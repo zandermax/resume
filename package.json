@@ -4,9 +4,9 @@
 	"description": "Zander Maxwell's resume!",
 	"main": "index.js",
 	"scripts": {
-		"build": "sass styles/index.scss build/style.scss",
+		"build": "rm -rf build/* && sass --no-source-map styles/index.scss build/style.css && cp index.html build/index.html",
 		"dev": "npm run dev:style",
-		"dev:style": "sass --watch styles/index.scss build/style.css"
+		"dev:style": "sass --watch styles/index.scss style.css"
 	},
 	"author": {
 		"name": "Zander Maxwell"
