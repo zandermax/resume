@@ -1,0 +1,20 @@
+header {
+	text-align: center;
+	padding-top: 1rem;
+
+	* {
+		font-weight: lighter;
+	}
+
+	h1 {
+		margin: 1rem auto 0.5rem;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		margin-block: 0;
+		font-size: 1.5rem;
+		font-variant: small-caps;
+	}
+}

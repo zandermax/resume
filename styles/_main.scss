@@ -1,0 +1,50 @@
+@use "info";
+@use "experience";
+@use "colors";
+@use "spacing";
+
+main {
+	display: flex;
+	justify-content: center;
+	column-gap: spacing.$sections-gap;
+	margin-top: 2rem;
+	padding-block: 1rem;
+	background-color: colors.$main-background;
+	border: 4px solid #FCE4EC;
+	border-radius: 8px;
+
+
+	h2 {
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	h4 {
+		font-size: 1.17rem;
+		font-variant: small-caps;
+	}
+
+	h5 {
+		font-size: 1rem;
+		margin-block: 0.5rem
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	.supplemental-list {
+		font-size: 0.9rem;
+		font-style: italic;
+		font-weight: lighter;
+	}
+
+	#separator-main {
+		width: 2px;
+		background-color: colors.$accent-color;
+	}
+}

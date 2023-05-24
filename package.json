@@ -1,0 +1,18 @@
+{
+	"name": "@zandermax/resume",
+	"version": "1.0.0",
+	"description": "Zander Maxwell's resume!",
+	"main": "index.js",
+	"scripts": {
+		"build": "",
+		"dev": "npm run dev:style",
+		"dev:style": "sass --watch styles/index.scss build/style.css"
+	},
+	"author": {
+		"name": "Zander Maxwell"
+	},
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.62.1"
+	}
+}

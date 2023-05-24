@@ -1,0 +1,5 @@
+@use "colors";
+
+.color-accent {
+	color: colors.$accent-color;
+}

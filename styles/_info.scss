@@ -1,0 +1,43 @@
+@use "colors";
+
+.info {
+	padding-left: 5%;
+	flex-basis: 40%;
+	display: flex;
+	flex-direction: column;
+
+	* {
+		text-align: end;
+	}
+
+	h3, h4 {
+		margin-block: 0;
+	}
+
+	p, li {
+		line-height: 2;
+	}
+
+	hgroup {
+		margin-top: 1rem;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.color-accent {
+		font-weight: bold;
+	}
+
+	#contact-list {
+		margin-top: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	#tech-expertise-list {
+		list-style: none;
+	}
+
+}

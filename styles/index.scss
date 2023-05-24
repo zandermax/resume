@@ -1,0 +1,12 @@
+
+@use "color-classes";
+@use "colors";
+@use "header";
+@use "main";
+
+body {
+	margin-inline: auto;
+	max-width: 80%;
+	background-color: colors.$body-background;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
