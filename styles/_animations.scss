@@ -15,22 +15,41 @@
 	}
 }
 
-@mixin rotate-on-hover($rotations: 2, $duration: 0.4s) {
-	$name: inline-#{unique-id()};
+@mixin spin($duration: 0.4s) {
+	$rotation-animation: inline-#{unique-id()};
+	$rotation-animation-reduced: inline-#{unique-id()};
 
-	@keyframes #{$name} {
+	@keyframes #{$rotation-animation} {
+		0% {
+			transform: rotate(0);
+		}
+
+		10% {
+			transform: scale(0.8);
+		}
+
+		50% {
+			transform: rotate(180deg)
+		}
+
+		90% {
+			transform: scale(1.4);
+		}
+	}
+
+	@keyframes #{$rotation-animation-reduced} {
 		from {
 			transform: rotate(0);
 		}
 
 		to {
-			transform: rotate(360deg);
+			transform: rotate(1turn);
 		}
 	}
 
-	animation: $name $duration ease-in-out;
+	animation: $rotation-animation $duration ease-in-out;
 
 	@media (prefers-reduced-motion) {
-		animation: $name $duration * 5 1 ease;
+		animation: $rotation-animation-reduced $duration * 5 1 ease;
 	}
 }

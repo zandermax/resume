@@ -25,7 +25,7 @@
 		@include animations.scale-on-hover($duration: 0.05s);
 
 		&:hover img {
-			@include animations.rotate-on-hover;
+			@include animations.spin;
 		}
 	}
 
@@ -36,6 +36,8 @@
 
 		.contact-icon {
 			@include colors.black-to-accent;
+			// transform: scale(1.2);
+			// transition: 1.5s transform 2.4s ease-in-out;
 		}
 
 		* {
@@ -43,12 +45,7 @@
 		}
 
 		#logo-linkedin {
-			margin-right: -4px;
 
-			// Getting rid of the ® symbol - sorry LinkedIn, but it's not unique enough to require attribution
-			// (See threshold of uniqueness as it applies to the public domain)
-			clip-path: inset(0 4px 0 0 );
-			transform-origin: calc(50% - 2px);
 		}
 	}
 
