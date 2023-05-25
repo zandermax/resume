@@ -3,4 +3,4 @@ node_modules/
 build/
 
 # Local development
-style.css
+style.css*

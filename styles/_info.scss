@@ -1,6 +1,7 @@
+@use "animations";
 @use "colors";
 
-.info {
+#info {
 	padding-left: 5%;
 	flex-basis: 40%;
 	display: flex;
@@ -18,6 +19,39 @@
 		line-height: 2;
 	}
 
+	li a {
+		// Enables scaling, since anchor elements are normally inline, which transforms do not affect
+		display: block;
+		@include animations.scale-on-hover($duration: 0.05s);
+
+		&:hover img {
+			@include animations.rotate-on-hover;
+		}
+	}
+
+	.li-with-icon {
+		display: flex inline;
+		align-items: center;
+		column-gap: 2ch;
+
+		.contact-icon {
+			@include colors.black-to-accent;
+		}
+
+		* {
+			margin-bottom: 0;
+		}
+
+		#logo-linkedin {
+			margin-right: -4px;
+
+			// Getting rid of the ® symbol - sorry LinkedIn, but it's not unique enough to require attribution
+			// (See threshold of uniqueness as it applies to the public domain)
+			clip-path: inset(0 4px 0 0 );
+			transform-origin: calc(50% - 2px);
+		}
+	}
+
 	hgroup {
 		margin-top: 1rem;
 
@@ -28,6 +62,10 @@
 
 	.color-accent {
 		font-weight: bold;
+	}
+
+	.contact-icon {
+		height: 3ex;
 	}
 
 	#contact-list {

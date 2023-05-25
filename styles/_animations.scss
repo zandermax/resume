@@ -1,0 +1,36 @@
+@mixin scale-on-hover ($scale: 1.2, $duration: 0.4s) {
+	transition: transform $duration ease-in-out;
+
+	@media (prefers-reduced-motion) {
+		transition: transform calc($duration * 5) ease;
+	}
+
+	&:hover {
+		transform: translateX(-2rem) scale($scale);
+		transition: transform $duration ease-in;
+
+		@media (prefers-reduced-motion) {
+			transition: transform calc($duration * 5) ease;
+		}
+	}
+}
+
+@mixin rotate-on-hover($rotations: 2, $duration: 0.4s) {
+	$name: inline-#{unique-id()};
+
+	@keyframes #{$name} {
+		from {
+			transform: rotate(0);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	animation: $name $duration ease-in-out;
+
+	@media (prefers-reduced-motion) {
+		animation: $name $duration * 5 1 ease;
+	}
+}
