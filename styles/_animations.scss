@@ -1,13 +1,13 @@
-@mixin scale-on-hover ($scale: 1.2, $duration: 0.4s) {
+@mixin scale-on-hover ($scale: 1.2, $duration: 0.4s, $delay: 0s) {
 	transition: transform $duration ease-in-out;
 
 	@media (prefers-reduced-motion) {
-		transition: transform calc($duration * 5) ease;
+		transition: transform calc($duration * 5) ease $delay;
 	}
 
 	&:hover {
 		transform: translateX(-2rem) scale($scale);
-		transition: transform $duration ease-in;
+		transition: transform $duration ease-in $delay;
 
 		@media (prefers-reduced-motion) {
 			transition: transform calc($duration * 5) ease;
@@ -15,7 +15,7 @@
 	}
 }
 
-@mixin spin($duration: 0.4s) {
+@mixin spin($duration: 0.4s, $delay: 0s) {
 	$rotation-animation: inline-#{unique-id()};
 	$rotation-animation-reduced: inline-#{unique-id()};
 
@@ -47,7 +47,7 @@
 		}
 	}
 
-	animation: $rotation-animation $duration ease-in-out;
+	animation: $rotation-animation $duration ease-in-out $delay;
 
 	@media (prefers-reduced-motion) {
 		animation: $rotation-animation-reduced $duration * 5 1 ease;

@@ -22,10 +22,10 @@
 	li a {
 		// Enables scaling, since anchor elements are normally inline, which transforms do not affect
 		display: block;
-		@include animations.scale-on-hover($duration: 0.05s);
+		@include animations.scale-on-hover($duration: 0.05s, $delay: 0.3s);
 
 		&:hover img {
-			@include animations.spin;
+			@include animations.spin($delay: 0.3s);
 		}
 	}
 
