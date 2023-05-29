@@ -6,7 +6,7 @@
 	}
 
 	&:hover {
-		transform: translateX(-2rem) scale($scale);
+		transform: scale($scale);
 		transition: transform $duration ease-in $delay;
 
 		@media (prefers-reduced-motion) {
