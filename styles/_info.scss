@@ -29,6 +29,10 @@
 		}
 	}
 
+	li {
+		font-size: 1.25rem;
+	}
+
 	.li-with-icon {
 		display: flex inline;
 		align-items: center;
@@ -70,7 +74,8 @@
 	}
 
 	#tech-expertise-list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 		list-style: none;
 	}
-
 }
