@@ -1,3 +1,5 @@
+@use "./colors";
+
 .experience {
 	padding-right: 5%;
 	flex-basis: 60%;
@@ -15,5 +17,26 @@
 
 	.employment-details p {
 		line-height: 1.5;
+	}
+
+	details {
+		cursor: pointer;
+	}
+
+	summary {
+		// Changing this from list-item will remove the ::marker
+		display: flex;
+		justify-content: center;
+		margin-block: 2rem;
+
+		border-radius: 20px;
+		background-color: colors.$accent-color;
+		color: white;
+		text-align: center;
+
+		p {
+			margin-top: revert;
+			font-size: 1.25rem;
+		}
 	}
 }
