@@ -1,5 +1,17 @@
 @use "./colors";
 
+@mixin summary-spin {
+	@media not (prefers-reduced-motion) {
+		transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
+	}
+}
+
+@mixin summary-spin-back {
+	@media not (prefers-reduced-motion) {
+		transition: all 0.25s cubic-bezier(.18,.89,.32,1.28);
+	}
+}
+
 .experience {
 	padding-inline: var(--sections-gap);
 	grid-column: span 2;
@@ -28,9 +40,7 @@
 		}
 
 		summary {
-			@media not (prefers-reduced-motion) {
-				transition: all 0.25s cubic-bezier(.18,.89,.32,1.28);
-			}
+			@include summary-spin-back;
 
 			p {
 				&::before {
@@ -44,9 +54,7 @@
 				&::before, &::after {
 					// Needed to transform
 					display: inline-block;
-					@media not (prefers-reduced-motion) {
-						transition: all 0.25s cubic-bezier(.18,.89,.32,1.28);
-					}
+					@include summary-spin-back;
 				}
 			}
 		}
@@ -58,9 +66,7 @@
 				border: 3px solid colors.$accent-color;
 				transform: rotate3d(1, 0, 0, 1turn);
 
-				@media not (prefers-reduced-motion) {
-					transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
-				}
+				@include summary-spin;
 
 				p {
 					&::before {
@@ -69,10 +75,8 @@
 					&::after {
 						transform: rotate(-1.5turn);
 					}
-					@media not (prefers-reduced-motion) {
-						&::before, &::after {
-							transition: transform 0.75s cubic-bezier(.68,-0.55,.27,1.55);
-						}
+					&::before, &::after {
+						@include summary-spin;
 					}
 				}
 			}
@@ -86,12 +90,13 @@
 
 		border-radius: 20px;
 		background-color: colors.$accent-color;
-		color: white;
+		color: colors.$accent-color-text;
 		text-align: center;
 
 		p {
 			margin-top: revert;
 			font-size: 1.25rem;
+			font-weight: bold;
 		}
 	}
 }
