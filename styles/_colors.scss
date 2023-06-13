@@ -1,13 +1,20 @@
-$accent-color: var(--color-accent);
+$accent-color: rgb(var(--color-accent));
+$accent-color-text: var(--color-accent-text);
 $body-background: var(--color-background-body);
 $main-background: var(--color-background-main);
 
+@mixin accent-color-alpha($property, $alpha) {
+	#{$property}: rgba(var(--color-accent), $alpha);
+}
+
+// Used to convert black icons to another color directly
 @mixin black-to-accent {
 	filter:  brightness(0) saturate(100%) invert(44%) sepia(49%) saturate(3385%) hue-rotate(313deg) brightness(91%) contrast(103%);
 }
 
 :root {
-	--color-accent: #EC407A;
+	--color-accent: 236, 64, 122;
+	--color-accent-text: white;
 	--color-background-body: #ECEFF1;
 	--color-background-main: white;
 }

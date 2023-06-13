@@ -2,10 +2,11 @@
 @use "colors";
 
 #info {
-	padding-left: 5%;
-	flex-basis: 40%;
 	display: flex;
 	flex-direction: column;
+	grid-column: span 1;
+	padding-inline: var(--sections-gap);
+	border-right: 1px solid colors.$accent-color;
 
 	* {
 		text-align: end;

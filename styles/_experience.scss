@@ -1,11 +1,8 @@
 @use "./colors";
 
 .experience {
-	padding-right: 5%;
-	flex-basis: 60%;
-	align-content: baseline;
-	display: grid;
-	justify-content: start;
+	padding-inline: var(--sections-gap);
+	grid-column: span 2;
 
 	h3, h4 {
 		margin-block: 0;
@@ -20,13 +17,66 @@
 	}
 
 	details {
-		cursor: pointer;
+		.summary-container {
+			width: 100%;
+			cursor: pointer;
+		}
+
+		summary {
+			@media not (prefers-reduced-motion) {
+				transition: all 0.25s cubic-bezier(.18,.89,.32,1.28);
+			}
+
+			p {
+				&::before {
+					content: "↓";
+					margin-right: 1ch;
+				}
+				&::after {
+					content: "↓";
+					margin-left: 1ch;
+				}
+				&::before, &::after {
+					// Needed to transform
+					display: inline-block;
+					@media not (prefers-reduced-motion) {
+						transition: all 0.25s cubic-bezier(.18,.89,.32,1.28);
+					}
+				}
+			}
+		}
+
+		&[open] {
+			summary {
+				color: colors.$accent-color;
+				background-color: colors.$accent-color-text;
+				border: 3px solid colors.$accent-color;
+				transform: rotate3d(1, 0, 0, 1turn);
+
+				@media not (prefers-reduced-motion) {
+					transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
+				}
+
+				p {
+					&::before {
+						transform: rotate(1.5turn);
+					}
+					&::after {
+						transform: rotate(-1.5turn);
+					}
+					@media not (prefers-reduced-motion) {
+						&::before, &::after {
+							transition: transform 0.75s cubic-bezier(.68,-0.55,.27,1.55);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	summary {
 		// Changing this from list-item will remove the ::marker
 		display: flex;
-		justify-content: center;
 		margin-block: 2rem;
 
 		border-radius: 20px;
