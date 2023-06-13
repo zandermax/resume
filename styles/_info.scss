@@ -35,8 +35,9 @@
 	}
 
 	.li-with-icon {
-		display: flex inline;
+		display: flex;
 		align-items: center;
+		justify-content: end;
 		column-gap: 2ch;
 
 		.contact-icon {
