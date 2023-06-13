@@ -1,6 +1,6 @@
-@use "info";
-@use "experience";
 @use "colors";
+@use "experience";
+@use "info";
 @use "spacing";
 
 main {
@@ -9,7 +9,7 @@ main {
 	margin-top: 2rem;
 	padding-block: 1rem;
 	background-color: colors.$main-background;
-	border: 4px solid;
+	border: 2px solid;
 	border-radius: 8px;
 
 	@include colors.accent-color-alpha(border-color, 0.3);
@@ -29,13 +29,14 @@ main {
 	}
 
 	h4 {
-		font-size: 1.17rem;
+		font-size: 1.25rem;
 		font-variant: small-caps;
 	}
 
 	h5 {
+		margin-top: 0.5rem;
+		margin-bottom: 0.25rem;
 		font-size: 1rem;
-		margin-block: 0.5rem
 	}
 
 	p {
