@@ -1,4 +1,7 @@
+@use "spacing";
+
 header {
+	@include spacing.max-document-width;
 	text-align: center;
 	padding-top: 1rem;
 

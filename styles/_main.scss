@@ -12,6 +12,7 @@ main {
 	border: 2px solid;
 	border-radius: 8px;
 
+	@include spacing.max-document-width;
 	@include colors.accent-color-alpha(border-color, 0.3);
 
 	> * {

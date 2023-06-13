@@ -1,5 +1,9 @@
 $sections-gap: var(--sections-gap);
 
+@mixin max-document-width {
+	max-width: 100rem;
+}
+
 :root {
 	--sections-gap: 3rem;
 }
