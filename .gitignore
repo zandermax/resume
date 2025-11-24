@@ -1,6 +1,1 @@
-# Dependency directories
-node_modules/
-build/
-
-# Local development
-style.css*
+.DS_Store

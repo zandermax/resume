@@ -2,249 +2,346 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Zander Maxwell</title>
+	<meta charset="UTF-8" />
+	<title>Zander Maxwell – Senior Software Engineer</title>
+	<link rel="stylesheet" href="./assets/css/resume.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body>
-	<header>
-		<hgroup>
-			<h1>Zander Maxwell</h1>
-			<h2 class="color-accent">Front End Software Engineer</h2>
-		</hgroup>
-	</header>
-	<main>
-		<section id="info">
-			<article>
-				<h2>Contact</h2>
-				<ul id="contact-list">
+<body class="resume">
+	<main class="resume__main">
+		<!-- HEADER -->
+		<header class="resume-header">
+			<div class="resume-header__top-row">
+				<hgroup class="resume-header__name-wrapper">
+					<h1 class="resume-header__name">Zander Maxwell</h1>
+					<p class="resume-header__role">Senior Front-End / Full-Stack Engineer</p>
+					<button type="button" class="resume-header__print-button" onclick="window.print()">
+						Print version
+					</button>
+				</hgroup>
+			</div>
+
+			<div class="resume-header__meta">
+				<p class="resume-header__location">Munich, Germany</p>
+				<p class="resume-header__contact">
+					<span class="resume-header__phone">+49 151 72534939</span> ·
+					<a href="mailto:zandermaxwell@hey.com" class="resume-header__email">zandermaxwell@hey.com</a>
+				</p>
+				<p class="resume-header__links">
+					<a href="https://www.linkedin.com/in/zandermax" class="resume-header__link" target="_blank" rel="noreferrer">
+						linkedin.com/in/zandermax
+					</a>
+					·
+					<a href="https://github.com/zandermax" class="resume-header__link" target="_blank" rel="noreferrer">
+						github.com/zandermax
+					</a>
+				</p>
+			</div>
+		</header>
+
+		<!-- SUMMARY -->
+		<section class="resume-section resume-section--summary">
+			<h2 class="resume-section__title">Professional Summary</h2>
+			<p class="resume-section__text">
+				Senior Software Engineer with 8+ years of experience building fast, accessible, secure web applications at global
+				scale. Specializes in React, TypeScript, and modernizing legacy architectures into resilient, maintainable platforms.
+				Passionate advocate for open web standards, user trust, and community-driven engineering.Author of widely used open-source tooling.
+				Thrives in collaborative, distributed teams and
+				mission-driven environments where accessibility, performance, and user empowerment are central. Dreams of a more inclusive web, and
+				making a difference with Mozilla.
+			</p>
+		</section>
+
+		<!-- CORE SKILLS -->
+		<section class="resume-section resume-section--skills">
+			<h2 class="resume-section__title">Core Skills</h2>
+
+			<div class="skills-grid">
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Frontend</h3>
+					<p class="skills-grid__items">
+						React, TypeScript, JavaScript, Web Components, HTML5, CSS, Next.js
+					</p>
+				</div>
+
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Backend</h3>
+					<p class="skills-grid__items">
+						Node.js, REST APIs, GraphQL, MySQL, SQL Server, Python (familiar), Django (familiar)
+					</p>
+				</div>
+
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Architecture &amp; Quality</h3>
+					<p class="skills-grid__items">
+						Microfrontends, performance optimization, accessibility, Jest, CI/CD, testing &amp; observability
+					</p>
+				</div>
+
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Cloud &amp; Reliability</h3>
+					<p class="skills-grid__items">
+						AWS, cloud-native pipelines, monitoring, debugging, incident response
+					</p>
+				</div>
+
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Open Web &amp; OSS</h3>
+					<p class="skills-grid__items">
+						W3C OpenUI attendee, npm module author (&ldquo;sfdx&rdquo;), open-source collaboration
+					</p>
+				</div>
+
+				<div class="skills-grid__group">
+					<h3 class="skills-grid__title">Collaboration</h3>
+					<p class="skills-grid__items">
+						Code reviews, RFCs, cross-functional design work, distributed teams, mentoring
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- EXPERIENCE -->
+		<section class="resume-section resume-section--experience">
+			<h2 class="resume-section__title">Professional Experience</h2>
+
+			<!-- CHECK24 -->
+			<article class="experience-item">
+				<header class="experience-item__header">
+					<div class="experience-item__main">
+						<h3 class="experience-item__role">Full-Stack Software Engineer</h3>
+						<p class="experience-item__company">CHECK24 Vergleichsportal GmbH</p>
+					</div>
+					<div class="experience-item__meta">
+						<p class="experience-item__location">Munich, Germany</p>
+						<p class="experience-item__dates">06/2024 &ndash; Present</p>
+					</div>
+				</header>
+
+				<p class="experience-item__tech">
+					<strong>Tech:</strong> React, TypeScript, Next.js, Node.js, MongoDB, MobX, CSS/SCSS
+				</p>
+
+				<ul class="experience-item__bullets">
 					<li>
-						<address>
-							<a href="mailto:zandermaxwell@hey.com" class="li-with-icon" target="_blank">
-								<p>zandermaxwell@hey.com</p><img alt="mail" class="contact-icon"
-									src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/envelope.svg" />
-							</a>
-						</address>
+						Modernized multiple legacy React/JavaScript applications into a TypeScript-based architecture,
+						improving maintainability and long-term platform reliability.
 					</li>
 					<li>
-						<span>
-							<a href="tel:+14402539629" class="li-with-icon" target="_blank">
-								<p>+1-440-253-9629</p><img alt="phone" class="contact-icon"
-									src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/phone.svg" />
-							</a>
-						</span>
+						Delivered customer-facing comparison flows used across Germany, focusing on fast load times,
+						accessibility, and trustworthy user experiences.
 					</li>
 					<li>
-						<span>
-							<a class="li-with-icon" target="_blank" href="https://www.linkedin.com/in/zandermax">
-								<p>linkedin.com/in/zandermax</p><img alt="LinkedIn logo" id="logo-linkedin" class="contact-icon"
-									src="https://raw.githubusercontent.com/Automattic/social-logos/trunk/svg-min/linkedin.svg" />
-							</a>
-						</span>
+						Built automated pricing campaign tooling, reducing repetitive engineering work by approximately
+						95% and enabling safer, more auditable updates.
 					</li>
 					<li>
-						<span>
-							<a class="li-with-icon" target="_blank" href="https://www.github.com/zandermax">
-								<p>github.com/zandermax</p><img class="contact-icon" alt="GitHub logo"
-									src="https://raw.githubusercontent.com/primer/octicons/main/icons/mark-github-16.svg" />
-							</a>
-						</span>
+						Implemented reusable UI patterns and shared components adopted across product teams, improving
+						consistency and reducing UI defects.
+					</li>
+					<li>
+						Collaborated closely with product managers, designers, and QA to deliver secure, accessible,
+						end-to-end features for millions of user journeys.
 					</li>
 				</ul>
 			</article>
-			<article>
-				<h2>About Me</h2>
-				<p>As a developer who prioritizes creating
-					quality user experiences, I look to work on
-					projects where I can combine both my
-					creative and technical skills to design and
-					construct technology that users find
-					accessible, intuitive, and beautiful.</p>
+
+			<!-- AWS -->
+			<article class="experience-item">
+				<header class="experience-item__header">
+					<div class="experience-item__main">
+						<h3 class="experience-item__role">Front End / Full Stack Engineer</h3>
+						<p class="experience-item__company">Amazon Web Services (AWS)</p>
+					</div>
+					<div class="experience-item__meta">
+						<p class="experience-item__location">Remote, United States</p>
+						<p class="experience-item__dates">01/2019 &ndash; 12/2023</p>
+					</div>
+				</header>
+
+				<p class="experience-item__tech">
+					<strong>Tech:</strong> React, TypeScript, Redux, Node.js, GraphQL, HTML5, CSS, AWS
+				</p>
+
+				<ul class="experience-item__bullets">
+					<li>
+						Led development of cross-product microfrontends using React and custom web components, reducing
+						deployment delays by over 95% and lowering deployment failure rates by over 30%.
+					</li>
+					<li>
+						Built accessibility-first UIs for IT Support systems used by 5,000+ internal users; keyboard
+						navigation improvements alone reduced handling time by around 20%.
+					</li>
+					<li>
+						Developed UI testing and observability tooling integrated into CI/CD pipelines, providing real-time
+						metrics now used by hundreds of AWS teams and improving incident visibility and debugging speed.
+					</li>
+					<li>
+						Designed and implemented the frontend for the AWS Support App in Slack, shipping interactive
+						onboarding and self-service capabilities to 100+ companies and more than 1,000 AWS accounts.
+					</li>
+					<li>
+						Drove i18n and localization efforts that significantly reduced language-related support issues and
+						improved the experience for international users.
+					</li>
+					<li>
+						Worked in highly distributed, cross-functional teams across engineering, design, QA, and security,
+						in a culture of open discussion, code review, and shared standards.
+					</li>
+				</ul>
 			</article>
-			<article>
-				<h2>Education</h2>
-				<h3>Iowa State University</h3>
-				<hgroup>
-					<h4>Computer Engineering<br>Bachelor of Science</h4>
-					<p class="supplemental-list">Philosophy, Psychology Minors</p>
-				</hgroup>
-				<p>United States – 2015</p>
+
+			<!-- Microsoft -->
+			<article class="experience-item">
+				<header class="experience-item__header">
+					<div class="experience-item__main">
+						<h3 class="experience-item__role">Software Development Engineer (Contract)</h3>
+						<p class="experience-item__company">Microsoft</p>
+					</div>
+					<div class="experience-item__meta">
+						<p class="experience-item__location">Redmond, WA, United States</p>
+						<p class="experience-item__dates">04/2018 &ndash; 10/2018</p>
+					</div>
+				</header>
+
+				<p class="experience-item__tech">
+					<strong>Tech:</strong> JavaScript, C#, .NET, SQL, Kendo UI, HTML, CSS, Azure
+				</p>
+
+				<ul class="experience-item__bullets">
+					<li>
+						Improved the performance of Azure&rsquo;s AIRS cost-tracking platform by approximately 300%, enabling
+						faster and more reliable internal workflows.
+					</li>
+					<li>
+						Enhanced error-handling systems, catching roughly 500% more issues during testing and reducing
+						production defects.
+					</li>
+					<li>
+						Delivered UI performance and reliability improvements while collaborating with cross-functional
+						engineering teams.
+					</li>
+				</ul>
 			</article>
-			<article>
-				<h2>Technology Expertise</h2>
-				<ul id="tech-expertise-list">
-					<li>Adobe CC</li>
-					<li>AWS</li>
-					<li>Babel</li>
-					<li>CSS</li>
-					<li>git</li>
-					<li>GraphQL</li>
-					<li>HTML</li>
-					<li class="color-accent">Javascript</li>
-					<li class="color-accent">Node.js</li>
-					<li>npm</li>
-					<li class="color-accent">React</li>
-					<li>Redux</li>
-					<li>Sass</li>
-					<li>Sketch</li>
-					<li class="color-accent">Typescript</li>
-					<li>Webpack</li>
+
+			<!-- ReedHein -->
+			<article class="experience-item">
+				<header class="experience-item__header">
+					<div class="experience-item__main">
+						<h3 class="experience-item__role">Software Developer</h3>
+						<p class="experience-item__company">ReedHein &amp; Associates</p>
+					</div>
+					<div class="experience-item__meta">
+						<p class="experience-item__location">Lynnwood, WA, United States</p>
+						<p class="experience-item__dates">09/2017 &ndash; 03/2018</p>
+					</div>
+				</header>
+
+				<p class="experience-item__tech">
+					<strong>Tech:</strong> Salesforce, Node.js, React, JavaScript, HTML, CSS, npm
+				</p>
+
+				<ul class="experience-item__bullets">
+					<li>
+						Authored the open-source npm module &ldquo;sfdx,&rdquo; enabling Salesforce DX workflows in Node.js ecosystems,
+						with over 100,000 downloads.
+					</li>
+					<li>
+						Modernized internal Salesforce development practices, introducing version control and tooling that
+						reduced client loss by approximately 80%.
+					</li>
+					<li>
+						Helped integrate agile methodologies and automated follow-up mechanisms, doubling software
+						development velocity and improving efficiency by about 65%.
+					</li>
+				</ul>
+			</article>
+
+			<!-- Advisory Board -->
+			<article class="experience-item">
+				<header class="experience-item__header">
+					<div class="experience-item__main">
+						<h3 class="experience-item__role">Software Engineer</h3>
+						<p class="experience-item__company">The Advisory Board Company</p>
+					</div>
+					<div class="experience-item__meta">
+						<p class="experience-item__location">Austin, TX, United States</p>
+						<p class="experience-item__dates">06/2015 &ndash; 01/2017</p>
+					</div>
+				</header>
+
+				<p class="experience-item__tech">
+					<strong>Tech:</strong> Node.js, JavaScript, HTML5, CSS, ASP.NET, Salesforce, SQL
+				</p>
+
+				<ul class="experience-item__bullets">
+					<li>
+						Built a physician referral trends web application that helped secure healthcare contracts worth over
+						$1M.
+					</li>
+					<li>
+						Optimized a Physician Relationship Management platform widely adopted across mid-sized US hospital
+						systems, improving performance and usability.
+					</li>
+					<li>
+						Developed an internal volunteer tracking system monitoring more than 10,000 employee volunteer hours
+						monthly.
+					</li>
 				</ul>
 			</article>
 		</section>
-		<section class="experience">
-			<h2>Work experience</h2>
-			<article>
-				<hgroup>
-					<h3 class="color-accent">Amazon Web Services (AWS)</h3>
-					<p>2019 – Present</p>
-				</hgroup>
-				<div class="employment-position">
-					<hgroup>
-						<h4>Front-End Engineer</h4>
-						<p>2021 – Present</p>
-					</hgroup>
-					<div class="employment-details">
-						<hgroup>
-							<h5>IT Support contact resolution software development</h5>
-							<p class="supplemental-list">React, Typescript, Node.js, npm, Sass / CSS, HTML, AWS, Redux, GraphQL</p>
-						</hgroup>
-						<p>I am currently responsible for the front end design and development on products used by IT Support
-							Engineers (ITSEs) that support all Amazon employees. The main product is a web application that incorporates many tools
-							together for the sake of enabling ITSEs to have an efficient and centralized workflow.</p>
-						<p>Additionally, I am leading the development of re-usable micro-frontends used in multiple Amazon
-							software packages by multiple development teams. These are created and connected through Webpack's Federated Modules. Each
-							implementation uses React lazy-loading, and the latest versions use custom web components and custom events to communicate
-							with the host application.</p>
-					</div>
-					<hgroup>
-						<h4>Software Development Engineer</h4>
-						<p>2019 – 2021</p>
-					</hgroup>
-					<div class="employment-details">
-						<hgroup>
-							<h5>AWS Support App in Slack</h5>
-							<p class="supplemental-list">React, Javascript, Node.js, npm, CSS, HTML, AWS</p>
-						</hgroup>
-						<p>On the way to transitioning from a software engineer to specialize on the front-end, I was part of a newly-created team that
-							created the AWS product that enables AWS customers to receive customer support in
-							chat applications, the first instance being <a target="_blank"
-								href="https://docs.aws.amazon.com/awssupport/latest/user/aws-support-app-for-slack.html">"AWS Support App in
-								Slack"</a>. I created the AWS console application for this new product using React and Javascript. During the initial
-							phases, I also designed the initial UX and created UI mockups for the console
-							application as well as the user experience in Slack.</p>
-					</div>
-				</div>
+
+		<!-- OPEN SOURCE & COMMUNITY -->
+		<section class="resume-section resume-section--community">
+			<h2 class="resume-section__title">Open Source &amp; Community</h2>
+
+			<ul class="community-list">
+				<li class="community-list__item">
+					<strong>W3C OpenUI Community Group Contributor</strong> - Participated in discussions and efforts to
+					standardize accessible, interoperable UI controls for the web.
+				</li>
+				<li class="community-list__item">
+					<strong>Author of &ldquo;sfdx&rdquo; npm module</strong> - Created and maintain a popular Node.js package enabling
+					Salesforce DX functionality, with 100k+ downloads.
+				</li>
+				<li class="community-list__item">
+					<strong>Volunteer Developer - Code for Social Good</strong> - Contributed frontend development to a
+					global platform connecting nonprofits with technical volunteers.
+				</li>
+				<li class="community-list__item">
+					<strong>Mentor - Justice Through Code (Columbia University)</strong> - Mentored participants in a
+					16-week program teaching Python fundamentals to individuals reentering the workforce.
+				</li>
+			</ul>
+		</section>
+
+		<!-- EDUCATION -->
+		<section class="resume-section resume-section--education">
+			<h2 class="resume-section__title">Education</h2>
+
+			<article class="education-item">
+				<h3 class="education-item__institution">Iowa State University</h3>
+				<p class="education-item__degree">
+					B.S. Computer Engineering, Minors in Philosophy &amp; Psychology
+				</p>
+				<p class="education-item__details">
+					Graduate coursework in Human-Computer Interaction.
+				</p>
 			</article>
-			<article>
-				<hgroup>
-					<h3 class="color-accent">Microsoft</h3>
-					<p>2018</p>
-				</hgroup>
-				<div class="employment-position">
-					<h4>Software Development Engineer (Contract)</h4>
-					<div class="employment-details">
-						<hgroup>
-							<h5>Azure API and user interface development</h5>
-							<p class="supplemental-list">ASP.Net, C#, CSS, Javascript, HTML, SQL</p>
-						</hgroup>
-						<p>At Microsoft, I was focused on development work related the internal Azure API used to create internal
-							subscriptions and registrations. I also developed an improved user interface for internal
-							subscription tracking using the Kendo UI library.</p>
-					</div>
-				</div>
-			</article>
-			<article>
-				<hgroup>
-					<h3 class="color-accent">ReedHein and Associates</h3>
-					<p>2017 – 2018</p>
-				</hgroup>
-				<div class="employment-position">
-					<h4>Software Developer</h4>
-					<div class="employment-details">
-						<hgroup>
-							<h5>Node module development</h5>
-							<p class="supplemental-list">Javascript, Node.js, npm, GitHub</p>
-						</hgroup>
-						<p>Developed an open-source npm software package to assist with Salesforce DX development,
-							<a target="_blank" href="https://www.npmjs.com/package/sfdx">sfdx</a>, which allows Salesforce DX features to be directly
-							usable within Node projects. Also created an additional
-							project that
-							interacts with <a target="_blank" href="https://www.npmjs.com/package/sfdx">sfdx</a> via a UI in React, to make the
-							functionality provided by Salesforce DX easier to use by non-developers.
-						</p>
-					</div>
-				</div>
-			</article>
-			<details>
-				<summary>
-					<div class="summary-container">
-						<p>See more</p>
-						<div>
-				</summary>
-				<article>
-					<hgroup>
-						<h3 class="color-accent">The Advisory Board Company</h3>
-						<p>2015 – 2017</p>
-					</hgroup>
-					<div class="employment-position">
-						<h4>Software Engineer</h4>
-						<div class="employment-details">
-							<hgroup>
-								<h5>Physician Alignment dashboard</h5>
-								<p class="supplemental-list">Javascript, Node.js, npm, C#, ASP.net</p>
-							</hgroup>
-							<p>I helped to create a web app used by healthcare systems that used extensive Node.js / javascript / CSS / HTML on the
-								front
-								end to interact with SQL database structures through APIs written in C# and the ASP.Net framework. My work on this app was
-								essentially full-stack development, as I worked on all parts of the app.
-							</p>
-							<hgroup>
-								<h5>Physician Relationship Manager (CRM for healthcare)</h5>
-								<p class="supplemental-list">Salesforce, HTML, Handlebars, CSS, Python, Java</p>
-							</hgroup>
-							<p>I started at The Advisory Board by working with the Salesforce platform to create Physician Relationship Management
-								software
-								for healthcare providers. This work also involved substantial front-end design and development using Salesforce technology
-								including Apex, SOQL and Visualforce. Other technologies used included Javascript, CSS, HTML, as well as some C# / Asp.Net
-								work for data interaction.
-							</p>
-						</div>
-					</div>
-				</article>
-				<article>
-					<hgroup>
-						<h3 class="color-accent">Iowa State University</h3>
-						<p>2013 – 2015</p>
-					</hgroup>
-					<div class="employment-position">
-						<h4>Software Engineer</h4>
-						<div class="employment-details">
-							<hgroup>
-								<h5>Iowa State University Computer Science Department</h5>
-								<p class="supplemental-list">C, C++, R, Windows shell scripting</p>
-							</hgroup>
-							<p>We worked with physicians at the Mayo clinic (and beta programs at other institutions) to create, maintain and improve
-								systems that provided
-								real-time feedback during endoscopic examinations. I worked with two professors and several graduate students to implement
-								image analysis
-								procedures that related the movement of the inspection camera with measures of performance. Essentially, we created an
-								enhanced version of
-								the colonoscopy, which we showed through quantitative research increased physicians' ability to detect abnormalities in
-								patients.
-								My responsibilities included development of the web server that monitored remote systems (Apache Tomcat and Java), and
-								remote systems
-								configuration (Windows Services and Batch Scripting). The software we used was written in Java, and the real-time image
-								processing was
-								created using C (specifically OpenCV). I also did video creation using ffmpeg and programming video statistics using R.
-							</p>
-						</div>
-					</div>
-				</article>
-			</details>
+		</section>
+
+		<!-- CORE PRINCIPLES -->
+		<section class="resume-section resume-section--principles">
+			<h2 class="resume-section__title">Core Principles</h2>
+			<ul class="principles-list">
+				<li class="principles-list__item">Accessibility-first engineering and inclusive design.</li>
+				<li class="principles-list__item">User trust, security-conscious development, and privacy-minded decisions.</li>
+				<li class="principles-list__item">Open collaboration, transparent communication, and code review culture.</li>
+				<li class="principles-list__item">Responsible participation in distributed, community-driven teams.</li>
+				<li class="principles-list__item">Mission-driven development focused on improving the open web.</li>
+			</ul>
 		</section>
 	</main>
 </body>
