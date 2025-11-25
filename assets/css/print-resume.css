@@ -23,6 +23,16 @@ body.resume-print {
 	box-sizing: border-box;
 }
 
+/* ===========================
+ATS-Specific (not shown on screen)
+=========================== */
+.resume-print__ats-contact {
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
 /* Headings & text */
 
 h1,
