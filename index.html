@@ -3,23 +3,48 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Zander Maxwell – Senior Software Engineer</title>
+	<title>Zander Maxwell -- Senior Software Engineer -- Mozilla Application</title>
 	<link rel="stylesheet" href="./assets/css/resume.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Zander Maxwell",
+		"jobTitle": "Senior Software Engineer",
+		"description": "Senior Front-End / Full-Stack Engineer applying to Mozilla. Specializes in React, TypeScript, and accessible, open web development.",
+		"url": "https://mozilla.zandermaxwell.com",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Munich",
+			"addressCountry": "DE"
+		},
+		"email": "mailto:zandermaxwell@hey.com",
+		"telephone": "+49-151-72534939",
+		"sameAs": [
+			"https://www.linkedin.com/in/zandermax",
+			"https://github.com/zandermax"
+		]
+	}
+</script>
+
 </head>
 
 <body class="resume">
 	<main class="resume__main">
-		<!-- HEADER -->
 		<header class="resume-header">
 			<div class="resume-header__top-row">
 				<hgroup class="resume-header__name-wrapper">
-					<h1 class="resume-header__name">Zander Maxwell</h1>
-					<p class="resume-header__role">Senior Front-End / Full-Stack Engineer</p>
-					<button type="button" class="resume-header__print-button" onclick="window.print()">
-						Print version
-					</button>
+					<h1 class="resume-header__name">
+						<div class="resume-header__name-greeting">Hello, Mozilla!</div>
+						<div class="resume-header__name-small">I'm</div>
+						<div>Zander Maxwell</div>
+					</h1>
+					<p class="resume-header__role">
+						Senior Front-End / Full-Stack Engineer<br />
+						<span class="resume-header__role-sub">Applying for Senior Software Engineer -- Add-ons Engineering (AMO)</span>
+					</p>
 				</hgroup>
 			</div>
 
@@ -47,16 +72,46 @@
 			<p class="resume-section__text">
 				Senior Software Engineer with 8+ years of experience building fast, accessible, secure web applications at global
 				scale. Specializes in React, TypeScript, and modernizing legacy architectures into resilient, maintainable platforms.
-				Passionate advocate for open web standards, user trust, and community-driven engineering.Author of widely used open-source tooling.
-				Thrives in collaborative, distributed teams and
-				mission-driven environments where accessibility, performance, and user empowerment are central. Dreams of a more inclusive web, and
-				making a difference with Mozilla.
+				Passionate advocate for open web standards, user trust, and community-driven engineering, including participation
+				in W3C OpenUI discussions and authoring widely used open-source tooling.
 			</p>
+			<p class="resume-section__text">
+				After several years at companies like Amazon Web Services and Microsoft, I&rsquo;m intentionally looking to apply
+				my skills at an organization whose mission aligns more closely with my values. Mozilla&rsquo;s goal of making the
+				internet better for people, not just for companies, fits exactly what I want my work to support. I&rsquo;m especially
+				excited about contributing to Firefox&rsquo;s add-ons ecosystem and helping keep the web safe, open, and customizable for
+				millions of users.
+			</p>
+		</section>
+
+		<!-- WHY MOZILLA -->
+		<section class="resume-section resume-section--mozilla">
+			<h2 class="resume-section__title">Why Mozilla &amp; AMO</h2>
+			<ul class="principles-list">
+				<li class="principles-list__item">
+					I care deeply about the web as a public resource. Mozilla&rsquo;s focus on an internet built for people, not just
+					for profit, is deeply inline with why I work in software development.
+				</li>
+				<li class="principles-list__item">
+					Throughout my career, Firefox and MDN have been daily development companions, Firefox as a privacy-respecting daily
+					browser, and MDN as the obvious gold-standard reference for modern web development.
+				</li>
+				<li class="principles-list__item">
+					I&rsquo;m excited by the role addons.mozilla.org plays in making Firefox truly customizable. The idea of helping
+					developers publish extensions safely and helping users discover trustworthy add-ons is exactly the kind of
+					impactful frontend work I want to do. On a personal level, I&rsquo;ve used Firefox extensions for years to enhance my own browsing
+					experience, and I&rsquo;d love to help make that experience better for others.
+				</li>
+				<li class="principles-list__item">
+					Mozilla&rsquo;s open, community-driven engineering culture resonates with my experience contributing to open source
+					and working in shared codebases that invite collaboration, code review, and discussion in the open.
+				</li>
+			</ul>
 		</section>
 
 		<!-- CORE SKILLS -->
 		<section class="resume-section resume-section--skills">
-			<h2 class="resume-section__title">Core Skills</h2>
+			<h2 class="resume-section__title">Core Skills (Relevant to AMO)</h2>
 
 			<div class="skills-grid">
 				<div class="skills-grid__group">
@@ -90,14 +145,16 @@
 				<div class="skills-grid__group">
 					<h3 class="skills-grid__title">Open Web &amp; OSS</h3>
 					<p class="skills-grid__items">
-						W3C OpenUI attendee, npm module author (&ldquo;sfdx&rdquo;), open-source collaboration
+						W3C OpenUI Community Group participant, npm module author (&ldquo;sfdx&rdquo;), open-source workflows, MDN-heavy
+						development.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Collaboration</h3>
+					<h3 class="skills-grid__title">Collaboration &amp; Values</h3>
 					<p class="skills-grid__items">
-						Code reviews, RFCs, cross-functional design work, distributed teams, mentoring
+						Code reviews, RFCs, cross-functional design work, distributed teams, mentoring; strong alignment with
+						Mozilla values of welcoming differences, responsible participation, and having grit.
 					</p>
 				</div>
 			</div>
@@ -131,7 +188,8 @@
 					</li>
 					<li>
 						Delivered customer-facing comparison flows used across Germany, focusing on fast load times,
-						accessibility, and trustworthy user experiences.
+						accessibility, and trustworthy user experiences, echoing the same principles behind AMO&rsquo;s user and
+						developer experiences.
 					</li>
 					<li>
 						Built automated pricing campaign tooling, reducing repetitive engineering work by approximately
@@ -299,19 +357,19 @@
 
 			<ul class="community-list">
 				<li class="community-list__item">
-					<strong>W3C OpenUI Community Group Contributor</strong> - Participated in discussions and efforts to
+					<strong>Open standards advocate -> W3C OpenUI Community Group Attendee</strong> -- Participated in discussions and efforts to
 					standardize accessible, interoperable UI controls for the web.
 				</li>
 				<li class="community-list__item">
-					<strong>Author of &ldquo;sfdx&rdquo; npm module</strong> - Created and maintain a popular Node.js package enabling
+					<strong>Open source contributor -> Author of &ldquo;sfdx&rdquo; npm module</strong> -- Created and maintain a popular Node.js package enabling
 					Salesforce DX functionality, with 100k+ downloads.
 				</li>
 				<li class="community-list__item">
-					<strong>Volunteer Developer - Code for Social Good</strong> - Contributed frontend development to a
+					<strong>Volunteer Developer -> Code for Social Good</strong> -- Contributed frontend development to a
 					global platform connecting nonprofits with technical volunteers.
 				</li>
 				<li class="community-list__item">
-					<strong>Mentor - Justice Through Code (Columbia University)</strong> - Mentored participants in a
+					<strong>Mentor -> Justice Through Code (Columbia University)</strong> -- Mentored participants in a
 					16-week program teaching Python fundamentals to individuals reentering the workforce.
 				</li>
 			</ul>
@@ -324,10 +382,10 @@
 			<article class="education-item">
 				<h3 class="education-item__institution">Iowa State University</h3>
 				<p class="education-item__degree">
-					B.S. Computer Engineering, Minors in Philosophy &amp; Psychology
+					B.S. Computer Engineering (Minors in Philosophy &amp; Psychology)
 				</p>
 				<p class="education-item__details">
-					Graduate coursework in Human-Computer Interaction.
+					Graduate coursework in Human-Computer Interaction (degree not pursued).
 				</p>
 			</article>
 		</section>
