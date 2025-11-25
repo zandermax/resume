@@ -388,8 +388,7 @@ Mobile layout
 =========================== */
 
 /* Stuff that should be hidden unless on mobile */
-.resume-header__mobile-image,
-.resume-header__mobile-image-description {
+.resume-header__mobile-image {
 	display: none;
 }
 
@@ -410,17 +409,6 @@ Mobile layout
 		order: unset;
 		margin: 0;
 		padding: 0;
-	}
-
-	.resume-header__mobile-image-description {
-		display: block;
-
-		p {
-			position: relative;
-			top: 70px;
-			font-size: small;
-			text-align: center;
-		}
 	}
 
 	.resume-header__mobile-image {
