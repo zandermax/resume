@@ -56,7 +56,7 @@ p {
 	flex-direction: column;
 	gap: 0.4rem;
 
-	>* {
+	> * {
 		flex: 0 0 50%;
 	}
 }
@@ -82,7 +82,7 @@ h1.resume-header__name {
 	font-size: 1.2rem;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	margin-block-top: -0.2rem;
+	margin-block-start: -0.2rem;
 }
 
 .resume-header__role {
@@ -454,5 +454,49 @@ Print Styles
 	a {
 		color: #000000;
 		text-decoration: none;
+	}
+}
+
+/* BUTTON: Printable CV link (visible on screen only) */
+.resume-header__printlink {
+	font-family: inherit;
+	font-size: 0.8rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	padding: 0.55rem 1.1rem;
+	border: 4px solid var(--text-color);
+	background: var(--background-color);
+	color: var(--text-color);
+	text-decoration: none;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	white-space: nowrap;
+	cursor: pointer;
+
+	margin-block: 1rem;
+}
+
+/* Hover effect: brutalist inversion */
+.resume-header__printlink:hover {
+	background: --var(--text-color);
+	color: --var(--background-color);
+}
+
+/* Responsive: on small screens, stack below name */
+@media (max-width: 600px) {
+	.resume-header__printlink {
+		margin-inline-start: 0;
+		margin-block-start: 0.65rem;
+		align-self: flex-start;
+	}
+}
+
+/* Hide this element when printing the main page */
+@media print {
+	.resume-header__printlink {
+		display: none !important;
 	}
 }
