@@ -413,7 +413,8 @@ Mobile layout
 
 	.resume-header__mobile-image {
 		display: block;
-		width: 192px;
+		max-width: 192px;
+		min-width: 64px;
 		height: 64px;
 		object-fit: cover;
 		border: 3px solid black;
