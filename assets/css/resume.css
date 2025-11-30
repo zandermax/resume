@@ -21,11 +21,17 @@ body {
 
 body.resume {
 	font-family: var(--font-family);
-	background-size: 200px 200px;
-	background-image: url("../img/FF-pixeled.png");
-	background-attachment: fixed;
 	color: var(--text-color);
 	-webkit-font-smoothing: antialiased;
+}
+
+/* Custom dial selector styles */
+
+.resume-header__dial-selector {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Main layout */

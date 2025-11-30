@@ -3,18 +3,21 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Zander Maxwell -- Senior Software Engineer -- Mozilla Application</title>
+	<title>Zander Maxwell -- Design-focused Software Engineer -- Ashby Application</title>
 	<link rel="stylesheet" href="./assets/css/resume.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<script src="./dial-selector.js"></script>
+
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Zander Maxwell",
-		"jobTitle": "Senior Software Engineer",
-		"description": "Senior Front-End / Full-Stack Engineer applying to Mozilla. Specializes in React, TypeScript, and accessible, open web development.",
-		"url": "https://mozilla.zandermaxwell.com",
+		"jobTitle": "Design-focused Software Engineer",
+		"description": "Design-focused Software Engineer applying to Ashby. Combines product thinking, UX design, and front-end engineering to build polished, composable UI systems in React and TypeScript.",
+		"url": "https://ashby.zandermaxwell.com",
 		"address": {
 			"@type": "PostalAddress",
 			"addressLocality": "Munich",
@@ -27,27 +30,27 @@
 			"https://github.com/zandermax"
 		]
 	}
-</script>
-
+	</script>
 </head>
 
 <body class="resume">
 	<main class="resume__main">
 		<header class="resume-header">
 			<div class="resume-header__top-row">
+				<div class="resume-header__dial-selector">
+					<h3>Theme:</h3>
+					<dial-selector width="600px" height="200px" options="Dark,Light"></dial-selector>
+				</div>
 				<hgroup class="resume-header__name-wrapper">
 					<h1 class="resume-header__name">
 						<div class="resume-header__name-greeting">
-								Hello, Mozilla!
-								<span class="resume-header__mobile-image-description">
-									<span class="resume-header__mobile-image" />
-								</span>
-							</div>
+							Hello, Ashby!
+						</div>
 						<div class="resume-header__name-small">I'm</div>
 						<div>Zander Maxwell</div>
 					</h1>
 					<p class="resume-header__role">
-						Senior Front-End / Full-Stack Engineer
+						Design-focused Software Engineer (Front-End / Full-Stack)
 					</p>
 				</hgroup>
 
@@ -57,7 +60,7 @@
 			</div>
 
 			<div class="resume-header__meta">
-				<p class="resume-header__location">Munich, Germany</p>
+				<p class="resume-header__location">Munich, Germany (EU-based)</p>
 				<p class="resume-header__contact">
 					<span class="resume-header__phone">+49 151 72534939</span> ·
 					<a href="mailto:zandermaxwell@hey.com" class="resume-header__email">zandermaxwell@hey.com</a>
@@ -78,91 +81,108 @@
 		<section class="resume-section resume-section--summary">
 			<h2 class="resume-section__title">Professional Summary</h2>
 			<p class="resume-section__text">
-				Senior Software Engineer with 8+ years of experience building fast, accessible, secure web applications at global
-				scale. Specializes in React, TypeScript, and modernizing legacy architectures into resilient, maintainable platforms.
-				Passionate advocate for open web standards, user trust, and community-driven engineering, including participation
-				in W3C OpenUI discussions and authoring widely used open-source tooling.
+				I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
+				end-to-end features in React, TypeScript, and Node. I like working in the space where product, design, and
+				engineering combine. At Ashby this would look something like taking a problem brief, talking to users, sketching flows, iterating in
+				Figma or
+				low-fidelity prototypes, and then turning those into polished, composable components in code.
 			</p>
 			<p class="resume-section__text">
-				After several years at companies like Amazon Web Services and Microsoft, I&rsquo;m intentionally looking to apply
-				my skills at an organization whose mission aligns more closely with my values. Mozilla&rsquo;s goal of making the
-				internet better for people, not just for companies, fits exactly what I want my work to support. I&rsquo;m especially
-				excited about contributing to Firefox&rsquo;s add-ons ecosystem and helping keep the web safe, open, and customizable for
-				millions of users.
+				Across roles at CHECK24, Amazon Web Services, Microsoft, and earlier-stage companies, I've led front-end
+				designs and implementations for systems used by thousands of internal and external users. My work ranges from
+				micro-frontends and shared component libraries to interaction design, information hierarchy, and accessibility
+				improvements that materially change how fast and confidently people can work.
+			</p>
+			<p class="resume-section__text">
+				I'm applying to Ashby because I'm looking for a place where engineers are trusted to own the full loop, including
+				understanding customer problems, writing product specs, wireframing solutions, and implementing them end-to-end
+				in a shared design system. I would thrive in the environment described at Ashby: minimal process, deep ownership, and a strong focus
+				on
+				high-quality tools for working professionals.
 			</p>
 		</section>
 
-		<!-- WHY MOZILLA -->
+		<!-- WHY ASHBY -->
 		<section class="resume-section resume-section--mozilla">
-			<h2 class="resume-section__title">Why Mozilla &amp; AMO</h2>
+			<h2 class="resume-section__title">Why Ashby &amp; This Role</h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
-					I care deeply about the web as a public resource. Mozilla&rsquo;s focus on an internet built for people, not just
-					for profit, is deeply inline with why I work in software development.
+					<strong>Design + build, together.</strong> I've always gravitated toward roles where I can both design
+					and implement software. Ashby's model, in which engineers run projects, write specs, wireframe flows, and then ship
+					production code aligns well with my experience and aspirations.
 				</li>
 				<li class="principles-list__item">
-					Throughout my career, Firefox and MDN have been daily development companions, Firefox as a privacy-respecting daily
-					browser, and MDN as the obvious gold-standard reference for modern web development.
+					<strong>Design systems as leverage.</strong> I'm excited by the idea of contributing to (and evolving) an
+					in-house design system used across complex surfaces. I am driven by the idea of building composable components
+					that unlock faster, more consistent experiences for both developers and end-users.
 				</li>
 				<li class="principles-list__item">
-					I&rsquo;m excited by the role addons.mozilla.org plays in making Firefox truly customizable. The idea of helping
-					developers publish extensions safely and helping users discover trustworthy add-ons is exactly the kind of
-					impactful frontend work I want to do. On a personal level, I&rsquo;ve used Firefox extensions for years to enhance my own browsing
-					experience, and I&rsquo;d love to help make that experience better for others.
+					<strong>Tools for power users.</strong> You're building software for teams that live in your product all day.
+					I've repeatedly built UIs for heavy internal and enterprise users, where information density, parsability,
+					and good defaults matter as much as aesthetics. The idea of "approachable but customizable" resonates with
+					what I've tried to do in past roles.
 				</li>
 				<li class="principles-list__item">
-					Mozilla&rsquo;s open, community-driven engineering culture resonates with my experience contributing to open source
-					and working in shared codebases that invite collaboration, code review, and discussion in the open.
+					<strong>Small, talented team with high ownership.</strong> Ashby's engineering culture of minimal process,
+					deliberate communication, and a bias toward written proposals and prototypes matches my preference for deep
+					focus time and collaborative, thoughtful critique instead of ceremony.
+				</li>
+				<li class="principles-list__item">
+					<strong>Mission: better tools for working professionals.</strong> I like building software that is meaningfully useful. Helping
+					recruiters and talent teams do more with less, with tools that feel as
+					thoughtfully designed as great engineering tooling aligns with the kind of impact I want to have.
 				</li>
 			</ul>
 		</section>
 
 		<!-- CORE SKILLS -->
 		<section class="resume-section resume-section--skills">
-			<h2 class="resume-section__title">Core Skills (Relevant to AMO)</h2>
+			<h2 class="resume-section__title">Core Skills (Relevant to Ashby)</h2>
 
 			<div class="skills-grid">
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Frontend</h3>
+					<h3 class="skills-grid__title">Front-end &amp; UI Engineering</h3>
 					<p class="skills-grid__items">
-						React, TypeScript, JavaScript, Web Components, HTML5, CSS, Next.js
+						React, TypeScript, JavaScript, Web Components, HTML5, CSS/SCSS, Next.js, accessibility, performance tuning.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Backend</h3>
+					<h3 class="skills-grid__title">Design &amp; Product Thinking</h3>
 					<p class="skills-grid__items">
-						Node.js, REST APIs, GraphQL, MySQL, SQL Server, Python (familiar), Django (familiar)
+						Wireframing user flows, interaction design, information hierarchy, UX writing, Figma (and similar tools),
+						prototyping, collaborating closely with designers and PMs.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Architecture &amp; Quality</h3>
+					<h3 class="skills-grid__title">Design Systems &amp; Components</h3>
 					<p class="skills-grid__items">
-						Microfrontends, performance optimization, accessibility, Jest, CI/CD, testing &amp; observability
+						Component APIs, theming, stateful UI patterns, composable layouts, reusable form and input primitives,
+						documentation, migration of legacy UIs into modern shared systems.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Cloud &amp; Reliability</h3>
+					<h3 class="skills-grid__title">Backend &amp; Full-Stack</h3>
 					<p class="skills-grid__items">
-						AWS, cloud-native pipelines, monitoring, debugging, incident response
+						Node.js, REST APIs, GraphQL, MongoDB, SQL Server, MySQL; working end-to-end from database to UI when needed.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Open Web &amp; OSS</h3>
+					<h3 class="skills-grid__title">Architecture, Quality &amp; Tooling</h3>
 					<p class="skills-grid__items">
-						W3C OpenUI Community Group participant, npm module author (<code>"sfdx"</code>), open-source workflows, MDN-heavy
-						development.
+						Micro-frontends, CI/CD, observability, automated testing (Jest and others), feature flags, developer
+						experience tooling, performance and error monitoring.
 					</p>
 				</div>
 
 				<div class="skills-grid__group">
-					<h3 class="skills-grid__title">Collaboration &amp; Values</h3>
+					<h3 class="skills-grid__title">Collaboration &amp; Ways of Working</h3>
 					<p class="skills-grid__items">
-						Code reviews, RFCs, cross-functional design work, distributed teams, mentoring; strong alignment with
-						Mozilla values of welcoming differences, responsible participation, and having grit.
+						Writing product and technical specs, RFCs, code reviews, mentoring, async collaboration across time zones,
+						pairing with engineers and designers on tricky UX problems.
 					</p>
 				</div>
 			</div>
@@ -176,7 +196,7 @@
 			<article class="experience-item">
 				<header class="experience-item__header">
 					<div class="experience-item__main">
-						<h3 class="experience-item__role">Full-Stack Software Engineer</h3>
+						<h3 class="experience-item__role">Full-Stack / UI Engineer</h3>
 						<p class="experience-item__company">CHECK24 Vergleichsportal GmbH</p>
 					</div>
 					<div class="experience-item__meta">
@@ -191,25 +211,16 @@
 
 				<ul class="experience-item__bullets">
 					<li>
-						Modernized multiple legacy React/JavaScript applications into a TypeScript-based architecture,
-						improving maintainability and long-term platform reliability.
+						Modernized legacy React/JavaScript applications into a TypeScript-based architecture, improving long-term
+						maintainability and enabling safer refactors and UI experimentation.
 					</li>
 					<li>
-						Delivered customer-facing comparison flows used across Germany, focusing on fast load times,
-						accessibility, and trustworthy user experiences, echoing the same principles behind AMO&rsquo;s user and
-						developer experiences.
+						Built internal tools for configuring and launching pricing and marketing campaigns, reducing repetitive
+						engineering work by ~95% and giving non-engineers more safe control over presentation and content.
 					</li>
 					<li>
-						Built automated pricing campaign tooling, reducing repetitive engineering work by approximately
-						95% and enabling safer, more auditable updates.
-					</li>
-					<li>
-						Implemented reusable UI patterns and shared components adopted across product teams, improving
-						consistency and reducing UI defects.
-					</li>
-					<li>
-						Collaborated closely with product managers, designers, and QA to deliver secure, accessible,
-						end-to-end features for millions of user journeys.
+						Worked closely with product, design, and QA partners to take features from problem definition through
+						wireframes, implementation, and iterative refinement based on feedback and analytics.
 					</li>
 				</ul>
 			</article>
@@ -218,7 +229,7 @@
 			<article class="experience-item">
 				<header class="experience-item__header">
 					<div class="experience-item__main">
-						<h3 class="experience-item__role">Front End / Full Stack Engineer</h3>
+						<h3 class="experience-item__role">Front-End / Full-Stack Engineer</h3>
 						<p class="experience-item__company">Amazon Web Services (AWS)</p>
 					</div>
 					<div class="experience-item__meta">
@@ -233,28 +244,26 @@
 
 				<ul class="experience-item__bullets">
 					<li>
-						Led development of cross-product microfrontends using React and custom web components, reducing
-						deployment delays by over 95% and lowering deployment failure rates by over 30%.
+						Led the UI design and implementation of an internal IT Support platform used by 5,000+ employees processing
+						100,000+ issues per day, including the layout, navigation, and interaction patterns that defined how agents
+						worked.
 					</li>
 					<li>
-						Built accessibility-first UIs for IT Support systems used by 5,000+ internal users; keyboard
-						navigation improvements alone reduced handling time by around 20%.
+						Built cross-product micro-frontends and custom web components that acted as shared primitives across multiple
+						tools, reducing deployment delays by over 95% and deployment failures by 30%+.
 					</li>
 					<li>
-						Developed UI testing and observability tooling integrated into CI/CD pipelines, providing real-time
-						metrics now used by hundreds of AWS teams and improving incident visibility and debugging speed.
+						Drove accessibility improvements (including robust keyboard navigation and better focus management) that
+						reduced handling time for core flows by around 20% and made the product more usable for all agents.
 					</li>
 					<li>
-						Designed and implemented the frontend for the AWS Support App in Slack, shipping interactive
-						onboarding and self-service capabilities to 100+ companies and more than 1,000 AWS accounts.
+						Served as the frontend lead for the "AWS Support App in Slack" console application, from early UX flows and
+						mockups to production UI: interactive onboarding, contextual help, and multi-step workflows for 100+ customer
+						organizations.
 					</li>
 					<li>
-						Drove i18n and localization efforts that significantly reduced language-related support issues and
-						improved the experience for international users.
-					</li>
-					<li>
-						Worked in highly distributed, cross-functional teams across engineering, design, QA, and security,
-						in a culture of open discussion, code review, and shared standards.
+						Partnered with product and design to write specs, review UX proposals, and iterate on the smallest details of
+						information density, labelling, and error handling in complex support flows.
 					</li>
 				</ul>
 			</article>
@@ -278,16 +287,16 @@
 
 				<ul class="experience-item__bullets">
 					<li>
-						Improved the performance of Azure&rsquo;s AIRS cost-tracking platform by approximately 300%, enabling
-						faster and more reliable internal workflows.
+						Improved the performance of Azure's internal AIRS cost-tracking UI by ~300%, making dense financial and
+						configuration views feel noticeably faster and more responsive to internal users.
 					</li>
 					<li>
-						Enhanced error-handling systems, catching roughly 500% more issues during testing and reducing
-						production defects.
+						Enhanced error-handling and validation flows, catching ~5x more issues during testing and preventing confusing
+						or inconsistent error states in production.
 					</li>
 					<li>
-						Delivered UI performance and reliability improvements while collaborating with cross-functional
-						engineering teams.
+						Collaborated with product and other engineers to refine UI behavior and edge cases on complex, form-heavy
+						surfaces.
 					</li>
 				</ul>
 			</article>
@@ -311,16 +320,16 @@
 
 				<ul class="experience-item__bullets">
 					<li>
-						Authored the open-source npm module <code>"sfdx"</code>, enabling Salesforce DX workflows in Node.js ecosystems,
-						with over 100,000 downloads.
+						Authored the open-source npm module <code>"sfdx"</code>, enabling Salesforce DX workflows in Node.js ecosystems
+						(100k+ downloads), with a focus on clear CLI UX and discoverable options.
 					</li>
 					<li>
-						Modernized internal Salesforce development practices, introducing version control and tooling that
-						reduced client loss by approximately 80%.
+						Modernized internal Salesforce development workflows and data models, which contributed to an ~80% reduction
+						in client loss by improving timely follow-up and clearer state tracking.
 					</li>
 					<li>
-						Helped integrate agile methodologies and automated follow-up mechanisms, doubling software
-						development velocity and improving efficiency by about 65%.
+						Worked with non-technical stakeholders to understand their workflows and adjust UIs, terminology, and
+						automation to better match how they actually operated day-to-day.
 					</li>
 				</ul>
 			</article>
@@ -344,16 +353,16 @@
 
 				<ul class="experience-item__bullets">
 					<li>
-						Built a physician referral trends web application that helped secure healthcare contracts worth over
-						$1M.
+						Designed and built a physician referral trends web application that visualized complex spatial and temporal
+						data, directly helping secure healthcare contracts worth over $1M.
 					</li>
 					<li>
-						Optimized a Physician Relationship Management platform widely adopted across mid-sized US hospital
-						systems, improving performance and usability.
+						Helped shape the UX of a custom Physician Relationship Management platform, balancing dense information with
+						clear, scannable layouts for hospital stakeholders.
 					</li>
 					<li>
-						Developed an internal volunteer tracking system monitoring more than 10,000 employee volunteer hours
-						monthly.
+						Built an internal volunteer tracking app used to monitor 10,000+ employee volunteer hours monthly, including
+						its information architecture, reporting views, and interaction patterns.
 					</li>
 				</ul>
 			</article>
@@ -361,25 +370,26 @@
 
 		<!-- OPEN SOURCE & COMMUNITY -->
 		<section class="resume-section resume-section--community">
-			<h2 class="resume-section__title">Open Source &amp; Community</h2>
+			<h2 class="resume-section__title">Open Source, Standards &amp; Community</h2>
 
 			<ul class="community-list">
 				<li class="community-list__item">
-					<strong>Open standards advocate -> W3C OpenUI Community Group Attendee</strong> -- Participated in discussions and efforts to
-					standardize accessible, interoperable UI controls for the web.
+					<strong>Open standards advocate → W3C OpenUI Community Group attendee</strong> — Participated in discussions on
+					standardizing accessible, interoperable UI controls, reinforcing my interest in reusable, well-designed
+					components across products.
 				</li>
 				<li class="community-list__item">
-					<strong>Open source contributor -> Author of <code>"sfdx"</code> npm module</strong> -- Created and maintain a popular Node.js
-					package enabling
-					Salesforce DX functionality, with 100k+ downloads.
+					<strong>Open source contributor → Author of <code>"sfdx"</code> npm module</strong> — Created and maintained a
+					widely used Node.js package, learning how to design APIs, documentation, and ergonomics for diverse users.
 				</li>
 				<li class="community-list__item">
-					<strong>Volunteer Developer -> Code for Social Good</strong> -- Contributed frontend development to a
-					global platform connecting nonprofits with technical volunteers.
+					<strong>Volunteer Developer → Code for Social Good</strong> — Contributed frontend work for nonprofits,
+					adapting designs to constraints while keeping the experience intuitive for non-technical users.
 				</li>
 				<li class="community-list__item">
-					<strong>Mentor -> Justice Through Code (Columbia University)</strong> -- Mentored participants in a
-					16-week program teaching Python fundamentals to individuals reentering the workforce.
+					<strong>Mentor → Justice Through Code (Columbia University)</strong> — Mentored participants in a 16-week
+					program teaching Python fundamentals, focusing on patient, clear explanations and helping people see themselves
+					as capable technologists.
 				</li>
 			</ul>
 		</section>
@@ -401,13 +411,28 @@
 
 		<!-- CORE PRINCIPLES -->
 		<section class="resume-section resume-section--principles">
-			<h2 class="resume-section__title">Core Principles</h2>
+			<h2 class="resume-section__title">How I Prefer to Work</h2>
 			<ul class="principles-list">
-				<li class="principles-list__item">Accessibility-first engineering and inclusive design.</li>
-				<li class="principles-list__item">User trust, security-conscious development, and privacy-minded decisions.</li>
-				<li class="principles-list__item">Open collaboration, transparent communication, and code review culture.</li>
-				<li class="principles-list__item">Responsible participation in distributed, community-driven teams.</li>
-				<li class="principles-list__item">Mission-driven development focused on improving the open web.</li>
+				<li class="principles-list__item">
+					<strong>Design through code.</strong> I'm most comfortable when I can bounce between design tools like Figma, rough sketches, and
+					live
+					prototypes, using real data and realistic interactions to judge a design.
+				</li>
+				<li class="principles-list__item">
+					<strong>Ownership over process.</strong> I like environments where engineers own the full lifecycle of a
+					project, from problem understanding to shipped product, and use process as a tool, not a constraint.
+				</li>
+				<li class="principles-list__item">
+					<strong>Approachable for beginners, powerful for experts.</strong> I care about ease of onboarding and good
+					defaults as much as I care about power-user workflows, keyboard shortcuts, and composable building blocks.
+				</li>
+				<li class="principles-list__item">
+					<strong>Thoughtful communication.</strong> I write specs, diagrams, and design notes to make it easy for others
+					to critique, contribute, or pick up where I left off.
+				</li>
+				<li class="principles-list__item">
+					<strong>Continuous improvement.</strong>I like to leave things more robust, testable, and understandable than I found them.
+				</li>
 			</ul>
 		</section>
 	</main>
