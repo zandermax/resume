@@ -7,6 +7,11 @@ Custom Properties
 	--text-color: #000000;
 	--background-color: #ffffff;
 	--font-family: "Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* Dial-selector custom properties */
+	--dial-color-ink: #000000;
+	--dial-color-selection: #f13b3b;
+	--dial-color-indicator: #f13b3b;
+	--dial-knob-background: #11161c;
 }
 
 /* ===========================

@@ -1,10 +1,10 @@
 const style = document.createElement('style');
 style.textContent = `
 dial-selector {
-  --color-ink: #f4f4f4;
-  --color-selection: #f13b3b;
-  --color-line: #c7c2b5;
-  --color-indicator: #f13b3b;
+  --color-ink: var(--dial-color-ink, #f4f4f4);
+  --color-selection: var(--dial-color-selection, #f13b3b);
+  --color-line: var(--dial-color-ink, #c7c2b5);
+  --color-indicator: var(--dial-color-indicator, #f13b3b);
   --shadow: 0;
   --label-radius: 150px;
   /* Line styling variables */
@@ -24,7 +24,7 @@ dial-selector {
   --width-inner-circle: 2px;
   --color-inner-circle: var(--color-ink);
   /* Typography variables */
-  --font-size: clamp(10px, 1.5vw, 14px);
+  --font-size: clamp(16px, 1.5vw, 22px);
   --font-family: 'IBM Plex Mono', 'Courier New', monospace;
   /* Responsive sizing variables (set dynamically) */
   --knob-wrap-size: 320px;
@@ -106,7 +106,7 @@ dial-selector .knob {
   height: calc(var(--radius-outer) * 2);
   border: var(--width-outer-circle) solid var(--color-outer-circle);
   border-radius: 50%;
-  background: #11161c;
+  background: var(--dial-knob-background, #11161c);
   box-shadow: var(--shadow);
   z-index: 2;
 }
@@ -301,6 +301,7 @@ class DialSelector extends HTMLElement {
       'font-family',
       'width',
       'height',
+      'default-option',
     ];
   }
 
@@ -308,6 +309,9 @@ class DialSelector extends HTMLElement {
     // Parse options from attribute or use default
     const optionsAttr = this.getAttribute('options');
     this.OPTIONS = optionsAttr ? optionsAttr.split(',').map((opt) => opt.trim()) : DEFAULT_OPTIONS;
+
+    // Set default option before building DOM
+    this.setDefaultOption();
 
     this.updateIndicatorColor();
     this.updateIndicatorGradient();
@@ -451,6 +455,17 @@ class DialSelector extends HTMLElement {
       case 'onchange':
         // onchange attribute changes are handled automatically
         // No action needed here
+        break;
+
+      case 'default-option':
+        // Only apply default-option if not already initialized
+        // This prevents changing selection after user has interacted
+        if (!this.isInitialized) {
+          this.setDefaultOption();
+          if (this.labels.length > 0) {
+            this.updateSelector();
+          }
+        }
         break;
 
       default:
@@ -750,6 +765,33 @@ class DialSelector extends HTMLElement {
         this.updateDimensions();
       }
     }
+  }
+
+  setDefaultOption() {
+    const defaultOption = this.getAttribute('default-option');
+    if (!defaultOption) return;
+
+    // Guard: OPTIONS must be initialized first
+    if (!this.OPTIONS || !Array.isArray(this.OPTIONS)) {
+      return;
+    }
+
+    // Try to parse as number (index)
+    const indexValue = parseInt(defaultOption, 10);
+    if (!isNaN(indexValue) && indexValue >= 0 && indexValue < this.OPTIONS.length) {
+      this.currentIndex = indexValue;
+      return;
+    }
+
+    // Try to find by option name (case-insensitive)
+    const optionIndex = this.OPTIONS.findIndex((opt) => opt.toLowerCase() === defaultOption.trim().toLowerCase());
+    if (optionIndex !== -1) {
+      this.currentIndex = optionIndex;
+      return;
+    }
+
+    // If neither worked, log a warning but don't change currentIndex
+    console.warn(`dial-selector: default-option "${defaultOption}" not found. Using index 0.`);
   }
 
   setupResizeObserver() {

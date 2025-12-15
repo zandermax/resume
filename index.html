@@ -10,6 +10,245 @@
 
 	<script src="./dial-selector.js"></script>
 
+	<script>
+		// Theme configuration - defines all CSS custom properties for each theme + mode combination
+		const THEME_CONFIG = {
+			default: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			brutal: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			glass: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			'8-bit': {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			nostalgia: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			source: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			anti: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			swiss: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			'95': {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			},
+			glitch: {
+				light: {
+					'--background-color': '#ffffff',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#f13b3b',
+					'--dial-color-indicator': '#f13b3b',
+					'--dial-knob-background': '#11161c'
+				},
+				dark: {
+					'--background-color': '#1a1f24',
+					'--text-color': '#e8e8e8',
+					'--border-color': '#888888',
+					'--dial-color-ink': '#e8e8e8',
+					'--dial-color-selection': '#ff5555',
+					'--dial-color-indicator': '#ff5555',
+					'--dial-knob-background': '#2a2f34'
+				}
+			}
+		};
+
+		// Current selections
+		let currentTheme = 'default';
+		let currentMode = 'light';
+
+		// Apply a theme+mode combination by setting CSS custom properties on the document root
+		function applyThemeAndMode() {
+			const theme = THEME_CONFIG[currentTheme];
+			if (theme && theme[currentMode]) {
+				const config = theme[currentMode];
+				Object.entries(config).forEach(([property, value]) => {
+					document.documentElement.style.setProperty(property, value);
+				});
+			}
+		}
+
+		// Handle theme change from theme selector
+		function handleThemeChange(event) {
+			currentTheme = event.detail.value.toLowerCase();
+			applyThemeAndMode();
+		}
+
+		// Handle mode change from mode selector
+		function handleModeChange(event) {
+			currentMode = event.detail.value.toLowerCase();
+			applyThemeAndMode();
+		}
+
+		// Initialize theme on page load
+		document.addEventListener('DOMContentLoaded', () => {
+			// Apply default theme and mode
+			applyThemeAndMode();
+		});
+	</script>
+
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -39,7 +278,13 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Dark,Light"></dial-selector>
+					<dial-selector width="600px" height="200px" options="Default,Brutal,Glass,8-bit,Nostalgia,Source,Anti,Swiss,95,Glitch"
+						default-option="Default" onchange="handleThemeChange(event)"></dial-selector>
+				</div>
+				<div class="resume-header__dial-selector">
+					<h3>Mode:</h3>
+					<dial-selector width="600px" height="200px" options="Light,Dark" default-option="Light"
+						onchange="handleModeChange(event)"></dial-selector>
 				</div>
 				<hgroup class="resume-header__name-wrapper">
 					<h1 class="resume-header__name">
