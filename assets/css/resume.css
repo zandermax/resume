@@ -19,7 +19,6 @@ Custom Properties
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: #f13b3b;
-  --section-padding: 1rem 0 0;
   /* Skeuomorphic theme properties */
   --leather-color: #6d4c41;
   --paper-color: #f4f1e8;
@@ -257,7 +256,7 @@ Sections
 
 .resume-section {
   margin-block-end: 1.75rem;
-  padding: var(--section-padding);
+  padding: 1rem 0 0;
   border-block-start: 1px solid var(--border-color);
 }
 
@@ -778,7 +777,7 @@ Skeuomorphic Theme Effects
   width: 220px;
   min-height: 160px;
   padding: 20px;
-  background: #feff9c;
+  background: var(--sticky-note-color);
   background-image: repeating-linear-gradient(
     transparent,
     transparent 24px,
@@ -787,9 +786,9 @@ Skeuomorphic Theme Effects
   );
   box-shadow: var(--sticky-note-shadow);
   transform: rotate(var(--sticky-note-rotation));
-  font-family: 'Caveat', 'Comic Sans MS', cursive;
-  font-size: 20px;
-  line-height: 28px;
+  font-family: 'Indie Flower', 'Comic Sans MS', cursive;
+  font-size: 15px;
+  line-height: 24px;
   color: #333;
   z-index: 1000;
   transition: transform 0.2s ease;
@@ -1136,401 +1135,338 @@ body[data-theme='skeuomorph'] .experience-item__bullets li::before {
 }
 
 /* ===========================
-8-bit Theme (NES-inspired)
+Terminal Theme (1993 CLI-inspired)
 =========================== */
 
-/* Apply pixel font and pixelated rendering */
-body[data-theme='8-bit'] {
-  font-family: var(--pixel-font);
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
+/* Apply terminal font and rendering */
+body[data-theme='terminal'] {
+  font-family: var(--font-family);
 }
 
-/* Pixelated background grid overlay */
-body[data-theme='8-bit']::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-      0deg,
-      var(--pixel-grid-color) 0px,
-      var(--pixel-grid-color) 1px,
-      transparent 1px,
-      transparent var(--pixel-grid-size)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--pixel-grid-color) 0px,
-      var(--pixel-grid-color) 1px,
-      transparent 1px,
-      transparent var(--pixel-grid-size)
-    );
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0.15;
-}
-
-/* CRT Scanline overlay */
-body[data-theme='8-bit']::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    var(--scanline-color) 0px,
-    var(--scanline-color) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  pointer-events: none;
-  z-index: 999;
-}
-
-/* Screen flicker animation */
-@keyframes screen-flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.98;
-  }
-  51% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  52% {
-    opacity: 0.97;
-    transform: translateY(1px);
-  }
-  53% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-body[data-theme='8-bit'] .resume__main {
-  animation: screen-flicker 8s infinite;
-}
-
-/* Blinking cursor animation for links */
-@keyframes blink-cursor {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-body[data-theme='8-bit'] a::after {
-  content: '▮';
-  animation: blink-cursor 1s step-start infinite;
-  margin-left: 2px;
-  font-size: 0.8em;
-}
-
-/* Pixelated borders on main container */
-body[data-theme='8-bit'] .resume__main {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
+/* Main container with 3D terminal window effect */
+body[data-theme='terminal'] .resume__main {
+  border: 0;
+  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+    inset -2px -2px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 0;
+  background: var(--terminal-window-bg);
+  padding: 2rem;
 }
 
-/* Pixelated borders on section titles */
-body[data-theme='8-bit'] .resume-section__title {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
+/* Terminal-style 3D borders for sections */
+body[data-theme='terminal'] .resume-section__title {
+  border: 0;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
   border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--terminal-button-bg);
+  margin-bottom: 1rem;
 }
 
-/* Pixelated borders on skills grid */
-body[data-theme='8-bit'] .skills-grid {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
+/* Terminal window border for skills grid */
+body[data-theme='terminal'] .skills-grid {
+  border: 0;
+  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+    inset -2px -2px 0 var(--terminal-border-light, #ffffff);
   border-radius: 0;
-}
-
-body[data-theme='8-bit'] .skills-grid__group {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: none;
-  border-radius: 0;
-}
-
-/* Tech badges with pixel borders */
-body[data-theme='8-bit'] .experience-item__tech {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
-  border-radius: 0;
-  background: var(--accent-color);
-  color: var(--background-color);
-  font-weight: bold;
-}
-
-/* List containers with pixel borders */
-body[data-theme='8-bit'] .community-list,
-body[data-theme='8-bit'] .principles-list {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
-  border-radius: 0;
-}
-
-/* Education box with pixel border */
-body[data-theme='8-bit'] .education-item {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
-  border-radius: 0;
-}
-
-/* Experience items as game cartridges */
-body[data-theme='8-bit'] .experience-item {
-  position: relative;
-  padding: 1.5rem;
-  background: var(--section-bg);
-  box-shadow: var(--pixel-shadow);
-  border: var(--pixel-border-width) solid var(--border-color);
-  border-radius: 0;
-  margin-top: 1.5rem;
-}
-
-body[data-theme='8-bit'] .experience-item::before {
-  content: '▲';
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 16px;
-  color: var(--border-color);
-  background: var(--background-color);
-  padding: 0 8px;
-}
-
-/* Dial selector enhancements */
-body[data-theme='8-bit'] dial-selector .knob {
-  box-shadow: var(--pixel-shadow);
-  border-radius: 0;
-  border: var(--pixel-border-width) solid var(--border-color);
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
-body[data-theme='8-bit'] dial-selector .indicator {
-  border-radius: 0;
-  width: 8px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-body[data-theme='8-bit'] dial-selector .dial-label {
-  font-size: 10px;
-  padding: 8px 12px;
-  transition: none;
-}
-
-body[data-theme='8-bit'] dial-selector .dial-label:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-body[data-theme='8-bit'] dial-selector .spoke-line {
-  stroke-width: 3px;
-}
-
-/* Print button as game start button */
-body[data-theme='8-bit'] .resume-header__printlink {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
-  position: relative;
-  transition: none;
-  border-radius: 0;
-  background: var(--accent-color);
-  color: var(--background-color);
-  font-weight: bold;
-}
-
-body[data-theme='8-bit'] .resume-header__printlink:hover {
-  transform: translate(2px, 2px);
-  box-shadow: none;
-  background: var(--accent-color);
-  color: var(--background-color);
-  filter: brightness(1.2);
-}
-
-body[data-theme='8-bit'] .resume-header__printlink::before {
-  content: '▶';
-  margin-right: 8px;
-}
-
-/* Pixelated hover effects */
-body[data-theme='8-bit'] a:hover {
-  transform: scale(1.02);
-  filter: brightness(1.2);
-  transition: none;
-}
-
-/* Header with pixel border */
-body[data-theme='8-bit'] .resume-header {
-  border: var(--pixel-border-width) solid var(--border-color);
-  box-shadow: var(--pixel-shadow);
+  background: var(--terminal-window-bg);
   padding: 1rem;
+}
+
+body[data-theme='terminal'] .skills-grid__group {
+  border: 0;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000);
+  background: var(--section-bg);
+  border-radius: 0;
+  padding: 0.75rem;
+}
+
+/* Tech badges as terminal buttons */
+body[data-theme='terminal'] .experience-item__tech {
+  border: 0;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000);
+  border-radius: 0;
+  background: var(--terminal-button-bg);
+  color: var(--text-color);
+  font-weight: normal;
+  padding: 0.35rem 0.5rem;
+}
+
+/* List containers with terminal window style */
+body[data-theme='terminal'] .community-list,
+body[data-theme='terminal'] .principles-list {
+  border: 0;
+  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+    inset -2px -2px 0 var(--terminal-border-light, #ffffff);
+  border-radius: 0;
+  background: var(--terminal-window-bg);
+}
+
+/* Education box with terminal style */
+body[data-theme='terminal'] .education-item {
+  border: 0;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000);
+  border-radius: 0;
+  background: var(--section-bg);
+  padding: 1rem;
+}
+
+/* Experience items as terminal panels */
+body[data-theme='terminal'] .experience-item {
+  position: relative;
+  padding: 1.25rem;
+  background: var(--section-bg);
+  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+    inset -2px -2px 0 var(--terminal-border-dark, #000000);
+  border: 0;
+  border-radius: 0;
+  margin-top: 1.25rem;
+}
+
+/* Dial selector enhancements with CLI-style knob */
+body[data-theme='terminal'] dial-selector .knob {
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  border: 0;
+  /* Octagonal clip-path to look like a CLI GUI element */
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+  background: var(--dial-knob-background);
+}
+
+body[data-theme='terminal'] dial-selector .indicator {
+  border-radius: 0;
+  width: 10px;
+  box-shadow: none;
+  background: var(--dial-color-indicator);
+}
+
+body[data-theme='terminal'] dial-selector .dial-label {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+body[data-theme='terminal'] dial-selector .dial-label:hover {
+  background: var(--terminal-button-bg);
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000);
+}
+
+body[data-theme='terminal'] dial-selector .dial-label.active {
+  background: var(--terminal-title-bg);
+  color: var(--dial-color-selection);
+  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+}
+
+body[data-theme='terminal'] dial-selector .spoke-line {
+  stroke-width: 2px;
+}
+
+/* Print button as terminal button */
+body[data-theme='terminal'] .resume-header__printlink {
+  border: 0;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+    inset -1px -1px 0 var(--terminal-border-dark, #000000), 1px 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  border-radius: 0;
+  background: var(--terminal-button-bg);
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+body[data-theme='terminal'] .resume-header__printlink:hover {
+  transform: none;
+  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+  background: var(--terminal-button-bg);
+  color: var(--text-color);
+}
+
+body[data-theme='terminal'] .resume-header__printlink:active {
+  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+  transform: translate(1px, 1px);
+}
+
+body[data-theme='terminal'] .resume-header__printlink::before {
+  content: '[';
+  margin-right: 4px;
+}
+
+body[data-theme='terminal'] .resume-header__printlink::after {
+  content: ']';
+  margin-left: 4px;
+}
+
+/* Terminal link styling */
+body[data-theme='terminal'] a {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+body[data-theme='terminal'] a:hover {
+  background: var(--accent-color);
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+/* Header with terminal window style */
+body[data-theme='terminal'] .resume-header {
+  border: 0;
+  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+    inset -2px -2px 0 var(--terminal-border-dark, #000000);
+  padding: 1.25rem;
   background: var(--header-bg);
   border-radius: 0;
+  margin-bottom: 1.5rem;
 }
 
-/* Typography enhancements with pixel text shadows */
-body[data-theme='8-bit'] h1,
-body[data-theme='8-bit'] h2,
-body[data-theme='8-bit'] h3 {
-  text-shadow: var(--text-shadow-pixel);
-  letter-spacing: 0.1em;
+/* Typography enhancements */
+body[data-theme='terminal'] h1,
+body[data-theme='terminal'] h2,
+body[data-theme='terminal'] h3 {
+  text-shadow: none;
+  letter-spacing: 0.05em;
 }
 
-body[data-theme='8-bit'] h1.resume-header__name {
-  font-size: 1.8rem;
-  line-height: 1.4;
+body[data-theme='terminal'] h1.resume-header__name {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  border-color: var(--terminal-border-dark);
 }
 
-body[data-theme='8-bit'] .resume-header__name-greeting,
-body[data-theme='8-bit'] .resume-header__name-small {
-  font-size: 0.8rem;
+body[data-theme='terminal'] .resume-header__name-greeting,
+body[data-theme='terminal'] .resume-header__name-small {
+  font-size: 1.05rem;
 }
 
-body[data-theme='8-bit'] .resume-header__role {
+body[data-theme='terminal'] .resume-header__role {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body[data-theme='terminal'] h2.resume-section__title {
+  font-size: 1.1rem;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+}
+
+body[data-theme='terminal'] h3.experience-item__role,
+body[data-theme='terminal'] h3.education-item__institution {
+  font-size: 1.05rem;
+}
+
+body[data-theme='terminal'] p,
+body[data-theme='terminal'] li {
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+}
+
+body[data-theme='terminal'] .resume-section__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+body[data-theme='terminal'] .experience-item__company {
+  font-size: 0.9rem;
+}
+
+body[data-theme='terminal'] .experience-item__tech {
+  font-size: 0.85rem;
+}
+
+body[data-theme='terminal'] .experience-item__meta {
+  font-size: 0.85rem;
+}
+
+body[data-theme='terminal'] .experience-item__bullets li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+body[data-theme='terminal'] .skills-grid__title {
+  font-size: 0.9rem;
+}
+
+body[data-theme='terminal'] .skills-grid__items {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+body[data-theme='terminal'] .community-list__item,
+body[data-theme='terminal'] .principles-list__item {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+body[data-theme='terminal'] .education-item {
+  font-size: 0.95rem;
+}
+
+body[data-theme='terminal'] .resume-header__meta {
+  font-size: 0.9rem;
+}
+
+/* Terminal-style bullet points */
+body[data-theme='terminal'] .experience-item__bullets li::before {
+  content: '▪';
   font-size: 0.7rem;
-  line-height: 1.6;
-}
-
-body[data-theme='8-bit'] h2.resume-section__title {
-  font-size: 0.8rem;
-  padding: 0.6rem;
-}
-
-body[data-theme='8-bit'] h3.experience-item__role,
-body[data-theme='8-bit'] h3.education-item__institution {
-  font-size: 0.75rem;
-}
-
-body[data-theme='8-bit'] p,
-body[data-theme='8-bit'] li {
-  line-height: 1.8;
-  letter-spacing: 0.02em;
-  font-size: 0.65rem;
-}
-
-body[data-theme='8-bit'] .resume-section__text {
-  font-size: 0.65rem;
-  line-height: 1.8;
-}
-
-body[data-theme='8-bit'] .experience-item__company,
-body[data-theme='8-bit'] .experience-item__tech {
-  font-size: 0.6rem;
-}
-
-body[data-theme='8-bit'] .experience-item__meta {
-  font-size: 0.55rem;
-}
-
-body[data-theme='8-bit'] .experience-item__bullets li {
-  font-size: 0.6rem;
-  line-height: 1.8;
-  margin-bottom: 0.6rem;
-}
-
-body[data-theme='8-bit'] .skills-grid__title {
-  font-size: 0.65rem;
-}
-
-body[data-theme='8-bit'] .skills-grid__items {
-  font-size: 0.6rem;
-  line-height: 1.6;
-}
-
-body[data-theme='8-bit'] .community-list__item,
-body[data-theme='8-bit'] .principles-list__item {
-  font-size: 0.6rem;
-  line-height: 1.7;
-}
-
-body[data-theme='8-bit'] .education-item {
-  font-size: 0.65rem;
-}
-
-body[data-theme='8-bit'] .resume-header__meta {
-  font-size: 0.6rem;
-}
-
-/* Pixelated bullet points */
-body[data-theme='8-bit'] .experience-item__bullets li::before {
-  content: '■';
-  font-size: 0.5rem;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 /* ===========================
-8-bit Theme - Responsive Adjustments
+Terminal Theme - Responsive Adjustments
 =========================== */
 
-/* Reduce pixel effects on smaller screens */
 @media (max-width: 768px) {
-  body[data-theme='8-bit'] {
-    --pixel-size: 2px;
-    --pixel-border-width: 2px;
-    --pixel-shadow: 2px 0 0 var(--border-color), -2px 0 0 var(--border-color), 0 2px 0 var(--border-color),
-      0 -2px 0 var(--border-color), 2px 2px 0 var(--border-color), -2px -2px 0 var(--border-color),
-      2px -2px 0 var(--border-color), -2px 2px 0 var(--border-color);
+  body[data-theme='terminal'] .resume__main {
+    padding: 1.5rem;
   }
 
-  body[data-theme='8-bit']::before {
-    opacity: 0.08;
+  body[data-theme='terminal'] h1.resume-header__name {
+    font-size: 2.1rem;
   }
 
-  body[data-theme='8-bit'] h1.resume-header__name {
-    font-size: 1.4rem;
+  body[data-theme='terminal'] .resume-header__name-greeting,
+  body[data-theme='terminal'] .resume-header__name-small {
+    font-size: 0.95rem;
   }
 
-  body[data-theme='8-bit'] .resume-header__name-greeting,
-  body[data-theme='8-bit'] .resume-header__name-small {
-    font-size: 0.7rem;
+  body[data-theme='terminal'] .resume-header__role {
+    font-size: 0.9rem;
   }
 
-  body[data-theme='8-bit'] .resume-header__role {
-    font-size: 0.6rem;
-  }
-
-  body[data-theme='8-bit'] dial-selector .dial-label {
-    font-size: 8px;
-    padding: 6px 8px;
+  body[data-theme='terminal'] dial-selector .dial-label {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
   }
 }
 
-/* Further reduce on very small screens */
 @media (max-width: 500px) {
-  body[data-theme='8-bit'] {
-    --pixel-size: 1px;
-    --pixel-border-width: 2px;
+  body[data-theme='terminal'] .resume__main {
+    padding: 1rem;
   }
 
-  body[data-theme='8-bit']::before {
-    opacity: 0.05;
+  body[data-theme='terminal'] h1.resume-header__name {
+    font-size: 1.7rem;
   }
 
-  body[data-theme='8-bit']::after {
-    display: none;
+  body[data-theme='terminal'] dial-selector .dial-label {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.55rem;
   }
 
-  body[data-theme='8-bit'] h1.resume-header__name {
-    font-size: 1.1rem;
-  }
-
-  body[data-theme='8-bit'] dial-selector .dial-label {
-    font-size: 7px;
-    padding: 4px 6px;
-  }
-
-  body[data-theme='8-bit'] .resume-header__printlink {
-    font-size: 0.6rem;
-    padding: 0.4rem 0.8rem;
+  body[data-theme='terminal'] .resume-header__printlink {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.85rem;
   }
 }
