@@ -1225,21 +1225,30 @@ class DialSelector extends HTMLElement {
       this.isInitialized = true;
       this.previousIndex = this.currentIndex;
     } else {
-      // Calculate the shortest angular path to the target
-      let normalizedCurrent = ((this.currentAngle % FULL_CIRCLE_DEGREES) + FULL_CIRCLE_DEGREES) % FULL_CIRCLE_DEGREES;
-      let normalizedTarget = ((targetAngle % FULL_CIRCLE_DEGREES) + FULL_CIRCLE_DEGREES) % FULL_CIRCLE_DEGREES;
+      // Calculate shortest angular distance
+      // First get the raw difference
+      let delta = targetAngle - this.currentAngle;
 
-      let forwardDist = normalizedTarget - normalizedCurrent;
-      if (forwardDist < 0) forwardDist += FULL_CIRCLE_DEGREES;
+      // Normalize delta to be in the range [-180, 180]
+      // This ensures we always take the shortest path around the circle
+      while (delta > 180) delta -= FULL_CIRCLE_DEGREES;
+      while (delta < -180) delta += FULL_CIRCLE_DEGREES;
 
-      let backwardDist = normalizedCurrent - normalizedTarget;
-      if (backwardDist < 0) backwardDist += FULL_CIRCLE_DEGREES;
-
-      if (backwardDist < forwardDist) {
-        this.currentAngle = this.currentAngle - backwardDist;
-      } else {
-        this.currentAngle = this.currentAngle + forwardDist;
+      // Special case: When delta is exactly ±180° (halfway around the circle),
+      // the direction is ambiguous. For 2-option selectors, prefer the direction
+      // that goes "over the top" when moving to a higher index.
+      if (Math.abs(delta) === 180) {
+        if (this.currentIndex > this.previousIndex) {
+          // Moving to higher index: prefer positive (counterclockwise)
+          delta = 180;
+        } else {
+          // Moving to lower index: prefer negative (clockwise)
+          delta = -180;
+        }
       }
+
+      // Apply the shortest delta to current angle
+      this.currentAngle = this.currentAngle + delta;
     }
 
     this.style.setProperty('--indicator-angle', `${this.currentAngle}deg`);

@@ -287,7 +287,6 @@ body[data-theme='brutal'] dial-selector .knob {
   border-radius: 0;
   box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 4px var(--accent-color);
   background: var(--dial-knob-background);
-  transform: rotate(0deg);
 }
 
 body[data-theme='brutal'] dial-selector .indicator {
