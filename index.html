@@ -63,6 +63,9 @@
 
 			// Handle section titles in nostalgia theme
 			handleNostalgiaTitles();
+
+			// Handle cursed text in glitch2038 theme
+			handleCursedText();
 		}
 
 		// Helper to handle nostalgia theme title transformations
@@ -102,6 +105,104 @@
 					}
 				}
 			});
+		}
+
+		// Helper to handle cursed text in glitch2038 theme
+		function handleCursedText() {
+			const mainContent = document.querySelector('.resume');
+			if (!mainContent) return;
+
+			if (currentTheme === 'glitch2038') {
+				// Store original HTML on first run
+				if (!mainContent.dataset.originalHtml) {
+					mainContent.dataset.originalHtml = mainContent.innerHTML;
+				}
+
+				// Skip if already cursed
+				if (mainContent.querySelector('.cursed')) {
+					return;
+				}
+
+				// Combining diacritical marks for zalgo-style text
+				const diacritics = [
+					'\u0300', '\u0301', '\u0302', '\u0303', '\u0304', '\u0305', '\u0306', '\u0307',
+					'\u0308', '\u0309', '\u030A', '\u030B', '\u030C', '\u030D', '\u030E', '\u030F',
+					'\u0310', '\u0311', '\u0312', '\u0313', '\u0314', '\u0315', '\u0316', '\u0317',
+					'\u0318', '\u0319', '\u031A', '\u031B', '\u031C', '\u031D', '\u031E', '\u031F',
+					'\u0320', '\u0321', '\u0322', '\u0323', '\u0324', '\u0325', '\u0326', '\u0327',
+					'\u0328', '\u0329', '\u032A', '\u032B', '\u032C', '\u032D', '\u032E', '\u032F',
+					'\u0330', '\u0331', '\u0332', '\u0333', '\u0334', '\u0335', '\u0336', '\u0337',
+					'\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033E', '\u033F'
+				];
+
+				// Add random diacritics to a character
+				function cursify(char) {
+					let cursed = char;
+					// Add 2-5 random diacritics
+					const numDiacritics = Math.floor(Math.random() * 4) + 2;
+					for (let i = 0; i < numDiacritics; i++) {
+						cursed += diacritics[Math.floor(Math.random() * diacritics.length)];
+					}
+					return cursed;
+				}
+
+				// Work with text nodes to preserve HTML structure
+				const walker = document.createTreeWalker(
+					mainContent,
+					NodeFilter.SHOW_TEXT,
+					{
+						acceptNode: function (node) {
+							// Skip text nodes inside the header
+							let parent = node.parentElement;
+							while (parent) {
+								if (parent.classList.contains('resume-header')) {
+									return NodeFilter.FILTER_REJECT;
+								}
+								parent = parent.parentElement;
+							}
+							return NodeFilter.FILTER_ACCEPT;
+						}
+					},
+					false
+				);
+
+				const textNodes = [];
+				let node;
+				while (node = walker.nextNode()) {
+					textNodes.push(node);
+				}
+
+				// Process each text node
+				textNodes.forEach(textNode => {
+					const text = textNode.textContent;
+					if (!text.trim()) return;
+
+					const fragment = document.createDocumentFragment();
+
+					for (let i = 0; i < text.length; i++) {
+						const char = text[i];
+
+						// 3% chance to make character cursed
+						if (char.trim() && Math.random() < 0.03) {
+							const span = document.createElement('span');
+							span.className = 'cursed';
+							const cursedText = cursify(char);
+							span.textContent = cursedText;
+							span.setAttribute('data-text', cursedText);
+							fragment.appendChild(span);
+						} else {
+							fragment.appendChild(document.createTextNode(char));
+						}
+					}
+
+					textNode.parentNode.replaceChild(fragment, textNode);
+				});
+			} else {
+				// Restore original HTML for all other themes
+				if (mainContent.dataset.originalHtml && mainContent.querySelector('.cursed')) {
+					mainContent.innerHTML = mainContent.dataset.originalHtml;
+				}
+			}
 		}
 
 		// Handle theme change from theme selector
