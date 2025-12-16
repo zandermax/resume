@@ -1,0 +1,109 @@
+/* ===========================
+Responsive Layout
+=========================== */
+
+/* Responsive: stack skills on small screens */
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume__main {
+    margin: 1rem;
+    padding: 1.5rem 1.25rem;
+    border-width: 3px;
+  }
+
+  .resume-header {
+    border-block-end-width: 2px;
+  }
+
+  .experience-item__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-item__meta {
+    text-align: left;
+  }
+
+  .sticky-note {
+    top: 80px;
+    right: 20px;
+    width: 180px;
+    min-height: 140px;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .sticky-note input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ===========================
+Mobile layout
+=========================== */
+
+/* Stuff that should be hidden unless on mobile */
+.resume-header__mobile-image {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .resume-header__mobile-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .resume-header__name-greeting {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h1.resume-header__name {
+    order: unset;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-header__mobile-image {
+    display: block;
+    max-width: 192px;
+    min-width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border: 3px solid black;
+    background-image: url('../img/FF-pixeled.png');
+    background-size: contain;
+  }
+
+  .resume-header__printlink {
+    margin-inline-start: 0;
+    margin-block-start: 0.65rem;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .sticky-note {
+    top: 60px;
+    right: 10px;
+    width: 160px;
+    min-height: 120px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .sticky-note input[type='checkbox'] {
+    width: 14px;
+    height: 14px;
+  }
+}

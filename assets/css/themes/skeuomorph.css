@@ -1,0 +1,278 @@
+/* ===========================
+Skeuomorphic Theme Effects
+=========================== */
+
+/* Paper curl effect on sections in skeuomorph theme */
+body[data-theme='skeuomorph'] .resume-section {
+  position: relative;
+  background: var(--paper-color);
+  background-image: var(--paper-texture);
+}
+
+body[data-theme='skeuomorph'] .resume-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 24px 24px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.08) transparent;
+  pointer-events: none;
+}
+
+body[data-theme='skeuomorph'] .resume-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  border-color: transparent var(--background-color) transparent transparent;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+/* Enhanced borders and boxes in skeuomorph theme */
+body[data-theme='skeuomorph'] .skills-grid,
+body[data-theme='skeuomorph'] .community-list,
+body[data-theme='skeuomorph'] .principles-list,
+body[data-theme='skeuomorph'] .education-item {
+  position: relative;
+  background: var(--paper-color);
+  background-image: var(--paper-texture);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stitching effect on bordered elements */
+body[data-theme='skeuomorph'] .skills-grid::before,
+body[data-theme='skeuomorph'] .community-list::before,
+body[data-theme='skeuomorph'] .principles-list::before,
+body[data-theme='skeuomorph'] .education-item::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 2px dashed var(--stitch-color);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Header leather backing */
+body[data-theme='skeuomorph'] .resume-header {
+  position: relative;
+  padding: 1.5rem;
+  margin: -1rem -1rem 1.5rem -1rem;
+  background: var(--paper-color);
+  background-image: var(--paper-texture);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  border: 4px solid var(--leather-color);
+}
+
+body[data-theme='skeuomorph'] .resume-header * {
+  color: var(--text-color);
+  border-color: var(--stitch-color);
+}
+
+body[data-theme='skeuomorph'] .resume-header h1,
+body[data-theme='skeuomorph'] .resume-header h3,
+body[data-theme='skeuomorph'] .resume-header .resume-header__role {
+  color: var(--text-color);
+}
+
+body[data-theme='skeuomorph'] .resume-header::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px dashed var(--stitch-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Ensure dial selector labels are readable in skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector .dial-label {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+body[data-theme='skeuomorph'] dial-selector .dial-label.active {
+  color: var(--dial-color-selection);
+  font-weight: 700;
+}
+
+/* Experience items get paper card treatment */
+body[data-theme='skeuomorph'] .experience-item {
+  background: var(--paper-color);
+  background-image: var(--paper-texture);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem -0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-left: 4px solid var(--leather-color);
+  border-right: 4px solid var(--leather-color);
+}
+
+/* Metal badge effect for tech stack */
+body[data-theme='skeuomorph'] .experience-item__tech {
+  background: var(--metal-gradient);
+  color: var(--ink-color);
+  border: 2px solid #8b7355;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+/* Dial selector enhancements for skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector {
+  --dial-knob-background: var(--metal-gradient);
+}
+
+body[data-theme='skeuomorph'] dial-selector .knob {
+  box-shadow: var(--knob-shadow);
+  border: 3px solid var(--color-outer-circle);
+  position: relative;
+}
+
+/* Add ridges to the knob for grip */
+body[data-theme='skeuomorph'] dial-selector .knob::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 0, 0, 0.15) 0deg,
+    rgba(0, 0, 0, 0.15) 4deg,
+    transparent 4deg,
+    transparent 8deg
+  );
+  pointer-events: none;
+}
+
+/* Leather pad under dial selectors */
+body[data-theme='skeuomorph'] .resume-header__dial-selector {
+  position: relative;
+  padding: 1.5rem;
+  margin: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme='skeuomorph'] .resume-header__dial-selector::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 2px dashed var(--stitch-color);
+  border-radius: 4px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Print button gets embossed metal look */
+body[data-theme='skeuomorph'] .resume-header__printlink {
+  background: var(--metal-gradient);
+  color: var(--ink-color);
+  border: 3px solid var(--stitch-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body[data-theme='skeuomorph'] .resume-header__printlink:hover {
+  background: linear-gradient(
+    135deg,
+    #b8924c 0%,
+    #d4af37 20%,
+    #ffd700 40%,
+    #fffacd 50%,
+    #ffd700 60%,
+    #d4af37 80%,
+    #b8924c 100%
+  );
+  background-size: 300% 300%;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s linear infinite;
+}
+
+body[data-theme='skeuomorph'] .resume-header__printlink:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation for skeuomorph button hover */
+@keyframes button-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Dark mode specific: very dark brown text */
+body[data-theme='skeuomorph'] .resume-header__printlink {
+  color: var(--print-button-text-color, var(--ink-color));
+}
+
+/* Add texture to section headings in skeuomorph theme */
+body[data-theme='skeuomorph'] .resume-section__title {
+  background: var(--paper-color);
+  background-image: var(--paper-texture);
+  color: var(--text-color);
+  padding: 0.6rem 1rem;
+  margin: 0 0 1rem -0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--leather-color);
+  border-right: 4px solid var(--leather-color);
+  position: relative;
+}
+
+body[data-theme='skeuomorph'] .resume-section__title::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px dashed var(--stitch-color);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Embossed effect on section title text */
+body[data-theme='skeuomorph'] .resume-section__title {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+/* Enhanced indicator appearance in skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector .indicator {
+  background: var(--color-indicator);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 8px var(--color-indicator), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Add depth to skills grid items */
+body[data-theme='skeuomorph'] .skills-grid__group {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Leather texture on bullets */
+body[data-theme='skeuomorph'] .experience-item__bullets li::before {
+  color: var(--leather-color);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+

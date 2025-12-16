@@ -1,0 +1,159 @@
+/* ===========================
+Custom Properties
+=========================== */
+:root {
+  /* Note: not necessarily used when printing */
+  --border-color: #000000;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Dial-selector custom properties */
+  --dial-color-ink: #000000;
+  --dial-color-selection: #f13b3b;
+  --dial-color-indicator: #f13b3b;
+  --dial-knob-background: #11161c;
+  /* Theme-specific properties */
+  --background-image: none;
+  --link-color: #000000;
+  --link-visited-color: #551a8b;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #f13b3b;
+  /* Skeuomorphic theme properties */
+  --leather-color: #6d4c41;
+  --paper-color: #f4f1e8;
+  --ink-color: #2c2416;
+  --stitch-color: #8b7355;
+  --stitch-spacing: 8px;
+  --stitch-length: 4px;
+  --metal-gradient: linear-gradient(135deg, #e8e8e8 0%, #9e9e9e 25%, #d0d0d0 50%, #787878 75%, #c0c0c0 100%);
+  --wood-color-dark: #4a3526;
+  --wood-color-light: #6b4d3a;
+  --wood-grain: none;
+  --paper-shadow: none;
+  --paper-texture: none;
+  --leather-texture: none;
+  --sticky-note-color: #feff9c;
+  --sticky-note-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sticky-note-rotation: -3deg;
+  --desk-shadow: none;
+}
+
+/* ===========================
+Base + Typography
+=========================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.resume {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Wood grain desk effect for skeuomorphic theme */
+body.resume::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--wood-grain),
+    linear-gradient(180deg, var(--wood-color-dark) 0%, var(--wood-color-light) 50%, var(--wood-color-dark) 100%);
+  box-shadow: var(--desk-shadow);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show wood grain only in skeuomorph theme */
+body.resume[data-theme='skeuomorph']::before {
+  opacity: 1;
+}
+
+/* Reset margins for common elements */
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headers */
+
+.resume-header__name-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  > * {
+    flex: 0 0 50%;
+  }
+}
+
+h1.resume-header__name {
+  order: 1;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-block-end: 4px solid var(--border-color);
+  padding-block-end: 0.35rem;
+  margin-block-end: 0.35rem;
+}
+
+.resume-header__name-greeting {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-block-end: -0.2rem;
+}
+
+.resume-header__name-small {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-block-start: -0.2rem;
+}
+
+.resume-header__role {
+  order: 3;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h2.resume-section__title {
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-block: 3px solid var(--border-color);
+  padding: 0.45rem 0;
+  margin-block-end: 0.75rem;
+}
+
+h3.experience-item__role,
+h3.education-item__institution {
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Link colors using custom properties */
+a {
+  color: var(--link-color, inherit);
+}
+
+a:visited {
+  color: var(--link-visited-color, inherit);
+}

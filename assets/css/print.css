@@ -1,0 +1,40 @@
+/* ===========================
+Print Styles
+=========================== */
+
+@media print {
+  body.resume {
+    background: #ffffff;
+  }
+
+  .resume__main {
+    border: none;
+    margin: 0;
+    padding: 0.5in 0.65in;
+  }
+
+  /* Hide the PRINT VERSION button on paper */
+  .resume-header__print-button {
+    display: none !important;
+  }
+
+  /* Avoid awkward splits across pages */
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  .resume-section--experience .experience-item {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  /* Hide this element when printing the main page */
+  .resume-header__printlink {
+    display: none !important;
+  }
+}
+

@@ -1,0 +1,482 @@
+/* ===========================
+Windows XP Theme (Luna)
+=========================== */
+
+/* Apply XP-style Tahoma font */
+body[data-theme='xp'] {
+  font-family: var(--font-family);
+  background-image: var(--background-image);
+}
+
+/* Main container as XP window */
+body[data-theme='xp'] .resume__main {
+  border: 0;
+  border-radius: 8px 8px 6px 6px;
+  box-shadow: 0 0 0 3px var(--xp-window-border-top), 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: var(--xp-button-face);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* XP-style title bar for main window */
+body[data-theme='xp'] .resume__main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(180deg, var(--xp-window-title-start) 0%, var(--xp-window-title-end) 100%);
+  border-radius: 6px 6px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Window control buttons (minimize, maximize, close) */
+body[data-theme='xp'] .resume__main::after {
+  content: '×';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(180deg, #ff6b6b 0%, #e85c5c 50%, #d04a4a 100%);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  z-index: 11;
+  pointer-events: none;
+  font-family: 'Tahoma', sans-serif;
+}
+
+/* Content area with padding to account for title bar */
+body[data-theme='xp'] .resume-header,
+body[data-theme='xp'] .resume-section {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+body[data-theme='xp'] .resume-header {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--xp-button-shadow);
+}
+
+body[data-theme='xp'] .resume-section {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-top: 1px solid var(--xp-button-shadow);
+}
+
+body[data-theme='xp'] .resume-section:last-child {
+  margin-bottom: 2rem;
+}
+
+/* XP-style section titles as colored bars */
+body[data-theme='xp'] .resume-section__title {
+  border: 0;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #0054e3 0%, #0f8ae8 100%);
+  color: white;
+  padding: 0.6rem 1rem;
+  margin: 0 -0.5rem 1rem -0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: var(--xp-text-shadow, 1px 1px 2px rgba(0, 0, 0, 0.3));
+  font-weight: bold;
+}
+
+/* XP-style buttons for skills grid and other bordered containers */
+body[data-theme='xp'] .skills-grid {
+  border: 0;
+  background: var(--xp-button-face);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    inset -1px -1px 0 var(--xp-button-dark-shadow);
+}
+
+body[data-theme='xp'] .skills-grid__group {
+  border: 0;
+  background: var(--section-bg);
+  padding: 0.75rem;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode: white background for skill groups */
+body[data-theme='xp'][data-mode='light'] .skills-grid__group {
+  background: white;
+}
+
+body[data-theme='xp'] .skills-grid__title {
+  border-bottom: 2px solid var(--xp-window-border-top);
+  color: var(--text-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Light mode: make skills grid titles blue */
+body[data-theme='xp'][data-mode='light'] .skills-grid__title {
+  color: var(--xp-window-border-top);
+}
+
+/* Tech badges as XP-style buttons */
+body[data-theme='xp'] .experience-item__tech {
+  border: 0;
+  background: linear-gradient(
+    180deg,
+    var(--xp-button-highlight) 0%,
+    var(--xp-button-face) 50%,
+    var(--xp-button-shadow) 100%
+  );
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* List containers with XP window style */
+body[data-theme='xp'] .community-list,
+body[data-theme='xp'] .principles-list {
+  border: 0;
+  background: var(--section-bg);
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+/* Light mode: white background for lists */
+body[data-theme='xp'][data-mode='light'] .community-list,
+body[data-theme='xp'][data-mode='light'] .principles-list {
+  background: white;
+}
+
+body[data-theme='xp'] .community-list__item,
+body[data-theme='xp'] .principles-list__item {
+  border-top: 1px solid #e0e0e0;
+  padding: 0.75rem 0.5rem;
+}
+
+body[data-theme='xp'] .community-list__item:first-child,
+body[data-theme='xp'] .principles-list__item:first-child {
+  border-top: 0;
+}
+
+/* Education box with XP style */
+body[data-theme='xp'] .education-item {
+  border: 0;
+  background: var(--section-bg);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode: white background for education */
+body[data-theme='xp'][data-mode='light'] .education-item {
+  background: white;
+}
+
+/* Experience items as XP panels */
+body[data-theme='xp'] .experience-item {
+  position: relative;
+  padding: 1.25rem;
+  background: var(--section-bg);
+  border: 0;
+  border-radius: 6px;
+  margin-top: 1.25rem;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme='xp'] .experience-item:first-of-type {
+  border-top: 0;
+}
+
+/* Light mode: white background for experience items */
+body[data-theme='xp'][data-mode='light'] .experience-item {
+  background: white;
+}
+
+/* Dial selector with XP styling */
+body[data-theme='xp'] dial-selector .knob {
+  border-radius: 50%;
+  border: 3px solid var(--xp-button-shadow);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  background: var(--dial-knob-background);
+}
+
+body[data-theme='xp'] dial-selector .indicator {
+  border-radius: 3px;
+  background: linear-gradient(180deg, #8fd36b 0%, var(--xp-start-green) 50%, #5a9a3f 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='xp'] dial-selector .dial-label {
+  font-size: 0.85rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background: transparent;
+  font-weight: 600;
+}
+
+/* Dark mode: dark text for dial labels */
+body[data-theme='xp'][data-mode='dark'] dial-selector .dial-label {
+  color: #000000;
+}
+
+body[data-theme='xp'] dial-selector .dial-label:hover {
+  background: linear-gradient(180deg, #f0f7ff 0%, #d0e8ff 100%);
+  box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Dark mode: ensure hover text is dark */
+body[data-theme='xp'][data-mode='dark'] dial-selector .dial-label:hover {
+  color: #000000;
+}
+
+body[data-theme='xp'] dial-selector .dial-label.active {
+  background: linear-gradient(180deg, var(--xp-start-green) 0%, #5a9a3f 100%);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='xp'] dial-selector .spoke-line {
+  stroke-width: 2px;
+}
+
+/* Dark mode: dark lines for dial selector spokes */
+body[data-theme='xp'][data-mode='dark'] dial-selector .spoke-line {
+  stroke: #000000;
+}
+
+/* Print button as XP "Start" button */
+body[data-theme='xp'] .resume-header__printlink {
+  border: 0;
+  background: linear-gradient(180deg, #8fd36b 0%, var(--xp-start-green) 50%, #5a9a3f 100%);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(255, 255, 255, 0.5), 0 3px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+body[data-theme='xp'] .resume-header__printlink::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 0.7em;
+  transform: rotate(90deg);
+}
+
+body[data-theme='xp'] .resume-header__printlink:hover {
+  background: linear-gradient(180deg, #a3e67f 0%, #8fd36b 50%, #6aae4f 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), inset 1px 1px 0 rgba(255, 255, 255, 0.6), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme='xp'] .resume-header__printlink:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), inset 1px 1px 3px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* XP link styling */
+body[data-theme='xp'] a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-color);
+  transition: color 0.15s ease;
+}
+
+body[data-theme='xp'] a:hover {
+  color: var(--xp-start-green);
+  border-bottom-color: var(--xp-start-green);
+}
+
+body[data-theme='xp'] a:visited {
+  color: var(--link-visited-color);
+  border-bottom-color: var(--link-visited-color);
+}
+
+/* Header with XP styling */
+body[data-theme='xp'] .resume-header {
+  border-bottom: 2px solid var(--xp-button-shadow);
+  background: transparent;
+}
+
+body[data-theme='xp'] h1.resume-header__name {
+  border-bottom: 3px solid var(--xp-window-border-top);
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode: make header name blue */
+body[data-theme='xp'][data-mode='light'] h1.resume-header__name,
+body[data-theme='xp'][data-mode='light'] .resume-header__name-greeting,
+body[data-theme='xp'][data-mode='light'] .resume-header__name-small {
+  color: var(--xp-window-border-top);
+}
+
+body[data-theme='xp'] .resume-header__role {
+  color: var(--text-color);
+}
+
+/* Typography enhancements */
+body[data-theme='xp'] h2.resume-section__title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body[data-theme='xp'] h3.experience-item__role,
+body[data-theme='xp'] h3.education-item__institution {
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
+
+/* Light mode: make these headers blue */
+body[data-theme='xp'][data-mode='light'] h3.experience-item__role,
+body[data-theme='xp'][data-mode='light'] h3.education-item__institution {
+  color: var(--xp-window-border-top);
+}
+
+body[data-theme='xp'] .experience-item__company {
+  color: var(--text-color);
+}
+
+/* XP-style bullet points */
+body[data-theme='xp'] .experience-item__bullets li::before {
+  content: '■';
+  color: var(--xp-start-green);
+  font-size: 0.6rem;
+}
+
+/* Dial selector housing with XP panel style */
+body[data-theme='xp'] .resume-header__dial-selector {
+  padding: 1rem;
+  background: linear-gradient(180deg, #f0f7ff 0%, #e0e0e0 100%);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.15);
+}
+
+body[data-theme='xp'] .resume-header__dial-selector h3 {
+  color: var(--dial-selector-label-color, var(--text-color));
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+/* Scrollbar styling for XP theme (modern browsers) */
+body[data-theme='xp'] ::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+body[data-theme='xp'] ::-webkit-scrollbar-track {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+
+body[data-theme='xp'] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #ece9d8 0%, #d4d0c8 50%, #aca899 100%);
+  border: 1px solid #716f64;
+  border-radius: 0;
+}
+
+body[data-theme='xp'] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #f0f0f0 0%, #d8d4cc 50%, #b0aca0 100%);
+}
+
+body[data-theme='xp'] ::-webkit-scrollbar-button {
+  background: #ece9d8;
+  border: 1px solid #716f64;
+  height: 16px;
+  width: 16px;
+}
+
+/* Add subtle shadow to text in light mode */
+body[data-theme='xp'] .resume-section__text,
+body[data-theme='xp'] .experience-item__bullets li {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===========================
+XP Theme - Responsive Adjustments
+=========================== */
+
+@media (max-width: 768px) {
+  body[data-theme='xp'] .resume__main {
+    border-radius: 6px 6px 4px 4px;
+  }
+
+  body[data-theme='xp'] .resume-header,
+  body[data-theme='xp'] .resume-section {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  body[data-theme='xp'] h1.resume-header__name {
+    font-size: 2.1rem;
+  }
+
+  body[data-theme='xp'] dial-selector .dial-label {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body[data-theme='xp'] .resume__main {
+    border-radius: 4px 4px 3px 3px;
+  }
+
+  body[data-theme='xp'] .resume-header,
+  body[data-theme='xp'] .resume-section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  body[data-theme='xp'] .resume__main::before {
+    height: 28px;
+  }
+
+  body[data-theme='xp'] .resume__main::after {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  body[data-theme='xp'] h1.resume-header__name {
+    font-size: 1.7rem;
+  }
+
+  body[data-theme='xp'] dial-selector .dial-label {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  body[data-theme='xp'] .resume-header__printlink {
+    font-size: 0.75rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
