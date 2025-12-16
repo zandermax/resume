@@ -20,10 +20,6 @@ BRUTAL Theme - Maximum Brutalism
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: var(--color-red-crimson);
-  --label-text-shadow: none;
-  --label-text-shadow-hover: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
-    -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black), -2px 0 0 var(--color-black), 2px 0 0 var(--color-black),
-    0 -2px 0 var(--color-black), 0 2px 0 var(--color-black);
 }
 
 /* Dark Mode */
@@ -44,10 +40,6 @@ BRUTAL Theme - Maximum Brutalism
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: var(--color-red-bright);
-  --label-text-shadow: none;
-  --label-text-shadow-hover: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black),
-    -1px 1px 0 var(--color-black), 1px 1px 0 var(--color-black), -2px 0 0 var(--color-black), 2px 0 0 var(--color-black),
-    0 -2px 0 var(--color-black), 0 2px 0 var(--color-black);
 }
 
 /* Harsh, unforgiving base */
@@ -348,10 +340,6 @@ body[data-theme='brutal'] {
   /* Dial selector enhancements */
   dial-selector {
     margin-block-start: -3em;
-
-    .label-column {
-      margin-block-end: 2em;
-    }
 
     .knob {
       border: 8px solid var(--border-color);

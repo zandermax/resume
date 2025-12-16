@@ -13,10 +13,6 @@ Print Styles
     padding: 0.5in 0.65in;
   }
 
-  /* Hide the PRINT VERSION button on paper */
-  .resume-header__print-button {
-    display: none !important;
-  }
 
   /* Avoid awkward splits across pages */
   .resume-section {
