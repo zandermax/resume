@@ -107,62 +107,55 @@
 			});
 		}
 
-		// Helper to handle cursed text in glitch theme
-		function handleCursedText() {
-			const mainContent = document.querySelector('.resume');
-			if (!mainContent) return;
+		// Pre-computed cursed HTML (set during page load)
+		// Store content sections separately to avoid destroying header/dial selectors
+		let cursedContentCache = [];
+		let originalContentCache = [];
+		let contentElements = [];
 
-			if (currentTheme === 'glitch') {
-				// Store original HTML on first run
-				if (!mainContent.dataset.originalHtml) {
-					mainContent.dataset.originalHtml = mainContent.innerHTML;
+		// Pre-generate cursed text on page load (runs once in background)
+		function preGenerateCursedText() {
+			const mainContainer = document.querySelector('.resume__main');
+			if (!mainContainer) return;
+
+			// Get all sections except the header
+			contentElements = Array.from(mainContainer.children).filter(child =>
+				!child.classList.contains('resume-header')
+			);
+
+			// Store original HTML for each section
+			originalContentCache = contentElements.map(el => el.innerHTML);
+
+			// Combining diacritical marks for zalgo-style text
+			const diacritics = [
+				'\u0300', '\u0301', '\u0302', '\u0303', '\u0304', '\u0305', '\u0306', '\u0307',
+				'\u0308', '\u0309', '\u030A', '\u030B', '\u030C', '\u030D', '\u030E', '\u030F',
+				'\u0310', '\u0311', '\u0312', '\u0313', '\u0314', '\u0315', '\u0316', '\u0317',
+				'\u0318', '\u0319', '\u031A', '\u031B', '\u031C', '\u031D', '\u031E', '\u031F',
+				'\u0320', '\u0321', '\u0322', '\u0323', '\u0324', '\u0325', '\u0326', '\u0327',
+				'\u0328', '\u0329', '\u032A', '\u032B', '\u032C', '\u032D', '\u032E', '\u032F',
+				'\u0330', '\u0331', '\u0332', '\u0333', '\u0334', '\u0335', '\u0336', '\u0337',
+				'\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033E', '\u033F'
+			];
+
+			// Add random diacritics to a character
+			function cursify(char) {
+				let cursed = char;
+				// Add 2-5 random diacritics
+				const numDiacritics = Math.floor(Math.random() * 4) + 2;
+				for (let i = 0; i < numDiacritics; i++) {
+					cursed += diacritics[Math.floor(Math.random() * diacritics.length)];
 				}
+				return cursed;
+			}
 
-				// Skip if already cursed
-				if (mainContent.querySelector('.cursed')) {
-					return;
-				}
-
-				// Combining diacritical marks for zalgo-style text
-				const diacritics = [
-					'\u0300', '\u0301', '\u0302', '\u0303', '\u0304', '\u0305', '\u0306', '\u0307',
-					'\u0308', '\u0309', '\u030A', '\u030B', '\u030C', '\u030D', '\u030E', '\u030F',
-					'\u0310', '\u0311', '\u0312', '\u0313', '\u0314', '\u0315', '\u0316', '\u0317',
-					'\u0318', '\u0319', '\u031A', '\u031B', '\u031C', '\u031D', '\u031E', '\u031F',
-					'\u0320', '\u0321', '\u0322', '\u0323', '\u0324', '\u0325', '\u0326', '\u0327',
-					'\u0328', '\u0329', '\u032A', '\u032B', '\u032C', '\u032D', '\u032E', '\u032F',
-					'\u0330', '\u0331', '\u0332', '\u0333', '\u0334', '\u0335', '\u0336', '\u0337',
-					'\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033E', '\u033F'
-				];
-
-				// Add random diacritics to a character
-				function cursify(char) {
-					let cursed = char;
-					// Add 2-5 random diacritics
-					const numDiacritics = Math.floor(Math.random() * 4) + 2;
-					for (let i = 0; i < numDiacritics; i++) {
-						cursed += diacritics[Math.floor(Math.random() * diacritics.length)];
-					}
-					return cursed;
-				}
-
+			// Process each content section
+			contentElements.forEach(element => {
 				// Work with text nodes to preserve HTML structure
 				const walker = document.createTreeWalker(
-					mainContent,
+					element,
 					NodeFilter.SHOW_TEXT,
-					{
-						acceptNode: function (node) {
-							// Skip text nodes inside the header
-							let parent = node.parentElement;
-							while (parent) {
-								if (parent.classList.contains('resume-header')) {
-									return NodeFilter.FILTER_REJECT;
-								}
-								parent = parent.parentElement;
-							}
-							return NodeFilter.FILTER_ACCEPT;
-						}
-					},
+					null,
 					false
 				);
 
@@ -189,7 +182,7 @@
 							const cursedText = cursify(char);
 							span.textContent = cursedText;
 							span.setAttribute('data-text', cursedText);
-							span.setAttribute('data-original', char); // Store original character
+							span.setAttribute('data-original', char);
 							fragment.appendChild(span);
 						} else {
 							fragment.appendChild(document.createTextNode(char));
@@ -198,43 +191,32 @@
 
 					textNode.parentNode.replaceChild(fragment, textNode);
 				});
+			});
+
+			// Store the cursed HTML for each section
+			cursedContentCache = contentElements.map(el => el.innerHTML);
+
+			// Restore original HTML immediately (user doesn't start on glitch theme)
+			contentElements.forEach((el, index) => {
+				el.innerHTML = originalContentCache[index];
+			});
+		}
+
+		// Helper to handle cursed text in glitch theme (now just swaps cached versions)
+		function handleCursedText() {
+			// If caches aren't ready yet, do nothing (shouldn't happen but safety check)
+			if (cursedContentCache.length === 0 || originalContentCache.length === 0) return;
+
+			if (currentTheme === 'glitch') {
+				// Simply swap to pre-computed cursed HTML for each content section
+				contentElements.forEach((el, index) => {
+					el.innerHTML = cursedContentCache[index];
+				});
 			} else {
-				// Remove cursed text for all other themes
-				const cursedElements = mainContent.querySelectorAll('.cursed');
-				if (cursedElements.length > 0) {
-					cursedElements.forEach(cursed => {
-						// Replace the cursed span with its original character
-						const originalChar = cursed.getAttribute('data-original') || cursed.textContent;
-						const textNode = document.createTextNode(originalChar);
-						cursed.parentNode.replaceChild(textNode, cursed);
-					});
-
-					// Normalize text nodes to merge adjacent text nodes
-					const walker = document.createTreeWalker(
-						mainContent,
-						NodeFilter.SHOW_TEXT,
-						null,
-						false
-					);
-
-					const textNodes = [];
-					let node;
-					while (node = walker.nextNode()) {
-						textNodes.push(node);
-					}
-
-					// Merge adjacent text nodes by normalizing parent elements
-					const processedParents = new Set();
-					textNodes.forEach(textNode => {
-						if (textNode.parentNode && !processedParents.has(textNode.parentNode)) {
-							textNode.parentNode.normalize();
-							processedParents.add(textNode.parentNode);
-						}
-					});
-
-					// Clear the stored original HTML so it can be re-captured if needed
-					delete mainContent.dataset.originalHtml;
-				}
+				// Simply swap back to original HTML for each content section
+				contentElements.forEach((el, index) => {
+					el.innerHTML = originalContentCache[index];
+				});
 			}
 		}
 
@@ -254,6 +236,9 @@
 
 		// Initialize theme on page load
 		document.addEventListener('DOMContentLoaded', () => {
+			// Pre-generate cursed text for 2039 theme (runs in background)
+			preGenerateCursedText();
+
 			// Apply default theme and mode
 			applyThemeAndMode();
 		});
