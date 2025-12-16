@@ -19,6 +19,7 @@
 			'1993': 'terminal',
 			'1996': 'nostalgia',
 			'2001': 'xp',
+			'2004': 'web2gloss',
 			'2007': 'skeuomorph',
 			'2012': 'metro',
 			'2017': 'brutal',
@@ -475,6 +476,54 @@
 					'--dial-selector-label-color': '#000000'
 				}
 			},
+			web2gloss: {
+				light: {
+					'--background-color': '#E8F5FF',
+					'--text-color': '#333333',
+					'--border-color': '#CCDDEE',
+					'--dial-color-ink': '#0099FF',
+					'--dial-color-selection': '#0099FF',
+					'--dial-color-indicator': '#0099FF',
+					'--dial-knob-background': 'radial-gradient(circle at 30% 30%, #FFFFFF 0%, #E8F5FF 30%, #B5E3FF 70%, #66CCFF 100%)',
+					'--font-family': '"Helvetica Neue", Helvetica, Arial, sans-serif',
+					'--color-hover': '#0099FF',
+					'--background-image': 'radial-gradient(ellipse at center, #E8F5FF 0%, #B5E3FF 100%)',
+					'--link-color': '#0099FF',
+					'--link-visited-color': '#7F3FA8',
+					'--section-bg': '#FFFFFF',
+					'--header-bg': 'linear-gradient(180deg, #0099FF 0%, #0077DD 100%)',
+					'--accent-color': '#FF6600',
+					'--web2-primary': '#0099FF',
+					'--web2-accent': '#FF6600',
+					'--web2-success': '#66CC00',
+					'--web2-surface': '#FFFFFF',
+					'--web2-glow': 'rgba(0, 153, 255, 0.3)',
+					'--web2-shadow': 'rgba(0, 0, 0, 0.15)'
+				},
+				dark: {
+					'--background-color': '#001F3F',
+					'--text-color': '#E8F5FF',
+					'--border-color': '#0066CC',
+					'--dial-color-ink': '#00D4FF',
+					'--dial-color-selection': '#00D4FF',
+					'--dial-color-indicator': '#00D4FF',
+					'--dial-knob-background': 'radial-gradient(circle at 30% 30%, #0066CC 0%, #003D7A 40%, #001F3F 80%, #000A1A 100%)',
+					'--font-family': '"Helvetica Neue", Helvetica, Arial, sans-serif',
+					'--color-hover': '#00D4FF',
+					'--background-image': 'radial-gradient(ellipse at center, #003D7A 0%, #001F3F 100%)',
+					'--link-color': '#00D4FF',
+					'--link-visited-color': '#9F7FC8',
+					'--section-bg': '#003D7A',
+					'--header-bg': 'linear-gradient(180deg, #0066CC 0%, #003D7A 100%)',
+					'--accent-color': '#FF9933',
+					'--web2-primary': '#00D4FF',
+					'--web2-accent': '#FF9933',
+					'--web2-success': '#99FF33',
+					'--web2-surface': '#003D7A',
+					'--web2-glow': 'rgba(0, 212, 255, 0.4)',
+					'--web2-shadow': 'rgba(0, 0, 0, 0.5)'
+				}
+			},
 			metro: {
 				light: {
 					'--background-color': '#ffffff',
@@ -653,6 +702,12 @@
 				dashboardMetricsGrid.style.display = currentTheme === 'dashboard' ? 'grid' : 'none';
 			}
 
+			// Toggle web2gloss-specific elements
+			const web2Badges = document.querySelector('.web2-badges');
+			if (web2Badges) {
+				web2Badges.style.display = currentTheme === 'web2gloss' ? 'block' : 'none';
+			}
+
 			// Handle section titles in nostalgia theme
 			const sectionTitles = document.querySelectorAll('.resume-section__title');
 			const gifs = ['🔥', '⭐', '💫', '✨', '🌟', '👷', '📧'];
@@ -766,8 +821,8 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2007,2012,2017,2020" default-option="Current"
-						onchange="handleThemeChange(event)"></dial-selector>
+					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020"
+						default-option="Current" onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
 					<h3>Mode:</h3>
@@ -866,6 +921,190 @@
 				<span class="retro-gif bouncing" style="font-size: 2rem;">🌟</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">⭐</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">💫</span>
+			</div>
+		</div>
+
+		<!-- Web 2.0 Theme Elements -->
+		<div class="web2-badges"
+			style="display: none; text-align: center; margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 12px;">
+			<div style="margin-bottom: 1.5rem;">
+				<h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
+					✨ Web 2.0 Certified ✨
+				</h3>
+			</div>
+			<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+				<!-- Powered by HTML Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #FF6600 0%, #DD5500 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">🔧 POWERED BY HTML</span>
+				</div>
+
+				<!-- Valid CSS Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #0099FF 0%, #0077DD 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">✓ VALID CSS</span>
+				</div>
+
+				<!-- RSS Feed Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #FF9933 0%, #FF6600 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">📡 RSS FEED</span>
+				</div>
+
+				<!-- Web 2.0 Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #66CCFF 0%, #0099FF 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">⭐ WEB 2.0</span>
+				</div>
+
+				<!-- AJAX Enabled Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #99FF33 0%, #66CC00 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">⚡ AJAX ENABLED</span>
+				</div>
+
+				<!-- Beta Badge -->
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, #9966FF 0%, #7744DD 100%);
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">β BETA</span>
+				</div>
+			</div>
+			<div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+				<p style="margin: 0.5rem 0;">🌐 Built with cutting-edge Web 2.0 technologies</p>
+				<p style="margin: 0.5rem 0;">✨ Featuring glossy buttons and rounded corners</p>
+				<p style="margin: 0.5rem 0;">🚀 Optimized for social bookmarking</p>
 			</div>
 		</div>
 
