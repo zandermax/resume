@@ -18,6 +18,7 @@ Resume Styles - Modular Import
 @import url('./print.css');
 
 /* Themes - Individual theme files */
+@import url('./themes/brutal.css');
 @import url('./themes/nostalgia.css');
 @import url('./themes/retro85.css');
 @import url('./themes/skeuomorph.css');
