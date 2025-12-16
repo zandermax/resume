@@ -21,7 +21,8 @@
 			'2001': 'xp',
 			'2007': 'skeuomorph',
 			'2012': 'metro2012',
-			'2017': 'brutal'
+			'2017': 'brutal',
+			'2020': 'dashboard2020'
 		};
 
 		// Theme configuration - defines all CSS custom properties for each theme + mode combination
@@ -557,6 +558,58 @@
 					'--header-bg': 'transparent',
 					'--accent-color': '#ff5555'
 				}
+			},
+			dashboard2020: {
+				light: {
+					'--background-color': '#f5f7fa',
+					'--text-color': '#1a1a1a',
+					'--border-color': '#e1e8ed',
+					'--dial-color-ink': '#1a1a1a',
+					'--dial-color-selection': '#0066cc',
+					'--dial-color-indicator': '#0066cc',
+					'--dial-knob-background': '#ffffff',
+					'--font-family': '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
+					'--color-hover': '#0066cc',
+					'--background-image': 'none',
+					'--link-color': '#0066cc',
+					'--link-visited-color': '#004499',
+					'--section-bg': '#ffffff',
+					'--header-bg': '#ffffff',
+					'--accent-color': '#0066cc',
+					'--panel-bg': '#ffffff',
+					'--panel-border': '#e1e8ed',
+					'--status-green': '#28a745',
+					'--status-yellow': '#ffc107',
+					'--status-red': '#dc3545',
+					'--metric-highlight': '#0066cc',
+					'--panel-shadow': 'rgba(0, 0, 0, 0.08)',
+					'--mono-font': '"SF Mono", "Monaco", "Courier New", monospace'
+				},
+				dark: {
+					'--background-color': '#0d1117',
+					'--text-color': '#e6edf3',
+					'--border-color': '#30363d',
+					'--dial-color-ink': '#e6edf3',
+					'--dial-color-selection': '#58a6ff',
+					'--dial-color-indicator': '#58a6ff',
+					'--dial-knob-background': '#161b22',
+					'--font-family': '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
+					'--color-hover': '#58a6ff',
+					'--background-image': 'none',
+					'--link-color': '#58a6ff',
+					'--link-visited-color': '#79c0ff',
+					'--section-bg': '#161b22',
+					'--header-bg': '#161b22',
+					'--accent-color': '#58a6ff',
+					'--panel-bg': '#161b22',
+					'--panel-border': '#30363d',
+					'--status-green': '#3fb950',
+					'--status-yellow': '#d29922',
+					'--status-red': '#f85149',
+					'--metric-highlight': '#58a6ff',
+					'--panel-shadow': 'rgba(0, 0, 0, 0.3)',
+					'--mono-font': '"SF Mono", "Monaco", "Courier New", monospace'
+				}
 			}
 		};
 
@@ -588,6 +641,16 @@
 			const stickyNote = document.querySelector('.sticky-note');
 			if (stickyNote) {
 				stickyNote.style.display = currentTheme === 'skeuomorph' ? 'block' : 'none';
+			}
+
+			// Toggle dashboard2020-specific elements
+			const dashboardStatusBanner = document.querySelector('.dashboard-status-banner');
+			if (dashboardStatusBanner) {
+				dashboardStatusBanner.style.display = currentTheme === 'dashboard2020' ? 'flex' : 'none';
+			}
+			const dashboardMetricsGrid = document.querySelector('.dashboard-metrics-grid');
+			if (dashboardMetricsGrid) {
+				dashboardMetricsGrid.style.display = currentTheme === 'dashboard2020' ? 'grid' : 'none';
 			}
 
 			// Handle section titles in nostalgia theme
@@ -703,7 +766,7 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2007,2012,2017" default-option="Current"
+					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2007,2012,2017,2020" default-option="Current"
 						onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
@@ -803,6 +866,52 @@
 				<span class="retro-gif bouncing" style="font-size: 2rem;">🌟</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">⭐</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">💫</span>
+			</div>
+		</div>
+
+		<!-- Dashboard 2020 Theme Elements -->
+		<div class="dashboard-status-banner" style="display: none;">
+			<div class="dashboard-status-banner__content">
+				<div class="status-indicator status-indicator--operational">
+					<span class="status-indicator__dot"></span>
+					<span class="status-indicator__label">System Health: Nominal</span>
+				</div>
+				<div class="dashboard-metric">
+					<span class="dashboard-metric__label">Uptime:</span>
+					<span class="dashboard-metric__value">99.9%</span>
+				</div>
+				<div class="dashboard-metric">
+					<span class="dashboard-metric__label">Last Updated:</span>
+					<span class="dashboard-metric__value">Just Now</span>
+				</div>
+				<div class="dashboard-metric">
+					<span class="dashboard-metric__label">Active Processes:</span>
+					<span class="dashboard-metric__value">8</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Dashboard Metrics Cards -->
+		<div class="dashboard-metrics-grid" style="display: none;">
+			<div class="dashboard-card">
+				<div class="dashboard-card__label">Years Experience</div>
+				<div class="dashboard-card__value">8+</div>
+				<div class="dashboard-card__status">Active</div>
+			</div>
+			<div class="dashboard-card">
+				<div class="dashboard-card__label">Technologies</div>
+				<div class="dashboard-card__value">25+</div>
+				<div class="dashboard-card__status">Monitored</div>
+			</div>
+			<div class="dashboard-card">
+				<div class="dashboard-card__label">Projects Shipped</div>
+				<div class="dashboard-card__value">50+</div>
+				<div class="dashboard-card__status">Deployed</div>
+			</div>
+			<div class="dashboard-card">
+				<div class="dashboard-card__label">Code Quality</div>
+				<div class="dashboard-card__value">A+</div>
+				<div class="dashboard-card__status">Optimal</div>
 			</div>
 		</div>
 
