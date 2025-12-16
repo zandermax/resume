@@ -19,6 +19,7 @@ Custom Properties
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: #f13b3b;
+  --section-padding: 1rem 0 0;
   /* Skeuomorphic theme properties */
   --leather-color: #6d4c41;
   --paper-color: #f4f1e8;
@@ -75,8 +76,8 @@ body.resume::before {
   transition: opacity 0.3s ease;
 }
 
-/* Show wood grain only in skeu theme */
-body.resume[data-theme='skeu']::before {
+/* Show wood grain only in skeuomorph theme */
+body.resume[data-theme='skeuomorph']::before {
   opacity: 1;
 }
 
@@ -135,9 +136,9 @@ body.resume[data-theme='skeu']::before {
   transition: opacity 0.3s ease;
 }
 
-/* Show leather border and stitching only in skeu theme */
-body[data-theme='skeu'] .resume__main::before,
-body[data-theme='skeu'] .resume__main::after {
+/* Show leather border and stitching only in skeuomorph theme */
+body[data-theme='skeuomorph'] .resume__main::before,
+body[data-theme='skeuomorph'] .resume__main::after {
   opacity: 1;
 }
 
@@ -256,7 +257,7 @@ Sections
 
 .resume-section {
   margin-block-end: 1.75rem;
-  padding: 1rem 0 0;
+  padding: var(--section-padding);
   border-block-start: 1px solid var(--border-color);
 }
 
@@ -820,19 +821,19 @@ Skeuomorphic Theme Effects
   transform: rotate(0deg) scale(1.02);
 }
 
-/* Show sticky note only in skeu theme */
-body[data-theme='skeu'] .sticky-note {
+/* Show sticky note only in skeuomorph theme */
+body[data-theme='skeuomorph'] .sticky-note {
   display: block;
 }
 
-/* Paper curl effect on sections in skeu theme */
-body[data-theme='skeu'] .resume-section {
+/* Paper curl effect on sections in skeuomorph theme */
+body[data-theme='skeuomorph'] .resume-section {
   position: relative;
   background: var(--paper-color);
   background-image: var(--paper-texture);
 }
 
-body[data-theme='skeu'] .resume-section::before {
+body[data-theme='skeuomorph'] .resume-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -845,7 +846,7 @@ body[data-theme='skeu'] .resume-section::before {
   pointer-events: none;
 }
 
-body[data-theme='skeu'] .resume-section::after {
+body[data-theme='skeuomorph'] .resume-section::after {
   content: '';
   position: absolute;
   top: 0;
@@ -859,11 +860,11 @@ body[data-theme='skeu'] .resume-section::after {
   pointer-events: none;
 }
 
-/* Enhanced borders and boxes in skeu theme */
-body[data-theme='skeu'] .skills-grid,
-body[data-theme='skeu'] .community-list,
-body[data-theme='skeu'] .principles-list,
-body[data-theme='skeu'] .education-item {
+/* Enhanced borders and boxes in skeuomorph theme */
+body[data-theme='skeuomorph'] .skills-grid,
+body[data-theme='skeuomorph'] .community-list,
+body[data-theme='skeuomorph'] .principles-list,
+body[data-theme='skeuomorph'] .education-item {
   position: relative;
   background: var(--paper-color);
   background-image: var(--paper-texture);
@@ -871,10 +872,10 @@ body[data-theme='skeu'] .education-item {
 }
 
 /* Stitching effect on bordered elements */
-body[data-theme='skeu'] .skills-grid::before,
-body[data-theme='skeu'] .community-list::before,
-body[data-theme='skeu'] .principles-list::before,
-body[data-theme='skeu'] .education-item::before {
+body[data-theme='skeuomorph'] .skills-grid::before,
+body[data-theme='skeuomorph'] .community-list::before,
+body[data-theme='skeuomorph'] .principles-list::before,
+body[data-theme='skeuomorph'] .education-item::before {
   content: '';
   position: absolute;
   top: -6px;
@@ -887,7 +888,7 @@ body[data-theme='skeu'] .education-item::before {
 }
 
 /* Header leather backing */
-body[data-theme='skeu'] .resume-header {
+body[data-theme='skeuomorph'] .resume-header {
   position: relative;
   padding: 1.5rem;
   margin: -1rem -1rem 1.5rem -1rem;
@@ -897,18 +898,18 @@ body[data-theme='skeu'] .resume-header {
   border: 4px solid var(--leather-color);
 }
 
-body[data-theme='skeu'] .resume-header * {
+body[data-theme='skeuomorph'] .resume-header * {
   color: var(--text-color);
   border-color: var(--stitch-color);
 }
 
-body[data-theme='skeu'] .resume-header h1,
-body[data-theme='skeu'] .resume-header h3,
-body[data-theme='skeu'] .resume-header .resume-header__role {
+body[data-theme='skeuomorph'] .resume-header h1,
+body[data-theme='skeuomorph'] .resume-header h3,
+body[data-theme='skeuomorph'] .resume-header .resume-header__role {
   color: var(--text-color);
 }
 
-body[data-theme='skeu'] .resume-header::before {
+body[data-theme='skeuomorph'] .resume-header::before {
   content: '';
   position: absolute;
   top: 8px;
@@ -920,19 +921,19 @@ body[data-theme='skeu'] .resume-header::before {
   pointer-events: none;
 }
 
-/* Ensure dial selector labels are readable in skeu theme */
-body[data-theme='skeu'] dial-selector .dial-label {
+/* Ensure dial selector labels are readable in skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector .dial-label {
   color: var(--text-color);
   font-weight: 600;
 }
 
-body[data-theme='skeu'] dial-selector .dial-label.active {
+body[data-theme='skeuomorph'] dial-selector .dial-label.active {
   color: var(--dial-color-selection);
   font-weight: 700;
 }
 
 /* Experience items get paper card treatment */
-body[data-theme='skeu'] .experience-item {
+body[data-theme='skeuomorph'] .experience-item {
   background: var(--paper-color);
   background-image: var(--paper-texture);
   padding: 1rem 1.25rem;
@@ -943,7 +944,7 @@ body[data-theme='skeu'] .experience-item {
 }
 
 /* Metal badge effect for tech stack */
-body[data-theme='skeu'] .experience-item__tech {
+body[data-theme='skeuomorph'] .experience-item__tech {
   background: var(--metal-gradient);
   color: var(--ink-color);
   border: 2px solid #8b7355;
@@ -953,19 +954,19 @@ body[data-theme='skeu'] .experience-item__tech {
   font-weight: 600;
 }
 
-/* Dial selector enhancements for skeu theme */
-body[data-theme='skeu'] dial-selector {
+/* Dial selector enhancements for skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector {
   --dial-knob-background: var(--metal-gradient);
 }
 
-body[data-theme='skeu'] dial-selector .knob {
+body[data-theme='skeuomorph'] dial-selector .knob {
   box-shadow: var(--knob-shadow);
   border: 3px solid var(--color-outer-circle);
   position: relative;
 }
 
 /* Add ridges to the knob for grip */
-body[data-theme='skeu'] dial-selector .knob::after {
+body[data-theme='skeuomorph'] dial-selector .knob::after {
   content: '';
   position: absolute;
   inset: 12px;
@@ -981,7 +982,7 @@ body[data-theme='skeu'] dial-selector .knob::after {
 }
 
 /* Leather pad under dial selectors */
-body[data-theme='skeu'] .resume-header__dial-selector {
+body[data-theme='skeuomorph'] .resume-header__dial-selector {
   position: relative;
   padding: 1.5rem;
   margin: 0.5rem;
@@ -990,7 +991,7 @@ body[data-theme='skeu'] .resume-header__dial-selector {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(255, 255, 255, 0.05);
 }
 
-body[data-theme='skeu'] .resume-header__dial-selector::before {
+body[data-theme='skeuomorph'] .resume-header__dial-selector::before {
   content: '';
   position: absolute;
   inset: 6px;
@@ -1001,7 +1002,7 @@ body[data-theme='skeu'] .resume-header__dial-selector::before {
 }
 
 /* Print button gets embossed metal look */
-body[data-theme='skeu'] .resume-header__printlink {
+body[data-theme='skeuomorph'] .resume-header__printlink {
   background: var(--metal-gradient);
   color: var(--ink-color);
   border: 3px solid var(--stitch-color);
@@ -1009,19 +1010,45 @@ body[data-theme='skeu'] .resume-header__printlink {
     inset 0 -2px 4px rgba(0, 0, 0, 0.3);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
   font-weight: 700;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-body[data-theme='skeu'] .resume-header__printlink:hover {
-  background: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #b8924c 100%);
+body[data-theme='skeuomorph'] .resume-header__printlink:hover {
+  background: linear-gradient(
+    135deg,
+    #b8924c 0%,
+    #d4af37 20%,
+    #ffd700 40%,
+    #fffacd 50%,
+    #ffd700 60%,
+    #d4af37 80%,
+    #b8924c 100%
+  );
+  background-size: 300% 300%;
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5),
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s linear infinite;
 }
 
-body[data-theme='skeu'] .resume-header__printlink:active {
+body[data-theme='skeuomorph'] .resume-header__printlink:active {
   transform: translateY(0);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation for skeuomorph button hover */
+@keyframes button-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Dark mode specific: very dark brown text */
+body[data-theme='skeuomorph'] .resume-header__printlink {
+  color: var(--print-button-text-color, var(--ink-color));
 }
 
 /* Responsive sticky note */
@@ -1059,20 +1086,20 @@ body[data-theme='skeu'] .resume-header__printlink:active {
   }
 }
 
-/* Add texture to section headings in skeu theme */
-body[data-theme='skeu'] .resume-section__title {
+/* Add texture to section headings in skeuomorph theme */
+body[data-theme='skeuomorph'] .resume-section__title {
   background: var(--paper-color);
   background-image: var(--paper-texture);
   color: var(--text-color);
   padding: 0.6rem 1rem;
-  margin: 0 -0.5rem 1rem -0.5rem;
+  margin: 0 0 1rem -0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.1);
   border-left: 4px solid var(--leather-color);
   border-right: 4px solid var(--leather-color);
   position: relative;
 }
 
-body[data-theme='skeu'] .resume-section__title::before {
+body[data-theme='skeuomorph'] .resume-section__title::before {
   content: '';
   position: absolute;
   top: 4px;
@@ -1085,25 +1112,425 @@ body[data-theme='skeu'] .resume-section__title::before {
 }
 
 /* Embossed effect on section title text */
-body[data-theme='skeu'] .resume-section__title {
+body[data-theme='skeuomorph'] .resume-section__title {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.1);
   font-weight: 700;
 }
 
-/* Enhanced indicator appearance in skeu theme */
-body[data-theme='skeu'] dial-selector .indicator {
+/* Enhanced indicator appearance in skeuomorph theme */
+body[data-theme='skeuomorph'] dial-selector .indicator {
   background: var(--color-indicator);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 8px var(--color-indicator), inset 0 1px 2px rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /* Add depth to skills grid items */
-body[data-theme='skeu'] .skills-grid__group {
+body[data-theme='skeuomorph'] .skills-grid__group {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Leather texture on bullets */
-body[data-theme='skeu'] .experience-item__bullets li::before {
+body[data-theme='skeuomorph'] .experience-item__bullets li::before {
   color: var(--leather-color);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ===========================
+8-bit Theme (NES-inspired)
+=========================== */
+
+/* Apply pixel font and pixelated rendering */
+body[data-theme='8-bit'] {
+  font-family: var(--pixel-font);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Pixelated background grid overlay */
+body[data-theme='8-bit']::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--pixel-grid-color) 0px,
+      var(--pixel-grid-color) 1px,
+      transparent 1px,
+      transparent var(--pixel-grid-size)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--pixel-grid-color) 0px,
+      var(--pixel-grid-color) 1px,
+      transparent 1px,
+      transparent var(--pixel-grid-size)
+    );
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.15;
+}
+
+/* CRT Scanline overlay */
+body[data-theme='8-bit']::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    var(--scanline-color) 0px,
+    var(--scanline-color) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Screen flicker animation */
+@keyframes screen-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.98;
+  }
+  51% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  52% {
+    opacity: 0.97;
+    transform: translateY(1px);
+  }
+  53% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body[data-theme='8-bit'] .resume__main {
+  animation: screen-flicker 8s infinite;
+}
+
+/* Blinking cursor animation for links */
+@keyframes blink-cursor {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+body[data-theme='8-bit'] a::after {
+  content: '▮';
+  animation: blink-cursor 1s step-start infinite;
+  margin-left: 2px;
+  font-size: 0.8em;
+}
+
+/* Pixelated borders on main container */
+body[data-theme='8-bit'] .resume__main {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+}
+
+/* Pixelated borders on section titles */
+body[data-theme='8-bit'] .resume-section__title {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+}
+
+/* Pixelated borders on skills grid */
+body[data-theme='8-bit'] .skills-grid {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+}
+
+body[data-theme='8-bit'] .skills-grid__group {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Tech badges with pixel borders */
+body[data-theme='8-bit'] .experience-item__tech {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+  background: var(--accent-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+/* List containers with pixel borders */
+body[data-theme='8-bit'] .community-list,
+body[data-theme='8-bit'] .principles-list {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+}
+
+/* Education box with pixel border */
+body[data-theme='8-bit'] .education-item {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+}
+
+/* Experience items as game cartridges */
+body[data-theme='8-bit'] .experience-item {
+  position: relative;
+  padding: 1.5rem;
+  background: var(--section-bg);
+  box-shadow: var(--pixel-shadow);
+  border: var(--pixel-border-width) solid var(--border-color);
+  border-radius: 0;
+  margin-top: 1.5rem;
+}
+
+body[data-theme='8-bit'] .experience-item::before {
+  content: '▲';
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: var(--border-color);
+  background: var(--background-color);
+  padding: 0 8px;
+}
+
+/* Dial selector enhancements */
+body[data-theme='8-bit'] dial-selector .knob {
+  box-shadow: var(--pixel-shadow);
+  border-radius: 0;
+  border: var(--pixel-border-width) solid var(--border-color);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+body[data-theme='8-bit'] dial-selector .indicator {
+  border-radius: 0;
+  width: 8px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+body[data-theme='8-bit'] dial-selector .dial-label {
+  font-size: 10px;
+  padding: 8px 12px;
+  transition: none;
+}
+
+body[data-theme='8-bit'] dial-selector .dial-label:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+body[data-theme='8-bit'] dial-selector .spoke-line {
+  stroke-width: 3px;
+}
+
+/* Print button as game start button */
+body[data-theme='8-bit'] .resume-header__printlink {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  position: relative;
+  transition: none;
+  border-radius: 0;
+  background: var(--accent-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+body[data-theme='8-bit'] .resume-header__printlink:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+  background: var(--accent-color);
+  color: var(--background-color);
+  filter: brightness(1.2);
+}
+
+body[data-theme='8-bit'] .resume-header__printlink::before {
+  content: '▶';
+  margin-right: 8px;
+}
+
+/* Pixelated hover effects */
+body[data-theme='8-bit'] a:hover {
+  transform: scale(1.02);
+  filter: brightness(1.2);
+  transition: none;
+}
+
+/* Header with pixel border */
+body[data-theme='8-bit'] .resume-header {
+  border: var(--pixel-border-width) solid var(--border-color);
+  box-shadow: var(--pixel-shadow);
+  padding: 1rem;
+  background: var(--header-bg);
+  border-radius: 0;
+}
+
+/* Typography enhancements with pixel text shadows */
+body[data-theme='8-bit'] h1,
+body[data-theme='8-bit'] h2,
+body[data-theme='8-bit'] h3 {
+  text-shadow: var(--text-shadow-pixel);
+  letter-spacing: 0.1em;
+}
+
+body[data-theme='8-bit'] h1.resume-header__name {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+body[data-theme='8-bit'] .resume-header__name-greeting,
+body[data-theme='8-bit'] .resume-header__name-small {
+  font-size: 0.8rem;
+}
+
+body[data-theme='8-bit'] .resume-header__role {
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+body[data-theme='8-bit'] h2.resume-section__title {
+  font-size: 0.8rem;
+  padding: 0.6rem;
+}
+
+body[data-theme='8-bit'] h3.experience-item__role,
+body[data-theme='8-bit'] h3.education-item__institution {
+  font-size: 0.75rem;
+}
+
+body[data-theme='8-bit'] p,
+body[data-theme='8-bit'] li {
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  font-size: 0.65rem;
+}
+
+body[data-theme='8-bit'] .resume-section__text {
+  font-size: 0.65rem;
+  line-height: 1.8;
+}
+
+body[data-theme='8-bit'] .experience-item__company,
+body[data-theme='8-bit'] .experience-item__tech {
+  font-size: 0.6rem;
+}
+
+body[data-theme='8-bit'] .experience-item__meta {
+  font-size: 0.55rem;
+}
+
+body[data-theme='8-bit'] .experience-item__bullets li {
+  font-size: 0.6rem;
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+}
+
+body[data-theme='8-bit'] .skills-grid__title {
+  font-size: 0.65rem;
+}
+
+body[data-theme='8-bit'] .skills-grid__items {
+  font-size: 0.6rem;
+  line-height: 1.6;
+}
+
+body[data-theme='8-bit'] .community-list__item,
+body[data-theme='8-bit'] .principles-list__item {
+  font-size: 0.6rem;
+  line-height: 1.7;
+}
+
+body[data-theme='8-bit'] .education-item {
+  font-size: 0.65rem;
+}
+
+body[data-theme='8-bit'] .resume-header__meta {
+  font-size: 0.6rem;
+}
+
+/* Pixelated bullet points */
+body[data-theme='8-bit'] .experience-item__bullets li::before {
+  content: '■';
+  font-size: 0.5rem;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+8-bit Theme - Responsive Adjustments
+=========================== */
+
+/* Reduce pixel effects on smaller screens */
+@media (max-width: 768px) {
+  body[data-theme='8-bit'] {
+    --pixel-size: 2px;
+    --pixel-border-width: 2px;
+    --pixel-shadow: 2px 0 0 var(--border-color), -2px 0 0 var(--border-color), 0 2px 0 var(--border-color),
+      0 -2px 0 var(--border-color), 2px 2px 0 var(--border-color), -2px -2px 0 var(--border-color),
+      2px -2px 0 var(--border-color), -2px 2px 0 var(--border-color);
+  }
+
+  body[data-theme='8-bit']::before {
+    opacity: 0.08;
+  }
+
+  body[data-theme='8-bit'] h1.resume-header__name {
+    font-size: 1.4rem;
+  }
+
+  body[data-theme='8-bit'] .resume-header__name-greeting,
+  body[data-theme='8-bit'] .resume-header__name-small {
+    font-size: 0.7rem;
+  }
+
+  body[data-theme='8-bit'] .resume-header__role {
+    font-size: 0.6rem;
+  }
+
+  body[data-theme='8-bit'] dial-selector .dial-label {
+    font-size: 8px;
+    padding: 6px 8px;
+  }
+}
+
+/* Further reduce on very small screens */
+@media (max-width: 500px) {
+  body[data-theme='8-bit'] {
+    --pixel-size: 1px;
+    --pixel-border-width: 2px;
+  }
+
+  body[data-theme='8-bit']::before {
+    opacity: 0.05;
+  }
+
+  body[data-theme='8-bit']::after {
+    display: none;
+  }
+
+  body[data-theme='8-bit'] h1.resume-header__name {
+    font-size: 1.1rem;
+  }
+
+  body[data-theme='8-bit'] dial-selector .dial-label {
+    font-size: 7px;
+    padding: 4px 6px;
+  }
+
+  body[data-theme='8-bit'] .resume-header__printlink {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
