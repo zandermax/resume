@@ -37,11 +37,11 @@ Responsive Layout
     padding: 15px;
     font-size: 13px;
     line-height: 22px;
-  }
 
-  .sticky-note input[type='checkbox'] {
-    width: 16px;
-    height: 16px;
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
@@ -100,10 +100,10 @@ Mobile layout
     padding: 12px;
     font-size: 12px;
     line-height: 20px;
-  }
 
-  .sticky-note input[type='checkbox'] {
-    width: 14px;
-    height: 14px;
+    input[type='checkbox'] {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

@@ -4,64 +4,64 @@ Windows XP Theme (Luna)
 
 /* Light Mode */
 :root[data-theme='xp'][data-mode='light'] {
-  --background-color: #5a8fcc;
-  --text-color: #000000;
-  --border-color: #0054e3;
-  --dial-color-ink: #0054e3;
-  --dial-color-selection: #73bc5a;
-  --dial-color-indicator: #73bc5a;
+  --background-color: var(--color-blue-steel);
+  --text-color: var(--color-black);
+  --border-color: var(--color-blue-dark);
+  --dial-color-ink: var(--color-blue-dark);
+  --dial-color-selection: var(--color-green-xp);
+  --dial-color-indicator: var(--color-green-xp);
   --dial-knob-background: linear-gradient(180deg, #f0f7ff 0%, #d0e8ff 50%, #8fc4ff 100%);
   --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
-  --color-hover: #73bc5a;
-  --background-image: linear-gradient(180deg, #5a8fcc 0%, #4682bf 50%, #3367a8 100%);
-  --link-color: #0054e3;
+  --color-hover: var(--color-green-xp);
+  --background-image: linear-gradient(180deg, var(--color-blue-steel) 0%, #4682bf 50%, #3367a8 100%);
+  --link-color: var(--color-blue-dark);
   --link-visited-color: #7f3fa8;
-  --section-bg: #ece9d8;
-  --header-bg: #0054e3;
-  --accent-color: #73bc5a;
-  --xp-window-border-top: #0054e3;
+  --section-bg: var(--color-beige);
+  --header-bg: var(--color-blue-dark);
+  --accent-color: var(--color-green-xp);
+  --xp-window-border-top: var(--color-blue-dark);
   --xp-window-border-bottom: #042c6e;
-  --xp-window-title-start: #0054e3;
+  --xp-window-title-start: var(--color-blue-dark);
   --xp-window-title-end: #0f8ae8;
-  --xp-button-face: #ece9d8;
-  --xp-button-highlight: #ffffff;
+  --xp-button-face: var(--color-beige);
+  --xp-button-highlight: var(--color-white);
   --xp-button-shadow: #aca899;
   --xp-button-dark-shadow: #716f64;
-  --xp-start-green: #73bc5a;
+  --xp-start-green: var(--color-green-xp);
   --xp-taskbar-blue: #245edc;
   --xp-text-shadow: none;
-  --dial-selector-label-color: #0054e3;
+  --dial-selector-label-color: var(--color-blue-dark);
 }
 
 /* Dark Mode */
 :root[data-theme='xp'][data-mode='dark'] {
   --background-color: #1f3a5f;
-  --text-color: #ffffff;
-  --border-color: #0054e3;
+  --text-color: var(--color-white);
+  --border-color: var(--color-blue-dark);
   --dial-color-ink: #8fc4ff;
-  --dial-color-selection: #73bc5a;
-  --dial-color-indicator: #73bc5a;
+  --dial-color-selection: var(--color-green-xp);
+  --dial-color-indicator: var(--color-green-xp);
   --dial-knob-background: linear-gradient(180deg, #4a6b99 0%, #2d4a6e 50%, #1f3a5f 100%);
   --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
-  --color-hover: #73bc5a;
+  --color-hover: var(--color-green-xp);
   --background-image: linear-gradient(180deg, #1f3a5f 0%, #163052 50%, #0d1f3a 100%);
   --link-color: #5ba3ff;
   --link-visited-color: #9f7fc8;
   --section-bg: #2d4a6e;
-  --header-bg: #0054e3;
-  --accent-color: #73bc5a;
-  --xp-window-border-top: #0054e3;
+  --header-bg: var(--color-blue-dark);
+  --accent-color: var(--color-green-xp);
+  --xp-window-border-top: var(--color-blue-dark);
   --xp-window-border-bottom: #042c6e;
-  --xp-window-title-start: #0054e3;
+  --xp-window-title-start: var(--color-blue-dark);
   --xp-window-title-end: #0f8ae8;
   --xp-button-face: #3d5a7f;
   --xp-button-highlight: #5a7fa8;
   --xp-button-shadow: #1f3a5f;
   --xp-button-dark-shadow: #0d1f3a;
-  --xp-start-green: #73bc5a;
+  --xp-start-green: var(--color-green-xp);
   --xp-taskbar-blue: #245edc;
   --xp-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  --dial-selector-label-color: #000000;
+  --dial-selector-label-color: var(--color-black);
 }
 
 /* Apply XP-style Tahoma font */

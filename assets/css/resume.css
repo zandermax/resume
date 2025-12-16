@@ -5,6 +5,9 @@ Resume Styles - Modular Import
 /* Core styles - Base styles and custom properties */
 @import url('./base.css');
 
+/* Utilities - Reusable patterns and helpers */
+@import url('./utilities.css');
+
 /* Layout - Main structure, header, sections */
 @import url('./layout.css');
 

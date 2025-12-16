@@ -5,12 +5,12 @@ Skeuomorphic Theme Effects
 /* Light Mode */
 :root[data-theme='skeuomorph'][data-mode='light'] {
   --background-color: #5c4033;
-  --text-color: #2c2416;
+  --text-color: var(--color-brown);
   --border-color: #8b7355;
-  --dial-color-ink: #2c2416;
+  --dial-color-ink: var(--color-brown);
   --dial-color-selection: #d4766a;
   --dial-color-indicator: #d4766a;
-  --dial-knob-background: radial-gradient(circle at 35% 35%, #e8e8e8 0%, #c0c0c0 30%, #a0a0a0 60%, #707070 100%);
+  --dial-knob-background: radial-gradient(circle at 35% 35%, #e8e8e8 0%, var(--color-silver) 30%, #a0a0a0 60%, #707070 100%);
   --color-outer-circle: #b8860b;
   --width-outer-circle: 3px;
   --color-inner-circle: #5c4033;
@@ -23,12 +23,12 @@ Skeuomorphic Theme Effects
   --background-image: repeating-linear-gradient(90deg, #6b4423 0px, #6b4423 2px, #5c3a1f 2px, #5c3a1f 4px);
   --link-color: #5d4037;
   --link-visited-color: #3e2723;
-  --section-bg: #f4f1e8;
-  --header-bg: #6d4c41;
+  --section-bg: var(--color-cream);
+  --header-bg: var(--color-tan);
   --accent-color: #8b4513;
-  --leather-color: #6d4c41;
-  --paper-color: #f4f1e8;
-  --ink-color: #2c2416;
+  --leather-color: var(--color-tan);
+  --paper-color: var(--color-cream);
+  --ink-color: var(--color-brown);
   --stitch-color: #d4a574;
   --stitch-spacing: 8px;
   --stitch-length: 4px;

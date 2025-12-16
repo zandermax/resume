@@ -3,7 +3,6 @@ Components
 =========================== */
 
 /* Skills Grid */
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -35,7 +34,6 @@ Components
 }
 
 /* Experience */
-
 .resume-section--experience {
   border-block-start: 0;
   padding-block-start: 0;
@@ -45,10 +43,10 @@ Components
   border-block-start: 2px solid var(--border-color);
   padding-block-start: 0.9rem;
   margin-block-start: 0.9rem;
-}
 
-.experience-item:first-of-type {
-  border-block-start: 3px solid var(--border-color);
+  &:first-of-type {
+    border-block-start: 3px solid var(--border-color);
+  }
 }
 
 .experience-item__header {
@@ -88,31 +86,29 @@ Components
 }
 
 /* bullets */
-
 .experience-item__bullets {
   list-style: none;
   padding-inline-start: 0;
   margin: 0;
-}
 
-.experience-item__bullets li {
-  position: relative;
-  padding-inline-start: 1.1rem;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  margin-block-end: 0.3rem;
-}
+  li {
+    position: relative;
+    padding-inline-start: 1.1rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-block-end: 0.3rem;
 
-.experience-item__bullets li::before {
-  content: '■';
-  position: absolute;
-  left: 0;
-  top: 0.1rem;
-  font-size: 0.6rem;
+    &::before {
+      content: '■';
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: 0.6rem;
+    }
+  }
 }
 
 /* Open Source & Community */
-
 .community-list {
   list-style: none;
   padding-inline-start: 0;
@@ -127,14 +123,13 @@ Components
   line-height: 1.5;
   padding: 0.6rem 0.75rem;
   border-block-start: 1px solid var(--border-color);
-}
 
-.community-list__item:first-child {
-  border-block-start: 0;
+  &:first-child {
+    border-block-start: 0;
+  }
 }
 
 /* Education */
-
 .education-item {
   border: 2px solid var(--border-color);
   padding: 0.75rem 0.85rem;
@@ -153,7 +148,6 @@ Components
 }
 
 /* Core Principles */
-
 .principles-list {
   list-style: none;
   padding-inline-start: 0;
@@ -169,10 +163,10 @@ Components
   line-height: 1.4;
   padding: 0.25rem 0;
   border-block-start: 1px dashed var(--border-color);
-}
 
-.principles-list__item:first-child {
-  border-block-start: 0;
+  &:first-child {
+    border-block-start: 0;
+  }
 }
 
 /* BUTTON: Printable CV link (visible on screen only) */
@@ -186,14 +180,11 @@ Components
   background: var(--background-color);
   color: var(--text-color);
   text-decoration: none;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   white-space: nowrap;
   cursor: pointer;
-
   margin-block: 1rem;
 
   &:hover {
@@ -251,32 +242,32 @@ Components
   color: #333;
   z-index: 1000;
   transition: transform 0.2s ease;
-}
 
-.sticky-note input[type='checkbox'] {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  cursor: default;
-  accent-color: #333;
-}
+  input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    cursor: default;
+    accent-color: #333;
+  }
 
-/* Sticky note "tape" at top */
-.sticky-note::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+  /* Sticky note "tape" at top */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 
-.sticky-note:hover {
-  transform: rotate(0deg) scale(1.02);
+  &:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
 }
 
 /* Show sticky note only in skeuomorph theme */

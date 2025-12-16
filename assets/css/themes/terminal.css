@@ -4,50 +4,50 @@ Terminal Theme (1993 CLI-inspired)
 
 /* Light Mode */
 :root[data-theme='terminal'][data-mode='light'] {
-  --background-color: #5555AA;
-  --text-color: #000000;
-  --border-color: #808080;
-  --dial-color-ink: #000000;
-  --dial-color-selection: #FFFF00;
-  --dial-color-indicator: #FFFF00;
-  --dial-knob-background: #C0C0C0;
-  --font-family: "Courier New", "Lucida Console", monospace;
-  --color-hover: #FFFF00;
+  --background-color: var(--color-blue-sky);
+  --text-color: var(--color-black);
+  --border-color: var(--color-gray-medium);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-yellow);
+  --dial-color-indicator: var(--color-yellow);
+  --dial-knob-background: var(--color-silver);
+  --font-family: 'Courier New', 'Lucida Console', monospace;
+  --color-hover: var(--color-yellow);
   --background-image: none;
-  --link-color: #FFFF00;
-  --link-visited-color: #00FFFF;
-  --section-bg: #C0C0C0;
-  --header-bg: #AAAAAA;
-  --accent-color: #FFFF00;
-  --terminal-border-light: #FFFFFF;
-  --terminal-border-dark: #000000;
-  --terminal-window-bg: #C0C0C0;
-  --terminal-title-bg: #000080;
-  --terminal-button-bg: #C0C0C0;
+  --link-color: var(--color-yellow);
+  --link-visited-color: var(--color-cyan);
+  --section-bg: var(--color-silver);
+  --header-bg: var(--color-gray-light);
+  --accent-color: var(--color-yellow);
+  --terminal-border-light: var(--color-white);
+  --terminal-border-dark: var(--color-black);
+  --terminal-window-bg: var(--color-silver);
+  --terminal-title-bg: var(--color-blue-navy);
+  --terminal-button-bg: var(--color-silver);
   --terminal-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* Dark Mode */
 :root[data-theme='terminal'][data-mode='dark'] {
-  --background-color: #0000AA;
-  --text-color: #FFFFFF;
-  --border-color: #808080;
-  --dial-color-ink: #AAAAAA;
-  --dial-color-selection: #00FFFF;
-  --dial-color-indicator: #00FFFF;
+  --background-color: var(--color-blue-navy);
+  --text-color: var(--color-white);
+  --border-color: var(--color-gray-medium);
+  --dial-color-ink: var(--color-gray-light);
+  --dial-color-selection: var(--color-cyan);
+  --dial-color-indicator: var(--color-cyan);
   --dial-knob-background: #555555;
-  --font-family: "Courier New", "Lucida Console", monospace;
-  --color-hover: #00FFFF;
+  --font-family: 'Courier New', 'Lucida Console', monospace;
+  --color-hover: var(--color-cyan);
   --background-image: none;
-  --link-color: #00FFFF;
-  --link-visited-color: #FFFF00;
-  --section-bg: #000080;
-  --header-bg: #000080;
-  --accent-color: #00FFFF;
-  --terminal-border-light: #5555FF;
+  --link-color: var(--color-cyan);
+  --link-visited-color: var(--color-yellow);
+  --section-bg: var(--color-blue-navy);
+  --header-bg: var(--color-blue-navy);
+  --accent-color: var(--color-cyan);
+  --terminal-border-light: #5555ff;
   --terminal-border-dark: #000033;
-  --terminal-window-bg: #000080;
-  --terminal-title-bg: #0000AA;
+  --terminal-window-bg: var(--color-blue-navy);
+  --terminal-title-bg: var(--color-blue-navy);
   --terminal-button-bg: #333388;
   --terminal-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
@@ -55,333 +55,323 @@ Terminal Theme (1993 CLI-inspired)
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
   font-family: var(--font-family);
-}
 
-/* Main container with 3D terminal window effect */
-body[data-theme='terminal'] .resume__main {
-  border: 0;
-  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
-    inset -2px -2px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 0;
-  background: var(--terminal-window-bg);
-  padding: 2rem;
-}
-
-/* Terminal-style 3D borders for sections */
-body[data-theme='terminal'] .resume-section__title {
-  border: 0;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
-    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-  border-radius: 0;
-  padding: 0.5rem 0.75rem;
-  background: var(--terminal-button-bg);
-  margin-bottom: 1rem;
-}
-
-/* Terminal window border for skills grid */
-body[data-theme='terminal'] .skills-grid {
-  border: 0;
-  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
-    inset -2px -2px 0 var(--terminal-border-light, #ffffff);
-  border-radius: 0;
-  background: var(--terminal-window-bg);
-  padding: 1rem;
-}
-
-body[data-theme='terminal'] .skills-grid__group {
-  border: 0;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000);
-  background: var(--section-bg);
-  border-radius: 0;
-  padding: 0.75rem;
-}
-
-/* Tech badges as terminal buttons */
-body[data-theme='terminal'] .experience-item__tech {
-  border: 0;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000);
-  border-radius: 0;
-  background: var(--terminal-button-bg);
-  color: var(--text-color);
-  font-weight: normal;
-  padding: 0.35rem 0.5rem;
-}
-
-/* List containers with terminal window style */
-body[data-theme='terminal'] .community-list,
-body[data-theme='terminal'] .principles-list {
-  border: 0;
-  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
-    inset -2px -2px 0 var(--terminal-border-light, #ffffff);
-  border-radius: 0;
-  background: var(--terminal-window-bg);
-}
-
-/* Education box with terminal style */
-body[data-theme='terminal'] .education-item {
-  border: 0;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000);
-  border-radius: 0;
-  background: var(--section-bg);
-  padding: 1rem;
-}
-
-/* Experience items as terminal panels */
-body[data-theme='terminal'] .experience-item {
-  position: relative;
-  padding: 1.25rem;
-  background: var(--section-bg);
-  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
-    inset -2px -2px 0 var(--terminal-border-dark, #000000);
-  border: 0;
-  border-radius: 0;
-  margin-top: 1.25rem;
-}
-
-/* Dial selector enhancements with CLI-style knob */
-body[data-theme='terminal'] dial-selector .knob {
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 0;
-  border: 0;
-  /* Octagonal clip-path to look like a CLI GUI element */
-  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
-  background: var(--dial-knob-background);
-}
-
-body[data-theme='terminal'] dial-selector .indicator {
-  border-radius: 0;
-  width: 10px;
-  box-shadow: none;
-  background: var(--dial-color-indicator);
-}
-
-body[data-theme='terminal'] dial-selector .dial-label {
-  font-size: 0.85rem;
-  padding: 0.4rem 0.8rem;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-body[data-theme='terminal'] dial-selector .dial-label:hover {
-  background: var(--terminal-button-bg);
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000);
-}
-
-body[data-theme='terminal'] dial-selector .dial-label.active {
-  background: var(--terminal-title-bg);
-  color: var(--dial-color-selection);
-  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
-    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-}
-
-body[data-theme='terminal'] dial-selector .spoke-line {
-  stroke-width: 2px;
-}
-
-/* Print button as terminal button */
-body[data-theme='terminal'] .resume-header__printlink {
-  border: 0;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-    inset -1px -1px 0 var(--terminal-border-dark, #000000), 1px 1px 3px rgba(0, 0, 0, 0.3);
-  position: relative;
-  transition: box-shadow 0.1s ease, transform 0.1s ease;
-  border-radius: 0;
-  background: var(--terminal-button-bg);
-  color: var(--text-color);
-  font-weight: normal;
-}
-
-body[data-theme='terminal'] .resume-header__printlink:hover {
-  transform: none;
-  box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
-    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-  background: var(--terminal-button-bg);
-  color: var(--text-color);
-}
-
-body[data-theme='terminal'] .resume-header__printlink:active {
-  box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
-    inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-  transform: translate(1px, 1px);
-}
-
-body[data-theme='terminal'] .resume-header__printlink::before {
-  content: '[';
-  margin-right: 4px;
-}
-
-body[data-theme='terminal'] .resume-header__printlink::after {
-  content: ']';
-  margin-left: 4px;
-}
-
-/* Terminal link styling */
-body[data-theme='terminal'] a {
-  text-decoration: underline;
-  color: var(--link-color);
-}
-
-body[data-theme='terminal'] a:hover {
-  background: var(--accent-color);
-  color: var(--background-color);
-  text-decoration: none;
-}
-
-/* Header with terminal window style */
-body[data-theme='terminal'] .resume-header {
-  border: 0;
-  box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
-    inset -2px -2px 0 var(--terminal-border-dark, #000000);
-  padding: 1.25rem;
-  background: var(--header-bg);
-  border-radius: 0;
-  margin-bottom: 1.5rem;
-}
-
-/* Typography enhancements */
-body[data-theme='terminal'] h1,
-body[data-theme='terminal'] h2,
-body[data-theme='terminal'] h3 {
-  text-shadow: none;
-  letter-spacing: 0.05em;
-}
-
-body[data-theme='terminal'] h1.resume-header__name {
-  font-size: 2.5rem;
-  line-height: 1.3;
-  border-color: var(--terminal-border-dark);
-}
-
-body[data-theme='terminal'] .resume-header__name-greeting,
-body[data-theme='terminal'] .resume-header__name-small {
-  font-size: 1.05rem;
-}
-
-body[data-theme='terminal'] .resume-header__role {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-body[data-theme='terminal'] h2.resume-section__title {
-  font-size: 1.1rem;
-  padding: 0.5rem 0.75rem;
-  text-transform: uppercase;
-}
-
-body[data-theme='terminal'] h3.experience-item__role,
-body[data-theme='terminal'] h3.education-item__institution {
-  font-size: 1.05rem;
-}
-
-body[data-theme='terminal'] p,
-body[data-theme='terminal'] li {
-  line-height: 1.6;
-  letter-spacing: 0;
-  font-size: 0.95rem;
-}
-
-body[data-theme='terminal'] .resume-section__text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-body[data-theme='terminal'] .experience-item__company {
-  font-size: 0.9rem;
-}
-
-body[data-theme='terminal'] .experience-item__tech {
-  font-size: 0.85rem;
-}
-
-body[data-theme='terminal'] .experience-item__meta {
-  font-size: 0.85rem;
-}
-
-body[data-theme='terminal'] .experience-item__bullets li {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-body[data-theme='terminal'] .skills-grid__title {
-  font-size: 0.9rem;
-}
-
-body[data-theme='terminal'] .skills-grid__items {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-body[data-theme='terminal'] .community-list__item,
-body[data-theme='terminal'] .principles-list__item {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-body[data-theme='terminal'] .education-item {
-  font-size: 0.95rem;
-}
-
-body[data-theme='terminal'] .resume-header__meta {
-  font-size: 0.9rem;
-}
-
-/* Terminal-style bullet points */
-body[data-theme='terminal'] .experience-item__bullets li::before {
-  content: '▪';
-  font-size: 0.7rem;
-  text-shadow: none;
-}
-
-/* ===========================
-Terminal Theme - Responsive Adjustments
-=========================== */
-
-@media (max-width: 768px) {
-  body[data-theme='terminal'] .resume__main {
-    padding: 1.5rem;
+  /* Main container with 3D terminal window effect */
+  .resume__main {
+    border: 0;
+    box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+      inset -2px -2px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    background: var(--terminal-window-bg);
+    padding: 2rem;
   }
 
-  body[data-theme='terminal'] h1.resume-header__name {
-    font-size: 2.1rem;
+  /* Terminal-style 3D borders for sections */
+  .resume-section__title {
+    border: 0;
+    box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+      inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+    border-radius: 0;
+    padding: 0.5rem 0.75rem;
+    background: var(--terminal-button-bg);
+    margin-bottom: 1rem;
   }
 
-  body[data-theme='terminal'] .resume-header__name-greeting,
-  body[data-theme='terminal'] .resume-header__name-small {
+  /* Terminal window border for skills grid */
+  .skills-grid {
+    border: 0;
+    box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+      inset -2px -2px 0 var(--terminal-border-light, #ffffff);
+    border-radius: 0;
+    background: var(--terminal-window-bg);
+    padding: 1rem;
+
+    &__group {
+      border: 0;
+      box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+        inset -1px -1px 0 var(--terminal-border-dark, #000000);
+      background: var(--section-bg);
+      border-radius: 0;
+      padding: 0.75rem;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+    }
+
+    &__items {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Tech badges as terminal buttons */
+  .experience-item__tech {
+    border: 0;
+    box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+      inset -1px -1px 0 var(--terminal-border-dark, #000000);
+    border-radius: 0;
+    background: var(--terminal-button-bg);
+    color: var(--text-color);
+    font-weight: normal;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* List containers with terminal window style */
+  .community-list,
+  .principles-list {
+    border: 0;
+    box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+      inset -2px -2px 0 var(--terminal-border-light, #ffffff);
+    border-radius: 0;
+    background: var(--terminal-window-bg);
+  }
+
+  .community-list__item,
+  .principles-list__item {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Education box with terminal style */
+  .education-item {
+    border: 0;
+    box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+      inset -1px -1px 0 var(--terminal-border-dark, #000000);
+    border-radius: 0;
+    background: var(--section-bg);
+    padding: 1rem;
     font-size: 0.95rem;
   }
 
-  body[data-theme='terminal'] .resume-header__role {
-    font-size: 0.9rem;
+  /* Experience items as terminal panels */
+  .experience-item {
+    position: relative;
+    padding: 1.25rem;
+    background: var(--section-bg);
+    box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+      inset -2px -2px 0 var(--terminal-border-dark, #000000);
+    border: 0;
+    border-radius: 0;
+    margin-top: 1.25rem;
+
+    &__company {
+      font-size: 0.9rem;
+    }
+
+    &__meta {
+      font-size: 0.85rem;
+    }
+
+    &__bullets li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+
+      &::before {
+        content: '▪';
+        font-size: 0.7rem;
+        text-shadow: none;
+      }
+    }
   }
 
-  body[data-theme='terminal'] dial-selector .dial-label {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.65rem;
+  /* Header with terminal window style */
+  .resume-header {
+    border: 0;
+    box-shadow: inset 2px 2px 0 var(--terminal-border-light, #ffffff),
+      inset -2px -2px 0 var(--terminal-border-dark, #000000);
+    padding: 1.25rem;
+    background: var(--header-bg);
+    border-radius: 0;
+    margin-bottom: 1.5rem;
+
+    &__meta {
+      font-size: 0.9rem;
+    }
+
+    &__printlink {
+      border: 0;
+      box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+        inset -1px -1px 0 var(--terminal-border-dark, #000000), 1px 1px 3px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: box-shadow 0.1s ease, transform 0.1s ease;
+      border-radius: 0;
+      background: var(--terminal-button-bg);
+      color: var(--text-color);
+      font-weight: normal;
+
+      &::before {
+        content: '[';
+        margin-right: 4px;
+      }
+
+      &::after {
+        content: ']';
+        margin-left: 4px;
+      }
+
+      &:hover {
+        transform: none;
+        box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+          inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+        background: var(--terminal-button-bg);
+        color: var(--text-color);
+      }
+
+      &:active {
+        box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
+          inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+        transform: translate(1px, 1px);
+      }
+    }
+  }
+
+  /* Dial selector enhancements with CLI-style knob */
+  dial-selector {
+    .knob {
+      box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+        inset -1px -1px 0 var(--terminal-border-dark, #000000), 2px 2px 4px rgba(0, 0, 0, 0.3);
+      border-radius: 0;
+      border: 0;
+      /* Octagonal clip-path to look like a CLI GUI element */
+      clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+      background: var(--dial-knob-background);
+    }
+
+    .indicator {
+      border-radius: 0;
+      width: 10px;
+      box-shadow: none;
+      background: var(--dial-color-indicator);
+    }
+
+    .dial-label {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      transition: background 0.15s ease, color 0.15s ease;
+
+      &:hover {
+        background: var(--terminal-button-bg);
+        box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+          inset -1px -1px 0 var(--terminal-border-dark, #000000);
+      }
+
+      &.active {
+        background: var(--terminal-title-bg);
+        color: var(--dial-color-selection);
+        box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
+          inset -1px -1px 0 var(--terminal-border-light, #ffffff);
+      }
+    }
+
+    .spoke-line {
+      stroke-width: 2px;
+    }
+  }
+
+  /* Terminal link styling */
+  a {
+    text-decoration: underline;
+    color: var(--link-color);
+
+    &:hover {
+      background: var(--accent-color);
+      color: var(--background-color);
+      text-decoration: none;
+    }
+  }
+
+  /* Typography enhancements */
+  h1,
+  h2,
+  h3 {
+    text-shadow: none;
+    letter-spacing: 0.05em;
+  }
+
+  h1.resume-header__name {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    border-color: var(--terminal-border-dark);
+  }
+
+  .resume-header__name-greeting,
+  .resume-header__name-small {
+    font-size: 1.05rem;
+  }
+
+  .resume-header__role {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  h2.resume-section__title {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+    text-transform: uppercase;
+  }
+
+  h3.experience-item__role,
+  h3.education-item__institution {
+    font-size: 1.05rem;
+  }
+
+  p,
+  li {
+    line-height: 1.6;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+  }
+
+  .resume-section__text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .resume__main {
+      padding: 1.5rem;
+    }
+
+    h1.resume-header__name {
+      font-size: 2.1rem;
+    }
+
+    .resume-header__name-greeting,
+    .resume-header__name-small {
+      font-size: 0.95rem;
+    }
+
+    .resume-header__role {
+      font-size: 0.9rem;
+    }
+
+    dial-selector .dial-label {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.65rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .resume__main {
+      padding: 1rem;
+    }
+
+    h1.resume-header__name {
+      font-size: 1.7rem;
+    }
+
+    dial-selector .dial-label {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.55rem;
+    }
+
+    .resume-header__printlink {
+      font-size: 0.7rem;
+      padding: 0.45rem 0.85rem;
+    }
   }
 }
-
-@media (max-width: 500px) {
-  body[data-theme='terminal'] .resume__main {
-    padding: 1rem;
-  }
-
-  body[data-theme='terminal'] h1.resume-header__name {
-    font-size: 1.7rem;
-  }
-
-  body[data-theme='terminal'] dial-selector .dial-label {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.55rem;
-  }
-
-  body[data-theme='terminal'] .resume-header__printlink {
-    font-size: 0.7rem;
-    padding: 0.45rem 0.85rem;
-  }
-}
-

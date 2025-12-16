@@ -4,46 +4,46 @@
 
 /* Light Mode */
 :root[data-theme='glitch'][data-mode='light'] {
-  --background-color: #00ffff;
-  --text-color: #ff00ff;
-  --border-color: #ff00ff;
-  --dial-color-ink: #ff00ff;
-  --dial-color-selection: #ffff00;
-  --dial-color-indicator: #ffff00;
-  --dial-knob-background: #00ff00;
+  --background-color: var(--color-cyan);
+  --text-color: var(--color-magenta);
+  --border-color: var(--color-magenta);
+  --dial-color-ink: var(--color-magenta);
+  --dial-color-selection: var(--color-yellow);
+  --dial-color-indicator: var(--color-yellow);
+  --dial-knob-background: var(--color-green);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: #ff0000;
+  --color-hover: var(--color-red);
   --background-image: none;
   --link-color: #ff1493;
-  --link-visited-color: #00ff00;
+  --link-visited-color: var(--color-green);
   --section-bg: #ccff00;
-  --header-bg: #ff00ff;
-  --accent-color: #ff6600;
-  --glitch-primary: #ff00ff;
-  --glitch-secondary: #00ffff;
-  --glitch-tertiary: #ffff00;
+  --header-bg: var(--color-magenta);
+  --accent-color: var(--color-orange-bright);
+  --glitch-primary: var(--color-magenta);
+  --glitch-secondary: var(--color-cyan);
+  --glitch-tertiary: var(--color-yellow);
 }
 
 /* Dark Mode */
 :root[data-theme='glitch'][data-mode='dark'] {
   --background-color: #1a0033;
   --text-color: #ccff00;
-  --border-color: #ff6600;
+  --border-color: var(--color-orange-bright);
   --dial-color-ink: #ccff00;
-  --dial-color-selection: #ff00ff;
-  --dial-color-indicator: #ff00ff;
+  --dial-color-selection: var(--color-magenta);
+  --dial-color-indicator: var(--color-magenta);
   --dial-knob-background: #660066;
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: #00ffff;
+  --color-hover: var(--color-cyan);
   --background-image: none;
-  --link-color: #00ffff;
+  --link-color: var(--color-cyan);
   --link-visited-color: #ff1493;
   --section-bg: #220044;
   --header-bg: #330055;
-  --accent-color: #ff6600;
+  --accent-color: var(--color-orange-bright);
   --glitch-primary: #ccff00;
-  --glitch-secondary: #ff00ff;
-  --glitch-tertiary: #ff6600;
+  --glitch-secondary: var(--color-magenta);
+  --glitch-tertiary: var(--color-orange-bright);
 }
 
 /* ===========================

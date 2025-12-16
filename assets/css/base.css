@@ -3,22 +3,25 @@ Custom Properties
 =========================== */
 :root {
   /* Note: not necessarily used when printing */
-  --border-color: #000000;
-  --text-color: #000000;
-  --background-color: #ffffff;
+  --border-color: var(--color-black);
+  --text-color: var(--color-black);
+  --background-color: var(--color-white);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
   /* Dial-selector custom properties */
-  --dial-color-ink: #000000;
-  --dial-color-selection: #f13b3b;
-  --dial-color-indicator: #f13b3b;
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-red-crimson);
+  --dial-color-indicator: var(--color-red-crimson);
   --dial-knob-background: #11161c;
+
   /* Theme-specific properties */
   --background-image: none;
-  --link-color: #000000;
-  --link-visited-color: #551a8b;
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-purple-link);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: #f13b3b;
+  --accent-color: var(--color-red-crimson);
+
   /* Skeuomorphic theme properties */
   --leather-color: #6d4c41;
   --paper-color: #f4f1e8;
@@ -56,32 +59,31 @@ body.resume {
   background-image: var(--background-image);
   -webkit-font-smoothing: antialiased;
   position: relative;
-}
 
-/* Wood grain desk effect for skeuomorphic theme */
-body.resume::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--wood-grain),
-    linear-gradient(180deg, var(--wood-color-dark) 0%, var(--wood-color-light) 50%, var(--wood-color-dark) 100%);
-  box-shadow: var(--desk-shadow);
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  /* Wood grain desk effect for skeuomorphic theme */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--wood-grain),
+      linear-gradient(180deg, var(--wood-color-dark) 0%, var(--wood-color-light) 50%, var(--wood-color-dark) 100%);
+    box-shadow: var(--desk-shadow);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-/* Show wood grain only in skeuomorph theme */
-body.resume[data-theme='skeuomorph']::before {
-  opacity: 1;
+  /* Show wood grain only in skeuomorph theme */
+  &[data-theme='skeuomorph']::before {
+    opacity: 1;
+  }
 }
 
 /* Reset margins for common elements */
-
 h1,
 h2,
 h3,
@@ -91,7 +93,6 @@ p {
 }
 
 /* Headers */
-
 .resume-header__name-wrapper {
   display: flex;
   flex-direction: column;
@@ -152,8 +153,8 @@ h3.education-item__institution {
 /* Link colors using custom properties */
 a {
   color: var(--link-color, inherit);
-}
 
-a:visited {
-  color: var(--link-visited-color, inherit);
+  &:visited {
+    color: var(--link-visited-color, inherit);
+  }
 }

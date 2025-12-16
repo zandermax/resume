@@ -9,52 +9,52 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --text-color: #1a1a1a;
   --border-color: #e1e8ed;
   --dial-color-ink: #1a1a1a;
-  --dial-color-selection: #0066cc;
-  --dial-color-indicator: #0066cc;
-  --dial-knob-background: #ffffff;
-  --font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --color-hover: #0066cc;
+  --dial-color-selection: var(--color-blue-dashboard);
+  --dial-color-indicator: var(--color-blue-dashboard);
+  --dial-knob-background: var(--color-white);
+  --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --color-hover: var(--color-blue-dashboard);
   --background-image: none;
-  --link-color: #0066cc;
+  --link-color: var(--color-blue-dashboard);
   --link-visited-color: #004499;
-  --section-bg: #ffffff;
-  --header-bg: #ffffff;
-  --accent-color: #0066cc;
-  --panel-bg: #ffffff;
+  --section-bg: var(--color-white);
+  --header-bg: var(--color-white);
+  --accent-color: var(--color-blue-dashboard);
+  --panel-bg: var(--color-white);
   --panel-border: #e1e8ed;
-  --status-green: #28a745;
-  --status-yellow: #ffc107;
-  --status-red: #dc3545;
-  --metric-highlight: #0066cc;
+  --status-green: var(--color-green-success);
+  --status-yellow: var(--color-yellow-bright);
+  --status-red: var(--color-red-dark);
+  --metric-highlight: var(--color-blue-dashboard);
   --panel-shadow: rgba(0, 0, 0, 0.08);
-  --mono-font: "SF Mono", "Monaco", "Courier New", monospace;
+  --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 }
 
 /* Dark Mode */
 :root[data-theme='dashboard'][data-mode='dark'] {
-  --background-color: #0d1117;
+  --background-color: var(--color-dark-surface);
   --text-color: #e6edf3;
-  --border-color: #30363d;
+  --border-color: var(--color-dark-border);
   --dial-color-ink: #e6edf3;
-  --dial-color-selection: #58a6ff;
-  --dial-color-indicator: #58a6ff;
+  --dial-color-selection: var(--color-blue-bright);
+  --dial-color-indicator: var(--color-blue-bright);
   --dial-knob-background: #161b22;
-  --font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --color-hover: #58a6ff;
+  --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --color-hover: var(--color-blue-bright);
   --background-image: none;
-  --link-color: #58a6ff;
+  --link-color: var(--color-blue-bright);
   --link-visited-color: #79c0ff;
   --section-bg: #161b22;
   --header-bg: #161b22;
-  --accent-color: #58a6ff;
+  --accent-color: var(--color-blue-bright);
   --panel-bg: #161b22;
-  --panel-border: #30363d;
+  --panel-border: var(--color-dark-border);
   --status-green: #3fb950;
   --status-yellow: #d29922;
   --status-red: #f85149;
-  --metric-highlight: #58a6ff;
+  --metric-highlight: var(--color-blue-bright);
   --panel-shadow: rgba(0, 0, 0, 0.3);
-  --mono-font: "SF Mono", "Monaco", "Courier New", monospace;
+  --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 }
 
 /* Base typography - system fonts for dashboard aesthetic */

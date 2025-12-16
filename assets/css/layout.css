@@ -3,7 +3,6 @@ Layout and Structure
 =========================== */
 
 /* Custom dial selector styles */
-
 .resume-header__dial-selector {
   display: flex;
   flex-direction: column;
@@ -12,7 +11,6 @@ Layout and Structure
 }
 
 /* Main layout */
-
 .resume__main {
   max-width: 960px;
   margin: 2rem auto;
@@ -23,44 +21,46 @@ Layout and Structure
   box-sizing: border-box;
   box-shadow: var(--paper-shadow);
   position: relative;
-}
 
-/* Stitched leather border effect for skeu theme */
-.resume__main::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: -12px;
-  background: var(--leather-color);
-  background-image: var(--leather-texture);
-  border-radius: 4px;
-  z-index: -1;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  /* Stitched leather border effect for skeu theme */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: var(--leather-color);
+    background-image: var(--leather-texture);
+    border-radius: 4px;
+    z-index: -1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-/* Stitching effect */
-.resume__main::after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border: 2px dashed var(--stitch-color);
-  border-radius: 2px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  /* Stitching effect */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px dashed var(--stitch-color);
+    border-radius: 2px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 }
 
 /* Show leather border and stitching only in skeuomorph theme */
-body[data-theme='skeuomorph'] .resume__main::before,
-body[data-theme='skeuomorph'] .resume__main::after {
-  opacity: 1;
+body[data-theme='skeuomorph'] .resume__main {
+  &::before,
+  &::after {
+    opacity: 1;
+  }
 }
 
 /* ===========================
@@ -97,10 +97,10 @@ hgroup.resume-header__name-wrapper {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-}
 
-.resume-header__link:hover {
-  text-decoration-style: wavy;
+  &:hover {
+    text-decoration-style: wavy;
+  }
 }
 
 /* ===========================
@@ -126,4 +126,3 @@ Sections
     margin-block-end: 0.9rem;
   }
 }
-

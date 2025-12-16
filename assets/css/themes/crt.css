@@ -5,39 +5,39 @@
 /* Light Mode */
 :root[data-theme='crt'][data-mode='light'] {
   --background-color: #2d2d2d;
-  --text-color: #33ff33;
-  --border-color: #33ff33;
-  --dial-color-ink: #33ff33;
-  --dial-color-selection: #33ff33;
-  --dial-color-indicator: #33ff33;
+  --text-color: var(--color-green-terminal);
+  --border-color: var(--color-green-terminal);
+  --dial-color-ink: var(--color-green-terminal);
+  --dial-color-selection: var(--color-green-terminal);
+  --dial-color-indicator: var(--color-green-terminal);
   --dial-knob-background: #1a1a1a;
   --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
-  --color-hover: #33ff33;
+  --color-hover: var(--color-green-terminal);
   --background-image: none;
-  --link-color: #33ff33;
-  --link-visited-color: #33ff33;
+  --link-color: var(--color-green-terminal);
+  --link-visited-color: var(--color-green-terminal);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: #33ff33;
+  --accent-color: var(--color-green-terminal);
 }
 
 /* Dark Mode */
 :root[data-theme='crt'][data-mode='dark'] {
-  --background-color: #000000;
-  --text-color: #00ff00;
-  --border-color: #00ff00;
-  --dial-color-ink: #00ff00;
-  --dial-color-selection: #00ff00;
-  --dial-color-indicator: #00ff00;
+  --background-color: var(--color-black);
+  --text-color: var(--color-green);
+  --border-color: var(--color-green);
+  --dial-color-ink: var(--color-green);
+  --dial-color-selection: var(--color-green);
+  --dial-color-indicator: var(--color-green);
   --dial-knob-background: #001100;
   --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
-  --color-hover: #00ff00;
+  --color-hover: var(--color-green);
   --background-image: none;
-  --link-color: #00ff00;
-  --link-visited-color: #00ff00;
+  --link-color: var(--color-green);
+  --link-visited-color: var(--color-green);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: #00ff00;
+  --accent-color: var(--color-green);
 }
 
 /* Apply monospace terminal font */

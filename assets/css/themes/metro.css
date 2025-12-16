@@ -5,52 +5,52 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --border-color: #0078D7;
-  --dial-color-ink: #000000;
-  --dial-color-selection: #0078D7;
-  --dial-color-indicator: #0078D7;
-  --dial-knob-background: #F2F2F2;
-  --font-family: "Segoe UI", "Roboto", system-ui, -apple-system, sans-serif;
-  --color-hover: #0078D7;
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --border-color: var(--color-blue-metro);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-blue-metro);
+  --dial-color-indicator: var(--color-blue-metro);
+  --dial-knob-background: #f2f2f2;
+  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  --color-hover: var(--color-blue-metro);
   --background-image: none;
-  --link-color: #0078D7;
-  --link-visited-color: #E3008C;
-  --section-bg: #F2F2F2;
+  --link-color: var(--color-blue-metro);
+  --link-visited-color: #e3008c;
+  --section-bg: #f2f2f2;
   --header-bg: transparent;
-  --accent-color: #0078D7;
-  --metro-blue: #0078D7;
-  --metro-green: #00A300;
-  --metro-orange: #FF8C00;
-  --metro-magenta: #E3008C;
-  --metro-red: #E81123;
-  --metro-purple: #881798;
+  --accent-color: var(--color-blue-metro);
+  --metro-blue: var(--color-blue-metro);
+  --metro-green: #00a300;
+  --metro-orange: var(--color-orange);
+  --metro-magenta: #e3008c;
+  --metro-red: #e81123;
+  --metro-purple: var(--color-purple);
 }
 
 /* Dark Mode */
 :root[data-theme='metro'][data-mode='dark'] {
-  --background-color: #1E1E1E;
-  --text-color: #FFFFFF;
-  --border-color: #00BCF2;
-  --dial-color-ink: #FFFFFF;
-  --dial-color-selection: #00BCF2;
-  --dial-color-indicator: #00BCF2;
-  --dial-knob-background: #2D2D30;
-  --font-family: "Segoe UI", "Roboto", system-ui, -apple-system, sans-serif;
-  --color-hover: #00BCF2;
+  --background-color: #1e1e1e;
+  --text-color: var(--color-white);
+  --border-color: var(--color-cyan-bright);
+  --dial-color-ink: var(--color-white);
+  --dial-color-selection: var(--color-cyan-bright);
+  --dial-color-indicator: var(--color-cyan-bright);
+  --dial-knob-background: #2d2d30;
+  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  --color-hover: var(--color-cyan-bright);
   --background-image: none;
-  --link-color: #00BCF2;
-  --link-visited-color: #E3008C;
-  --section-bg: #2D2D30;
+  --link-color: var(--color-cyan-bright);
+  --link-visited-color: #e3008c;
+  --section-bg: #2d2d30;
   --header-bg: transparent;
-  --accent-color: #00BCF2;
-  --metro-blue: #00BCF2;
-  --metro-green: #00CC6A;
-  --metro-orange: #FFAA44;
-  --metro-magenta: #FF1A8C;
-  --metro-red: #FF4343;
-  --metro-purple: #B146C2;
+  --accent-color: var(--color-cyan-bright);
+  --metro-blue: var(--color-cyan-bright);
+  --metro-green: var(--color-green-bright);
+  --metro-orange: #ffaa44;
+  --metro-magenta: var(--color-magenta-bright);
+  --metro-red: #ff4343;
+  --metro-purple: #b146c2;
 }
 
 /* Typography-first, flat colors, zero skeuomorphism */
@@ -58,514 +58,479 @@ body[data-theme='metro'] {
   font-family: var(--font-family);
   font-weight: 400;
   letter-spacing: 0;
-}
 
-/* Clean main container - no shadows, sharp edges */
-body[data-theme='metro'] .resume__main {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: var(--background-color);
-  padding: 0;
-  position: relative;
-}
-
-/* SECTION TITLES - Bold colored bars (Metro live tiles aesthetic) */
-body[data-theme='metro'] .resume-section__title {
-  border: 0;
-  border-radius: 0;
-  padding: 1.25rem 2rem;
-  margin: 0;
-  background: var(--metro-blue);
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-  line-height: 1;
-  box-shadow: none;
-}
-
-/* Rotate through Metro colors for different sections */
-body[data-theme='metro'] .resume-section:nth-of-type(1) .resume-section__title {
-  background: var(--metro-blue);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(2) .resume-section__title {
-  background: var(--metro-green);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(3) .resume-section__title {
-  background: var(--metro-orange);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(4) .resume-section__title {
-  background: var(--metro-magenta);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(5) .resume-section__title {
-  background: var(--metro-purple);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(6) .resume-section__title {
-  background: var(--metro-red);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(7) .resume-section__title {
-  background: var(--metro-blue);
-}
-
-body[data-theme='metro'] .resume-section:nth-of-type(8) .resume-section__title {
-  background: var(--metro-green);
-}
-
-/* Skills grid - tile blocks */
-body[data-theme='metro'] .skills-grid {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  gap: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-body[data-theme='metro'] .skills-grid__group {
-  border: 0;
-  background: var(--section-bg);
-  padding: 1.5rem;
-  border-radius: 0;
-  margin: 0;
-  box-shadow: none;
-  transition: background-color 0.15s ease;
-}
-
-body[data-theme='metro'] .skills-grid__group:hover {
-  background: var(--metro-blue);
-}
-
-body[data-theme='metro'] .skills-grid__group:hover * {
-  color: #ffffff;
-}
-
-body[data-theme='metro'] .skills-grid__title {
-  border: 0;
-  border-bottom: 3px solid var(--accent-color);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-}
-
-/* Tech badges - flat labels */
-body[data-theme='metro'] .experience-item__tech {
-  border: 0;
-  border-radius: 0;
-  background: var(--metro-blue);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  box-shadow: none;
-  transition: background-color 0.15s ease;
-}
-
-body[data-theme='metro'] .experience-item__tech:hover {
-  background: var(--metro-orange);
-}
-
-/* Lists - clean, minimal styling */
-body[data-theme='metro'] .community-list,
-body[data-theme='metro'] .principles-list {
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  padding: 1.5rem 0;
-  box-shadow: none;
-}
-
-body[data-theme='metro'] .community-list__item,
-body[data-theme='metro'] .principles-list__item {
-  border: 0;
-  border-left: 4px solid var(--metro-blue);
-  padding: 1rem 0 1rem 1.5rem;
-  margin-bottom: 1rem;
-  background: var(--section-bg);
-  font-weight: 400;
-  line-height: 1.6;
-  transition: all 0.15s ease;
-}
-
-body[data-theme='metro'] .community-list__item:hover,
-body[data-theme='metro'] .principles-list__item:hover {
-  border-left-width: 8px;
-  padding-left: 1.25rem;
-}
-
-/* Alternate colors for list items */
-body[data-theme='metro'] .community-list__item:nth-child(2n),
-body[data-theme='metro'] .principles-list__item:nth-child(2n) {
-  border-left-color: var(--metro-green);
-}
-
-body[data-theme='metro'] .community-list__item:nth-child(3n),
-body[data-theme='metro'] .principles-list__item:nth-child(3n) {
-  border-left-color: var(--metro-orange);
-}
-
-body[data-theme='metro'] .community-list__item:nth-child(4n),
-body[data-theme='metro'] .principles-list__item:nth-child(4n) {
-  border-left-color: var(--metro-magenta);
-}
-
-/* Education - tile style */
-body[data-theme='metro'] .education-item {
-  border: 0;
-  border-left: 6px solid var(--metro-purple);
-  background: var(--section-bg);
-  padding: 2rem;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-}
-
-/* Experience items - clean tiles with accent bar */
-body[data-theme='metro'] .experience-item {
-  position: relative;
-  padding: 2rem;
-  background: var(--section-bg);
-  border: 0;
-  border-left: 6px solid var(--metro-blue);
-  border-radius: 0;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  box-shadow: none;
-  transition: border-left-width 0.15s ease;
-}
-
-body[data-theme='metro'] .experience-item:hover {
-  border-left-width: 12px;
-}
-
-/* Alternate colors for experience items */
-body[data-theme='metro'] .experience-item:nth-of-type(2n) {
-  border-left-color: var(--metro-green);
-}
-
-body[data-theme='metro'] .experience-item:nth-of-type(3n) {
-  border-left-color: var(--metro-orange);
-}
-
-body[data-theme='metro'] .experience-item:nth-of-type(4n) {
-  border-left-color: var(--metro-magenta);
-}
-
-body[data-theme='metro'] .experience-item:nth-of-type(5n) {
-  border-left-color: var(--metro-purple);
-}
-
-/* Header - bold, clean typography */
-body[data-theme='metro'] .resume-header {
-  border: 0;
-  border-bottom: 4px solid var(--metro-blue);
-  padding: 2rem;
-  background: transparent;
-  margin: 0 0 2rem 0;
-  box-shadow: none;
-}
-
-body[data-theme='metro'] h1.resume-header__name {
-  border: 0;
-  border-bottom: 0;
-  padding: 0;
-  margin-bottom: 1rem;
-  font-weight: 300;
-  font-size: 3.5rem;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: -0.02em;
-  color: var(--text-color);
-}
-
-body[data-theme='metro'] .resume-header__name-greeting {
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--metro-blue);
-}
-
-body[data-theme='metro'] .resume-header__name-small {
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--metro-blue);
-}
-
-body[data-theme='metro'] .resume-header__role {
-  font-weight: 400;
-  font-size: 1.2rem;
-  text-transform: none;
-  letter-spacing: 0;
-  color: var(--text-color);
-  margin-top: 0.5rem;
-}
-
-/* Flat links */
-body[data-theme='metro'] a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 2px solid var(--link-color);
-  transition: all 0.15s ease;
-  position: relative;
-}
-
-body[data-theme='metro'] a:hover {
-  background: var(--link-color);
-  color: #ffffff;
-  border-bottom-color: var(--link-color);
-}
-
-body[data-theme='metro'] a:visited {
-  color: var(--link-visited-color);
-  border-bottom-color: var(--link-visited-color);
-}
-
-body[data-theme='metro'] a:visited:hover {
-  background: var(--link-visited-color);
-  color: #ffffff;
-}
-
-/* Print button - large flat tile */
-body[data-theme='metro'] .resume-header__printlink {
-  border: 0;
-  border-radius: 0;
-  background: var(--metro-green);
-  color: #ffffff;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  box-shadow: none;
-  transition: background-color 0.15s ease;
-}
-
-body[data-theme='metro'] .resume-header__printlink:hover {
-  background: var(--metro-blue);
-  transform: none;
-  box-shadow: none;
-}
-
-body[data-theme='metro'] .resume-header__printlink:active {
-  transform: none;
-  box-shadow: none;
-  opacity: 0.8;
-}
-
-/* Dial selector - flat, minimal */
-body[data-theme='metro'] dial-selector .knob {
-  border-radius: 50%;
-  border: 0;
-  box-shadow: none;
-  background: var(--dial-knob-background);
-}
-
-body[data-theme='metro'] dial-selector .indicator {
-  border-radius: 0;
-  background: var(--accent-color);
-  box-shadow: none;
-  border: 0;
-  width: 4px;
-}
-
-body[data-theme='metro'] dial-selector .dial-label {
-  font-size: 0.85rem;
-  padding: 0.6rem 1rem;
-  border-radius: 0;
-  transition: all 0.15s ease;
-  background: transparent;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border: 0;
-}
-
-body[data-theme='metro'] dial-selector .dial-label:hover {
-  background: rgba(0, 120, 215, 0.15);
-  box-shadow: none;
-}
-
-/* Dark mode hover - use lighter blue tint */
-body[data-theme='metro'][data-mode='dark'] dial-selector .dial-label:hover {
-  background: rgba(0, 188, 242, 0.2);
-}
-
-body[data-theme='metro'] dial-selector .dial-label.active {
-  background: var(--accent-color);
-  color: #ffffff;
-  box-shadow: none;
-  font-weight: 600;
-}
-
-body[data-theme='metro'] dial-selector .spoke-line {
-  stroke-width: 2px;
-}
-
-/* Bullet points - simple squares */
-body[data-theme='metro'] .experience-item__bullets li::before {
-  content: '■';
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: var(--accent-color);
-}
-
-/* Dial selector housing - clean panel */
-body[data-theme='metro'] .resume-header__dial-selector {
-  padding: 1.5rem;
-  background: var(--section-bg);
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-}
-
-body[data-theme='metro'] .resume-header__dial-selector h3 {
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* Typography - clean, modern */
-body[data-theme='metro'] h2,
-body[data-theme='metro'] h3 {
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-body[data-theme='metro'] h3.experience-item__role,
-body[data-theme='metro'] h3.education-item__institution {
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: var(--text-color);
-}
-
-body[data-theme='metro'] .experience-item__company {
-  font-weight: 400;
-  font-size: 1rem;
-  text-transform: none;
-  color: var(--text-color);
-  letter-spacing: 0;
-}
-
-body[data-theme='metro'] p,
-body[data-theme='metro'] li {
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-/* Content padding */
-body[data-theme='metro'] .resume-header,
-body[data-theme='metro'] .resume-section {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-body[data-theme='metro'] .resume-section {
-  padding-top: 0;
-  padding-bottom: 2rem;
-  border-block-start: 3px solid var(--border-color);
-}
-
-/* Section spacing */
-body[data-theme='metro'] .resume-section {
-  margin-bottom: 0;
-}
-
-/* Sticky note - hide in metro theme (not flat design) */
-body[data-theme='metro'] .sticky-note {
-  display: none !important;
-}
-
-/* Nostalgia elements - hide in metro theme */
-body[data-theme='metro'] .nostalgia-elements {
-  display: none !important;
-}
-
-/* ===========================
-Metro 2012 Theme - Responsive Adjustments
-=========================== */
-
-@media (max-width: 768px) {
-  body[data-theme='metro'] h1.resume-header__name {
-    font-size: 2.5rem;
+  /* Clean main container - no shadows, sharp edges */
+  .resume__main {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--background-color);
+    padding: 0;
+    position: relative;
   }
 
-  body[data-theme='metro'] .resume-section__title {
-    font-size: 1.2rem;
-    padding: 1rem 1.5rem;
+  /* SECTION TITLES - Bold colored bars (Metro live tiles aesthetic) */
+  .resume-section {
+    padding-top: 0;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 0;
+    border-block-start: 3px solid var(--border-color);
+
+    &__title {
+      border: 0;
+      border-radius: 0;
+      padding: 1.25rem 2rem;
+      margin: 0;
+      background: var(--metro-blue);
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      box-shadow: none;
+    }
+
+    /* Rotate through Metro colors for different sections */
+    &:nth-of-type(1) .resume-section__title {
+      background: var(--metro-blue);
+    }
+    &:nth-of-type(2) .resume-section__title {
+      background: var(--metro-green);
+    }
+    &:nth-of-type(3) .resume-section__title {
+      background: var(--metro-orange);
+    }
+    &:nth-of-type(4) .resume-section__title {
+      background: var(--metro-magenta);
+    }
+    &:nth-of-type(5) .resume-section__title {
+      background: var(--metro-purple);
+    }
+    &:nth-of-type(6) .resume-section__title {
+      background: var(--metro-red);
+    }
+    &:nth-of-type(7) .resume-section__title {
+      background: var(--metro-blue);
+    }
+    &:nth-of-type(8) .resume-section__title {
+      background: var(--metro-green);
+    }
   }
 
-  body[data-theme='metro'] h3.experience-item__role,
-  body[data-theme='metro'] h3.education-item__institution {
-    font-size: 1.1rem;
+  /* Skills grid - tile blocks */
+  .skills-grid {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    gap: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    &__group {
+      border: 0;
+      background: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: none;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background: var(--metro-blue);
+
+        * {
+          color: #ffffff;
+        }
+      }
+    }
+
+    &__title {
+      border: 0;
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
   }
 
-  body[data-theme='metro'] dial-selector .dial-label {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.8rem;
+  /* Experience items - clean tiles with accent bar */
+  .experience-item {
+    position: relative;
+    padding: 2rem;
+    background: var(--section-bg);
+    border: 0;
+    border-left: 6px solid var(--metro-blue);
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+    transition: border-left-width 0.15s ease;
+
+    &:hover {
+      border-left-width: 12px;
+    }
+
+    /* Alternate colors for experience items */
+    &:nth-of-type(2n) {
+      border-left-color: var(--metro-green);
+    }
+    &:nth-of-type(3n) {
+      border-left-color: var(--metro-orange);
+    }
+    &:nth-of-type(4n) {
+      border-left-color: var(--metro-magenta);
+    }
+    &:nth-of-type(5n) {
+      border-left-color: var(--metro-purple);
+    }
+
+    &__tech {
+      border: 0;
+      border-radius: 0;
+      background: var(--metro-blue);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      box-shadow: none;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background: var(--metro-orange);
+      }
+    }
+
+    &__company {
+      font-weight: 400;
+      font-size: 1rem;
+      text-transform: none;
+      color: var(--text-color);
+      letter-spacing: 0;
+    }
+
+    &__bullets li::before {
+      content: '■';
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--accent-color);
+    }
   }
 
-  body[data-theme='metro'] .resume-header,
-  body[data-theme='metro'] .resume-section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  /* Lists - clean, minimal styling */
+  .community-list,
+  .principles-list {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 1.5rem 0;
+    box-shadow: none;
+  }
+
+  .community-list__item,
+  .principles-list__item {
+    border: 0;
+    border-left: 4px solid var(--metro-blue);
+    padding: 1rem 0 1rem 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--section-bg);
+    font-weight: 400;
+    line-height: 1.6;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-left-width: 8px;
+      padding-left: 1.25rem;
+    }
+
+    /* Alternate colors for list items */
+    &:nth-child(2n) {
+      border-left-color: var(--metro-green);
+    }
+    &:nth-child(3n) {
+      border-left-color: var(--metro-orange);
+    }
+    &:nth-child(4n) {
+      border-left-color: var(--metro-magenta);
+    }
+  }
+
+  /* Education - tile style */
+  .education-item {
+    border: 0;
+    border-left: 6px solid var(--metro-purple);
+    background: var(--section-bg);
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+  }
+
+  /* Header - bold, clean typography */
+  .resume-header {
+    border: 0;
+    border-bottom: 4px solid var(--metro-blue);
+    padding: 2rem;
+    background: transparent;
+    margin: 0 0 2rem 0;
+    box-shadow: none;
+
+    &__printlink {
+      border: 0;
+      border-radius: 0;
+      background: var(--metro-green);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      box-shadow: none;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background: var(--metro-blue);
+        transform: none;
+        box-shadow: none;
+      }
+
+      &:active {
+        transform: none;
+        box-shadow: none;
+        opacity: 0.8;
+      }
+    }
+
+    &__name-greeting,
+    &__name-small {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--metro-blue);
+    }
+
+    &__role {
+      font-weight: 400;
+      font-size: 1.2rem;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text-color);
+      margin-top: 0.5rem;
+    }
+  }
+
+  h1.resume-header__name {
+    border: 0;
+    border-bottom: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 3.5rem;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+  }
+
+  /* Flat links */
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--link-color);
+    transition: all 0.15s ease;
+    position: relative;
+
+    &:hover {
+      background: var(--link-color);
+      color: #ffffff;
+      border-bottom-color: var(--link-color);
+    }
+
+    &:visited {
+      color: var(--link-visited-color);
+      border-bottom-color: var(--link-visited-color);
+
+      &:hover {
+        background: var(--link-visited-color);
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* Dial selector - flat, minimal */
+  dial-selector {
+    .knob {
+      border-radius: 50%;
+      border: 0;
+      box-shadow: none;
+      background: var(--dial-knob-background);
+    }
+
+    .indicator {
+      border-radius: 0;
+      background: var(--accent-color);
+      box-shadow: none;
+      border: 0;
+      width: 4px;
+    }
+
+    .dial-label {
+      font-size: 0.85rem;
+      padding: 0.6rem 1rem;
+      border-radius: 0;
+      transition: all 0.15s ease;
+      background: transparent;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 0;
+
+      &:hover {
+        background: rgba(0, 120, 215, 0.15);
+        box-shadow: none;
+      }
+
+      &.active {
+        background: var(--accent-color);
+        color: #ffffff;
+        box-shadow: none;
+        font-weight: 600;
+      }
+    }
+
+    .spoke-line {
+      stroke-width: 2px;
+    }
+  }
+
+  /* Dial selector housing - clean panel */
+  .resume-header__dial-selector {
+    padding: 1.5rem;
+    background: var(--section-bg);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+
+    h3 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  /* Typography - clean, modern */
+  h2,
+  h3 {
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  h3.experience-item__role,
+  h3.education-item__institution {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+  }
+
+  p,
+  li {
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Sticky note - hide in metro theme (not flat design) */
+  .sticky-note {
+    display: none !important;
+  }
+
+  /* Nostalgia elements - hide in metro theme */
+  .nostalgia-elements {
+    display: none !important;
+  }
+
+  /* Dark mode hover - use lighter blue tint */
+  &[data-mode='dark'] {
+    dial-selector .dial-label:hover {
+      background: rgba(0, 188, 242, 0.2);
+    }
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    h1.resume-header__name {
+      font-size: 2.5rem;
+    }
+
+    .resume-section__title {
+      font-size: 1.2rem;
+      padding: 1rem 1.5rem;
+    }
+
+    h3.experience-item__role,
+    h3.education-item__institution {
+      font-size: 1.1rem;
+    }
+
+    dial-selector .dial-label {
+      font-size: 0.75rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    .resume-header,
+    .resume-section {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h1.resume-header__name {
+      font-size: 2rem;
+    }
+
+    .resume-section__title {
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .resume-header,
+    .resume-section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    dial-selector .dial-label {
+      font-size: 0.7rem;
+      padding: 0.4rem 0.7rem;
+    }
+
+    .resume-header__printlink {
+      font-size: 0.75rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .experience-item,
+    .education-item,
+    .community-list__item,
+    .principles-list__item {
+      padding: 1.25rem;
+    }
   }
 }
-
-@media (max-width: 500px) {
-  body[data-theme='metro'] h1.resume-header__name {
-    font-size: 2rem;
-  }
-
-  body[data-theme='metro'] .resume-section__title {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-  }
-
-  body[data-theme='metro'] .resume-header,
-  body[data-theme='metro'] .resume-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  body[data-theme='metro'] dial-selector .dial-label {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.7rem;
-  }
-
-  body[data-theme='metro'] .resume-header__printlink {
-    font-size: 0.75rem;
-    padding: 0.75rem 1.5rem;
-  }
-
-  body[data-theme='metro'] .experience-item,
-  body[data-theme='metro'] .education-item,
-  body[data-theme='metro'] .community-list__item,
-  body[data-theme='metro'] .principles-list__item {
-    padding: 1.25rem;
-  }
-}
-

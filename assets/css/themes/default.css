@@ -4,40 +4,40 @@ DEFAULT Theme - Clean, Professional
 
 /* Light Mode */
 :root[data-theme='default'][data-mode='light'] {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --border-color: #000000;
-  --dial-color-ink: #000000;
-  --dial-color-selection: #f13b3b;
-  --dial-color-indicator: #f13b3b;
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-red-crimson);
+  --dial-color-indicator: var(--color-red-crimson);
   --dial-knob-background: #11161c;
-  --font-family: "Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --color-hover: #f13b3b;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: var(--color-red-crimson);
   --background-image: none;
-  --link-color: #000000;
-  --link-visited-color: #551a8b;
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-purple-link);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: #f13b3b;
+  --accent-color: var(--color-red-crimson);
 }
 
 /* Dark Mode */
 :root[data-theme='default'][data-mode='dark'] {
-  --background-color: #1a1f24;
+  --background-color: var(--color-dark-bg);
   --text-color: #e8e8e8;
-  --border-color: #888888;
+  --border-color: var(--color-gray-dark);
   --dial-color-ink: #e8e8e8;
-  --dial-color-selection: #ff5555;
-  --dial-color-indicator: #ff5555;
-  --dial-knob-background: #2a2f34;
-  --font-family: "Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --color-hover: #ff5555;
+  --dial-color-selection: var(--color-red-bright);
+  --dial-color-indicator: var(--color-red-bright);
+  --dial-knob-background: var(--color-dark-bg-alt);
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: var(--color-red-bright);
   --background-image: none;
   --link-color: #e8e8e8;
-  --link-visited-color: #aaaaaa;
+  --link-visited-color: var(--color-gray-light);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: #ff5555;
+  --accent-color: var(--color-red-bright);
 }
 
 /* Default theme has no additional styling - uses base layout.css styles */
