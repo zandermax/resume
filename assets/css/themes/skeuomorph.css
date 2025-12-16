@@ -412,3 +412,12 @@ body[data-theme='skeuomorph'] .experience-item__bullets li::before {
   color: var(--leather-color);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* ===========================
+Theme-Specific Element Visibility
+=========================== */
+
+/* Show sticky note when theme is active */
+[data-theme='skeuomorph'] .sticky-note {
+  display: block;
+}

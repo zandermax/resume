@@ -555,3 +555,16 @@ body[data-theme='dashboard'][data-mode='dark'] .resume-section__title::before {
   }
 }
 
+
+/* ===========================
+Theme-Specific Element Visibility
+=========================== */
+
+/* Show dashboard elements when theme is active */
+[data-theme='dashboard'] .dashboard-status-banner {
+  display: flex;
+}
+
+[data-theme='dashboard'] .dashboard-metrics-grid {
+  display: grid;
+}

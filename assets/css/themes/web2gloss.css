@@ -650,3 +650,12 @@ Web 2.0 Responsive Adjustments
     padding: 0.75rem 1.5rem;
   }
 }
+
+/* ===========================
+Theme-Specific Element Visibility
+=========================== */
+
+/* Show web2 badges when theme is active */
+[data-theme='web2gloss'] .web2-badges {
+  display: block;
+}

@@ -1,69 +1,39 @@
 /* ===========================
-Shared Theme Utilities
-Common patterns used across multiple themes
+Theme-Specific Element Visibility - Default States
 =========================== */
 
-/* Reset utilities - common pattern across themes */
-.theme-reset-borders {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
+/*
+ * This file contains the DEFAULT visibility states for theme-specific elements.
+ * Each element is hidden by default, and individual theme CSS files control when to show them.
+ *
+ * Theme-specific [data-theme="..."] rules are in their respective theme files:
+ * - nostalgia.css - .nostalgia-elements, section title decorations
+ * - skeuomorph.css - .sticky-note
+ * - dashboard.css - .dashboard-status-banner, .dashboard-metrics-grid
+ * - web2gloss.css - .web2-badges
+ * - glitch.css - .glitchable text effects
+ */
 
-/* Common responsive breakpoints - can be extended by themes */
-@media (max-width: 768px) {
-  :root {
-    --responsive-scale-md: 0.85;
-  }
-}
-
-@media (max-width: 500px) {
-  :root {
-    --responsive-scale-sm: 0.7;
-  }
-}
-
-/* Shared animation keyframes used by multiple themes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Common transition utilities */
-.theme-transition-fast {
-  transition: all 0.15s ease;
-}
-
-.theme-transition-medium {
-  transition: all 0.3s ease;
-}
-
-.theme-transition-slow {
-  transition: all 0.5s ease;
-}
-
-/* Helper for theme-specific element hiding */
-[data-theme]:not([data-theme='']) .nostalgia-elements,
-[data-theme]:not([data-theme='']) .sticky-note,
-[data-theme]:not([data-theme='']) .dashboard-status-banner,
-[data-theme]:not([data-theme='']) .dashboard-metrics-grid,
-[data-theme]:not([data-theme='']) .web2-badges {
+/* Hide all theme-specific elements by default */
+.nostalgia-elements,
+.sticky-note,
+.dashboard-status-banner,
+.dashboard-metrics-grid,
+.web2-badges {
   display: none;
 }
 
-/* Shown only in specific themes (controlled via JS) */
+/* Show normal titles by default, hide decorated versions */
+.resume-section__title--normal {
+  display: block;
+}
+
+.resume-section__title--nostalgia-blink,
+.resume-section__title--nostalgia-marquee {
+  display: none;
+}
+
+/* Glitchable characters - no effect by default, styled in glitch.css when theme is active */
+.glitchable {
+  display: inline;
+}

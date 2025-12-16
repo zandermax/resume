@@ -13,6 +13,66 @@
 	<script src="./dial-selector.js"></script>
 
 	<script>
+		// ===========================
+		// Glitch Theme - Mark Random Characters
+		// ===========================
+
+		// Mark random characters with a class for CSS-based glitch effect
+		function markGlitchableCharacters() {
+			const mainContainer = document.querySelector('.resume__main');
+			if (!mainContainer) return;
+
+			// Get all sections except the header
+			const contentElements = Array.from(mainContainer.children).filter(child =>
+				!child.classList.contains('resume-header')
+			);
+
+			// Process each content section
+			contentElements.forEach(element => {
+				// Work with text nodes to preserve HTML structure
+				const walker = document.createTreeWalker(
+					element,
+					NodeFilter.SHOW_TEXT,
+					null,
+					false
+				);
+
+				const textNodes = [];
+				let node;
+				while (node = walker.nextNode()) {
+					textNodes.push(node);
+				}
+
+				// Wrap random characters in spans
+				textNodes.forEach(textNode => {
+					const text = textNode.textContent;
+					if (!text.trim()) return;
+
+					const fragment = document.createDocumentFragment();
+
+					for (let i = 0; i < text.length; i++) {
+						const char = text[i];
+
+						// 3% chance to mark character as glitchable
+						if (char.trim() && Math.random() < 0.03) {
+							const span = document.createElement('span');
+							span.className = 'glitchable';
+							span.textContent = char;
+							fragment.appendChild(span);
+						} else {
+							fragment.appendChild(document.createTextNode(char));
+						}
+					}
+
+					textNode.parentNode.replaceChild(fragment, textNode);
+				});
+			});
+		}
+
+		// ===========================
+		// Theme Management
+		// ===========================
+
 		// Map display names to internal theme names
 		const THEME_DISPLAY_TO_INTERNAL = {
 			'current': 'default',
@@ -33,23 +93,8 @@
 		let currentTheme = 'default';
 		let currentMode = 'light';
 
-		// Helper to toggle theme-specific elements
-		function toggleThemeElements() {
-			const elements = [
-				{ selector: '.nostalgia-elements', theme: 'nostalgia', display: 'block' },
-				{ selector: '.sticky-note', theme: 'skeuomorph', display: 'block' },
-				{ selector: '.dashboard-status-banner', theme: 'dashboard', display: 'flex' },
-				{ selector: '.dashboard-metrics-grid', theme: 'dashboard', display: 'grid' },
-				{ selector: '.web2-badges', theme: 'web2gloss', display: 'block' }
-			];
-
-			elements.forEach(({ selector, theme, display }) => {
-				const el = document.querySelector(selector);
-				if (el) el.style.display = currentTheme === theme ? display : 'none';
-			});
-		}
-
 		// Apply a theme+mode combination by setting data attributes
+		// CSS handles ALL theme behavior via [data-theme] selectors (see theme-utils.css and theme CSS files)
 		function applyThemeAndMode() {
 			// Set attributes on both :root (html) and body for CSS targeting
 			// :root is needed for CSS custom properties, body for theme-specific rules
@@ -57,167 +102,6 @@
 			document.documentElement.setAttribute('data-mode', currentMode);
 			document.body.setAttribute('data-theme', currentTheme);
 			document.body.setAttribute('data-mode', currentMode);
-
-			// Toggle theme-specific elements
-			toggleThemeElements();
-
-			// Handle section titles in nostalgia theme
-			handleNostalgiaTitles();
-
-			// Handle cursed text in glitch theme
-			handleCursedText();
-		}
-
-		// Helper to handle nostalgia theme title transformations
-		function handleNostalgiaTitles() {
-			const gifs = ['🔥', '⭐', '💫', '✨', '🌟', '👷', '📧'];
-			const gifPattern = /[🔥⭐💫✨🌟👷📧]/g;
-
-			document.querySelectorAll('.resume-section__title').forEach((title, index) => {
-				// Store original text on first run
-				if (!title.dataset.originalText) {
-					title.dataset.originalText = title.textContent.trim();
-				}
-
-				const originalText = title.dataset.originalText;
-				const gif = gifs[index % gifs.length];
-
-				if (currentTheme === 'nostalgia') {
-					if (index % 2 === 0) {
-						// Blink with GIF decorations
-						title.classList.add('blink');
-						if (!title.innerHTML.includes('retro-gif')) {
-							title.innerHTML = `<span class="retro-gif spinning">${gif}</span> ${originalText} <span class="retro-gif spinning">${gif}</span>`;
-						}
-					} else {
-						// Marquee
-						title.classList.remove('blink');
-						if (!title.querySelector('.marquee-container')) {
-							title.innerHTML = `<div class="marquee-container"><div class="marquee">${gif} ${originalText} ${gif} --- ${gif} ${originalText} ${gif} --- ${gif} ${originalText} ${gif}</div></div>`;
-						}
-					}
-				} else {
-					// Restore original state for all other themes
-					title.classList.remove('blink');
-					const marquee = title.querySelector('.marquee-container');
-					if (marquee || title.innerHTML.includes('retro-gif')) {
-						title.textContent = originalText;
-					}
-				}
-			});
-		}
-
-		// Pre-computed cursed HTML (set during page load)
-		// Store content sections separately to avoid destroying header/dial selectors
-		let cursedContentCache = [];
-		let originalContentCache = [];
-		let contentElements = [];
-
-		// Pre-generate cursed text on page load (runs once in background)
-		function preGenerateCursedText() {
-			const mainContainer = document.querySelector('.resume__main');
-			if (!mainContainer) return;
-
-			// Get all sections except the header
-			contentElements = Array.from(mainContainer.children).filter(child =>
-				!child.classList.contains('resume-header')
-			);
-
-			// Store original HTML for each section
-			originalContentCache = contentElements.map(el => el.innerHTML);
-
-			// Combining diacritical marks for zalgo-style text
-			const diacritics = [
-				'\u0300', '\u0301', '\u0302', '\u0303', '\u0304', '\u0305', '\u0306', '\u0307',
-				'\u0308', '\u0309', '\u030A', '\u030B', '\u030C', '\u030D', '\u030E', '\u030F',
-				'\u0310', '\u0311', '\u0312', '\u0313', '\u0314', '\u0315', '\u0316', '\u0317',
-				'\u0318', '\u0319', '\u031A', '\u031B', '\u031C', '\u031D', '\u031E', '\u031F',
-				'\u0320', '\u0321', '\u0322', '\u0323', '\u0324', '\u0325', '\u0326', '\u0327',
-				'\u0328', '\u0329', '\u032A', '\u032B', '\u032C', '\u032D', '\u032E', '\u032F',
-				'\u0330', '\u0331', '\u0332', '\u0333', '\u0334', '\u0335', '\u0336', '\u0337',
-				'\u0338', '\u0339', '\u033A', '\u033B', '\u033C', '\u033D', '\u033E', '\u033F'
-			];
-
-			// Add random diacritics to a character
-			function cursify(char) {
-				let cursed = char;
-				// Add 2-5 random diacritics
-				const numDiacritics = Math.floor(Math.random() * 4) + 2;
-				for (let i = 0; i < numDiacritics; i++) {
-					cursed += diacritics[Math.floor(Math.random() * diacritics.length)];
-				}
-				return cursed;
-			}
-
-			// Process each content section
-			contentElements.forEach(element => {
-				// Work with text nodes to preserve HTML structure
-				const walker = document.createTreeWalker(
-					element,
-					NodeFilter.SHOW_TEXT,
-					null,
-					false
-				);
-
-				const textNodes = [];
-				let node;
-				while (node = walker.nextNode()) {
-					textNodes.push(node);
-				}
-
-				// Process each text node
-				textNodes.forEach(textNode => {
-					const text = textNode.textContent;
-					if (!text.trim()) return;
-
-					const fragment = document.createDocumentFragment();
-
-					for (let i = 0; i < text.length; i++) {
-						const char = text[i];
-
-						// 3% chance to make character cursed
-						if (char.trim() && Math.random() < 0.03) {
-							const span = document.createElement('span');
-							span.className = 'cursed';
-							const cursedText = cursify(char);
-							span.textContent = cursedText;
-							span.setAttribute('data-text', cursedText);
-							span.setAttribute('data-original', char);
-							fragment.appendChild(span);
-						} else {
-							fragment.appendChild(document.createTextNode(char));
-						}
-					}
-
-					textNode.parentNode.replaceChild(fragment, textNode);
-				});
-			});
-
-			// Store the cursed HTML for each section
-			cursedContentCache = contentElements.map(el => el.innerHTML);
-
-			// Restore original HTML immediately (user doesn't start on glitch theme)
-			contentElements.forEach((el, index) => {
-				el.innerHTML = originalContentCache[index];
-			});
-		}
-
-		// Helper to handle cursed text in glitch theme (now just swaps cached versions)
-		function handleCursedText() {
-			// If caches aren't ready yet, do nothing (shouldn't happen but safety check)
-			if (cursedContentCache.length === 0 || originalContentCache.length === 0) return;
-
-			if (currentTheme === 'glitch') {
-				// Simply swap to pre-computed cursed HTML for each content section
-				contentElements.forEach((el, index) => {
-					el.innerHTML = cursedContentCache[index];
-				});
-			} else {
-				// Simply swap back to original HTML for each content section
-				contentElements.forEach((el, index) => {
-					el.innerHTML = originalContentCache[index];
-				});
-			}
 		}
 
 		// Handle theme change from theme selector
@@ -236,11 +120,23 @@
 
 		// Initialize theme on page load
 		document.addEventListener('DOMContentLoaded', () => {
-			// Pre-generate cursed text for 2039 theme (runs in background)
-			preGenerateCursedText();
+			// Mark random characters for glitch effect (CSS will handle the styling)
+			markGlitchableCharacters();
 
 			// Apply default theme and mode
 			applyThemeAndMode();
+
+			// Attach event listeners to dial-selectors
+			const themeSelector = document.getElementById('theme-selector');
+			const modeSelector = document.getElementById('mode-selector');
+
+			if (themeSelector) {
+				themeSelector.addEventListener('change', handleThemeChange);
+			}
+
+			if (modeSelector) {
+				modeSelector.addEventListener('change', handleModeChange);
+			}
 		});
 	</script>
 
@@ -322,13 +218,12 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Year:</h3>
-					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020,2027,2039"
-						default-option="Current" onchange="handleThemeChange(event)"></dial-selector>
+					<dial-selector id="theme-selector" width="600px" height="200px"
+						options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020,2027,2039" default-option="Current"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
 					<h3>Mode:</h3>
-					<dial-selector width="600px" height="200px" options="Light,Dark" default-option="Light"
-						onchange="handleModeChange(event)"></dial-selector>
+					<dial-selector id="mode-selector" width="600px" height="200px" options="Light,Dark" default-option="Light"></dial-selector>
 				</div>
 				<hgroup class="resume-header__name-wrapper">
 					<h1 class="resume-header__name">
@@ -500,7 +395,12 @@
 
 		<!-- SUMMARY -->
 		<section class="resume-section resume-section--summary">
-			<h2 class="resume-section__title">Professional Summary</h2>
+			<!-- Normal title (shown by default and in all themes except nostalgia) -->
+			<h2 class="resume-section__title resume-section__title--normal">Professional Summary</h2>
+			<!-- Nostalgia blink version (shown only in nostalgia theme, index 0 = even) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+				<span class="retro-gif spinning">🔥</span> Professional Summary <span class="retro-gif spinning">🔥</span>
+			</h2>
 			<p class="resume-section__text">
 				I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
 				end-to-end features in React, TypeScript, and Node. I like working in the space where product, design, and
@@ -525,7 +425,14 @@
 
 		<!-- WHY ASHBY -->
 		<section class="resume-section resume-section--ashby">
-			<h2 class="resume-section__title">Why Ashby &amp; This Role</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">Why Ashby &amp; This Role</h2>
+			<!-- Nostalgia marquee version (index 1 = odd) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+				<div class="marquee-container">
+					<div class="marquee">⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐</div>
+				</div>
+			</h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
 					<strong>Design + build, together.</strong> I've always gravitated toward roles where I can both design
@@ -558,7 +465,12 @@
 
 		<!-- CORE SKILLS -->
 		<section class="resume-section resume-section--skills">
-			<h2 class="resume-section__title">Core Skills (Relevant to Ashby)</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">Core Skills (Relevant to Ashby)</h2>
+			<!-- Nostalgia blink version (index 2 = even) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+				<span class="retro-gif spinning">💫</span> Core Skills (Relevant to Ashby) <span class="retro-gif spinning">💫</span>
+			</h2>
 
 			<div class="skills-grid">
 				<div class="skills-grid__group">
@@ -611,7 +523,14 @@
 
 		<!-- EXPERIENCE -->
 		<section class="resume-section resume-section--experience">
-			<h2 class="resume-section__title">Professional Experience</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">Professional Experience</h2>
+			<!-- Nostalgia marquee version (index 3 = odd) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+				<div class="marquee-container">
+					<div class="marquee">✨ Professional Experience ✨ --- ✨ Professional Experience ✨ --- ✨ Professional Experience ✨</div>
+				</div>
+			</h2>
 
 			<!-- CHECK24 -->
 			<article class="experience-item">
@@ -791,7 +710,12 @@
 
 		<!-- OPEN SOURCE & COMMUNITY -->
 		<section class="resume-section resume-section--community">
-			<h2 class="resume-section__title">Open Source, Standards &amp; Community</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">Open Source, Standards &amp; Community</h2>
+			<!-- Nostalgia blink version (index 4 = even) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+				<span class="retro-gif spinning">🌟</span> Open Source, Standards &amp; Community <span class="retro-gif spinning">🌟</span>
+			</h2>
 
 			<ul class="community-list">
 				<li class="community-list__item">
@@ -817,7 +741,14 @@
 
 		<!-- EDUCATION -->
 		<section class="resume-section resume-section--education">
-			<h2 class="resume-section__title">Education</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">Education</h2>
+			<!-- Nostalgia marquee version (index 5 = odd) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+				<div class="marquee-container">
+					<div class="marquee">👷 Education 👷 --- 👷 Education 👷 --- 👷 Education 👷</div>
+				</div>
+			</h2>
 
 			<article class="education-item">
 				<h3 class="education-item__institution">Iowa State University</h3>
@@ -832,7 +763,12 @@
 
 		<!-- CORE PRINCIPLES -->
 		<section class="resume-section resume-section--principles">
-			<h2 class="resume-section__title">How I Prefer to Work</h2>
+			<!-- Normal title -->
+			<h2 class="resume-section__title resume-section__title--normal">How I Prefer to Work</h2>
+			<!-- Nostalgia blink version (index 6 = even) -->
+			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+				<span class="retro-gif spinning">📧</span> How I Prefer to Work <span class="retro-gif spinning">📧</span>
+			</h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
 					<strong>Design through code.</strong> I'm most comfortable when I can bounce between design tools like Figma, rough sketches, and

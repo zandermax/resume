@@ -1193,3 +1193,56 @@ PERFORMANCE OPTIMIZATIONS
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===========================
+Theme-Specific Element Visibility & Effects
+=========================== */
+
+/* Glitchable characters - apply visual effects when glitch theme is active */
+[data-theme='glitch'] .glitchable {
+  position: relative;
+  display: inline-block;
+  animation: glitch-char 0.3s infinite;
+  color: var(--glitch-primary);
+  text-shadow:
+    2px 0 var(--glitch-secondary),
+    -2px 0 var(--glitch-tertiary);
+}
+
+/* Stagger animations for variety */
+[data-theme='glitch'] .glitchable:nth-child(2n) {
+  animation-delay: 0.1s;
+}
+
+[data-theme='glitch'] .glitchable:nth-child(3n) {
+  animation-delay: 0.2s;
+}
+
+[data-theme='glitch'] .glitchable:nth-child(5n) {
+  animation-delay: 0.15s;
+  animation-duration: 0.4s;
+}
+
+/* Character glitch animation */
+@keyframes glitch-char {
+  0%, 100% {
+    transform: translate(0, 0) skew(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-1px, 1px) skew(1deg);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(1px, -1px) skew(-1deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(-1px, -1px) skew(2deg);
+    opacity: 0.85;
+  }
+  80% {
+    transform: translate(1px, 1px) skew(-2deg);
+    opacity: 0.95;
+  }
+}
