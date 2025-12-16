@@ -30,7 +30,7 @@ Responsive Layout
   }
 
   .sticky-note {
-    top: 80px;
+    position: absolute;
     right: 20px;
     width: 180px;
     min-height: 140px;
@@ -93,7 +93,7 @@ Mobile layout
 
 @media (max-width: 500px) {
   .sticky-note {
-    top: 60px;
+    position: absolute;
     right: 10px;
     width: 160px;
     min-height: 120px;

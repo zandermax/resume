@@ -230,8 +230,8 @@ Components
 /* Sticky note */
 .sticky-note {
   display: none;
-  position: fixed;
-  top: 120px;
+  position: absolute;
+  top: 50em;
   right: 40px;
   width: 220px;
   min-height: 160px;
@@ -295,4 +295,3 @@ body[data-theme='skeuomorph'] .sticky-note {
   animation: gradientShift 3s ease infinite;
   box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
 }
-
