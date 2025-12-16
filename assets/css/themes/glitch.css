@@ -3,7 +3,7 @@
 =========================== */
 
 /* Light Mode */
-:root[data-theme='glitch2038'][data-mode='light'] {
+:root[data-theme='glitch'][data-mode='light'] {
   --background-color: #00ffff;
   --text-color: #ff00ff;
   --border-color: #ff00ff;
@@ -25,7 +25,7 @@
 }
 
 /* Dark Mode */
-:root[data-theme='glitch2038'][data-mode='dark'] {
+:root[data-theme='glitch'][data-mode='dark'] {
   --background-color: #1a0033;
   --text-color: #ccff00;
   --border-color: #ff6600;
@@ -308,14 +308,14 @@ KEYFRAME ANIMATIONS
 BASE THEME STYLING
 =========================== */
 
-body[data-theme='glitch2038'] {
+body[data-theme='glitch'] {
   font-family: var(--font-family);
   letter-spacing: 0.03em;
   position: relative;
 }
 
 /* Global scan line overlay */
-body[data-theme='glitch2038']::before {
+body[data-theme='glitch']::before {
   content: '';
   position: fixed;
   top: 0;
@@ -335,7 +335,7 @@ body[data-theme='glitch2038']::before {
 }
 
 /* Dark mode scan lines */
-body[data-theme='glitch2038'][data-mode='dark']::before {
+body[data-theme='glitch'][data-mode='dark']::before {
   background: repeating-linear-gradient(
     0deg,
     transparent 0px,
@@ -349,7 +349,7 @@ body[data-theme='glitch2038'][data-mode='dark']::before {
 MAIN CONTAINER
 =========================== */
 
-body[data-theme='glitch2038'] .resume__main {
+body[data-theme='glitch'] .resume__main {
   border: 3px solid var(--border-color);
   background: var(--section-bg);
   padding: 2rem;
@@ -360,7 +360,7 @@ body[data-theme='glitch2038'] .resume__main {
 }
 
 /* Screen tear effect on main container */
-body[data-theme='glitch2038'] .resume__main::before {
+body[data-theme='glitch'] .resume__main::before {
   content: '';
   position: absolute;
   top: 0;
@@ -376,7 +376,7 @@ body[data-theme='glitch2038'] .resume__main::before {
 }
 
 /* Compression artifact overlay */
-body[data-theme='glitch2038'] .resume__main::after {
+body[data-theme='glitch'] .resume__main::after {
   content: '';
   position: absolute;
   top: 0;
@@ -394,7 +394,7 @@ body[data-theme='glitch2038'] .resume__main::after {
 HEADER
 =========================== */
 
-body[data-theme='glitch2038'] .resume-header {
+body[data-theme='glitch'] .resume-header {
   border: 2px solid var(--border-color);
   border-bottom: 5px solid var(--glitch-primary);
   background: var(--header-bg);
@@ -406,7 +406,7 @@ body[data-theme='glitch2038'] .resume-header {
 }
 
 /* Corrupted header border effect */
-body[data-theme='glitch2038'] .resume-header::before {
+body[data-theme='glitch'] .resume-header::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -417,7 +417,7 @@ body[data-theme='glitch2038'] .resume-header::before {
   animation: h-displace 3s infinite;
 }
 
-body[data-theme='glitch2038'] .resume-header::after {
+body[data-theme='glitch'] .resume-header::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -428,7 +428,7 @@ body[data-theme='glitch2038'] .resume-header::after {
   animation: h-displace 4s infinite reverse;
 }
 
-body[data-theme='glitch2038'] h1.resume-header__name {
+body[data-theme='glitch'] h1.resume-header__name {
   font-size: 3rem;
   font-weight: 700;
   color: var(--text-color);
@@ -438,7 +438,7 @@ body[data-theme='glitch2038'] h1.resume-header__name {
   text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
 }
 
-body[data-theme='glitch2038'] .resume-header__role {
+body[data-theme='glitch'] .resume-header__role {
   font-size: 1.2rem;
   color: var(--glitch-tertiary);
   text-shadow: 2px 2px 0 var(--glitch-secondary), -1px -1px 0 var(--background-color);
@@ -446,7 +446,7 @@ body[data-theme='glitch2038'] .resume-header__role {
   animation: color-shift 6s infinite;
 }
 
-body[data-theme='glitch2038'] .resume-header__meta {
+body[data-theme='glitch'] .resume-header__meta {
   color: var(--background-color);
   text-shadow: 1px 1px 0 var(--glitch-primary), -1px -1px 0 var(--glitch-tertiary);
   filter: contrast(1.2);
@@ -457,7 +457,7 @@ body[data-theme='glitch2038'] .resume-header__meta {
 SECTION TITLES
 =========================== */
 
-body[data-theme='glitch2038'] .resume-section__title {
+body[data-theme='glitch'] .resume-section__title {
   background: var(--section-bg);
   color: var(--text-color);
   border: 2px solid var(--border-color);
@@ -476,48 +476,48 @@ body[data-theme='glitch2038'] .resume-section__title {
 }
 
 /* Random variations using nth-child - each title gets different glitch */
-body[data-theme='glitch2038'] .resume-section:nth-child(1) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(1) .resume-section__title {
   animation: glitch-shake-1 3.2s infinite steps(4, end);
   animation-delay: 0.5s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(2) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(2) .resume-section__title {
   animation: glitch-shake-2 2.5s infinite steps(6, jump-start);
   animation-delay: 1.2s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(3) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(3) .resume-section__title {
   animation: h-displace 3.7s infinite steps(3, jump-both);
   animation-delay: 0.8s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(4) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(4) .resume-section__title {
   animation: glitch-shake-3 2.9s infinite steps(5, end);
   animation-delay: 1.5s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(5) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(5) .resume-section__title {
   animation: glitch-shake-1 3.4s infinite steps(4, jump-start);
   animation-delay: 0.3s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(6) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(6) .resume-section__title {
   animation: glitch-shake-2 2.7s infinite steps(7, end);
   animation-delay: 1.8s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(7) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(7) .resume-section__title {
   animation: h-displace 3.1s infinite steps(5, jump-both);
   animation-delay: 0.6s;
 }
 
-body[data-theme='glitch2038'] .resume-section:nth-child(8) .resume-section__title {
+body[data-theme='glitch'] .resume-section:nth-child(8) .resume-section__title {
   animation: glitch-shake-3 2.6s infinite steps(4, jump-start);
   animation-delay: 1.1s;
 }
 
 /* Glitched section title pseudo-elements - more jarring */
-body[data-theme='glitch2038'] .resume-section__title::before {
+body[data-theme='glitch'] .resume-section__title::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -535,7 +535,7 @@ body[data-theme='glitch2038'] .resume-section__title::before {
   transform: translateX(-3px);
 }
 
-body[data-theme='glitch2038'] .resume-section__title::after {
+body[data-theme='glitch'] .resume-section__title::after {
   content: '';
   position: absolute;
   right: -5px;
@@ -593,7 +593,7 @@ body[data-theme='glitch2038'] .resume-section__title::after {
 EXPERIENCE ITEMS
 =========================== */
 
-body[data-theme='glitch2038'] .experience-item {
+body[data-theme='glitch'] .experience-item {
   border: 2px solid var(--border-color);
   background: var(--section-bg);
   padding: 2rem;
@@ -606,7 +606,7 @@ body[data-theme='glitch2038'] .experience-item {
 }
 
 /* Compression artifacts on experience items */
-body[data-theme='glitch2038'] .experience-item::before {
+body[data-theme='glitch'] .experience-item::before {
   content: '';
   position: absolute;
   top: 10%;
@@ -618,7 +618,7 @@ body[data-theme='glitch2038'] .experience-item::before {
   animation: h-displace 4s infinite;
 }
 
-body[data-theme='glitch2038'] .experience-item::after {
+body[data-theme='glitch'] .experience-item::after {
   content: '';
   position: absolute;
   bottom: 20%;
@@ -630,8 +630,8 @@ body[data-theme='glitch2038'] .experience-item::after {
   animation: h-displace 5s infinite reverse;
 }
 
-body[data-theme='glitch2038'] .experience-item__role,
-body[data-theme='glitch2038'] .education-item__institution {
+body[data-theme='glitch'] .experience-item__role,
+body[data-theme='glitch'] .education-item__institution {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--glitch-primary);
@@ -639,14 +639,14 @@ body[data-theme='glitch2038'] .education-item__institution {
   animation: color-shift 7s infinite;
 }
 
-body[data-theme='glitch2038'] .experience-item__company {
+body[data-theme='glitch'] .experience-item__company {
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-color);
   filter: invert(0.1);
 }
 
-body[data-theme='glitch2038'] .experience-item:hover {
+body[data-theme='glitch'] .experience-item:hover {
   animation: border-corrupt 0.5s infinite, pixel-drift 1s infinite;
   filter: contrast(1.2) saturate(1.3);
 }
@@ -655,7 +655,7 @@ body[data-theme='glitch2038'] .experience-item:hover {
 TECH BADGES
 =========================== */
 
-body[data-theme='glitch2038'] .experience-item__tech {
+body[data-theme='glitch'] .experience-item__tech {
   border: 2px solid var(--glitch-secondary);
   background: var(--glitch-primary);
   color: var(--glitch-tertiary);
@@ -670,7 +670,7 @@ body[data-theme='glitch2038'] .experience-item__tech {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
-body[data-theme='glitch2038'] .experience-item__tech:hover {
+body[data-theme='glitch'] .experience-item__tech:hover {
   filter: invert(1) hue-rotate(180deg);
   animation: color-shift 0.3s infinite;
 }
@@ -679,7 +679,7 @@ body[data-theme='glitch2038'] .experience-item__tech:hover {
 SKILLS GRID
 =========================== */
 
-body[data-theme='glitch2038'] .skills-grid {
+body[data-theme='glitch'] .skills-grid {
   border: 3px solid var(--border-color);
   background: var(--section-bg);
   padding: 1.5rem;
@@ -688,7 +688,7 @@ body[data-theme='glitch2038'] .skills-grid {
   box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
 }
 
-body[data-theme='glitch2038'] .skills-grid::before {
+body[data-theme='glitch'] .skills-grid::before {
   content: '';
   position: absolute;
   top: 0;
@@ -700,7 +700,7 @@ body[data-theme='glitch2038'] .skills-grid::before {
   animation: artifact-pulse 3s infinite;
 }
 
-body[data-theme='glitch2038'] .skills-grid__group {
+body[data-theme='glitch'] .skills-grid__group {
   border: 2px solid var(--border-color);
   background: var(--background-color);
   padding: 1rem;
@@ -711,12 +711,12 @@ body[data-theme='glitch2038'] .skills-grid__group {
   animation: pixel-drift 5s infinite;
 }
 
-body[data-theme='glitch2038'] .skills-grid__group:nth-child(even) {
+body[data-theme='glitch'] .skills-grid__group:nth-child(even) {
   transform: skewX(-0.3deg) translateX(2px);
   animation-delay: 1s;
 }
 
-body[data-theme='glitch2038'] .skills-grid__title {
+body[data-theme='glitch'] .skills-grid__title {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--glitch-primary);
@@ -731,8 +731,8 @@ body[data-theme='glitch2038'] .skills-grid__title {
 LISTS
 =========================== */
 
-body[data-theme='glitch2038'] .community-list,
-body[data-theme='glitch2038'] .principles-list {
+body[data-theme='glitch'] .community-list,
+body[data-theme='glitch'] .principles-list {
   border: 2px solid var(--border-color);
   background: var(--section-bg);
   padding: 1.5rem;
@@ -740,8 +740,8 @@ body[data-theme='glitch2038'] .principles-list {
   box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
 }
 
-body[data-theme='glitch2038'] .community-list__item,
-body[data-theme='glitch2038'] .principles-list__item {
+body[data-theme='glitch'] .community-list__item,
+body[data-theme='glitch'] .principles-list__item {
   padding: 1rem;
   margin-bottom: 0.75rem;
   background: var(--background-color);
@@ -752,13 +752,13 @@ body[data-theme='glitch2038'] .principles-list__item {
   box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
 }
 
-body[data-theme='glitch2038'] .community-list__item:nth-child(odd),
-body[data-theme='glitch2038'] .principles-list__item:nth-child(odd) {
+body[data-theme='glitch'] .community-list__item:nth-child(odd),
+body[data-theme='glitch'] .principles-list__item:nth-child(odd) {
   animation-delay: 2s;
 }
 
-body[data-theme='glitch2038'] .community-list__item:hover,
-body[data-theme='glitch2038'] .principles-list__item:hover {
+body[data-theme='glitch'] .community-list__item:hover,
+body[data-theme='glitch'] .principles-list__item:hover {
   filter: invert(0.15) hue-rotate(30deg);
   transform: translateX(3px);
 }
@@ -767,7 +767,7 @@ body[data-theme='glitch2038'] .principles-list__item:hover {
 EDUCATION
 =========================== */
 
-body[data-theme='glitch2038'] .education-item {
+body[data-theme='glitch'] .education-item {
   border: 2px solid var(--border-color);
   background: var(--section-bg);
   padding: 2rem;
@@ -781,7 +781,7 @@ body[data-theme='glitch2038'] .education-item {
 LINKS
 =========================== */
 
-body[data-theme='glitch2038'] a {
+body[data-theme='glitch'] a {
   color: var(--link-color);
   text-decoration: underline;
   text-decoration-style: wavy;
@@ -790,7 +790,7 @@ body[data-theme='glitch2038'] a {
   position: relative;
 }
 
-body[data-theme='glitch2038'] a:hover {
+body[data-theme='glitch'] a:hover {
   color: var(--glitch-secondary);
   background: var(--glitch-tertiary);
   text-decoration: none;
@@ -799,7 +799,7 @@ body[data-theme='glitch2038'] a:hover {
   padding: 2px 4px;
 }
 
-body[data-theme='glitch2038'] a:visited {
+body[data-theme='glitch'] a:visited {
   color: var(--link-visited-color);
   filter: hue-rotate(90deg);
 }
@@ -808,7 +808,7 @@ body[data-theme='glitch2038'] a:visited {
 PRINT BUTTON
 =========================== */
 
-body[data-theme='glitch2038'] .resume-header__printlink {
+body[data-theme='glitch'] .resume-header__printlink {
   border: 3px solid var(--border-color);
   background: var(--glitch-primary);
   color: var(--background-color);
@@ -825,18 +825,18 @@ body[data-theme='glitch2038'] .resume-header__printlink {
   filter: contrast(1.3) saturate(1.5);
 }
 
-body[data-theme='glitch2038'] .resume-header__printlink:hover {
+body[data-theme='glitch'] .resume-header__printlink:hover {
   animation: text-glitch 0.2s infinite, color-shift 0.3s infinite;
   filter: invert(1) contrast(1.5);
   transform: skewX(3deg);
 }
 
-body[data-theme='glitch2038'] .resume-header__printlink::before {
+body[data-theme='glitch'] .resume-header__printlink::before {
   content: '⚠ ';
   margin-right: 4px;
 }
 
-body[data-theme='glitch2038'] .resume-header__printlink::after {
+body[data-theme='glitch'] .resume-header__printlink::after {
   content: ' ⚠';
   margin-left: 4px;
 }
@@ -845,12 +845,12 @@ body[data-theme='glitch2038'] .resume-header__printlink::after {
 DIAL SELECTOR
 =========================== */
 
-body[data-theme='glitch2038'] dial-selector {
+body[data-theme='glitch'] dial-selector {
   position: relative;
   filter: contrast(1.2) saturate(1.3);
 }
 
-body[data-theme='glitch2038'] dial-selector .knob {
+body[data-theme='glitch'] dial-selector .knob {
   border: 3px solid var(--border-color);
   box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 0 0 0 6px var(--glitch-tertiary),
     5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -859,7 +859,7 @@ body[data-theme='glitch2038'] dial-selector .knob {
   transform: rotate(2deg);
 }
 
-body[data-theme='glitch2038'] dial-selector .indicator {
+body[data-theme='glitch'] dial-selector .indicator {
   width: 14px;
   height: 14px;
   background: var(--dial-color-indicator);
@@ -869,7 +869,7 @@ body[data-theme='glitch2038'] dial-selector .indicator {
   transform: rotate(-2deg);
 }
 
-body[data-theme='glitch2038'] dial-selector .dial-label {
+body[data-theme='glitch'] dial-selector .dial-label {
   background: var(--background-color);
   border: 2px solid var(--border-color);
   padding: 0.4rem 1rem;
@@ -881,19 +881,19 @@ body[data-theme='glitch2038'] dial-selector .dial-label {
   transform: skewX(-1deg);
 }
 
-body[data-theme='glitch2038'] dial-selector .dial-label:nth-child(odd) {
+body[data-theme='glitch'] dial-selector .dial-label:nth-child(odd) {
   animation-delay: 1.5s;
   transform: skewX(1deg);
 }
 
-body[data-theme='glitch2038'] dial-selector .dial-label:hover {
+body[data-theme='glitch'] dial-selector .dial-label:hover {
   background: var(--glitch-tertiary);
   color: var(--background-color);
   filter: invert(0.2) hue-rotate(45deg);
   animation: color-shift 0.5s infinite;
 }
 
-body[data-theme='glitch2038'] dial-selector .dial-label.active {
+body[data-theme='glitch'] dial-selector .dial-label.active {
   background: var(--glitch-primary);
   color: var(--background-color);
   border-color: var(--glitch-secondary);
@@ -903,23 +903,23 @@ body[data-theme='glitch2038'] dial-selector .dial-label.active {
   filter: contrast(1.4) saturate(1.6);
 }
 
-body[data-theme='glitch2038'] dial-selector .spoke-line {
+body[data-theme='glitch'] dial-selector .spoke-line {
   stroke-width: 2px;
   opacity: 0.5;
   animation: artifact-pulse 4s infinite;
 }
 
-body[data-theme='glitch2038'] dial-selector .spoke-line:nth-child(odd) {
+body[data-theme='glitch'] dial-selector .spoke-line:nth-child(odd) {
   stroke: var(--glitch-primary);
   animation-delay: 1s;
 }
 
-body[data-theme='glitch2038'] dial-selector .spoke-line:nth-child(even) {
+body[data-theme='glitch'] dial-selector .spoke-line:nth-child(even) {
   stroke: var(--glitch-secondary);
   animation-delay: 2s;
 }
 
-body[data-theme='glitch2038'] .resume-header__dial-selector {
+body[data-theme='glitch'] .resume-header__dial-selector {
   padding: 1.5rem;
   background: var(--section-bg);
   border: 2px solid var(--border-color);
@@ -927,7 +927,7 @@ body[data-theme='glitch2038'] .resume-header__dial-selector {
   position: relative;
 }
 
-body[data-theme='glitch2038'] .resume-header__dial-selector::before {
+body[data-theme='glitch'] .resume-header__dial-selector::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -939,7 +939,7 @@ body[data-theme='glitch2038'] .resume-header__dial-selector::before {
   animation: h-displace 3s infinite;
 }
 
-body[data-theme='glitch2038'] .resume-header__dial-selector h3 {
+body[data-theme='glitch'] .resume-header__dial-selector h3 {
   color: var(--text-color);
   margin-bottom: 1rem;
   font-weight: 700;
@@ -953,14 +953,14 @@ body[data-theme='glitch2038'] .resume-header__dial-selector h3 {
 BULLET POINTS
 =========================== */
 
-body[data-theme='glitch2038'] .experience-item__bullets li::before {
+body[data-theme='glitch'] .experience-item__bullets li::before {
   content: '◆';
   color: var(--glitch-primary);
   font-size: 0.9rem;
   animation: color-shift 5s infinite;
 }
 
-body[data-theme='glitch2038'] .experience-item__bullets li:nth-child(even)::before {
+body[data-theme='glitch'] .experience-item__bullets li:nth-child(even)::before {
   content: '◇';
   color: var(--glitch-secondary);
 }
@@ -969,19 +969,19 @@ body[data-theme='glitch2038'] .experience-item__bullets li:nth-child(even)::befo
 CONTENT SECTIONS
 =========================== */
 
-body[data-theme='glitch2038'] .resume-section {
+body[data-theme='glitch'] .resume-section {
   padding: 2rem;
   position: relative;
   z-index: 2;
 }
 
-body[data-theme='glitch2038'] .resume-section--summary,
-body[data-theme='glitch2038'] .resume-section--ashby,
-body[data-theme='glitch2038'] .resume-section--skills,
-body[data-theme='glitch2038'] .resume-section--experience,
-body[data-theme='glitch2038'] .resume-section--community,
-body[data-theme='glitch2038'] .resume-section--education,
-body[data-theme='glitch2038'] .resume-section--principles {
+body[data-theme='glitch'] .resume-section--summary,
+body[data-theme='glitch'] .resume-section--ashby,
+body[data-theme='glitch'] .resume-section--skills,
+body[data-theme='glitch'] .resume-section--experience,
+body[data-theme='glitch'] .resume-section--community,
+body[data-theme='glitch'] .resume-section--education,
+body[data-theme='glitch'] .resume-section--principles {
   margin-bottom: 1.5rem;
 }
 
@@ -990,58 +990,58 @@ RESPONSIVE ADJUSTMENTS
 =========================== */
 
 @media (max-width: 768px) {
-  body[data-theme='glitch2038'] h1.resume-header__name {
+  body[data-theme='glitch'] h1.resume-header__name {
     font-size: 2rem;
   }
 
-  body[data-theme='glitch2038'] .resume-section__title {
+  body[data-theme='glitch'] .resume-section__title {
     font-size: 1.1rem;
     padding: 0.6rem 1rem;
   }
 
-  body[data-theme='glitch2038'] .resume__main {
+  body[data-theme='glitch'] .resume__main {
     padding: 1.5rem;
   }
 
-  body[data-theme='glitch2038'] .resume-section {
+  body[data-theme='glitch'] .resume-section {
     padding: 1.5rem;
   }
 
-  body[data-theme='glitch2038'] .experience-item,
-  body[data-theme='glitch2038'] .education-item {
+  body[data-theme='glitch'] .experience-item,
+  body[data-theme='glitch'] .education-item {
     padding: 1.5rem;
   }
 }
 
 @media (max-width: 500px) {
-  body[data-theme='glitch2038'] h1.resume-header__name {
+  body[data-theme='glitch'] h1.resume-header__name {
     font-size: 1.75rem;
   }
 
-  body[data-theme='glitch2038'] .resume-section__title {
+  body[data-theme='glitch'] .resume-section__title {
     font-size: 1rem;
     padding: 0.5rem 0.8rem;
   }
 
-  body[data-theme='glitch2038'] .resume__main {
+  body[data-theme='glitch'] .resume__main {
     padding: 1rem;
   }
 
-  body[data-theme='glitch2038'] .resume-section {
+  body[data-theme='glitch'] .resume-section {
     padding: 1rem;
   }
 
-  body[data-theme='glitch2038'] .experience-item,
-  body[data-theme='glitch2038'] .education-item {
+  body[data-theme='glitch'] .experience-item,
+  body[data-theme='glitch'] .education-item {
     padding: 1rem;
   }
 
-  body[data-theme='glitch2038'] dial-selector .dial-label {
+  body[data-theme='glitch'] dial-selector .dial-label {
     font-size: 0.75rem;
     padding: 0.3rem 0.7rem;
   }
 
-  body[data-theme='glitch2038'] .resume-header__printlink {
+  body[data-theme='glitch'] .resume-header__printlink {
     font-size: 0.85rem;
     padding: 0.75rem 1.5rem;
   }
@@ -1053,7 +1053,8 @@ CURSED TEXT EFFECTS
 
 /* Cursed character animation - glitchy/jarring movements */
 @keyframes cursed-glitch {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     filter: hue-rotate(0deg);
     opacity: 1;
@@ -1067,7 +1068,8 @@ CURSED TEXT EFFECTS
     transform: translate(4px, -3px) rotate(12deg) scale(0.7);
     filter: hue-rotate(-270deg);
   }
-  7%, 25% {
+  7%,
+  25% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     filter: hue-rotate(0deg);
     opacity: 1;
@@ -1081,7 +1083,8 @@ CURSED TEXT EFFECTS
     transform: translate(-5px, 3px) rotate(-20deg) scale(0.6);
     filter: hue-rotate(-180deg);
   }
-  32%, 50% {
+  32%,
+  50% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     filter: hue-rotate(0deg);
     opacity: 1;
@@ -1095,7 +1098,8 @@ CURSED TEXT EFFECTS
     transform: translate(3px, 4px) rotate(-18deg) scale(0.8);
     filter: hue-rotate(-90deg);
   }
-  57%, 75% {
+  57%,
+  75% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     filter: hue-rotate(0deg);
     opacity: 1;
@@ -1109,7 +1113,8 @@ CURSED TEXT EFFECTS
     transform: translate(-2px, -5px) rotate(10deg) scale(0.5);
     filter: hue-rotate(-360deg);
   }
-  82%, 99% {
+  82%,
+  99% {
     transform: translate(0, 0) rotate(0deg) scale(1);
     filter: hue-rotate(0deg);
     opacity: 1;
@@ -1117,15 +1122,11 @@ CURSED TEXT EFFECTS
 }
 
 /* Cursed text styling */
-body[data-theme='glitch2038'] .cursed {
+body[data-theme='glitch'] .cursed {
   display: inline-block;
   position: relative;
   color: var(--glitch-primary);
-  text-shadow:
-    1px 0 0 var(--glitch-secondary),
-    -1px 0 0 var(--glitch-tertiary),
-    0 1px 0 #ff0000,
-    0 -1px 0 #00ff00;
+  text-shadow: 1px 0 0 var(--glitch-secondary), -1px 0 0 var(--glitch-tertiary), 0 1px 0 #ff0000, 0 -1px 0 #00ff00;
   animation: cursed-glitch 9s infinite steps(1);
   animation-delay: calc(var(--cursed-delay, 0) * 0.1s);
   transform-origin: center;
@@ -1135,28 +1136,28 @@ body[data-theme='glitch2038'] .cursed {
 }
 
 /* Randomize animation delays */
-body[data-theme='glitch2038'] .cursed:nth-child(2n) {
+body[data-theme='glitch'] .cursed:nth-child(2n) {
   animation-delay: 0.9s;
   animation-duration: 7.5s;
 }
 
-body[data-theme='glitch2038'] .cursed:nth-child(3n) {
+body[data-theme='glitch'] .cursed:nth-child(3n) {
   animation-delay: 2.1s;
   animation-duration: 10.5s;
 }
 
-body[data-theme='glitch2038'] .cursed:nth-child(5n) {
+body[data-theme='glitch'] .cursed:nth-child(5n) {
   animation-delay: 3.6s;
   animation-duration: 12s;
 }
 
-body[data-theme='glitch2038'] .cursed:nth-child(7n) {
+body[data-theme='glitch'] .cursed:nth-child(7n) {
   animation-delay: 5.4s;
   animation-duration: 8.4s;
 }
 
 /* Add additional glitch layers */
-body[data-theme='glitch2038'] .cursed::before {
+body[data-theme='glitch'] .cursed::before {
   content: attr(data-text);
   position: absolute;
   left: -2px;
@@ -1167,7 +1168,7 @@ body[data-theme='glitch2038'] .cursed::before {
   animation: cursed-glitch 6s infinite reverse steps(1);
 }
 
-body[data-theme='glitch2038'] .cursed::after {
+body[data-theme='glitch'] .cursed::after {
   content: attr(data-text);
   position: absolute;
   left: 2px;
@@ -1184,9 +1185,9 @@ PERFORMANCE OPTIMIZATIONS
 
 /* Reduce animations on devices that prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  body[data-theme='glitch2038'] *,
-  body[data-theme='glitch2038'] *::before,
-  body[data-theme='glitch2038'] *::after {
+  body[data-theme='glitch'] *,
+  body[data-theme='glitch'] *::before,
+  body[data-theme='glitch'] *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

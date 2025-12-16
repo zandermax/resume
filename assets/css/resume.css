@@ -23,7 +23,7 @@ Resume Styles - Modular Import
 /* Themes - Individual theme files */
 @import url('./themes/brutal.css');
 @import url('./themes/nostalgia.css');
-@import url('./themes/retro85.css');
+@import url('./themes/crt.css');
 @import url('./themes/skeuomorph.css');
 @import url('./themes/terminal.css');
 @import url('./themes/xp.css');
@@ -31,4 +31,4 @@ Resume Styles - Modular Import
 @import url('./themes/metro.css');
 @import url('./themes/dashboard.css');
 @import url('./themes/neo-swiss.css');
-@import url('./themes/glitch2038.css');
+@import url('./themes/glitch.css');

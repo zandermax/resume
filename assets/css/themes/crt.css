@@ -3,7 +3,7 @@
 =========================== */
 
 /* Light Mode */
-:root[data-theme='retro85'][data-mode='light'] {
+:root[data-theme='crt'][data-mode='light'] {
   --background-color: #2d2d2d;
   --text-color: #33ff33;
   --border-color: #33ff33;
@@ -11,7 +11,7 @@
   --dial-color-selection: #33ff33;
   --dial-color-indicator: #33ff33;
   --dial-knob-background: #1a1a1a;
-  --font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+  --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
   --color-hover: #33ff33;
   --background-image: none;
   --link-color: #33ff33;
@@ -22,7 +22,7 @@
 }
 
 /* Dark Mode */
-:root[data-theme='retro85'][data-mode='dark'] {
+:root[data-theme='crt'][data-mode='dark'] {
   --background-color: #000000;
   --text-color: #00ff00;
   --border-color: #00ff00;
@@ -30,7 +30,7 @@
   --dial-color-selection: #00ff00;
   --dial-color-indicator: #00ff00;
   --dial-knob-background: #001100;
-  --font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+  --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
   --color-hover: #00ff00;
   --background-image: none;
   --link-color: #00ff00;
@@ -41,13 +41,13 @@
 }
 
 /* Apply monospace terminal font */
-body[data-theme='retro85'] {
+body[data-theme='crt'] {
   font-family: var(--font-family);
   text-shadow: 0 0 8px currentColor;
 }
 
 /* Scanline effect overlay */
-body[data-theme='retro85']::before {
+body[data-theme='crt']::before {
   content: '';
   position: fixed;
   top: 0;
@@ -66,7 +66,7 @@ body[data-theme='retro85']::before {
 }
 
 /* Main container with CRT glow */
-body[data-theme='retro85'] .resume__main {
+body[data-theme='crt'] .resume__main {
   border: 2px solid currentColor;
   box-shadow: 0 0 20px currentColor, inset 0 0 30px rgba(0, 255, 0, 0.05);
   border-radius: 0;
@@ -75,7 +75,7 @@ body[data-theme='retro85'] .resume__main {
 }
 
 /* Section titles with underline */
-body[data-theme='retro85'] .resume-section__title {
+body[data-theme='crt'] .resume-section__title {
   border: 0;
   border-bottom: 2px solid currentColor;
   border-radius: 0;
@@ -87,12 +87,12 @@ body[data-theme='retro85'] .resume-section__title {
 }
 
 /* Remove all borders and styling from containers */
-body[data-theme='retro85'] .skills-grid,
-body[data-theme='retro85'] .skills-grid__group,
-body[data-theme='retro85'] .community-list,
-body[data-theme='retro85'] .principles-list,
-body[data-theme='retro85'] .education-item,
-body[data-theme='retro85'] .experience-item {
+body[data-theme='crt'] .skills-grid,
+body[data-theme='crt'] .skills-grid__group,
+body[data-theme='crt'] .community-list,
+body[data-theme='crt'] .principles-list,
+body[data-theme='crt'] .education-item,
+body[data-theme='crt'] .experience-item {
   border: 0;
   box-shadow: none;
   border-radius: 0;
@@ -100,22 +100,22 @@ body[data-theme='retro85'] .experience-item {
   padding: 0.5rem 0;
 }
 
-body[data-theme='retro85'] .skills-grid {
+body[data-theme='crt'] .skills-grid {
   padding: 1rem 0;
 }
 
-body[data-theme='retro85'] .skills-grid__group {
+body[data-theme='crt'] .skills-grid__group {
   margin-bottom: 1rem;
 }
 
-body[data-theme='retro85'] .skills-grid__title {
+body[data-theme='crt'] .skills-grid__title {
   border-bottom: 1px solid currentColor;
   padding-bottom: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
 /* Tech badges with brackets */
-body[data-theme='retro85'] .experience-item__tech {
+body[data-theme='crt'] .experience-item__tech {
   border: 1px solid currentColor;
   border-radius: 0;
   background: transparent;
@@ -125,18 +125,18 @@ body[data-theme='retro85'] .experience-item__tech {
   text-shadow: 0 0 6px currentColor;
 }
 
-body[data-theme='retro85'] .experience-item__tech::before {
+body[data-theme='crt'] .experience-item__tech::before {
   content: '[';
   margin-right: 2px;
 }
 
-body[data-theme='retro85'] .experience-item__tech::after {
+body[data-theme='crt'] .experience-item__tech::after {
   content: ']';
   margin-left: 2px;
 }
 
 /* Header with simple styling */
-body[data-theme='retro85'] .resume-header {
+body[data-theme='crt'] .resume-header {
   border: 0;
   border-bottom: 2px double currentColor;
   padding: 1rem 0;
@@ -144,7 +144,7 @@ body[data-theme='retro85'] .resume-header {
   margin-bottom: 2rem;
 }
 
-body[data-theme='retro85'] h1.resume-header__name {
+body[data-theme='crt'] h1.resume-header__name {
   border: 0;
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.5rem;
@@ -153,22 +153,22 @@ body[data-theme='retro85'] h1.resume-header__name {
 }
 
 /* Links with simple underline */
-body[data-theme='retro85'] a {
+body[data-theme='crt'] a {
   color: var(--link-color);
   text-decoration: underline;
   text-shadow: 0 0 8px currentColor;
 }
 
-body[data-theme='retro85'] a:hover {
-	background: transparent;
-	color: var(--text-color);
-	text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-	text-decoration: none;
-	border-bottom: 2px solid currentColor;
+body[data-theme='crt'] a:hover {
+  background: transparent;
+  color: var(--text-color);
+  text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
 }
 
 /* Print button with terminal style */
-body[data-theme='retro85'] .resume-header__printlink {
+body[data-theme='crt'] .resume-header__printlink {
   border: 2px solid currentColor;
   border-radius: 0;
   background: transparent;
@@ -179,80 +179,80 @@ body[data-theme='retro85'] .resume-header__printlink {
   transition: all 0.1s ease;
 }
 
-body[data-theme='retro85'] .resume-header__printlink::before {
+body[data-theme='crt'] .resume-header__printlink::before {
   content: '> ';
 }
 
-body[data-theme='retro85'] .resume-header__printlink:hover {
-	background: transparent;
-	color: var(--text-color);
-	box-shadow: 0 0 25px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
-	text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-	border-width: 3px;
+body[data-theme='crt'] .resume-header__printlink:hover {
+  background: transparent;
+  color: var(--text-color);
+  box-shadow: 0 0 25px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  border-width: 3px;
 }
 
 /* Dial selector with monochrome styling */
-body[data-theme='retro85'] dial-selector .knob {
+body[data-theme='crt'] dial-selector .knob {
   border: 2px solid currentColor;
   border-radius: 50%;
   box-shadow: 0 0 15px currentColor, inset 0 0 10px rgba(0, 255, 0, 0.2);
   background: var(--dial-knob-background);
 }
 
-body[data-theme='retro85'] dial-selector .indicator {
+body[data-theme='crt'] dial-selector .indicator {
   border-radius: 0;
   background: currentColor;
   box-shadow: 0 0 10px currentColor;
 }
 
-body[data-theme='retro85'] dial-selector .dial-label {
+body[data-theme='crt'] dial-selector .dial-label {
   font-size: 0.85rem;
   padding: 0.4rem 0.8rem;
   border: 1px solid transparent;
   transition: all 0.15s ease;
 }
 
-body[data-theme='retro85'] dial-selector .dial-label:hover {
+body[data-theme='crt'] dial-selector .dial-label:hover {
   border: 1px solid currentColor;
   background: transparent;
   text-shadow: 0 0 10px currentColor;
 }
 
-body[data-theme='retro85'] dial-selector .dial-label.active {
-	background: transparent;
-	color: var(--text-color);
-	border: 2px solid currentColor;
-	text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-	box-shadow: 0 0 15px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
-	font-weight: bold;
+body[data-theme='crt'] dial-selector .dial-label.active {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid currentColor;
+  text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  box-shadow: 0 0 15px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
+  font-weight: bold;
 }
 
-body[data-theme='retro85'] dial-selector .spoke-line {
+body[data-theme='crt'] dial-selector .spoke-line {
   stroke-width: 1px;
   opacity: 0.5;
 }
 
 /* List items with simple markers */
-body[data-theme='retro85'] .experience-item__bullets li::before {
+body[data-theme='crt'] .experience-item__bullets li::before {
   content: '>';
   font-size: 0.8rem;
   margin-right: 0.5rem;
 }
 
-body[data-theme='retro85'] .community-list__item,
-body[data-theme='retro85'] .principles-list__item {
+body[data-theme='crt'] .community-list__item,
+body[data-theme='crt'] .principles-list__item {
   border: 0;
   border-top: 1px dotted currentColor;
   padding: 0.75rem 0;
 }
 
-body[data-theme='retro85'] .community-list__item:first-child,
-body[data-theme='retro85'] .principles-list__item:first-child {
+body[data-theme='crt'] .community-list__item:first-child,
+body[data-theme='crt'] .principles-list__item:first-child {
   border-top: 0;
 }
 
 /* Dial selector housing */
-body[data-theme='retro85'] .resume-header__dial-selector {
+body[data-theme='crt'] .resume-header__dial-selector {
   padding: 1rem;
   background: transparent;
   border: 1px solid currentColor;
@@ -260,44 +260,50 @@ body[data-theme='retro85'] .resume-header__dial-selector {
   box-shadow: none;
 }
 
-body[data-theme='retro85'] .resume-header__dial-selector h3 {
+body[data-theme='crt'] .resume-header__dial-selector h3 {
   color: var(--text-color);
   margin-bottom: 0.75rem;
   text-shadow: 0 0 8px currentColor;
 }
 
 /* Typography enhancements */
-body[data-theme='retro85'] h1,
-body[data-theme='retro85'] h2,
-body[data-theme='retro85'] h3 {
+body[data-theme='crt'] h1,
+body[data-theme='crt'] h2,
+body[data-theme='crt'] h3 {
   text-shadow: 0 0 8px currentColor;
   letter-spacing: 0.05em;
 }
 
-body[data-theme='retro85'] p,
-body[data-theme='retro85'] li {
+body[data-theme='crt'] p,
+body[data-theme='crt'] li {
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
 
 /* Experience items with minimal styling */
-body[data-theme='retro85'] .experience-item {
+body[data-theme='crt'] .experience-item {
   margin-top: 1.5rem;
   padding-top: 1rem;
   border-top: 1px solid currentColor;
 }
 
-body[data-theme='retro85'] .experience-item:first-of-type {
+body[data-theme='crt'] .experience-item:first-of-type {
   border-top: 0;
 }
 
 /* Cursor blink effect for active elements */
 @keyframes terminal-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
-body[data-theme='retro85'] .resume-header__name::after {
+body[data-theme='crt'] .resume-header__name::after {
   content: '█';
   animation: terminal-blink 1s infinite;
   margin-left: 0.25rem;
@@ -309,37 +315,36 @@ body[data-theme='retro85'] .resume-header__name::after {
 =========================== */
 
 @media (max-width: 768px) {
-  body[data-theme='retro85'] .resume__main {
+  body[data-theme='crt'] .resume__main {
     padding: 1.5rem;
   }
 
-  body[data-theme='retro85'] h1.resume-header__name {
+  body[data-theme='crt'] h1.resume-header__name {
     font-size: 2rem;
   }
 
-  body[data-theme='retro85'] dial-selector .dial-label {
+  body[data-theme='crt'] dial-selector .dial-label {
     font-size: 0.75rem;
     padding: 0.35rem 0.65rem;
   }
 }
 
 @media (max-width: 500px) {
-  body[data-theme='retro85'] .resume__main {
+  body[data-theme='crt'] .resume__main {
     padding: 1rem;
   }
 
-  body[data-theme='retro85'] h1.resume-header__name {
+  body[data-theme='crt'] h1.resume-header__name {
     font-size: 1.7rem;
   }
 
-  body[data-theme='retro85'] dial-selector .dial-label {
+  body[data-theme='crt'] dial-selector .dial-label {
     font-size: 0.7rem;
     padding: 0.3rem 0.55rem;
   }
 
-  body[data-theme='retro85'] .resume-header__printlink {
+  body[data-theme='crt'] .resume-header__printlink {
     font-size: 0.7rem;
     padding: 0.45rem 0.85rem;
   }
 }
-

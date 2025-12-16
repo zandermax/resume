@@ -16,7 +16,7 @@
 		// Map display names to internal theme names
 		const THEME_DISPLAY_TO_INTERNAL = {
 			'current': 'default',
-			'1985': 'retro85',
+			'1985': 'crt',
 			'1993': 'terminal',
 			'1996': 'nostalgia',
 			'2001': 'xp',
@@ -26,7 +26,7 @@
 			'2017': 'brutal',
 			'2020': 'dashboard',
 			'2026': 'neoswiss',
-			'2038': 'glitch2038'
+			'2038': 'glitch'
 		};
 
 		// Current selections
@@ -64,7 +64,7 @@
 			// Handle section titles in nostalgia theme
 			handleNostalgiaTitles();
 
-			// Handle cursed text in glitch2038 theme
+			// Handle cursed text in glitch theme
 			handleCursedText();
 		}
 
@@ -107,12 +107,12 @@
 			});
 		}
 
-		// Helper to handle cursed text in glitch2038 theme
+		// Helper to handle cursed text in glitch theme
 		function handleCursedText() {
 			const mainContent = document.querySelector('.resume');
 			if (!mainContent) return;
 
-			if (currentTheme === 'glitch2038') {
+			if (currentTheme === 'glitch') {
 				// Store original HTML on first run
 				if (!mainContent.dataset.originalHtml) {
 					mainContent.dataset.originalHtml = mainContent.innerHTML;
@@ -189,6 +189,7 @@
 							const cursedText = cursify(char);
 							span.textContent = cursedText;
 							span.setAttribute('data-text', cursedText);
+							span.setAttribute('data-original', char); // Store original character
 							fragment.appendChild(span);
 						} else {
 							fragment.appendChild(document.createTextNode(char));
@@ -198,9 +199,41 @@
 					textNode.parentNode.replaceChild(fragment, textNode);
 				});
 			} else {
-				// Restore original HTML for all other themes
-				if (mainContent.dataset.originalHtml && mainContent.querySelector('.cursed')) {
-					mainContent.innerHTML = mainContent.dataset.originalHtml;
+				// Remove cursed text for all other themes
+				const cursedElements = mainContent.querySelectorAll('.cursed');
+				if (cursedElements.length > 0) {
+					cursedElements.forEach(cursed => {
+						// Replace the cursed span with its original character
+						const originalChar = cursed.getAttribute('data-original') || cursed.textContent;
+						const textNode = document.createTextNode(originalChar);
+						cursed.parentNode.replaceChild(textNode, cursed);
+					});
+
+					// Normalize text nodes to merge adjacent text nodes
+					const walker = document.createTreeWalker(
+						mainContent,
+						NodeFilter.SHOW_TEXT,
+						null,
+						false
+					);
+
+					const textNodes = [];
+					let node;
+					while (node = walker.nextNode()) {
+						textNodes.push(node);
+					}
+
+					// Merge adjacent text nodes by normalizing parent elements
+					const processedParents = new Set();
+					textNodes.forEach(textNode => {
+						if (textNode.parentNode && !processedParents.has(textNode.parentNode)) {
+							textNode.parentNode.normalize();
+							processedParents.add(textNode.parentNode);
+						}
+					});
+
+					// Clear the stored original HTML so it can be re-captured if needed
+					delete mainContent.dataset.originalHtml;
 				}
 			}
 		}
