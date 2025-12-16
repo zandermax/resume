@@ -6,11 +6,18 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 :root[data-theme='web2gloss'][data-mode='light'] {
   --background-color: #e8f5ff;
   --text-color: #333333;
+  --heading-color: #ffffff;
   --border-color: #ccddee;
   --dial-color-ink: #0099ff;
   --dial-color-selection: #0099ff;
   --dial-color-indicator: #0099ff;
-  --dial-knob-background: radial-gradient(circle at 30% 30%, var(--color-white) 0%, #e8f5ff 30%, #b5e3ff 70%, #66ccff 100%);
+  --dial-knob-background: radial-gradient(
+    circle at 30% 30%,
+    var(--color-white) 0%,
+    #e8f5ff 30%,
+    #b5e3ff 70%,
+    #66ccff 100%
+  );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --color-hover: #0099ff;
   --background-image: radial-gradient(ellipse at center, #e8f5ff 0%, #b5e3ff 100%);
@@ -19,6 +26,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --section-bg: var(--color-white);
   --header-bg: linear-gradient(180deg, #0099ff 0%, #0077dd 100%);
   --accent-color: var(--color-orange-bright);
+  --section-title-color: #ffffff;
   --web2-primary: #0099ff;
   --web2-accent: var(--color-orange-bright);
   --web2-success: #66cc00;
@@ -31,11 +39,18 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 :root[data-theme='web2gloss'][data-mode='dark'] {
   --background-color: #001f3f;
   --text-color: #e8f5ff;
+  --heading-color: #ffffff;
   --border-color: var(--color-blue-dashboard);
   --dial-color-ink: #00d4ff;
   --dial-color-selection: #00d4ff;
   --dial-color-indicator: #00d4ff;
-  --dial-knob-background: radial-gradient(circle at 30% 30%, var(--color-blue-dashboard) 0%, #003d7a 40%, #001f3f 80%, #000a1a 100%);
+  --dial-knob-background: radial-gradient(
+    circle at 30% 30%,
+    var(--color-blue-dashboard) 0%,
+    #003d7a 40%,
+    #001f3f 80%,
+    #000a1a 100%
+  );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --color-hover: #00d4ff;
   --background-image: radial-gradient(ellipse at center, #003d7a 0%, #001f3f 100%);
@@ -44,6 +59,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --section-bg: #003d7a;
   --header-bg: linear-gradient(180deg, var(--color-blue-dashboard) 0%, #003d7a 100%);
   --accent-color: #ff9933;
+  --section-title-color: #ffffff;
   --web2-primary: #00d4ff;
   --web2-accent: #ff9933;
   --web2-success: #99ff33;
@@ -86,7 +102,7 @@ body[data-theme='web2gloss'] .resume__main::before {
 /* Section titles - Glossy gradient bars with reflection */
 body[data-theme='web2gloss'] .resume-section__title {
   background: linear-gradient(90deg, var(--web2-primary) 0%, #0077dd 100%);
-  color: #ffffff;
+  color: var(--section-title-color);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 12px;
@@ -655,7 +671,4 @@ Web 2.0 Responsive Adjustments
 Theme-Specific Element Visibility
 =========================== */
 
-/* Show web2 badges when theme is active */
-[data-theme='web2gloss'] .web2-badges {
-  display: block;
-}
+/* Web2 badges visibility is controlled in theme-utils.css */

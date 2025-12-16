@@ -7,6 +7,7 @@ Ultra-modern minimalism with mathematical precision
 :root[data-theme='neoswiss'][data-mode='light'] {
   --background-color: var(--color-white);
   --text-color: var(--color-black);
+  --heading-color: var(--color-black);
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red);
@@ -27,6 +28,7 @@ Ultra-modern minimalism with mathematical precision
 :root[data-theme='neoswiss'][data-mode='dark'] {
   --background-color: var(--color-black);
   --text-color: var(--color-white);
+  --heading-color: var(--color-white);
   --border-color: var(--color-white);
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-red);
@@ -496,15 +498,6 @@ body[data-theme='neoswiss'] .resume-section--summary p {
   font-weight: 300;
   line-height: 1.8;
   margin-bottom: calc(var(--swiss-grid) * 3);
-}
-
-/* Hide skeuomorphic elements */
-body[data-theme='neoswiss'] .sticky-note {
-  display: none !important;
-}
-
-body[data-theme='neoswiss'] .nostalgia-elements {
-  display: none !important;
 }
 
   /* Ashby section - If present */

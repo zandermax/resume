@@ -7,6 +7,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
 :root[data-theme='dashboard'][data-mode='light'] {
   --background-color: #f5f7fa;
   --text-color: #1a1a1a;
+  --heading-color: #1a1a1a;
   --border-color: #e1e8ed;
   --dial-color-ink: #1a1a1a;
   --dial-color-selection: var(--color-blue-dashboard);
@@ -34,6 +35,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
 :root[data-theme='dashboard'][data-mode='dark'] {
   --background-color: var(--color-dark-surface);
   --text-color: #e6edf3;
+  --heading-color: #e6edf3;
   --border-color: var(--color-dark-border);
   --dial-color-ink: #e6edf3;
   --dial-color-selection: var(--color-blue-bright);
@@ -114,7 +116,8 @@ body[data-theme='dashboard'] .status-indicator__dot {
 }
 
 @keyframes pulse-status {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 var(--status-green);
   }
   50% {
@@ -224,7 +227,8 @@ body[data-theme='dashboard'] .resume-section__title::before {
 }
 
 @keyframes pulse-dot {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -555,16 +559,8 @@ body[data-theme='dashboard'][data-mode='dark'] .resume-section__title::before {
   }
 }
 
-
 /* ===========================
 Theme-Specific Element Visibility
 =========================== */
 
-/* Show dashboard elements when theme is active */
-[data-theme='dashboard'] .dashboard-status-banner {
-  display: flex;
-}
-
-[data-theme='dashboard'] .dashboard-metrics-grid {
-  display: grid;
-}
+/* Dashboard element visibility is controlled in theme-utils.css */

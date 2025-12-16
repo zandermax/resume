@@ -6,6 +6,7 @@
 :root[data-theme='glitch'][data-mode='light'] {
   --background-color: var(--color-cyan);
   --text-color: var(--color-magenta);
+  --heading-color: var(--color-magenta);
   --border-color: var(--color-magenta);
   --dial-color-ink: var(--color-magenta);
   --dial-color-selection: var(--color-yellow);
@@ -28,6 +29,7 @@
 :root[data-theme='glitch'][data-mode='dark'] {
   --background-color: #1a0033;
   --text-color: #ccff00;
+  --heading-color: #ccff00;
   --border-color: var(--color-orange-bright);
   --dial-color-ink: #ccff00;
   --dial-color-selection: var(--color-magenta);
@@ -1204,9 +1206,7 @@ Theme-Specific Element Visibility & Effects
   display: inline-block;
   animation: glitch-char 0.3s infinite;
   color: var(--glitch-primary);
-  text-shadow:
-    2px 0 var(--glitch-secondary),
-    -2px 0 var(--glitch-tertiary);
+  text-shadow: 2px 0 var(--glitch-secondary), -2px 0 var(--glitch-tertiary);
 }
 
 /* Stagger animations for variety */
@@ -1225,7 +1225,8 @@ Theme-Specific Element Visibility & Effects
 
 /* Character glitch animation */
 @keyframes glitch-char {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) skew(0deg);
     opacity: 1;
   }

@@ -6,6 +6,7 @@
 :root[data-theme='crt'][data-mode='light'] {
   --background-color: #2d2d2d;
   --text-color: var(--color-green-terminal);
+  --heading-color: var(--color-green-terminal);
   --border-color: var(--color-green-terminal);
   --dial-color-ink: var(--color-green-terminal);
   --dial-color-selection: var(--color-green-terminal);
@@ -25,6 +26,7 @@
 :root[data-theme='crt'][data-mode='dark'] {
   --background-color: var(--color-black);
   --text-color: var(--color-green);
+  --heading-color: var(--color-green);
   --border-color: var(--color-green);
   --dial-color-ink: var(--color-green);
   --dial-color-selection: var(--color-green);

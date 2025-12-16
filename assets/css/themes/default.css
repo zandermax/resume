@@ -6,6 +6,7 @@ DEFAULT Theme - Clean, Professional
 :root[data-theme='default'][data-mode='light'] {
   --background-color: var(--color-white);
   --text-color: var(--color-black);
+  --heading-color: var(--color-black);
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
@@ -25,6 +26,7 @@ DEFAULT Theme - Clean, Professional
 :root[data-theme='default'][data-mode='dark'] {
   --background-color: var(--color-dark-bg);
   --text-color: #e8e8e8;
+  --heading-color: #e8e8e8;
   --border-color: var(--color-gray-dark);
   --dial-color-ink: #e8e8e8;
   --dial-color-selection: var(--color-red-bright);

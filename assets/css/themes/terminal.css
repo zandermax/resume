@@ -6,6 +6,7 @@ Terminal Theme (1993 CLI-inspired)
 :root[data-theme='terminal'][data-mode='light'] {
   --background-color: var(--color-blue-sky);
   --text-color: var(--color-black);
+  --heading-color: var(--color-black);
   --border-color: var(--color-gray-medium);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-yellow);
@@ -31,6 +32,7 @@ Terminal Theme (1993 CLI-inspired)
 :root[data-theme='terminal'][data-mode='dark'] {
   --background-color: var(--color-blue-navy);
   --text-color: var(--color-white);
+  --heading-color: var(--color-white);
   --border-color: var(--color-gray-medium);
   --dial-color-ink: var(--color-gray-light);
   --dial-color-selection: var(--color-cyan);
@@ -85,24 +87,24 @@ body[data-theme='terminal'] {
     border-radius: 0;
     background: var(--terminal-window-bg);
     padding: 1rem;
+  }
 
-    &__group {
-      border: 0;
-      box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-        inset -1px -1px 0 var(--terminal-border-dark, #000000);
-      background: var(--section-bg);
-      border-radius: 0;
-      padding: 0.75rem;
-    }
+  .skills-grid__group {
+    border: 0;
+    box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
+      inset -1px -1px 0 var(--terminal-border-dark, #000000);
+    background: var(--section-bg);
+    border-radius: 0;
+    padding: 0.75rem;
+  }
 
-    &__title {
-      font-size: 0.9rem;
-    }
+  .skills-grid__title {
+    font-size: 0.9rem;
+  }
 
-    &__items {
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
+  .skills-grid__items {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   /* Tech badges as terminal buttons */
@@ -155,25 +157,25 @@ body[data-theme='terminal'] {
     border: 0;
     border-radius: 0;
     margin-top: 1.25rem;
+  }
 
-    &__company {
-      font-size: 0.9rem;
-    }
+  .experience-item__company {
+    font-size: 0.9rem;
+  }
 
-    &__meta {
-      font-size: 0.85rem;
-    }
+  .experience-item__meta {
+    font-size: 0.85rem;
+  }
 
-    &__bullets li {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 0.5rem;
+  .experience-item__bullets li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 
-      &::before {
-        content: '▪';
-        font-size: 0.7rem;
-        text-shadow: none;
-      }
+    &::before {
+      content: '▪';
+      font-size: 0.7rem;
+      text-shadow: none;
     }
   }
 
@@ -186,45 +188,42 @@ body[data-theme='terminal'] {
     background: var(--header-bg);
     border-radius: 0;
     margin-bottom: 1.5rem;
+  }
 
-    &__meta {
-      font-size: 0.9rem;
+  .resume-header__meta {
+    font-size: 0.9rem;
+  }
+
+  .resume-header__printlink {
+    border: 0;
+    box-shadow: none;
+    position: relative;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+    border-radius: 0;
+    background: var(--terminal-button-bg);
+    color: var(--text-color);
+    font-weight: normal;
+
+    &::before {
+      content: '[';
+      margin-right: 4px;
     }
 
-    &__printlink {
-      border: 0;
-      box-shadow: inset 1px 1px 0 var(--terminal-border-light, #ffffff),
-        inset -1px -1px 0 var(--terminal-border-dark, #000000), 1px 1px 3px rgba(0, 0, 0, 0.3);
-      position: relative;
-      transition: box-shadow 0.1s ease, transform 0.1s ease;
-      border-radius: 0;
+    &::after {
+      content: ']';
+      margin-left: 4px;
+    }
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
       background: var(--terminal-button-bg);
       color: var(--text-color);
-      font-weight: normal;
+    }
 
-      &::before {
-        content: '[';
-        margin-right: 4px;
-      }
-
-      &::after {
-        content: ']';
-        margin-left: 4px;
-      }
-
-      &:hover {
-        transform: none;
-        box-shadow: inset 1px 1px 0 var(--terminal-border-dark, #000000),
-          inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-        background: var(--terminal-button-bg);
-        color: var(--text-color);
-      }
-
-      &:active {
-        box-shadow: inset 2px 2px 0 var(--terminal-border-dark, #000000),
-          inset -1px -1px 0 var(--terminal-border-light, #ffffff);
-        transform: translate(1px, 1px);
-      }
+    &:active {
+      box-shadow: none;
+      transform: translate(1px, 1px);
     }
   }
 

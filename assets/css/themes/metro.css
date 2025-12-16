@@ -7,6 +7,7 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
   --text-color: var(--color-black);
+  --heading-color: #ffffff;
   --border-color: var(--color-blue-metro);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-blue-metro);
@@ -20,6 +21,7 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
   --section-bg: #f2f2f2;
   --header-bg: transparent;
   --accent-color: var(--color-blue-metro);
+  --section-title-color: #ffffff;
   --metro-blue: var(--color-blue-metro);
   --metro-green: #00a300;
   --metro-orange: var(--color-orange);
@@ -32,6 +34,7 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 :root[data-theme='metro'][data-mode='dark'] {
   --background-color: #1e1e1e;
   --text-color: var(--color-white);
+  --heading-color: #ffffff;
   --border-color: var(--color-cyan-bright);
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-cyan-bright);
@@ -45,6 +48,7 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
   --section-bg: #2d2d30;
   --header-bg: transparent;
   --accent-color: var(--color-cyan-bright);
+  --section-title-color: #ffffff;
   --metro-blue: var(--color-cyan-bright);
   --metro-green: var(--color-green-bright);
   --metro-orange: #ffaa44;
@@ -71,53 +75,56 @@ body[data-theme='metro'] {
 
   /* SECTION TITLES - Bold colored bars (Metro live tiles aesthetic) */
   .resume-section {
-    padding-top: 0;
+    padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
     margin-bottom: 0;
-    border-block-start: 3px solid var(--border-color);
 
-    &__title {
-      border: 0;
-      border-radius: 0;
-      padding: 1.25rem 2rem;
-      margin: 0;
-      background: var(--metro-blue);
-      color: #ffffff;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 1.4rem;
-      letter-spacing: 0.05em;
-      line-height: 1;
-      box-shadow: none;
+    &:not(:first-of-type) {
+      border-block-start: 3px solid var(--border-color);
     }
+  }
 
-    /* Rotate through Metro colors for different sections */
-    &:nth-of-type(1) .resume-section__title {
-      background: var(--metro-blue);
-    }
-    &:nth-of-type(2) .resume-section__title {
-      background: var(--metro-green);
-    }
-    &:nth-of-type(3) .resume-section__title {
-      background: var(--metro-orange);
-    }
-    &:nth-of-type(4) .resume-section__title {
-      background: var(--metro-magenta);
-    }
-    &:nth-of-type(5) .resume-section__title {
-      background: var(--metro-purple);
-    }
-    &:nth-of-type(6) .resume-section__title {
-      background: var(--metro-red);
-    }
-    &:nth-of-type(7) .resume-section__title {
-      background: var(--metro-blue);
-    }
-    &:nth-of-type(8) .resume-section__title {
-      background: var(--metro-green);
-    }
+  h2.resume-section__title {
+    border: 0;
+    border-radius: 0;
+    padding: 1em;
+    margin: 0 0 1.5rem 0;
+    background: var(--metro-blue);
+    color: var(--section-title-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    box-shadow: none;
+  }
+
+  /* Rotate through Metro colors for different sections */
+  .resume-section:nth-of-type(1) h2.resume-section__title {
+    background: var(--metro-blue);
+  }
+  .resume-section:nth-of-type(2) h2.resume-section__title {
+    background: var(--metro-green);
+  }
+  .resume-section:nth-of-type(3) h2.resume-section__title {
+    background: var(--metro-orange);
+  }
+  .resume-section:nth-of-type(4) h2.resume-section__title {
+    background: var(--metro-magenta);
+  }
+  .resume-section:nth-of-type(5) h2.resume-section__title {
+    background: var(--metro-purple);
+  }
+  .resume-section:nth-of-type(6) h2.resume-section__title {
+    background: var(--metro-red);
+  }
+  .resume-section:nth-of-type(7) h2.resume-section__title {
+    background: var(--metro-blue);
+  }
+  .resume-section:nth-of-type(8) h2.resume-section__title {
+    background: var(--metro-green);
   }
 
   /* Skills grid - tile blocks */
@@ -128,35 +135,35 @@ body[data-theme='metro'] {
     gap: 0;
     border-radius: 0;
     box-shadow: none;
+  }
 
-    &__group {
-      border: 0;
-      background: var(--section-bg);
-      padding: 1.5rem;
-      border-radius: 0;
-      margin: 0;
-      box-shadow: none;
-      transition: background-color 0.15s ease;
+  .skills-grid__group {
+    border: 0;
+    background: var(--section-bg);
+    padding: 1.5rem;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+    transition: background-color 0.15s ease;
 
-      &:hover {
-        background: var(--metro-blue);
+    &:hover {
+      background: var(--metro-blue);
 
-        * {
-          color: #ffffff;
-        }
+      * {
+        color: #ffffff;
       }
     }
+  }
 
-    &__title {
-      border: 0;
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 0.75rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-    }
+  .skills-grid__title {
+    border: 0;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
   }
 
   /* Experience items - clean tiles with accent bar */
@@ -189,39 +196,39 @@ body[data-theme='metro'] {
     &:nth-of-type(5n) {
       border-left-color: var(--metro-purple);
     }
+  }
 
-    &__tech {
-      border: 0;
-      border-radius: 0;
-      background: var(--metro-blue);
-      color: #ffffff;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      box-shadow: none;
-      transition: background-color 0.15s ease;
+  .experience-item__tech {
+    border: 0;
+    border-radius: 0;
+    background: var(--metro-blue);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    box-shadow: none;
+    transition: background-color 0.15s ease;
 
-      &:hover {
-        background: var(--metro-orange);
-      }
+    &:hover {
+      background: var(--metro-orange);
     }
+  }
 
-    &__company {
-      font-weight: 400;
-      font-size: 1rem;
-      text-transform: none;
-      color: var(--text-color);
-      letter-spacing: 0;
-    }
+  .experience-item__company {
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: none;
+    color: var(--text-color);
+    letter-spacing: 0;
+  }
 
-    &__bullets li::before {
-      content: '■';
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: var(--accent-color);
-    }
+  .experience-item__bullets li::before {
+    content: '■';
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--accent-color);
   }
 
   /* Lists - clean, minimal styling */
@@ -279,52 +286,51 @@ body[data-theme='metro'] {
     border-bottom: 4px solid var(--metro-blue);
     padding: 2rem;
     background: transparent;
-    margin: 0 0 2rem 0;
     box-shadow: none;
+  }
 
-    &__printlink {
-      border: 0;
-      border-radius: 0;
-      background: var(--metro-green);
-      color: #ffffff;
-      font-weight: 600;
-      padding: 1rem 2rem;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
+  .resume-header__printlink {
+    border: 0;
+    border-radius: 0;
+    background: var(--metro-green);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    box-shadow: none;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background: var(--metro-blue);
+      transform: none;
       box-shadow: none;
-      transition: background-color 0.15s ease;
-
-      &:hover {
-        background: var(--metro-blue);
-        transform: none;
-        box-shadow: none;
-      }
-
-      &:active {
-        transform: none;
-        box-shadow: none;
-        opacity: 0.8;
-      }
     }
 
-    &__name-greeting,
-    &__name-small {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--metro-blue);
+    &:active {
+      transform: none;
+      box-shadow: none;
+      opacity: 0.8;
     }
+  }
 
-    &__role {
-      font-weight: 400;
-      font-size: 1.2rem;
-      text-transform: none;
-      letter-spacing: 0;
-      color: var(--text-color);
-      margin-top: 0.5rem;
-    }
+  .resume-header__name-greeting,
+  .resume-header__name-small {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--metro-blue);
+  }
+
+  .resume-header__role {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-color);
+    margin-top: 0.5rem;
   }
 
   h1.resume-header__name {
@@ -367,49 +373,47 @@ body[data-theme='metro'] {
   }
 
   /* Dial selector - flat, minimal */
-  dial-selector {
-    .knob {
-      border-radius: 50%;
-      border: 0;
+  dial-selector .knob {
+    border-radius: 50%;
+    border: 0;
+    box-shadow: none;
+    background: var(--dial-knob-background);
+  }
+
+  dial-selector .indicator {
+    border-radius: 0;
+    background: var(--accent-color);
+    box-shadow: none;
+    border: 0;
+    width: 4px;
+  }
+
+  dial-selector .dial-label {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0;
+    transition: all 0.15s ease;
+    background: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 0;
+
+    &:hover {
+      background: rgba(0, 120, 215, 0.15);
       box-shadow: none;
-      background: var(--dial-knob-background);
     }
 
-    .indicator {
-      border-radius: 0;
+    &.active {
       background: var(--accent-color);
+      color: #ffffff;
       box-shadow: none;
-      border: 0;
-      width: 4px;
-    }
-
-    .dial-label {
-      font-size: 0.85rem;
-      padding: 0.6rem 1rem;
-      border-radius: 0;
-      transition: all 0.15s ease;
-      background: transparent;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border: 0;
-
-      &:hover {
-        background: rgba(0, 120, 215, 0.15);
-        box-shadow: none;
-      }
-
-      &.active {
-        background: var(--accent-color);
-        color: #ffffff;
-        box-shadow: none;
-        font-weight: 600;
-      }
     }
+  }
 
-    .spoke-line {
-      stroke-width: 2px;
-    }
+  dial-selector .spoke-line {
+    stroke-width: 2px;
   }
 
   /* Dial selector housing - clean panel */
@@ -420,15 +424,15 @@ body[data-theme='metro'] {
     border-radius: 0;
     box-shadow: none;
     position: relative;
+  }
 
-    h3 {
-      color: var(--text-color);
-      margin-bottom: 1rem;
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+  .resume-header__dial-selector h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   /* Typography - clean, modern */
@@ -453,16 +457,6 @@ body[data-theme='metro'] {
   li {
     font-weight: 400;
     line-height: 1.6;
-  }
-
-  /* Sticky note - hide in metro theme (not flat design) */
-  .sticky-note {
-    display: none !important;
-  }
-
-  /* Nostalgia elements - hide in metro theme */
-  .nostalgia-elements {
-    display: none !important;
   }
 
   /* Dark mode hover - use lighter blue tint */

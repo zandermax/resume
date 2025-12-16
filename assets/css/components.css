@@ -220,7 +220,6 @@ Components
 
 /* Sticky note */
 .sticky-note {
-  display: none;
   position: absolute;
   top: 50em;
   right: 40px;
@@ -270,10 +269,7 @@ Components
   }
 }
 
-/* Show sticky note only in skeuomorph theme */
-body[data-theme='skeuomorph'] .sticky-note {
-  display: block;
-}
+/* Sticky note visibility is controlled in theme-utils.css */
 
 /* Retro badge styling */
 .retro-badge {

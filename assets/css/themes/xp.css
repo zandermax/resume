@@ -6,6 +6,7 @@ Windows XP Theme (Luna)
 :root[data-theme='xp'][data-mode='light'] {
   --background-color: var(--color-blue-steel);
   --text-color: var(--color-black);
+  --heading-color: white;
   --border-color: var(--color-blue-dark);
   --dial-color-ink: var(--color-blue-dark);
   --dial-color-selection: var(--color-green-xp);
@@ -19,6 +20,7 @@ Windows XP Theme (Luna)
   --section-bg: var(--color-beige);
   --header-bg: var(--color-blue-dark);
   --accent-color: var(--color-green-xp);
+  --section-title-color: white;
   --xp-window-border-top: var(--color-blue-dark);
   --xp-window-border-bottom: #042c6e;
   --xp-window-title-start: var(--color-blue-dark);
@@ -37,6 +39,7 @@ Windows XP Theme (Luna)
 :root[data-theme='xp'][data-mode='dark'] {
   --background-color: #1f3a5f;
   --text-color: var(--color-white);
+  --heading-color: white;
   --border-color: var(--color-blue-dark);
   --dial-color-ink: #8fc4ff;
   --dial-color-selection: var(--color-green-xp);
@@ -50,6 +53,7 @@ Windows XP Theme (Luna)
   --section-bg: #2d4a6e;
   --header-bg: var(--color-blue-dark);
   --accent-color: var(--color-green-xp);
+  --section-title-color: white;
   --xp-window-border-top: var(--color-blue-dark);
   --xp-window-border-bottom: #042c6e;
   --xp-window-title-start: var(--color-blue-dark);
@@ -147,7 +151,7 @@ body[data-theme='xp'] .resume-section__title {
   border: 0;
   border-radius: 4px;
   background: linear-gradient(180deg, #0054e3 0%, #0f8ae8 100%);
-  color: white;
+  color: var(--section-title-color);
   padding: 0.6rem 1rem;
   margin: 0 -0.5rem 1rem -0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);

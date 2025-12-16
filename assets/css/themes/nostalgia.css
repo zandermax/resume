@@ -6,6 +6,7 @@ Nostalgia Theme (Geocities 90s)
 :root[data-theme='nostalgia'][data-mode='light'] {
   --background-color: var(--color-white);
   --text-color: var(--color-blue);
+  --heading-color: var(--color-blue);
   --border-color: var(--color-magenta);
   --dial-color-ink: var(--color-magenta);
   --dial-color-selection: var(--color-red);
@@ -25,6 +26,7 @@ Nostalgia Theme (Geocities 90s)
 :root[data-theme='nostalgia'][data-mode='dark'] {
   --background-color: var(--color-blue-navy);
   --text-color: var(--color-cyan);
+  --heading-color: var(--color-cyan);
   --border-color: var(--color-magenta);
   --dial-color-ink: var(--color-green);
   --dial-color-selection: var(--color-magenta);
@@ -151,20 +153,4 @@ Nostalgia Theme (Geocities 90s)
 Theme-Specific Element Visibility
 =========================== */
 
-/* Show nostalgia elements when theme is active */
-[data-theme='nostalgia'] .nostalgia-elements {
-  display: block;
-}
-
-/* Section titles - hide normal, show decorated versions */
-[data-theme='nostalgia'] .resume-section__title--normal {
-  display: none;
-}
-
-[data-theme='nostalgia'] .resume-section__title--nostalgia-blink {
-  display: block;
-}
-
-[data-theme='nostalgia'] .resume-section__title--nostalgia-marquee {
-  display: block;
-}
+/* All theme-specific visibility rules are now centralized in theme-utils.css */
