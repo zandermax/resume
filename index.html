@@ -366,40 +366,64 @@
 					'--accent-color': '#ff5555'
 				}
 			},
-			'95': {
+			xp: {
 				light: {
-					'--background-color': '#ffffff',
+					'--background-color': '#5A8FCC',
 					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
+					'--border-color': '#0054E3',
+					'--dial-color-ink': '#0054E3',
+					'--dial-color-selection': '#73BC5A',
+					'--dial-color-indicator': '#73BC5A',
+					'--dial-knob-background': 'linear-gradient(180deg, #F0F7FF 0%, #D0E8FF 50%, #8FC4FF 100%)',
+					'--font-family': '"Tahoma", "Segoe UI", "Verdana", sans-serif',
+					'--color-hover': '#73BC5A',
+					'--background-image': 'linear-gradient(180deg, #5A8FCC 0%, #4682BF 50%, #3367A8 100%)',
+					'--link-color': '#0054E3',
+					'--link-visited-color': '#7F3FA8',
+					'--section-bg': '#ECE9D8',
+					'--header-bg': '#0054E3',
+					'--accent-color': '#73BC5A',
+					'--xp-window-border-top': '#0054E3',
+					'--xp-window-border-bottom': '#042C6E',
+					'--xp-window-title-start': '#0054E3',
+					'--xp-window-title-end': '#0F8AE8',
+					'--xp-button-face': '#ECE9D8',
+					'--xp-button-highlight': '#FFFFFF',
+					'--xp-button-shadow': '#ACA899',
+					'--xp-button-dark-shadow': '#716F64',
+					'--xp-start-green': '#73BC5A',
+					'--xp-taskbar-blue': '#245EDC',
+					'--xp-text-shadow': 'none',
+					'--dial-selector-label-color': '#0054E3'
 				},
 				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
+					'--background-color': '#1F3A5F',
+					'--text-color': '#FFFFFF',
+					'--border-color': '#0054E3',
+					'--dial-color-ink': '#8FC4FF',
+					'--dial-color-selection': '#73BC5A',
+					'--dial-color-indicator': '#73BC5A',
+					'--dial-knob-background': 'linear-gradient(180deg, #4A6B99 0%, #2D4A6E 50%, #1F3A5F 100%)',
+					'--font-family': '"Tahoma", "Segoe UI", "Verdana", sans-serif',
+					'--color-hover': '#73BC5A',
+					'--background-image': 'linear-gradient(180deg, #1F3A5F 0%, #163052 50%, #0D1F3A 100%)',
+					'--link-color': '#5BA3FF',
+					'--link-visited-color': '#9F7FC8',
+					'--section-bg': '#2D4A6E',
+					'--header-bg': '#0054E3',
+					'--accent-color': '#73BC5A',
+					'--xp-window-border-top': '#0054E3',
+					'--xp-window-border-bottom': '#042C6E',
+					'--xp-window-title-start': '#0054E3',
+					'--xp-window-title-end': '#0F8AE8',
+					'--xp-button-face': '#3D5A7F',
+					'--xp-button-highlight': '#5A7FA8',
+					'--xp-button-shadow': '#1F3A5F',
+					'--xp-button-dark-shadow': '#0D1F3A',
+					'--xp-start-green': '#73BC5A',
+					'--xp-taskbar-blue': '#245EDC',
+					'--xp-text-shadow': '1px 1px 2px rgba(0,0,0,0.5)',
+					'--dial-selector-label-color': '#000000'
 				}
 			},
 			glitch: {
@@ -454,8 +478,9 @@
 				});
 			}
 
-			// Update body data-theme attribute for CSS targeting
+			// Update body data-theme and data-mode attributes for CSS targeting
 			document.body.setAttribute('data-theme', currentTheme);
+			document.body.setAttribute('data-mode', currentMode);
 
 			// Toggle nostalgia-specific elements
 			const nostalgiaElements = document.querySelector('.nostalgia-elements');
@@ -580,7 +605,7 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Default,Brutal,Skeuomorph,Terminal,Nostalgia,Source,Anti,Swiss,95,Glitch"
+					<dial-selector width="600px" height="200px" options="Default,Brutal,Skeuomorph,Terminal,Nostalgia,Source,Anti,Swiss,XP,Glitch"
 						default-option="Default" onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
