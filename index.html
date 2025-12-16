@@ -20,9 +20,9 @@
 			'1996': 'nostalgia',
 			'2001': 'xp',
 			'2007': 'skeuomorph',
-			'2012': 'metro2012',
+			'2012': 'metro',
 			'2017': 'brutal',
-			'2020': 'dashboard2020'
+			'2020': 'dashboard'
 		};
 
 		// Theme configuration - defines all CSS custom properties for each theme + mode combination
@@ -475,7 +475,7 @@
 					'--dial-selector-label-color': '#000000'
 				}
 			},
-			metro2012: {
+			metro: {
 				light: {
 					'--background-color': '#ffffff',
 					'--text-color': '#000000',
@@ -559,7 +559,7 @@
 					'--accent-color': '#ff5555'
 				}
 			},
-			dashboard2020: {
+			dashboard: {
 				light: {
 					'--background-color': '#f5f7fa',
 					'--text-color': '#1a1a1a',
@@ -643,14 +643,14 @@
 				stickyNote.style.display = currentTheme === 'skeuomorph' ? 'block' : 'none';
 			}
 
-			// Toggle dashboard2020-specific elements
+			// Toggle dashboard-specific elements
 			const dashboardStatusBanner = document.querySelector('.dashboard-status-banner');
 			if (dashboardStatusBanner) {
-				dashboardStatusBanner.style.display = currentTheme === 'dashboard2020' ? 'flex' : 'none';
+				dashboardStatusBanner.style.display = currentTheme === 'dashboard' ? 'flex' : 'none';
 			}
 			const dashboardMetricsGrid = document.querySelector('.dashboard-metrics-grid');
 			if (dashboardMetricsGrid) {
-				dashboardMetricsGrid.style.display = currentTheme === 'dashboard2020' ? 'grid' : 'none';
+				dashboardMetricsGrid.style.display = currentTheme === 'dashboard' ? 'grid' : 'none';
 			}
 
 			// Handle section titles in nostalgia theme
