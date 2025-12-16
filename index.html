@@ -5,6 +5,7 @@
 	<meta charset="UTF-8" />
 	<title>Zander Maxwell -- Design-focused Software Engineer -- Ashby Application</title>
 	<link rel="stylesheet" href="./assets/css/resume.css" />
+	<link rel="stylesheet" href="./assets/css/themes/default.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,811 +29,76 @@
 			'2038': 'glitch2038'
 		};
 
-		// Theme configuration - defines all CSS custom properties for each theme + mode combination
-		const THEME_CONFIG = {
-			default: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			brutal: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ffffff',
-					'--label-text-shadow': 'none',
-					'--label-text-shadow-hover': '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ffffff',
-					'--label-text-shadow': 'none',
-					'--label-text-shadow-hover': '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			skeuomorph: {
-				light: {
-					'--background-color': '#5c4033',
-					'--text-color': '#2c2416',
-					'--border-color': '#8b7355',
-					'--dial-color-ink': '#2c2416',
-					'--dial-color-selection': '#d4766a',
-					'--dial-color-indicator': '#d4766a',
-					'--dial-knob-background': 'radial-gradient(circle at 35% 35%, #e8e8e8 0%, #c0c0c0 30%, #a0a0a0 60%, #707070 100%)',
-					'--color-outer-circle': '#b8860b',
-					'--width-outer-circle': '3px',
-					'--color-inner-circle': '#5c4033',
-					'--width-inner-circle': '1px',
-					'--font-family': '"Georgia", "Times New Roman", serif',
-					'--label-font-weight': '900',
-					'--color-hover': '#8b4513',
-					'--knob-shadow': '0 8px 16px rgba(0, 0, 0, 0.6), 0 16px 32px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 3px 6px rgba(255, 255, 255, 0.3), inset 0 -4px 8px rgba(0, 0, 0, 0.5)',
-					'--background-image': 'repeating-linear-gradient(90deg, #6b4423 0px, #6b4423 2px, #5c3a1f 2px, #5c3a1f 4px)',
-					'--link-color': '#5d4037',
-					'--link-visited-color': '#3e2723',
-					'--section-bg': '#f4f1e8',
-					'--header-bg': '#6d4c41',
-					'--accent-color': '#8b4513',
-					'--leather-color': '#6d4c41',
-					'--paper-color': '#f4f1e8',
-					'--ink-color': '#2c2416',
-					'--stitch-color': '#d4a574',
-					'--stitch-spacing': '8px',
-					'--stitch-length': '4px',
-					'--metal-gradient': 'linear-gradient(135deg, #f4e4c1 0%, #d4af37 20%, #ffd700 40%, #d4af37 60%, #b8924c 80%, #d4af37 100%)',
-					'--wood-color-dark': '#4a3526',
-					'--wood-color-light': '#6b4d3a',
-					'--wood-grain': 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px), repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.02) 1px, rgba(0,0,0,0.02) 2px)',
-					'--paper-shadow': '0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.05)',
-					'--paper-texture': 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.015) 1px, rgba(0,0,0,0.015) 2px), repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0,0,0,0.015) 1px, rgba(0,0,0,0.015) 2px)',
-					'--leather-texture': 'radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.05) 0%, transparent 50%), radial-gradient(ellipse at 40% 80%, rgba(255,255,255,0.03) 0%, transparent 50%)',
-					'--sticky-note-color': '#feff9c',
-					'--sticky-note-shadow': '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)',
-					'--sticky-note-rotation': '-3deg',
-					'--desk-shadow': 'inset 0 2px 4px rgba(0, 0, 0, 0.2)'
-				},
-				dark: {
-					'--background-color': '#1a1410',
-					'--text-color': '#e8d5c4',
-					'--border-color': '#6d5948',
-					'--dial-color-ink': '#e8d5c4',
-					'--dial-color-selection': '#d4766a',
-					'--dial-color-indicator': '#d4766a',
-					'--dial-knob-background': 'radial-gradient(circle at 30% 30%, #4a4a4a 0%, #2a2a2a 40%, #1a1a1a 70%, #0a0a0a 100%)',
-					'--color-outer-circle': '#d4af37',
-					'--width-outer-circle': '3px',
-					'--color-inner-circle': '#8b7355',
-					'--width-inner-circle': '1px',
-					'--font-family': '"Georgia", "Times New Roman", serif',
-					'--label-font-weight': '900',
-					'--color-hover': '#1a1a1a',
-					'--knob-shadow': '0 12px 24px rgba(0, 0, 0, 0.8), 0 24px 48px rgba(0, 0, 0, 0.6), 0 6px 12px rgba(0, 0, 0, 0.7), inset 0 3px 6px rgba(255, 255, 255, 0.08), inset 0 -5px 10px rgba(0, 0, 0, 0.8)',
-					'--background-image': 'repeating-linear-gradient(90deg, #1a1410 0px, #1a1410 2px, #0f0b08 2px, #0f0b08 4px)',
-					'--link-color': '#d4af37',
-					'--link-visited-color': '#b8924c',
-					'--section-bg': '#2d2416',
-					'--header-bg': '#1f1812',
-					'--accent-color': '#d4af37',
-					'--leather-color': '#1f1812',
-					'--paper-color': '#2d2416',
-					'--ink-color': '#e8d5c4',
-					'--stitch-color': '#d4af37',
-					'--stitch-spacing': '8px',
-					'--stitch-length': '4px',
-					'--metal-gradient': 'linear-gradient(135deg, #f0e68c 0%, #d4af37 20%, #ffd700 40%, #d4af37 60%, #b8924c 80%, #d4af37 100%)',
-					'--wood-color-dark': '#0f0b08',
-					'--wood-color-light': '#1a1410',
-					'--wood-grain': 'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px), repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.08) 1px, rgba(0,0,0,0.08) 2px)',
-					'--paper-shadow': '0 3px 6px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.15)',
-					'--paper-texture': 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.03) 2px), repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0.03) 2px)',
-					'--leather-texture': 'radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.03) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.1) 0%, transparent 50%), radial-gradient(ellipse at 40% 80%, rgba(255,255,255,0.02) 0%, transparent 50%)',
-					'--sticky-note-color': '#7a7a3c',
-					'--sticky-note-shadow': '0 6px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)',
-					'--sticky-note-rotation': '-3deg',
-					'--desk-shadow': 'inset 0 3px 6px rgba(0, 0, 0, 0.4)',
-					'--print-button-text-color': '#2d2416',
-					'--print-button-bg-hover-gradient': 'linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #b8924c 100%)'
-				}
-			},
-			retro85: {
-				light: {
-					'--background-color': '#2d2d2d',
-					'--text-color': '#33ff33',
-					'--border-color': '#33ff33',
-					'--dial-color-ink': '#33ff33',
-					'--dial-color-selection': '#33ff33',
-					'--dial-color-indicator': '#33ff33',
-					'--dial-knob-background': '#1a1a1a',
-					'--font-family': '"Courier New", "Lucida Console", "Consolas", monospace',
-					'--color-hover': '#33ff33',
-					'--background-image': 'none',
-					'--link-color': '#33ff33',
-					'--link-visited-color': '#33ff33',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#33ff33'
-				},
-				dark: {
-					'--background-color': '#000000',
-					'--text-color': '#00ff00',
-					'--border-color': '#00ff00',
-					'--dial-color-ink': '#00ff00',
-					'--dial-color-selection': '#00ff00',
-					'--dial-color-indicator': '#00ff00',
-					'--dial-knob-background': '#001100',
-					'--font-family': '"Courier New", "Lucida Console", "Consolas", monospace',
-					'--color-hover': '#00ff00',
-					'--background-image': 'none',
-					'--link-color': '#00ff00',
-					'--link-visited-color': '#00ff00',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#00ff00'
-				}
-			},
-			terminal: {
-				light: {
-					'--background-color': '#5555AA',
-					'--text-color': '#000000',
-					'--border-color': '#808080',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#FFFF00',
-					'--dial-color-indicator': '#FFFF00',
-					'--dial-knob-background': '#C0C0C0',
-					'--font-family': '"Courier New", "Lucida Console", monospace',
-					'--color-hover': '#FFFF00',
-					'--background-image': 'none',
-					'--link-color': '#FFFF00',
-					'--link-visited-color': '#00FFFF',
-					'--section-bg': '#C0C0C0',
-					'--header-bg': '#AAAAAA',
-					'--accent-color': '#FFFF00',
-					'--terminal-border-light': '#FFFFFF',
-					'--terminal-border-dark': '#000000',
-					'--terminal-window-bg': '#C0C0C0',
-					'--terminal-title-bg': '#000080',
-					'--terminal-button-bg': '#C0C0C0',
-					'--terminal-shadow': '2px 2px 0 rgba(0, 0, 0, 0.3)'
-				},
-				dark: {
-					'--background-color': '#0000AA',
-					'--text-color': '#FFFFFF',
-					'--border-color': '#808080',
-					'--dial-color-ink': '#AAAAAA',
-					'--dial-color-selection': '#00FFFF',
-					'--dial-color-indicator': '#00FFFF',
-					'--dial-knob-background': '#555555',
-					'--font-family': '"Courier New", "Lucida Console", monospace',
-					'--color-hover': '#00FFFF',
-					'--background-image': 'none',
-					'--link-color': '#00FFFF',
-					'--link-visited-color': '#FFFF00',
-					'--section-bg': '#000080',
-					'--header-bg': '#000080',
-					'--accent-color': '#00FFFF',
-					'--terminal-border-light': '#5555FF',
-					'--terminal-border-dark': '#000033',
-					'--terminal-window-bg': '#000080',
-					'--terminal-title-bg': '#0000AA',
-					'--terminal-button-bg': '#333388',
-					'--terminal-shadow': '2px 2px 0 rgba(0, 0, 0, 0.5)'
-				}
-			},
-			nostalgia: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#0000ff',
-					'--border-color': '#ff00ff',
-					'--dial-color-ink': '#ff00ff',
-					'--dial-color-selection': '#ff0000',
-					'--dial-color-indicator': '#ffff00',
-					'--dial-knob-background': '#00ffff',
-					'--font-family': '"Comic Sans MS", "Comic Sans", cursive',
-					'--color-hover': '#ff0000',
-					'--background-image': 'url("data:image/svg+xml,%3Csvg width=\'200\' height=\'200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'stars\' x=\'0\' y=\'0\' width=\'200\' height=\'200\' patternUnits=\'userSpaceOnUse\'%3E%3Crect fill=\'%23ffffff\' width=\'200\' height=\'200\'/%3E%3Ccircle cx=\'20\' cy=\'30\' r=\'2\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'80\' cy=\'70\' r=\'1.5\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.5s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'150\' cy=\'40\' r=\'2\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'1.8s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'45\' cy=\'120\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2.2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'170\' cy=\'150\' r=\'2\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.6s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'110\' cy=\'180\' r=\'1.5\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'2.4s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'60\' cy=\'90\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.5;1;0.5\' dur=\'1.9s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'130\' cy=\'110\' r=\'2\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2.1s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'200\' height=\'200\' fill=\'url(%23stars)\'/%3E%3C/svg%3E")',
-					'--link-color': '#0000ee',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': '#ffff99',
-					'--header-bg': '#ff99ff',
-					'--accent-color': '#00ff00'
-				},
-				dark: {
-					'--background-color': '#000080',
-					'--text-color': '#00ffff',
-					'--border-color': '#ff00ff',
-					'--dial-color-ink': '#00ff00',
-					'--dial-color-selection': '#ff00ff',
-					'--dial-color-indicator': '#ffff00',
-					'--dial-knob-background': '#ff00ff',
-					'--font-family': '"Comic Sans MS", "Comic Sans", cursive',
-					'--color-hover': '#ff00ff',
-					'--background-image': 'url("data:image/svg+xml,%3Csvg width=\'200\' height=\'200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'stars\' x=\'0\' y=\'0\' width=\'200\' height=\'200\' patternUnits=\'userSpaceOnUse\'%3E%3Crect fill=\'%23000080\' width=\'200\' height=\'200\'/%3E%3Ccircle cx=\'20\' cy=\'30\' r=\'2\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'80\' cy=\'70\' r=\'1.5\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.5s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'150\' cy=\'40\' r=\'2\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'1.8s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'45\' cy=\'120\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2.2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'170\' cy=\'150\' r=\'2\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.6s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'110\' cy=\'180\' r=\'1.5\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'2.4s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'60\' cy=\'90\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.5;1;0.5\' dur=\'1.9s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'130\' cy=\'110\' r=\'2\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2.1s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'10\' cy=\'160\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'1.7s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'190\' cy=\'20\' r=\'2\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'2.3s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'35\' cy=\'50\' r=\'1.5\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.8s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'95\' cy=\'140\' r=\'2\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'165\' cy=\'95\' r=\'1.5\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'1.6s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'125\' cy=\'25\' r=\'2\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.5;1;0.5\' dur=\'2.2s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'50\' cy=\'195\' r=\'1.5\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.3;1;0.3\' dur=\'1.9s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'185\' cy=\'120\' r=\'2\' fill=\'%2300ffff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.4;1;0.4\' dur=\'2.1s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'15\' cy=\'80\' r=\'1.5\' fill=\'%23ff00ff\'%3E%3Canimate attributeName=\'opacity\' values=\'0.2;1;0.2\' dur=\'1.7s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3Ccircle cx=\'145\' cy=\'175\' r=\'2\' fill=\'%23ffff00\'%3E%3Canimate attributeName=\'opacity\' values=\'0.5;1;0.5\' dur=\'2.4s\' repeatCount=\'indefinite\'/%3E%3C/circle%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'200\' height=\'200\' fill=\'url(%23stars)\'/%3E%3C/svg%3E")',
-					'--link-color': '#00ffff',
-					'--link-visited-color': '#ff00ff',
-					'--section-bg': '#001a4d',
-					'--header-bg': '#003366',
-					'--accent-color': '#ffff00'
-				}
-			},
-			source: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			anti: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			swiss: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			xp: {
-				light: {
-					'--background-color': '#5A8FCC',
-					'--text-color': '#000000',
-					'--border-color': '#0054E3',
-					'--dial-color-ink': '#0054E3',
-					'--dial-color-selection': '#73BC5A',
-					'--dial-color-indicator': '#73BC5A',
-					'--dial-knob-background': 'linear-gradient(180deg, #F0F7FF 0%, #D0E8FF 50%, #8FC4FF 100%)',
-					'--font-family': '"Tahoma", "Segoe UI", "Verdana", sans-serif',
-					'--color-hover': '#73BC5A',
-					'--background-image': 'linear-gradient(180deg, #5A8FCC 0%, #4682BF 50%, #3367A8 100%)',
-					'--link-color': '#0054E3',
-					'--link-visited-color': '#7F3FA8',
-					'--section-bg': '#ECE9D8',
-					'--header-bg': '#0054E3',
-					'--accent-color': '#73BC5A',
-					'--xp-window-border-top': '#0054E3',
-					'--xp-window-border-bottom': '#042C6E',
-					'--xp-window-title-start': '#0054E3',
-					'--xp-window-title-end': '#0F8AE8',
-					'--xp-button-face': '#ECE9D8',
-					'--xp-button-highlight': '#FFFFFF',
-					'--xp-button-shadow': '#ACA899',
-					'--xp-button-dark-shadow': '#716F64',
-					'--xp-start-green': '#73BC5A',
-					'--xp-taskbar-blue': '#245EDC',
-					'--xp-text-shadow': 'none',
-					'--dial-selector-label-color': '#0054E3'
-				},
-				dark: {
-					'--background-color': '#1F3A5F',
-					'--text-color': '#FFFFFF',
-					'--border-color': '#0054E3',
-					'--dial-color-ink': '#8FC4FF',
-					'--dial-color-selection': '#73BC5A',
-					'--dial-color-indicator': '#73BC5A',
-					'--dial-knob-background': 'linear-gradient(180deg, #4A6B99 0%, #2D4A6E 50%, #1F3A5F 100%)',
-					'--font-family': '"Tahoma", "Segoe UI", "Verdana", sans-serif',
-					'--color-hover': '#73BC5A',
-					'--background-image': 'linear-gradient(180deg, #1F3A5F 0%, #163052 50%, #0D1F3A 100%)',
-					'--link-color': '#5BA3FF',
-					'--link-visited-color': '#9F7FC8',
-					'--section-bg': '#2D4A6E',
-					'--header-bg': '#0054E3',
-					'--accent-color': '#73BC5A',
-					'--xp-window-border-top': '#0054E3',
-					'--xp-window-border-bottom': '#042C6E',
-					'--xp-window-title-start': '#0054E3',
-					'--xp-window-title-end': '#0F8AE8',
-					'--xp-button-face': '#3D5A7F',
-					'--xp-button-highlight': '#5A7FA8',
-					'--xp-button-shadow': '#1F3A5F',
-					'--xp-button-dark-shadow': '#0D1F3A',
-					'--xp-start-green': '#73BC5A',
-					'--xp-taskbar-blue': '#245EDC',
-					'--xp-text-shadow': '1px 1px 2px rgba(0,0,0,0.5)',
-					'--dial-selector-label-color': '#000000'
-				}
-			},
-			web2gloss: {
-				light: {
-					'--background-color': '#E8F5FF',
-					'--text-color': '#333333',
-					'--border-color': '#CCDDEE',
-					'--dial-color-ink': '#0099FF',
-					'--dial-color-selection': '#0099FF',
-					'--dial-color-indicator': '#0099FF',
-					'--dial-knob-background': 'radial-gradient(circle at 30% 30%, #FFFFFF 0%, #E8F5FF 30%, #B5E3FF 70%, #66CCFF 100%)',
-					'--font-family': '"Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#0099FF',
-					'--background-image': 'radial-gradient(ellipse at center, #E8F5FF 0%, #B5E3FF 100%)',
-					'--link-color': '#0099FF',
-					'--link-visited-color': '#7F3FA8',
-					'--section-bg': '#FFFFFF',
-					'--header-bg': 'linear-gradient(180deg, #0099FF 0%, #0077DD 100%)',
-					'--accent-color': '#FF6600',
-					'--web2-primary': '#0099FF',
-					'--web2-accent': '#FF6600',
-					'--web2-success': '#66CC00',
-					'--web2-surface': '#FFFFFF',
-					'--web2-glow': 'rgba(0, 153, 255, 0.3)',
-					'--web2-shadow': 'rgba(0, 0, 0, 0.15)'
-				},
-				dark: {
-					'--background-color': '#001F3F',
-					'--text-color': '#E8F5FF',
-					'--border-color': '#0066CC',
-					'--dial-color-ink': '#00D4FF',
-					'--dial-color-selection': '#00D4FF',
-					'--dial-color-indicator': '#00D4FF',
-					'--dial-knob-background': 'radial-gradient(circle at 30% 30%, #0066CC 0%, #003D7A 40%, #001F3F 80%, #000A1A 100%)',
-					'--font-family': '"Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#00D4FF',
-					'--background-image': 'radial-gradient(ellipse at center, #003D7A 0%, #001F3F 100%)',
-					'--link-color': '#00D4FF',
-					'--link-visited-color': '#9F7FC8',
-					'--section-bg': '#003D7A',
-					'--header-bg': 'linear-gradient(180deg, #0066CC 0%, #003D7A 100%)',
-					'--accent-color': '#FF9933',
-					'--web2-primary': '#00D4FF',
-					'--web2-accent': '#FF9933',
-					'--web2-success': '#99FF33',
-					'--web2-surface': '#003D7A',
-					'--web2-glow': 'rgba(0, 212, 255, 0.4)',
-					'--web2-shadow': 'rgba(0, 0, 0, 0.5)'
-				}
-			},
-			metro: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#0078D7',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#0078D7',
-					'--dial-color-indicator': '#0078D7',
-					'--dial-knob-background': '#F2F2F2',
-					'--font-family': '"Segoe UI", "Roboto", system-ui, -apple-system, sans-serif',
-					'--color-hover': '#0078D7',
-					'--background-image': 'none',
-					'--link-color': '#0078D7',
-					'--link-visited-color': '#E3008C',
-					'--section-bg': '#F2F2F2',
-					'--header-bg': 'transparent',
-					'--accent-color': '#0078D7',
-					'--metro-blue': '#0078D7',
-					'--metro-green': '#00A300',
-					'--metro-orange': '#FF8C00',
-					'--metro-magenta': '#E3008C',
-					'--metro-red': '#E81123',
-					'--metro-purple': '#881798'
-				},
-				dark: {
-					'--background-color': '#1E1E1E',
-					'--text-color': '#FFFFFF',
-					'--border-color': '#00BCF2',
-					'--dial-color-ink': '#FFFFFF',
-					'--dial-color-selection': '#00BCF2',
-					'--dial-color-indicator': '#00BCF2',
-					'--dial-knob-background': '#2D2D30',
-					'--font-family': '"Segoe UI", "Roboto", system-ui, -apple-system, sans-serif',
-					'--color-hover': '#00BCF2',
-					'--background-image': 'none',
-					'--link-color': '#00BCF2',
-					'--link-visited-color': '#E3008C',
-					'--section-bg': '#2D2D30',
-					'--header-bg': 'transparent',
-					'--accent-color': '#00BCF2',
-					'--metro-blue': '#00BCF2',
-					'--metro-green': '#00CC6A',
-					'--metro-orange': '#FFAA44',
-					'--metro-magenta': '#FF1A8C',
-					'--metro-red': '#FF4343',
-					'--metro-purple': '#B146C2'
-				}
-			},
-			glitch: {
-				light: {
-					'--background-color': '#ffffff',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#f13b3b',
-					'--dial-color-indicator': '#f13b3b',
-					'--dial-knob-background': '#11161c',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#f13b3b',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#551a8b',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#f13b3b'
-				},
-				dark: {
-					'--background-color': '#1a1f24',
-					'--text-color': '#e8e8e8',
-					'--border-color': '#888888',
-					'--dial-color-ink': '#e8e8e8',
-					'--dial-color-selection': '#ff5555',
-					'--dial-color-indicator': '#ff5555',
-					'--dial-knob-background': '#2a2f34',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#ff5555',
-					'--background-image': 'none',
-					'--link-color': '#e8e8e8',
-					'--link-visited-color': '#aaaaaa',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#ff5555'
-				}
-			},
-			dashboard: {
-				light: {
-					'--background-color': '#f5f7fa',
-					'--text-color': '#1a1a1a',
-					'--border-color': '#e1e8ed',
-					'--dial-color-ink': '#1a1a1a',
-					'--dial-color-selection': '#0066cc',
-					'--dial-color-indicator': '#0066cc',
-					'--dial-knob-background': '#ffffff',
-					'--font-family': '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
-					'--color-hover': '#0066cc',
-					'--background-image': 'none',
-					'--link-color': '#0066cc',
-					'--link-visited-color': '#004499',
-					'--section-bg': '#ffffff',
-					'--header-bg': '#ffffff',
-					'--accent-color': '#0066cc',
-					'--panel-bg': '#ffffff',
-					'--panel-border': '#e1e8ed',
-					'--status-green': '#28a745',
-					'--status-yellow': '#ffc107',
-					'--status-red': '#dc3545',
-					'--metric-highlight': '#0066cc',
-					'--panel-shadow': 'rgba(0, 0, 0, 0.08)',
-					'--mono-font': '"SF Mono", "Monaco", "Courier New", monospace'
-				},
-				dark: {
-					'--background-color': '#0d1117',
-					'--text-color': '#e6edf3',
-					'--border-color': '#30363d',
-					'--dial-color-ink': '#e6edf3',
-					'--dial-color-selection': '#58a6ff',
-					'--dial-color-indicator': '#58a6ff',
-					'--dial-knob-background': '#161b22',
-					'--font-family': '"Inter", "Segoe UI", system-ui, -apple-system, sans-serif',
-					'--color-hover': '#58a6ff',
-					'--background-image': 'none',
-					'--link-color': '#58a6ff',
-					'--link-visited-color': '#79c0ff',
-					'--section-bg': '#161b22',
-					'--header-bg': '#161b22',
-					'--accent-color': '#58a6ff',
-					'--panel-bg': '#161b22',
-					'--panel-border': '#30363d',
-					'--status-green': '#3fb950',
-					'--status-yellow': '#d29922',
-					'--status-red': '#f85149',
-					'--metric-highlight': '#58a6ff',
-					'--panel-shadow': 'rgba(0, 0, 0, 0.3)',
-					'--mono-font': '"SF Mono", "Monaco", "Courier New", monospace'
-				}
-			},
-			neoswiss: {
-				light: {
-					'--background-color': '#FFFFFF',
-					'--text-color': '#000000',
-					'--border-color': '#000000',
-					'--dial-color-ink': '#000000',
-					'--dial-color-selection': '#FF0000',
-					'--dial-color-indicator': '#FF0000',
-					'--dial-knob-background': '#000000',
-					'--font-family': '"Helvetica Neue", "Helvetica", "Arial", sans-serif',
-					'--color-hover': '#FF0000',
-					'--background-image': 'none',
-					'--link-color': '#000000',
-					'--link-visited-color': '#000000',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#FF0000',
-					'--swiss-grid': '8px'
-				},
-				dark: {
-					'--background-color': '#000000',
-					'--text-color': '#FFFFFF',
-					'--border-color': '#FFFFFF',
-					'--dial-color-ink': '#FFFFFF',
-					'--dial-color-selection': '#FF0000',
-					'--dial-color-indicator': '#FF0000',
-					'--dial-knob-background': '#FFFFFF',
-					'--font-family': '"Helvetica Neue", "Helvetica", "Arial", sans-serif',
-					'--color-hover': '#FF0000',
-					'--background-image': 'none',
-					'--link-color': '#FFFFFF',
-					'--link-visited-color': '#FFFFFF',
-					'--section-bg': 'transparent',
-					'--header-bg': 'transparent',
-					'--accent-color': '#FF0000',
-					'--swiss-grid': '8px'
-				}
-			},
-			glitch2038: {
-				light: {
-					'--background-color': '#00FFFF',
-					'--text-color': '#FF00FF',
-					'--border-color': '#FF00FF',
-					'--dial-color-ink': '#FF00FF',
-					'--dial-color-selection': '#FFFF00',
-					'--dial-color-indicator': '#FFFF00',
-					'--dial-knob-background': '#00FF00',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#FF0000',
-					'--background-image': 'none',
-					'--link-color': '#FF1493',
-					'--link-visited-color': '#00FF00',
-					'--section-bg': '#CCFF00',
-					'--header-bg': '#FF00FF',
-					'--accent-color': '#FF6600',
-					'--glitch-primary': '#FF00FF',
-					'--glitch-secondary': '#00FFFF',
-					'--glitch-tertiary': '#FFFF00'
-				},
-				dark: {
-					'--background-color': '#1A0033',
-					'--text-color': '#CCFF00',
-					'--border-color': '#FF6600',
-					'--dial-color-ink': '#CCFF00',
-					'--dial-color-selection': '#FF00FF',
-					'--dial-color-indicator': '#FF00FF',
-					'--dial-knob-background': '#660066',
-					'--font-family': '"Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
-					'--color-hover': '#00FFFF',
-					'--background-image': 'none',
-					'--link-color': '#00FFFF',
-					'--link-visited-color': '#FF1493',
-					'--section-bg': '#220044',
-					'--header-bg': '#330055',
-					'--accent-color': '#FF6600',
-					'--glitch-primary': '#CCFF00',
-					'--glitch-secondary': '#FF00FF',
-					'--glitch-tertiary': '#FF6600'
-				}
-			}
-		};
-
 		// Current selections
 		let currentTheme = 'default';
 		let currentMode = 'light';
 
-		// Apply a theme+mode combination by setting CSS custom properties on the document root
-		function applyThemeAndMode() {
-			const theme = THEME_CONFIG[currentTheme];
-			if (theme && theme[currentMode]) {
-				const config = theme[currentMode];
-				Object.entries(config).forEach(([property, value]) => {
-					document.documentElement.style.setProperty(property, value);
-				});
-			}
+		// Helper to toggle theme-specific elements
+		function toggleThemeElements() {
+			const elements = [
+				{ selector: '.nostalgia-elements', theme: 'nostalgia', display: 'block' },
+				{ selector: '.sticky-note', theme: 'skeuomorph', display: 'block' },
+				{ selector: '.dashboard-status-banner', theme: 'dashboard', display: 'flex' },
+				{ selector: '.dashboard-metrics-grid', theme: 'dashboard', display: 'grid' },
+				{ selector: '.web2-badges', theme: 'web2gloss', display: 'block' }
+			];
 
-			// Update body data-theme and data-mode attributes for CSS targeting
+			elements.forEach(({ selector, theme, display }) => {
+				const el = document.querySelector(selector);
+				if (el) el.style.display = currentTheme === theme ? display : 'none';
+			});
+		}
+
+		// Apply a theme+mode combination by setting data attributes
+		function applyThemeAndMode() {
+			// Set attributes on both :root (html) and body for CSS targeting
+			// :root is needed for CSS custom properties, body for theme-specific rules
+			document.documentElement.setAttribute('data-theme', currentTheme);
+			document.documentElement.setAttribute('data-mode', currentMode);
 			document.body.setAttribute('data-theme', currentTheme);
 			document.body.setAttribute('data-mode', currentMode);
 
-			// Toggle nostalgia-specific elements
-			const nostalgiaElements = document.querySelector('.nostalgia-elements');
-			if (nostalgiaElements) {
-				nostalgiaElements.style.display = currentTheme === 'nostalgia' ? 'block' : 'none';
-			}
-
-			// Toggle skeuomorph-specific elements
-			const stickyNote = document.querySelector('.sticky-note');
-			if (stickyNote) {
-				stickyNote.style.display = currentTheme === 'skeuomorph' ? 'block' : 'none';
-			}
-
-			// Toggle dashboard-specific elements
-			const dashboardStatusBanner = document.querySelector('.dashboard-status-banner');
-			if (dashboardStatusBanner) {
-				dashboardStatusBanner.style.display = currentTheme === 'dashboard' ? 'flex' : 'none';
-			}
-			const dashboardMetricsGrid = document.querySelector('.dashboard-metrics-grid');
-			if (dashboardMetricsGrid) {
-				dashboardMetricsGrid.style.display = currentTheme === 'dashboard' ? 'grid' : 'none';
-			}
-
-			// Toggle web2gloss-specific elements
-			const web2Badges = document.querySelector('.web2-badges');
-			if (web2Badges) {
-				web2Badges.style.display = currentTheme === 'web2gloss' ? 'block' : 'none';
-			}
+			// Toggle theme-specific elements
+			toggleThemeElements();
 
 			// Handle section titles in nostalgia theme
-			const sectionTitles = document.querySelectorAll('.resume-section__title');
+			handleNostalgiaTitles();
+		}
+
+		// Helper to handle nostalgia theme title transformations
+		function handleNostalgiaTitles() {
 			const gifs = ['🔥', '⭐', '💫', '✨', '🌟', '👷', '📧'];
-			sectionTitles.forEach((title, index) => {
+			const gifPattern = /[🔥⭐💫✨🌟👷📧]/g;
+
+			document.querySelectorAll('.resume-section__title').forEach((title, index) => {
+				// Store original text on first run
+				if (!title.dataset.originalText) {
+					title.dataset.originalText = title.textContent.trim();
+				}
+
+				const originalText = title.dataset.originalText;
+				const gif = gifs[index % gifs.length];
+
 				if (currentTheme === 'nostalgia') {
-					// Every other headline becomes a marquee
 					if (index % 2 === 0) {
-						// Make it blink
+						// Blink with GIF decorations
 						title.classList.add('blink');
-						// Remove marquee if it was added
-						const marqueeContainer = title.querySelector('.marquee-container');
-						if (marqueeContainer) {
-							const cleanText = marqueeContainer.querySelector('.marquee').textContent.replace(/[🔥⭐💫✨🌟👷📧]/g, '').trim();
-							title.innerHTML = cleanText;
-						}
-						// Add decorative GIFs
 						if (!title.innerHTML.includes('retro-gif')) {
-							const gif = gifs[index % gifs.length];
-							const cleanText = title.textContent.trim();
-							title.innerHTML = `<span class="retro-gif spinning">${gif}</span> ${cleanText} <span class="retro-gif spinning">${gif}</span>`;
+							title.innerHTML = `<span class="retro-gif spinning">${gif}</span> ${originalText} <span class="retro-gif spinning">${gif}</span>`;
 						}
 					} else {
-						// Make it a marquee
+						// Marquee
 						title.classList.remove('blink');
 						if (!title.querySelector('.marquee-container')) {
-							const cleanText = title.textContent.replace(/[🔥⭐💫✨🌟👷📧]/g, '').trim();
-							const gif = gifs[index % gifs.length];
-							title.innerHTML = `<div class="marquee-container"><div class="marquee">${gif} ${cleanText} ${gif} --- ${gif} ${cleanText} ${gif} --- ${gif} ${cleanText} ${gif}</div></div>`;
+							title.innerHTML = `<div class="marquee-container"><div class="marquee">${gif} ${originalText} ${gif} --- ${gif} ${originalText} ${gif} --- ${gif} ${originalText} ${gif}</div></div>`;
 						}
 					}
 				} else {
-					// Restore original state
+					// Restore original state for all other themes
 					title.classList.remove('blink');
-					const marqueeContainer = title.querySelector('.marquee-container');
-					if (marqueeContainer) {
-						const originalText = marqueeContainer.querySelector('.marquee').textContent.split('---')[0].replace(/[🔥⭐💫✨🌟👷📧]/g, '').trim();
-						title.innerHTML = originalText;
-					} else {
-						// Remove GIFs from non-marquee titles
-						const cleanText = title.textContent.replace(/[🔥⭐💫✨🌟👷📧]/g, '').trim();
-						if (title.innerHTML.includes('retro-gif')) {
-							title.innerHTML = cleanText;
-						}
+					const marquee = title.querySelector('.marquee-container');
+					if (marquee || title.innerHTML.includes('retro-gif')) {
+						title.textContent = originalText;
 					}
 				}
 			});
@@ -882,6 +148,40 @@
 	</script>
 
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<script>
+		// Helper function to create glossy badge HTML
+		function createGlossyBadge(text, gradientColors) {
+			return `
+				<div class="web2-badge" style="
+					background: linear-gradient(180deg, ${gradientColors});
+					color: white;
+					padding: 0.5rem 1rem;
+					border-radius: 8px;
+					font-weight: 700;
+					font-size: 0.85rem;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+					position: relative;
+					overflow: hidden;
+					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+					min-width: 100px;
+					text-align: center;
+				">
+					<div style="
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						height: 50%;
+						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+						border-radius: 8px 8px 0 0;
+						pointer-events: none;
+					"></div>
+					<span style="position: relative; z-index: 1;">${text}</span>
+				</div>
+			`;
+		}
+	</script>
 </head>
 
 <body class="resume" data-theme="default">
@@ -1015,145 +315,16 @@
 				</h3>
 			</div>
 			<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
-				<!-- Powered by HTML Badge -->
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, #FF6600 0%, #DD5500 100%);
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">🔧 POWERED BY HTML</span>
-				</div>
-
-				<!-- Valid CSS Badge -->
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, #0099FF 0%, #0077DD 100%);
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">✓ VALID CSS</span>
-				</div>
-
-				<!-- RSS Feed Badge -->
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, #FF9933 0%, #FF6600 100%);
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">📡 RSS FEED</span>
-				</div>
-
-				<!-- AJAX Enabled Badge -->
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, #99FF33 0%, #66CC00 100%);
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">⚡ AJAX ENABLED</span>
-				</div>
-
-				<!-- Beta Badge -->
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, #9966FF 0%, #7744DD 100%);
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">β BETA</span>
-				</div>
+				<script>
+					const badges = [
+						['🔧 POWERED BY HTML', '#FF6600 0%, #DD5500 100%'],
+						['✓ VALID CSS', '#0099FF 0%, #0077DD 100%'],
+						['📡 RSS FEED', '#FF9933 0%, #FF6600 100%'],
+						['⚡ AJAX ENABLED', '#99FF33 0%, #66CC00 100%'],
+						['β BETA', '#9966FF 0%, #7744DD 100%']
+					];
+					document.write(badges.map(([text, colors]) => createGlossyBadge(text, colors)).join(''));
+				</script>
 			</div>
 			<div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
 				<p style="margin: 0.5rem 0;">🌐 Built with cutting-edge Web 2.0 technologies</p>

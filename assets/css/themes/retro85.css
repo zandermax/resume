@@ -2,6 +2,44 @@
 1985 Monochrome Terminal Theme
 =========================== */
 
+/* Light Mode */
+:root[data-theme='retro85'][data-mode='light'] {
+  --background-color: #2d2d2d;
+  --text-color: #33ff33;
+  --border-color: #33ff33;
+  --dial-color-ink: #33ff33;
+  --dial-color-selection: #33ff33;
+  --dial-color-indicator: #33ff33;
+  --dial-knob-background: #1a1a1a;
+  --font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+  --color-hover: #33ff33;
+  --background-image: none;
+  --link-color: #33ff33;
+  --link-visited-color: #33ff33;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #33ff33;
+}
+
+/* Dark Mode */
+:root[data-theme='retro85'][data-mode='dark'] {
+  --background-color: #000000;
+  --text-color: #00ff00;
+  --border-color: #00ff00;
+  --dial-color-ink: #00ff00;
+  --dial-color-selection: #00ff00;
+  --dial-color-indicator: #00ff00;
+  --dial-knob-background: #001100;
+  --font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+  --color-hover: #00ff00;
+  --background-image: none;
+  --link-color: #00ff00;
+  --link-visited-color: #00ff00;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #00ff00;
+}
+
 /* Apply monospace terminal font */
 body[data-theme='retro85'] {
   font-family: var(--font-family);

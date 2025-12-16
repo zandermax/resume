@@ -3,6 +3,60 @@ DASHBOARD 2020 Theme - Pandemic Era Control Panel
 Inspired by COVID dashboards, Grafana, status pages, and data obsession
 =========================== */
 
+/* Light Mode */
+:root[data-theme='dashboard'][data-mode='light'] {
+  --background-color: #f5f7fa;
+  --text-color: #1a1a1a;
+  --border-color: #e1e8ed;
+  --dial-color-ink: #1a1a1a;
+  --dial-color-selection: #0066cc;
+  --dial-color-indicator: #0066cc;
+  --dial-knob-background: #ffffff;
+  --font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --color-hover: #0066cc;
+  --background-image: none;
+  --link-color: #0066cc;
+  --link-visited-color: #004499;
+  --section-bg: #ffffff;
+  --header-bg: #ffffff;
+  --accent-color: #0066cc;
+  --panel-bg: #ffffff;
+  --panel-border: #e1e8ed;
+  --status-green: #28a745;
+  --status-yellow: #ffc107;
+  --status-red: #dc3545;
+  --metric-highlight: #0066cc;
+  --panel-shadow: rgba(0, 0, 0, 0.08);
+  --mono-font: "SF Mono", "Monaco", "Courier New", monospace;
+}
+
+/* Dark Mode */
+:root[data-theme='dashboard'][data-mode='dark'] {
+  --background-color: #0d1117;
+  --text-color: #e6edf3;
+  --border-color: #30363d;
+  --dial-color-ink: #e6edf3;
+  --dial-color-selection: #58a6ff;
+  --dial-color-indicator: #58a6ff;
+  --dial-knob-background: #161b22;
+  --font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --color-hover: #58a6ff;
+  --background-image: none;
+  --link-color: #58a6ff;
+  --link-visited-color: #79c0ff;
+  --section-bg: #161b22;
+  --header-bg: #161b22;
+  --accent-color: #58a6ff;
+  --panel-bg: #161b22;
+  --panel-border: #30363d;
+  --status-green: #3fb950;
+  --status-yellow: #d29922;
+  --status-red: #f85149;
+  --metric-highlight: #58a6ff;
+  --panel-shadow: rgba(0, 0, 0, 0.3);
+  --mono-font: "SF Mono", "Monaco", "Courier New", monospace;
+}
+
 /* Base typography - system fonts for dashboard aesthetic */
 body[data-theme='dashboard'] {
   font-family: var(--font-family);

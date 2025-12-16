@@ -1,0 +1,69 @@
+/* ===========================
+Shared Theme Utilities
+Common patterns used across multiple themes
+=========================== */
+
+/* Reset utilities - common pattern across themes */
+.theme-reset-borders {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Common responsive breakpoints - can be extended by themes */
+@media (max-width: 768px) {
+  :root {
+    --responsive-scale-md: 0.85;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --responsive-scale-sm: 0.7;
+  }
+}
+
+/* Shared animation keyframes used by multiple themes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Common transition utilities */
+.theme-transition-fast {
+  transition: all 0.15s ease;
+}
+
+.theme-transition-medium {
+  transition: all 0.3s ease;
+}
+
+.theme-transition-slow {
+  transition: all 0.5s ease;
+}
+
+/* Helper for theme-specific element hiding */
+[data-theme]:not([data-theme='']) .nostalgia-elements,
+[data-theme]:not([data-theme='']) .sticky-note,
+[data-theme]:not([data-theme='']) .dashboard-status-banner,
+[data-theme]:not([data-theme='']) .dashboard-metrics-grid,
+[data-theme]:not([data-theme='']) .web2-badges {
+  display: none;
+}
+
+/* Shown only in specific themes (controlled via JS) */

@@ -2,6 +2,50 @@
 BRUTAL Theme - Maximum Brutalism
 =========================== */
 
+/* Light Mode */
+:root[data-theme='brutal'][data-mode='light'] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #000000;
+  --dial-color-ink: #000000;
+  --dial-color-selection: #f13b3b;
+  --dial-color-indicator: #f13b3b;
+  --dial-knob-background: #11161c;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: #ffffff;
+  --background-image: none;
+  --link-color: #000000;
+  --link-visited-color: #551a8b;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #f13b3b;
+  --label-text-shadow: none;
+  --label-text-shadow-hover: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000,
+    2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+}
+
+/* Dark Mode */
+:root[data-theme='brutal'][data-mode='dark'] {
+  --background-color: #1a1f24;
+  --text-color: #e8e8e8;
+  --border-color: #888888;
+  --dial-color-ink: #e8e8e8;
+  --dial-color-selection: #ff5555;
+  --dial-color-indicator: #ff5555;
+  --dial-knob-background: #2a2f34;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: #ffffff;
+  --background-image: none;
+  --link-color: #e8e8e8;
+  --link-visited-color: #aaaaaa;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #ff5555;
+  --label-text-shadow: none;
+  --label-text-shadow-hover: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000,
+    2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+}
+
 /* Harsh, unforgiving base */
 body[data-theme='brutal'] {
   font-family: var(--font-family);

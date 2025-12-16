@@ -2,6 +2,68 @@
 Windows XP Theme (Luna)
 =========================== */
 
+/* Light Mode */
+:root[data-theme='xp'][data-mode='light'] {
+  --background-color: #5a8fcc;
+  --text-color: #000000;
+  --border-color: #0054e3;
+  --dial-color-ink: #0054e3;
+  --dial-color-selection: #73bc5a;
+  --dial-color-indicator: #73bc5a;
+  --dial-knob-background: linear-gradient(180deg, #f0f7ff 0%, #d0e8ff 50%, #8fc4ff 100%);
+  --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  --color-hover: #73bc5a;
+  --background-image: linear-gradient(180deg, #5a8fcc 0%, #4682bf 50%, #3367a8 100%);
+  --link-color: #0054e3;
+  --link-visited-color: #7f3fa8;
+  --section-bg: #ece9d8;
+  --header-bg: #0054e3;
+  --accent-color: #73bc5a;
+  --xp-window-border-top: #0054e3;
+  --xp-window-border-bottom: #042c6e;
+  --xp-window-title-start: #0054e3;
+  --xp-window-title-end: #0f8ae8;
+  --xp-button-face: #ece9d8;
+  --xp-button-highlight: #ffffff;
+  --xp-button-shadow: #aca899;
+  --xp-button-dark-shadow: #716f64;
+  --xp-start-green: #73bc5a;
+  --xp-taskbar-blue: #245edc;
+  --xp-text-shadow: none;
+  --dial-selector-label-color: #0054e3;
+}
+
+/* Dark Mode */
+:root[data-theme='xp'][data-mode='dark'] {
+  --background-color: #1f3a5f;
+  --text-color: #ffffff;
+  --border-color: #0054e3;
+  --dial-color-ink: #8fc4ff;
+  --dial-color-selection: #73bc5a;
+  --dial-color-indicator: #73bc5a;
+  --dial-knob-background: linear-gradient(180deg, #4a6b99 0%, #2d4a6e 50%, #1f3a5f 100%);
+  --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  --color-hover: #73bc5a;
+  --background-image: linear-gradient(180deg, #1f3a5f 0%, #163052 50%, #0d1f3a 100%);
+  --link-color: #5ba3ff;
+  --link-visited-color: #9f7fc8;
+  --section-bg: #2d4a6e;
+  --header-bg: #0054e3;
+  --accent-color: #73bc5a;
+  --xp-window-border-top: #0054e3;
+  --xp-window-border-bottom: #042c6e;
+  --xp-window-title-start: #0054e3;
+  --xp-window-title-end: #0f8ae8;
+  --xp-button-face: #3d5a7f;
+  --xp-button-highlight: #5a7fa8;
+  --xp-button-shadow: #1f3a5f;
+  --xp-button-dark-shadow: #0d1f3a;
+  --xp-start-green: #73bc5a;
+  --xp-taskbar-blue: #245edc;
+  --xp-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  --dial-selector-label-color: #000000;
+}
+
 /* Apply XP-style Tahoma font */
 body[data-theme='xp'] {
   font-family: var(--font-family);
@@ -479,4 +541,3 @@ XP Theme - Responsive Adjustments
     padding: 0.5rem 1.2rem;
   }
 }
-

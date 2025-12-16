@@ -2,13 +2,58 @@
 2038 GLITCH Theme - Dystopian Anti-Design
 =========================== */
 
+/* Light Mode */
+:root[data-theme='glitch2038'][data-mode='light'] {
+  --background-color: #00ffff;
+  --text-color: #ff00ff;
+  --border-color: #ff00ff;
+  --dial-color-ink: #ff00ff;
+  --dial-color-selection: #ffff00;
+  --dial-color-indicator: #ffff00;
+  --dial-knob-background: #00ff00;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: #ff0000;
+  --background-image: none;
+  --link-color: #ff1493;
+  --link-visited-color: #00ff00;
+  --section-bg: #ccff00;
+  --header-bg: #ff00ff;
+  --accent-color: #ff6600;
+  --glitch-primary: #ff00ff;
+  --glitch-secondary: #00ffff;
+  --glitch-tertiary: #ffff00;
+}
+
+/* Dark Mode */
+:root[data-theme='glitch2038'][data-mode='dark'] {
+  --background-color: #1a0033;
+  --text-color: #ccff00;
+  --border-color: #ff6600;
+  --dial-color-ink: #ccff00;
+  --dial-color-selection: #ff00ff;
+  --dial-color-indicator: #ff00ff;
+  --dial-knob-background: #660066;
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-hover: #00ffff;
+  --background-image: none;
+  --link-color: #00ffff;
+  --link-visited-color: #ff1493;
+  --section-bg: #220044;
+  --header-bg: #330055;
+  --accent-color: #ff6600;
+  --glitch-primary: #ccff00;
+  --glitch-secondary: #ff00ff;
+  --glitch-tertiary: #ff6600;
+}
+
 /* ===========================
 KEYFRAME ANIMATIONS
 =========================== */
 
 /* Screen tear effect - horizontal displacement */
 @keyframes screen-tear {
-  0%, 100% {
+  0%,
+  100% {
     clip-path: inset(0 0 0 0);
     transform: translateX(0);
   }
@@ -24,7 +69,8 @@ KEYFRAME ANIMATIONS
     clip-path: inset(60% 0 30% 0);
     transform: translateX(-3px);
   }
-  20%, 80% {
+  20%,
+  80% {
     clip-path: inset(0 0 0 0);
     transform: translateX(0);
   }
@@ -40,7 +86,9 @@ KEYFRAME ANIMATIONS
 
 /* Text glitch effect */
 @keyframes text-glitch {
-  0%, 90%, 100% {
+  0%,
+  90%,
+  100% {
     text-shadow: none;
     transform: translateX(0);
   }
@@ -64,7 +112,8 @@ KEYFRAME ANIMATIONS
 
 /* Color shift filter effect */
 @keyframes color-shift {
-  0%, 100% {
+  0%,
+  100% {
     filter: hue-rotate(0deg) saturate(1);
   }
   25% {
@@ -80,7 +129,8 @@ KEYFRAME ANIMATIONS
 
 /* Pixel drift - small horizontal shifts */
 @keyframes pixel-drift {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0) translateY(0);
   }
   10% {
@@ -114,7 +164,8 @@ KEYFRAME ANIMATIONS
 
 /* Artifact pulse - compression glitch */
 @keyframes artifact-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.1;
   }
   50% {
@@ -124,7 +175,9 @@ KEYFRAME ANIMATIONS
 
 /* Horizontal displacement glitch - jarring, stepped */
 @keyframes h-displace {
-  0%, 78%, 100% {
+  0%,
+  78%,
+  100% {
     transform: translateX(0) scaleX(1);
     opacity: 1;
   }
@@ -157,7 +210,9 @@ KEYFRAME ANIMATIONS
 
 /* Alternative jarring glitch - variant 1 */
 @keyframes glitch-shake-1 {
-  0%, 82%, 100% {
+  0%,
+  82%,
+  100% {
     transform: translate(0, 0) skewX(0);
     filter: hue-rotate(0deg);
   }
@@ -181,7 +236,9 @@ KEYFRAME ANIMATIONS
 
 /* Alternative jarring glitch - variant 2 */
 @keyframes glitch-shake-2 {
-  0%, 75%, 100% {
+  0%,
+  75%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
     clip-path: inset(0 0 0 0);
   }
@@ -205,7 +262,9 @@ KEYFRAME ANIMATIONS
 
 /* Alternative jarring glitch - variant 3 */
 @keyframes glitch-shake-3 {
-  0%, 88%, 100% {
+  0%,
+  88%,
+  100% {
     transform: translateY(0) scaleY(1);
     text-shadow: none;
   }
@@ -229,7 +288,9 @@ KEYFRAME ANIMATIONS
 
 /* Corrupted border flicker */
 @keyframes border-corrupt {
-  0%, 90%, 100% {
+  0%,
+  90%,
+  100% {
     box-shadow: 0 0 0 0 transparent;
   }
   92% {
@@ -322,19 +383,8 @@ body[data-theme='glitch2038'] .resume__main::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      rgba(255, 0, 255, 0.03) 8px,
-      transparent 16px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      rgba(0, 255, 255, 0.03) 8px,
-      transparent 16px
-    );
+  background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.03) 8px, transparent 16px),
+    repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 255, 0.03) 8px, transparent 16px);
   pointer-events: none;
   z-index: 1;
   animation: artifact-pulse 2.5s infinite alternate;
@@ -352,9 +402,7 @@ body[data-theme='glitch2038'] .resume-header {
   margin-bottom: 2rem;
   position: relative;
   transform: skewX(0.2deg);
-  box-shadow:
-    3px 0 0 0 var(--glitch-secondary),
-    -2px 0 0 0 var(--glitch-tertiary);
+  box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
 }
 
 /* Corrupted header border effect */
@@ -387,9 +435,7 @@ body[data-theme='glitch2038'] h1.resume-header__name {
   margin-bottom: 0.5rem;
   position: relative;
   animation: text-glitch 5s infinite;
-  text-shadow:
-    2px 0 var(--glitch-primary),
-    -2px 0 var(--glitch-secondary);
+  text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
 }
 
 body[data-theme='glitch2038'] .resume-header__role {
@@ -426,9 +472,7 @@ body[data-theme='glitch2038'] .resume-section__title {
   transform: skewX(-0.5deg);
   animation: h-displace 2.8s infinite steps(3, jump-both);
   animation-timing-function: steps(5, jump-both);
-  box-shadow:
-    5px 0 0 -2px var(--glitch-secondary),
-    -3px 0 0 -1px var(--glitch-tertiary);
+  box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
 }
 
 /* Random variations using nth-child - each title gets different glitch */
@@ -504,7 +548,9 @@ body[data-theme='glitch2038'] .resume-section__title::after {
 
 /* Jarring flash effect for pseudo-elements */
 @keyframes corrupt-flash {
-  0%, 92%, 100% {
+  0%,
+  92%,
+  100% {
     opacity: 0;
     transform: translateX(-3px);
   }
@@ -524,7 +570,9 @@ body[data-theme='glitch2038'] .resume-section__title::after {
 
 /* Jarring jitter for after element */
 @keyframes jitter {
-  0%, 85%, 100% {
+  0%,
+  85%,
+  100% {
     transform: translate(0, 0);
   }
   86% {
@@ -553,9 +601,7 @@ body[data-theme='glitch2038'] .experience-item {
   position: relative;
   transform: skewX(0.2deg);
   filter: contrast(1.1) saturate(1.15);
-  box-shadow:
-    4px 4px 0 0 var(--glitch-primary),
-    -2px -2px 0 0 var(--glitch-secondary);
+  box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
   animation: border-corrupt 6s infinite;
 }
 
@@ -618,9 +664,7 @@ body[data-theme='glitch2038'] .experience-item__tech {
   font-size: 0.85rem;
   position: relative;
   transform: skewX(-2deg);
-  box-shadow:
-    2px 2px 0 0 var(--glitch-tertiary),
-    -1px -1px 0 0 var(--glitch-secondary);
+  box-shadow: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
   animation: pixel-drift 3s infinite;
   filter: contrast(1.3) saturate(1.4);
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
@@ -641,9 +685,7 @@ body[data-theme='glitch2038'] .skills-grid {
   padding: 1.5rem;
   position: relative;
   transform: skewX(-0.15deg);
-  box-shadow:
-    -3px 3px 0 0 var(--glitch-primary),
-    3px -3px 0 0 var(--glitch-secondary);
+  box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
 }
 
 body[data-theme='glitch2038'] .skills-grid::before {
@@ -653,12 +695,7 @@ body[data-theme='glitch2038'] .skills-grid::before {
   left: 30%;
   width: 40%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    rgba(255, 0, 255, 0.05) 1px,
-    transparent 2px
-  );
+  background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.05) 1px, transparent 2px);
   pointer-events: none;
   animation: artifact-pulse 3s infinite;
 }
@@ -670,9 +707,7 @@ body[data-theme='glitch2038'] .skills-grid__group {
   margin-bottom: 1rem;
   position: relative;
   transform: skewX(0.3deg) translateX(-2px);
-  box-shadow:
-    2px 0 0 0 var(--glitch-tertiary),
-    -2px 0 0 0 var(--glitch-primary);
+  box-shadow: 2px 0 0 0 var(--glitch-tertiary), -2px 0 0 0 var(--glitch-primary);
   animation: pixel-drift 5s infinite;
 }
 
@@ -702,9 +737,7 @@ body[data-theme='glitch2038'] .principles-list {
   background: var(--section-bg);
   padding: 1.5rem;
   position: relative;
-  box-shadow:
-    4px 0 0 0 var(--glitch-primary),
-    -4px 0 0 0 var(--glitch-secondary);
+  box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
 }
 
 body[data-theme='glitch2038'] .community-list__item,
@@ -716,9 +749,7 @@ body[data-theme='glitch2038'] .principles-list__item {
   border-left: 4px solid var(--glitch-tertiary);
   position: relative;
   animation: pixel-drift 6s infinite;
-  box-shadow:
-    2px 2px 0 0 var(--glitch-primary),
-    -1px -1px 0 0 var(--glitch-secondary);
+  box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
 }
 
 body[data-theme='glitch2038'] .community-list__item:nth-child(odd),
@@ -742,9 +773,7 @@ body[data-theme='glitch2038'] .education-item {
   padding: 2rem;
   position: relative;
   transform: skewX(-0.25deg);
-  box-shadow:
-    3px 3px 0 0 var(--glitch-secondary),
-    -2px -2px 0 0 var(--glitch-primary);
+  box-shadow: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
   animation: border-corrupt 7s infinite;
 }
 
@@ -791,9 +820,7 @@ body[data-theme='glitch2038'] .resume-header__printlink {
   position: relative;
   text-decoration: none;
   transform: skewX(-3deg);
-  box-shadow:
-    5px 5px 0 0 var(--glitch-secondary),
-    -3px -3px 0 0 var(--glitch-tertiary);
+  box-shadow: 5px 5px 0 0 var(--glitch-secondary), -3px -3px 0 0 var(--glitch-tertiary);
   animation: border-corrupt 4s infinite, pixel-drift 2s infinite;
   filter: contrast(1.3) saturate(1.5);
 }
@@ -825,10 +852,7 @@ body[data-theme='glitch2038'] dial-selector {
 
 body[data-theme='glitch2038'] dial-selector .knob {
   border: 3px solid var(--border-color);
-  box-shadow:
-    0 0 0 2px var(--glitch-primary),
-    0 0 0 4px var(--glitch-secondary),
-    0 0 0 6px var(--glitch-tertiary),
+  box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 0 0 0 6px var(--glitch-tertiary),
     5px 5px 10px rgba(0, 0, 0, 0.3);
   background: var(--dial-knob-background);
   animation: border-corrupt 5s infinite;
@@ -840,9 +864,7 @@ body[data-theme='glitch2038'] dial-selector .indicator {
   height: 14px;
   background: var(--dial-color-indicator);
   border: 2px solid var(--glitch-secondary);
-  box-shadow:
-    0 0 5px var(--glitch-primary),
-    0 0 10px var(--glitch-tertiary);
+  box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-tertiary);
   animation: pixel-drift 1.5s infinite;
   transform: rotate(-2deg);
 }
@@ -854,9 +876,7 @@ body[data-theme='glitch2038'] dial-selector .dial-label {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-color);
-  box-shadow:
-    2px 2px 0 0 var(--glitch-primary),
-    -2px -2px 0 0 var(--glitch-secondary);
+  box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
   animation: pixel-drift 4s infinite;
   transform: skewX(-1deg);
 }
@@ -877,9 +897,7 @@ body[data-theme='glitch2038'] dial-selector .dial-label.active {
   background: var(--glitch-primary);
   color: var(--background-color);
   border-color: var(--glitch-secondary);
-  box-shadow:
-    4px 4px 0 0 var(--glitch-secondary),
-    -2px -2px 0 0 var(--glitch-tertiary);
+  box-shadow: 4px 4px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-tertiary);
   font-weight: 700;
   animation: text-glitch 3s infinite;
   filter: contrast(1.4) saturate(1.6);
@@ -905,9 +923,7 @@ body[data-theme='glitch2038'] .resume-header__dial-selector {
   padding: 1.5rem;
   background: var(--section-bg);
   border: 2px solid var(--border-color);
-  box-shadow:
-    3px 0 0 0 var(--glitch-primary),
-    -3px 0 0 0 var(--glitch-secondary);
+  box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
   position: relative;
 }
 
@@ -1045,4 +1061,3 @@ PERFORMANCE OPTIMIZATIONS
     transition-duration: 0.01ms !important;
   }
 }
-

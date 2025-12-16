@@ -527,23 +527,20 @@ class DialSelector extends HTMLElement {
     }
   }
 
+  // Helper to parse percentage attribute (DRY principle)
+  parsePercentageAttr(attrValue, defaultValue = 100, minValue = 0) {
+    if (!attrValue) return defaultValue;
+    const percentage = parseFloat(attrValue.replace('%', ''));
+    return !isNaN(percentage) && percentage >= minValue ? percentage : defaultValue;
+  }
+
   updateLineThickness() {
     const lineThickness = this.getAttribute('line-thickness');
     if (lineThickness) {
-      // Parse as percentage (0-100), with or without % sign
-      const percentage = parseFloat(lineThickness.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.lineThicknessPercentage = percentage;
-        // Calculate actual value from percentage of base
-        const actualThickness = (DEFAULT_LINE_STROKE_WIDTH * percentage) / 100;
-        this.style.setProperty('--line-stroke-width', `${actualThickness}px`);
-      } else {
-        // If invalid, default to 100%
-        this.lineThicknessPercentage = 100;
-        this.style.setProperty('--line-stroke-width', `${DEFAULT_LINE_STROKE_WIDTH}px`);
-      }
+      this.lineThicknessPercentage = this.parsePercentageAttr(lineThickness);
+      const actualThickness = (DEFAULT_LINE_STROKE_WIDTH * this.lineThicknessPercentage) / 100;
+      this.style.setProperty('--line-stroke-width', `${actualThickness}px`);
     } else {
-      // Reset to default if attribute is removed
       this.lineThicknessPercentage = 100;
       this.style.removeProperty('--line-stroke-width');
     }
@@ -551,21 +548,7 @@ class DialSelector extends HTMLElement {
 
   updateIndicatorLength() {
     const lengthIndicator = this.getAttribute('length-indicator');
-    if (lengthIndicator) {
-      // Parse as percentage (0+), with or without % sign
-      // Allow values > 100% for longer indicators
-      const percentage = parseFloat(lengthIndicator.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.indicatorLengthPercentage = percentage;
-      } else {
-        // If invalid, default to 100%
-        this.indicatorLengthPercentage = 100;
-      }
-    } else {
-      // Reset to default if attribute is removed
-      this.indicatorLengthPercentage = 100;
-    }
-    // Trigger dimension update to recalculate scaled indicator length
+    this.indicatorLengthPercentage = this.parsePercentageAttr(lengthIndicator);
     if (this.isInitialized) {
       this.updateDimensions();
     }
@@ -573,20 +556,7 @@ class DialSelector extends HTMLElement {
 
   updateCenterIndicator() {
     const centerIndicator = this.getAttribute('center-indicator');
-    if (centerIndicator) {
-      // Parse as percentage (0-100+), with or without % sign
-      const percentage = parseFloat(centerIndicator.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.centerIndicatorPercentage = percentage;
-      } else {
-        // If invalid, default to 0%
-        this.centerIndicatorPercentage = 0;
-      }
-    } else {
-      // Reset to default if attribute is removed
-      this.centerIndicatorPercentage = 0;
-    }
-    // Trigger dimension update to recalculate scaled center-indicator
+    this.centerIndicatorPercentage = this.parsePercentageAttr(centerIndicator, 0);
     if (this.isInitialized) {
       this.updateDimensions();
     }
@@ -612,29 +582,8 @@ class DialSelector extends HTMLElement {
 
     // Note: width-inner-circle and width-outer-circle are handled by updateDimensions() for responsive scaling
     // Parse percentages here and store them
-    const widthInnerCircle = this.getAttribute('width-inner-circle');
-    if (widthInnerCircle) {
-      const percentage = parseFloat(widthInnerCircle.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.widthInnerCirclePercentage = percentage;
-      } else {
-        this.widthInnerCirclePercentage = 100;
-      }
-    } else {
-      this.widthInnerCirclePercentage = 100;
-    }
-
-    const widthOuterCircle = this.getAttribute('width-outer-circle');
-    if (widthOuterCircle) {
-      const percentage = parseFloat(widthOuterCircle.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.widthOuterCirclePercentage = percentage;
-      } else {
-        this.widthOuterCirclePercentage = 100;
-      }
-    } else {
-      this.widthOuterCirclePercentage = 100;
-    }
+    this.widthInnerCirclePercentage = this.parsePercentageAttr(this.getAttribute('width-inner-circle'));
+    this.widthOuterCirclePercentage = this.parsePercentageAttr(this.getAttribute('width-outer-circle'));
 
     // Trigger dimension update to recalculate scaled knob radii
     if (this.isInitialized) {
@@ -884,33 +833,9 @@ class DialSelector extends HTMLElement {
     this.horizontalLineEndOffset = BASE_HORIZONTAL_LINE_END_OFFSET * scale;
     this.indicatorWidth = BASE_INDICATOR_WIDTH * scale;
 
-    // Scale knob radii proportionally
-    // Get the base radius values (from attribute if set, otherwise use defaults)
-    const radiusOuterAttr = this.getAttribute('radius-outer');
-    const radiusInnerAttr = this.getAttribute('radius-inner');
-
-    // Parse as percentage if attribute is set
-    if (radiusOuterAttr) {
-      const percentage = parseFloat(radiusOuterAttr.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.radiusOuterPercentage = percentage;
-      } else {
-        this.radiusOuterPercentage = 100;
-      }
-    } else {
-      this.radiusOuterPercentage = 100;
-    }
-
-    if (radiusInnerAttr) {
-      const percentage = parseFloat(radiusInnerAttr.replace('%', ''));
-      if (!isNaN(percentage) && percentage >= 0) {
-        this.radiusInnerPercentage = percentage;
-      } else {
-        this.radiusInnerPercentage = 100;
-      }
-    } else {
-      this.radiusInnerPercentage = 100;
-    }
+    // Scale knob radii proportionally - parse percentages from attributes
+    this.radiusOuterPercentage = this.parsePercentageAttr(this.getAttribute('radius-outer'));
+    this.radiusInnerPercentage = this.parsePercentageAttr(this.getAttribute('radius-inner'));
 
     // Calculate base radii from percentages
     const baseRadiusOuter = (BASE_KNOB_RADIUS_OUTER * this.radiusOuterPercentage) / 100;

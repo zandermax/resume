@@ -2,6 +2,56 @@
 Terminal Theme (1993 CLI-inspired)
 =========================== */
 
+/* Light Mode */
+:root[data-theme='terminal'][data-mode='light'] {
+  --background-color: #5555AA;
+  --text-color: #000000;
+  --border-color: #808080;
+  --dial-color-ink: #000000;
+  --dial-color-selection: #FFFF00;
+  --dial-color-indicator: #FFFF00;
+  --dial-knob-background: #C0C0C0;
+  --font-family: "Courier New", "Lucida Console", monospace;
+  --color-hover: #FFFF00;
+  --background-image: none;
+  --link-color: #FFFF00;
+  --link-visited-color: #00FFFF;
+  --section-bg: #C0C0C0;
+  --header-bg: #AAAAAA;
+  --accent-color: #FFFF00;
+  --terminal-border-light: #FFFFFF;
+  --terminal-border-dark: #000000;
+  --terminal-window-bg: #C0C0C0;
+  --terminal-title-bg: #000080;
+  --terminal-button-bg: #C0C0C0;
+  --terminal-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode */
+:root[data-theme='terminal'][data-mode='dark'] {
+  --background-color: #0000AA;
+  --text-color: #FFFFFF;
+  --border-color: #808080;
+  --dial-color-ink: #AAAAAA;
+  --dial-color-selection: #00FFFF;
+  --dial-color-indicator: #00FFFF;
+  --dial-knob-background: #555555;
+  --font-family: "Courier New", "Lucida Console", monospace;
+  --color-hover: #00FFFF;
+  --background-image: none;
+  --link-color: #00FFFF;
+  --link-visited-color: #FFFF00;
+  --section-bg: #000080;
+  --header-bg: #000080;
+  --accent-color: #00FFFF;
+  --terminal-border-light: #5555FF;
+  --terminal-border-dark: #000033;
+  --terminal-window-bg: #000080;
+  --terminal-title-bg: #0000AA;
+  --terminal-button-bg: #333388;
+  --terminal-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
   font-family: var(--font-family);

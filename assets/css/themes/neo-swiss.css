@@ -3,6 +3,46 @@ Neo-Swiss Theme - Post-Platform Modernism
 Ultra-modern minimalism with mathematical precision
 =========================== */
 
+/* Light Mode */
+:root[data-theme='neoswiss'][data-mode='light'] {
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+  --border-color: #000000;
+  --dial-color-ink: #000000;
+  --dial-color-selection: #FF0000;
+  --dial-color-indicator: #FF0000;
+  --dial-knob-background: #000000;
+  --font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --color-hover: #FF0000;
+  --background-image: none;
+  --link-color: #000000;
+  --link-visited-color: #000000;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #FF0000;
+  --swiss-grid: 8px;
+}
+
+/* Dark Mode */
+:root[data-theme='neoswiss'][data-mode='dark'] {
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --border-color: #FFFFFF;
+  --dial-color-ink: #FFFFFF;
+  --dial-color-selection: #FF0000;
+  --dial-color-indicator: #FF0000;
+  --dial-knob-background: #FFFFFF;
+  --font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --color-hover: #FF0000;
+  --background-image: none;
+  --link-color: #FFFFFF;
+  --link-visited-color: #FFFFFF;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: #FF0000;
+  --swiss-grid: 8px;
+}
+
 /* Base theme - Pure minimalism */
 body[data-theme='neoswiss'] {
   font-family: var(--font-family);

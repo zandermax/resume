@@ -3,6 +3,56 @@ METRO 2012 Theme - Flat Design / Material Zero
 Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 =========================== */
 
+/* Light Mode */
+:root[data-theme='metro'][data-mode='light'] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --border-color: #0078D7;
+  --dial-color-ink: #000000;
+  --dial-color-selection: #0078D7;
+  --dial-color-indicator: #0078D7;
+  --dial-knob-background: #F2F2F2;
+  --font-family: "Segoe UI", "Roboto", system-ui, -apple-system, sans-serif;
+  --color-hover: #0078D7;
+  --background-image: none;
+  --link-color: #0078D7;
+  --link-visited-color: #E3008C;
+  --section-bg: #F2F2F2;
+  --header-bg: transparent;
+  --accent-color: #0078D7;
+  --metro-blue: #0078D7;
+  --metro-green: #00A300;
+  --metro-orange: #FF8C00;
+  --metro-magenta: #E3008C;
+  --metro-red: #E81123;
+  --metro-purple: #881798;
+}
+
+/* Dark Mode */
+:root[data-theme='metro'][data-mode='dark'] {
+  --background-color: #1E1E1E;
+  --text-color: #FFFFFF;
+  --border-color: #00BCF2;
+  --dial-color-ink: #FFFFFF;
+  --dial-color-selection: #00BCF2;
+  --dial-color-indicator: #00BCF2;
+  --dial-knob-background: #2D2D30;
+  --font-family: "Segoe UI", "Roboto", system-ui, -apple-system, sans-serif;
+  --color-hover: #00BCF2;
+  --background-image: none;
+  --link-color: #00BCF2;
+  --link-visited-color: #E3008C;
+  --section-bg: #2D2D30;
+  --header-bg: transparent;
+  --accent-color: #00BCF2;
+  --metro-blue: #00BCF2;
+  --metro-green: #00CC6A;
+  --metro-orange: #FFAA44;
+  --metro-magenta: #FF1A8C;
+  --metro-red: #FF4343;
+  --metro-purple: #B146C2;
+}
+
 /* Typography-first, flat colors, zero skeuomorphism */
 body[data-theme='metro'] {
   font-family: var(--font-family);
