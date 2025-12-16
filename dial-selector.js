@@ -14,6 +14,7 @@ dial-selector {
   --line-transition: opacity 0.3s ease, stroke 0.3s ease;
   /* Indicator styling variables */
   --indicator-length: 60px;
+  --indicator-vertical-offset: 46.75%;
   --center-indicator: 0px;
   --time-selection-delay: 0s;
   /* Knob circle styling variables */
@@ -109,6 +110,8 @@ dial-selector .knob {
   background: var(--dial-knob-background, #11161c);
   box-shadow: var(--shadow);
   z-index: 2;
+  transform: rotate(var(--indicator-angle));
+  transition: transform 0.25s ease-in var(--time-selection-delay, 0s);
 }
 
 dial-selector .indicator {
@@ -117,14 +120,13 @@ dial-selector .indicator {
   height: var(--indicator-length, 60px);
   background: var(--indicator-gradient, var(--color-indicator));
   border-radius: calc(var(--indicator-width, 10px) / 2);
-  top: calc(50% + sin(var(--indicator-angle)) * var(--center-indicator, 0px) - var(--indicator-length, 60px));
-  left: calc(50% + cos(var(--indicator-angle)) * var(--center-indicator, 0px) - var(--indicator-width, 10px) / 2);
-  transform-origin: 50% 100%;
-  transform: rotate(calc(90deg + var(--indicator-angle)));
-  transition: var(--indicator-transition, transform 0.25s ease-in var(--time-selection-delay, 0s), top 0.25s ease-in var(--time-selection-delay, 0s), left 0.25s ease-in var(--time-selection-delay, 0s));
+  top: calc(var(--indicator-vertical-offset, 46.75%) - var(--indicator-length, 60px) / 2);
+  left: calc(40% + var(--radius-inner, 72px) - var(--width-inner-circle, 2px) + var(--center-indicator, 0px));
+  transform-origin: 0% 50%;
+  transform: rotate(90deg);
 }
 
-dial-selector.no-transitions .indicator {
+dial-selector.no-transitions .knob {
   transition: none;
 }
 
