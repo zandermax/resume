@@ -12,6 +12,21 @@
 	<script src="./dial-selector.js"></script>
 
 	<script>
+		// Map display names to internal theme names
+		const THEME_DISPLAY_TO_INTERNAL = {
+			'default': 'default',
+			'1985': 'retro85',
+			'1993': 'terminal',
+			'1996': 'nostalgia',
+			'2001': 'xp',
+			'2007': 'skeuomorph',
+			'brutal': 'brutal',
+			'source': 'source',
+			'anti': 'anti',
+			'swiss': 'swiss',
+			'glitch': 'glitch'
+		};
+
 		// Theme configuration - defines all CSS custom properties for each theme + mode combination
 		const THEME_CONFIG = {
 			default: {
@@ -172,6 +187,42 @@
 					'--desk-shadow': 'inset 0 3px 6px rgba(0, 0, 0, 0.4)',
 					'--print-button-text-color': '#2d2416',
 					'--print-button-bg-hover-gradient': 'linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #b8924c 100%)'
+				}
+			},
+			retro85: {
+				light: {
+					'--background-color': '#2d2d2d',
+					'--text-color': '#33ff33',
+					'--border-color': '#33ff33',
+					'--dial-color-ink': '#33ff33',
+					'--dial-color-selection': '#33ff33',
+					'--dial-color-indicator': '#33ff33',
+					'--dial-knob-background': '#1a1a1a',
+					'--font-family': '"Courier New", "Lucida Console", "Consolas", monospace',
+					'--color-hover': '#33ff33',
+					'--background-image': 'none',
+					'--link-color': '#33ff33',
+					'--link-visited-color': '#33ff33',
+					'--section-bg': 'transparent',
+					'--header-bg': 'transparent',
+					'--accent-color': '#33ff33'
+				},
+				dark: {
+					'--background-color': '#000000',
+					'--text-color': '#00ff00',
+					'--border-color': '#00ff00',
+					'--dial-color-ink': '#00ff00',
+					'--dial-color-selection': '#00ff00',
+					'--dial-color-indicator': '#00ff00',
+					'--dial-knob-background': '#001100',
+					'--font-family': '"Courier New", "Lucida Console", "Consolas", monospace',
+					'--color-hover': '#00ff00',
+					'--background-image': 'none',
+					'--link-color': '#00ff00',
+					'--link-visited-color': '#00ff00',
+					'--section-bg': 'transparent',
+					'--header-bg': 'transparent',
+					'--accent-color': '#00ff00'
 				}
 			},
 			terminal: {
@@ -544,7 +595,9 @@
 
 		// Handle theme change from theme selector
 		function handleThemeChange(event) {
-			currentTheme = event.detail.value.toLowerCase();
+			const displayName = event.detail.value.toLowerCase();
+			// Map display name to internal theme name
+			currentTheme = THEME_DISPLAY_TO_INTERNAL[displayName] || displayName;
 			applyThemeAndMode();
 		}
 
@@ -605,7 +658,7 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Default,Brutal,Skeuomorph,Terminal,Nostalgia,Source,Anti,Swiss,XP,Glitch"
+					<dial-selector width="600px" height="200px" options="Default,1985,1993,1996,2001,2007,Brutal,Source,Anti,Swiss,Glitch"
 						default-option="Default" onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">

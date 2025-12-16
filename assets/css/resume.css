@@ -19,6 +19,7 @@ Resume Styles - Modular Import
 
 /* Themes - Individual theme files */
 @import url('./themes/nostalgia.css');
+@import url('./themes/retro85.css');
 @import url('./themes/skeuomorph.css');
 @import url('./themes/terminal.css');
 @import url('./themes/xp.css');
