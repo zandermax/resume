@@ -23,7 +23,8 @@
 			'2007': 'skeuomorph',
 			'2012': 'metro',
 			'2017': 'brutal',
-			'2020': 'dashboard'
+			'2020': 'dashboard',
+			'2026': 'neoswiss'
 		};
 
 		// Theme configuration - defines all CSS custom properties for each theme + mode combination
@@ -659,6 +660,44 @@
 					'--panel-shadow': 'rgba(0, 0, 0, 0.3)',
 					'--mono-font': '"SF Mono", "Monaco", "Courier New", monospace'
 				}
+			},
+			neoswiss: {
+				light: {
+					'--background-color': '#FFFFFF',
+					'--text-color': '#000000',
+					'--border-color': '#000000',
+					'--dial-color-ink': '#000000',
+					'--dial-color-selection': '#FF0000',
+					'--dial-color-indicator': '#FF0000',
+					'--dial-knob-background': '#000000',
+					'--font-family': '"Helvetica Neue", "Helvetica", "Arial", sans-serif',
+					'--color-hover': '#FF0000',
+					'--background-image': 'none',
+					'--link-color': '#000000',
+					'--link-visited-color': '#000000',
+					'--section-bg': 'transparent',
+					'--header-bg': 'transparent',
+					'--accent-color': '#FF0000',
+					'--swiss-grid': '8px'
+				},
+				dark: {
+					'--background-color': '#000000',
+					'--text-color': '#FFFFFF',
+					'--border-color': '#FFFFFF',
+					'--dial-color-ink': '#FFFFFF',
+					'--dial-color-selection': '#FF0000',
+					'--dial-color-indicator': '#FF0000',
+					'--dial-knob-background': '#FFFFFF',
+					'--font-family': '"Helvetica Neue", "Helvetica", "Arial", sans-serif',
+					'--color-hover': '#FF0000',
+					'--background-image': 'none',
+					'--link-color': '#FFFFFF',
+					'--link-visited-color': '#FFFFFF',
+					'--section-bg': 'transparent',
+					'--header-bg': 'transparent',
+					'--accent-color': '#FF0000',
+					'--swiss-grid': '8px'
+				}
 			}
 		};
 
@@ -820,8 +859,8 @@
 		<header class="resume-header">
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
-					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020,2026,2035"
+					<h3>Year:</h3>
+					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020,2026,2038"
 						default-option="Current" onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">

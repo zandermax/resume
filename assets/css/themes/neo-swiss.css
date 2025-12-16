@@ -1,0 +1,566 @@
+/* ===========================
+Neo-Swiss Theme - Post-Platform Modernism
+Ultra-modern minimalism with mathematical precision
+=========================== */
+
+/* Base theme - Pure minimalism */
+body[data-theme='neoswiss'] {
+  font-family: var(--font-family);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.8;
+}
+
+/* Main container - Absolute minimalism, no decoration */
+body[data-theme='neoswiss'] .resume__main {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--background-color);
+  padding: 0;
+  position: relative;
+}
+
+/* SECTION TITLES - Minimal with mathematical precision */
+body[data-theme='neoswiss'] .resume-section__title {
+  border: 0;
+  border-bottom: 1px solid var(--accent-color);
+  border-radius: 0;
+  padding: 0 0 calc(var(--swiss-grid) * 2) 0;
+  margin: 0 0 calc(var(--swiss-grid) * 6) 0;
+  background: transparent;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+  box-shadow: none;
+  width: 60%;
+  max-width: none;
+}
+
+/* Header - Asymmetric, ultra-minimal */
+body[data-theme='neoswiss'] .resume-header {
+  border: 0;
+  border-bottom: 0;
+  padding: calc(var(--swiss-grid) * 8) calc(var(--swiss-grid) * 6);
+  background: transparent;
+  margin: 0 0 calc(var(--swiss-grid) * 8) 0;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Header name - Ultra-light, massive scale */
+body[data-theme='neoswiss'] h1.resume-header__name {
+  border: 0;
+  padding: 0;
+  margin: 0 0 calc(var(--swiss-grid) * 2) 0;
+  font-weight: 100;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  text-transform: none;
+  letter-spacing: -0.04em;
+  color: var(--text-color);
+}
+
+body[data-theme='neoswiss'] .resume-header__name-greeting {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text-color);
+}
+
+body[data-theme='neoswiss'] .resume-header__name-small {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-weight: 100;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--text-color);
+}
+
+/* Header role with accent */
+body[data-theme='neoswiss'] .resume-header__role {
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  margin-top: calc(var(--swiss-grid) * 2);
+  padding-left: calc(var(--swiss-grid) * 4);
+  border-left: calc(var(--swiss-grid) * 1) solid var(--accent-color);
+}
+
+/* Skills grid - Text-only, no backgrounds */
+body[data-theme='neoswiss'] .skills-grid {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  gap: calc(var(--swiss-grid) * 4);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body[data-theme='neoswiss'] .skills-grid__group {
+  border: 0;
+  background: transparent;
+  padding: 0 0 calc(var(--swiss-grid) * 4) 0;
+  border-radius: 0;
+  margin: 0 0 calc(var(--swiss-grid) * 4) 0;
+  box-shadow: none;
+  transition: none;
+}
+
+body[data-theme='neoswiss'] .skills-grid__title {
+  border: 0;
+  border-bottom: 0;
+  padding: 0;
+  margin: 0 0 calc(var(--swiss-grid) * 2) 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.15em;
+  color: var(--accent-color);
+  line-height: 1.2;
+}
+
+body[data-theme='neoswiss'] .skills-grid__group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--swiss-grid) * 2);
+}
+
+body[data-theme='neoswiss'] .skills-grid__group li {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+body[data-theme='neoswiss'] .skills-grid__group li:not(:last-child)::after {
+  content: ',';
+  margin-right: calc(var(--swiss-grid) * 0.5);
+}
+
+/* Experience items - Borderless with generous spacing */
+body[data-theme='neoswiss'] .experience-item {
+  position: relative;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin: 0 0 calc(var(--swiss-grid) * 8) 0;
+  box-shadow: none;
+  transition: none;
+}
+
+body[data-theme='neoswiss'] .experience-item:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Role - Large, bold */
+body[data-theme='neoswiss'] h3.experience-item__role,
+body[data-theme='neoswiss'] h3.education-item__institution {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  text-transform: none;
+  margin: 0 0 calc(var(--swiss-grid) * 1) 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+}
+
+/* Company - Small caps */
+body[data-theme='neoswiss'] .experience-item__company {
+  font-weight: 500;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  text-transform: uppercase;
+  color: var(--text-color);
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  margin-bottom: calc(var(--swiss-grid) * 2);
+}
+
+/* Dates - Minimal */
+body[data-theme='neoswiss'] .experience-item__dates,
+body[data-theme='neoswiss'] .education-item__dates {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-weight: 300;
+  color: var(--text-color);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+}
+
+/* Tech badges - No badges, inline with red bullets */
+body[data-theme='neoswiss'] .experience-item__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--swiss-grid) * 2);
+  margin-top: calc(var(--swiss-grid) * 2);
+}
+
+body[data-theme='neoswiss'] .experience-item__tech {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 400;
+  padding: 0;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  box-shadow: none;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-left: calc(var(--swiss-grid) * 2);
+}
+
+body[data-theme='neoswiss'] .experience-item__tech::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Lists - Clean, minimal */
+body[data-theme='neoswiss'] .community-list,
+body[data-theme='neoswiss'] .principles-list {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+body[data-theme='neoswiss'] .community-list__item,
+body[data-theme='neoswiss'] .principles-list__item {
+  border: 0;
+  border-left: 2px solid var(--text-color);
+  padding: calc(var(--swiss-grid) * 2) 0 calc(var(--swiss-grid) * 2) calc(var(--swiss-grid) * 3);
+  margin-bottom: calc(var(--swiss-grid) * 3);
+  background: transparent;
+  font-weight: 300;
+  line-height: 1.8;
+  transition: border-left-color 50ms linear;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+
+body[data-theme='neoswiss'] .community-list__item:hover,
+body[data-theme='neoswiss'] .principles-list__item:hover {
+  border-left-color: var(--accent-color);
+  padding-left: calc(var(--swiss-grid) * 4);
+}
+
+/* Education - Minimal card */
+body[data-theme='neoswiss'] .education-item {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: calc(var(--swiss-grid) * 6);
+}
+
+/* Bullet points - Minimal markers */
+body[data-theme='neoswiss'] .experience-item__bullets {
+  margin-top: calc(var(--swiss-grid) * 2);
+}
+
+body[data-theme='neoswiss'] .experience-item__bullets li {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: calc(var(--swiss-grid) * 2);
+  position: relative;
+  padding-left: calc(var(--swiss-grid) * 3);
+}
+
+body[data-theme='neoswiss'] .experience-item__bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  font-weight: 300;
+  color: var(--text-color);
+  opacity: 0.4;
+}
+
+/* Links - Invisible until hover */
+body[data-theme='neoswiss'] a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 0;
+  transition: border-bottom 50ms linear;
+  position: relative;
+}
+
+body[data-theme='neoswiss'] a:hover {
+  color: var(--link-color);
+  border-bottom: 1px solid var(--accent-color);
+  transform: none;
+}
+
+body[data-theme='neoswiss'] a:visited {
+  color: var(--link-visited-color);
+  border-bottom: 0;
+}
+
+body[data-theme='neoswiss'] a:visited:hover {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+/* Print button - Solid red block */
+body[data-theme='neoswiss'] .resume-header__printlink {
+  border: 0;
+  border-radius: 0;
+  background: var(--accent-color);
+  color: #ffffff;
+  font-weight: 500;
+  padding: calc(var(--swiss-grid) * 2) calc(var(--swiss-grid) * 4);
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.15em;
+  box-shadow: none;
+  transition: none;
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+body[data-theme='neoswiss'] .resume-header__printlink:hover {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.9;
+  border-bottom: 0;
+}
+
+body[data-theme='neoswiss'] .resume-header__printlink:active {
+  transform: none;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+/* Dial selector - Geometric minimal design */
+body[data-theme='neoswiss'] dial-selector .knob {
+  border-radius: 50%;
+  border: 2px solid var(--dial-color-ink);
+  box-shadow: none;
+  background: var(--dial-knob-background);
+}
+
+body[data-theme='neoswiss'] dial-selector .indicator {
+  border-radius: 0;
+  background: var(--accent-color);
+  box-shadow: none;
+  border: 0;
+  width: 2px;
+  height: 24px;
+}
+
+body[data-theme='neoswiss'] dial-selector .dial-label {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  padding: calc(var(--swiss-grid) * 1) calc(var(--swiss-grid) * 2);
+  border-radius: 0;
+  transition: color 50ms linear, background 50ms linear;
+  background: transparent;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 0;
+  color: var(--dial-color-ink);
+}
+
+body[data-theme='neoswiss'] dial-selector .dial-label:hover {
+  background: transparent;
+  box-shadow: none;
+  color: var(--accent-color);
+}
+
+body[data-theme='neoswiss'] dial-selector .dial-label.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+body[data-theme='neoswiss'] dial-selector .spoke-line {
+  stroke-width: 1px;
+  opacity: 0.2;
+  stroke: var(--dial-color-ink);
+}
+
+/* Dial selector housing - Clean panel */
+body[data-theme='neoswiss'] .resume-header__dial-selector {
+  padding: calc(var(--swiss-grid) * 4);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+}
+
+body[data-theme='neoswiss'] .resume-header__dial-selector h3 {
+  color: var(--text-color);
+  margin-bottom: calc(var(--swiss-grid) * 2);
+  font-weight: 500;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Content padding - Mathematical grid */
+body[data-theme='neoswiss'] .resume-header,
+body[data-theme='neoswiss'] .resume-section {
+  padding-left: calc(var(--swiss-grid) * 6);
+  padding-right: calc(var(--swiss-grid) * 6);
+}
+
+body[data-theme='neoswiss'] .resume-section {
+  padding-top: 0;
+  padding-bottom: calc(var(--swiss-grid) * 8);
+  border: 0;
+}
+
+/* Section spacing */
+body[data-theme='neoswiss'] .resume-section {
+  margin-bottom: 0;
+}
+
+/* Typography hierarchy */
+body[data-theme='neoswiss'] h2,
+body[data-theme='neoswiss'] h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body[data-theme='neoswiss'] p {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  margin-bottom: calc(var(--swiss-grid) * 2);
+}
+
+body[data-theme='neoswiss'] strong {
+  font-weight: 700;
+}
+
+body[data-theme='neoswiss'] em {
+  font-style: italic;
+}
+
+/* Summary section - Special treatment */
+body[data-theme='neoswiss'] .resume-section--summary p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: calc(var(--swiss-grid) * 3);
+}
+
+/* Hide skeuomorphic elements */
+body[data-theme='neoswiss'] .sticky-note {
+  display: none !important;
+}
+
+body[data-theme='neoswiss'] .nostalgia-elements {
+  display: none !important;
+}
+
+/* Ashby section - If present */
+body[data-theme='neoswiss'] .resume-section--ashby {
+  border-top: 1px solid var(--accent-color);
+  padding-top: calc(var(--swiss-grid) * 8);
+}
+
+/* ===========================
+Neo-Swiss Theme - Responsive
+=========================== */
+
+@media (max-width: 768px) {
+  body[data-theme='neoswiss'] h1.resume-header__name {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  body[data-theme='neoswiss'] .resume-section__title {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    width: 80%;
+  }
+
+  body[data-theme='neoswiss'] h3.experience-item__role,
+  body[data-theme='neoswiss'] h3.education-item__institution {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  body[data-theme='neoswiss'] .resume-header,
+  body[data-theme='neoswiss'] .resume-section {
+    padding-left: calc(var(--swiss-grid) * 4);
+    padding-right: calc(var(--swiss-grid) * 4);
+  }
+
+  body[data-theme='neoswiss'] .resume-header {
+    padding-top: calc(var(--swiss-grid) * 6);
+    padding-bottom: calc(var(--swiss-grid) * 6);
+  }
+}
+
+@media (max-width: 500px) {
+  body[data-theme='neoswiss'] h1.resume-header__name {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  body[data-theme='neoswiss'] .resume-section__title {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    padding-bottom: calc(var(--swiss-grid) * 1);
+    margin-bottom: calc(var(--swiss-grid) * 4);
+    width: 100%;
+  }
+
+  body[data-theme='neoswiss'] .resume-header,
+  body[data-theme='neoswiss'] .resume-section {
+    padding-left: calc(var(--swiss-grid) * 3);
+    padding-right: calc(var(--swiss-grid) * 3);
+  }
+
+  body[data-theme='neoswiss'] .resume-header {
+    padding-top: calc(var(--swiss-grid) * 4);
+    padding-bottom: calc(var(--swiss-grid) * 4);
+  }
+
+  body[data-theme='neoswiss'] .experience-item {
+    margin-bottom: calc(var(--swiss-grid) * 6);
+  }
+
+  body[data-theme='neoswiss'] dial-selector .dial-label {
+    font-size: clamp(0.625rem, 2vw, 0.75rem);
+    padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 1.5);
+  }
+
+  body[data-theme='neoswiss'] .resume-header__printlink {
+    font-size: clamp(0.625rem, 2vw, 0.75rem);
+    padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
+  }
+}
+
+/* ===========================
+Print Styles - Maintain minimal aesthetic
+=========================== */
+
+@media print {
+  body[data-theme='neoswiss'] .resume-section__title {
+    border-bottom-color: #000000;
+  }
+
+  body[data-theme='neoswiss'] .resume-header__role {
+    border-left-color: #000000;
+  }
+
+  body[data-theme='neoswiss'] .skills-grid__title {
+    color: #000000;
+  }
+
+  body[data-theme='neoswiss'] .experience-item__tech::before {
+    color: #000000;
+  }
+}
+
