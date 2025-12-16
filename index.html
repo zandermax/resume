@@ -14,18 +14,14 @@
 	<script>
 		// Map display names to internal theme names
 		const THEME_DISPLAY_TO_INTERNAL = {
-			'default': 'default',
+			'current': 'default',
 			'1985': 'retro85',
 			'1993': 'terminal',
 			'1996': 'nostalgia',
 			'2001': 'xp',
 			'2007': 'skeuomorph',
 			'2012': 'metro2012',
-			'2017': 'brutal',
-			'source': 'source',
-			'anti': 'anti',
-			'swiss': 'swiss',
-			'glitch': 'glitch'
+			'2017': 'brutal'
 		};
 
 		// Theme configuration - defines all CSS custom properties for each theme + mode combination
@@ -707,8 +703,8 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Theme:</h3>
-					<dial-selector width="600px" height="200px" options="Default,1985,1993,1996,2001,2007,2012,2017,Source,Anti,Swiss,Glitch"
-						default-option="Default" onchange="handleThemeChange(event)"></dial-selector>
+					<dial-selector width="600px" height="200px" options="Current,1985,1993,1996,2001,2007,2012,2017" default-option="Current"
+						onchange="handleThemeChange(event)"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
 					<h3>Mode:</h3>
@@ -836,7 +832,7 @@
 		</section>
 
 		<!-- WHY ASHBY -->
-		<section class="resume-section resume-section--mozilla">
+		<section class="resume-section resume-section--ashby">
 			<h2 class="resume-section__title">Why Ashby &amp; This Role</h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
