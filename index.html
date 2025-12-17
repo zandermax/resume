@@ -94,7 +94,7 @@
 		let currentMode = 'light';
 
 		// Apply a theme+mode combination by setting data attributes
-		// CSS handles ALL theme behavior via [data-theme] selectors (see theme-utils.css and theme CSS files)
+		// CSS handles ALL theme behavior via [data-theme] selectors and CSS custom properties
 		function applyThemeAndMode() {
 			// Set attributes on both :root (html) and body for CSS targeting
 			// :root is needed for CSS custom properties, body for theme-specific rules
@@ -396,9 +396,9 @@
 		<!-- SUMMARY -->
 		<section class="resume-section resume-section--summary">
 			<!-- Normal title (shown by default and in all themes except nostalgia) -->
-			<h2 class="resume-section__title resume-section__title--normal">Professional Summary</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Professional Summary</span></h2>
 			<!-- Nostalgia blink version (shown only in nostalgia theme, index 0 = even) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+			<h2 class="resume-section__title nostalgia blink">
 				<span class="retro-gif spinning">🔥</span> Professional Summary <span class="retro-gif spinning">🔥</span>
 			</h2>
 			<p class="resume-section__text">
@@ -426,9 +426,9 @@
 		<!-- WHY ASHBY -->
 		<section class="resume-section resume-section--ashby">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">Why Ashby &amp; This Role</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Why Ashby &amp; This Role</span></h2>
 			<!-- Nostalgia marquee version (index 1 = odd) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+			<h2 class="resume-section__title nostalgia">
 				<div class="marquee-container">
 					<div class="marquee">⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐</div>
 				</div>
@@ -466,9 +466,9 @@
 		<!-- CORE SKILLS -->
 		<section class="resume-section resume-section--skills">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">Core Skills (Relevant to Ashby)</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Core Skills (Relevant to Ashby)</span></h2>
 			<!-- Nostalgia blink version (index 2 = even) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+			<h2 class="resume-section__title nostalgia blink">
 				<span class="retro-gif spinning">💫</span> Core Skills (Relevant to Ashby) <span class="retro-gif spinning">💫</span>
 			</h2>
 
@@ -524,9 +524,10 @@
 		<!-- EXPERIENCE -->
 		<section class="resume-section resume-section--experience">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">Professional Experience</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Professional Experience</span>
+			</h2>
 			<!-- Nostalgia marquee version (index 3 = odd) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+			<h2 class="resume-section__title nostalgia">
 				<div class="marquee-container">
 					<div class="marquee">✨ Professional Experience ✨ --- ✨ Professional Experience ✨ --- ✨ Professional Experience ✨</div>
 				</div>
@@ -711,9 +712,9 @@
 		<!-- OPEN SOURCE & COMMUNITY -->
 		<section class="resume-section resume-section--community">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">Open Source, Standards &amp; Community</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Open Source, Standards &amp; Community</span></h2>
 			<!-- Nostalgia blink version (index 4 = even) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+			<h2 class="resume-section__title nostalgia blink">
 				<span class="retro-gif spinning">🌟</span> Open Source, Standards &amp; Community <span class="retro-gif spinning">🌟</span>
 			</h2>
 
@@ -742,9 +743,9 @@
 		<!-- EDUCATION -->
 		<section class="resume-section resume-section--education">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">Education</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>Education</span></h2>
 			<!-- Nostalgia marquee version (index 5 = odd) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-marquee">
+			<h2 class="resume-section__title nostalgia">
 				<div class="marquee-container">
 					<div class="marquee">👷 Education 👷 --- 👷 Education 👷 --- 👷 Education 👷</div>
 				</div>
@@ -764,9 +765,9 @@
 		<!-- CORE PRINCIPLES -->
 		<section class="resume-section resume-section--principles">
 			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal">How I Prefer to Work</h2>
+			<h2 class="resume-section__title resume-section__title--normal"><span>How I Prefer to Work</span></h2>
 			<!-- Nostalgia blink version (index 6 = even) -->
-			<h2 class="resume-section__title resume-section__title--nostalgia-blink blink">
+			<h2 class="resume-section__title nostalgia blink">
 				<span class="retro-gif spinning">📧</span> How I Prefer to Work <span class="retro-gif spinning">📧</span>
 			</h2>
 			<ul class="principles-list">

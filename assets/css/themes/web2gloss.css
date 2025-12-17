@@ -11,6 +11,9 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --dial-color-ink: oklch(62% 0.17 240);
   --dial-color-selection: oklch(62% 0.17 240);
   --dial-color-indicator: oklch(62% 0.17 240);
+
+  /* Show web2 badges in web2gloss theme */
+  --display-web2-badges: block;
   --dial-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--color-white) 0%,
@@ -52,6 +55,9 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --dial-color-ink: oklch(82% 0.13 210);
   --dial-color-selection: oklch(82% 0.13 210);
   --dial-color-indicator: oklch(82% 0.13 210);
+
+  /* Show web2 badges in web2gloss theme */
+  --display-web2-badges: block;
   --dial-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--color-blue-dashboard) 0%,
@@ -627,6 +633,10 @@ body[data-theme='web2gloss'][data-mode='dark'] {
       opacity: 0.5;
       stroke: oklch(100% 0 0 / 0.6);
     }
+  }
+
+  .experience-item__tech {
+    color: var(--color-black);
   }
 
   .web2-badges {

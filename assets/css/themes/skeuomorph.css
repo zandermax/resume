@@ -25,6 +25,9 @@ Skeuomorphic Theme Effects
     --dial-color-ink: var(--color-brown);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
+
+    /* Show sticky note in skeuomorph theme */
+    --display-sticky-note: block;
     --dial-knob-background: radial-gradient(
       circle at 35% 35%,
       oklch(0.93 0 0) 0%,
@@ -87,6 +90,9 @@ Skeuomorphic Theme Effects
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
+
+    /* Show sticky note in skeuomorph theme */
+    --display-sticky-note: block;
     --dial-knob-background: radial-gradient(
       circle at 30% 30%,
       oklch(0.35 0 0) 0%,
@@ -143,6 +149,40 @@ Skeuomorphic Theme Effects
 
 /* Paper curl effect on sections */
 body[data-theme='skeuomorph'] {
+  /* Stitched leather border effect for main resume container */
+  .resume__main {
+    /* Leather border backing */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      background: var(--leather-color);
+      background-image: var(--leather-texture);
+      border-radius: 4px;
+      z-index: -1;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+      opacity: 1;
+    }
+
+    /* Stitching effect */
+    &::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border: 2px dashed var(--stitch-color);
+      border-radius: 2px;
+      z-index: -1;
+      opacity: 1;
+    }
+  }
+
   .resume-section {
     position: relative;
     background: var(--paper-color);

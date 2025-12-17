@@ -2,23 +2,17 @@
 Resume Styles - Modular Import
 =========================== */
 
-/* Core styles - Base styles and custom properties */
+/* Core styles - Base styles, custom properties, layout, and structure */
 @import url('./base.css');
 
 /* Utilities - Reusable patterns and helpers */
 @import url('./utilities.css');
-
-/* Layout - Main structure, header, sections */
-@import url('./layout.css');
 
 /* Components - Skills, experience, education, etc. */
 @import url('./components.css');
 
 /* Responsive - Media queries for mobile/tablet */
 @import url('./responsive.css');
-
-/* Theme utilities - Shared theme patterns */
-@import url('./theme-utils.css');
 
 /* Print - Print-specific styles */
 @import url('./print.css');

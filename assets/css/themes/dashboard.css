@@ -25,6 +25,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --metric-highlight: var(--color-blue-dashboard);
   --panel-shadow: oklch(0% 0 0 / 0.08);
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
+
+  /* Show dashboard-specific elements */
+  --display-dashboard-status: flex;
+  --display-dashboard-metrics: grid;
 }
 
 /* Dark Mode */
@@ -49,6 +53,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --metric-highlight: var(--color-blue-bright);
   --panel-shadow: oklch(0% 0 0 / 0.3);
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
+
+  /* Show dashboard-specific elements */
+  --display-dashboard-status: flex;
+  --display-dashboard-metrics: grid;
 }
 
 @keyframes pulse-status {
@@ -199,7 +207,7 @@ body[data-theme='dashboard'] {
   }
 
   /* Section Titles - Panel Headers */
-  .resume-section__title {
+  .resume-section__title:not(.nostalgia) {
     border-left: 4px solid var(--accent-color);
     border-bottom: 1px solid var(--panel-border);
     padding: 1rem 1.5rem;
@@ -538,9 +546,3 @@ body[data-theme='dashboard'] {
     }
   }
 }
-
-/* ===========================
-Theme-Specific Element Visibility
-=========================== */
-
-/* Dashboard element visibility is controlled in theme-utils.css */
