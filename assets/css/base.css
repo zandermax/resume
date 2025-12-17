@@ -36,9 +36,6 @@ Custom Properties
     oklch(55% 0 0) 75%,
     var(--color-silver) 100%
   );
-  --wood-color-dark: var(--color-brown);
-  --wood-color-light: oklch(42% 0.04 40); /* Light brown */
-  --wood-grain: none;
   --paper-shadow: none;
   --paper-texture: none;
   --leather-texture: none;
@@ -65,28 +62,6 @@ body.resume {
   background-image: var(--background-image);
   -webkit-font-smoothing: antialiased;
   position: relative;
-
-  /* Wood grain desk effect for skeuomorphic theme */
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--wood-grain),
-      linear-gradient(180deg, var(--wood-color-dark) 0%, var(--wood-color-light) 50%, var(--wood-color-dark) 100%);
-    box-shadow: var(--desk-shadow);
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  /* Show wood grain only in skeuomorph theme */
-  &[data-theme='skeuomorph']::before {
-    opacity: 1;
-  }
 }
 
 /* Reset margins for common elements */

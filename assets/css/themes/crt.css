@@ -42,6 +42,18 @@
   --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
 }
 
+/* Cursor blink animation */
+@keyframes terminal-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 body[data-theme='crt'] {
   font-family: var(--font-family);
   text-shadow: 0 0 4px currentColor;
@@ -62,33 +74,11 @@ body[data-theme='crt'] {
     z-index: 9999;
   }
 
-  /* Main container with CRT glow */
-  .resume__main {
-    border: 2px solid currentColor;
-    box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
-    background: var(--background-color);
-    padding: 2rem;
-  }
-
   /* Typography with glow */
   h1,
   h2,
   h3 {
     letter-spacing: 0.05em;
-  }
-
-  h1.resume-header__name {
-    border-bottom: 2px solid currentColor;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px currentColor;
-
-    &::after {
-      content: '█';
-      animation: terminal-blink 1s infinite;
-      margin-left: 0.25rem;
-      font-size: 0.9em;
-    }
   }
 
   p,
@@ -97,64 +87,60 @@ body[data-theme='crt'] {
     letter-spacing: 0.02em;
   }
 
-  /* Reset all container styling */
-  .skills-grid,
-  .skills-grid__group,
-  .community-list,
-  .principles-list,
-  .education-item {
-    border: 0;
-    background: transparent;
-    padding: 0.5rem 0;
+  /* Main container with CRT glow */
+  .resume__main {
+    border: 2px solid currentColor;
+    box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+    background: var(--background-color);
+    padding: 2rem;
   }
 
-  .skills-grid {
+  /* Header */
+  .resume-header {
+    border: 0;
+    border-bottom: 2px double currentColor;
     padding: 1rem 0;
-  }
+    margin-bottom: 2rem;
 
-  .skills-grid__group {
-    margin-bottom: 1rem;
-  }
+    &__name {
+      border-bottom: 2px solid currentColor;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px currentColor;
 
-  .skills-grid__title {
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Experience items */
-  .experience-item {
-    border: 0;
-    background: transparent;
-    margin-top: 1.5rem;
-    padding: 1rem 0 0.5rem;
-    border-top: 1px solid currentColor;
-
-    &:first-of-type {
-      border-top: 0;
-    }
-  }
-
-  .experience-item__tech {
-    border: 1px solid currentColor;
-    padding: 0.25rem 0.5rem;
-    text-shadow: 0 0 6px currentColor;
-
-    &::before {
-      content: '[';
-      margin-right: 2px;
+      &::after {
+        content: '█';
+        animation: terminal-blink 1s infinite;
+        margin-left: 0.25rem;
+        font-size: 0.9em;
+      }
     }
 
-    &::after {
-      content: ']';
-      margin-left: 2px;
-    }
-  }
+    &__dial-selector {
+      padding: 1rem;
+      border: 1px solid currentColor;
 
-  .experience-item__bullets li::before {
-    content: '>';
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
+      h3 {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    &__printlink {
+      border: 2px solid currentColor;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      transition: all 0.1s ease;
+
+      &::before {
+        content: '> ';
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+        text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+        border-width: 3px;
+      }
+    }
   }
 
   /* Section titles */
@@ -167,21 +153,83 @@ body[data-theme='crt'] {
     letter-spacing: 0.1em;
   }
 
-  /* Header */
-  .resume-header {
+  /* Common transparent containers */
+  .skills-grid,
+  .skills-grid__group,
+  .community-list,
+  .principles-list,
+  .education-item,
+  .experience-item {
     border: 0;
-    border-bottom: 2px double currentColor;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+    background: transparent;
   }
 
-  .resume-header__dial-selector {
-    padding: 1rem;
-    border: 1px solid currentColor;
+  /* Skills grid */
+  .skills-grid {
+    padding: 1rem 0;
 
-    h3 {
-      margin-bottom: 0.75rem;
+    &__group {
+      padding: 0.5rem 0;
+      margin-bottom: 1rem;
     }
+
+    &__title {
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Experience items */
+  .experience-item {
+    margin-top: 1.5rem;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid currentColor;
+
+    &:first-of-type {
+      border-top: 0;
+    }
+
+    &__tech {
+      border: 1px solid currentColor;
+      padding: 0.25rem 0.5rem;
+      text-shadow: 0 0 6px currentColor;
+
+      &::before {
+        content: '[';
+        margin-right: 2px;
+      }
+
+      &::after {
+        content: ']';
+        margin-left: 2px;
+      }
+    }
+
+    &__bullets li::before {
+      content: '>';
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  /* Community and principles lists */
+  .community-list,
+  .principles-list {
+    &__item {
+      padding: 0.75rem 0;
+      border: 0;
+      border-top: 1px dotted currentColor;
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  /* Education items */
+  .education-item {
+    padding: 0.5rem 0;
   }
 
   /* Links */
@@ -192,36 +240,6 @@ body[data-theme='crt'] {
       text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
       text-decoration: none;
       border-bottom: 2px solid currentColor;
-    }
-  }
-
-  /* Print button */
-  .resume-header__printlink {
-    border: 2px solid currentColor;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    transition: all 0.1s ease;
-
-    &::before {
-      content: '> ';
-    }
-
-    &:hover {
-      box-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
-      text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-      border-width: 3px;
-    }
-  }
-
-  /* List items */
-  .community-list__item,
-  .principles-list__item {
-    border: 0;
-    border-top: 1px dotted currentColor;
-    padding: 0.75rem 0;
-
-    &:first-child {
-      border-top: 0;
     }
   }
 
@@ -263,23 +281,9 @@ body[data-theme='crt'] {
       opacity: 0.5;
     }
   }
-}
 
-/* Cursor blink animation */
-@keyframes terminal-blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  body[data-theme='crt'] {
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .resume__main {
       padding: 1.5rem;
     }
@@ -293,10 +297,8 @@ body[data-theme='crt'] {
       padding: 0.35rem 0.65rem;
     }
   }
-}
 
-@media (max-width: 500px) {
-  body[data-theme='crt'] {
+  @media (max-width: 500px) {
     .resume__main {
       padding: 1rem;
     }

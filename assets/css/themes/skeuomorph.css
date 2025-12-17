@@ -68,6 +68,14 @@ Skeuomorphic Theme Effects
     --sticky-note-color: oklch(0.98 0.1 105);
     --sticky-note-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.08);
     --desk-shadow: inset 0 2px 4px rgb(0 0 0 / 0.2);
+
+    /* Oak desk colors - honey oak for light mode */
+    --oak-lite: oklch(82% 0.035 76);
+    --oak-base: oklch(74% 0.045 75);
+    --oak-mid: oklch(66% 0.055 74);
+    --oak-dark: oklch(52% 0.06 73);
+    --oak-sheen: rgba(255, 255, 255, 0.2);
+    --oak-shade: rgba(0, 0, 0, 0.18);
   }
 
   &[data-mode='dark'] {
@@ -75,6 +83,7 @@ Skeuomorphic Theme Effects
     --text-color: oklch(0.86 0.03 60);
     --heading-color: oklch(0.86 0.03 60);
     --border-color: oklch(0.42 0.03 50);
+    --print-button-text-color: var(--border-color);
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
@@ -121,6 +130,14 @@ Skeuomorphic Theme Effects
     --sticky-note-color: oklch(0.98 0.1 105);
     --sticky-note-shadow: 0 6px 8px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.3);
     --desk-shadow: inset 0 3px 6px rgb(0 0 0 / 0.4);
+
+    /* Oak desk colors - rich walnut for dark mode */
+    --oak-lite: oklch(0.42 0.05 65);
+    --oak-base: oklch(0.34 0.06 63);
+    --oak-mid: oklch(0.28 0.07 61);
+    --oak-dark: oklch(0.2 0.08 58);
+    --oak-sheen: rgba(255, 255, 255, 0.12);
+    --oak-shade: rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -410,6 +427,94 @@ body[data-theme='skeuomorph'] {
   .skills-grid__group {
     box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), inset 0 -1px 0 rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.08);
   }
+}
+
+/* ===========================
+Oak Desk Background
+=========================== */
+
+/* Main oak desk surface with wood grain and varnish */
+body[data-theme='skeuomorph'].resume::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 var(--oak-sheen), inset 0 -1px 0 var(--oak-shade);
+
+  background:
+    /* subtle corner vignette */ radial-gradient(
+      140% 120% at 20% 10%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 30%,
+      transparent 60%
+    ),
+    radial-gradient(140% 120% at 85% 80%, transparent 45%, rgba(0, 0, 0, 0.16) 80%, rgba(0, 0, 0, 0.22) 100%),
+    /* big, gentle "oak cathedrals" (veneer-ish, not photoreal) */
+      radial-gradient(
+        120% 220% at 22% 55%,
+        transparent 0 34%,
+        color-mix(in oklch, var(--oak-dark) 55%, transparent) 35% 36%,
+        transparent 37% 43%,
+        color-mix(in oklch, var(--oak-dark) 40%, transparent) 44% 45%,
+        transparent 46% 100%
+      ),
+    radial-gradient(
+      120% 220% at 62% 50%,
+      transparent 0 30%,
+      color-mix(in oklch, var(--oak-mid) 45%, transparent) 31% 32%,
+      transparent 33% 42%,
+      color-mix(in oklch, var(--oak-dark) 35%, transparent) 43% 44%,
+      transparent 45% 100%
+    ),
+    /* fine grain lines (the "veneer print" look) */
+      repeating-linear-gradient(
+        90deg,
+        color-mix(in oklch, var(--oak-base) 92%, black) 0 2px,
+        color-mix(in oklch, var(--oak-mid) 88%, black) 2px 3px,
+        color-mix(in oklch, var(--oak-base) 96%, black) 3px 7px,
+        color-mix(in oklch, var(--oak-base) 90%, black) 7px 10px
+      ),
+    /* base fill */ linear-gradient(180deg, var(--oak-lite), var(--oak-base));
+
+  background-blend-mode: soft-light, multiply, soft-light, normal, normal, normal;
+}
+
+/* Micro-noise texture + "finish" glare overlay */
+body[data-theme='skeuomorph'].resume::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    /* tiny printed texture */ repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.02) 0 1px,
+      rgba(255, 255, 255, 0.012) 1px 2px
+    ),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.012) 0 1px, rgba(255, 255, 255, 0.008) 1px 3px),
+    /* soft varnish sheen */
+      linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.1) 18%,
+        transparent 40%,
+        transparent 100%
+      );
+
+  mix-blend-mode: overlay;
+  opacity: 0.75;
+  filter: blur(0.25px);
 }
 
 /* Shimmer animation for print button hover */
