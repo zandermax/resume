@@ -14,7 +14,6 @@ Ultra-modern minimalism with mathematical precision
   --dial-color-indicator: var(--color-red);
   --dial-knob-background: var(--color-black);
   --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --color-hover: var(--color-red);
   --background-image: none;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-black);
@@ -35,7 +34,6 @@ Ultra-modern minimalism with mathematical precision
   --dial-color-indicator: var(--color-red);
   --dial-knob-background: var(--color-white);
   --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --color-hover: var(--color-red);
   --background-image: none;
   --link-color: var(--color-white);
   --link-visited-color: var(--color-white);

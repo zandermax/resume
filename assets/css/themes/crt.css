@@ -13,7 +13,6 @@
   --dial-color-indicator: var(--color-green-terminal);
   --dial-knob-background: #1a1a1a;
   --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
-  --color-hover: var(--color-green-terminal);
   --background-image: none;
   --link-color: var(--color-green-terminal);
   --link-visited-color: var(--color-green-terminal);
@@ -33,7 +32,6 @@
   --dial-color-indicator: var(--color-green);
   --dial-knob-background: #001100;
   --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
-  --color-hover: var(--color-green);
   --background-image: none;
   --link-color: var(--color-green);
   --link-visited-color: var(--color-green);

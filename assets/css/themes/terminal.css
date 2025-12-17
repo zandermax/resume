@@ -13,7 +13,6 @@ Terminal Theme (1993 CLI-inspired)
   --dial-color-indicator: var(--color-yellow);
   --dial-knob-background: var(--color-silver);
   --font-family: 'Courier New', 'Lucida Console', monospace;
-  --color-hover: var(--color-yellow);
   --background-image: none;
   --link-color: var(--color-yellow);
   --link-visited-color: var(--color-cyan);
@@ -39,7 +38,6 @@ Terminal Theme (1993 CLI-inspired)
   --dial-color-indicator: var(--color-cyan);
   --dial-knob-background: #555555;
   --font-family: 'Courier New', 'Lucida Console', monospace;
-  --color-hover: var(--color-cyan);
   --background-image: none;
   --link-color: var(--color-cyan);
   --link-visited-color: var(--color-yellow);

@@ -12,76 +12,87 @@ Color Palette - Semantic Color Names
 =========================== */
 
 :root {
-  /* Grayscale */
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
+  /* Grayscale - OKLCH format: lightness, chroma, hue */
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
+  --color-gray-50: oklch(98.5% 0.002 264);
+  --color-gray-100: oklch(96.5% 0.002 264);
+  --color-gray-200: oklch(92% 0.004 264);
+  --color-gray-300: oklch(86% 0.006 264);
+  --color-gray-400: oklch(69% 0.012 264);
+  --color-gray-500: oklch(55% 0.016 264);
+  --color-gray-600: oklch(45% 0.015 264);
+  --color-gray-700: oklch(37% 0.013 264);
+  --color-gray-800: oklch(28% 0.011 264);
+  --color-gray-900: oklch(21% 0.01 264);
 
-  /* Primary Colors */
-  --color-red: #ff0000;
-  --color-red-bright: #ff5555;
-  --color-red-dark: #dc3545;
-  --color-red-crimson: #f13b3b;
+  /* Pure grays (no color tint) */
+  --color-gray-pure-light: oklch(92% 0 0);
 
-  --color-blue: #0000ff;
-  --color-blue-bright: #58a6ff;
-  --color-blue-dark: #0054e3;
-  --color-blue-navy: #000080;
-  --color-blue-sky: #5555aa;
-  --color-blue-steel: #5a8fcc;
-  --color-blue-link: #0000ee;
-  --color-blue-metro: #0078d7;
-  --color-blue-dashboard: #0066cc;
+  /* Primary Colors - Red family */
+  --color-red: oklch(63% 0.26 29); /* Pure red: high chroma at 29° hue */
+  --color-red-bright: oklch(70% 0.22 29); /* Lighter, less saturated */
+  --color-red-dark: oklch(58% 0.21 27);
+  --color-red-crimson: oklch(62% 0.24 29);
 
-  --color-green: #00ff00;
-  --color-green-terminal: #33ff33;
-  --color-green-bright: #00cc6a;
-  --color-green-success: #28a745;
-  --color-green-xp: #73bc5a;
+  /* Blue family */
+  --color-blue: oklch(45% 0.31 264); /* Pure blue: 264° hue */
+  --color-blue-bright: oklch(70% 0.16 245);
+  --color-blue-dark: oklch(50% 0.24 264);
+  --color-blue-navy: oklch(32% 0.15 264);
+  --color-blue-sky: oklch(49% 0.13 276);
+  --color-blue-steel: oklch(64% 0.12 245);
+  --color-blue-link: oklch(42% 0.3 264);
+  --color-blue-metro: oklch(57% 0.17 246);
+  --color-blue-dashboard: oklch(54% 0.19 250);
 
-  --color-yellow: #ffff00;
-  --color-yellow-bright: #ffc107;
-  --color-yellow-cream: #ffff99;
+  /* Green family */
+  --color-green: oklch(87% 0.29 142); /* Pure green: 142° hue */
+  --color-green-terminal: oklch(88% 0.27 142);
+  --color-green-bright: oklch(70% 0.2 166);
+  --color-green-success: oklch(65% 0.18 145);
+  --color-green-xp: oklch(72% 0.16 130);
 
-  --color-cyan: #00ffff;
-  --color-cyan-bright: #00bcf2;
+  /* Yellow family */
+  --color-yellow: oklch(97% 0.21 110); /* Pure yellow: 110° hue */
+  --color-yellow-bright: oklch(82% 0.15 85);
+  --color-yellow-cream: oklch(94% 0.09 105);
 
-  --color-magenta: #ff00ff;
-  --color-magenta-bright: #ff1a8c;
-  --color-magenta-pink: #ff99ff;
+  /* Cyan family */
+  --color-cyan: oklch(91% 0.15 195); /* Pure cyan: ~195° hue */
+  --color-cyan-bright: oklch(75% 0.14 210);
 
-  --color-orange: #ff8c00;
-  --color-orange-bright: #ff6600;
+  /* Magenta/Pink family */
+  --color-magenta: oklch(70% 0.32 328); /* Pure magenta: 328° hue */
+  --color-magenta-bright: oklch(68% 0.27 350);
+  --color-magenta-pink: oklch(85% 0.18 328);
 
-  --color-purple: #881798;
-  --color-purple-link: #551a8b;
+  /* Orange family */
+  --color-orange: oklch(70% 0.19 55); /* Orange: ~55° hue */
+  --color-orange-bright: oklch(68% 0.22 40);
+
+  /* Purple family */
+  --color-purple: oklch(44% 0.17 310); /* Purple: 310° hue */
+  --color-purple-link: oklch(35% 0.13 305);
 
   /* Neutral Tones */
-  --color-beige: #ece9d8;
-  --color-cream: #f4f1e8;
-  --color-tan: #6d4c41;
-  --color-brown: #4a3526;
+  --color-beige: oklch(93% 0.02 85); /* Beige: low chroma yellow tint */
+  --color-cream: oklch(95% 0.01 80); /* Cream: very low chroma */
+  --color-tan: oklch(41% 0.04 40);
+  --color-brown: oklch(30% 0.03 40);
 
   /* Terminal/System Colors */
-  --color-silver: #c0c0c0;
-  --color-gray-light: #aaaaaa;
-  --color-gray-medium: #808080;
-  --color-gray-dark: #888888;
+  --color-silver: oklch(80% 0 0);
+  --color-gray-light: oklch(72% 0 0);
+  --color-gray-medium: oklch(59% 0 0);
+  --color-gray-dark: oklch(61% 0 0);
 
   /* Theme-specific */
-  --color-dark-bg: #1a1f24;
-  --color-dark-bg-alt: #2a2f34;
-  --color-dark-surface: #0d1117;
-  --color-dark-border: #30363d;
+  --color-dark-bg: oklch(23% 0.01 240);
+  --color-dark-bg-alt: oklch(28% 0.01 240);
+  --color-dark-surface: oklch(18% 0.01 240);
+  --color-dark-border: oklch(32% 0.01 240);
+  --color-dark-knob: oklch(19% 0.015 240); /* Dark blue-tinted knob */
 
   /* 3D Beveled Border Patterns (Terminal/XP/Skeuomorph) */
   --bevel-light: var(--terminal-border-light, var(--color-white));

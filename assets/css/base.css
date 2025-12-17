@@ -13,7 +13,7 @@ Custom Properties
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --dial-knob-background: #11161c;
+  --dial-knob-background: var(--color-dark-knob);
 
   /* Theme-specific properties */
   --background-image: none;
@@ -24,19 +24,26 @@ Custom Properties
   --accent-color: var(--color-red-crimson);
 
   /* Skeuomorphic theme properties */
-  --leather-color: #6d4c41;
-  --paper-color: #f4f1e8;
-  --ink-color: #2c2416;
-  --stitch-color: #8b7355;
-  --metal-gradient: linear-gradient(135deg, #e8e8e8 0%, #9e9e9e 25%, #d0d0d0 50%, #787878 75%, #c0c0c0 100%);
-  --wood-color-dark: #4a3526;
-  --wood-color-light: #6b4d3a;
+  --leather-color: var(--color-tan);
+  --paper-color: var(--color-cream);
+  --ink-color: oklch(23% 0.03 40); /* Dark brown ink */
+  --stitch-color: oklch(57% 0.04 45); /* Tan stitch */
+  --metal-gradient: linear-gradient(
+    135deg,
+    var(--color-gray-pure-light) 0%,
+    oklch(68% 0 0) 25%,
+    oklch(85% 0 0) 50%,
+    oklch(55% 0 0) 75%,
+    var(--color-silver) 100%
+  );
+  --wood-color-dark: var(--color-brown);
+  --wood-color-light: oklch(42% 0.04 40); /* Light brown */
   --wood-grain: none;
   --paper-shadow: none;
   --paper-texture: none;
   --leather-texture: none;
-  --sticky-note-color: #feff9c;
-  --sticky-note-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sticky-note-color: oklch(96% 0.1 105); /* Light yellow post-it */
+  --sticky-note-shadow: 0 4px 6px oklch(0% 0 0 / 0.1);
   --sticky-note-rotation: -3deg;
   --desk-shadow: none;
 }

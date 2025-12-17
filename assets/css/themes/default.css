@@ -11,9 +11,8 @@ DEFAULT Theme - Clean, Professional
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --dial-knob-background: #11161c;
+  --dial-knob-background: var(--color-dark-knob);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: var(--color-red-crimson);
   --background-image: none;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
@@ -25,17 +24,16 @@ DEFAULT Theme - Clean, Professional
 /* Dark Mode */
 :root[data-theme='default'][data-mode='dark'] {
   --background-color: var(--color-dark-bg);
-  --text-color: #e8e8e8;
-  --heading-color: #e8e8e8;
+  --text-color: var(--color-gray-pure-light);
+  --heading-color: var(--color-gray-pure-light);
   --border-color: var(--color-gray-dark);
-  --dial-color-ink: #e8e8e8;
+  --dial-color-ink: var(--color-gray-pure-light);
   --dial-color-selection: var(--color-red-bright);
   --dial-color-indicator: var(--color-red-bright);
   --dial-knob-background: var(--color-dark-bg-alt);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: var(--color-red-bright);
   --background-image: none;
-  --link-color: #e8e8e8;
+  --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
   --section-bg: transparent;
   --header-bg: transparent;

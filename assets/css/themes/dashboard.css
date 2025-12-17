@@ -14,7 +14,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dial-color-indicator: var(--color-blue-dashboard);
   --dial-knob-background: var(--color-white);
   --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --color-hover: var(--color-blue-dashboard);
   --background-image: none;
   --link-color: var(--color-blue-dashboard);
   --link-visited-color: #004499;
@@ -42,7 +41,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dial-color-indicator: var(--color-blue-bright);
   --dial-knob-background: #161b22;
   --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --color-hover: var(--color-blue-bright);
   --background-image: none;
   --link-color: var(--color-blue-bright);
   --link-visited-color: #79c0ff;

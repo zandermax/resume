@@ -4,68 +4,66 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
 /* Light Mode */
 :root[data-theme='web2gloss'][data-mode='light'] {
-  --background-color: #e8f5ff;
-  --text-color: #333333;
-  --heading-color: #ffffff;
-  --border-color: #ccddee;
-  --dial-color-ink: #0099ff;
-  --dial-color-selection: #0099ff;
-  --dial-color-indicator: #0099ff;
+  --background-color: oklch(96% 0.02 230); /* Light blue tint */
+  --text-color: oklch(27% 0 0); /* Dark gray */
+  --heading-color: var(--color-white);
+  --border-color: oklch(88% 0.02 230); /* Light blue-gray */
+  --dial-color-ink: oklch(62% 0.17 240); /* Bright blue */
+  --dial-color-selection: oklch(62% 0.17 240);
+  --dial-color-indicator: oklch(62% 0.17 240);
   --dial-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--color-white) 0%,
-    #e8f5ff 30%,
-    #b5e3ff 70%,
-    #66ccff 100%
+    oklch(96% 0.02 230) 30%,
+    oklch(90% 0.05 230) 70%,
+    oklch(82% 0.10 230) 100%
   );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: #0099ff;
-  --background-image: radial-gradient(ellipse at center, #e8f5ff 0%, #b5e3ff 100%);
-  --link-color: #0099ff;
-  --link-visited-color: #7f3fa8;
+  --background-image: radial-gradient(ellipse at center, oklch(96% 0.02 230) 0%, oklch(90% 0.05 230) 100%);
+  --link-color: oklch(62% 0.17 240);
+  --link-visited-color: oklch(48% 0.14 300); /* Purple */
   --section-bg: var(--color-white);
-  --header-bg: linear-gradient(180deg, #0099ff 0%, #0077dd 100%);
+  --header-bg: linear-gradient(180deg, oklch(62% 0.17 240) 0%, oklch(57% 0.18 245) 100%);
   --accent-color: var(--color-orange-bright);
-  --section-title-color: #ffffff;
-  --web2-primary: #0099ff;
+  --section-title-color: var(--color-white);
+  --web2-primary: oklch(62% 0.17 240);
   --web2-accent: var(--color-orange-bright);
-  --web2-success: #66cc00;
+  --web2-success: oklch(75% 0.18 130); /* Bright green */
   --web2-surface: var(--color-white);
-  --web2-glow: rgba(0, 153, 255, 0.3);
-  --web2-shadow: rgba(0, 0, 0, 0.15);
+  --web2-glow: oklch(62% 0.17 240 / 0.3);
+  --web2-shadow: oklch(0% 0 0 / 0.15);
 }
 
 /* Dark Mode */
 :root[data-theme='web2gloss'][data-mode='dark'] {
-  --background-color: #001f3f;
-  --text-color: #e8f5ff;
-  --heading-color: #ffffff;
+  --background-color: oklch(18% 0.04 250); /* Dark blue */
+  --text-color: oklch(96% 0.02 230); /* Light blue tint */
+  --heading-color: var(--color-white);
   --border-color: var(--color-blue-dashboard);
-  --dial-color-ink: #00d4ff;
-  --dial-color-selection: #00d4ff;
-  --dial-color-indicator: #00d4ff;
+  --dial-color-ink: oklch(82% 0.13 210); /* Bright cyan */
+  --dial-color-selection: oklch(82% 0.13 210);
+  --dial-color-indicator: oklch(82% 0.13 210);
   --dial-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--color-blue-dashboard) 0%,
-    #003d7a 40%,
-    #001f3f 80%,
-    #000a1a 100%
+    oklch(30% 0.06 250) 40%,
+    oklch(18% 0.04 250) 80%,
+    oklch(10% 0.03 250) 100%
   );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-hover: #00d4ff;
-  --background-image: radial-gradient(ellipse at center, #003d7a 0%, #001f3f 100%);
-  --link-color: #00d4ff;
-  --link-visited-color: #9f7fc8;
-  --section-bg: #003d7a;
-  --header-bg: linear-gradient(180deg, var(--color-blue-dashboard) 0%, #003d7a 100%);
-  --accent-color: #ff9933;
-  --section-title-color: #ffffff;
-  --web2-primary: #00d4ff;
-  --web2-accent: #ff9933;
-  --web2-success: #99ff33;
-  --web2-surface: #003d7a;
-  --web2-glow: rgba(0, 212, 255, 0.4);
-  --web2-shadow: rgba(0, 0, 0, 0.5);
+  --background-image: radial-gradient(ellipse at center, oklch(30% 0.06 250) 0%, oklch(18% 0.04 250) 100%);
+  --link-color: oklch(82% 0.13 210);
+  --link-visited-color: oklch(65% 0.12 300); /* Light purple */
+  --section-bg: oklch(30% 0.06 250);
+  --header-bg: linear-gradient(180deg, var(--color-blue-dashboard) 0%, oklch(30% 0.06 250) 100%);
+  --accent-color: oklch(75% 0.15 60); /* Orange */
+  --section-title-color: var(--color-white);
+  --web2-primary: oklch(82% 0.13 210);
+  --web2-accent: oklch(75% 0.15 60);
+  --web2-success: oklch(92% 0.20 130); /* Bright lime */
+  --web2-surface: oklch(30% 0.06 250);
+  --web2-glow: oklch(82% 0.13 210 / 0.4);
+  --web2-shadow: oklch(0% 0 0 / 0.5);
 }
 
 /* Base theme styling with glossy gradients */

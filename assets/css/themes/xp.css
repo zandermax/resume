@@ -13,7 +13,6 @@ Windows XP Theme (Luna)
   --dial-color-indicator: var(--color-green-xp);
   --dial-knob-background: linear-gradient(180deg, #f0f7ff 0%, #d0e8ff 50%, #8fc4ff 100%);
   --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
-  --color-hover: var(--color-green-xp);
   --background-image: linear-gradient(180deg, var(--color-blue-steel) 0%, #4682bf 50%, #3367a8 100%);
   --link-color: var(--color-blue-dark);
   --link-visited-color: #7f3fa8;
@@ -46,7 +45,6 @@ Windows XP Theme (Luna)
   --dial-color-indicator: var(--color-green-xp);
   --dial-knob-background: linear-gradient(180deg, #4a6b99 0%, #2d4a6e 50%, #1f3a5f 100%);
   --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
-  --color-hover: var(--color-green-xp);
   --background-image: linear-gradient(180deg, #1f3a5f 0%, #163052 50%, #0d1f3a 100%);
   --link-color: #5ba3ff;
   --link-visited-color: #9f7fc8;

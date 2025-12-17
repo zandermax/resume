@@ -7,54 +7,52 @@ Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
   --text-color: var(--color-black);
-  --heading-color: #ffffff;
+  --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-blue-metro);
   --dial-color-indicator: var(--color-blue-metro);
-  --dial-knob-background: #f2f2f2;
+  --dial-knob-background: oklch(96% 0 0); /* Light gray */
   --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-  --color-hover: var(--color-blue-metro);
   --background-image: none;
   --link-color: var(--color-blue-metro);
-  --link-visited-color: #e3008c;
-  --section-bg: #f2f2f2;
+  --link-visited-color: oklch(52% 0.24 340); /* Magenta */
+  --section-bg: oklch(96% 0 0);
   --header-bg: transparent;
   --accent-color: var(--color-blue-metro);
-  --section-title-color: #ffffff;
+  --section-title-color: var(--color-white);
   --metro-blue: var(--color-blue-metro);
-  --metro-green: #00a300;
+  --metro-green: oklch(64% 0.19 145); /* Metro green */
   --metro-orange: var(--color-orange);
-  --metro-magenta: #e3008c;
-  --metro-red: #e81123;
+  --metro-magenta: oklch(52% 0.24 340);
+  --metro-red: oklch(60% 0.24 25); /* Metro red */
   --metro-purple: var(--color-purple);
 }
 
 /* Dark Mode */
 :root[data-theme='metro'][data-mode='dark'] {
-  --background-color: #1e1e1e;
+  --background-color: oklch(24% 0 0); /* Dark gray */
   --text-color: var(--color-white);
-  --heading-color: #ffffff;
+  --heading-color: var(--color-white);
   --border-color: var(--color-cyan-bright);
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-cyan-bright);
   --dial-color-indicator: var(--color-cyan-bright);
-  --dial-knob-background: #2d2d30;
+  --dial-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
   --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-  --color-hover: var(--color-cyan-bright);
   --background-image: none;
   --link-color: var(--color-cyan-bright);
-  --link-visited-color: #e3008c;
-  --section-bg: #2d2d30;
+  --link-visited-color: oklch(52% 0.24 340);
+  --section-bg: oklch(28% 0 0);
   --header-bg: transparent;
   --accent-color: var(--color-cyan-bright);
-  --section-title-color: #ffffff;
+  --section-title-color: var(--color-white);
   --metro-blue: var(--color-cyan-bright);
   --metro-green: var(--color-green-bright);
-  --metro-orange: #ffaa44;
+  --metro-orange: oklch(78% 0.14 70); /* Light orange */
   --metro-magenta: var(--color-magenta-bright);
-  --metro-red: #ff4343;
-  --metro-purple: #b146c2;
+  --metro-red: oklch(68% 0.22 25); /* Light red */
+  --metro-purple: oklch(60% 0.2 315); /* Purple */
 }
 
 /* Typography-first, flat colors, zero skeuomorphism */
