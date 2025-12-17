@@ -1,13 +1,4 @@
 /* ===========================
-CSS Utilities - Reusable Patterns
-=========================== */
-
-/*
- * This file contains reusable CSS custom properties and utility classes
- * that eliminate duplication across theme files.
- */
-
-/* ===========================
 Color Palette - Semantic Color Names
 =========================== */
 
@@ -98,16 +89,3 @@ Color Palette - Semantic Color Names
   --bevel-light: var(--terminal-border-light, var(--color-white));
   --bevel-dark: var(--terminal-border-dark, var(--color-black));
 }
-
-/* ===========================
-Common Responsive Breakpoints
-=========================== */
-
-/*
- * These can be referenced in media queries across files
- * Usage: @media (max-width: 768px) { ... }
- */
-
-/* Tablet: 768px */
-/* Mobile landscape: 600px */
-/* Mobile portrait: 500px */

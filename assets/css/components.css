@@ -268,6 +268,37 @@ Components
   &:hover {
     transform: rotate(0deg) scale(1.02);
   }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 20px;
+    width: 180px;
+    min-height: 140px;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 22px;
+
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    position: absolute;
+    right: 10px;
+    width: 160px;
+    min-height: 120px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 20px;
+
+    input[type='checkbox'] {
+      width: 14px;
+      height: 14px;
+    }
+  }
 }
 
 /* Theme-specific element visibility controlled by CSS custom properties */

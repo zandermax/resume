@@ -28,21 +28,6 @@ Responsive Layout
   .experience-item__meta {
     text-align: left;
   }
-
-  .sticky-note {
-    position: absolute;
-    right: 20px;
-    width: 180px;
-    min-height: 140px;
-    padding: 15px;
-    font-size: 13px;
-    line-height: 22px;
-
-    input[type='checkbox'] {
-      width: 16px;
-      height: 16px;
-    }
-  }
 }
 
 /* ===========================
@@ -73,37 +58,9 @@ Mobile layout
     padding: 0;
   }
 
-  .resume-header__mobile-image {
-    display: block;
-    max-width: 192px;
-    min-width: 64px;
-    height: 64px;
-    object-fit: cover;
-    border: 3px solid black;
-    background-image: url('../img/FF-pixeled.png');
-    background-size: contain;
-  }
-
   .resume-header__printlink {
     margin-inline-start: 0;
     margin-block-start: 0.65rem;
     align-self: flex-start;
-  }
-}
-
-@media (max-width: 500px) {
-  .sticky-note {
-    position: absolute;
-    right: 10px;
-    width: 160px;
-    min-height: 120px;
-    padding: 12px;
-    font-size: 12px;
-    line-height: 20px;
-
-    input[type='checkbox'] {
-      width: 14px;
-      height: 14px;
-    }
   }
 }

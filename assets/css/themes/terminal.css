@@ -56,13 +56,20 @@ Terminal Theme (1992 CLI-inspired)
 body[data-theme='terminal'] {
   font-family: var(--font-family);
 
-  /* Main container with 3D terminal window effect */
-  .resume__main {
+  /* Common 3D border patterns */
+  .resume__main,
+  .skills-grid,
+  .community-list,
+  .principles-list {
     border: 0;
-    box-shadow: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
-      inset -2px -2px 0 var(--terminal-border-dark, var(--color-black)), 2px 2px 4px var(--color-black / 0.4);
     border-radius: 0;
     background: var(--terminal-window-bg);
+  }
+
+  /* Main container with 3D terminal window effect */
+  .resume__main {
+    box-shadow: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
+      inset -2px -2px 0 var(--terminal-border-dark, var(--color-black)), 2px 2px 4px var(--color-black / 0.4);
     padding: 2rem;
   }
 
@@ -74,25 +81,30 @@ body[data-theme='terminal'] {
     border-radius: 0;
     padding: 0.5rem 0.75rem;
     background: var(--terminal-button-bg);
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
   }
 
-  /* Terminal window border for skills grid */
-  .skills-grid {
-    border: 0;
+  /* Terminal window border for containers */
+  .skills-grid,
+  .community-list,
+  .principles-list {
     box-shadow: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
       inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
-    border-radius: 0;
-    background: var(--terminal-window-bg);
     padding: 1rem;
   }
 
-  .skills-grid__group {
+  /* Common raised 3D effect */
+  .skills-grid__group,
+  .experience-item__tech,
+  .education-item {
     border: 0;
     box-shadow: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
       inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-    background: var(--section-bg);
     border-radius: 0;
+    background: var(--section-bg);
+  }
+
+  .skills-grid__group {
     padding: 0.75rem;
   }
 
@@ -107,25 +119,11 @@ body[data-theme='terminal'] {
 
   /* Tech badges as terminal buttons */
   .experience-item__tech {
-    border: 0;
-    box-shadow: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
-      inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-    border-radius: 0;
     background: var(--terminal-button-bg);
     color: var(--text-color);
     font-weight: normal;
     padding: 0.35rem 0.5rem;
     font-size: 0.85rem;
-  }
-
-  /* List containers with terminal window style */
-  .community-list,
-  .principles-list {
-    border: 0;
-    box-shadow: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
-      inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
-    border-radius: 0;
-    background: var(--terminal-window-bg);
   }
 
   .community-list__item,
@@ -136,25 +134,24 @@ body[data-theme='terminal'] {
 
   /* Education box with terminal style */
   .education-item {
-    border: 0;
-    box-shadow: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
-      inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-    border-radius: 0;
-    background: var(--section-bg);
     padding: 1rem;
     font-size: 0.95rem;
   }
 
-  /* Experience items as terminal panels */
-  .experience-item {
+  /* Inset 3D panel effect */
+  .experience-item,
+  .resume-header {
     position: relative;
     padding: 1.25rem;
-    background: var(--section-bg);
     box-shadow: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
       inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
     border: 0;
     border-radius: 0;
-    margin-top: 1.25rem;
+  }
+
+  .experience-item {
+    background: var(--section-bg);
+    margin-block-start: 1.25rem;
   }
 
   .experience-item__company {
@@ -168,7 +165,7 @@ body[data-theme='terminal'] {
   .experience-item__bullets li {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
 
     &::before {
       content: '▪';
@@ -179,13 +176,8 @@ body[data-theme='terminal'] {
 
   /* Header with terminal window style */
   .resume-header {
-    border: 0;
-    box-shadow: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
-      inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
-    padding: 1.25rem;
     background: var(--header-bg);
-    border-radius: 0;
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
   }
 
   .resume-header__meta {
@@ -204,12 +196,12 @@ body[data-theme='terminal'] {
 
     &::before {
       content: '[';
-      margin-right: 4px;
+      margin-inline-start: 4px;
     }
 
     &::after {
       content: ']';
-      margin-left: 4px;
+      margin-inline-start: 4px;
     }
 
     &:hover {
@@ -294,7 +286,9 @@ body[data-theme='terminal'] {
   }
 
   .resume-header__name-greeting,
-  .resume-header__name-small {
+  .resume-header__name-small,
+  h3.experience-item__role,
+  h3.education-item__institution {
     font-size: 1.05rem;
   }
 
@@ -309,21 +303,12 @@ body[data-theme='terminal'] {
     text-transform: uppercase;
   }
 
-  h3.experience-item__role,
-  h3.education-item__institution {
-    font-size: 1.05rem;
-  }
-
   p,
-  li {
+  li,
+  .resume-section__text {
     line-height: 1.6;
     letter-spacing: 0;
     font-size: 0.95rem;
-  }
-
-  .resume-section__text {
-    font-size: 0.95rem;
-    line-height: 1.6;
   }
 
   /* Responsive Adjustments */

@@ -5,8 +5,8 @@ Resume Styles - Modular Import
 /* Core styles - Base styles, custom properties, layout, and structure */
 @import url('./base.css');
 
-/* Utilities - Reusable patterns and helpers */
-@import url('./utilities.css');
+/* Colors - Color palette */
+@import url('./colors.css');
 
 /* Components - Skills, experience, education, etc. */
 @import url('./components.css');

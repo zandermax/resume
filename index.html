@@ -163,40 +163,6 @@
 	</script>
 
 	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-
-	<script>
-		// Helper function to create glossy badge HTML
-		function createGlossyBadge(text, gradientColors) {
-			return `
-				<div class="web2-badge" style="
-					background: linear-gradient(180deg, ${gradientColors});
-					color: white;
-					padding: 0.5rem 1rem;
-					border-radius: 8px;
-					font-weight: 700;
-					font-size: 0.85rem;
-					box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
-					position: relative;
-					overflow: hidden;
-					text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-					min-width: 100px;
-					text-align: center;
-				">
-					<div style="
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						height: 50%;
-						background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-						border-radius: 8px 8px 0 0;
-						pointer-events: none;
-					"></div>
-					<span style="position: relative; z-index: 1;">${text}</span>
-				</div>
-			`;
-		}
-	</script>
 </head>
 
 <body class="resume" data-theme="default">
@@ -204,11 +170,11 @@
 	<div class="sticky-note">
 		<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: bold; text-decoration: underline;">Todo:</p>
 		<div style="margin: 0 0 10px 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" checked disabled style="margin-top: 4px; cursor: default;">
+			<input type="checkbox" checked disabled style="margin-block-start: 4px; cursor: default;">
 			<span style="text-decoration: line-through; opacity: 0.6;">Create website</span>
 		</div>
 		<div style="margin: 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" disabled style="margin-top: 4px; cursor: default;">
+			<input type="checkbox" disabled style="margin-block-start: 4px; cursor: default;">
 			<span>Apply to awesome Ashby job!</span>
 		</div>
 	</div>
@@ -311,7 +277,7 @@
 
 		<!-- Nostalgia Theme Elements -->
 		<div class="nostalgia-elements" style="text-align: center; margin: 1rem 0;">
-			<div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+			<div style="display: flex; justify-content: space-around; align-items: center; margin-block-end: 1rem; flex-wrap: wrap;">
 				<span class="retro-gif spinning" style="font-size: 2rem;">💿</span>
 				<span class="retro-gif flame" style="font-size: 2rem;">🔥</span>
 				<span class="retro-gif" style="font-size: 2rem;">👷</span>
@@ -320,7 +286,7 @@
 				<span class="retro-gif" style="font-size: 2rem;">👷</span>
 				<span class="retro-gif spinning" style="font-size: 2rem;">💿</span>
 			</div>
-			<div class="marquee-container" style="margin-bottom: 1rem;">
+			<div class="marquee-container" style="margin-block-end: 1rem;">
 				<div class="marquee">
 					🌟 ✨ WELCOME TO MY TOTALLY AWESOME HOMEPAGE! ✨ 🌟 --- 🎨 GRAPHICS LOADING... 🎨 --- 📢 SIGN MY GUESTBOOK! 📢 ---
 				</div>
@@ -338,27 +304,27 @@
 			</div>
 			<div style="display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; flex-wrap: wrap;">
 				<div class="retro-badge">
-					<span class="blink" style="color: #ff0000; font-weight: bold; font-size: 1.5rem;">NEW!</span>
+					<span class="blink" style="color: oklch(62% 0.25 30); font-weight: bold; font-size: 1.5rem;">NEW!</span>
 				</div>
 				<div class="retro-badge">
-					<span class="blink" style="color: #00ff00; font-weight: bold; font-size: 1.5rem;">COOL!</span>
+					<span class="blink" style="color: oklch(85% 0.2 145); font-weight: bold; font-size: 1.5rem;">COOL!</span>
 				</div>
 				<div class="retro-badge">
-					<span class="blink" style="color: #ffff00; font-weight: bold; font-size: 1.5rem;">HOT!</span>
+					<span class="blink" style="color: oklch(95% 0.2 105); font-weight: bold; font-size: 1.5rem;">HOT!</span>
 				</div>
 			</div>
-			<p style="margin-top: 1rem;">
+			<p style="margin-block-start: 1rem;">
 				<span class="blink" style="font-size: 1.2rem;">⚠️ UNDER CONSTRUCTION ⚠️</span>
 			</p>
 			<p>
 				🔨 Best viewed in <span class="blink">Netscape Navigator 4.0</span> 🔨
 			</p>
-			<p style="margin-top: 0.5rem;">
+			<p style="margin-block-start: 0.5rem;">
 				<span class="retro-gif spinning" style="font-size: 1.5rem;">🌐</span>
 				<span style="font-size: 0.9rem;">This page is <span class="blink">OPTIMIZED</span> for 800×600 resolution!</span>
 				<span class="retro-gif spinning" style="font-size: 1.5rem;">🌐</span>
 			</p>
-			<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+			<div style="display: flex; justify-content: space-around; align-items: center; margin-block-start: 1rem; flex-wrap: wrap;">
 				<span class="retro-gif bouncing" style="font-size: 2rem;">⭐</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">💫</span>
 				<span class="retro-gif bouncing" style="font-size: 2rem;">✨</span>
@@ -370,25 +336,30 @@
 
 		<!-- Web 2.0 Theme Elements -->
 		<div class="web2-badges"
-			style="text-align: center; margin: 2rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 12px;">
-			<div style="margin-bottom: 1.5rem;">
-				<h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
+			style="text-align: center; margin: 2rem 0; padding: 2rem; background: oklch(100% 0 0 / 0.1); border-radius: 12px;">
+			<div style="margin-block-end: 1.5rem;">
+				<h3 style="font-size: 1.2rem; font-weight: 600; margin-block-end: 1rem; text-transform: uppercase; letter-spacing: 0.1em;">
 					✨ Web 2.0 Certified ✨
 				</h3>
 			</div>
 			<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
-				<script>
-					const badges = [
-						['🔧 POWERED BY HTML', '#FF6600 0%, #DD5500 100%'],
-						['✓ VALID CSS', '#0099FF 0%, #0077DD 100%'],
-						['📡 RSS FEED', '#FF9933 0%, #FF6600 100%'],
-						['⚡ AJAX ENABLED', '#99FF33 0%, #66CC00 100%'],
-						['β BETA', '#9966FF 0%, #7744DD 100%']
-					];
-					document.write(badges.map(([text, colors]) => createGlossyBadge(text, colors)).join(''));
-				</script>
+				<div class="web2-badge web2-badge--orange">
+					<span>🔧 POWERED BY HTML</span>
+				</div>
+				<div class="web2-badge web2-badge--blue">
+					<span>✓ VALID CSS</span>
+				</div>
+				<div class="web2-badge web2-badge--orange-alt">
+					<span class="rss-icon">RSS FEED</span>
+				</div>
+				<div class="web2-badge web2-badge--green">
+					<span>⚡ AJAX ENABLED</span>
+				</div>
+				<div class="web2-badge web2-badge--purple">
+					<span>β BETA</span>
+				</div>
 			</div>
-			<div style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
+			<div style="margin-block-start: 1.5rem; font-size: 0.9rem; opacity: 0.8;">
 				<p style="margin: 0.5rem 0;">🌐 Built with cutting-edge Web 2.0 technologies</p>
 				<p style="margin: 0.5rem 0;">✨ Featuring glossy buttons and rounded corners</p>
 				<p style="margin: 0.5rem 0;">🚀 Optimized for social bookmarking</p>

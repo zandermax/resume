@@ -23,26 +23,14 @@ Custom Properties
   --header-bg: transparent;
   --accent-color: var(--color-red-crimson);
 
-  /* Skeuomorphic theme properties */
-  --leather-color: var(--color-tan);
-  --paper-color: var(--color-cream);
-  --ink-color: oklch(23% 0.03 40); /* Dark brown ink */
-  --stitch-color: oklch(57% 0.04 45); /* Tan stitch */
-  --metal-gradient: linear-gradient(
-    135deg,
-    var(--color-gray-pure-light) 0%,
-    oklch(68% 0 0) 25%,
-    oklch(85% 0 0) 50%,
-    oklch(55% 0 0) 75%,
-    var(--color-silver) 100%
-  );
+  /* Paper/texture properties (used in base.css .resume__main) */
   --paper-shadow: none;
   --paper-texture: none;
-  --leather-texture: none;
+
+  /* Sticky note properties (used in components.css) */
   --sticky-note-color: oklch(96% 0.1 105); /* Light yellow post-it */
   --sticky-note-shadow: 0 4px 6px oklch(0% 0 0 / 0.1);
   --sticky-note-rotation: -3deg;
-  --desk-shadow: none;
 
   /* Theme-specific element visibility - Default: hidden */
   --display-nostalgia-elements: none;

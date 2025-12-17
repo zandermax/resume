@@ -312,741 +312,834 @@ body[data-theme='glitch'] {
   font-family: var(--font-family);
   letter-spacing: 0.03em;
   position: relative;
-}
 
-/* Global scan line overlay */
-body[data-theme='glitch']::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0px,
-    rgba(0, 0, 0, 0.03) 1px,
-    transparent 2px,
-    transparent 4px
-  );
-  pointer-events: none;
-  z-index: 9999;
-  animation: artifact-pulse 3s infinite;
-}
-
-/* Dark mode scan lines */
-body[data-theme='glitch'][data-mode='dark']::before {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 2px,
-    transparent 4px
-  );
-}
-
-/* ===========================
-MAIN CONTAINER
-=========================== */
-
-body[data-theme='glitch'] .resume__main {
-  border: 3px solid var(--border-color);
-  background: var(--section-bg);
-  padding: 2rem;
-  position: relative;
-  overflow: visible;
-  transform: skewX(-0.3deg);
-  filter: contrast(1.15) saturate(1.2);
-}
-
-/* Screen tear effect on main container */
-body[data-theme='glitch'] .resume__main::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--background-color);
-  opacity: 0.7;
-  pointer-events: none;
-  z-index: 1;
-  animation: screen-tear 4.5s infinite;
-  mix-blend-mode: overlay;
-}
-
-/* Compression artifact overlay */
-body[data-theme='glitch'] .resume__main::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.03) 8px, transparent 16px),
-    repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 255, 0.03) 8px, transparent 16px);
-  pointer-events: none;
-  z-index: 1;
-  animation: artifact-pulse 2.5s infinite alternate;
-}
-
-/* ===========================
-HEADER
-=========================== */
-
-body[data-theme='glitch'] .resume-header {
-  border: 2px solid var(--border-color);
-  border-bottom: 5px solid var(--glitch-primary);
-  background: var(--header-bg);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
-  transform: skewX(0.2deg);
-  box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
-}
-
-/* Corrupted header border effect */
-body[data-theme='glitch'] .resume-header::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 10%;
-  width: 30%;
-  height: 4px;
-  background: var(--glitch-tertiary);
-  animation: h-displace 3s infinite;
-}
-
-body[data-theme='glitch'] .resume-header::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  right: 20%;
-  width: 40%;
-  height: 3px;
-  background: var(--glitch-secondary);
-  animation: h-displace 4s infinite reverse;
-}
-
-body[data-theme='glitch'] h1.resume-header__name {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  position: relative;
-  animation: text-glitch 5s infinite;
-  text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
-}
-
-body[data-theme='glitch'] .resume-header__role {
-  font-size: 1.2rem;
-  color: var(--glitch-tertiary);
-  text-shadow: 2px 2px 0 var(--glitch-secondary), -1px -1px 0 var(--background-color);
-  filter: hue-rotate(180deg);
-  animation: color-shift 6s infinite;
-}
-
-body[data-theme='glitch'] .resume-header__meta {
-  color: var(--background-color);
-  text-shadow: 1px 1px 0 var(--glitch-primary), -1px -1px 0 var(--glitch-tertiary);
-  filter: contrast(1.2);
-  animation: pixel-drift 4s infinite;
-}
-
-/* ===========================
-SECTION TITLES
-=========================== */
-
-body[data-theme='glitch'] .resume-section__title {
-  background: var(--section-bg);
-  color: var(--text-color);
-  border: 2px solid var(--border-color);
-  border-left: 6px solid var(--glitch-primary);
-  padding: 0.75rem 1.5rem;
-  margin: 1.5rem 0;
-  font-weight: 700;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  position: relative;
-  transform: skewX(-0.5deg);
-  animation: h-displace 2.8s infinite steps(3, jump-both);
-  animation-timing-function: steps(5, jump-both);
-  box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
-}
-
-/* Random variations using nth-child - each title gets different glitch */
-body[data-theme='glitch'] .resume-section:nth-child(1) .resume-section__title {
-  animation: glitch-shake-1 3.2s infinite steps(4, end);
-  animation-delay: 0.5s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(2) .resume-section__title {
-  animation: glitch-shake-2 2.5s infinite steps(6, jump-start);
-  animation-delay: 1.2s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(3) .resume-section__title {
-  animation: h-displace 3.7s infinite steps(3, jump-both);
-  animation-delay: 0.8s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(4) .resume-section__title {
-  animation: glitch-shake-3 2.9s infinite steps(5, end);
-  animation-delay: 1.5s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(5) .resume-section__title {
-  animation: glitch-shake-1 3.4s infinite steps(4, jump-start);
-  animation-delay: 0.3s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(6) .resume-section__title {
-  animation: glitch-shake-2 2.7s infinite steps(7, end);
-  animation-delay: 1.8s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(7) .resume-section__title {
-  animation: h-displace 3.1s infinite steps(5, jump-both);
-  animation-delay: 0.6s;
-}
-
-body[data-theme='glitch'] .resume-section:nth-child(8) .resume-section__title {
-  animation: glitch-shake-3 2.6s infinite steps(4, jump-start);
-  animation-delay: 1.1s;
-}
-
-/* Glitched section title pseudo-elements - more jarring */
-body[data-theme='glitch'] .resume-section__title::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  color: var(--glitch-primary);
-  opacity: 0;
-  z-index: -1;
-  clip-path: inset(0 0 50% 0);
-  animation: corrupt-flash 4s infinite steps(2, jump-end);
-  transform: translateX(-3px);
-}
-
-body[data-theme='glitch'] .resume-section__title::after {
-  content: '';
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  width: 20px;
-  height: 3px;
-  background: var(--glitch-tertiary);
-  animation: jitter 1.5s infinite steps(8, end);
-}
-
-/* Jarring flash effect for pseudo-elements */
-@keyframes corrupt-flash {
-  0%,
-  92%,
-  100% {
-    opacity: 0;
-    transform: translateX(-3px);
-  }
-  93% {
-    opacity: 0.8;
-    transform: translateX(-10px);
-  }
-  94% {
-    opacity: 0.6;
-    transform: translateX(8px);
-  }
-  95% {
-    opacity: 0;
-    transform: translateX(-3px);
-  }
-}
-
-/* Jarring jitter for after element */
-@keyframes jitter {
-  0%,
-  85%,
-  100% {
-    transform: translate(0, 0);
-  }
-  86% {
-    transform: translate(-8px, -3px);
-  }
-  88% {
-    transform: translate(5px, 4px);
-  }
-  90% {
-    transform: translate(-3px, -2px);
-  }
-  92% {
-    transform: translate(0, 0);
-  }
-}
-
-/* ===========================
-EXPERIENCE ITEMS
-=========================== */
-
-body[data-theme='glitch'] .experience-item {
-  border: 2px solid var(--border-color);
-  background: var(--section-bg);
-  padding: 2rem;
-  margin: 1.5rem 0;
-  position: relative;
-  transform: skewX(0.2deg);
-  filter: contrast(1.1) saturate(1.15);
-  box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-  animation: border-corrupt 6s infinite;
-}
-
-/* Compression artifacts on experience items */
-body[data-theme='glitch'] .experience-item::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--glitch-tertiary);
-  opacity: 0.3;
-  animation: h-displace 4s infinite;
-}
-
-body[data-theme='glitch'] .experience-item::after {
-  content: '';
-  position: absolute;
-  bottom: 20%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--glitch-secondary);
-  opacity: 0.4;
-  animation: h-displace 5s infinite reverse;
-}
-
-body[data-theme='glitch'] .experience-item__role,
-body[data-theme='glitch'] .education-item__institution {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--glitch-primary);
-  margin-bottom: 0.5rem;
-  animation: color-shift 7s infinite;
-}
-
-body[data-theme='glitch'] .experience-item__company {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--text-color);
-  filter: invert(0.1);
-}
-
-body[data-theme='glitch'] .experience-item:hover {
-  animation: border-corrupt 0.5s infinite, pixel-drift 1s infinite;
-  filter: contrast(1.2) saturate(1.3);
-}
-
-/* ===========================
-TECH BADGES
-=========================== */
-
-body[data-theme='glitch'] .experience-item__tech {
-  border: 2px solid var(--glitch-secondary);
-  background: var(--glitch-primary);
-  color: var(--glitch-tertiary);
-  font-weight: 600;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
-  position: relative;
-  transform: skewX(-2deg);
-  box-shadow: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
-  animation: pixel-drift 3s infinite;
-  filter: contrast(1.3) saturate(1.4);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-}
-
-body[data-theme='glitch'] .experience-item__tech:hover {
-  filter: invert(1) hue-rotate(180deg);
-  animation: color-shift 0.3s infinite;
-}
-
-/* ===========================
-SKILLS GRID
-=========================== */
-
-body[data-theme='glitch'] .skills-grid {
-  border: 3px solid var(--border-color);
-  background: var(--section-bg);
-  padding: 1.5rem;
-  position: relative;
-  transform: skewX(-0.15deg);
-  box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
-}
-
-body[data-theme='glitch'] .skills-grid::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 30%;
-  width: 40%;
-  height: 100%;
-  background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.05) 1px, transparent 2px);
-  pointer-events: none;
-  animation: artifact-pulse 3s infinite;
-}
-
-body[data-theme='glitch'] .skills-grid__group {
-  border: 2px solid var(--border-color);
-  background: var(--background-color);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-  transform: skewX(0.3deg) translateX(-2px);
-  box-shadow: 2px 0 0 0 var(--glitch-tertiary), -2px 0 0 0 var(--glitch-primary);
-  animation: pixel-drift 5s infinite;
-}
-
-body[data-theme='glitch'] .skills-grid__group:nth-child(even) {
-  transform: skewX(-0.3deg) translateX(2px);
-  animation-delay: 1s;
-}
-
-body[data-theme='glitch'] .skills-grid__title {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--glitch-primary);
-  text-shadow: 1px 1px 0 var(--glitch-tertiary);
-  border-bottom: 2px solid var(--glitch-secondary);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
-  animation: color-shift 8s infinite;
-}
-
-/* ===========================
-LISTS
-=========================== */
-
-body[data-theme='glitch'] .community-list,
-body[data-theme='glitch'] .principles-list {
-  border: 2px solid var(--border-color);
-  background: var(--section-bg);
-  padding: 1.5rem;
-  position: relative;
-  box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
-}
-
-body[data-theme='glitch'] .community-list__item,
-body[data-theme='glitch'] .principles-list__item {
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--glitch-tertiary);
-  position: relative;
-  animation: pixel-drift 6s infinite;
-  box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
-}
-
-body[data-theme='glitch'] .community-list__item:nth-child(odd),
-body[data-theme='glitch'] .principles-list__item:nth-child(odd) {
-  animation-delay: 2s;
-}
-
-body[data-theme='glitch'] .community-list__item:hover,
-body[data-theme='glitch'] .principles-list__item:hover {
-  filter: invert(0.15) hue-rotate(30deg);
-  transform: translateX(3px);
-}
-
-/* ===========================
-EDUCATION
-=========================== */
-
-body[data-theme='glitch'] .education-item {
-  border: 2px solid var(--border-color);
-  background: var(--section-bg);
-  padding: 2rem;
-  position: relative;
-  transform: skewX(-0.25deg);
-  box-shadow: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
-  animation: border-corrupt 7s infinite;
-}
-
-/* ===========================
-LINKS
-=========================== */
-
-body[data-theme='glitch'] a:not(.resume-header__printlink) {
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: var(--glitch-primary);
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-body[data-theme='glitch'] a:not(.resume-header__printlink):hover {
-  color: var(--glitch-secondary);
-  background: var(--glitch-tertiary);
-  text-decoration: none;
-  filter: invert(1) hue-rotate(180deg);
-  animation: text-glitch 0.5s infinite;
-  padding: 2px 4px;
-}
-
-body[data-theme='glitch'] a:not(.resume-header__printlink):visited {
-  filter: hue-rotate(90deg);
-}
-
-/* ===========================
-PRINT BUTTON
-=========================== */
-
-body[data-theme='glitch'] .resume-header__printlink {
-  border: 3px solid var(--border-color);
-  background: var(--glitch-primary);
-  color: var(--background-color);
-  font-weight: 700;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  position: relative;
-  text-decoration: none;
-  transform: skewX(-3deg);
-  box-shadow: 5px 5px 0 0 var(--glitch-secondary), -3px -3px 0 0 var(--glitch-tertiary);
-  animation: border-corrupt 4s infinite, pixel-drift 2s infinite;
-  filter: contrast(1.3) saturate(1.5);
-}
-
-body[data-theme='glitch'] .resume-header__printlink:hover {
-  animation: text-glitch 0.2s infinite, color-shift 0.3s infinite;
-  filter: invert(1) contrast(1.5);
-  transform: skewX(3deg);
-}
-
-body[data-theme='glitch'] .resume-header__printlink::before {
-  content: '⚠ ';
-  margin-right: 4px;
-}
-
-body[data-theme='glitch'] .resume-header__printlink::after {
-  content: ' ⚠';
-  margin-left: 4px;
-}
-
-/* ===========================
-DIAL SELECTOR
-=========================== */
-
-body[data-theme='glitch'] dial-selector {
-  position: relative;
-  filter: contrast(1.2) saturate(1.3);
-}
-
-body[data-theme='glitch'] dial-selector .knob {
-  border: 3px solid var(--border-color);
-  box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 0 0 0 6px var(--glitch-tertiary),
-    5px 5px 10px rgba(0, 0, 0, 0.3);
-  background: var(--dial-knob-background);
-  animation: border-corrupt 5s infinite;
-  transform: rotate(2deg);
-}
-
-body[data-theme='glitch'] dial-selector .indicator {
-  width: 14px;
-  height: 14px;
-  background: var(--dial-color-indicator);
-  border: 2px solid var(--glitch-secondary);
-  box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-tertiary);
-  animation: pixel-drift 1.5s infinite;
-  transform: rotate(-2deg);
-}
-
-body[data-theme='glitch'] dial-selector .dial-label {
-  background: var(--background-color);
-  border: 2px solid var(--border-color);
-  padding: 0.4rem 1rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-  animation: pixel-drift 4s infinite;
-  transform: skewX(-1deg);
-}
-
-body[data-theme='glitch'] dial-selector .dial-label:nth-child(odd) {
-  animation-delay: 1.5s;
-  transform: skewX(1deg);
-}
-
-body[data-theme='glitch'] dial-selector .dial-label:hover {
-  background: var(--glitch-tertiary);
-  color: var(--background-color);
-  filter: invert(0.2) hue-rotate(45deg);
-  animation: color-shift 0.5s infinite;
-}
-
-body[data-theme='glitch'] dial-selector .dial-label.active {
-  background: var(--glitch-primary);
-  color: var(--background-color);
-  border-color: var(--glitch-secondary);
-  box-shadow: 4px 4px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-tertiary);
-  font-weight: 700;
-  animation: text-glitch 3s infinite;
-  filter: contrast(1.4) saturate(1.6);
-}
-
-body[data-theme='glitch'] dial-selector .spoke-line {
-  stroke-width: 2px;
-  opacity: 0.5;
-  animation: artifact-pulse 4s infinite;
-}
-
-body[data-theme='glitch'] dial-selector .spoke-line:nth-child(odd) {
-  stroke: var(--glitch-primary);
-  animation-delay: 1s;
-}
-
-body[data-theme='glitch'] dial-selector .spoke-line:nth-child(even) {
-  stroke: var(--glitch-secondary);
-  animation-delay: 2s;
-}
-
-body[data-theme='glitch'] .resume-header__dial-selector {
-  padding: 1.5rem;
-  background: var(--section-bg);
-  border: 2px solid var(--border-color);
-  box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
-  position: relative;
-}
-
-body[data-theme='glitch'] .resume-header__dial-selector::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--glitch-tertiary);
-  opacity: 0.3;
-  animation: h-displace 3s infinite;
-}
-
-body[data-theme='glitch'] .resume-header__dial-selector h3 {
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  animation: text-glitch 6s infinite;
-}
-
-/* ===========================
-BULLET POINTS
-=========================== */
-
-body[data-theme='glitch'] .experience-item__bullets li::before {
-  content: '◆';
-  color: var(--glitch-primary);
-  font-size: 0.9rem;
-  animation: color-shift 5s infinite;
-}
-
-body[data-theme='glitch'] .experience-item__bullets li:nth-child(even)::before {
-  content: '◇';
-  color: var(--glitch-secondary);
-}
-
-/* ===========================
-CONTENT SECTIONS
-=========================== */
-
-body[data-theme='glitch'] .resume-section {
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-body[data-theme='glitch'] .resume-section--summary,
-body[data-theme='glitch'] .resume-section--ashby,
-body[data-theme='glitch'] .resume-section--skills,
-body[data-theme='glitch'] .resume-section--experience,
-body[data-theme='glitch'] .resume-section--community,
-body[data-theme='glitch'] .resume-section--education,
-body[data-theme='glitch'] .resume-section--principles {
-  margin-bottom: 1.5rem;
-}
-
-/* ===========================
-RESPONSIVE ADJUSTMENTS
-=========================== */
-
-@media (max-width: 768px) {
-  body[data-theme='glitch'] h1.resume-header__name {
-    font-size: 2rem;
+  /* Global scan line overlay */
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: artifact-pulse 3s infinite;
   }
 
-  body[data-theme='glitch'] .resume-section__title {
-    font-size: 1.1rem;
-    padding: 0.6rem 1rem;
+  /* Dark mode scan lines */
+  &[data-mode='dark']::before {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 2px,
+      transparent 4px
+    );
   }
 
-  body[data-theme='glitch'] .resume__main {
+  /* ===========================
+  SHARED PATTERNS
+  =========================== */
+
+  /* Common bordered container with glitch effects */
+  .resume__main,
+  .skills-grid,
+  .community-list,
+  .principles-list,
+  .resume-header__dial-selector {
+    border: 2px solid var(--border-color);
+    background: var(--section-bg);
     padding: 1.5rem;
+    position: relative;
   }
 
-  body[data-theme='glitch'] .resume-section {
-    padding: 1.5rem;
+  .resume__main {
+    border-width: 3px;
+    padding: 2rem;
   }
 
-  body[data-theme='glitch'] .experience-item,
-  body[data-theme='glitch'] .education-item {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 500px) {
-  body[data-theme='glitch'] h1.resume-header__name {
-    font-size: 1.75rem;
+  /* Common card-style items */
+  .experience-item,
+  .education-item,
+  .skills-grid__group {
+    border: 2px solid var(--border-color);
+    position: relative;
+    animation: pixel-drift 5s infinite;
   }
 
-  body[data-theme='glitch'] .resume-section__title {
-    font-size: 1rem;
-    padding: 0.5rem 0.8rem;
+  .experience-item,
+  .education-item {
+    background: var(--section-bg);
+    padding: 2rem;
+    animation: border-corrupt 6s infinite;
   }
 
-  body[data-theme='glitch'] .resume__main {
+  .education-item {
+    animation-duration: 7s;
+  }
+
+  /* Common horizontal artifact lines */
+  .experience-item::before,
+  .resume-header__dial-selector::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.3;
+    animation: h-displace 3s infinite;
+  }
+
+  .experience-item::before {
+    top: 10%;
+    background: var(--glitch-tertiary);
+    animation-duration: 4s;
+  }
+
+  .resume-header__dial-selector::before {
+    top: 50%;
+    background: var(--glitch-tertiary);
+  }
+
+  .experience-item::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--glitch-secondary);
+    opacity: 0.4;
+    animation: h-displace 5s infinite reverse;
+  }
+
+  /* Common list items */
+  .community-list__item,
+  .principles-list__item {
     padding: 1rem;
+    margin-block-end: 0.75rem;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-inline-start: 4px solid var(--glitch-tertiary);
+    position: relative;
+    animation: pixel-drift 6s infinite;
+    box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
+
+    &:nth-child(odd) {
+      animation-delay: 2s;
+    }
+
+    &:hover {
+      filter: invert(0.15) hue-rotate(30deg);
+      transform: translateX(3px);
+    }
   }
 
-  body[data-theme='glitch'] .resume-section {
-    padding: 1rem;
+  /* ===========================
+  MAIN CONTAINER
+  =========================== */
+
+  .resume__main {
+    overflow: visible;
+    transform: skewX(-0.3deg);
+    filter: contrast(1.15) saturate(1.2);
+
+    /* Screen tear effect */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--background-color);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 1;
+      animation: screen-tear 4.5s infinite;
+      mix-blend-mode: overlay;
+    }
+
+    /* Compression artifact overlay */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.03) 8px, transparent 16px),
+        repeating-linear-gradient(0deg, transparent 0px, rgba(0, 255, 255, 0.03) 8px, transparent 16px);
+      pointer-events: none;
+      z-index: 1;
+      animation: artifact-pulse 2.5s infinite alternate;
+    }
   }
 
-  body[data-theme='glitch'] .experience-item,
-  body[data-theme='glitch'] .education-item {
-    padding: 1rem;
+  /* ===========================
+  HEADER
+  =========================== */
+
+  .resume-header {
+    border: 2px solid var(--border-color);
+    border-block-end-width: 5px;
+    background: var(--header-bg);
+    padding: 2rem;
+    margin-block-end: 2rem;
+    position: relative;
+    transform: skewX(0.2deg);
+    box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
+
+    /* Corrupted header border effects */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      animation: h-displace infinite;
+    }
+
+    &::before {
+      top: -2px;
+      left: 10%;
+      width: 30%;
+      height: 4px;
+      background: var(--glitch-tertiary);
+      animation-duration: 3s;
+    }
+
+    &::after {
+      bottom: -5px;
+      right: 20%;
+      width: 40%;
+      height: 3px;
+      background: var(--glitch-secondary);
+      animation-duration: 4s;
+      animation-direction: reverse;
+    }
   }
 
-  body[data-theme='glitch'] dial-selector .dial-label {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
+  h1.resume-header__name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-block-end: 0.5rem;
+    position: relative;
+    animation: text-glitch 5s infinite;
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
   }
 
-  body[data-theme='glitch'] .resume-header__printlink {
-    font-size: 0.85rem;
+  .resume-header__role {
+    font-size: 1.2rem;
+    color: var(--glitch-tertiary);
+    text-shadow: 2px 2px 0 var(--glitch-secondary), -1px -1px 0 var(--background-color);
+    filter: hue-rotate(180deg);
+    animation: color-shift 6s infinite;
+  }
+
+  .resume-header__meta {
+    color: var(--background-color);
+    text-shadow: 1px 1px 0 var(--glitch-primary), -1px -1px 0 var(--glitch-tertiary);
+    filter: contrast(1.2);
+    animation: pixel-drift 4s infinite;
+  }
+
+  /* ===========================
+  SECTION TITLES
+  =========================== */
+
+  .resume-section__title {
+    background: var(--section-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-inline-start: 6px solid var(--glitch-primary);
     padding: 0.75rem 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    transform: skewX(-0.5deg);
+    animation: h-displace 2.8s infinite steps(3, jump-both);
+    animation-timing-function: steps(5, jump-both);
+    box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
+
+    /* Glitched section title pseudo-elements - more jarring */
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      color: var(--glitch-primary);
+      opacity: 0;
+      z-index: -1;
+      clip-path: inset(0 0 50% 0);
+      animation: corrupt-flash 4s infinite steps(2, jump-end);
+      transform: translateX(-3px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      width: 20px;
+      height: 3px;
+      background: var(--glitch-tertiary);
+      animation: jitter 1.5s infinite steps(8, end);
+    }
+  }
+
+  /* Randomized glitch animations per section */
+  .resume-section:nth-child(odd) .resume-section__title {
+    animation-name: glitch-shake-1;
+  }
+
+  .resume-section:nth-child(3n) .resume-section__title {
+    animation-name: h-displace;
+  }
+
+  .resume-section:nth-child(4n) .resume-section__title {
+    animation-name: glitch-shake-3;
+  }
+
+  .resume-section:nth-child(2n) .resume-section__title {
+    animation-name: glitch-shake-2;
+  }
+
+  .resume-section:nth-child(1) .resume-section__title {
+    animation-delay: 0.5s;
+    animation-duration: 3.2s;
+  }
+
+  .resume-section:nth-child(2) .resume-section__title {
+    animation-delay: 1.2s;
+    animation-duration: 2.5s;
+  }
+
+  .resume-section:nth-child(3) .resume-section__title {
+    animation-delay: 0.8s;
+    animation-duration: 3.7s;
+  }
+
+  .resume-section:nth-child(4) .resume-section__title {
+    animation-delay: 1.5s;
+    animation-duration: 2.9s;
+  }
+
+  .resume-section:nth-child(5) .resume-section__title {
+    animation-delay: 0.3s;
+    animation-duration: 3.4s;
+  }
+
+  .resume-section:nth-child(6) .resume-section__title {
+    animation-delay: 1.8s;
+    animation-duration: 2.7s;
+  }
+
+  .resume-section:nth-child(7) .resume-section__title {
+    animation-delay: 0.6s;
+    animation-duration: 3.1s;
+  }
+
+  .resume-section:nth-child(8) .resume-section__title {
+    animation-delay: 1.1s;
+    animation-duration: 2.6s;
+  }
+
+  /* Jarring flash effect for pseudo-elements */
+  @keyframes corrupt-flash {
+    0%,
+    92%,
+    100% {
+      opacity: 0;
+      transform: translateX(-3px);
+    }
+    93% {
+      opacity: 0.8;
+      transform: translateX(-10px);
+    }
+    94% {
+      opacity: 0.6;
+      transform: translateX(8px);
+    }
+    95% {
+      opacity: 0;
+      transform: translateX(-3px);
+    }
+  }
+
+  /* Jarring jitter for after element */
+  @keyframes jitter {
+    0%,
+    85%,
+    100% {
+      transform: translate(0, 0);
+    }
+    86% {
+      transform: translate(-8px, -3px);
+    }
+    88% {
+      transform: translate(5px, 4px);
+    }
+    90% {
+      transform: translate(-3px, -2px);
+    }
+    92% {
+      transform: translate(0, 0);
+    }
+  }
+
+  /* ===========================
+  EXPERIENCE & EDUCATION ITEMS
+  =========================== */
+
+  .experience-item {
+    margin: 1.5rem 0;
+    transform: skewX(0.2deg);
+    filter: contrast(1.1) saturate(1.15);
+    box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+
+    &:hover {
+      animation: border-corrupt 0.5s infinite, pixel-drift 1s infinite;
+      filter: contrast(1.2) saturate(1.3);
+    }
+  }
+
+  .experience-item__role,
+  .education-item__institution {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--glitch-primary);
+    margin-block-end: 0.5rem;
+    animation: color-shift 7s infinite;
+  }
+
+  .experience-item__company {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    filter: invert(0.1);
+  }
+
+  /* ===========================
+  TECH BADGES
+  =========================== */
+
+  .experience-item__tech {
+    border: 2px solid var(--glitch-secondary);
+    background: var(--glitch-primary);
+    color: var(--glitch-tertiary);
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    position: relative;
+    transform: skewX(-2deg);
+    box-shadow: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
+    animation: pixel-drift 3s infinite;
+    filter: contrast(1.3) saturate(1.4);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      filter: invert(1) hue-rotate(180deg);
+      animation: color-shift 0.3s infinite;
+    }
+  }
+
+  /* ===========================
+  SKILLS GRID
+  =========================== */
+
+  .skills-grid {
+    border-width: 3px;
+    transform: skewX(-0.15deg);
+    box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 60% 0 30%;
+      background: repeating-linear-gradient(90deg, transparent 0px, rgba(255, 0, 255, 0.05) 1px, transparent 2px);
+      pointer-events: none;
+      animation: artifact-pulse 3s infinite;
+    }
+  }
+
+  .skills-grid__group {
+    background: var(--background-color);
+    padding: 1rem;
+    margin-block-end: 1rem;
+    transform: skewX(0.3deg) translateX(-2px);
+    box-shadow: 2px 0 0 0 var(--glitch-tertiary), -2px 0 0 0 var(--glitch-primary);
+
+    &:nth-child(even) {
+      transform: skewX(-0.3deg) translateX(2px);
+      animation-delay: 1s;
+    }
+  }
+
+  .skills-grid__title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--glitch-primary);
+    text-shadow: 1px 1px 0 var(--glitch-tertiary);
+    border-block-end: 2px solid var(--glitch-secondary);
+    padding-block-end: 0.5rem;
+    margin-block-end: 0.75rem;
+    animation: color-shift 8s infinite;
+  }
+
+  /* ===========================
+  LISTS
+  =========================== */
+
+  .community-list,
+  .principles-list {
+    box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
+  }
+
+  .education-item {
+    transform: skewX(-0.25deg);
+    box-shadow: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
+  }
+
+  /* ===========================
+  LINKS
+  =========================== */
+
+  a:not(.resume-header__printlink) {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--glitch-primary);
+    transition: all 0.2s ease;
+    position: relative;
+
+    &:hover {
+      color: var(--glitch-secondary);
+      background: var(--glitch-tertiary);
+      text-decoration: none;
+      filter: invert(1) hue-rotate(180deg);
+      animation: text-glitch 0.5s infinite;
+      padding: 2px 4px;
+    }
+
+    &:visited {
+      filter: hue-rotate(90deg);
+    }
+  }
+
+  /* ===========================
+  PRINT BUTTON
+  =========================== */
+
+  .resume-header__printlink {
+    border: 3px solid var(--border-color);
+    background: var(--glitch-primary);
+    color: var(--background-color);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    text-decoration: none;
+    transform: skewX(-3deg);
+    box-shadow: 5px 5px 0 0 var(--glitch-secondary), -3px -3px 0 0 var(--glitch-tertiary);
+    animation: border-corrupt 4s infinite, pixel-drift 2s infinite;
+    filter: contrast(1.3) saturate(1.5);
+
+    &:hover {
+      animation: text-glitch 0.2s infinite, color-shift 0.3s infinite;
+      filter: invert(1) contrast(1.5);
+      transform: skewX(3deg);
+    }
+
+    &::before,
+    &::after {
+      margin-inline-start: 4px;
+    }
+
+    &::before {
+      content: '⚠ ';
+    }
+
+    &::after {
+      content: ' ⚠';
+    }
+  }
+
+  /* ===========================
+  DIAL SELECTOR
+  =========================== */
+
+  dial-selector {
+    position: relative;
+    filter: contrast(1.2) saturate(1.3);
+
+    .knob {
+      border: 3px solid var(--border-color);
+      box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 0 0 0 6px var(--glitch-tertiary),
+        5px 5px 10px rgba(0, 0, 0, 0.3);
+      background: var(--dial-knob-background);
+      animation: border-corrupt 5s infinite;
+      transform: rotate(2deg);
+    }
+
+    .indicator {
+      width: 14px;
+      height: 14px;
+      background: var(--dial-color-indicator);
+      border: 2px solid var(--glitch-secondary);
+      box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-tertiary);
+      animation: pixel-drift 1.5s infinite;
+      transform: rotate(-2deg);
+    }
+
+    .dial-label {
+      background: var(--background-color);
+      border: 2px solid var(--border-color);
+      padding: 0.4rem 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+      animation: pixel-drift 4s infinite;
+      transform: skewX(-1deg);
+
+      &:nth-child(odd) {
+        animation-delay: 1.5s;
+        transform: skewX(1deg);
+      }
+
+      &:hover {
+        background: var(--glitch-tertiary);
+        color: var(--background-color);
+        filter: invert(0.2) hue-rotate(45deg);
+        animation: color-shift 0.5s infinite;
+      }
+
+      &.active {
+        background: var(--glitch-primary);
+        color: var(--background-color);
+        border-color: var(--glitch-secondary);
+        box-shadow: 4px 4px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-tertiary);
+        font-weight: 700;
+        animation: text-glitch 3s infinite;
+        filter: contrast(1.4) saturate(1.6);
+      }
+    }
+
+    .spoke-line {
+      stroke-width: 2px;
+      opacity: 0.5;
+      animation: artifact-pulse 4s infinite;
+      stroke: var(--glitch-primary);
+      animation-delay: 1s;
+
+      &:nth-child(even) {
+        stroke: var(--glitch-secondary);
+        animation-delay: 2s;
+      }
+    }
+  }
+
+  .resume-header__dial-selector {
+    box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
+
+    h3 {
+      color: var(--text-color);
+      margin-block-end: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      animation: text-glitch 6s infinite;
+    }
+  }
+
+  /* ===========================
+  BULLET POINTS
+  =========================== */
+
+  .experience-item__bullets li {
+    &::before {
+      content: '◆';
+      color: var(--glitch-primary);
+      font-size: 0.9rem;
+      animation: color-shift 5s infinite;
+    }
+
+    &:nth-child(even)::before {
+      content: '◇';
+      color: var(--glitch-secondary);
+    }
+  }
+
+  /* ===========================
+  CONTENT SECTIONS
+  =========================== */
+
+  .resume-section {
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    margin-block-end: 1.5rem;
+  }
+
+  /* ===========================
+  RESPONSIVE ADJUSTMENTS
+  =========================== */
+
+  @media (max-width: 768px) {
+    h1.resume-header__name {
+      font-size: 2rem;
+    }
+
+    .resume-section__title {
+      font-size: 1.1rem;
+      padding: 0.6rem 1rem;
+    }
+
+    .resume__main,
+    .resume-section,
+    .experience-item,
+    .education-item {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h1.resume-header__name {
+      font-size: 1.75rem;
+    }
+
+    .resume-section__title {
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+    }
+
+    .resume__main,
+    .resume-section,
+    .experience-item,
+    .education-item {
+      padding: 1rem;
+    }
+
+    dial-selector .dial-label {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+    }
+
+    .resume-header__printlink {
+      font-size: 0.85rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  /* ===========================
+  CURSED & GLITCHABLE TEXT EFFECTS
+  =========================== */
+
+  .cursed,
+  .glitchable {
+    display: inline-block;
+    position: relative;
+    color: var(--glitch-primary);
+    transform-origin: center;
+  }
+
+  .cursed {
+    text-shadow: 1px 0 0 var(--glitch-secondary), -1px 0 0 var(--glitch-tertiary), 0 1px 0 #f00, 0 -1px 0 #0f0;
+    animation: cursed-glitch 9s infinite steps(1);
+    animation-delay: calc(var(--cursed-delay, 0) * 0.1s);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    z-index: 10;
+
+    &:nth-child(2n) {
+      animation-delay: 0.9s;
+      animation-duration: 7.5s;
+    }
+
+    &:nth-child(3n) {
+      animation-delay: 2.1s;
+      animation-duration: 10.5s;
+    }
+
+    &:nth-child(5n) {
+      animation-delay: 3.6s;
+      animation-duration: 12s;
+    }
+
+    &:nth-child(7n) {
+      animation-delay: 5.4s;
+      animation-duration: 8.4s;
+    }
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      animation: cursed-glitch infinite reverse steps(1);
+    }
+
+    &::before {
+      left: -2px;
+      color: var(--glitch-secondary);
+      opacity: 0.7;
+      z-index: -1;
+      animation-duration: 6s;
+    }
+
+    &::after {
+      left: 2px;
+      color: var(--glitch-tertiary);
+      opacity: 0.5;
+      z-index: -2;
+      animation-duration: 7.5s;
+      animation-direction: normal;
+    }
+  }
+
+  .glitchable {
+    animation: glitch-char 0.3s infinite;
+    text-shadow: 2px 0 var(--glitch-secondary), -2px 0 var(--glitch-tertiary);
+
+    &:nth-child(2n) {
+      animation-delay: 0.1s;
+    }
+
+    &:nth-child(3n) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(5n) {
+      animation-delay: 0.15s;
+      animation-duration: 0.4s;
+    }
+  }
+
+  /* ===========================
+  PERFORMANCE OPTIMIZATIONS
+  =========================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 /* ===========================
-CURSED TEXT EFFECTS
+KEYFRAME ANIMATIONS (OUTSIDE THEME SCOPE)
 =========================== */
 
 /* Cursed character animation - glitchy/jarring movements */
@@ -1117,106 +1210,6 @@ CURSED TEXT EFFECTS
     filter: hue-rotate(0deg);
     opacity: 1;
   }
-}
-
-/* Cursed text styling */
-body[data-theme='glitch'] .cursed {
-  display: inline-block;
-  position: relative;
-  color: var(--glitch-primary);
-  text-shadow: 1px 0 0 var(--glitch-secondary), -1px 0 0 var(--glitch-tertiary), 0 1px 0 #ff0000, 0 -1px 0 #00ff00;
-  animation: cursed-glitch 9s infinite steps(1);
-  animation-delay: calc(var(--cursed-delay, 0) * 0.1s);
-  transform-origin: center;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  z-index: 10;
-}
-
-/* Randomize animation delays */
-body[data-theme='glitch'] .cursed:nth-child(2n) {
-  animation-delay: 0.9s;
-  animation-duration: 7.5s;
-}
-
-body[data-theme='glitch'] .cursed:nth-child(3n) {
-  animation-delay: 2.1s;
-  animation-duration: 10.5s;
-}
-
-body[data-theme='glitch'] .cursed:nth-child(5n) {
-  animation-delay: 3.6s;
-  animation-duration: 12s;
-}
-
-body[data-theme='glitch'] .cursed:nth-child(7n) {
-  animation-delay: 5.4s;
-  animation-duration: 8.4s;
-}
-
-/* Add additional glitch layers */
-body[data-theme='glitch'] .cursed::before {
-  content: attr(data-text);
-  position: absolute;
-  left: -2px;
-  top: 0;
-  color: var(--glitch-secondary);
-  opacity: 0.7;
-  z-index: -1;
-  animation: cursed-glitch 6s infinite reverse steps(1);
-}
-
-body[data-theme='glitch'] .cursed::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 2px;
-  top: 0;
-  color: var(--glitch-tertiary);
-  opacity: 0.5;
-  z-index: -2;
-  animation: cursed-glitch 7.5s infinite steps(1);
-}
-
-/* ===========================
-PERFORMANCE OPTIMIZATIONS
-=========================== */
-
-/* Reduce animations on devices that prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  body[data-theme='glitch'] *,
-  body[data-theme='glitch'] *::before,
-  body[data-theme='glitch'] *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ===========================
-Theme-Specific Element Visibility & Effects
-=========================== */
-
-/* Glitchable characters - apply visual effects when glitch theme is active */
-[data-theme='glitch'] .glitchable {
-  position: relative;
-  display: inline-block;
-  animation: glitch-char 0.3s infinite;
-  color: var(--glitch-primary);
-  text-shadow: 2px 0 var(--glitch-secondary), -2px 0 var(--glitch-tertiary);
-}
-
-/* Stagger animations for variety */
-[data-theme='glitch'] .glitchable:nth-child(2n) {
-  animation-delay: 0.1s;
-}
-
-[data-theme='glitch'] .glitchable:nth-child(3n) {
-  animation-delay: 0.2s;
-}
-
-[data-theme='glitch'] .glitchable:nth-child(5n) {
-  animation-delay: 0.15s;
-  animation-duration: 0.4s;
 }
 
 /* Character glitch animation */
