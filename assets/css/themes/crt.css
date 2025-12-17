@@ -4,22 +4,22 @@
 
 /* Light Mode */
 :root[data-theme='crt'][data-mode='light'] {
-  --background-color: oklch(24% 0 0); /* Dark gray */
-  --text-color: var(--color-green-terminal);
-  --heading-color: var(--color-green-terminal);
-  --border-color: var(--color-green-terminal);
-  --dial-color-ink: var(--color-green-terminal);
-  --dial-color-selection: var(--color-green-terminal);
-  --dial-color-indicator: var(--color-green-terminal);
-  --dial-knob-background: oklch(16% 0 0); /* Darker gray */
+  --background-color: oklch(85% 0.15 60); /* Warm amber/orange glow */
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-black);
+  --dial-color-indicator: var(--color-black);
+  --dial-knob-background: oklch(78% 0.12 55); /* Lighter amber */
   --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
   --background-image: none;
-  --link-color: var(--color-green-terminal);
-  --link-visited-color: var(--color-green-terminal);
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-black);
   --section-bg: transparent;
   --header-bg: transparent;
-  --accent-color: var(--color-green-terminal);
-  --crt-glow: var(--color-green / 0.05); /* Green glow */
+  --accent-color: var(--color-black);
+  --crt-glow: oklch(70% 0.2 55 / 0.08); /* Amber glow */
 }
 
 /* Dark Mode */
@@ -44,7 +44,7 @@
 
 body[data-theme='crt'] {
   font-family: var(--font-family);
-  text-shadow: 0 0 8px currentColor;
+  text-shadow: 0 0 4px currentColor;
 
   /* Scanline effect overlay */
   &::before {
@@ -55,8 +55,8 @@ body[data-theme='crt'] {
       0deg,
       transparent 0px,
       transparent 2px,
-      var(--color-black / 0.15) 2px,
-      var(--color-black / 0.15) 4px
+      var(--color-black / 0.08) 2px,
+      var(--color-black / 0.08) 4px
     );
     pointer-events: none;
     z-index: 9999;
