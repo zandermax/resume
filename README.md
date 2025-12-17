@@ -13,7 +13,7 @@ The idea is simple: instead of sending a static PDF, why not show my work throug
 This site includes several distinct themes spanning different design eras:
 
 - **1985** — CRT terminal aesthetic
-- **1993** — Classic terminal interface
+- **1992** — Classic terminal interface
 - **1996** — Nostalgia-era web with marquees and blinking text
 - **2001** — Windows XP-inspired skeuomorphism
 - **2004** — Web 2.0 glossy badges and rounded corners

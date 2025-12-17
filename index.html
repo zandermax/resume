@@ -77,7 +77,7 @@
 		const THEME_DISPLAY_TO_INTERNAL = {
 			'current': 'default',
 			'1985': 'crt',
-			'1993': 'terminal',
+			'1992': 'terminal',
 			'1996': 'nostalgia',
 			'2001': 'xp',
 			'2004': 'web2gloss',
@@ -213,13 +213,32 @@
 		</div>
 	</div>
 
+	<!-- XP Close Button (visible only in XP theme) -->
+	<button class="xp-close-btn" id="xp-close-btn" aria-label="Close">×</button>
+
+	<!-- XP Dialog Modal (visible only when triggered) -->
+	<dialog class="xp-dialog" id="xp-dialog">
+		<div class="xp-dialog__title">
+			Close Resume
+			<button class="xp-dialog__close" id="xp-dialog-close" aria-label="Close dialog">×</button>
+		</div>
+		<div class="xp-dialog__content">
+			<span class="xp-dialog__icon">ⓘ</span>
+			<p class="xp-dialog__message">Are you sure you want to close this window?</p>
+		</div>
+		<div class="xp-dialog__buttons">
+			<button class="xp-dialog__button xp-dialog__button--yes" id="xp-dialog-ok">OK</button>
+			<button class="xp-dialog__button" id="xp-dialog-cancel">Cancel</button>
+		</div>
+	</dialog>
+
 	<main class="resume__main">
 		<header class="resume-header">
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Year:</h3>
 					<dial-selector id="theme-selector" width="600px" height="200px"
-						options="Current,1985,1993,1996,2001,2004,2007,2012,2017,2020,2027,2039" default-option="Current"></dial-selector>
+						options="Current,1985,1992,1996,2001,2004,2007,2012,2017,2020,2027,2039" default-option="Current"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
 					<h3>Mode:</h3>
@@ -258,6 +277,35 @@
 						github.com/zandermax
 					</a>
 				</p>
+			</div>
+
+			<!-- Terminal Command Log (CRT Theme Only) -->
+			<div class="terminal-log">
+				<div class="terminal-log__content">
+					<div class="terminal-log__line">$ ./evaluate_candidate.sh --name="Zander Maxwell"</div>
+					<div class="terminal-log__line">Initializing candidate evaluation system...</div>
+					<div class="terminal-log__line">Loading resume data... [OK]</div>
+					<div class="terminal-log__line">Parsing experience: 8+ years... [OK]</div>
+					<div class="terminal-log__line">Checking React knowledge... [EXCELLENT]</div>
+					<div class="terminal-log__line">Checking TypeScript skills... [EXCELLENT]</div>
+					<div class="terminal-log__line">Analyzing design system experience... [STRONG]</div>
+					<div class="terminal-log__line">Verifying front-end architecture skills... [ADVANCED]</div>
+					<div class="terminal-log__line">Testing UX/UI sensibilities... [OUTSTANDING]</div>
+					<div class="terminal-log__line">Evaluating cultural fit... [HIGH]</div>
+					<div class="terminal-log__line">Checking problem-solving approach... [EXCELLENT]</div>
+					<div class="terminal-log__line">Assessing communication style... [CLEAR]</div>
+					<div class="terminal-log__line">Running compatibility check with Ashby values... [MATCH]</div>
+					<div class="terminal-log__line">Calculating overall score... 94/100</div>
+					<div class="terminal-log__line">Logging results to 'candidates.log'... [OK]</div>
+					<div class="terminal-log__line">Generating recommendation report...</div>
+					<div class="terminal-log__line">$ cat evaluation_result.txt</div>
+					<div class="terminal-log__line">STATUS: ✓ APPROVED</div>
+					<div class="terminal-log__line">RECOMMENDATION: STRONG HIRE</div>
+					<div class="terminal-log__line">CONFIDENCE: 98%</div>
+					<div class="terminal-log__line">$ echo "Let's build something great together!"</div>
+					<div class="terminal-log__line">Let's build something great together!</div>
+					<div class="terminal-log__line">$ <span class="terminal-log__cursor"></span></div>
+				</div>
 			</div>
 		</header>
 
@@ -794,6 +842,21 @@
 			</ul>
 		</section>
 	</main>
+
+	<script>
+		// XP Dialog minimal JS using native dialog
+		const xpCloseBtn = document.getElementById('xp-close-btn');
+		const xpDialog = document.getElementById('xp-dialog');
+
+		xpCloseBtn?.addEventListener('click', () => xpDialog?.showModal());
+		xpDialog?.addEventListener('click', (e) => {
+			if (e.target.id === 'xp-dialog-ok') {
+				window.close(); // Actually try to close the window!
+			} else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
+				xpDialog.close();
+			}
+		});
+	</script>
 </body>
 
 </html>

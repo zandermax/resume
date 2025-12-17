@@ -51,6 +51,7 @@ Custom Properties
   --display-dashboard-status: none;
   --display-dashboard-metrics: none;
   --display-section-title-normal: block;
+  --display-terminal: none;
 }
 
 /* ===========================

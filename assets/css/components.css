@@ -301,6 +301,11 @@ Components
   display: var(--display-nostalgia-elements);
 }
 
+/* Terminal */
+.terminal-log {
+  display: var(--display-terminal);
+}
+
 /* Glitchable elements - inline by default, styled in glitch theme */
 .glitchable {
   display: inline;
