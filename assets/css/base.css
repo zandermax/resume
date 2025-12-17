@@ -158,7 +158,7 @@ h3.education-item__institution {
 }
 
 /* Link colors using custom properties */
-a {
+a:not(.resume-header__printlink) {
   color: var(--link-color, inherit);
 
   &:visited {

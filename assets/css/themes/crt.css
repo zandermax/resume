@@ -4,21 +4,22 @@
 
 /* Light Mode */
 :root[data-theme='crt'][data-mode='light'] {
-  --background-color: #2d2d2d;
+  --background-color: oklch(24% 0 0); /* Dark gray */
   --text-color: var(--color-green-terminal);
   --heading-color: var(--color-green-terminal);
   --border-color: var(--color-green-terminal);
   --dial-color-ink: var(--color-green-terminal);
   --dial-color-selection: var(--color-green-terminal);
   --dial-color-indicator: var(--color-green-terminal);
-  --dial-knob-background: #1a1a1a;
-  --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
+  --dial-knob-background: oklch(16% 0 0); /* Darker gray */
+  --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
   --background-image: none;
   --link-color: var(--color-green-terminal);
   --link-visited-color: var(--color-green-terminal);
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: var(--color-green-terminal);
+  --crt-glow: var(--color-green / 0.05); /* Green glow */
 }
 
 /* Dark Mode */
@@ -30,268 +31,241 @@
   --dial-color-ink: var(--color-green);
   --dial-color-selection: var(--color-green);
   --dial-color-indicator: var(--color-green);
-  --dial-knob-background: #001100;
-  --font-family: 'Courier New', 'Lucida Console', 'Consolas', monospace;
+  --dial-knob-background: oklch(5% 0.02 142); /* Dark green tint */
+  --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
   --background-image: none;
   --link-color: var(--color-green);
   --link-visited-color: var(--color-green);
   --section-bg: transparent;
   --header-bg: transparent;
   --accent-color: var(--color-green);
+  --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
 }
 
-/* Apply monospace terminal font */
 body[data-theme='crt'] {
   font-family: var(--font-family);
   text-shadow: 0 0 8px currentColor;
+
+  /* Scanline effect overlay */
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      var(--color-black / 0.15) 2px,
+      var(--color-black / 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Main container with CRT glow */
+  .resume__main {
+    border: 2px solid currentColor;
+    box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+    background: var(--background-color);
+    padding: 2rem;
+  }
+
+  /* Typography with glow */
+  h1,
+  h2,
+  h3 {
+    letter-spacing: 0.05em;
+  }
+
+  h1.resume-header__name {
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px currentColor;
+
+    &::after {
+      content: '█';
+      animation: terminal-blink 1s infinite;
+      margin-left: 0.25rem;
+      font-size: 0.9em;
+    }
+  }
+
+  p,
+  li {
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  /* Reset all container styling */
+  .skills-grid,
+  .skills-grid__group,
+  .community-list,
+  .principles-list,
+  .education-item {
+    border: 0;
+    background: transparent;
+    padding: 0.5rem 0;
+  }
+
+  .skills-grid {
+    padding: 1rem 0;
+  }
+
+  .skills-grid__group {
+    margin-bottom: 1rem;
+  }
+
+  .skills-grid__title {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Experience items */
+  .experience-item {
+    border: 0;
+    background: transparent;
+    margin-top: 1.5rem;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid currentColor;
+
+    &:first-of-type {
+      border-top: 0;
+    }
+  }
+
+  .experience-item__tech {
+    border: 1px solid currentColor;
+    padding: 0.25rem 0.5rem;
+    text-shadow: 0 0 6px currentColor;
+
+    &::before {
+      content: '[';
+      margin-right: 2px;
+    }
+
+    &::after {
+      content: ']';
+      margin-left: 2px;
+    }
+  }
+
+  .experience-item__bullets li::before {
+    content: '>';
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Section titles */
+  .resume-section__title {
+    border: 0;
+    border-bottom: 2px solid currentColor;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Header */
+  .resume-header {
+    border: 0;
+    border-bottom: 2px double currentColor;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .resume-header__dial-selector {
+    padding: 1rem;
+    border: 1px solid currentColor;
+
+    h3 {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  /* Links */
+  a:not(.resume-header__printlink) {
+    text-decoration: underline;
+
+    &:hover {
+      text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+      text-decoration: none;
+      border-bottom: 2px solid currentColor;
+    }
+  }
+
+  /* Print button */
+  .resume-header__printlink {
+    border: 2px solid currentColor;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.1s ease;
+
+    &::before {
+      content: '> ';
+    }
+
+    &:hover {
+      box-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+      text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+      border-width: 3px;
+    }
+  }
+
+  /* List items */
+  .community-list__item,
+  .principles-list__item {
+    border: 0;
+    border-top: 1px dotted currentColor;
+    padding: 0.75rem 0;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  /* Dial selector */
+  dial-selector {
+    .knob {
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+      background: var(--dial-knob-background);
+    }
+
+    .indicator {
+      background: currentColor;
+      box-shadow: 0 0 10px currentColor;
+    }
+
+    .dial-label {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+
+      &:hover {
+        border-color: currentColor;
+        text-shadow: 0 0 10px currentColor;
+      }
+
+      &.active {
+        border: 2px solid currentColor;
+        text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+        box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+        font-weight: bold;
+      }
+    }
+
+    .spoke-line {
+      stroke-width: 1px;
+      opacity: 0.5;
+    }
+  }
 }
 
-/* Scanline effect overlay */
-body[data-theme='crt']::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
-  );
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* Main container with CRT glow */
-body[data-theme='crt'] .resume__main {
-  border: 2px solid currentColor;
-  box-shadow: 0 0 20px currentColor, inset 0 0 30px rgba(0, 255, 0, 0.05);
-  border-radius: 0;
-  background: var(--background-color);
-  padding: 2rem;
-}
-
-/* Section titles with underline */
-body[data-theme='crt'] .resume-section__title {
-  border: 0;
-  border-bottom: 2px solid currentColor;
-  border-radius: 0;
-  padding: 0.5rem 0;
-  margin-bottom: 1rem;
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* Remove all borders and styling from containers */
-body[data-theme='crt'] .skills-grid,
-body[data-theme='crt'] .skills-grid__group,
-body[data-theme='crt'] .community-list,
-body[data-theme='crt'] .principles-list,
-body[data-theme='crt'] .education-item,
-body[data-theme='crt'] .experience-item {
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-  background: transparent;
-  padding: 0.5rem 0;
-}
-
-body[data-theme='crt'] .skills-grid {
-  padding: 1rem 0;
-}
-
-body[data-theme='crt'] .skills-grid__group {
-  margin-bottom: 1rem;
-}
-
-body[data-theme='crt'] .skills-grid__title {
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Tech badges with brackets */
-body[data-theme='crt'] .experience-item__tech {
-  border: 1px solid currentColor;
-  border-radius: 0;
-  background: transparent;
-  color: var(--text-color);
-  font-weight: normal;
-  padding: 0.25rem 0.5rem;
-  text-shadow: 0 0 6px currentColor;
-}
-
-body[data-theme='crt'] .experience-item__tech::before {
-  content: '[';
-  margin-right: 2px;
-}
-
-body[data-theme='crt'] .experience-item__tech::after {
-  content: ']';
-  margin-left: 2px;
-}
-
-/* Header with simple styling */
-body[data-theme='crt'] .resume-header {
-  border: 0;
-  border-bottom: 2px double currentColor;
-  padding: 1rem 0;
-  background: transparent;
-  margin-bottom: 2rem;
-}
-
-body[data-theme='crt'] h1.resume-header__name {
-  border: 0;
-  border-bottom: 2px solid currentColor;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px currentColor;
-}
-
-/* Links with simple underline */
-body[data-theme='crt'] a {
-  color: var(--link-color);
-  text-decoration: underline;
-  text-shadow: 0 0 8px currentColor;
-}
-
-body[data-theme='crt'] a:hover {
-  background: transparent;
-  color: var(--text-color);
-  text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-  text-decoration: none;
-  border-bottom: 2px solid currentColor;
-}
-
-/* Print button with terminal style */
-body[data-theme='crt'] .resume-header__printlink {
-  border: 2px solid currentColor;
-  border-radius: 0;
-  background: transparent;
-  color: var(--text-color);
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  text-shadow: 0 0 8px currentColor;
-  transition: all 0.1s ease;
-}
-
-body[data-theme='crt'] .resume-header__printlink::before {
-  content: '> ';
-}
-
-body[data-theme='crt'] .resume-header__printlink:hover {
-  background: transparent;
-  color: var(--text-color);
-  box-shadow: 0 0 25px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
-  text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-  border-width: 3px;
-}
-
-/* Dial selector with monochrome styling */
-body[data-theme='crt'] dial-selector .knob {
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  box-shadow: 0 0 15px currentColor, inset 0 0 10px rgba(0, 255, 0, 0.2);
-  background: var(--dial-knob-background);
-}
-
-body[data-theme='crt'] dial-selector .indicator {
-  border-radius: 0;
-  background: currentColor;
-  box-shadow: 0 0 10px currentColor;
-}
-
-body[data-theme='crt'] dial-selector .dial-label {
-  font-size: 0.85rem;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid transparent;
-  transition: all 0.15s ease;
-}
-
-body[data-theme='crt'] dial-selector .dial-label:hover {
-  border: 1px solid currentColor;
-  background: transparent;
-  text-shadow: 0 0 10px currentColor;
-}
-
-body[data-theme='crt'] dial-selector .dial-label.active {
-  background: transparent;
-  color: var(--text-color);
-  border: 2px solid currentColor;
-  text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-  box-shadow: 0 0 15px currentColor, inset 0 0 15px rgba(0, 255, 0, 0.2);
-  font-weight: bold;
-}
-
-body[data-theme='crt'] dial-selector .spoke-line {
-  stroke-width: 1px;
-  opacity: 0.5;
-}
-
-/* List items with simple markers */
-body[data-theme='crt'] .experience-item__bullets li::before {
-  content: '>';
-  font-size: 0.8rem;
-  margin-right: 0.5rem;
-}
-
-body[data-theme='crt'] .community-list__item,
-body[data-theme='crt'] .principles-list__item {
-  border: 0;
-  border-top: 1px dotted currentColor;
-  padding: 0.75rem 0;
-}
-
-body[data-theme='crt'] .community-list__item:first-child,
-body[data-theme='crt'] .principles-list__item:first-child {
-  border-top: 0;
-}
-
-/* Dial selector housing */
-body[data-theme='crt'] .resume-header__dial-selector {
-  padding: 1rem;
-  background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-body[data-theme='crt'] .resume-header__dial-selector h3 {
-  color: var(--text-color);
-  margin-bottom: 0.75rem;
-  text-shadow: 0 0 8px currentColor;
-}
-
-/* Typography enhancements */
-body[data-theme='crt'] h1,
-body[data-theme='crt'] h2,
-body[data-theme='crt'] h3 {
-  text-shadow: 0 0 8px currentColor;
-  letter-spacing: 0.05em;
-}
-
-body[data-theme='crt'] p,
-body[data-theme='crt'] li {
-  line-height: 1.6;
-  letter-spacing: 0.02em;
-}
-
-/* Experience items with minimal styling */
-body[data-theme='crt'] .experience-item {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid currentColor;
-}
-
-body[data-theme='crt'] .experience-item:first-of-type {
-  border-top: 0;
-}
-
-/* Cursor blink effect for active elements */
+/* Cursor blink animation */
 @keyframes terminal-blink {
   0%,
   49% {
@@ -303,48 +277,42 @@ body[data-theme='crt'] .experience-item:first-of-type {
   }
 }
 
-body[data-theme='crt'] .resume-header__name::after {
-  content: '█';
-  animation: terminal-blink 1s infinite;
-  margin-left: 0.25rem;
-  font-size: 0.9em;
-}
-
-/* ===========================
-1985 Theme - Responsive Adjustments
-=========================== */
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  body[data-theme='crt'] .resume__main {
-    padding: 1.5rem;
-  }
+  body[data-theme='crt'] {
+    .resume__main {
+      padding: 1.5rem;
+    }
 
-  body[data-theme='crt'] h1.resume-header__name {
-    font-size: 2rem;
-  }
+    h1.resume-header__name {
+      font-size: 2rem;
+    }
 
-  body[data-theme='crt'] dial-selector .dial-label {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.65rem;
+    dial-selector .dial-label {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.65rem;
+    }
   }
 }
 
 @media (max-width: 500px) {
-  body[data-theme='crt'] .resume__main {
-    padding: 1rem;
-  }
+  body[data-theme='crt'] {
+    .resume__main {
+      padding: 1rem;
+    }
 
-  body[data-theme='crt'] h1.resume-header__name {
-    font-size: 1.7rem;
-  }
+    h1.resume-header__name {
+      font-size: 1.7rem;
+    }
 
-  body[data-theme='crt'] dial-selector .dial-label {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.55rem;
-  }
+    dial-selector .dial-label {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.55rem;
+    }
 
-  body[data-theme='crt'] .resume-header__printlink {
-    font-size: 0.7rem;
-    padding: 0.45rem 0.85rem;
+    .resume-header__printlink {
+      font-size: 0.7rem;
+      padding: 0.45rem 0.85rem;
+    }
   }
 }

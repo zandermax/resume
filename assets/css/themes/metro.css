@@ -291,7 +291,7 @@ body[data-theme='metro'] {
     border: 0;
     border-radius: 0;
     background: var(--metro-green);
-    color: #ffffff;
+    color: var(--color-white);
     font-weight: 600;
     padding: 1rem 2rem;
     text-transform: uppercase;
@@ -345,8 +345,7 @@ body[data-theme='metro'] {
   }
 
   /* Flat links */
-  a {
-    color: var(--link-color);
+  a:not(.resume-header__printlink) {
     text-decoration: none;
     font-weight: 600;
     border-bottom: 2px solid var(--link-color);
@@ -360,7 +359,6 @@ body[data-theme='metro'] {
     }
 
     &:visited {
-      color: var(--link-visited-color);
       border-bottom-color: var(--link-visited-color);
 
       &:hover {

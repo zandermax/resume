@@ -781,8 +781,7 @@ body[data-theme='glitch'] .education-item {
 LINKS
 =========================== */
 
-body[data-theme='glitch'] a {
-  color: var(--link-color);
+body[data-theme='glitch'] a:not(.resume-header__printlink) {
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: var(--glitch-primary);
@@ -790,7 +789,7 @@ body[data-theme='glitch'] a {
   position: relative;
 }
 
-body[data-theme='glitch'] a:hover {
+body[data-theme='glitch'] a:not(.resume-header__printlink):hover {
   color: var(--glitch-secondary);
   background: var(--glitch-tertiary);
   text-decoration: none;
@@ -799,8 +798,7 @@ body[data-theme='glitch'] a:hover {
   padding: 2px 4px;
 }
 
-body[data-theme='glitch'] a:visited {
-  color: var(--link-visited-color);
+body[data-theme='glitch'] a:not(.resume-header__printlink):visited {
   filter: hue-rotate(90deg);
 }
 

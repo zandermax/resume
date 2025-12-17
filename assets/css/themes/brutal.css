@@ -11,33 +11,35 @@ BRUTAL Theme - Maximum Brutalism
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --dial-knob-background: #11161c;
+  --dial-knob-background: oklch(19% 0.02 240);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --background-image: none;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
-  --section-bg: transparent;
-  --header-bg: transparent;
   --accent-color: var(--color-red-crimson);
+  --brutal-shadow-dark: oklch(0% 0 0 / 0.9);
+  --brutal-shadow-medium: oklch(0% 0 0 / 0.5);
+  --brutal-shadow-light: oklch(0% 0 0 / 0.3);
+  --brutal-texture: oklch(0% 0 0 / 0.03);
 }
 
 /* Dark Mode */
 :root[data-theme='brutal'][data-mode='dark'] {
   --background-color: var(--color-dark-bg);
-  --text-color: #e8e8e8;
+  --text-color: oklch(92% 0 0);
   --heading-color: var(--color-dark-bg);
   --border-color: var(--color-gray-dark);
-  --dial-color-ink: #e8e8e8;
+  --dial-color-ink: oklch(92% 0 0);
   --dial-color-selection: var(--color-red-bright);
   --dial-color-indicator: var(--color-red-bright);
   --dial-knob-background: var(--color-dark-bg-alt);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --background-image: none;
-  --link-color: #e8e8e8;
+  --link-color: oklch(92% 0 0);
   --link-visited-color: var(--color-gray-light);
-  --section-bg: transparent;
-  --header-bg: transparent;
   --accent-color: var(--color-red-bright);
+  --brutal-shadow-dark: oklch(100% 0 0 / 0.1);
+  --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
+  --brutal-shadow-light: oklch(100% 0 0 / 0.1);
+  --brutal-texture: oklch(100% 0 0 / 0.03);
 }
 
 /* Harsh, unforgiving base */
@@ -49,29 +51,31 @@ body[data-theme='brutal'] {
   /* AGGRESSIVE main container - raw concrete block */
   .resume__main {
     border: 8px solid var(--border-color);
-    box-shadow: 16px 16px 0 rgba(0, 0, 0, 0.9), 32px 32px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 0;
+    box-shadow: 16px 16px 0 var(--brutal-shadow-dark), 32px 32px 0 var(--brutal-shadow-medium);
     background: var(--background-color);
     padding: 0;
     position: relative;
     transform: rotate(-0.3deg);
 
-    /* Add visual noise/texture for raw concrete feel */
+    /* Visual noise/texture for raw concrete feel */
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background-image: repeating-linear-gradient(
           0deg,
           transparent,
           transparent 2px,
-          rgba(0, 0, 0, 0.03) 2px,
-          rgba(0, 0, 0, 0.03) 4px
+          var(--brutal-texture) 2px,
+          var(--brutal-texture) 4px
         ),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px);
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 2px,
+          var(--brutal-texture) 2px,
+          var(--brutal-texture) 4px
+        );
       pointer-events: none;
       opacity: 0.5;
     }
@@ -117,17 +121,13 @@ body[data-theme='brutal'] {
     border: 6px solid var(--border-color);
     background: var(--section-bg);
     padding: 2rem;
-    border-radius: 0;
-    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 12px 12px 0 var(--brutal-shadow-light);
     position: relative;
 
     &::before {
       content: '';
       position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
+      inset: -3px;
       border: 3px solid var(--accent-color);
       pointer-events: none;
     }
@@ -137,13 +137,11 @@ body[data-theme='brutal'] {
     border: 4px solid var(--border-color);
     background: var(--background-color);
     padding: 1rem;
-    border-radius: 0;
     margin-bottom: 1rem;
     transform: skewX(-0.5deg);
   }
 
   .skills-grid__title {
-    border: 0;
     border-bottom: 3px solid var(--accent-color);
     padding-bottom: 0.5rem;
     margin-bottom: 0.75rem;
@@ -159,9 +157,8 @@ body[data-theme='brutal'] {
     padding: 2rem;
     background: var(--section-bg);
     border: 6px solid var(--border-color);
-    border-radius: 0;
     margin-top: 2rem;
-    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 12px 12px 0 var(--brutal-shadow-light);
     transform: rotate(-0.2deg);
 
     &::before {
@@ -183,7 +180,6 @@ body[data-theme='brutal'] {
 
   .experience-item__tech {
     border: 3px solid var(--border-color);
-    border-radius: 0;
     background: var(--text-color);
     color: var(--background-color);
     font-weight: 900;
@@ -217,15 +213,13 @@ body[data-theme='brutal'] {
   .community-list,
   .principles-list {
     border: 6px solid var(--border-color);
-    border-radius: 0;
     background: var(--section-bg);
     padding: 2rem;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 0 var(--brutal-shadow-light);
   }
 
   .community-list__item,
   .principles-list__item {
-    border: 0;
     border-left: 6px solid var(--accent-color);
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
@@ -238,24 +232,20 @@ body[data-theme='brutal'] {
     border: 6px solid var(--border-color);
     background: var(--section-bg);
     padding: 2rem;
-    border-radius: 0;
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 0 var(--brutal-shadow-light);
     position: relative;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0 auto 0 0;
       width: 8px;
-      height: 100%;
       background: var(--accent-color);
     }
   }
 
   /* Header - MASSIVE and confrontational */
   .resume-header {
-    border: 0;
     border-bottom: 12px solid var(--border-color);
     padding: 3rem 2rem;
     background: var(--text-color);
@@ -271,7 +261,6 @@ body[data-theme='brutal'] {
 
   .resume-header__printlink {
     border: 6px solid var(--background-color);
-    border-radius: 0;
     background: var(--accent-color);
     color: var(--color-white);
     font-weight: 900;
@@ -279,32 +268,20 @@ body[data-theme='brutal'] {
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 8px 8px 0 oklch(0% 0 0 / 0.4);
     transition: all 0.05s ease;
     transform: skewX(-5deg);
 
     &:hover {
       transform: skewX(-5deg) translate(-4px, -4px);
-      box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
       color: var(--color-white);
     }
 
     &:active {
       transform: skewX(-5deg) translate(0, 0);
-      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 4px 4px 0 var(--brutal-shadow-light);
     }
-  }
-
-  h1.resume-header__name {
-    border: 0;
-    border-left: 12px solid var(--accent-color);
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 900;
-    font-size: 4rem;
-    line-height: 0.85;
-    text-transform: uppercase;
-    letter-spacing: -0.04em;
   }
 
   .resume-header__role {
@@ -317,9 +294,19 @@ body[data-theme='brutal'] {
     margin-top: 1rem;
   }
 
+  h1.resume-header__name {
+    border-left: 12px solid var(--accent-color);
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+  }
+
   /* AGGRESSIVE links */
-  a {
-    color: var(--link-color);
+  a:not(.resume-header__printlink) {
     text-decoration: none;
     font-weight: 900;
     border-bottom: 4px solid var(--accent-color);
@@ -342,15 +329,13 @@ body[data-theme='brutal'] {
     .knob {
       border: 8px solid var(--border-color);
       border-radius: 0;
-      box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 4px var(--accent-color);
+      box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
       background: var(--dial-knob-background);
     }
 
     .indicator {
-      border-radius: 0;
       background: var(--accent-color);
       width: 16px;
-      box-shadow: none;
       border: 3px solid var(--border-color);
     }
 
@@ -365,7 +350,7 @@ body[data-theme='brutal'] {
       color: var(--text-color);
 
       &:hover {
-        border: 3px solid var(--border-color);
+        border-color: var(--border-color);
         background: var(--accent-color);
         color: var(--background-color);
         transform: skewX(-3deg) translate(-2px, -2px);
@@ -375,9 +360,8 @@ body[data-theme='brutal'] {
       &.active {
         background: var(--text-color);
         color: var(--background-color);
-        border: 3px solid var(--border-color);
+        border-color: var(--border-color);
         box-shadow: 6px 6px 0 var(--accent-color);
-        font-weight: 900;
         transform: skewX(-3deg) scale(1.05);
       }
     }
@@ -386,6 +370,10 @@ body[data-theme='brutal'] {
       stroke-width: 4px;
       opacity: 0.8;
     }
+
+    .label-column {
+      margin-block-end: 2.5em;
+    }
   }
 
   /* Dial selector housing - industrial frame */
@@ -393,16 +381,13 @@ body[data-theme='brutal'] {
     padding: 2rem;
     background: var(--background-color);
     border: 6px solid var(--border-color);
-    border-radius: 0;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 0 var(--brutal-shadow-light);
     position: relative;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      inset: 0 0 auto 0;
       height: 8px;
       background: repeating-linear-gradient(
         90deg,
@@ -434,8 +419,6 @@ body[data-theme='brutal'] {
   h3.experience-item__role,
   h3.education-item__institution {
     font-size: 1.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
     border-left: 8px solid var(--accent-color);
     padding-left: 1rem;
     margin-bottom: 0.5rem;
@@ -464,7 +447,7 @@ body[data-theme='brutal'] {
   &[data-mode='dark'] {
     .resume__main {
       border-width: 12px;
-      box-shadow: 20px 20px 0 rgba(255, 255, 255, 0.1), 40px 40px 0 rgba(255, 255, 255, 0.05);
+      box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
     }
 
     dial-selector .indicator {
@@ -495,7 +478,7 @@ body[data-theme='brutal'] {
 
     .resume__main {
       border-width: 6px;
-      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.7), 20px 20px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 10px 10px 0 oklch(0% 0 0 / 0.7), 20px 20px 0 var(--brutal-shadow-light);
     }
   }
 
@@ -514,13 +497,12 @@ body[data-theme='brutal'] {
 
     .resume-header,
     .resume-section {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-inline: 1rem;
     }
 
     .resume__main {
       border-width: 4px;
-      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.7), 12px 12px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 6px 6px 0 oklch(0% 0 0 / 0.7), 12px 12px 0 var(--brutal-shadow-light);
     }
 
     dial-selector .dial-label {

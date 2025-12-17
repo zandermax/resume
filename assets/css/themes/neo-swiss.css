@@ -329,26 +329,23 @@ body[data-theme='neoswiss'] .experience-item__bullets li::before {
 }
 
 /* Links - Invisible until hover */
-body[data-theme='neoswiss'] a {
-  color: var(--link-color);
+body[data-theme='neoswiss'] a:not(.resume-header__printlink) {
   text-decoration: none;
   border-bottom: 0;
   transition: border-bottom 50ms linear;
   position: relative;
 }
 
-body[data-theme='neoswiss'] a:hover {
-  color: var(--link-color);
+body[data-theme='neoswiss'] a:not(.resume-header__printlink):hover {
   border-bottom: 1px solid var(--accent-color);
   transform: none;
 }
 
-body[data-theme='neoswiss'] a:visited {
-  color: var(--link-visited-color);
+body[data-theme='neoswiss'] a:not(.resume-header__printlink):visited {
   border-bottom: 0;
 }
 
-body[data-theme='neoswiss'] a:visited:hover {
+body[data-theme='neoswiss'] a:not(.resume-header__printlink):visited:hover {
   border-bottom: 1px solid var(--accent-color);
 }
 
