@@ -589,9 +589,8 @@ body[data-theme='web2gloss'] {
     text-shadow: var(--web2-text-shadow-md);
     min-width: 100px;
     text-align: center;
-    transition: var(--web2-transition-fast);
     display: inline-block;
-    cursor: pointer;
+    cursor: default;
 
     &::before {
       content: '';
@@ -610,17 +609,6 @@ body[data-theme='web2gloss'] {
       position: relative;
       z-index: 1;
       color: inherit;
-    }
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 12px var(--web2-glow),
-        var(--web2-shadow-inset-strong);
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: var(--web2-shadow-sm), inset 0 2px 4px oklch(0% 0 0 / 0.2);
     }
   }
 
@@ -667,6 +655,19 @@ body[data-theme='web2gloss'] {
   /* RSS Feed Badge with attention-grabbing animation */
   .web2-badge--orange-alt:has(.rss-icon) {
     animation: web2-rss-wobble 6s ease-in-out infinite;
+    cursor: pointer;
+    transition: var(--web2-transition-fast);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 12px var(--web2-glow),
+        var(--web2-shadow-inset-strong);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: var(--web2-shadow-sm), inset 0 2px 4px oklch(0% 0 0 / 0.2);
+    }
 
     /* First ghost pulse ring using after on badge */
     &::after {

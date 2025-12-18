@@ -109,55 +109,12 @@ function handleThemeChange(event) {
     document.body.removeAttribute('data-glitch-animations-ready');
     applyThemeAndMode();
   }
-
-  // Handle cookie banner for brutal theme
-  handleCookieBanner();
 }
 
 // Handle mode change from mode selector
 function handleModeChange(event) {
   currentMode = event.detail.value.toLowerCase();
   applyThemeAndMode();
-}
-
-// ===========================
-// Cookie Banner (Brutal/2017 Theme)
-// ===========================
-
-// Handle cookie banner visibility
-function handleCookieBanner() {
-  const cookieBannerOverlay = document.getElementById('cookie-banner-overlay');
-
-  if (!cookieBannerOverlay) return;
-
-  // Check if user has already accepted cookies (stored in sessionStorage for the session)
-  const cookiesAccepted = sessionStorage.getItem('brutal-cookies-accepted');
-
-  // Show banner only for brutal theme and if not already accepted
-  if (currentTheme === 'brutal' && !cookiesAccepted) {
-    cookieBannerOverlay.style.display = 'block';
-    // Prevent scrolling when banner is open
-    document.body.style.overflow = 'hidden';
-  } else {
-    cookieBannerOverlay.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-}
-
-// Handle cookie banner acceptance
-function acceptCookies() {
-  // Store acceptance in sessionStorage (will reset when browser is closed)
-  sessionStorage.setItem('brutal-cookies-accepted', 'true');
-
-  // Hide the banner with animation
-  const cookieBannerOverlay = document.getElementById('cookie-banner-overlay');
-  if (cookieBannerOverlay) {
-    cookieBannerOverlay.style.animation = 'fadeOut 0.3s ease';
-    setTimeout(() => {
-      cookieBannerOverlay.style.display = 'none';
-      document.body.style.overflow = '';
-    }, 300);
-  }
 }
 
 // Initialize theme on page load
@@ -177,8 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize cookie banner
-  handleCookieBanner();
+  // Reset cookie banner checkbox on page load (browsers remember form state)
+  const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
+  if (cookieBannerDismiss) {
+    cookieBannerDismiss.checked = false;
+  }
+  // Same for the sticky note checkbox
+  const stickyNoteCheckbox = document.getElementById('sticky-note-disappear');
+  if (stickyNoteCheckbox) {
+    stickyNoteCheckbox.checked = false;
+  }
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');
@@ -190,11 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (modeSelector) {
     modeSelector.addEventListener('change', handleModeChange);
-  }
-
-  // Attach cookie banner accept button
-  const cookieAcceptBtn = document.getElementById('cookie-banner-accept');
-  if (cookieAcceptBtn) {
-    cookieAcceptBtn.addEventListener('click', acceptCookies);
   }
 });
