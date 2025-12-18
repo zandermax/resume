@@ -3,6 +3,30 @@ METRO 2012 Theme - Flat Design / Material Zero
 Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 =========================== */
 
+/* Hide Metro chat widget by default - only show in Metro theme */
+.metro-chat-widget {
+  display: none;
+}
+
+body[data-theme='metro'] .metro-chat-widget {
+  display: block;
+}
+
+/* Keyframe animation for chat widget status indicator */
+@keyframes pulse-indicator {
+  0%,
+  20%,
+  100% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(0.5);
+  }
+  10% {
+    transform: scale(1.4);
+  }
+}
+
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -448,10 +472,19 @@ body[data-theme='metro'] {
     line-height: 1.6;
   }
 
-  /* Dark mode hover - use lighter blue tint */
+  /* Dark mode adjustments */
   &[data-mode='dark'] {
     dial-selector .dial-label:hover {
       background: oklch(75% 0.14 210 / 0.2);
+    }
+
+    .metro-chat-widget__status {
+      background: oklch(32% 0 0);
+      color: var(--color-white);
+    }
+
+    .metro-chat-widget__status-text {
+      color: var(--color-white);
     }
   }
 
@@ -514,6 +547,130 @@ body[data-theme='metro'] {
     .community-list__item,
     .principles-list__item {
       padding: 1.25rem;
+    }
+  }
+
+  /* ===========================
+  METRO LIVE CHAT WIDGET
+  =========================== */
+
+  .metro-chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 280px;
+    background: var(--metro-blue);
+    color: var(--color-white);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .metro-chat-widget__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--metro-blue);
+    border-block-end: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .metro-chat-widget__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .metro-chat-widget__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+
+  .metro-chat-widget__status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-white);
+  }
+
+  .metro-chat-widget__indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 0;
+    flex-shrink: 0;
+    background: var(--metro-red);
+    box-shadow: none;
+    animation: pulse-indicator 2s ease-in-out infinite;
+  }
+
+  .metro-chat-widget__status-text {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-black);
+  }
+
+  /* Responsive adjustments for chat widget */
+  @media (max-width: 768px) {
+    .metro-chat-widget {
+      width: 240px;
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .metro-chat-widget__header,
+    .metro-chat-widget__status {
+      padding: 0.875rem 1rem;
+    }
+
+    .metro-chat-widget__title {
+      font-size: 0.8rem;
+    }
+
+    .metro-chat-widget__status-text {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .metro-chat-widget {
+      width: 220px;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .metro-chat-widget__header,
+    .metro-chat-widget__status {
+      padding: 0.75rem 0.875rem;
+    }
+
+    .metro-chat-widget__icon {
+      font-size: 1.25rem;
+    }
+
+    .metro-chat-widget__title {
+      font-size: 0.75rem;
+    }
+
+    .metro-chat-widget__status-text {
+      font-size: 0.7rem;
+    }
+
+    .metro-chat-widget__indicator {
+      width: 10px;
+      height: 10px;
     }
   }
 }

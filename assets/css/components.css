@@ -85,7 +85,6 @@ Components
   margin: 0.35rem 0 0.4rem;
 }
 
-/* bullets */
 .experience-item__bullets {
   list-style: none;
   padding-inline-start: 0;
@@ -169,19 +168,17 @@ Components
   }
 }
 
-/* BUTTON: Save Resume button (terminal theme only) */
-.resume-header__savelink {
-  display: none; /* Hidden by default, shown only in terminal theme */
-}
-
-/* Container for header buttons */
+/* Header buttons */
 .resume-header__buttons {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-/* BUTTON: Printable CV link (visible on screen only) */
+.resume-header__savelink {
+  display: none; /* Hidden by default, shown only in terminal theme */
+}
+
 .resume-header__printlink {
   font-family: inherit;
   font-size: 0.8rem;
@@ -230,102 +227,9 @@ Components
   font-size: 1.5rem;
 }
 
-/* Sticky note */
-.sticky-note {
-  display: var(--display-sticky-note);
-  position: absolute;
-  top: 50em;
-  left: clamp(40px, calc(100% - 260px), 1000px);
-  width: 220px;
-  min-height: 160px;
-  padding: 20px;
-  background: var(--sticky-note-color);
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 24px,
-    oklch(0% 0 0 / 0.05) 24px,
-    oklch(0% 0 0 / 0.05) 25px
-  );
-  box-shadow: var(--sticky-note-shadow);
-  transform: rotate(var(--sticky-note-rotation));
-  font-family: 'Indie Flower', 'Comic Sans MS', cursive;
-  font-size: 15px;
-  line-height: 24px;
-  color: #333;
-  z-index: 1000;
-  transition: transform 0.2s ease;
-
-  input[type='checkbox'] {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    cursor: default;
-    accent-color: #333;
-  }
-
-  /* Sticky note "tape" at top */
-  &::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 20px;
-    background: oklch(100% 0 0 / 0.3);
-    border: 1px solid oklch(0% 0 0 / 0.05);
-    box-shadow: 0 1px 2px oklch(0% 0 0 / 0.1);
-  }
-
-  &:hover {
-    transform: rotate(0deg) scale(1.02);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    position: absolute;
-    right: 20px;
-    width: 180px;
-    min-height: 140px;
-    padding: 15px;
-    font-size: 13px;
-    line-height: 22px;
-
-    input[type='checkbox'] {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    position: absolute;
-    right: 10px;
-    width: 160px;
-    min-height: 120px;
-    padding: 12px;
-    font-size: 12px;
-    line-height: 20px;
-
-    input[type='checkbox'] {
-      width: 14px;
-      height: 14px;
-    }
-  }
-}
-
-.sticky-note__item-3 {
-  display: none;
-}
-
-.sticky-note:has(.sticky-note__checkbox-ashby:checked) .sticky-note__item-3 {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-/* Theme-specific element visibility controlled by CSS custom properties */
-
-.nostalgia-elements {
+/* Theme-specific element visibility */
+.nostalgia-elements,
+.resume-section__title.nostalgia {
   display: var(--display-nostalgia-elements);
 }
 
@@ -345,48 +249,48 @@ Components
   display: var(--display-section-title-normal);
 }
 
-.resume-section__title.nostalgia {
-  display: var(--display-nostalgia-elements);
-}
-
-/* Hide nostalgia-specific elements by default */
-.nostalgia-marquee {
-  display: none;
-}
-
-/* In nostalgia theme, show marquee and hide normal span for marquee-decorated titles */
-:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='marquee'] > span:first-child {
-  display: none;
-}
-
-:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='marquee'] .nostalgia-marquee {
-  display: block;
-}
-
-:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink']::before,
-:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink']::after {
-  content: attr(data-nostalgia-icon);
-  display: inline-block;
-  animation: spin 2s linear infinite;
-  margin: 0 0.5em;
-}
-
-/* Make blink-decorated titles blink in nostalgia theme */
-:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink'] {
-  animation: blink 1s step-start infinite;
-}
-
-/* Terminal */
 .terminal-log {
   display: var(--display-terminal);
 }
 
-/* Glitchable elements - inline by default, styled in glitch theme */
 .glitchable {
   display: inline;
 }
 
-/* Retro badge styling */
+/* Nostalgia theme decorations */
+.nostalgia-marquee {
+  display: none;
+}
+
+#sticky-note {
+  display: var(--display-sticky-note);
+}
+
+:root[data-theme='nostalgia'] {
+  .resume-section__title[data-nostalgia-decoration='marquee'] {
+    & > span:first-child {
+      display: none;
+    }
+
+    .nostalgia-marquee {
+      display: block;
+    }
+  }
+
+  .resume-section__title[data-nostalgia-decoration='blink'] {
+    animation: blink 1s step-start infinite;
+
+    &::before,
+    &::after {
+      content: attr(data-nostalgia-icon);
+      display: inline-block;
+      animation: spin 2s linear infinite;
+      margin: 0 0.5em;
+    }
+  }
+}
+
+/* Retro badge */
 .retro-badge {
   display: inline-block;
   padding: 0.5rem 1rem;

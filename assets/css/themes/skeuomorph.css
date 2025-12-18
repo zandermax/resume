@@ -502,24 +502,169 @@ body[data-theme='skeuomorph'] {
     box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
   }
 
-  /* Sticky note interactive behavior */
-  .sticky-note {
-    cursor: pointer;
+  /* Sticky note - all styling consolidated here */
+  #sticky-note {
+    position: absolute;
+    top: 50em;
+    left: clamp(40px, calc(100% - 260px), 1000px);
+    width: 220px;
+    min-height: 160px;
+    padding: 20px;
+    background: var(--sticky-note-color);
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 24px,
+      oklch(0% 0 0 / 0.05) 24px,
+      oklch(0% 0 0 / 0.05) 25px
+    );
+    box-shadow: var(--sticky-note-shadow);
+    transform: rotate(var(--sticky-note-rotation));
+    font-family: 'Indie Flower', 'Comic Sans MS', cursive;
+    font-size: 15px;
+    line-height: 24px;
+    color: #333;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+
+    /* Sticky note "tape" at top */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: oklch(100% 0 0 / 0.3);
+      border: 1px solid oklch(0% 0 0 / 0.05);
+      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.1);
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    /* Hide the disappear checkbox */
+    #sticky-note-disappear {
+      display: none;
+    }
+
+    /* Label for sticky-note-trigger - invisible overlay covering entire sticky note */
+    label[for='sticky-note-trigger'] {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Label for sticky-note-disappear - initially hidden */
+    label[for='sticky-note-disappear'] {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10;
+      display: none;
+    }
+
+    /* When trigger is checked, hide first label and show second label */
+    &:has(#sticky-note-trigger:checked) label[for='sticky-note-trigger'] {
+      display: none;
+    }
+
+    &:has(#sticky-note-trigger:checked) label[for='sticky-note-disappear'] {
+      display: block;
+    }
+
+    /* When disappear checkbox is checked, trigger animation */
+    &:has(#sticky-note-disappear:checked) {
+      animation: sticky-note-disappear 3s 1s forwards ease-in;
+    }
+
+    input[type='checkbox'] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      cursor: default;
+      accent-color: #333;
+      margin-block-start: 4px;
+    }
 
     /* Style for checked checkboxes: strikethrough and reduced opacity on adjacent text */
     input[type='checkbox']:checked + span {
       text-decoration: line-through;
       opacity: 0.6;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      right: 20px;
+      left: auto;
+      width: 180px;
+      min-height: 140px;
+      padding: 15px;
+      font-size: 13px;
+      line-height: 22px;
+
+      input[type='checkbox'] {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      right: 10px;
+      left: auto;
+      width: 160px;
+      min-height: 120px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 20px;
+
+      input[type='checkbox'] {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
 
-  /* Hide third item by default */
-  .sticky-note__item-3 {
+  #sticky-note-title {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  #sticky-note-item-1,
+  #sticky-note-item-2 {
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  #sticky-note-item-3 {
+    margin: 0;
     display: none;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
   }
 
-  /* Style for "again" text */
-  .sticky-note__again {
+  /* Show third item when trigger checkbox is checked */
+  #sticky-note:has(#sticky-note-trigger:checked) #sticky-note-item-3 {
+    display: flex;
+  }
+
+  #sticky-note-again {
     font-style: italic;
     font-weight: bold;
     text-decoration: underline;
@@ -533,5 +678,46 @@ body[data-theme='skeuomorph'] {
   }
   100% {
     background-position: 300% 50%;
+  }
+}
+
+/* Sticky note disappear animation - realistic falling paper */
+@keyframes sticky-note-disappear {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--sticky-note-rotation)) translateY(0) translateX(0);
+  }
+
+  15% {
+    transform: rotate(-8deg) translateY(100px) translateX(-15px);
+  }
+
+  30% {
+    transform: rotate(5deg) translateY(250px) translateX(-5px);
+  }
+
+  45% {
+    transform: rotate(-12deg) translateY(400px) translateX(-25px);
+  }
+
+  60% {
+    transform: rotate(8deg) translateY(600px) translateX(-10px);
+    opacity: 0.9;
+  }
+
+  75% {
+    transform: rotate(-15deg) translateY(800px) translateX(-30px);
+    opacity: 0.6;
+  }
+
+  90% {
+    transform: rotate(10deg) translateY(1000px) translateX(-20px);
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-20deg) translateY(1200px) translateX(-40px);
+    visibility: hidden;
   }
 }

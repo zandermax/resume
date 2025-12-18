@@ -40,22 +40,25 @@
 
 <body class="resume" data-theme="default">
 	<!-- Sticky Note (visible only in skeu theme) -->
-	<label class="sticky-note" for="sticky-note-checkbox-ashby">
-		<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: bold; text-decoration: underline;">Todo:</p>
-		<div style="margin: 0 0 10px 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" checked style="margin-block-start: 4px; cursor: default;">
+	<div id="sticky-note">
+		<label for="sticky-note-trigger"></label>
+		<!-- Hidden checkbox for disappear animation -->
+		<input type="checkbox" id="sticky-note-disappear">
+		<label for="sticky-note-disappear"></label>
+		<p id="sticky-note-title">Todo:</p>
+		<div id="sticky-note-item-1">
+			<input type="checkbox" checked>
 			<span>Create website</span>
 		</div>
-		<div class="sticky-note__item-2" style="margin: 0 0 10px 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" id="sticky-note-checkbox-ashby" class="sticky-note__checkbox-ashby"
-				style="margin-block-start: 4px; cursor: default;">
-			<span class="sticky-note__text-ashby">Apply to awesome Ashby job!</span>
+		<div id="sticky-note-item-2">
+			<input type="checkbox" id="sticky-note-trigger">
+			<span>Apply to awesome Ashby job!</span>
 		</div>
-		<div class="sticky-note__item-3" style="margin: 0;">
-			<input type="checkbox" style="margin-block-start: 4px; cursor: default;">
-			<span>Update resume <span class="sticky-note__again">again</span></span>
+		<div id="sticky-note-item-3">
+			<input type="checkbox">
+			<span>Update resume <span id="sticky-note-again">again</span></span>
 		</div>
-	</label>
+	</div>
 
 	<!-- XP Close Button (visible only in XP theme) -->
 	<button class="xp-close-btn" id="xp-close-btn" aria-label="Close">×</button>
@@ -316,6 +319,18 @@
 				<div class="dashboard-card__label">Code Quality</div>
 				<div class="dashboard-card__value"></div>
 				<div class="dashboard-card__status">Optimal</div>
+			</div>
+		</div>
+
+		<!-- Metro Live Chat Widget (2012 theme only) -->
+		<div class="metro-chat-widget">
+			<div class="metro-chat-widget__header">
+				<span class="metro-chat-widget__icon">💬</span>
+				<span class="metro-chat-widget__title">LIVE SUPPORT</span>
+			</div>
+			<div class="metro-chat-widget__status">
+				<span class="metro-chat-widget__indicator metro-chat-widget__indicator--offline"></span>
+				<span class="metro-chat-widget__status-text">Live status: no agents online</span>
 			</div>
 		</div>
 
