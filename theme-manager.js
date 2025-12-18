@@ -144,6 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (stickyNoteCheckbox) {
     stickyNoteCheckbox.checked = false;
   }
+  // Same for the XP dialog checkbox
+  const xpDialogToggle = document.getElementById('xp-dialog-toggle');
+  if (xpDialogToggle) {
+    xpDialogToggle.checked = false;
+  }
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');

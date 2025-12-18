@@ -61,23 +61,28 @@
 	</div>
 
 	<!-- XP Close Button (visible only in XP theme) -->
-	<button class="xp-close-btn" id="xp-close-btn" aria-label="Close">×</button>
+	<label for="xp-dialog-toggle" class="xp-close-btn" aria-label="Close">×</label>
 
-	<!-- XP Dialog Modal (visible only when triggered) -->
-	<dialog class="xp-dialog" id="xp-dialog">
-		<div class="xp-dialog__title">
-			Close Resume
-			<button class="xp-dialog__close" id="xp-dialog-close" aria-label="Close dialog">×</button>
+	<!-- Hidden checkbox controls XP dialog visibility -->
+	<input type="checkbox" id="xp-dialog-toggle" class="xp-dialog-toggle">
+
+	<!-- XP Dialog Modal (visible only when checkbox is checked) -->
+	<div class="xp-dialog-overlay">
+		<div class="xp-dialog" id="xp-dialog">
+			<div class="xp-dialog__title">
+				Close Resume
+				<label for="xp-dialog-toggle" class="xp-dialog__close" aria-label="Close dialog">×</label>
+			</div>
+			<div class="xp-dialog__content">
+				<span class="xp-dialog__icon">ⓘ</span>
+				<p class="xp-dialog__message">Are you sure you want to close this window?</p>
+			</div>
+			<div class="xp-dialog__buttons">
+				<label for="xp-dialog-toggle" class="xp-dialog__button xp-dialog__button--yes" id="xp-dialog-ok">OK</label>
+				<label for="xp-dialog-toggle" class="xp-dialog__button" id="xp-dialog-cancel">Cancel</label>
+			</div>
 		</div>
-		<div class="xp-dialog__content">
-			<span class="xp-dialog__icon">ⓘ</span>
-			<p class="xp-dialog__message">Are you sure you want to close this window?</p>
-		</div>
-		<div class="xp-dialog__buttons">
-			<button class="xp-dialog__button xp-dialog__button--yes" id="xp-dialog-ok">OK</button>
-			<button class="xp-dialog__button" id="xp-dialog-cancel">Cancel</button>
-		</div>
-	</dialog>
+	</div>
 
 	<!-- Terminal Dialog Modal (visible only when triggered) -->
 	<dialog class="terminal-dialog" id="terminal-dialog">
@@ -785,6 +790,9 @@
 
 	<!-- Cookie Banner (Brutal/2017 theme only) -->
 	<div class="cookie-banner-overlay" id="cookie-banner-overlay">
+		<!-- Hidden checkbox controls cookie banner visibility -->
+		<input type="checkbox" id="cookie-banner-dismiss" class="cookie-banner-dismiss">
+
 		<div class="cookie-banner" id="cookie-banner">
 			<div class="cookie-banner__header">
 				<h2 class="cookie-banner__title">🍪 Cookie Notice 🍪</h2>
@@ -808,9 +816,9 @@
 				</p>
 			</div>
 			<div class="cookie-banner__buttons">
-				<button class="cookie-banner__accept" id="cookie-banner-accept">
+				<label for="cookie-banner-dismiss" class="cookie-banner__accept" id="cookie-banner-accept">
 					✓ I ACCEPT
-				</button>
+				</label>
 			</div>
 			<div class="cookie-banner__footer">
 				<p class="cookie-banner__fine-print">

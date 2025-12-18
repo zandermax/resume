@@ -590,7 +590,9 @@ body[data-theme='xp'] {
 
   /* XP Close Button */
   .xp-close-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: calc(2rem + 0.25rem);
     right: calc((100vw - 960px) / 2);
@@ -657,12 +659,37 @@ body[data-theme='xp'] {
   }
 }
 
-/* XP Close Button - only show in XP theme */
-.xp-close-btn {
-  display: none;
+/* XP Dialog Toggle Checkbox - hidden but functional */
+.xp-dialog-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
-/* XP Dialog - native dialog element */
+/* XP Dialog Overlay - hidden by default */
+.xp-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--xp-black-30);
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Show overlay when checkbox is checked */
+.xp-dialog-toggle:checked ~ .xp-dialog-overlay {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* XP Dialog - styled as a window */
 .xp-dialog {
   background: var(--xp-button-face, oklch(93% 0.01 85));
   border: 3px solid;
@@ -674,10 +701,13 @@ body[data-theme='xp'] {
   overflow: hidden;
   padding: 0;
   font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
 
-  &::backdrop {
-    background: var(--xp-black-30);
-  }
+/* Animate dialog when visible */
+.xp-dialog-toggle:checked ~ .xp-dialog-overlay .xp-dialog {
+  transform: scale(1);
 }
 
 .xp-dialog__title {
@@ -693,6 +723,9 @@ body[data-theme='xp'] {
 }
 
 .xp-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
   background: linear-gradient(180deg, oklch(65% 0.22 29) 0%, oklch(59% 0.2 29) 50%, oklch(54% 0.18 29) 100%);
@@ -747,6 +780,7 @@ body[data-theme='xp'] {
 }
 
 .xp-dialog__button {
+  display: inline-block;
   padding: 4px 16px;
   font-size: 11px;
   font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
@@ -758,6 +792,7 @@ body[data-theme='xp'] {
   cursor: pointer;
   min-width: 75px;
   transition: background 0.1s;
+  text-align: center;
 
   &:hover {
     background: linear-gradient(180deg, oklch(100% 0 0) 0%, oklch(95% 0.01 85) 100%);

@@ -267,7 +267,23 @@ Components
 }
 
 /* Cookie banner - hidden by default, shown only in brutal theme */
+/* Cookie Banner elements - hidden by default, shown only in brutal theme */
+.cookie-banner-dismiss {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
 .cookie-banner-overlay {
+  display: none;
+}
+
+/* XP Dialog elements - hidden by default, shown only in XP theme */
+.xp-close-btn,
+.xp-dialog-toggle,
+.xp-dialog-overlay {
   display: none;
 }
 
