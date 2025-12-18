@@ -396,7 +396,7 @@ body[data-theme='metro'] {
     border: 0;
 
     &:hover {
-      background: rgba(0, 120, 215, 0.15);
+      background: oklch(57% 0.17 246 / 0.15);
       box-shadow: none;
     }
 
@@ -458,7 +458,7 @@ body[data-theme='metro'] {
   /* Dark mode hover - use lighter blue tint */
   &[data-mode='dark'] {
     dial-selector .dial-label:hover {
-      background: rgba(0, 188, 242, 0.2);
+      background: oklch(75% 0.14 210 / 0.2);
     }
   }
 

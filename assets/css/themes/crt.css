@@ -154,7 +154,7 @@ body[data-theme='crt'] {
     font-size: 0.85rem;
     line-height: 1.4;
     text-shadow: 0 0 8px var(--background-color);
-    box-shadow: 0 0 20px var(--text-color), inset 0 0 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px var(--text-color), inset 0 0 40px oklch(0% 0 0 / 0.3);
     height: 8.4em;
     overflow: hidden;
     position: relative;

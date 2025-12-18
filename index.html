@@ -198,6 +198,24 @@
 		</div>
 	</dialog>
 
+	<!-- Terminal Dialog Modal (visible only when triggered) -->
+	<dialog class="terminal-dialog" id="terminal-dialog">
+		<div class="terminal-dialog__container">
+			<pre class="terminal-dialog__frame">╔══════════════════════════╗
+║  ╔═══ SAVE RESUME ═══╗   ║
+║  ║                   ║   ║
+║  ║   Saving...       ║   ║
+║  ║                   ║   ║
+║  ╚═══════════════════╝   ║
+║                          ║
+║      ┌─────────────┐     ║
+║      │   CANCEL    │     ║
+║      └─────────────┘     ║
+╚══════════════════════════╝</pre>
+			<button class="terminal-dialog__button" id="terminal-dialog-cancel" aria-label="Cancel"></button>
+		</div>
+	</dialog>
+
 	<main class="resume__main">
 		<header class="resume-header">
 			<div class="resume-header__top-row">
@@ -223,9 +241,14 @@
 					</p>
 				</hgroup>
 
-				<a href="./print.html" class="resume-header__printlink" target="_blank" rel="noreferrer">
-					Printable CV - click here
-				</a>
+				<div class="resume-header__buttons">
+					<button id="terminal-save-btn" class="resume-header__savelink">
+						Save resume
+					</button>
+					<a href="./print.html" class="resume-header__printlink" target="_blank" rel="noreferrer">
+						Printable CV - click here
+					</a>
+				</div>
 			</div>
 
 			<div class="resume-header__meta">
@@ -381,33 +404,33 @@
 					<span class="dashboard-metric__label">Last Updated:</span>
 					<span class="dashboard-metric__value">Just Now</span>
 				</div>
-				<div class="dashboard-metric">
+				<div class="dashboard-metric active-processes">
 					<span class="dashboard-metric__label">Active Processes:</span>
-					<span class="dashboard-metric__value">8</span>
+					<span class="dashboard-metric__value"></span>
 				</div>
 			</div>
 		</div>
 
 		<!-- Dashboard Metrics Cards -->
 		<div class="dashboard-metrics-grid">
-			<div class="dashboard-card">
+			<div class="dashboard-card years-experience">
 				<div class="dashboard-card__label">Years Experience</div>
-				<div class="dashboard-card__value">8+</div>
+				<div class="dashboard-card__value"></div>
 				<div class="dashboard-card__status">Active</div>
 			</div>
-			<div class="dashboard-card">
+			<div class="dashboard-card technologies-monitored">
 				<div class="dashboard-card__label">Technologies</div>
-				<div class="dashboard-card__value">25+</div>
+				<div class="dashboard-card__value"></div>
 				<div class="dashboard-card__status">Monitored</div>
 			</div>
-			<div class="dashboard-card">
+			<div class="dashboard-card projects-shipped">
 				<div class="dashboard-card__label">Projects Shipped</div>
-				<div class="dashboard-card__value">50+</div>
+				<div class="dashboard-card__value"></div>
 				<div class="dashboard-card__status">Deployed</div>
 			</div>
-			<div class="dashboard-card">
+			<div class="dashboard-card code-quality">
 				<div class="dashboard-card__label">Code Quality</div>
-				<div class="dashboard-card__value">A+</div>
+				<div class="dashboard-card__value"></div>
 				<div class="dashboard-card__status">Optimal</div>
 			</div>
 		</div>
@@ -827,6 +850,22 @@
 				xpDialog.close();
 			}
 		});
+
+		// Terminal Dialog minimal JS using native dialog
+		const terminalSaveBtn = document.getElementById('terminal-save-btn');
+		const terminalDialog = document.getElementById('terminal-dialog');
+		const terminalDialogCancel = document.getElementById('terminal-dialog-cancel');
+
+		terminalSaveBtn?.addEventListener('click', () => terminalDialog?.showModal());
+		terminalDialogCancel?.addEventListener('click', () => terminalDialog?.close());
+
+		// Close dialog when clicking the backdrop
+		terminalDialog?.addEventListener('click', (e) => {
+			if (e.target === terminalDialog) {
+				terminalDialog.close();
+			}
+		});
+
 	</script>
 </body>
 

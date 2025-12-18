@@ -154,3 +154,25 @@ Nostalgia Theme (Geocities 90s)
   white-space: nowrap;
   width: 100%;
 }
+
+/* Animated Rotating Cursor */
+@keyframes rotateCursor {
+  0%, 24% {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">⭐</text></svg>') 16 16, auto;
+  }
+  25%, 49% {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">💖</text></svg>') 16 16, auto;
+  }
+  50%, 74% {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">✨</text></svg>') 16 16, auto;
+  }
+  75%, 100% {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">🔥</text></svg>') 16 16, auto;
+  }
+}
+
+:root[data-theme='nostalgia'] body {
+  animation: rotateCursor 2s steps(4) infinite;
+}
+
+

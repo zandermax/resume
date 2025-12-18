@@ -26,6 +26,11 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --panel-shadow: oklch(0% 0 0 / 0.08);
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
+  /* Consolidated box-shadow patterns */
+  --dashboard-shadow-sm: var(--dashboard-shadow-sm);
+  --dashboard-shadow-md: var(--dashboard-shadow-md);
+  --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
+
   /* Show dashboard-specific elements */
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
@@ -54,6 +59,11 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --panel-shadow: oklch(0% 0 0 / 0.3);
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
+  /* Consolidated box-shadow patterns */
+  --dashboard-shadow-sm: var(--dashboard-shadow-sm);
+  --dashboard-shadow-md: var(--dashboard-shadow-md);
+  --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
+
   /* Show dashboard-specific elements */
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
@@ -79,6 +89,86 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   }
 }
 
+/* Animated Dashboard Metrics - Simplified with CSS @property */
+@property --years-count {
+  syntax: '<integer>';
+  initial-value: 8;
+  inherits: false;
+}
+
+@property --projects-count {
+  syntax: '<integer>';
+  initial-value: 43;
+  inherits: false;
+}
+
+@property --technologies-count {
+  syntax: '<integer>';
+  initial-value: 22;
+  inherits: false;
+}
+
+@property --processes-count {
+  syntax: '<integer>';
+  initial-value: 7;
+  inherits: false;
+}
+
+/* Animation keyframes */
+@keyframes count-years {
+  from {
+    --years-count: 8;
+  }
+  to {
+    --years-count: 9;
+  }
+}
+
+@keyframes count-projects {
+  from {
+    --projects-count: 43;
+  }
+  to {
+    --projects-count: 65;
+  }
+}
+
+@keyframes count-technologies {
+  from {
+    --technologies-count: 22;
+  }
+  to {
+    --technologies-count: 30;
+  }
+}
+
+@keyframes count-processes {
+  0%,
+  100% {
+    --processes-count: 8;
+  }
+  25% {
+    --processes-count: 9;
+  }
+  50% {
+    --processes-count: 7;
+  }
+  75% {
+    --processes-count: 10;
+  }
+}
+
+@keyframes quality-cycle {
+  0%,
+  49% {
+    content: 'A+';
+  }
+  50%,
+  100% {
+    content: 'A++';
+  }
+}
+
 /* Base typography - system fonts for dashboard aesthetic */
 body[data-theme='dashboard'] {
   font-family: var(--font-family);
@@ -89,7 +179,7 @@ body[data-theme='dashboard'] {
   .resume__main {
     border: 1px solid var(--panel-border);
     border-radius: 8px;
-    box-shadow: 0 4px 12px var(--panel-shadow), 0 0 0 1px var(--panel-border);
+    box-shadow: var(--dashboard-shadow-lg), 0 0 0 1px var(--panel-border);
     background: var(--panel-bg);
     padding: 0;
     position: relative;
@@ -107,7 +197,7 @@ body[data-theme='dashboard'] {
     margin: 1.5rem 1.5rem 1rem;
     font-family: var(--mono-font);
     font-size: 0.8rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
   }
 
   .dashboard-status-banner__content {
@@ -155,6 +245,16 @@ body[data-theme='dashboard'] {
     font-family: var(--mono-font);
   }
 
+  /* Active Processes animation */
+  .active-processes .dashboard-metric__value {
+    animation: count-processes 16s steps(4) infinite;
+    counter-set: processes-count var(--processes-count);
+
+    &::after {
+      content: counter(processes-count);
+    }
+  }
+
   /* Dashboard Metrics Grid - Key Performance Indicators */
   .dashboard-metrics-grid {
     display: grid;
@@ -171,12 +271,12 @@ body[data-theme='dashboard'] {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
     }
   }
 
@@ -195,6 +295,42 @@ body[data-theme='dashboard'] {
     color: var(--metric-highlight);
     font-family: var(--mono-font);
     line-height: 1;
+  }
+
+  /* Years Experience - Animated content */
+  .years-experience .dashboard-card__value {
+    animation: count-years 10s linear infinite;
+    counter-set: years-count var(--years-count);
+
+    &::after {
+      content: counter(years-count) '+';
+    }
+  }
+
+  /* Technologies Monitored - Animated content */
+  .technologies-monitored .dashboard-card__value {
+    animation: count-technologies 30s linear infinite;
+    counter-set: technologies-count var(--technologies-count);
+
+    &::after {
+      content: counter(technologies-count) '+';
+    }
+  }
+
+  /* Projects Shipped - Animated content */
+  .projects-shipped .dashboard-card__value {
+    animation: count-projects 35s linear infinite;
+    counter-set: projects-count var(--projects-count);
+
+    &::after {
+      content: counter(projects-count) '+';
+    }
+  }
+
+  /* Code Quality - Animated content */
+  .code-quality .dashboard-card__value::after {
+    content: 'A+';
+    animation: quality-cycle 10s steps(2) infinite;
   }
 
   .dashboard-card__status {
@@ -247,7 +383,7 @@ body[data-theme='dashboard'] {
     background: var(--panel-bg);
     border-block-end: 2px solid var(--panel-border);
     padding: 1.5rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
   }
 
   .resume-header__name {
@@ -278,11 +414,11 @@ body[data-theme='dashboard'] {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
       border-color: var(--accent-color);
       background: var(--accent-color);
       color: var(--panel-bg);
@@ -302,12 +438,12 @@ body[data-theme='dashboard'] {
     padding: 1rem;
     background: var(--panel-bg);
     border-radius: 6px;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
     }
   }
 
@@ -344,7 +480,7 @@ body[data-theme='dashboard'] {
     border-radius: 6px;
     padding: 1.25rem;
     margin-block-start: 1rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
     position: relative;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -354,7 +490,7 @@ body[data-theme='dashboard'] {
 
     &:hover {
       transform: translateX(4px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
       border-color: var(--accent-color);
 
       &::before {
@@ -447,7 +583,7 @@ body[data-theme='dashboard'] {
     border-radius: 6px;
     padding: 1rem 1rem 1rem 1.25rem;
     margin-block-start: 0.75rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
 
@@ -463,7 +599,7 @@ body[data-theme='dashboard'] {
 
     &:hover {
       transform: translateX(4px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
     }
   }
 
@@ -474,12 +610,12 @@ body[data-theme='dashboard'] {
     border-radius: 6px;
     padding: 1rem;
     margin-block-start: 0.75rem;
-    box-shadow: 0 2px 4px var(--panel-shadow);
+    box-shadow: var(--dashboard-shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateX(4px);
-      box-shadow: 0 4px 8px var(--panel-shadow);
+      box-shadow: var(--dashboard-shadow-md);
     }
   }
 

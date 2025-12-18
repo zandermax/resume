@@ -17,6 +17,40 @@ Skeuomorphic Theme Effects
     oklch(0.77 0.13 85) 100%
   );
 
+  /* Consolidated OKLCH transparency values */
+  --skeu-black-015: oklch(0% 0 0 / 0.015);
+  --skeu-black-03: oklch(0% 0 0 / 0.03);
+  --skeu-black-05: oklch(0% 0 0 / 0.05);
+  --skeu-black-06: oklch(0% 0 0 / 0.06);
+  --skeu-black-08: oklch(0% 0 0 / 0.08);
+  --skeu-black-10: oklch(0% 0 0 / 0.1);
+  --skeu-black-15: oklch(0% 0 0 / 0.15);
+  --skeu-black-20: oklch(0% 0 0 / 0.2);
+  --skeu-black-25: oklch(0% 0 0 / 0.25);
+  --skeu-black-30: oklch(0% 0 0 / 0.3);
+  --skeu-black-35: oklch(0% 0 0 / 0.35);
+  --skeu-black-40: oklch(0% 0 0 / 0.4);
+  --skeu-black-50: oklch(0% 0 0 / 0.5);
+  --skeu-black-60: oklch(0% 0 0 / 0.6);
+  --skeu-black-70: oklch(0% 0 0 / 0.7);
+  --skeu-black-80: oklch(0% 0 0 / 0.8);
+  --skeu-white-03: oklch(100% 0 0 / 0.03);
+  --skeu-white-05: oklch(100% 0 0 / 0.05);
+  --skeu-white-06: oklch(100% 0 0 / 0.06);
+  --skeu-white-08: oklch(100% 0 0 / 0.08);
+  --skeu-white-10: oklch(100% 0 0 / 0.1);
+  --skeu-white-12: oklch(100% 0 0 / 0.12);
+  --skeu-white-20: oklch(100% 0 0 / 0.2);
+  --skeu-white-30: oklch(100% 0 0 / 0.3);
+  --skeu-white-40: oklch(100% 0 0 / 0.4);
+  --skeu-white-50: oklch(100% 0 0 / 0.5);
+
+  /* Consolidated shadow patterns */
+  --skeu-shadow-sm: 0 2px 4px var(--skeu-black-10);
+  --skeu-shadow-md: 0 4px 8px var(--skeu-black-30);
+  --skeu-inset-highlight: inset 0 1px 0 var(--skeu-white-50);
+  --skeu-inset-shadow: inset 0 -1px 0 var(--skeu-black-10);
+
   &[data-mode='light'] {
     --background-color: oklch(0.36 0.05 45);
     --text-color: var(--color-brown);
@@ -38,8 +72,8 @@ Skeuomorphic Theme Effects
     --color-outer-circle: oklch(0.6 0.13 80);
     --color-inner-circle: oklch(0.36 0.05 45);
     --color-hover: oklch(0.42 0.11 50);
-    --knob-shadow: 0 8px 16px rgb(0 0 0 / 0.6), 0 16px 32px rgb(0 0 0 / 0.4), 0 4px 8px rgb(0 0 0 / 0.5),
-      inset 0 3px 6px rgb(255 255 255 / 0.3), inset 0 -4px 8px rgb(0 0 0 / 0.5);
+    --knob-shadow: 0 8px 16px var(--skeu-black-60), 0 16px 32px var(--skeu-black-40), 0 4px 8px var(--skeu-black-50),
+      inset 0 3px 6px var(--skeu-white-30), inset 0 -4px 8px var(--skeu-black-50);
     --background-image: repeating-linear-gradient(
       90deg,
       oklch(0.37 0.06 45) 0px,
@@ -56,36 +90,42 @@ Skeuomorphic Theme Effects
     --paper-color: var(--color-cream);
     --ink-color: var(--color-brown);
     --stitch-color: oklch(0.76 0.08 70);
-    --paper-shadow: 0 2px 4px rgb(0 0 0 / 0.1), 0 4px 8px rgb(0 0 0 / 0.08), 0 8px 16px rgb(0 0 0 / 0.05);
+    --paper-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-08), 0 8px 16px var(--skeu-black-05);
     --paper-texture: repeating-linear-gradient(
         0deg,
         transparent,
         transparent 1px,
-        rgb(0 0 0 / 0.015) 1px,
-        rgb(0 0 0 / 0.015) 2px
+        var(--skeu-black-015) 1px,
+        var(--skeu-black-015) 2px
       ),
-      repeating-linear-gradient(90deg, transparent, transparent 1px, rgb(0 0 0 / 0.015) 1px, rgb(0 0 0 / 0.015) 2px);
-    --leather-texture: radial-gradient(ellipse at 20% 30%, rgb(255 255 255 / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 60%, rgb(0 0 0 / 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 40% 80%, rgb(255 255 255 / 0.03) 0%, transparent 50%);
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        var(--skeu-black-015) 1px,
+        var(--skeu-black-015) 2px
+      );
+    --leather-texture: radial-gradient(ellipse at 20% 30%, var(--skeu-white-08) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, var(--skeu-black-05) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, var(--skeu-white-03) 0%, transparent 50%);
     --sticky-note-color: oklch(0.98 0.1 105);
-    --sticky-note-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.08);
-    --desk-shadow: inset 0 2px 4px rgb(0 0 0 / 0.2);
+    --sticky-note-shadow: 0 4px 6px var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
+    --desk-shadow: inset 0 2px 4px var(--skeu-black-20);
 
     /* Oak desk colors - honey oak for light mode */
     --oak-lite: oklch(82% 0.035 76);
     --oak-base: oklch(74% 0.045 75);
     --oak-mid: oklch(66% 0.055 74);
     --oak-dark: oklch(52% 0.06 73);
-    --oak-sheen: rgba(255, 255, 255, 0.2);
-    --oak-shade: rgba(0, 0, 0, 0.18);
+    --oak-sheen: oklch(100% 0 0 / 0.2);
+    --oak-shade: oklch(0% 0 0 / 0.18);
   }
 
   &[data-mode='dark'] {
     --background-color: oklch(0.32 0.03 45);
     --text-color: oklch(0.86 0.03 60);
     --heading-color: oklch(0.86 0.03 60);
-    --border-color: oklch(0.50 0.04 50);
+    --border-color: oklch(0.5 0.04 50);
     --print-button-text-color: var(--border-color);
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
@@ -103,8 +143,8 @@ Skeuomorphic Theme Effects
     --color-outer-circle: oklch(0.77 0.13 85);
     --color-inner-circle: oklch(0.54 0.04 50);
     --color-hover: oklch(0.26 0 0);
-    --knob-shadow: 0 12px 24px rgb(0 0 0 / 0.8), 0 24px 48px rgb(0 0 0 / 0.6), 0 6px 12px rgb(0 0 0 / 0.7),
-      inset 0 3px 6px rgb(255 255 255 / 0.08), inset 0 -5px 10px rgb(0 0 0 / 0.8);
+    --knob-shadow: 0 12px 24px var(--skeu-black-80), 0 24px 48px var(--skeu-black-60), 0 6px 12px var(--skeu-black-70),
+      inset 0 3px 6px var(--skeu-white-08), inset 0 -5px 10px var(--skeu-black-80);
     --background-image: repeating-linear-gradient(
       90deg,
       oklch(0.32 0.03 45) 0px,
@@ -121,29 +161,29 @@ Skeuomorphic Theme Effects
     --paper-color: oklch(0.38 0.04 50);
     --ink-color: oklch(0.86 0.03 60);
     --stitch-color: oklch(0.77 0.13 85);
-    --paper-shadow: 0 3px 6px rgb(0 0 0 / 0.3), 0 6px 12px rgb(0 0 0 / 0.2), 0 12px 24px rgb(0 0 0 / 0.15);
+    --paper-shadow: 0 3px 6px var(--skeu-black-30), 0 6px 12px var(--skeu-black-20), 0 12px 24px var(--skeu-black-15);
     --paper-texture: repeating-linear-gradient(
         0deg,
         transparent,
         transparent 1px,
-        rgb(0 0 0 / 0.03) 1px,
-        rgb(0 0 0 / 0.03) 2px
+        var(--skeu-black-03) 1px,
+        var(--skeu-black-03) 2px
       ),
-      repeating-linear-gradient(90deg, transparent, transparent 1px, rgb(0 0 0 / 0.03) 1px, rgb(0 0 0 / 0.03) 2px);
-    --leather-texture: radial-gradient(ellipse at 20% 30%, rgb(255 255 255 / 0.05) 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 60%, rgb(0 0 0 / 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 40% 80%, rgb(255 255 255 / 0.03) 0%, transparent 50%);
+      repeating-linear-gradient(90deg, transparent, transparent 1px, var(--skeu-black-03) 1px, var(--skeu-black-03) 2px);
+    --leather-texture: radial-gradient(ellipse at 20% 30%, var(--skeu-white-05) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, var(--skeu-black-10) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, var(--skeu-white-03) 0%, transparent 50%);
     --sticky-note-color: oklch(0.98 0.1 105);
-    --sticky-note-shadow: 0 6px 8px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.3);
-    --desk-shadow: inset 0 3px 6px rgb(0 0 0 / 0.4);
+    --sticky-note-shadow: 0 6px 8px var(--skeu-black-40), 0 2px 4px var(--skeu-black-30);
+    --desk-shadow: inset 0 3px 6px var(--skeu-black-40);
 
     /* Oak desk colors - rich walnut for dark mode */
     --oak-lite: oklch(0.52 0.05 65);
     --oak-base: oklch(0.44 0.06 63);
     --oak-mid: oklch(0.38 0.07 61);
-    --oak-dark: oklch(0.30 0.08 58);
-    --oak-sheen: rgba(255, 255, 255, 0.15);
-    --oak-shade: rgba(0, 0, 0, 0.25);
+    --oak-dark: oklch(0.3 0.08 58);
+    --oak-sheen: oklch(100% 0 0 / 0.15);
+    --oak-shade: oklch(0% 0 0 / 0.25);
   }
 }
 
@@ -163,8 +203,8 @@ body[data-theme='skeuomorph'] {
       background-image: var(--leather-texture);
       border-radius: 4px;
       z-index: -1;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 16px var(--skeu-black-30), 0 16px 32px var(--skeu-black-20),
+        inset 0 2px 4px var(--skeu-white-10);
       opacity: 1;
     }
 
@@ -197,7 +237,7 @@ body[data-theme='skeuomorph'] {
       height: 0;
       border-style: solid;
       border-width: 0 0 24px 24px;
-      border-color: transparent transparent rgb(0 0 0 / 0.08);
+      border-color: transparent transparent var(--skeu-black-08);
       pointer-events: none;
     }
 
@@ -210,7 +250,7 @@ body[data-theme='skeuomorph'] {
       border-style: solid;
       border-width: 0 24px 24px 0;
       border-color: transparent var(--background-color) transparent;
-      box-shadow: -2px 2px 3px rgb(0 0 0 / 0.1);
+      box-shadow: -2px 2px 3px var(--skeu-black-10);
       pointer-events: none;
     }
   }
@@ -223,7 +263,7 @@ body[data-theme='skeuomorph'] {
     position: relative;
     background: var(--paper-color);
     background-image: var(--paper-texture);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), inset 0 -1px 0 rgb(0 0 0 / 0.1), 0 2px 4px rgb(0 0 0 / 0.1);
+    box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10), 0 2px 4px var(--skeu-black-10);
 
     /* Stitching effect */
     &::before {
@@ -243,7 +283,7 @@ body[data-theme='skeuomorph'] {
     margin: -1rem -1rem 1.5rem;
     background: var(--paper-color);
     background-image: var(--paper-texture);
-    box-shadow: 0 4px 8px rgb(0 0 0 / 0.3), inset 0 1px 2px rgb(255 255 255 / 0.5);
+    box-shadow: 0 4px 8px var(--skeu-black-30), inset 0 1px 2px var(--skeu-white-50);
     border: 4px solid var(--leather-color);
 
     * {
@@ -287,7 +327,7 @@ body[data-theme='skeuomorph'] {
     background-image: var(--paper-texture);
     padding: 1rem 1.25rem;
     margin: 1.5rem -0.5rem;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1), 0 4px 8px rgb(0 0 0 / 0.05), inset 0 1px 0 rgb(255 255 255 / 0.5);
+    box-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-05), inset 0 1px 0 var(--skeu-white-50);
     border-inline: 4px solid var(--leather-color);
   }
 
@@ -302,7 +342,7 @@ body[data-theme='skeuomorph'] {
 
     /* Darker leather backing layer */
     background: linear-gradient(135deg, oklch(0.28 0.03 45) 0%, oklch(0.22 0.02 45) 100%);
-    box-shadow: 0 3px 6px rgb(0 0 0 / 0.35), 0 6px 12px rgb(0 0 0 / 0.25), inset 0 1px 0 rgb(255 255 255 / 0.05);
+    box-shadow: 0 3px 6px var(--skeu-black-35), 0 6px 12px var(--skeu-black-25), inset 0 1px 0 var(--skeu-white-05);
 
     /* Lighter placard overlay - using ::before */
     &::before {
@@ -311,12 +351,13 @@ body[data-theme='skeuomorph'] {
       inset: 5px;
       background: linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
       border-radius: 3px;
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.12), inset 0 -1px 0 rgb(0 0 0 / 0.25);
+      box-shadow: 0 2px 4px var(--skeu-black-35), inset 0 1px 0 var(--skeu-white-12),
+        inset 0 -1px 0 var(--skeu-black-25);
       pointer-events: none;
       z-index: 0;
       /* Add subtle leather texture */
-      background-image: radial-gradient(ellipse at 25% 35%, rgb(255 255 255 / 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 65%, rgb(0 0 0 / 0.08) 0%, transparent 50%),
+      background-image: radial-gradient(ellipse at 25% 35%, var(--skeu-white-06) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 65%, var(--skeu-black-08) 0%, transparent 50%),
         linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
     }
 
@@ -340,7 +381,7 @@ body[data-theme='skeuomorph'] {
           left 10px center / 7px 7px no-repeat,
         radial-gradient(circle at center, oklch(0.88 0 0) 0%, oklch(0.72 0 0) 45%, oklch(0.6 0 0) 70%, transparent 72%)
           right 10px center / 7px 7px no-repeat;
-      filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.5));
+      filter: drop-shadow(0 1px 2px var(--skeu-black-50));
     }
 
     /* Ensure all text has consistent light color */
@@ -356,7 +397,7 @@ body[data-theme='skeuomorph'] {
   /* Leather texture on bullets */
   .experience-item__bullets li::before {
     color: var(--leather-color);
-    text-shadow: 0 1px 0 rgb(255 255 255 / 0.2);
+    text-shadow: 0 1px 0 var(--skeu-white-20);
   }
 
   /* Dial selector enhancements */
@@ -374,7 +415,7 @@ body[data-theme='skeuomorph'] {
         position: absolute;
         inset: 12px;
         border-radius: 50%;
-        background: repeating-conic-gradient(from 0deg, rgb(0 0 0 / 0.15) 0deg 4deg, transparent 4deg 8deg);
+        background: repeating-conic-gradient(from 0deg, var(--skeu-black-15) 0deg 4deg, transparent 4deg 8deg);
         pointer-events: none;
       }
     }
@@ -382,8 +423,8 @@ body[data-theme='skeuomorph'] {
     /* Enhanced indicator appearance */
     .indicator {
       background: var(--color-indicator);
-      box-shadow: 0 2px 4px rgb(0 0 0 / 0.4), 0 0 8px var(--color-indicator), inset 0 1px 2px rgb(255 255 255 / 0.3);
-      border: 1px solid rgb(0 0 0 / 0.3);
+      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--color-indicator), inset 0 1px 2px var(--skeu-white-30);
+      border: 1px solid var(--skeu-black-30);
     }
   }
 
@@ -392,9 +433,9 @@ body[data-theme='skeuomorph'] {
     position: relative;
     padding: 1.5rem;
     margin: 0.5rem;
-    background: rgb(0 0 0 / 0.2);
+    background: var(--skeu-black-20);
     border-radius: 8px;
-    box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.3), inset 0 -1px 2px rgb(255 255 255 / 0.05);
+    box-shadow: inset 0 2px 4px var(--skeu-black-30), inset 0 -1px 2px var(--skeu-white-05);
 
     &::before {
       content: '';
@@ -412,8 +453,9 @@ body[data-theme='skeuomorph'] {
     background: var(--metal-gradient);
     color: var(--print-button-text-color, var(--ink-color));
     border: 3px solid var(--stitch-color);
-    box-shadow: 0 4px 6px rgb(0 0 0 / 0.3), inset 0 2px 4px rgb(255 255 255 / 0.4), inset 0 -2px 4px rgb(0 0 0 / 0.3);
-    text-shadow: 0 1px 0 rgb(255 255 255 / 0.3);
+    box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
+      inset 0 -2px 4px var(--skeu-black-30);
+    text-shadow: 0 1px 0 var(--skeu-white-30);
     font-weight: 700;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -430,13 +472,14 @@ body[data-theme='skeuomorph'] {
       );
       background-size: 300% 300%;
       transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgb(0 0 0 / 0.4), inset 0 2px 4px rgb(255 255 255 / 0.5), inset 0 -2px 4px rgb(0 0 0 / 0.2);
+      box-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
+        inset 0 -2px 4px var(--skeu-black-20);
       animation: button-shimmer 2s linear infinite;
     }
 
     &:active {
       transform: translateY(0);
-      box-shadow: 0 2px 3px rgb(0 0 0 / 0.4), inset 0 1px 2px rgb(0 0 0 / 0.3);
+      box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
     }
   }
 
@@ -448,9 +491,9 @@ body[data-theme='skeuomorph'] {
     color: var(--text-color);
     padding: 0.6rem 1rem;
     margin: 0 0 1rem -0.5rem;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 0.2), inset 0 1px 2px rgb(255 255 255 / 0.1);
+    box-shadow: 0 2px 4px var(--skeu-black-20), inset 0 1px 2px var(--skeu-white-10);
     border-inline: 4px solid var(--leather-color);
-    text-shadow: 0 1px 0 rgb(255 255 255 / 0.5), 0 2px 2px rgb(0 0 0 / 0.1);
+    text-shadow: 0 1px 0 var(--skeu-white-50), 0 2px 2px var(--skeu-black-10);
     font-weight: 700;
 
     &::before {
@@ -465,7 +508,7 @@ body[data-theme='skeuomorph'] {
 
   /* Add depth to skills grid items */
   .skills-grid__group {
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), inset 0 -1px 0 rgb(0 0 0 / 0.1), 0 1px 3px rgb(0 0 0 / 0.08);
+    box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
   }
 }
 

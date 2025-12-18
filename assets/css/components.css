@@ -169,6 +169,18 @@ Components
   }
 }
 
+/* BUTTON: Save Resume button (terminal theme only) */
+.resume-header__savelink {
+  display: none; /* Hidden by default, shown only in terminal theme */
+}
+
+/* Container for header buttons */
+.resume-header__buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 /* BUTTON: Printable CV link (visible on screen only) */
 .resume-header__printlink {
   font-family: inherit;
@@ -231,8 +243,8 @@ Components
   background-image: repeating-linear-gradient(
     transparent,
     transparent 24px,
-    rgba(0, 0, 0, 0.05) 24px,
-    rgba(0, 0, 0, 0.05) 25px
+    oklch(0% 0 0 / 0.05) 24px,
+    oklch(0% 0 0 / 0.05) 25px
   );
   box-shadow: var(--sticky-note-shadow);
   transform: rotate(var(--sticky-note-rotation));
@@ -260,9 +272,9 @@ Components
     transform: translateX(-50%);
     width: 60px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    background: oklch(100% 0 0 / 0.3);
+    border: 1px solid oklch(0% 0 0 / 0.05);
+    box-shadow: 0 1px 2px oklch(0% 0 0 / 0.1);
   }
 
   &:hover {
@@ -351,5 +363,6 @@ Components
   background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
   background-size: 400% 400%;
   animation: gradientShift 3s ease infinite;
-  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+  box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
 }
+
