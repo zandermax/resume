@@ -235,7 +235,7 @@ Components
   display: var(--display-sticky-note);
   position: absolute;
   top: 50em;
-  right: 40px;
+  left: clamp(40px, calc(100% - 260px), 1000px);
   width: 220px;
   min-height: 160px;
   padding: 20px;
@@ -313,35 +313,67 @@ Components
   }
 }
 
+.sticky-note__item-3 {
+  display: none;
+}
+
+.sticky-note:has(.sticky-note__checkbox-ashby:checked) .sticky-note__item-3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
 /* Theme-specific element visibility controlled by CSS custom properties */
 
-/* Nostalgia elements */
 .nostalgia-elements {
   display: var(--display-nostalgia-elements);
 }
 
-/* Web 2.0 badges */
 .web2-badges {
   display: var(--display-web2-badges);
 }
 
-/* Dashboard status banner */
 .dashboard-status-banner {
   display: var(--display-dashboard-status);
 }
 
-/* Dashboard metrics grid */
 .dashboard-metrics-grid {
   display: var(--display-dashboard-metrics);
 }
 
-/* Section title variants */
 .resume-section__title--normal {
   display: var(--display-section-title-normal);
 }
 
 .resume-section__title.nostalgia {
   display: var(--display-nostalgia-elements);
+}
+
+/* Hide nostalgia-specific elements by default */
+.nostalgia-marquee {
+  display: none;
+}
+
+/* In nostalgia theme, show marquee and hide normal span for marquee-decorated titles */
+:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='marquee'] > span:first-child {
+  display: none;
+}
+
+:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='marquee'] .nostalgia-marquee {
+  display: block;
+}
+
+:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink']::before,
+:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink']::after {
+  content: attr(data-nostalgia-icon);
+  display: inline-block;
+  animation: spin 2s linear infinite;
+  margin: 0 0.5em;
+}
+
+/* Make blink-decorated titles blink in nostalgia theme */
+:root[data-theme='nostalgia'] .resume-section__title[data-nostalgia-decoration='blink'] {
+  animation: blink 1s step-start infinite;
 }
 
 /* Terminal */
@@ -365,4 +397,3 @@ Components
   animation: gradientShift 3s ease infinite;
   box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
 }
-

@@ -4,24 +4,24 @@
 
 /* Light Mode */
 :root[data-theme='glitch'][data-mode='light'] {
-  --background-color: var(--color-cyan);
-  --text-color: var(--color-magenta);
-  --heading-color: var(--color-magenta);
-  --border-color: var(--color-magenta);
-  --dial-color-ink: var(--color-magenta);
-  --dial-color-selection: var(--color-yellow);
-  --dial-color-indicator: var(--color-yellow);
-  --dial-knob-background: var(--color-green);
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --heading-color: #000000;
+  --border-color: #000000;
+  --dial-color-ink: #000000;
+  --dial-color-selection: #000000;
+  --dial-color-indicator: #ff0000;
+  --dial-knob-background: #f5f5f5;
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: none;
-  --link-color: #ff1493;
-  --link-visited-color: var(--color-green);
-  --section-bg: #ccff00;
-  --header-bg: var(--color-magenta);
-  --accent-color: var(--color-orange-bright);
-  --glitch-primary: var(--color-magenta);
-  --glitch-secondary: var(--color-cyan);
-  --glitch-tertiary: var(--color-yellow);
+  --link-color: #000000;
+  --link-visited-color: #333333;
+  --section-bg: #fafafa;
+  --header-bg: #f0f0f0;
+  --accent-color: #000000;
+  --glitch-primary: #ff0000;
+  --glitch-secondary: #00ffff;
+  --glitch-tertiary: #0000ff;
 
   /* Glitch effect CSS variables */
   --glitch-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
@@ -31,24 +31,24 @@
 
 /* Dark Mode */
 :root[data-theme='glitch'][data-mode='dark'] {
-  --background-color: #1a0033;
-  --text-color: #ccff00;
-  --heading-color: #ccff00;
-  --border-color: var(--color-orange-bright);
-  --dial-color-ink: #ccff00;
-  --dial-color-selection: var(--color-magenta);
-  --dial-color-indicator: var(--color-magenta);
-  --dial-knob-background: #660066;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --heading-color: #ffffff;
+  --border-color: #ffffff;
+  --dial-color-ink: #ffffff;
+  --dial-color-selection: #ffffff;
+  --dial-color-indicator: #ff0000;
+  --dial-knob-background: #1a1a1a;
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: none;
-  --link-color: var(--color-cyan);
-  --link-visited-color: #ff1493;
-  --section-bg: #220044;
-  --header-bg: #330055;
-  --accent-color: var(--color-orange-bright);
-  --glitch-primary: #ccff00;
-  --glitch-secondary: var(--color-magenta);
-  --glitch-tertiary: var(--color-orange-bright);
+  --link-color: #ffffff;
+  --link-visited-color: #cccccc;
+  --section-bg: #0a0a0a;
+  --header-bg: #111111;
+  --accent-color: #ffffff;
+  --glitch-primary: #ff0000;
+  --glitch-secondary: #00ffff;
+  --glitch-tertiary: #0000ff;
 
   /* Glitch effect CSS variables */
   --glitch-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
@@ -100,19 +100,19 @@ KEYFRAME ANIMATIONS
     transform: translateX(0);
   }
   20% {
-    text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
     transform: translateX(-2px);
   }
   40% {
-    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
     transform: translateX(2px);
   }
   60% {
-    text-shadow: -1px 0 #ffff00, 1px 0 #ff00ff;
+    text-shadow: -1px 0 #0000ff, 1px 0 #ff0000;
     transform: translateX(1px);
   }
   80% {
-    text-shadow: 1px 0 #00ffff, -1px 0 #ffff00;
+    text-shadow: 1px 0 #00ffff, -1px 0 #0000ff;
     transform: translateX(-1px);
   }
 }
@@ -121,51 +121,51 @@ KEYFRAME ANIMATIONS
 @keyframes color-shift {
   0%,
   100% {
-    filter: hue-rotate(0deg) saturate(1);
+    filter: contrast(1.1);
   }
   25% {
-    filter: hue-rotate(15deg) saturate(1.3);
+    filter: contrast(1.2);
   }
   50% {
-    filter: hue-rotate(-15deg) saturate(0.8);
+    filter: contrast(1.1);
   }
   75% {
-    filter: hue-rotate(10deg) saturate(1.5);
+    filter: contrast(1.15);
   }
 }
 
-/* Pixel drift - small horizontal shifts */
+/* Pixel drift - random jarring shifts */
 @keyframes pixel-drift {
   0%,
+  8%,
+  16%,
+  30%,
+  48%,
+  70%,
+  85%,
   100% {
     transform: translateX(0) translateY(0);
   }
-  10% {
-    transform: translateX(2px) translateY(0);
+  9% {
+    transform: translateX(2px) translateY(-1px);
   }
-  20% {
-    transform: translateX(-1px) translateY(1px);
+  17% {
+    transform: translateX(-2px) translateY(1px);
   }
-  30% {
-    transform: translateX(0) translateY(-1px);
-  }
-  40% {
+  31%,
+  32% {
     transform: translateX(1px) translateY(0);
   }
+  49%,
   50% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  71% {
+    transform: translateX(2px) translateY(1px);
+  }
+  86%,
+  87% {
     transform: translateX(-2px) translateY(0);
-  }
-  60% {
-    transform: translateX(0) translateY(1px);
-  }
-  70% {
-    transform: translateX(1px) translateY(-1px);
-  }
-  80% {
-    transform: translateX(-1px) translateY(0);
-  }
-  90% {
-    transform: translateX(0) translateY(0);
   }
 }
 
@@ -216,24 +216,12 @@ KEYFRAME ANIMATIONS
     transform: rotate(0deg) skewX(-0.3deg);
   }
   6.25% {
-    transform: rotate(1.5deg) skewX(-0.3deg);
+    transform: rotate(0.7deg) skewX(-0.3deg);
   }
   18.75% {
-    transform: rotate(1.5deg) skewX(-0.3deg);
+    transform: rotate(0.7deg) skewX(-0.3deg);
   }
   18.76% {
-    transform: rotate(0deg) skewX(-0.3deg);
-  }
-  25% {
-    transform: rotate(0deg) skewX(-0.3deg);
-  }
-  25.1% {
-    transform: rotate(2deg) skewX(-0.3deg);
-  }
-  31.25% {
-    transform: rotate(2deg) skewX(-0.3deg);
-  }
-  31.26% {
     transform: rotate(0deg) skewX(-0.3deg);
   }
   100% {
@@ -247,24 +235,12 @@ KEYFRAME ANIMATIONS
     transform: skewX(0.2deg) rotate(0deg);
   }
   8% {
-    transform: skewX(0.2deg) rotate(-1.2deg);
+    transform: skewX(0.2deg) rotate(-0.6deg);
   }
   22% {
-    transform: skewX(0.2deg) rotate(-1.2deg);
+    transform: skewX(0.2deg) rotate(-0.6deg);
   }
   22.1% {
-    transform: skewX(0.2deg) rotate(0deg);
-  }
-  32% {
-    transform: skewX(0.2deg) rotate(0deg);
-  }
-  32.1% {
-    transform: skewX(0.2deg) rotate(-1.8deg);
-  }
-  38% {
-    transform: skewX(0.2deg) rotate(-1.8deg);
-  }
-  38.1% {
     transform: skewX(0.2deg) rotate(0deg);
   }
   100% {
@@ -278,24 +254,12 @@ KEYFRAME ANIMATIONS
     transform: skewX(-0.15deg) rotate(0deg);
   }
   5% {
-    transform: skewX(-0.15deg) rotate(1.8deg);
+    transform: skewX(-0.15deg) rotate(0.8deg);
   }
   20% {
-    transform: skewX(-0.15deg) rotate(1.8deg);
+    transform: skewX(-0.15deg) rotate(0.8deg);
   }
   20.1% {
-    transform: skewX(-0.15deg) rotate(0deg);
-  }
-  28% {
-    transform: skewX(-0.15deg) rotate(0deg);
-  }
-  28.1% {
-    transform: skewX(-0.15deg) rotate(1.3deg);
-  }
-  34% {
-    transform: skewX(-0.15deg) rotate(1.3deg);
-  }
-  34.1% {
     transform: skewX(-0.15deg) rotate(0deg);
   }
   100% {
@@ -309,24 +273,12 @@ KEYFRAME ANIMATIONS
     transform: rotate(0deg);
   }
   7% {
-    transform: rotate(-1.5deg);
+    transform: rotate(-0.7deg);
   }
   24% {
-    transform: rotate(-1.5deg);
+    transform: rotate(-0.7deg);
   }
   24.1% {
-    transform: rotate(0deg);
-  }
-  35% {
-    transform: rotate(0deg);
-  }
-  35.1% {
-    transform: rotate(2.2deg);
-  }
-  41% {
-    transform: rotate(2.2deg);
-  }
-  41.1% {
     transform: rotate(0deg);
   }
   100% {
@@ -340,24 +292,12 @@ KEYFRAME ANIMATIONS
     transform: rotate(0deg);
   }
   4% {
-    transform: rotate(1.1deg);
+    transform: rotate(0.5deg);
   }
   16% {
-    transform: rotate(1.1deg);
+    transform: rotate(0.5deg);
   }
   16.1% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(0deg);
-  }
-  30.1% {
-    transform: rotate(-1.6deg);
-  }
-  36% {
-    transform: rotate(-1.6deg);
-  }
-  36.1% {
     transform: rotate(0deg);
   }
   100% {
@@ -371,23 +311,23 @@ KEYFRAME ANIMATIONS
   82%,
   100% {
     transform: translate(0, 0) skewX(0);
-    filter: hue-rotate(0deg);
+    filter: contrast(1.1);
   }
   83% {
     transform: translate(-8px, 2px) skewX(-2deg);
-    filter: hue-rotate(90deg);
+    filter: contrast(1.3);
   }
   84% {
     transform: translate(10px, -2px) skewX(2deg);
-    filter: hue-rotate(-90deg);
+    filter: contrast(1.2);
   }
   85% {
     transform: translate(-5px, 1px) skewX(-1deg);
-    filter: hue-rotate(45deg);
+    filter: contrast(1.15);
   }
   86% {
     transform: translate(0, 0) skewX(0);
-    filter: hue-rotate(0deg);
+    filter: contrast(1.1);
   }
 }
 
@@ -444,6 +384,9 @@ body[data-theme='glitch'] {
   letter-spacing: 0.03em;
   position: relative;
 
+  /* Performance optimizations */
+  contain: layout style;
+
   /* Global scan line overlay */
   &::before {
     content: '';
@@ -458,7 +401,6 @@ body[data-theme='glitch'] {
     );
     pointer-events: none;
     z-index: 9999;
-    animation: artifact-pulse 3s infinite;
   }
 
   /* Dark mode scan lines */
@@ -499,18 +441,17 @@ body[data-theme='glitch'] {
   .skills-grid__group {
     border: 2px solid var(--border-color);
     position: relative;
-    animation: pixel-drift 5s infinite;
   }
 
   .experience-item,
   .education-item {
     background: var(--section-bg);
     padding: 2rem;
-    animation: border-corrupt 6s infinite;
+    animation: border-corrupt 16s infinite;
   }
 
   .education-item {
-    animation-duration: 7s;
+    animation-duration: 18s;
   }
 
   /* Common horizontal artifact lines */
@@ -522,18 +463,19 @@ body[data-theme='glitch'] {
     right: 0;
     height: 2px;
     opacity: 0.3;
-    animation: h-displace 3s infinite;
+    animation: h-displace 12s infinite;
   }
 
   .experience-item::before {
     top: 10%;
     background: var(--glitch-tertiary);
-    animation-duration: 4s;
+    animation-duration: 14s;
   }
 
   .resume-header__dial-selector::before {
     top: 50%;
     background: var(--glitch-tertiary);
+    animation-duration: 10s;
   }
 
   .experience-item::after {
@@ -545,7 +487,7 @@ body[data-theme='glitch'] {
     height: 1px;
     background: var(--glitch-secondary);
     opacity: 0.4;
-    animation: h-displace 5s infinite reverse;
+    animation: h-displace 16s infinite reverse;
   }
 
   /* Common list items */
@@ -553,19 +495,40 @@ body[data-theme='glitch'] {
   .principles-list__item {
     padding: 1rem;
     margin-block-end: 0.75rem;
-    background: var(--background-color);
+    background: var(--section-bg);
     border: 1px solid var(--border-color);
-    border-inline-start: 4px solid var(--glitch-tertiary);
+    border-inline-start: 4px solid var(--border-color);
     position: relative;
-    animation: pixel-drift 6s infinite;
     box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
+    animation: pixel-drift 18s infinite steps(1, jump-end);
 
-    &:nth-child(odd) {
-      animation-delay: 2s;
+    /* Broken misaligned transforms for list items */
+    &:nth-child(1) {
+      transform: skewX(-0.3deg) rotate(-0.1deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(0.4deg) rotate(0.2deg) translateY(1px);
+      animation-delay: 1.5s;
+    }
+
+    &:nth-child(3) {
+      transform: skewX(-0.2deg) rotate(-0.15deg) translateX(1px);
+      animation-delay: 3s;
+    }
+
+    &:nth-child(4) {
+      transform: skewX(0.35deg) rotate(0.1deg) translateY(-1px);
+      animation-delay: 4.5s;
+    }
+
+    &:nth-child(n + 5) {
+      transform: skewX(-0.25deg) rotate(-0.2deg);
+      animation-delay: 6s;
     }
 
     &:hover {
-      filter: invert(0.15) hue-rotate(30deg);
+      filter: invert(1);
       transform: translateX(3px);
     }
   }
@@ -578,31 +541,18 @@ body[data-theme='glitch'] {
     overflow: visible;
     transform: skewX(-0.3deg);
     filter: contrast(1.15) saturate(1.2);
-    animation: main-tilt-glitch 8s infinite;
-
-    /* Screen tear effect */
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--background-color);
-      opacity: 0.7;
-      pointer-events: none;
-      z-index: 1;
-      animation: screen-tear 4.5s infinite;
-      mix-blend-mode: overlay;
-    }
+    animation: main-tilt-glitch 12s infinite;
 
     /* Compression artifact overlay */
     &::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(90deg, transparent 0px, oklch(70% 0.32 328 / 0.03) 8px, transparent 16px),
-        repeating-linear-gradient(0deg, transparent 0px, oklch(91% 0.15 195 / 0.03) 8px, transparent 16px);
+      background: repeating-linear-gradient(90deg, transparent 0px, var(--glitch-primary) 8px, transparent 16px),
+        repeating-linear-gradient(0deg, transparent 0px, var(--glitch-secondary) 8px, transparent 16px);
       pointer-events: none;
       z-index: 1;
-      animation: artifact-pulse 2.5s infinite alternate;
+      opacity: 0.03;
     }
   }
 
@@ -619,14 +569,13 @@ body[data-theme='glitch'] {
     position: relative;
     transform: skewX(0.2deg);
     box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
-    animation: header-tilt-glitch 10s infinite;
+    animation: header-tilt-glitch 15s infinite;
 
     /* Corrupted header border effects */
     &::before,
     &::after {
       content: '';
       position: absolute;
-      animation: h-displace infinite;
     }
 
     &::before {
@@ -635,7 +584,6 @@ body[data-theme='glitch'] {
       width: 30%;
       height: 4px;
       background: var(--glitch-tertiary);
-      animation-duration: 3s;
     }
 
     &::after {
@@ -644,8 +592,6 @@ body[data-theme='glitch'] {
       width: 40%;
       height: 3px;
       background: var(--glitch-secondary);
-      animation-duration: 4s;
-      animation-direction: reverse;
     }
   }
 
@@ -655,23 +601,20 @@ body[data-theme='glitch'] {
     color: var(--text-color);
     margin-block-end: 0.5rem;
     position: relative;
-    animation: text-glitch 5s infinite;
     text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
+    animation: text-glitch 20s infinite;
   }
 
   .resume-header__role {
     font-size: 1.2rem;
-    color: var(--glitch-tertiary);
-    text-shadow: 2px 2px 0 var(--glitch-secondary), -1px -1px 0 var(--background-color);
-    filter: hue-rotate(180deg);
-    animation: color-shift 6s infinite;
+    color: var(--text-color);
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
   }
 
   .resume-header__meta {
-    color: var(--background-color);
-    text-shadow: 1px 1px 0 var(--glitch-primary), -1px -1px 0 var(--glitch-tertiary);
-    filter: contrast(1.2);
-    animation: pixel-drift 4s infinite;
+    color: var(--text-color);
+    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+    filter: contrast(1.1);
   }
 
   /* ===========================
@@ -691,28 +634,8 @@ body[data-theme='glitch'] {
     letter-spacing: 0.15em;
     position: relative;
     transform: skewX(-0.5deg);
-    animation: h-displace 2.8s infinite steps(3, jump-both);
-    animation-timing-function: steps(5, jump-both);
     box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
-
-    /* Glitched section title pseudo-elements - more jarring */
-    &::before {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding: 0.75rem 1.5rem;
-      color: var(--glitch-primary);
-      opacity: 0;
-      z-index: -1;
-      clip-path: inset(0 0 50% 0);
-      animation: corrupt-flash 4s infinite steps(2, jump-end);
-      transform: translateX(-3px);
-    }
+    animation: text-glitch 16s infinite;
 
     &::after {
       content: '';
@@ -721,59 +644,8 @@ body[data-theme='glitch'] {
       top: 50%;
       width: 20px;
       height: 3px;
-      background: var(--glitch-tertiary);
-      animation: jitter 1.5s infinite steps(8, end);
-    }
-  }
-
-  /* Randomized glitch animations per section */
-  .resume-section:nth-child(odd) .resume-section__title {
-    animation-name: glitch-shake-1;
-  }
-
-  .resume-section:nth-child(2n) .resume-section__title {
-    animation-name: glitch-shake-2;
-  }
-
-  .resume-section:nth-child(3n) .resume-section__title {
-    animation-name: h-displace;
-  }
-
-  /* Jarring flash effect for pseudo-elements */
-  @keyframes corrupt-flash {
-    0%,
-    92%,
-    95%,
-    100% {
-      opacity: 0;
-      transform: translateX(-3px);
-    }
-    93% {
-      opacity: 0.8;
-      transform: translateX(-10px);
-    }
-    94% {
-      opacity: 0.6;
-      transform: translateX(8px);
-    }
-  }
-
-  /* Jarring jitter for after element */
-  @keyframes jitter {
-    0%,
-    85%,
-    92%,
-    100% {
-      transform: translate(0, 0);
-    }
-    86% {
-      transform: translate(-8px, -3px);
-    }
-    88% {
-      transform: translate(5px, 4px);
-    }
-    90% {
-      transform: translate(-3px, -2px);
+      background: var(--glitch-secondary);
+      animation: pixel-drift 6s infinite steps(1, jump-end);
     }
   }
 
@@ -783,13 +655,17 @@ body[data-theme='glitch'] {
 
   .experience-item {
     margin: 1.5rem 0;
-    transform: skewX(0.2deg);
-    filter: contrast(1.1) saturate(1.15);
+    transform: skewX(0.2deg) rotate(0.1deg);
+    filter: contrast(1.1);
     box-shadow: var(--glitch-box-shadow);
 
+    &:nth-child(even) {
+      transform: skewX(-0.25deg) rotate(-0.15deg) translateY(1px);
+    }
+
     &:hover {
-      animation: border-corrupt 0.5s infinite, pixel-drift 1s infinite;
-      filter: contrast(1.2) saturate(1.3);
+      filter: contrast(1.2);
+      animation: pixel-drift 2s infinite steps(1, jump-end);
     }
   }
 
@@ -797,16 +673,15 @@ body[data-theme='glitch'] {
   .education-item__institution {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--glitch-primary);
+    color: var(--text-color);
     margin-block-end: 0.5rem;
-    animation: color-shift 7s infinite;
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
   }
 
   .experience-item__company {
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--text-color);
-    filter: invert(0.1);
   }
 
   /* ===========================
@@ -814,22 +689,57 @@ body[data-theme='glitch'] {
   =========================== */
 
   .experience-item__tech {
-    border: 2px solid var(--glitch-secondary);
-    background: var(--glitch-primary);
-    color: var(--glitch-tertiary);
+    border: 2px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
     font-weight: 600;
     padding: 0.4rem 0.9rem;
     font-size: 0.85rem;
     position: relative;
-    transform: skewX(-2deg);
     box-shadow: var(--glitch-box-shadow-sm);
-    animation: pixel-drift 3s infinite;
-    filter: contrast(1.3) saturate(1.4);
-    text-shadow: 1px 1px 0 oklch(0% 0 0 / 0.3);
+    filter: contrast(1.1);
+    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+
+    /* Broken misaligned transforms for tech badges */
+    &:nth-child(1) {
+      transform: skewX(-2.5deg) rotate(-0.4deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(2deg) rotate(0.3deg) translateY(1px);
+    }
+
+    &:nth-child(3) {
+      transform: skewX(-1.5deg) rotate(-0.2deg) translateY(-1px);
+    }
+
+    &:nth-child(4) {
+      transform: skewX(1.8deg) rotate(0.5deg);
+    }
+
+    &:nth-child(5) {
+      transform: skewX(-2.2deg) rotate(-0.3deg) translateX(1px);
+    }
+
+    &:nth-child(6) {
+      transform: skewX(1.3deg) rotate(0.4deg) translateY(1px);
+    }
+
+    &:nth-child(7) {
+      transform: skewX(-1.8deg) rotate(-0.5deg);
+    }
+
+    &:nth-child(8) {
+      transform: skewX(2.3deg) rotate(0.2deg) translateX(-1px);
+    }
+
+    &:nth-child(n + 9) {
+      transform: skewX(-1.6deg) rotate(-0.4deg) translateY(1px);
+    }
 
     &:hover {
-      filter: invert(1) hue-rotate(180deg);
-      animation: color-shift 0.3s infinite;
+      filter: invert(1);
+      animation: pixel-drift 1s infinite steps(1, jump-end);
     }
   }
 
@@ -841,40 +751,67 @@ body[data-theme='glitch'] {
     border-width: 3px;
     transform: skewX(-0.15deg);
     box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
-    animation: skills-tilt-glitch 9s infinite;
+    animation: skills-tilt-glitch 14s infinite;
 
     &::before {
       content: '';
       position: absolute;
       inset: 0 60% 0 30%;
-      background: repeating-linear-gradient(90deg, transparent 0px, oklch(70% 0.32 328 / 0.05) 1px, transparent 2px);
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        var(--glitch-primary) 1px,
+        transparent 2px,
+        transparent 3px,
+        var(--glitch-secondary) 4px,
+        transparent 5px
+      );
       pointer-events: none;
-      animation: artifact-pulse 3s infinite;
+      opacity: 0.05;
     }
   }
 
   .skills-grid__group {
-    background: var(--background-color);
+    background: var(--section-bg);
     padding: 1rem;
     margin-block-end: 1rem;
-    transform: skewX(0.3deg) translateX(-2px);
-    box-shadow: 2px 0 0 0 var(--glitch-tertiary), -2px 0 0 0 var(--glitch-primary);
+    box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
+    animation: pixel-drift 16s infinite steps(1, jump-end);
 
-    &:nth-child(even) {
-      transform: skewX(-0.3deg) translateX(2px);
+    /* Broken misaligned transforms for each group */
+    &:nth-child(1) {
+      transform: skewX(0.5deg) translateX(-2px) rotate(-0.2deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(-0.4deg) translateX(1px) rotate(0.3deg);
       animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+      transform: skewX(0.3deg) translateY(1px) rotate(-0.1deg);
+      animation-delay: 2s;
+    }
+
+    &:nth-child(4) {
+      transform: skewX(-0.6deg) translateX(-1px) rotate(0.2deg);
+      animation-delay: 3s;
+    }
+
+    &:nth-child(n + 5) {
+      transform: skewX(0.4deg) translateX(2px) rotate(-0.3deg);
+      animation-delay: 4s;
     }
   }
 
   .skills-grid__title {
     font-weight: 700;
     font-size: 1.1rem;
-    color: var(--glitch-primary);
-    text-shadow: 1px 1px 0 var(--glitch-tertiary);
-    border-block-end: 2px solid var(--glitch-secondary);
+    color: var(--text-color);
+    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+    border-block-end: 2px solid var(--border-color);
     padding-block-end: 0.5rem;
     margin-block-end: 0.75rem;
-    animation: color-shift 8s infinite;
   }
 
   /* ===========================
@@ -884,12 +821,16 @@ body[data-theme='glitch'] {
   .community-list,
   .principles-list {
     box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
-    animation: list-tilt-glitch 11s infinite;
+    animation: list-tilt-glitch 16s infinite;
   }
 
   .education-item {
-    transform: skewX(-0.25deg);
+    transform: skewX(-0.25deg) rotate(-0.2deg);
     box-shadow: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
+
+    &:nth-child(even) {
+      transform: skewX(0.3deg) rotate(0.15deg) translateX(1px);
+    }
   }
 
   /* ===========================
@@ -898,22 +839,20 @@ body[data-theme='glitch'] {
 
   a:not(.resume-header__printlink) {
     text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: var(--glitch-primary);
+    text-decoration-style: solid;
+    text-decoration-color: var(--text-color);
     transition: all 0.2s ease;
     position: relative;
+    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
 
     &:hover {
-      color: var(--glitch-secondary);
-      background: var(--glitch-tertiary);
       text-decoration: none;
-      filter: invert(1) hue-rotate(180deg);
-      animation: text-glitch 0.5s infinite;
+      filter: invert(1);
       padding: 2px 4px;
     }
 
     &:visited {
-      filter: hue-rotate(90deg);
+      opacity: 0.7;
     }
   }
 
@@ -923,8 +862,8 @@ body[data-theme='glitch'] {
 
   .resume-header__printlink {
     border: 3px solid var(--border-color);
-    background: var(--glitch-primary);
-    color: var(--background-color);
+    background: var(--background-color);
+    color: var(--text-color);
     font-weight: 700;
     padding: 1rem 2rem;
     text-transform: uppercase;
@@ -933,24 +872,23 @@ body[data-theme='glitch'] {
     position: relative;
     text-decoration: none;
     transform: skewX(-3deg);
-    box-shadow: 5px 5px 0 0 var(--glitch-secondary), -3px -3px 0 0 var(--glitch-tertiary);
-    animation: border-corrupt 4s infinite, pixel-drift 2s infinite;
-    filter: contrast(1.3) saturate(1.5);
+    box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
+    filter: contrast(1.1);
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
 
     &:hover {
-      animation: text-glitch 0.2s infinite, color-shift 0.3s infinite;
-      filter: invert(1) contrast(1.5);
+      filter: invert(1);
       transform: skewX(3deg);
     }
 
     &::before {
-      content: '⚠ ';
-      margin-inline-start: 4px;
+      content: '⚠';
+      margin-inline-start: 1em;
     }
 
     &::after {
-      content: ' ⚠';
-      margin-inline-start: 4px;
+      content: '⚠';
+      margin-inline-start: 1em;
     }
   }
 
@@ -960,78 +898,89 @@ body[data-theme='glitch'] {
 
   dial-selector {
     position: relative;
-    filter: contrast(1.2) saturate(1.3);
+    filter: contrast(1.1);
 
     .knob {
       border: 3px solid var(--border-color);
-      box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 0 0 0 6px var(--glitch-tertiary),
-        5px 5px 10px oklch(0% 0 0 / 0.3);
+      box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
       background: var(--dial-knob-background);
-      animation: border-corrupt 5s infinite;
-      transform: rotate(2deg);
+      transform: rotate(0.5deg) translateX(-1px) translateY(1px);
+      animation: pixel-drift 14s infinite steps(1, jump-end);
     }
 
     .indicator {
       width: 14px;
       height: 14px;
       background: var(--dial-color-indicator);
-      border: 2px solid var(--glitch-secondary);
-      box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-tertiary);
-      animation: pixel-drift 1.5s infinite;
-      transform: rotate(-2deg);
+      border: 2px solid var(--border-color);
+      box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
+      transform: rotate(-2deg) translateX(1px);
+      animation: pixel-drift 5s infinite steps(1, jump-end);
     }
 
     .dial-label {
-      background: var(--background-color);
+      background: var(--section-bg);
       border: 2px solid var(--border-color);
       padding: 0.4rem 1rem;
       font-weight: 600;
       font-size: 0.9rem;
       color: var(--text-color);
       box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-      animation: pixel-drift 4s infinite;
-      transform: skewX(-1deg);
+      text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+      animation: pixel-drift 12s infinite steps(1, jump-end);
 
-      &:nth-child(odd) {
-        animation-delay: 1.5s;
-        transform: skewX(1deg);
+      /* Broken misaligned transforms for each label */
+      &:nth-child(1) {
+        transform: skewX(-2deg) rotate(-0.3deg) translateY(-1px);
+      }
+
+      &:nth-child(2) {
+        transform: skewX(1.5deg) rotate(0.5deg) translateY(1px);
+        animation-delay: 1s;
+      }
+
+      &:nth-child(3) {
+        transform: skewX(-0.8deg) rotate(-0.2deg) translateX(1px);
+        animation-delay: 2s;
+      }
+
+      &:nth-child(4) {
+        transform: skewX(2deg) rotate(0.4deg) translateY(-1px);
+        animation-delay: 3s;
+      }
+
+      &:nth-child(5) {
+        transform: skewX(-1.2deg) rotate(-0.6deg) translateX(-1px);
+        animation-delay: 4s;
       }
 
       &:hover {
-        background: var(--glitch-tertiary);
-        color: var(--background-color);
-        filter: invert(0.2) hue-rotate(45deg);
-        animation: color-shift 0.5s infinite;
+        filter: invert(1);
       }
 
       &.active {
-        background: var(--glitch-primary);
-        color: var(--background-color);
-        border-color: var(--glitch-secondary);
-        box-shadow: 4px 4px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-tertiary);
+        filter: invert(1);
+        border-color: var(--border-color);
+        box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
         font-weight: 700;
-        animation: text-glitch 3s infinite;
-        filter: contrast(1.4) saturate(1.6);
+        animation: text-glitch 8s infinite;
       }
     }
 
     .spoke-line {
       stroke-width: 2px;
-      opacity: 0.5;
-      animation: artifact-pulse 4s infinite;
-      stroke: var(--glitch-primary);
-      animation-delay: 1s;
+      opacity: 0.3;
+      stroke: var(--border-color);
 
       &:nth-child(even) {
-        stroke: var(--glitch-secondary);
-        animation-delay: 2s;
+        opacity: 0.2;
       }
     }
   }
 
   .resume-header__dial-selector {
     box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
-    animation: dial-selector-tilt-glitch 12s infinite;
+    animation: dial-selector-tilt-glitch 18s infinite;
 
     h3 {
       color: var(--text-color);
@@ -1040,7 +989,6 @@ body[data-theme='glitch'] {
       font-size: 1.1rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      animation: text-glitch 6s infinite;
     }
   }
 
@@ -1051,14 +999,15 @@ body[data-theme='glitch'] {
   .experience-item__bullets li {
     &::before {
       content: '◆';
-      color: var(--glitch-primary);
+      color: var(--text-color);
       font-size: 0.9rem;
-      animation: color-shift 5s infinite;
+      text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
     }
 
     &:nth-child(even)::before {
       content: '◇';
-      color: var(--glitch-secondary);
+      color: var(--text-color);
+      text-shadow: 1px 0 var(--glitch-secondary), -1px 0 var(--glitch-primary);
     }
   }
 
@@ -1130,10 +1079,10 @@ body[data-theme='glitch'] {
   .glitchable {
     display: inline-block;
     position: relative;
-    color: var(--glitch-primary);
+    color: var(--text-color);
     transform-origin: center;
     animation: glitch-char 0.3s infinite;
-    text-shadow: 2px 0 var(--glitch-secondary), -2px 0 var(--glitch-tertiary);
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
 
     &:nth-child(2n) {
       animation-delay: 0.1s;

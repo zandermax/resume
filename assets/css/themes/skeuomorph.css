@@ -501,6 +501,29 @@ body[data-theme='skeuomorph'] {
   .skills-grid__group {
     box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
   }
+
+  /* Sticky note interactive behavior */
+  .sticky-note {
+    cursor: pointer;
+
+    /* Style for checked checkboxes: strikethrough and reduced opacity on adjacent text */
+    input[type='checkbox']:checked + span {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  }
+
+  /* Hide third item by default */
+  .sticky-note__item-3 {
+    display: none;
+  }
+
+  /* Style for "again" text */
+  .sticky-note__again {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 /* Shimmer animation for print button hover */

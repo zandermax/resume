@@ -11,134 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<script src="./dial-selector.js"></script>
-
-	<script>
-		// ===========================
-		// Glitch Theme - Mark Random Characters
-		// ===========================
-
-		// Mark random characters with a class for CSS-based glitch effect
-		function markGlitchableCharacters() {
-			const mainContainer = document.querySelector('.resume__main');
-			if (!mainContainer) return;
-
-			// Get all sections except the header
-			const contentElements = Array.from(mainContainer.children).filter(child =>
-				!child.classList.contains('resume-header')
-			);
-
-			// Process each content section
-			contentElements.forEach(element => {
-				// Work with text nodes to preserve HTML structure
-				const walker = document.createTreeWalker(
-					element,
-					NodeFilter.SHOW_TEXT,
-					null,
-					false
-				);
-
-				const textNodes = [];
-				let node;
-				while (node = walker.nextNode()) {
-					textNodes.push(node);
-				}
-
-				// Wrap random characters in spans
-				textNodes.forEach(textNode => {
-					const text = textNode.textContent;
-					if (!text.trim()) return;
-
-					const fragment = document.createDocumentFragment();
-
-					for (let i = 0; i < text.length; i++) {
-						const char = text[i];
-
-						// 3% chance to mark character as glitchable
-						if (char.trim() && Math.random() < 0.03) {
-							const span = document.createElement('span');
-							span.className = 'glitchable';
-							span.textContent = char;
-							fragment.appendChild(span);
-						} else {
-							fragment.appendChild(document.createTextNode(char));
-						}
-					}
-
-					textNode.parentNode.replaceChild(fragment, textNode);
-				});
-			});
-		}
-
-		// ===========================
-		// Theme Management
-		// ===========================
-
-		// Map display names to internal theme names
-		const THEME_DISPLAY_TO_INTERNAL = {
-			'current': 'default',
-			'1985': 'crt',
-			'1992': 'terminal',
-			'1996': 'nostalgia',
-			'2001': 'xp',
-			'2004': 'web2gloss',
-			'2007': 'skeuomorph',
-			'2012': 'metro',
-			'2017': 'brutal',
-			'2020': 'dashboard',
-			'2027': 'neoswiss',
-			'2039': 'glitch'
-		};
-
-		// Current selections
-		let currentTheme = 'default';
-		let currentMode = 'light';
-
-		// Apply a theme+mode combination by setting data attributes
-		// CSS handles ALL theme behavior via [data-theme] selectors and CSS custom properties
-		function applyThemeAndMode() {
-			// Set attributes on both :root (html) and body for CSS targeting
-			// :root is needed for CSS custom properties, body for theme-specific rules
-			document.documentElement.setAttribute('data-theme', currentTheme);
-			document.documentElement.setAttribute('data-mode', currentMode);
-			document.body.setAttribute('data-theme', currentTheme);
-			document.body.setAttribute('data-mode', currentMode);
-		}
-
-		// Handle theme change from theme selector
-		function handleThemeChange(event) {
-			const displayName = event.detail.value.toLowerCase();
-			// Map display name to internal theme name
-			currentTheme = THEME_DISPLAY_TO_INTERNAL[displayName] || displayName;
-			applyThemeAndMode();
-		}
-
-		// Handle mode change from mode selector
-		function handleModeChange(event) {
-			currentMode = event.detail.value.toLowerCase();
-			applyThemeAndMode();
-		}
-
-		// Initialize theme on page load
-		document.addEventListener('DOMContentLoaded', () => {
-			// Mark random characters for glitch effect (CSS will handle the styling)
-			markGlitchableCharacters();
-
-			// Apply default theme and mode
-			applyThemeAndMode();
-
-			// Attach event listeners to dial-selectors
-			const themeSelector = document.getElementById('theme-selector');
-			const modeSelector = document.getElementById('mode-selector');
-
-			if (themeSelector) {
-				themeSelector.addEventListener('change', handleThemeChange);
-			}
-
-			if (modeSelector) {
-				modeSelector.addEventListener('change', handleModeChange);
-			}
-		});
-	</script>
+	<script src="./theme-manager.js"></script>
 
 	<script type="application/ld+json">
 	{
@@ -167,17 +40,22 @@
 
 <body class="resume" data-theme="default">
 	<!-- Sticky Note (visible only in skeu theme) -->
-	<div class="sticky-note">
+	<label class="sticky-note" for="sticky-note-checkbox-ashby">
 		<p style="margin: 0 0 12px 0; font-size: 16px; font-weight: bold; text-decoration: underline;">Todo:</p>
 		<div style="margin: 0 0 10px 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" checked disabled style="margin-block-start: 4px; cursor: default;">
-			<span style="text-decoration: line-through; opacity: 0.6;">Create website</span>
+			<input type="checkbox" checked style="margin-block-start: 4px; cursor: default;">
+			<span>Create website</span>
 		</div>
-		<div style="margin: 0; display: flex; align-items: flex-start; gap: 8px;">
-			<input type="checkbox" disabled style="margin-block-start: 4px; cursor: default;">
-			<span>Apply to awesome Ashby job!</span>
+		<div class="sticky-note__item-2" style="margin: 0 0 10px 0; display: flex; align-items: flex-start; gap: 8px;">
+			<input type="checkbox" id="sticky-note-checkbox-ashby" class="sticky-note__checkbox-ashby"
+				style="margin-block-start: 4px; cursor: default;">
+			<span class="sticky-note__text-ashby">Apply to awesome Ashby job!</span>
 		</div>
-	</div>
+		<div class="sticky-note__item-3" style="margin: 0;">
+			<input type="checkbox" style="margin-block-start: 4px; cursor: default;">
+			<span>Update resume <span class="sticky-note__again">again</span></span>
+		</div>
+	</label>
 
 	<!-- XP Close Button (visible only in XP theme) -->
 	<button class="xp-close-btn" id="xp-close-btn" aria-label="Close">×</button>
@@ -371,14 +249,16 @@
 			</div>
 			<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
 				<div class="web2-badge web2-badge--orange">
-					<span>🔧 POWERED BY HTML</span>
+					<!-- "< POWERED BY HTML >" -->
+					<span>&lt; POWERED BY HTML &gt;</span>
 				</div>
 				<div class="web2-badge web2-badge--blue">
-					<span>✓ VALID CSS</span>
+					<!-- "{ } VALID CSS" -->
+					<span>&lbrace; &rbrace; VALID CSS</span>
 				</div>
-				<div class="web2-badge web2-badge--orange-alt">
+				<a href="./feed.xml.html" target="_blank" rel="noreferrer" class="web2-badge web2-badge--orange-alt" style="text-decoration: none;">
 					<span class="rss-icon">RSS FEED</span>
-				</div>
+				</a>
 				<div class="web2-badge web2-badge--green">
 					<span>⚡ AJAX ENABLED</span>
 				</div>
@@ -441,12 +321,7 @@
 
 		<!-- SUMMARY -->
 		<section class="resume-section resume-section--summary">
-			<!-- Normal title (shown by default and in all themes except nostalgia) -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Professional Summary</span></h2>
-			<!-- Nostalgia blink version (shown only in nostalgia theme, index 0 = even) -->
-			<h2 class="resume-section__title nostalgia blink">
-				<span class="retro-gif spinning">🔥</span> Professional Summary <span class="retro-gif spinning">🔥</span>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="blink" data-nostalgia-icon="🔥"><span>Professional Summary</span></h2>
 			<div class="resume-section__content">
 				<p class="resume-section__text">
 					I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
@@ -475,14 +350,12 @@
 
 		<!-- WHY ASHBY -->
 		<section class="resume-section resume-section--ashby">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Why Ashby &amp; This Role</span></h2>
-			<!-- Nostalgia marquee version (index 1 = odd) -->
-			<h2 class="resume-section__title nostalgia">
-				<div class="marquee-container">
-					<div class="marquee">⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐</div>
-				</div>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="marquee"><span>Why Ashby &amp; This Role</span><span
+					class="nostalgia-marquee">
+					<div class="marquee-container">
+						<div class="marquee">⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐ --- ⭐ Why Ashby &amp; This Role ⭐</div>
+					</div>
+				</span></h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
 					<strong>Design + build, together.</strong> I've always gravitated toward roles where I can both design
@@ -515,12 +388,8 @@
 
 		<!-- CORE SKILLS -->
 		<section class="resume-section resume-section--skills">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Core Skills (Relevant to Ashby)</span></h2>
-			<!-- Nostalgia blink version (index 2 = even) -->
-			<h2 class="resume-section__title nostalgia blink">
-				<span class="retro-gif spinning">💫</span> Core Skills (Relevant to Ashby) <span class="retro-gif spinning">💫</span>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="blink" data-nostalgia-icon="💫"><span>Core Skills (Relevant to
+					Ashby)</span></h2>
 
 			<div class="skills-grid">
 				<div class="skills-grid__group">
@@ -573,15 +442,12 @@
 
 		<!-- EXPERIENCE -->
 		<section class="resume-section resume-section--experience">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Professional Experience</span>
-			</h2>
-			<!-- Nostalgia marquee version (index 3 = odd) -->
-			<h2 class="resume-section__title nostalgia">
-				<div class="marquee-container">
-					<div class="marquee">✨ Professional Experience ✨ --- ✨ Professional Experience ✨ --- ✨ Professional Experience ✨</div>
-				</div>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="marquee"><span>Professional Experience</span><span
+					class="nostalgia-marquee">
+					<div class="marquee-container">
+						<div class="marquee">✨ Professional Experience ✨ --- ✨ Professional Experience ✨ --- ✨ Professional Experience ✨</div>
+					</div>
+				</span></h2>
 
 			<!-- CHECK24 -->
 			<article class="experience-item">
@@ -761,12 +627,8 @@
 
 		<!-- OPEN SOURCE & COMMUNITY -->
 		<section class="resume-section resume-section--community">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Open Source, Standards &amp; Community</span></h2>
-			<!-- Nostalgia blink version (index 4 = even) -->
-			<h2 class="resume-section__title nostalgia blink">
-				<span class="retro-gif spinning">🌟</span> Open Source, Standards &amp; Community <span class="retro-gif spinning">🌟</span>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="blink" data-nostalgia-icon="🌟"><span>Open Source, Standards &amp;
+					Community</span></h2>
 
 			<ul class="community-list">
 				<li class="community-list__item">
@@ -792,14 +654,11 @@
 
 		<!-- EDUCATION -->
 		<section class="resume-section resume-section--education">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>Education</span></h2>
-			<!-- Nostalgia marquee version (index 5 = odd) -->
-			<h2 class="resume-section__title nostalgia">
-				<div class="marquee-container">
-					<div class="marquee">👷 Education 👷 --- 👷 Education 👷 --- 👷 Education 👷</div>
-				</div>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="marquee"><span>Education</span><span class="nostalgia-marquee">
+					<div class="marquee-container">
+						<div class="marquee">👷 Education 👷 --- 👷 Education 👷 --- 👷 Education 👷</div>
+					</div>
+				</span></h2>
 
 			<article class="education-item">
 				<h3 class="education-item__institution">Iowa State University</h3>
@@ -814,12 +673,7 @@
 
 		<!-- CORE PRINCIPLES -->
 		<section class="resume-section resume-section--principles">
-			<!-- Normal title -->
-			<h2 class="resume-section__title resume-section__title--normal"><span>How I Prefer to Work</span></h2>
-			<!-- Nostalgia blink version (index 6 = even) -->
-			<h2 class="resume-section__title nostalgia blink">
-				<span class="retro-gif spinning">📧</span> How I Prefer to Work <span class="retro-gif spinning">📧</span>
-			</h2>
+			<h2 class="resume-section__title" data-nostalgia-decoration="blink" data-nostalgia-icon="📧"><span>How I Prefer to Work</span></h2>
 			<ul class="principles-list">
 				<li class="principles-list__item">
 					<strong>Design through code.</strong> I'm most comfortable when I can bounce between design tools like Figma, rough sketches, and
@@ -845,36 +699,7 @@
 		</section>
 	</main>
 
-	<script>
-		// XP Dialog minimal JS using native dialog
-		const xpCloseBtn = document.getElementById('xp-close-btn');
-		const xpDialog = document.getElementById('xp-dialog');
-
-		xpCloseBtn?.addEventListener('click', () => xpDialog?.showModal());
-		xpDialog?.addEventListener('click', (e) => {
-			if (e.target.id === 'xp-dialog-ok') {
-				window.close(); // Actually try to close the window!
-			} else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
-				xpDialog.close();
-			}
-		});
-
-		// Terminal Dialog minimal JS using native dialog
-		const terminalSaveBtn = document.getElementById('terminal-save-btn');
-		const terminalDialog = document.getElementById('terminal-dialog');
-		const terminalDialogCancel = document.getElementById('terminal-dialog-cancel');
-
-		terminalSaveBtn?.addEventListener('click', () => terminalDialog?.showModal());
-		terminalDialogCancel?.addEventListener('click', () => terminalDialog?.close());
-
-		// Close dialog when clicking the backdrop
-		terminalDialog?.addEventListener('click', (e) => {
-			if (e.target === terminalDialog) {
-				terminalDialog.close();
-			}
-		});
-
-	</script>
+	<script src="./dialog-handlers.js"></script>
 </body>
 
 </html>

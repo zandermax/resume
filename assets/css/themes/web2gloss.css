@@ -383,7 +383,7 @@ body[data-theme='web2gloss'] {
   }
 
   /* Links - Glossy with glow on hover */
-  a:not(.resume-header__printlink) {
+  a:not(.resume-header__printlink):not(.web2-badge) {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: var(--web2-transition-fast);
@@ -397,6 +397,17 @@ body[data-theme='web2gloss'] {
 
     &:visited {
       border-block-end-color: var(--link-visited-color);
+    }
+  }
+
+  /* Ensure web2-badge links maintain badge styling */
+  a.web2-badge {
+    border: none;
+
+    &:hover,
+    &:visited {
+      color: var(--color-white);
+      text-decoration: none;
     }
   }
 
@@ -467,7 +478,7 @@ body[data-theme='web2gloss'] {
       border-radius: var(--web2-radius-sm);
       background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
       border: 1px solid var(--border-color);
-      padding: 0.6rem 1rem;
+      padding: 0 1rem;
       font-weight: 600;
       font-size: 0.9rem;
       color: var(--text-color);
@@ -537,6 +548,8 @@ body[data-theme='web2gloss'] {
     min-width: 100px;
     text-align: center;
     transition: var(--web2-transition-fast);
+    display: inline-block;
+    cursor: pointer;
 
     &::before {
       content: '';
@@ -554,12 +567,18 @@ body[data-theme='web2gloss'] {
     span {
       position: relative;
       z-index: 1;
+      color: inherit;
     }
 
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 12px var(--web2-glow),
         var(--web2-shadow-inset-strong);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: var(--web2-shadow-sm), inset 0 2px 4px oklch(0% 0 0 / 0.2);
     }
   }
 
