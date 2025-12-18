@@ -226,11 +226,6 @@ body[data-theme='neoswiss'] {
     padding: 0;
     margin: 0 0 calc(var(--swiss-grid) * 8) 0;
     transition: none;
-
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
   }
 
   /* Role - Large, bold */
@@ -342,7 +337,6 @@ body[data-theme='neoswiss'] {
 
     &:hover {
       border-block-end: 1px solid var(--accent-color);
-      transform: none;
     }
 
     &:visited {
@@ -365,14 +359,10 @@ body[data-theme='neoswiss'] {
     text-decoration: none;
 
     &:hover {
-      transform: none;
-      box-shadow: none;
       opacity: 0.9;
     }
 
     &:active {
-      transform: none;
-      box-shadow: none;
       opacity: 0.8;
     }
   }
@@ -400,14 +390,12 @@ body[data-theme='neoswiss'] {
 
       &:hover {
         background: transparent;
-        box-shadow: none;
         color: var(--accent-color);
       }
 
       &.active {
         background: var(--accent-color);
         color: #ffffff;
-        box-shadow: none;
         font-weight: 600;
       }
     }

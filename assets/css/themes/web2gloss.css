@@ -467,7 +467,7 @@ body[data-theme='web2gloss'] {
       border-radius: var(--web2-radius-sm);
       background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
       border: 1px solid var(--border-color);
-      padding: 0 1rem;
+      padding: 0.6rem 1rem;
       font-weight: 600;
       font-size: 0.9rem;
       color: var(--text-color);

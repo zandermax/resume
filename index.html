@@ -201,18 +201,22 @@
 	<!-- Terminal Dialog Modal (visible only when triggered) -->
 	<dialog class="terminal-dialog" id="terminal-dialog">
 		<div class="terminal-dialog__container">
-			<pre class="terminal-dialog__frame">╔══════════════════════════╗
-║  ╔═══ SAVE RESUME ═══╗   ║
-║  ║                   ║   ║
-║  ║   Saving...       ║   ║
-║  ║                   ║   ║
-║  ╚═══════════════════╝   ║
-║                          ║
-║      ┌─────────────┐     ║
-║      │   CANCEL    │     ║
-║      └─────────────┘     ║
-╚══════════════════════════╝</pre>
+			<pre class="terminal-dialog__frame">╔════════════════════════════════════════════════════╗
+║   ╔═══════════════ SAVE RESUME ═══════════════╗    ║
+║   ║                                           ║    ║
+║   ║   <span class="terminal-dialog__message"></span>                                        ║    ║
+║   ║                                           ║    ║
+║   ║   <span class="terminal-dialog__loading-bar"></span>  ║    ║
+║   ║                                           ║    ║
+║   ╚═══════════════════════════════════════════╝    ║
+║                                                    ║
+║               ┌───────────────────┐                ║
+║               │<span class="terminal-dialog__button-text"></span>│                ║
+║               └───────────────────┘                ║
+╚════════════════════════════════════════════════════╝</pre>
 			<button class="terminal-dialog__button" id="terminal-dialog-cancel" aria-label="Cancel"></button>
+			<a href="./print.html?print=true" target="_blank" rel="noreferrer" class="terminal-dialog__print-overlay"
+				aria-label="Print Resume"></a>
 		</div>
 	</dialog>
 
@@ -443,26 +447,30 @@
 			<h2 class="resume-section__title nostalgia blink">
 				<span class="retro-gif spinning">🔥</span> Professional Summary <span class="retro-gif spinning">🔥</span>
 			</h2>
-			<p class="resume-section__text">
-				I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
-				end-to-end features in React, TypeScript, and Node. I like working in the space where product, design, and
-				engineering combine. At Ashby this would look something like taking a problem brief, talking to users, sketching flows, iterating in
-				Figma or
-				low-fidelity prototypes, and then turning those into polished, composable components in code.
-			</p>
-			<p class="resume-section__text">
-				Across roles at CHECK24, Amazon Web Services, Microsoft, and earlier-stage companies, I've led front-end
-				designs and implementations for systems used by thousands of internal and external users. My work ranges from
-				micro-frontends and shared component libraries to interaction design, information hierarchy, and accessibility
-				improvements that materially change how fast and confidently people can work.
-			</p>
-			<p class="resume-section__text">
-				I'm applying to Ashby because I'm looking for a place where engineers are trusted to own the full loop, including
-				understanding customer problems, writing product specs, wireframing solutions, and implementing them end-to-end
-				in a shared design system. I would thrive in the environment described at Ashby: minimal process, deep ownership, and a strong focus
-				on
-				high-quality tools for working professionals.
-			</p>
+			<div class="resume-section__content">
+				<p class="resume-section__text">
+					I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
+					end-to-end features in React, TypeScript, and Node. I like working in the space where product, design, and
+					engineering combine. At Ashby this would look something like taking a problem brief, talking to users, sketching flows, iterating
+					in
+					Figma or
+					low-fidelity prototypes, and then turning those into polished, composable components in code.
+				</p>
+				<p class="resume-section__text">
+					Across roles at CHECK24, Amazon Web Services, Microsoft, and earlier-stage companies, I've led front-end
+					designs and implementations for systems used by thousands of internal and external users. My work ranges from
+					micro-frontends and shared component libraries to interaction design, information hierarchy, and accessibility
+					improvements that materially change how fast and confidently people can work.
+				</p>
+				<p class="resume-section__text">
+					I'm applying to Ashby because I'm looking for a place where engineers are trusted to own the full loop, including
+					understanding customer problems, writing product specs, wireframing solutions, and implementing them end-to-end
+					in a shared design system. I would thrive in the environment described at Ashby: minimal process, deep ownership, and a strong
+					focus
+					on
+					high-quality tools for working professionals.
+				</p>
+			</div>
 		</section>
 
 		<!-- WHY ASHBY -->

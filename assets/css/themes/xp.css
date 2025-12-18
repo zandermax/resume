@@ -4,18 +4,18 @@ Windows XP Theme (Luna)
 
 /* Consolidated OKLCH transparency values (used in both light and dark modes) */
 :root[data-theme='xp'] {
-  --xp-black-10: var(--xp-black-10);
-  --xp-black-15: var(--xp-black-15);
-  --xp-black-20: var(--xp-black-20);
-  --xp-black-30: var(--xp-black-30);
-  --xp-black-40: var(--xp-black-40);
-  --xp-black-50: var(--xp-black-50);
-  --xp-white-20: var(--xp-white-20);
-  --xp-white-30: var(--xp-white-30);
-  --xp-white-40: var(--xp-white-40);
-  --xp-white-50: var(--xp-white-50);
-  --xp-white-60: var(--xp-white-60);
-  --xp-white-80: var(--xp-white-80);
+  --xp-black-10: oklch(0% 0 0 / 0.1);
+  --xp-black-15: oklch(0% 0 0 / 0.15);
+  --xp-black-20: oklch(0% 0 0 / 0.2);
+  --xp-black-30: oklch(0% 0 0 / 0.3);
+  --xp-black-40: oklch(0% 0 0 / 0.4);
+  --xp-black-50: oklch(0% 0 0 / 0.5);
+  --xp-white-20: oklch(100% 0 0 / 0.2);
+  --xp-white-30: oklch(100% 0 0 / 0.3);
+  --xp-white-40: oklch(100% 0 0 / 0.4);
+  --xp-white-50: oklch(100% 0 0 / 0.5);
+  --xp-white-60: oklch(100% 0 0 / 0.6);
+  --xp-white-80: oklch(100% 0 0 / 0.8);
 }
 
 /* Light Mode */
@@ -163,10 +163,6 @@ body[data-theme='xp'] {
       pointer-events: none;
     }
 
-    /* Window close button - hidden since we have a real button now */
-    &::after {
-      content: none;
-    }
   }
 
   /* Header and section spacing */
@@ -471,13 +467,6 @@ body[data-theme='xp'] {
 
       &::before {
         height: 28px;
-      }
-
-      &::after {
-        width: 20px;
-        height: 20px;
-        font-size: 18px;
-        line-height: 18px;
       }
     }
 

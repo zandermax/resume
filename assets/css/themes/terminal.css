@@ -25,7 +25,6 @@ Terminal Theme (1992 CLI-inspired)
   --link-visited-color: var(--color-cyan);
   --section-bg: var(--color-silver);
   --header-bg: var(--color-gray-light);
-  --accent-color: var(--color-yellow);
   --terminal-border-light: var(--color-white);
   --terminal-border-dark: var(--color-black);
   --terminal-window-bg: var(--color-silver);
@@ -79,6 +78,49 @@ Terminal Theme (1992 CLI-inspired)
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
 }
 
+/* Loading bar reveal animation - contracting overlay */
+@keyframes terminal-loadbar-reveal {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Message text swap animation */
+@keyframes terminal-message-swap {
+  0%,
+  99% {
+    content: 'Saving...';
+  }
+  100% {
+    content: 'Save complete. Would you like to Print?';
+  }
+}
+
+/* Button text swap animation */
+@keyframes terminal-button-text-swap {
+  0%,
+  99% {
+    content: '      CANCEL       ';
+  }
+  100% {
+    content: '      PRINT        ';
+  }
+}
+
+/* Print overlay enable animation */
+@keyframes terminal-print-overlay-enable {
+  0%,
+  99% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
+
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
   font-family: var(--font-family);
@@ -89,7 +131,6 @@ body[data-theme='terminal'] {
   .community-list,
   .principles-list {
     border: 0;
-    border-radius: 0;
     background: var(--terminal-window-bg);
   }
 
@@ -103,7 +144,6 @@ body[data-theme='terminal'] {
   .resume-section__title {
     border: 0;
     box-shadow: var(--terminal-inset-sunken-sm);
-    border-radius: 0;
     padding: 0.5rem 0.75rem;
     background: var(--terminal-button-bg);
     margin-block-end: 1rem;
@@ -123,7 +163,6 @@ body[data-theme='terminal'] {
   .education-item {
     border: 0;
     box-shadow: var(--terminal-inset-raised-sm);
-    border-radius: 0;
     background: var(--section-bg);
   }
 
@@ -168,7 +207,6 @@ body[data-theme='terminal'] {
     padding: 1.25rem;
     box-shadow: var(--terminal-inset-raised-lg);
     border: 0;
-    border-radius: 0;
   }
 
   .experience-item {
@@ -248,7 +286,6 @@ body[data-theme='terminal'] {
     box-shadow: none;
     position: relative;
     transition: box-shadow 0.1s ease, transform 0.1s ease;
-    border-radius: 0;
     background: var(--terminal-button-bg);
     color: var(--text-color);
     font-weight: normal;
@@ -264,14 +301,11 @@ body[data-theme='terminal'] {
     }
 
     &:hover {
-      transform: none;
-      box-shadow: none;
       background: var(--terminal-button-bg);
       color: var(--text-color);
     }
 
     &:active {
-      box-shadow: none;
       transform: translate(1px, 1px);
     }
   }
@@ -280,7 +314,6 @@ body[data-theme='terminal'] {
   dial-selector {
     .knob {
       box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
-      border-radius: 0;
       border: 0;
       /* Octagonal clip-path to look like a CLI GUI element */
       clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
@@ -288,7 +321,6 @@ body[data-theme='terminal'] {
     }
 
     .indicator {
-      border-radius: 0;
       width: 10px;
       box-shadow: none;
       background: var(--dial-color-indicator);
@@ -319,12 +351,6 @@ body[data-theme='terminal'] {
   /* Terminal link styling */
   a:not(.resume-header__printlink) {
     text-decoration: underline;
-
-    &:hover {
-      background: var(--accent-color);
-      color: var(--background-color);
-      text-decoration: none;
-    }
   }
 
   /* Typography enhancements */
@@ -372,8 +398,15 @@ body[data-theme='terminal'] {
     background: var(--terminal-window-bg);
     border: 0;
     padding: 0;
-    border-radius: 0;
-    box-shadow: 8px 8px 0 var(--terminal-black-80), 16px 16px 0 var(--terminal-black-40);
+    /* Pixelated dithered shadow effect */
+    box-shadow: 4px 0 0 var(--terminal-black-80), 8px 0 0 var(--terminal-black-80), 0 4px 0 var(--terminal-black-80),
+      4px 4px 0 var(--terminal-black-80), 8px 4px 0 var(--terminal-black-80), 12px 4px 0 var(--terminal-black-40),
+      0 8px 0 var(--terminal-black-80), 4px 8px 0 var(--terminal-black-80), 8px 8px 0 var(--terminal-black-80),
+      12px 8px 0 var(--terminal-black-80), 16px 8px 0 var(--terminal-black-40), 4px 12px 0 var(--terminal-black-40),
+      8px 12px 0 var(--terminal-black-80), 12px 12px 0 var(--terminal-black-80), 16px 12px 0 var(--terminal-black-40),
+      20px 12px 0 var(--terminal-black-40), 8px 16px 0 var(--terminal-black-40), 12px 16px 0 var(--terminal-black-80),
+      16px 16px 0 var(--terminal-black-40), 20px 16px 0 var(--terminal-black-40), 12px 20px 0 var(--terminal-black-40),
+      16px 20px 0 var(--terminal-black-40), 20px 20px 0 var(--terminal-black-40);
     color: var(--text-color);
     font-family: var(--font-family);
     min-width: auto;
@@ -408,32 +441,131 @@ body[data-theme='terminal'] {
     margin-block-end: 0;
   }
 
+  /* Loading bar - pure CSS block pattern with reveal overlay */
+  .terminal-dialog__loading-bar {
+    display: inline-block;
+    width: 38ch;
+    height: 1em;
+    vertical-align: middle;
+    position: relative;
+
+    /* The blocks */
+    --block-size: 1.75ch;
+    --block-gap: 0.5ch;
+
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-blue-navy) 0 var(--block-size),
+      transparent 0 calc(var(--block-size) + var(--block-gap))
+    );
+
+    /* Keep blocks vertically centered */
+    background-size: auto 100%;
+    background-repeat: repeat;
+    background-position: 0 0;
+
+    /* Overlay that covers the loading bar */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--terminal-window-bg);
+    }
+  }
+
+  /* Message text that changes after loading */
+  .terminal-dialog__message::before {
+    content: 'Saving...';
+  }
+
+  /* Button text that changes after loading */
+  .terminal-dialog__button-text::before {
+    content: '      CANCEL       ';
+  }
+
+  /* Trigger animations only when dialog is open */
+  .terminal-dialog[open] .terminal-dialog__loading-bar::after {
+    animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
+  }
+
+  .terminal-dialog[open] .terminal-dialog__message::before {
+    position: absolute;
+    animation: terminal-message-swap 5s steps(1) 1 forwards;
+  }
+
+  .terminal-dialog[open] .terminal-dialog__button-text::before {
+    animation: terminal-button-text-swap 5s steps(1) 1 forwards;
+  }
+
+  /* Dark mode - use brighter blue for loading bar and correct overlay color */
+  &[data-mode='dark'] {
+    .terminal-dialog__loading-bar {
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--color-blue-bright) 0 var(--block-size),
+        transparent 0 calc(var(--block-size) + var(--block-gap))
+      );
+
+      &::after {
+        background: var(--terminal-window-bg);
+      }
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .terminal-dialog__loading-bar {
+      animation: none;
+    }
+  }
+
   .terminal-dialog__button {
     position: absolute;
     bottom: 1.5rem;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
     background: transparent;
     color: transparent;
     border: 0;
-    padding: 1rem 4.25rem;
+    padding: 1rem 6rem;
     font-family: var(--font-family);
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     box-shadow: none;
     transition: none;
 
-    &:hover {
-      background: var(--terminal-button-bg);
-      opacity: 0.15;
+    &:active {
+      transform: translateX(-50%) translate(1px, 1px);
     }
+  }
+
+  /* Print overlay - positioned over button, only clickable after animation */
+  .terminal-dialog__print-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 6rem;
+    pointer-events: none;
+    cursor: pointer;
+    z-index: 10;
+    background: transparent;
+    text-decoration: none;
 
     &:active {
-      transform: translate(1px, 1px);
+      transform: translateX(-50%) translate(1px, 1px);
     }
+  }
+
+  /* Enable print overlay when dialog is open and animation completes */
+  .terminal-dialog[open] .terminal-dialog__print-overlay {
+    animation: terminal-print-overlay-enable 5s steps(1) 1 forwards;
   }
 
   /* Responsive Adjustments */
@@ -504,7 +636,36 @@ body[data-theme='terminal'] {
 
     .terminal-dialog__button {
       bottom: 1.65rem;
-      padding: 0.6rem 3.2rem;
+      padding: 0.6rem 4.5rem;
+    }
+
+    .terminal-dialog__print-overlay {
+      bottom: 1.65rem;
+      padding: 0.6rem 4.5rem;
+    }
+
+    .terminal-dialog__loading-bar {
+      width: 25ch;
+      --block-size: 1.25ch;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .terminal-dialog__frame {
+      font-size: 0.7rem;
+    }
+
+    .terminal-dialog__button {
+      padding: 0.6rem 3.5rem;
+    }
+
+    .terminal-dialog__print-overlay {
+      padding: 0.6rem 3.5rem;
+    }
+
+    .terminal-dialog__loading-bar {
+      width: 20ch;
+      --block-size: 1ch;
     }
   }
 }

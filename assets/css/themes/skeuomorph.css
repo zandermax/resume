@@ -291,11 +291,6 @@ body[data-theme='skeuomorph'] {
       border-color: var(--stitch-color);
     }
 
-    h1,
-    h3 {
-      color: var(--text-color);
-    }
-
     &::before {
       content: '';
       position: absolute;
@@ -304,10 +299,6 @@ body[data-theme='skeuomorph'] {
       opacity: 0.5;
       pointer-events: none;
     }
-  }
-
-  .resume-header__role {
-    color: var(--text-color);
   }
 
   /* Dial selector labels */

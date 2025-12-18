@@ -229,6 +229,16 @@
 			</article>
 		</section>
 	</main>
+
+	<script>
+		// Automatically trigger print dialog if 'print' query parameter is present
+		const urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.has('print')) {
+			window.addEventListener('load', () => {
+				window.print();
+			});
+		}
+	</script>
 </body>
 
 </html>

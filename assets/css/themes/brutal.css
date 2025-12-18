@@ -399,12 +399,8 @@ body[data-theme='brutal'] {
     }
 
     h3 {
-      color: var(--background-color);
       margin-block-end: 1rem;
-      font-weight: 900;
       font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
     }
   }
 

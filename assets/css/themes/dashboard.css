@@ -27,8 +27,8 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
   /* Consolidated box-shadow patterns */
-  --dashboard-shadow-sm: var(--dashboard-shadow-sm);
-  --dashboard-shadow-md: var(--dashboard-shadow-md);
+  --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
+  --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
 
   /* Show dashboard-specific elements */
@@ -60,8 +60,8 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
   /* Consolidated box-shadow patterns */
-  --dashboard-shadow-sm: var(--dashboard-shadow-sm);
-  --dashboard-shadow-md: var(--dashboard-shadow-md);
+  --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
+  --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
 
   /* Show dashboard-specific elements */
@@ -346,7 +346,7 @@ body[data-theme='dashboard'] {
   .resume-section__title:not(.nostalgia) {
     border-inline-start: 4px solid var(--accent-color);
     border-block-end: 1px solid var(--panel-border);
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 2rem;
     margin: 0;
     background: var(--panel-bg);
     color: var(--text-color);
@@ -369,13 +369,17 @@ body[data-theme='dashboard'] {
 
   /* Resume sections - panel style */
   .resume-section {
-    padding: 1.5rem;
+    padding: 2rem 2rem 1.5rem;
     margin: 0;
     border-block-end: 1px solid var(--panel-border);
 
     &:last-of-type {
       border-block-end: 0;
     }
+  }
+
+  .resume-section__content {
+    margin-block-start: 1em;
   }
 
   /* Header styling - control panel header */
@@ -392,11 +396,10 @@ body[data-theme='dashboard'] {
   }
 
   .resume-header__meta {
-    font-family: var(--mono-font);
-    font-size: 0.85rem;
     opacity: 0.85;
   }
 
+  .resume-header__meta,
   .resume-header__contact,
   .resume-header__location,
   .resume-header__links {
@@ -434,6 +437,7 @@ body[data-theme='dashboard'] {
   }
 
   .skills-grid__group {
+    margin: 0.5rem;
     border: 1px solid var(--panel-border);
     padding: 1rem;
     background: var(--panel-bg);
@@ -590,8 +594,8 @@ body[data-theme='dashboard'] {
     &::before {
       content: '✓';
       position: absolute;
-      left: 0.5rem;
-      top: 1rem;
+      left: 0.25rem;
+      top: 0.75rem;
       color: var(--status-green);
       font-weight: 700;
       font-size: 1rem;

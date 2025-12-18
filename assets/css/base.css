@@ -91,17 +91,18 @@ h1.resume-header__name {
   margin-block-end: 0.35rem;
 }
 
-.resume-header__name-greeting {
-  font-size: 1.2rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-block-end: -0.2rem;
-}
-
+.resume-header__name-greeting,
 .resume-header__name-small {
   font-size: 1.2rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.resume-header__name-greeting {
+  margin-block-end: -0.2rem;
+}
+
+.resume-header__name-small {
   margin-block-start: -0.2rem;
 }
 
@@ -142,14 +143,6 @@ a:not(.resume-header__printlink) {
 Layout and Structure
 =========================== */
 
-/* Custom dial selector styles */
-.resume-header__dial-selector {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Main layout */
 .resume__main {
   max-width: 960px;
@@ -176,8 +169,11 @@ Header Block
   margin-block-end: 1.5rem;
 }
 
-hgroup.resume-header__name-wrapper {
+.resume-header__dial-selector {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .resume-header__meta {
