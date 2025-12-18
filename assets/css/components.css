@@ -266,6 +266,11 @@ Components
   display: var(--display-sticky-note);
 }
 
+/* Cookie banner - hidden by default, shown only in brutal theme */
+.cookie-banner-overlay {
+  display: none;
+}
+
 :root[data-theme='nostalgia'] {
   .resume-section__title[data-nostalgia-decoration='marquee'] {
     & > span:first-child {

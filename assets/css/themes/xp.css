@@ -2,6 +2,48 @@
 Windows XP Theme (Luna)
 =========================== */
 
+/* XP Close Button Attention Animation */
+@keyframes xp-close-attention {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  20% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* Ghost Pulse Animation - radiating rings */
+@keyframes xp-ghost-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(4.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
 /* Consolidated OKLCH transparency values (used in both light and dark modes) */
 :root[data-theme='xp'] {
   --xp-black-10: oklch(0% 0 0 / 0.1);
@@ -162,7 +204,6 @@ body[data-theme='xp'] {
       z-index: 10;
       pointer-events: none;
     }
-
   }
 
   /* Header and section spacing */
@@ -551,7 +592,7 @@ body[data-theme='xp'] {
   .xp-close-btn {
     display: block;
     position: absolute;
-    top: 0.25rem;
+    top: calc(2rem + 0.25rem);
     right: calc((100vw - 960px) / 2);
     width: 24px;
     height: 24px;
@@ -569,6 +610,7 @@ body[data-theme='xp'] {
     z-index: 999;
     padding: 0;
     transition: background 0.1s;
+    animation: xp-close-attention 6s ease-in-out infinite;
 
     &:hover {
       background: linear-gradient(180deg, oklch(68% 0.24 29) 0%, oklch(62% 0.22 29) 50%, oklch(57% 0.2 29) 100%);
@@ -579,12 +621,34 @@ body[data-theme='xp'] {
       box-shadow: 0 0 2px var(--xp-black-30), inset 0 1px 2px var(--xp-black-40);
     }
 
+    /* Ghost pulse rings */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border: 3px solid oklch(59% 0.2 29);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    &::before {
+      animation: xp-ghost-pulse 4s ease-out infinite;
+    }
+
+    &::after {
+      animation: xp-ghost-pulse 4s ease-out 0.3s infinite;
+    }
+
     @media (max-width: 1040px) {
       right: 6px;
     }
 
     @media (max-width: 500px) {
-      top: calc(2rem + 3px);
+      top: calc(2rem + 0.25rem);
       width: 20px;
       height: 20px;
       font-size: 18px;
