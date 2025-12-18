@@ -423,7 +423,7 @@ body[data-theme='neoswiss'] {
 
   /* Neo-Swiss AI Toggle - Hidden checkbox */
   .neoswiss-ai-toggle {
-    position: absolute;
+    position: fixed;
     opacity: 0;
     width: 0;
     height: 0;
