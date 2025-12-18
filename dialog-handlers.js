@@ -1,3 +1,18 @@
+// Reset all dialog/modal states on page load
+window.addEventListener('DOMContentLoaded', () => {
+  // Reset Neo-Swiss AI modal
+  const neoswissAiToggle = document.getElementById('neoswiss-ai-toggle');
+  if (neoswissAiToggle) {
+    neoswissAiToggle.checked = false;
+  }
+
+  // Reset cookie banner
+  const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
+  if (cookieBannerDismiss) {
+    cookieBannerDismiss.checked = false;
+  }
+});
+
 // XP Dialog minimal JS using native dialog
 const xpCloseBtn = document.getElementById('xp-close-btn');
 const xpDialog = document.getElementById('xp-dialog');

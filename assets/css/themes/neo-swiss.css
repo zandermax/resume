@@ -547,6 +547,15 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__close {
+    /* The X in the close button */
+    span {
+      position: relative;
+      bottom: 10%;
+    }
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: calc(var(--swiss-grid) * 6);
     height: calc(var(--swiss-grid) * 6);
     background: transparent;
@@ -577,7 +586,6 @@ body[data-theme='neoswiss'] {
     margin-block-end: calc(var(--swiss-grid) * 6);
     padding-block-end: calc(var(--swiss-grid) * 6);
     border-block-end: 1px solid var(--text-color);
-    opacity: 0.3;
 
     &:last-child {
       border-block-end: 0;
@@ -588,7 +596,6 @@ body[data-theme='neoswiss'] {
   .neoswiss-ai-modal__section--final {
     border-block-end: 0;
     padding-block-end: 0;
-    opacity: 1;
   }
 
   .neoswiss-ai-modal__section-title {
