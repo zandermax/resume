@@ -208,6 +208,161 @@ KEYFRAME ANIMATIONS
   }
 }
 
+/* Main content tilt and glitch animation */
+@keyframes main-tilt-glitch {
+  0% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  6.25% {
+    transform: rotate(1.5deg) skewX(-0.3deg);
+  }
+  18.75% {
+    transform: rotate(1.5deg) skewX(-0.3deg);
+  }
+  18.76% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  25% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  25.1% {
+    transform: rotate(2deg) skewX(-0.3deg);
+  }
+  31.25% {
+    transform: rotate(2deg) skewX(-0.3deg);
+  }
+  31.26% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  100% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+}
+
+/* Header tilt and glitch animation - different timing and angles */
+@keyframes header-tilt-glitch {
+  0% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  8% {
+    transform: skewX(0.2deg) rotate(-1.2deg);
+  }
+  22% {
+    transform: skewX(0.2deg) rotate(-1.2deg);
+  }
+  22.1% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  32% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  32.1% {
+    transform: skewX(0.2deg) rotate(-1.8deg);
+  }
+  38% {
+    transform: skewX(0.2deg) rotate(-1.8deg);
+  }
+  38.1% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  100% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+}
+
+/* Skills grid tilt and glitch animation */
+@keyframes skills-tilt-glitch {
+  0% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  5% {
+    transform: skewX(-0.15deg) rotate(1.8deg);
+  }
+  20% {
+    transform: skewX(-0.15deg) rotate(1.8deg);
+  }
+  20.1% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  28% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  28.1% {
+    transform: skewX(-0.15deg) rotate(1.3deg);
+  }
+  34% {
+    transform: skewX(-0.15deg) rotate(1.3deg);
+  }
+  34.1% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  100% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+}
+
+/* List containers tilt and glitch animation */
+@keyframes list-tilt-glitch {
+  0% {
+    transform: rotate(0deg);
+  }
+  7% {
+    transform: rotate(-1.5deg);
+  }
+  24% {
+    transform: rotate(-1.5deg);
+  }
+  24.1% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  35.1% {
+    transform: rotate(2.2deg);
+  }
+  41% {
+    transform: rotate(2.2deg);
+  }
+  41.1% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Dial selector container tilt and glitch animation */
+@keyframes dial-selector-tilt-glitch {
+  0% {
+    transform: rotate(0deg);
+  }
+  4% {
+    transform: rotate(1.1deg);
+  }
+  16% {
+    transform: rotate(1.1deg);
+  }
+  16.1% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  30.1% {
+    transform: rotate(-1.6deg);
+  }
+  36% {
+    transform: rotate(-1.6deg);
+  }
+  36.1% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 /* Alternative jarring glitch - variant 1 */
 @keyframes glitch-shake-1 {
   0%,
@@ -447,6 +602,7 @@ body[data-theme='glitch'] {
     overflow: visible;
     transform: skewX(-0.3deg);
     filter: contrast(1.15) saturate(1.2);
+    animation: main-tilt-glitch 8s infinite;
 
     /* Screen tear effect */
     &::before {
@@ -487,6 +643,7 @@ body[data-theme='glitch'] {
     position: relative;
     transform: skewX(0.2deg);
     box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
+    animation: header-tilt-glitch 10s infinite;
 
     /* Corrupted header border effects */
     &::before,
@@ -757,6 +914,7 @@ body[data-theme='glitch'] {
     border-width: 3px;
     transform: skewX(-0.15deg);
     box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
+    animation: skills-tilt-glitch 9s infinite;
 
     &::before {
       content: '';
@@ -799,6 +957,7 @@ body[data-theme='glitch'] {
   .community-list,
   .principles-list {
     box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
+    animation: list-tilt-glitch 11s infinite;
   }
 
   .education-item {
@@ -948,6 +1107,7 @@ body[data-theme='glitch'] {
 
   .resume-header__dial-selector {
     box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
+    animation: dial-selector-tilt-glitch 12s infinite;
 
     h3 {
       color: var(--text-color);
