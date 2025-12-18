@@ -149,6 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (xpDialogToggle) {
     xpDialogToggle.checked = false;
   }
+  // Same for the terminal dialog checkbox
+  const terminalDialogToggle = document.getElementById('terminal-dialog-toggle');
+  if (terminalDialogToggle) {
+    terminalDialogToggle.checked = false;
+  }
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');

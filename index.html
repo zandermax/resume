@@ -61,28 +61,23 @@
 	</div>
 
 	<!-- XP Close Button (visible only in XP theme) -->
-	<label for="xp-dialog-toggle" class="xp-close-btn" aria-label="Close">×</label>
+	<button class="xp-close-btn" id="xp-close-btn" aria-label="Close">×</button>
 
-	<!-- Hidden checkbox controls XP dialog visibility -->
-	<input type="checkbox" id="xp-dialog-toggle" class="xp-dialog-toggle">
-
-	<!-- XP Dialog Modal (visible only when checkbox is checked) -->
-	<div class="xp-dialog-overlay">
-		<div class="xp-dialog" id="xp-dialog">
-			<div class="xp-dialog__title">
-				Close Resume
-				<label for="xp-dialog-toggle" class="xp-dialog__close" aria-label="Close dialog">×</label>
-			</div>
-			<div class="xp-dialog__content">
-				<span class="xp-dialog__icon">ⓘ</span>
-				<p class="xp-dialog__message">Are you sure you want to close this window?</p>
-			</div>
-			<div class="xp-dialog__buttons">
-				<label for="xp-dialog-toggle" class="xp-dialog__button xp-dialog__button--yes" id="xp-dialog-ok">OK</label>
-				<label for="xp-dialog-toggle" class="xp-dialog__button" id="xp-dialog-cancel">Cancel</label>
-			</div>
+	<!-- XP Dialog Modal (visible only when triggered) -->
+	<dialog class="xp-dialog" id="xp-dialog">
+		<div class="xp-dialog__title">
+			Close Resume
+			<button class="xp-dialog__close" id="xp-dialog-close" aria-label="Close dialog">×</button>
 		</div>
-	</div>
+		<div class="xp-dialog__content">
+			<span class="xp-dialog__icon">ⓘ</span>
+			<p class="xp-dialog__message">Are you sure you want to close this window?</p>
+		</div>
+		<div class="xp-dialog__buttons">
+			<button class="xp-dialog__button xp-dialog__button--yes" id="xp-dialog-ok">OK</button>
+			<button class="xp-dialog__button" id="xp-dialog-cancel">Cancel</button>
+		</div>
+	</dialog>
 
 	<!-- Terminal Dialog Modal (visible only when triggered) -->
 	<dialog class="terminal-dialog" id="terminal-dialog">
@@ -132,9 +127,9 @@
 				</hgroup>
 
 				<div class="resume-header__buttons">
-					<button id="terminal-save-btn" class="resume-header__savelink">
+					<label for="terminal-dialog-toggle" id="terminal-save-btn" class="resume-header__savelink">
 						Save resume
-					</button>
+					</label>
 					<a href="./print.html" class="resume-header__printlink" target="_blank" rel="noreferrer">
 						Printable CV - click here
 					</a>

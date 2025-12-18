@@ -103,10 +103,10 @@ Terminal Theme (1992 CLI-inspired)
 @keyframes terminal-button-text-swap {
   0%,
   99% {
-    content: '      CANCEL       ';
+    content: '       CANCEL      ';
   }
   100% {
-    content: '      PRINT        ';
+    content: '       PRINT       ';
   }
 }
 
@@ -525,7 +525,7 @@ body[data-theme='terminal'] {
   .terminal-dialog__button {
     position: absolute;
     bottom: 1.5rem;
-    left: 50%;
+    left: calc(50% - 0.25em);
     transform: translateX(-50%);
     background: transparent;
     color: transparent;
