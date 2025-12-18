@@ -322,7 +322,7 @@
 			</div>
 		</div>
 
-		<!-- Metro Live Chat Widget (2012 theme only) -->
+		<!-- Metro Live Chat Widget (metro theme only) -->
 		<div class="metro-chat-widget">
 			<div class="metro-chat-widget__header">
 				<span class="metro-chat-widget__icon">💬</span>
@@ -331,6 +331,75 @@
 			<div class="metro-chat-widget__status">
 				<span class="metro-chat-widget__indicator metro-chat-widget__indicator--offline"></span>
 				<span class="metro-chat-widget__status-text">Live status: no agents online</span>
+			</div>
+		</div>
+
+		<!-- Neo-Swiss AI Sparkles Button (neoswiss theme only) -->
+		<!-- Hidden checkbox controls modal visibility -->
+		<input type="checkbox" id="neoswiss-ai-toggle" class="neoswiss-ai-toggle">
+		<label for="neoswiss-ai-toggle" class="neoswiss-ai-button" aria-label="AI Summary">
+			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--1"></div>
+			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--2"></div>
+			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--3"></div>
+			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--4"></div>
+			<div class="neoswiss-ai-button__label">AI</div>
+		</label>
+
+		<!-- Neo-Swiss AI Summary Modal (neoswiss theme only) -->
+		<div class="neoswiss-ai-modal" id="neoswiss-ai-modal">
+			<label for="neoswiss-ai-toggle" class="neoswiss-ai-modal__overlay"></label>
+			<div class="neoswiss-ai-modal__container">
+				<div class="neoswiss-ai-modal__header">
+					<h2 class="neoswiss-ai-modal__title">CANDIDATE ANALYSIS</h2>
+					<label for="neoswiss-ai-toggle" class="neoswiss-ai-modal__close" aria-label="Close">×</label>
+				</div>
+				<div class="neoswiss-ai-modal__content">
+					<div class="neoswiss-ai-modal__section">
+						<h3 class="neoswiss-ai-modal__section-title">PROFILE CLASSIFICATION</h3>
+						<p class="neoswiss-ai-modal__text">
+							Subject: Zander Maxwell<br>
+							Role: Design-focused Software Engineer<br>
+							Experience Vector: 8+ years<br>
+							Location: Munich, Germany (EU)
+						</p>
+					</div>
+					<div class="neoswiss-ai-modal__section">
+						<h3 class="neoswiss-ai-modal__section-title">COMPETENCY MATRIX</h3>
+						<ul class="neoswiss-ai-modal__list">
+							<li><span class="neoswiss-ai-modal__metric">FRONT-END</span> React • TypeScript • Design Systems</li>
+							<li><span class="neoswiss-ai-modal__metric">ARCHITECTURE</span> Micro-frontends • Component APIs • Scalability</li>
+							<li><span class="neoswiss-ai-modal__metric">PRODUCT</span> UX Design • User Research • End-to-end Ownership</li>
+							<li><span class="neoswiss-ai-modal__metric">COLLABORATION</span> Cross-functional • Async • Mentorship</li>
+						</ul>
+					</div>
+					<div class="neoswiss-ai-modal__section">
+						<h3 class="neoswiss-ai-modal__section-title">CAREER TRAJECTORY</h3>
+						<p class="neoswiss-ai-modal__text">
+							Sequential progression through high-caliber organizations: CHECK24 (current) → AWS (5 years) → Microsoft → earlier-stage
+							ventures. Consistent pattern: Building UI systems for power users at scale. 5,000+ internal users. 100,000+ daily
+							transactions. 95%+ reduction in deployment overhead through architectural improvements.
+						</p>
+					</div>
+					<div class="neoswiss-ai-modal__section">
+						<h3 class="neoswiss-ai-modal__section-title">ALIGNMENT SCORE</h3>
+						<div class="neoswiss-ai-modal__score">
+							<div class="neoswiss-ai-modal__score-bar">
+								<div class="neoswiss-ai-modal__score-fill"></div>
+							</div>
+							<div class="neoswiss-ai-modal__score-label">94/100</div>
+						</div>
+						<p class="neoswiss-ai-modal__text">
+							High correlation detected between candidate capabilities and Ashby role requirements. Key indicators: Design system
+							experience. Full-stack ownership model. Minimal process preference. Bias toward written specs and prototypes over ceremony.
+						</p>
+					</div>
+					<div class="neoswiss-ai-modal__section neoswiss-ai-modal__section--final">
+						<h3 class="neoswiss-ai-modal__section-title">RECOMMENDATION</h3>
+						<div class="neoswiss-ai-modal__recommendation">
+							PROCEED TO INTERVIEW
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 

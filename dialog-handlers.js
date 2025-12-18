@@ -4,11 +4,11 @@ const xpDialog = document.getElementById('xp-dialog');
 
 xpCloseBtn?.addEventListener('click', () => xpDialog?.showModal());
 xpDialog?.addEventListener('click', (e) => {
-	if (e.target.id === 'xp-dialog-ok') {
-		window.close(); // Actually try to close the window!
-	} else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
-		xpDialog.close();
-	}
+  if (e.target.id === 'xp-dialog-ok') {
+    window.close(); // Actually try to close the window!
+  } else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
+    xpDialog.close();
+  }
 });
 
 // Terminal Dialog minimal JS using native dialog
@@ -21,8 +21,7 @@ terminalDialogCancel?.addEventListener('click', () => terminalDialog?.close());
 
 // Close dialog when clicking the backdrop
 terminalDialog?.addEventListener('click', (e) => {
-	if (e.target === terminalDialog) {
-		terminalDialog.close();
-	}
+  if (e.target === terminalDialog) {
+    terminalDialog.close();
+  }
 });
-

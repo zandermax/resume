@@ -271,6 +271,25 @@ Components
   display: none;
 }
 
+/* Neo-Swiss AI toggle - Always present but hidden visually */
+.neoswiss-ai-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Neo-Swiss AI button - hidden by default, shown only in neoswiss theme */
+.neoswiss-ai-button {
+  display: none;
+}
+
+/* Neo-Swiss AI modal - hidden by default, shown only in neoswiss theme */
+.neoswiss-ai-modal {
+  display: none;
+}
+
 :root[data-theme='nostalgia'] {
   .resume-section__title[data-nostalgia-decoration='marquee'] {
     & > span:first-child {
