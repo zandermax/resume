@@ -793,7 +793,9 @@
 			<div class="cookie-banner__header">
 				<h2 class="cookie-banner__title">🍪 Cookie Notice 🍪</h2>
 			</div>
-			<div class="cookie-banner__content">
+
+			<!-- Initial cookie acceptance message -->
+			<div class="cookie-banner__content cookie-banner__content--initial">
 				<p class="cookie-banner__warning">
 					⚠️ <strong>IMPORTANT:</strong> Our legal team says we need to tell you about cookies now.
 					Something about new EU regulations? We're not entirely sure what they mean, but apparently
@@ -811,6 +813,19 @@
 					But they assure us this banner makes everything legally compliant.
 				</p>
 			</div>
+
+			<!-- Returning visitor message (when cookie already set) -->
+			<div class="cookie-banner__content cookie-banner__content--returning">
+				<p class="cookie-banner__returning-message">
+					You must accept cookies<br>
+					<strong>EVERY TIME</strong><br>
+					you visit
+				</p>
+				<p class="cookie-banner__returning-subtext">
+					(Because apparently that's how this works now. Our lawyers insist.)
+				</p>
+			</div>
+
 			<div class="cookie-banner__buttons">
 				<label for="cookie-banner-dismiss" class="cookie-banner__accept" id="cookie-banner-accept">
 					✓ I ACCEPT

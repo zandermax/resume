@@ -613,7 +613,7 @@ body[data-theme='xp'] {
     z-index: 999;
     padding: 0;
     transition: background 0.1s;
-    animation: xp-close-attention 6s ease-in-out infinite;
+    animation: xp-close-attention 6s ease-in-out 2s infinite;
 
     &:hover {
       background: linear-gradient(180deg, oklch(68% 0.24 29) 0%, oklch(62% 0.22 29) 50%, oklch(57% 0.2 29) 100%);
@@ -636,14 +636,16 @@ body[data-theme='xp'] {
       border: 3px solid oklch(59% 0.2 29);
       border-radius: 50%;
       pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     &::before {
-      animation: xp-ghost-pulse 4s ease-out infinite;
+      animation: xp-ghost-pulse 4s ease-out 2s infinite;
     }
 
     &::after {
-      animation: xp-ghost-pulse 4s ease-out 0.3s infinite;
+      animation: xp-ghost-pulse 4s ease-out 2.3s infinite;
     }
 
     @media (max-width: 1040px) {

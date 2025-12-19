@@ -62,6 +62,7 @@ Nostalgia Theme (Geocities 90s)
 
 .blink {
   animation: blink 1s step-start infinite;
+  will-change: opacity;
 }
 
 /* Spinning animation for retro gifs */
@@ -77,6 +78,7 @@ Nostalgia Theme (Geocities 90s)
 .retro-gif.spinning {
   display: inline-block;
   animation: spin 2s linear infinite;
+  will-change: transform;
 }
 
 /* Flame animation */
@@ -103,6 +105,7 @@ Nostalgia Theme (Geocities 90s)
 .retro-gif.flame {
   display: inline-block;
   animation: flame 0.8s ease-in-out infinite;
+  will-change: transform, filter;
 }
 
 /* Bouncing animation */
@@ -119,6 +122,7 @@ Nostalgia Theme (Geocities 90s)
 .retro-gif.bouncing {
   display: inline-block;
   animation: bounce 1s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes gradientShift {
@@ -147,12 +151,14 @@ Nostalgia Theme (Geocities 90s)
   display: inline-block;
   white-space: nowrap;
   animation: marquee 20s linear infinite;
+  will-change: transform;
 }
 
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
+  contain: strict;
 }
 
 /* Animated Rotating Cursor */
@@ -183,6 +189,12 @@ Nostalgia Theme (Geocities 90s)
   }
 }
 
-:root[data-theme='nostalgia'] body {
-  animation: rotateCursor 2s steps(4) infinite;
+:root[data-theme='nostalgia'] {
+  body {
+    animation: rotateCursor 2s steps(4) infinite;
+  }
+  dial-selector {
+    --dial-cursor: inherit;
+    animation: rotateCursor 2s steps(4) infinite;
+  }
 }

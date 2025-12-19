@@ -413,6 +413,9 @@ body[data-theme='terminal'] {
     max-width: none;
     overflow: hidden; /* Prevent any overflow */
 
+    /* Performance optimizations */
+    contain: layout paint style;
+
     &::backdrop {
       background: var(--terminal-black-60);
     }
@@ -473,6 +476,7 @@ body[data-theme='terminal'] {
       height: 100%;
       width: 100%;
       background: var(--terminal-window-bg);
+      will-change: width;
     }
   }
 

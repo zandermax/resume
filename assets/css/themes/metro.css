@@ -27,6 +27,69 @@ body[data-theme='metro'] .metro-chat-widget {
   }
 }
 
+/* Animation for indicator color cycling between yellow and red */
+@keyframes indicator-color-transition {
+  0%,
+  40% {
+    background: var(--metro-yellow);
+  }
+  50%,
+  90% {
+    background: var(--metro-red);
+  }
+  100% {
+    background: var(--metro-yellow);
+  }
+}
+
+/* Cycle "Connecting..." pseudo-element visibility */
+@keyframes text-fade-out {
+  0%,
+  40% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50%,
+  90% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Cycle the actual status text visibility */
+@keyframes text-fade-in {
+  0%,
+  40% {
+    color: transparent;
+  }
+  50%,
+  90% {
+    color: var(--color-black);
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+/* Cycle the actual status text visibility (dark mode) */
+@keyframes text-fade-in-dark {
+  0%,
+  40% {
+    color: transparent;
+  }
+  50%,
+  90% {
+    color: var(--color-white);
+  }
+  100% {
+    color: transparent;
+  }
+}
+
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -48,6 +111,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --metro-blue: var(--color-blue-metro);
   --metro-green: oklch(64% 0.19 145); /* Metro green */
   --metro-orange: var(--color-orange);
+  --metro-yellow: var(--color-yellow);
   --metro-magenta: oklch(52% 0.24 340);
   --metro-red: oklch(60% 0.24 25); /* Metro red */
   --metro-purple: var(--color-purple);
@@ -74,6 +138,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --metro-blue: var(--color-cyan-bright);
   --metro-green: var(--color-green-bright);
   --metro-orange: oklch(78% 0.14 70); /* Light orange */
+  --metro-yellow: oklch(85% 0.15 95); /* Light yellow */
   --metro-magenta: var(--color-magenta-bright);
   --metro-red: oklch(68% 0.22 25); /* Light red */
   --metro-purple: oklch(60% 0.2 315); /* Purple */
@@ -484,7 +549,12 @@ body[data-theme='metro'] {
     }
 
     .metro-chat-widget__status-text {
-      color: var(--color-white);
+      /* Dark mode text fade-in animation - cycles infinitely */
+      animation: text-fade-in-dark 10s steps(1) infinite;
+
+      &::before {
+        color: var(--color-white);
+      }
     }
   }
 
@@ -610,9 +680,10 @@ body[data-theme='metro'] {
     height: 12px;
     border-radius: 0;
     flex-shrink: 0;
-    background: var(--metro-red);
+    background: var(--metro-yellow);
     box-shadow: none;
-    animation: pulse-indicator 2s ease-in-out infinite;
+    animation: pulse-indicator 2s ease-in-out infinite, indicator-color-transition 10s steps(1) infinite;
+    will-change: transform, background-color;
   }
 
   .metro-chat-widget__status-text {
@@ -620,6 +691,21 @@ body[data-theme='metro'] {
     font-weight: 400;
     line-height: 1.4;
     color: var(--color-black);
+    position: relative;
+
+    /* Initially hide the actual text content, cycle visibility */
+    color: transparent;
+    animation: text-fade-in 10s steps(1) infinite;
+
+    /* Show "Connecting..." initially via pseudo-element, cycle visibility */
+    &::before {
+      content: 'Connecting...';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--color-black);
+      animation: text-fade-out 10s steps(1) infinite;
+    }
   }
 
   /* Responsive adjustments for chat widget */

@@ -159,10 +159,14 @@ body[data-theme='crt'] {
     overflow: hidden;
     position: relative;
     filter: blur(0.3px);
+
+    /* Performance optimizations */
+    contain: strict;
   }
 
   .terminal-log__content {
     animation: terminal-scroll 14s steps(1) infinite;
+    will-change: transform;
   }
 
   .terminal-log__line {
@@ -180,6 +184,7 @@ body[data-theme='crt'] {
     animation: terminal-blink 1s infinite;
     vertical-align: text-bottom;
     box-shadow: 0 0 8px var(--background-color);
+    will-change: opacity;
   }
 
   /* Header */

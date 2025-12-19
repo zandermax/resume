@@ -468,7 +468,6 @@ body[data-theme='brutal'] {
     right: 0;
     width: 50%;
     margin-inline: auto;
-    max-height: 50vh;
     overflow-y: auto;
     background: var(--background-color);
     border-block-start: 6px solid var(--accent-color);
@@ -508,10 +507,54 @@ body[data-theme='brutal'] {
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
     margin: 0;
     animation: pulse 2s ease-in-out infinite;
+    will-change: transform;
   }
 
   .cookie-banner__content {
     margin-block-end: 1rem;
+  }
+
+  /* Show/hide content based on whether cookie is already set */
+  .cookie-banner__content--initial {
+    display: block;
+  }
+
+  .cookie-banner__content--returning {
+    display: none;
+  }
+
+  .cookie-banner.cookie-banner--returning .cookie-banner__content--initial {
+    display: none;
+  }
+
+  .cookie-banner.cookie-banner--returning .cookie-banner__content--returning {
+    display: block;
+  }
+
+  .cookie-banner__returning-message {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.3;
+    margin: 2rem 0 1rem 0;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    strong {
+      color: var(--accent-color);
+      font-size: 1.3em;
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .cookie-banner__returning-subtext {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
   }
 
   .cookie-banner__warning {
@@ -525,6 +568,7 @@ body[data-theme='brutal'] {
     text-transform: uppercase;
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
     animation: shake 0.5s ease-in-out infinite;
+    will-change: transform;
   }
 
   .cookie-banner__text,
@@ -561,6 +605,7 @@ body[data-theme='brutal'] {
     transform: skewX(-5deg);
     animation: bounce 1s ease-in-out infinite;
     font-family: var(--font-family);
+    will-change: transform;
 
     &:hover {
       transform: skewX(-5deg) translate(-2px, -2px);
@@ -588,6 +633,11 @@ body[data-theme='brutal'] {
     /* Actually hide the element after animation */
     opacity: 0;
     visibility: hidden;
+  }
+
+  /* Also animate the banner sliding down when dismissed */
+  .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) .cookie-banner {
+    animation: slideDown 0.3s ease forwards;
   }
 
   .cookie-banner__footer {
@@ -685,6 +735,18 @@ body[data-theme='brutal'] {
       padding: 1rem 2rem;
     }
 
+    .cookie-banner__returning-message {
+      font-size: 1.5rem;
+
+      strong {
+        font-size: 1.2em;
+      }
+    }
+
+    .cookie-banner__returning-subtext {
+      font-size: 0.75rem;
+    }
+
     .cookie-banner__title {
       font-size: 1.35rem;
     }
@@ -745,6 +807,15 @@ body[data-theme='brutal'] {
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
   }
 }
 

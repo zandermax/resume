@@ -386,6 +386,7 @@ body[data-theme='glitch'] {
 
   /* Performance optimizations */
   contain: layout style;
+  /* Body-level containment for overall theme isolation */
 
   /* Global scan line overlay */
   &::before {
@@ -448,6 +449,10 @@ body[data-theme='glitch'] {
     background: var(--section-bg);
     padding: 2rem;
     animation: border-corrupt 16s infinite;
+
+    /* Performance optimizations */
+    contain: layout;
+    will-change: box-shadow;
   }
 
   .education-item {
@@ -464,6 +469,7 @@ body[data-theme='glitch'] {
     height: 2px;
     opacity: 0.3;
     animation: h-displace 12s infinite;
+    will-change: transform, opacity;
   }
 
   .experience-item::before {
@@ -488,6 +494,7 @@ body[data-theme='glitch'] {
     background: var(--glitch-secondary);
     opacity: 0.4;
     animation: h-displace 16s infinite reverse;
+    will-change: transform, opacity;
   }
 
   /* Common list items */
@@ -501,6 +508,10 @@ body[data-theme='glitch'] {
     position: relative;
     box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
     animation: pixel-drift 18s infinite steps(1, jump-end);
+
+    /* Performance optimizations */
+    contain: layout;
+    will-change: transform;
 
     /* Broken misaligned transforms for list items */
     &:nth-child(1) {
@@ -543,6 +554,10 @@ body[data-theme='glitch'] {
     filter: contrast(1.15) saturate(1.2);
     animation: main-tilt-glitch 12s infinite;
 
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform, filter;
+
     /* Compression artifact overlay */
     &::after {
       content: '';
@@ -570,6 +585,10 @@ body[data-theme='glitch'] {
     transform: skewX(0.2deg);
     box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
     animation: header-tilt-glitch 15s infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
 
     /* Corrupted header border effects */
     &::before,
@@ -603,6 +622,7 @@ body[data-theme='glitch'] {
     position: relative;
     text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
     animation: text-glitch 20s infinite;
+    will-change: transform, text-shadow;
   }
 
   .resume-header__role {
@@ -637,6 +657,10 @@ body[data-theme='glitch'] {
     box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
     animation: text-glitch 16s infinite;
 
+    /* Performance optimizations */
+    contain: layout;
+    will-change: transform, text-shadow;
+
     &::after {
       content: '';
       position: absolute;
@@ -646,6 +670,7 @@ body[data-theme='glitch'] {
       height: 3px;
       background: var(--glitch-secondary);
       animation: pixel-drift 6s infinite steps(1, jump-end);
+      will-change: transform;
     }
   }
 
@@ -666,6 +691,7 @@ body[data-theme='glitch'] {
     &:hover {
       filter: contrast(1.2);
       animation: pixel-drift 2s infinite steps(1, jump-end);
+      will-change: transform;
     }
   }
 
@@ -699,6 +725,9 @@ body[data-theme='glitch'] {
     box-shadow: var(--glitch-box-shadow-sm);
     filter: contrast(1.1);
     text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+
+    /* Performance optimizations */
+    contain: layout;
 
     /* Broken misaligned transforms for tech badges */
     &:nth-child(1) {
@@ -740,6 +769,7 @@ body[data-theme='glitch'] {
     &:hover {
       filter: invert(1);
       animation: pixel-drift 1s infinite steps(1, jump-end);
+      will-change: transform;
     }
   }
 
@@ -752,6 +782,10 @@ body[data-theme='glitch'] {
     transform: skewX(-0.15deg);
     box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
     animation: skills-tilt-glitch 14s infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
 
     &::before {
       content: '';
@@ -777,6 +811,10 @@ body[data-theme='glitch'] {
     margin-block-end: 1rem;
     box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
     animation: pixel-drift 16s infinite steps(1, jump-end);
+
+    /* Performance optimizations */
+    contain: layout;
+    will-change: transform;
 
     /* Broken misaligned transforms for each group */
     &:nth-child(1) {
@@ -822,6 +860,10 @@ body[data-theme='glitch'] {
   .principles-list {
     box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
     animation: list-tilt-glitch 16s infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
   }
 
   .education-item {
@@ -913,6 +955,7 @@ body[data-theme='glitch'] {
       border: 2px solid var(--border-color);
       box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
       animation: pixel-drift 5s infinite steps(1, jump-end);
+      will-change: transform;
     }
 
     .dial-label {
@@ -925,6 +968,10 @@ body[data-theme='glitch'] {
       box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
       text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
       animation: pixel-drift 12s infinite steps(1, jump-end);
+
+      /* Performance optimizations */
+      contain: layout;
+      will-change: transform;
 
       /* Broken misaligned transforms for each label */
       &:nth-child(1) {
@@ -961,6 +1008,7 @@ body[data-theme='glitch'] {
         box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
         animation: text-glitch 8s infinite;
         font-weight: 700;
+        will-change: transform, text-shadow;
       }
     }
 
@@ -978,6 +1026,10 @@ body[data-theme='glitch'] {
   .resume-header__dial-selector {
     box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
     animation: dial-selector-tilt-glitch 18s infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
 
     h3 {
       color: var(--text-color);
@@ -1081,6 +1133,9 @@ body[data-theme='glitch'] {
     animation: glitch-char 0.3s infinite;
     text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
 
+    /* Performance optimizations */
+    will-change: transform, opacity;
+
     &:nth-child(2n) {
       animation-delay: 0.1s;
     }
@@ -1098,6 +1153,12 @@ body[data-theme='glitch'] {
   /* ===========================
   PERFORMANCE OPTIMIZATIONS
   =========================== */
+
+  /* Note: will-change and containment have been applied throughout to optimize
+     rendering performance for the extensive animations in this theme:
+     - will-change tells the browser which properties will animate
+     - contain isolates paint/layout calculations to improve composite performance
+     - Hover-triggered will-change only applies during interaction */
 
   @media (prefers-reduced-motion: reduce) {
     *,

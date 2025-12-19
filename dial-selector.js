@@ -7,6 +7,7 @@ dial-selector {
   --color-indicator: var(--dial-color-indicator, #f13b3b);
   --shadow: 0;
   --label-radius: 150px;
+  --dial-cursor: pointer;
   /* Line styling variables */
   --line-stroke-width: 2;
   --line-opacity-inactive: 0.4;
@@ -148,7 +149,7 @@ dial-selector .dial-label {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  cursor: pointer;
+  cursor: var(--dial-cursor);
   user-select: none;
   padding: clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px);
   position: absolute;
@@ -176,10 +177,14 @@ dial-selector.no-transitions .spoke-line {
   transition: none;
 }
 
+dial-selector .spoke-line-hit-area {
+  cursor: var(--dial-cursor);
+}
+
 dial-selector .advance {
   position: absolute;
   inset: 0;
-  cursor: pointer;
+  cursor: var(--dial-cursor);
   pointer-events: auto;
   background: transparent;
 }
@@ -390,6 +395,7 @@ class DialSelector extends HTMLElement {
       'width',
       'height',
       'default-option',
+      'cursor',
     ];
   }
 
@@ -411,6 +417,7 @@ class DialSelector extends HTMLElement {
     this.updateSelectionDelay();
     this.updateFontSize();
     this.updateFontFamily();
+    this.updateCursor();
     this.updateWidth();
     this.updateHeight();
     this.buildDOM();
@@ -422,16 +429,19 @@ class DialSelector extends HTMLElement {
     // Disable transitions during initial setup
     this.classList.add('no-transitions');
 
-    // Initial dimension calculation
-    this.updateDimensions();
-    this.createLabelsAndLines();
+    // Defer initial dimension calculation to avoid FOUC and forced layout
+    requestAnimationFrame(() => {
+      // Initial dimension calculation
+      this.updateDimensions();
+      this.createLabelsAndLines();
 
-    setTimeout(() => {
-      this.updateLines();
-      this.updateSelector();
-      // Re-enable transitions after initial setup
-      this.classList.remove('no-transitions');
-    }, INITIALIZATION_DELAY);
+      setTimeout(() => {
+        this.updateLines();
+        this.updateSelector();
+        // Re-enable transitions after initial setup
+        this.classList.remove('no-transitions');
+      }, INITIALIZATION_DELAY);
+    });
 
     window.addEventListener('resize', () => {
       // Disable transitions during resize
@@ -554,6 +564,10 @@ class DialSelector extends HTMLElement {
             this.updateSelector();
           }
         }
+        break;
+
+      case 'cursor':
+        this.updateCursor();
         break;
 
       default:
@@ -723,6 +737,16 @@ class DialSelector extends HTMLElement {
     } else {
       // Reset to default if attribute is removed
       this.style.removeProperty('--font-family');
+    }
+  }
+
+  updateCursor() {
+    const cursor = this.getAttribute('cursor');
+    if (cursor) {
+      this.style.setProperty('--dial-cursor', cursor);
+    } else {
+      // Reset to default if attribute is removed
+      this.style.removeProperty('--dial-cursor');
     }
   }
 
@@ -1095,7 +1119,6 @@ class DialSelector extends HTMLElement {
       hitArea.setAttribute('stroke-width', this.hitAreaStrokeWidth.toString());
       hitArea.setAttribute('stroke-linejoin', 'miter');
       hitArea.setAttribute('pointer-events', 'auto');
-      hitArea.style.cursor = 'pointer';
       hitArea.dataset.index = index;
       // Initialize with empty points - will be set in updateLines()
       hitArea.setAttribute('points', '');

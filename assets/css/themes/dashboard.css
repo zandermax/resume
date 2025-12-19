@@ -221,6 +221,7 @@ body[data-theme='dashboard'] {
     border-radius: 50%;
     background: var(--status-green);
     animation: pulse-status 2s ease-in-out infinite;
+    will-change: opacity, transform;
   }
 
   .status-indicator--operational .status-indicator__dot {
@@ -249,6 +250,7 @@ body[data-theme='dashboard'] {
   .active-processes .dashboard-metric__value {
     animation: count-processes 16s steps(4) infinite;
     counter-set: processes-count var(--processes-count);
+    will-change: counter-set;
 
     &::after {
       content: counter(processes-count);
@@ -301,6 +303,7 @@ body[data-theme='dashboard'] {
   .years-experience .dashboard-card__value {
     animation: count-years 10s linear infinite;
     counter-set: years-count var(--years-count);
+    will-change: counter-set;
 
     &::after {
       content: counter(years-count) '+';
@@ -311,6 +314,7 @@ body[data-theme='dashboard'] {
   .technologies-monitored .dashboard-card__value {
     animation: count-technologies 30s linear infinite;
     counter-set: technologies-count var(--technologies-count);
+    will-change: counter-set;
 
     &::after {
       content: counter(technologies-count) '+';
@@ -321,6 +325,7 @@ body[data-theme='dashboard'] {
   .projects-shipped .dashboard-card__value {
     animation: count-projects 35s linear infinite;
     counter-set: projects-count var(--projects-count);
+    will-change: counter-set;
 
     &::after {
       content: counter(projects-count) '+';
@@ -331,6 +336,7 @@ body[data-theme='dashboard'] {
   .code-quality .dashboard-card__value::after {
     content: 'A+';
     animation: quality-cycle 10s steps(2) infinite;
+    will-change: contents;
   }
 
   .dashboard-card__status {
@@ -364,6 +370,7 @@ body[data-theme='dashboard'] {
       color: var(--status-green);
       font-size: 0.75rem;
       animation: pulse-dot 3s ease-in-out infinite;
+      will-change: opacity;
     }
   }
 
