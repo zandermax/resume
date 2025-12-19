@@ -339,7 +339,7 @@ body[data-theme='brutal'] {
       border: 3px solid var(--border-color);
     }
 
-    .dial-label {
+    .dial-label > span {
       font-size: 0.9rem;
       font-weight: 900;
       border: 3px solid transparent;
@@ -349,7 +349,7 @@ body[data-theme='brutal'] {
       transform: skewX(-3deg);
       color: var(--text-color);
 
-      &:hover > span {
+      &:hover {
         border-color: var(--border-color);
         background: var(--accent-color);
         transform: skewX(-3deg) translate(-2px, -2px);
@@ -357,7 +357,7 @@ body[data-theme='brutal'] {
         color: var(--background-color);
       }
 
-      &.active > span {
+      &.active {
         background: var(--text-color);
         border-color: var(--border-color);
         box-shadow: 6px 6px 0 var(--accent-color);
@@ -369,10 +369,6 @@ body[data-theme='brutal'] {
     .spoke-line {
       stroke-width: 4px;
       opacity: 0.8;
-    }
-
-    .label-column {
-      margin-block-end: 2.5em;
     }
   }
 
@@ -623,7 +619,7 @@ body[data-theme='brutal'] {
       font-size: 1.4rem;
     }
 
-    dial-selector .dial-label {
+    dial-selector .dial-label > span {
       font-size: 0.75rem;
       padding: 0.6rem 1rem;
     }
@@ -679,7 +675,7 @@ body[data-theme='brutal'] {
       box-shadow: 6px 6px 0 oklch(0% 0 0 / 0.7), 12px 12px 0 var(--brutal-shadow-light);
     }
 
-    dial-selector .dial-label {
+    dial-selector .dial-label > span {
       font-size: 0.7rem;
       padding: 0.5rem 0.8rem;
     }
