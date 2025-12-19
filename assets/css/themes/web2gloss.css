@@ -528,17 +528,17 @@ body[data-theme='web2gloss'] {
       box-shadow: 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 1px 0 oklch(100% 0 0 / 0.5);
       overflow: hidden;
 
-      &:hover {
+      &:hover > span {
         background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
         box-shadow: 0 2px 4px oklch(0% 0 0 / 0.15), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
         transform: translateY(calc(-50% + 3px));
       }
 
-      &.active {
+      &.active > span {
         background: var(--web2-section-title-gradient);
-        color: var(--color-white);
         border-color: var(--web2-primary);
         box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
+        color: var(--color-white);
         text-shadow: var(--web2-text-shadow-md);
         font-weight: 700;
       }

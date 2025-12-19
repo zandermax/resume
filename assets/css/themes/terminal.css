@@ -331,15 +331,15 @@ body[data-theme='terminal'] {
       padding: 0.4rem 0.8rem;
       transition: background 0.15s ease, color 0.15s ease;
 
-      &:hover {
+      &:hover > span {
         background: var(--terminal-button-bg);
         box-shadow: var(--terminal-inset-raised-sm);
       }
 
-      &.active {
+      &.active > span {
         background: var(--terminal-title-bg);
-        color: var(--dial-color-selection);
         box-shadow: var(--terminal-inset-sunken-sm);
+        color: var(--dial-color-selection);
       }
     }
 

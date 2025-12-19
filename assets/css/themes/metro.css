@@ -414,15 +414,15 @@ body[data-theme='metro'] {
     letter-spacing: 0.05em;
     border: 0;
 
-    &:hover {
+    &:hover > span {
       background: oklch(57% 0.17 246 / 0.15);
       box-shadow: none;
     }
 
-    &.active {
+    &.active > span {
       background: var(--accent-color);
-      color: #ffffff;
       box-shadow: none;
+      color: #ffffff;
     }
   }
 

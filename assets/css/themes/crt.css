@@ -337,16 +337,16 @@ body[data-theme='crt'] {
       border: 1px solid transparent;
       transition: all 0.15s ease;
 
-      &:hover {
-        border-color: currentColor;
+      &:hover > span {
         text-shadow: 0 0 10px currentColor;
+        border-color: currentColor;
       }
 
-      &.active {
-        border: 2px solid currentColor;
+      &.active > span {
         text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-        box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
         font-weight: bold;
+        border: 2px solid currentColor;
+        box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
       }
     }
 

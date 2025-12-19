@@ -349,20 +349,20 @@ body[data-theme='brutal'] {
       transform: skewX(-3deg);
       color: var(--text-color);
 
-      &:hover {
+      &:hover > span {
         border-color: var(--border-color);
         background: var(--accent-color);
-        color: var(--background-color);
         transform: skewX(-3deg) translate(-2px, -2px);
         box-shadow: 4px 4px 0 var(--border-color);
+        color: var(--background-color);
       }
 
-      &.active {
+      &.active > span {
         background: var(--text-color);
-        color: var(--background-color);
         border-color: var(--border-color);
         box-shadow: 6px 6px 0 var(--accent-color);
         transform: skewX(-3deg) scale(1.05);
+        color: var(--background-color);
       }
     }
 

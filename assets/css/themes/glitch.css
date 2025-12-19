@@ -951,16 +951,16 @@ body[data-theme='glitch'] {
         animation-delay: 4s;
       }
 
-      &:hover {
+      &:hover > span {
         filter: invert(1);
       }
 
-      &.active {
+      &.active > span {
         filter: invert(1);
         border-color: var(--border-color);
         box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-        font-weight: 700;
         animation: text-glitch 8s infinite;
+        font-weight: 700;
       }
     }
 

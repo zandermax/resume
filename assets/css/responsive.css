@@ -64,3 +64,9 @@ Mobile layout
     align-self: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .resume-header__printlink {
+    padding: 0.55rem 0.5rem;
+  }
+}

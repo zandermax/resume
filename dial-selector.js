@@ -156,7 +156,8 @@ dial-selector .dial-label {
   white-space: nowrap;
 }
 
-dial-selector .dial-label.active {
+dial-selector .dial-label.active > span {
+  padding: 0.5em;
   color: var(--color-selection);
 }
 
@@ -181,6 +182,91 @@ dial-selector .advance {
   cursor: pointer;
   pointer-events: auto;
   background: transparent;
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 768px) {
+  dial-selector {
+    /* Reduce overall size for tablets/large phones */
+    --font-size: clamp(14px, 2.5vw, 18px);
+  }
+
+  dial-selector .selector {
+    gap: clamp(8px, 2vw, 20px);
+  }
+
+  dial-selector .dial-label {
+    padding: clamp(3px, 0.8vw, 6px) clamp(5px, 1.2vw, 10px);
+    letter-spacing: clamp(0.3px, 0.08vw, 0.8px);
+  }
+}
+
+/* Reduced horizontal lines for small mobile */
+@media (max-width: 600px) {
+  dial-selector {
+    /* Make knob 25% smaller (75% of original size) */
+    --knob-wrap-size: 240px; /* 75% of 320px */
+    --knob-center: 120px; /* 75% of 160px */
+    --label-column-height: 240px; /* 75% of 320px */
+    --radius-outer: 67.5px; /* 75% of 90px */
+    --radius-inner: 54px; /* 75% of 72px */
+    --label-vertical-offset-scale: 105px; /* 75% of 140px */
+    --horizontal-line-length: 40px; /* Significantly shorter horizontal lines */
+    --max-spoke-length: 60px;
+    --font-size: clamp(12px, 2.5vw, 16px);
+  }
+
+  dial-selector .selector {
+    gap: clamp(4px, 1.5vw, 12px);
+  }
+
+  dial-selector .dial-label {
+    padding: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Spokes-only mode for very small screens */
+@media (max-width: 480px) {
+  dial-selector {
+    --horizontal-line-length: 0px; /* NO horizontal lines - spokes only! */
+    --font-size: clamp(14px, 2.8vw, 14px);
+    --horizontal-line-end-offset: 0px; /* No offset needed without horizontal lines */
+  }
+
+  dial-selector .selector {
+    gap: clamp(2px, 1vw, 6px);
+  }
+
+  dial-selector .dial-label {
+    padding: 2px 6px;
+    letter-spacing: 0.2px;
+  }
+
+  /* Move horizontal labels (middle options) up and in for better text visibility */
+  dial-selector .dial-label[data-angle="180"] > span,
+  dial-selector .dial-label[data-angle="0"] > span {
+    margin-block-end: 2lh !important;
+    margin-inline: -1em;
+  }
+}
+
+/* Ultra-compact for tiny screens */
+@media (max-width: 380px) {
+  dial-selector {
+    --horizontal-line-length: 0px;
+    --max-spoke-length: 40px;
+    --font-size: clamp(12px, 3vw, 13px);
+  }
+
+  dial-selector .selector {
+    gap: 2px;
+  }
+
+  dial-selector .dial-label {
+    padding: 1px 4px;
+    letter-spacing: 0;
+  }
 }
 `;
 
@@ -978,7 +1064,9 @@ class DialSelector extends HTMLElement {
       // Create label
       const label = document.createElement('label');
       label.className = 'dial-label';
-      label.textContent = option;
+      const span = document.createElement('span');
+      span.textContent = option;
+      label.appendChild(span);
       label.dataset.index = index;
       label.dataset.angle = angle;
 

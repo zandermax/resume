@@ -306,7 +306,7 @@ body[data-theme='skeuomorph'] {
     color: var(--text-color);
     font-weight: 600;
 
-    &.active {
+    &.active > span {
       color: var(--dial-color-selection);
       font-weight: 700;
     }

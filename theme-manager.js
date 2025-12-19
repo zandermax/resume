@@ -55,7 +55,7 @@ function markGlitchableCharacters() {
 
 // Map display names to internal theme names
 const THEME_DISPLAY_TO_INTERNAL = {
-  current: 'default',
+  now: 'default',
   1985: 'crt',
   1992: 'terminal',
   1996: 'nostalgia',

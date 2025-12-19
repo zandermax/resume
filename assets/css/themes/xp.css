@@ -367,11 +367,11 @@ body[data-theme='xp'] {
         box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
       }
 
-      &.active {
+      &.active > span {
         background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
+        box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30), 0 2px 4px var(--xp-black-20);
         color: var(--color-white);
         text-shadow: 1px 1px 2px var(--xp-black-40);
-        box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30), 0 2px 4px var(--xp-black-20);
       }
     }
   }
@@ -513,6 +513,7 @@ body[data-theme='xp'] {
 
     .resume-header,
     .resume-section {
+      padding-block-start: 0;
       margin-inline: 1rem;
     }
 
@@ -646,11 +647,16 @@ body[data-theme='xp'] {
     }
 
     @media (max-width: 1040px) {
-      right: 6px;
+      right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      right: 1.25rem;
     }
 
     @media (max-width: 500px) {
       top: calc(2rem + 0.25rem);
+      right: 1rem;
       width: 20px;
       height: 20px;
       font-size: 18px;
@@ -714,7 +720,6 @@ body[data-theme='xp'] {
   background: linear-gradient(180deg, var(--xp-window-title-start) 0%, var(--xp-window-title-end) 100%);
   color: var(--color-white);
   padding: 4px 8px;
-  font-size: 11px;
   font-weight: bold;
   box-shadow: var(--xp-title-shadow);
   display: flex;
@@ -733,7 +738,7 @@ body[data-theme='xp'] {
   border: 1px solid var(--xp-white-30);
   box-shadow: 0 1px 1px var(--xp-black-30), inset 0 1px 0 var(--xp-white-40);
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 14px;
   text-align: center;
@@ -767,7 +772,6 @@ body[data-theme='xp'] {
 
 .xp-dialog__message {
   margin: 0;
-  font-size: 11px;
   color: var(--color-black);
   padding-block-start: 4px;
 }
@@ -782,7 +786,6 @@ body[data-theme='xp'] {
 .xp-dialog__button {
   display: inline-block;
   padding: 4px 16px;
-  font-size: 11px;
   font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
   background: linear-gradient(180deg, oklch(100% 0 0) 0%, oklch(93% 0.01 85) 100%);
   border: 1px solid;

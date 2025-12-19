@@ -388,12 +388,12 @@ body[data-theme='neoswiss'] {
       letter-spacing: 0.1em;
       color: var(--dial-color-ink);
 
-      &:hover {
+      &:hover > span {
         background: transparent;
         color: var(--accent-color);
       }
 
-      &.active {
+      &.active > span {
         background: var(--accent-color);
         color: #ffffff;
         font-weight: 600;
