@@ -43,6 +43,70 @@ Ultra-modern minimalism with mathematical precision
   --swiss-grid: 8px;
 }
 
+/* AI Modal Animations - Defined at root level */
+@keyframes statusMessage {
+  0% {
+    content: 'ANALYZING CANDIDATE...';
+    opacity: 1;
+  }
+  80% {
+    content: 'ANALYZING CANDIDATE...';
+    opacity: 1;
+  }
+  85% {
+    content: 'ANALYZING CANDIDATE...';
+    opacity: 0;
+  }
+  90% {
+    content: 'ANALYSIS COMPLETE';
+    opacity: 0;
+  }
+  100% {
+    content: 'ANALYSIS COMPLETE';
+    opacity: 1;
+  }
+}
+
+@keyframes sectionAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scoreFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 94%;
+  }
+}
+
+@keyframes recommendationAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Base theme - Pure minimalism */
 body[data-theme='neoswiss'] {
   font-family: var(--font-family);
@@ -536,6 +600,20 @@ body[data-theme='neoswiss'] {
     align-items: center;
     padding: calc(var(--swiss-grid) * 4);
     border-block-end: 1px solid var(--accent-color);
+    position: relative;
+  }
+
+  .neoswiss-ai-modal__header::after {
+    content: 'ANALYZING CANDIDATE...';
+    position: absolute;
+    top: calc(var(--swiss-grid) * 1);
+    left: calc(var(--swiss-grid) * 4);
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--accent-color);
+    opacity: 1;
+    animation: statusMessage 8s ease-in-out forwards;
   }
 
   .neoswiss-ai-modal__title {
@@ -586,10 +664,33 @@ body[data-theme='neoswiss'] {
     margin-block-end: calc(var(--swiss-grid) * 6);
     padding-block-end: calc(var(--swiss-grid) * 6);
     border-block-end: 1px solid var(--text-color);
+    opacity: 0;
+    animation: sectionAppear 0.6s ease-out forwards;
 
     &:last-child {
       border-block-end: 0;
       margin-block-end: 0;
+    }
+
+    /* Stagger each section with increasing delays */
+    &:nth-child(1) {
+      animation-delay: 0.8s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 3.5s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 5s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 6.5s;
     }
   }
 
@@ -605,6 +706,29 @@ body[data-theme='neoswiss'] {
     text-transform: uppercase;
     color: var(--accent-color);
     margin: 0 0 calc(var(--swiss-grid) * 3) 0;
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+  }
+
+  /* Stagger title animations relative to parent section */
+  .neoswiss-ai-modal__section:nth-child(1) .neoswiss-ai-modal__section-title {
+    animation-delay: 1s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(2) .neoswiss-ai-modal__section-title {
+    animation-delay: 2.2s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(3) .neoswiss-ai-modal__section-title {
+    animation-delay: 3.7s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(4) .neoswiss-ai-modal__section-title {
+    animation-delay: 5.2s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(5) .neoswiss-ai-modal__section-title {
+    animation-delay: 6.7s;
   }
 
   .neoswiss-ai-modal__text {
@@ -613,6 +737,25 @@ body[data-theme='neoswiss'] {
     line-height: 1.8;
     color: var(--text-color);
     margin: 0;
+    opacity: 0;
+    animation: contentFadeIn 0.5s ease-out forwards;
+  }
+
+  /* Stagger text animations */
+  .neoswiss-ai-modal__section:nth-child(1) .neoswiss-ai-modal__text {
+    animation-delay: 1.3s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(2) .neoswiss-ai-modal__text {
+    animation-delay: 2.5s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(3) .neoswiss-ai-modal__text {
+    animation-delay: 4s;
+  }
+
+  .neoswiss-ai-modal__section:nth-child(4) .neoswiss-ai-modal__text {
+    animation-delay: 5.8s;
   }
 
   .neoswiss-ai-modal__list {
@@ -628,6 +771,8 @@ body[data-theme='neoswiss'] {
     color: var(--text-color);
     padding-inline-start: calc(var(--swiss-grid) * 3);
     position: relative;
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
 
     &::before {
       content: '—';
@@ -635,6 +780,23 @@ body[data-theme='neoswiss'] {
       left: 0;
       color: var(--text-color);
       opacity: 0.4;
+    }
+
+    /* Stagger each list item */
+    &:nth-child(1) {
+      animation-delay: 2.5s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 2.7s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 2.9s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 3.1s;
     }
   }
 
@@ -657,15 +819,20 @@ body[data-theme='neoswiss'] {
     border: 1px solid var(--text-color);
     position: relative;
     margin-block-end: calc(var(--swiss-grid) * 2);
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+    animation-delay: 5.5s;
   }
 
   .neoswiss-ai-modal__score-fill {
     position: absolute;
     top: 0;
     left: 0;
-    width: 94%;
+    width: 0%;
     height: 100%;
     background: var(--accent-color);
+    animation: scoreFill 1.2s ease-out forwards;
+    animation-delay: 5.7s;
   }
 
   .neoswiss-ai-modal__score-label {
@@ -673,9 +840,13 @@ body[data-theme='neoswiss'] {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--text-color);
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+    animation-delay: 6.2s;
   }
 
   .neoswiss-ai-modal__recommendation {
+    display: block;
     background: var(--accent-color);
     color: #ffffff;
     font-size: clamp(1rem, 2vw, 1.5rem);
@@ -683,6 +854,24 @@ body[data-theme='neoswiss'] {
     letter-spacing: 0.2em;
     text-align: center;
     padding: calc(var(--swiss-grid) * 4);
+    text-decoration: none;
+    border: 0;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: recommendationAppear 0.6s ease-out forwards;
+    animation-delay: 7s;
+    transition: opacity 150ms linear;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+      color: #ffffff;
+      border: 0;
+    }
+
+    &:visited {
+      color: #ffffff;
+    }
   }
 
   /* Content padding - Mathematical grid */
