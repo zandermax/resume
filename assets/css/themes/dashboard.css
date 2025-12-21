@@ -30,10 +30,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
   --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
-
-  /* Show dashboard-specific elements */
-  --display-dashboard-status: flex;
-  --display-dashboard-metrics: grid;
 }
 
 /* Dark Mode */
@@ -63,10 +59,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
   --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
-
-  /* Show dashboard-specific elements */
-  --display-dashboard-status: flex;
-  --display-dashboard-metrics: grid;
 }
 
 @keyframes pulse-status {
@@ -171,6 +163,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
 
 /* Base typography - system fonts for dashboard aesthetic */
 body[data-theme='dashboard'] {
+  /* Show dashboard-specific elements */
+  --display-dashboard-status: flex;
+  --display-dashboard-metrics: grid;
+
   font-family: var(--font-family);
   font-weight: 400;
   letter-spacing: 0;

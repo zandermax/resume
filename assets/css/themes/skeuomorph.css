@@ -59,9 +59,6 @@ Skeuomorphic Theme Effects
     --dial-color-ink: var(--color-brown);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
-
-    /* Show sticky note in skeuomorph theme */
-    --display-sticky-note: block;
     --dial-knob-background: radial-gradient(
       circle at 35% 35%,
       oklch(0.93 0 0) 0%,
@@ -130,9 +127,6 @@ Skeuomorphic Theme Effects
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
-
-    /* Show sticky note in skeuomorph theme */
-    --display-sticky-note: block;
     --dial-knob-background: radial-gradient(
       circle at 30% 30%,
       oklch(0.45 0 0) 0%,
@@ -189,6 +183,8 @@ Skeuomorphic Theme Effects
 
 /* Paper curl effect on sections */
 body[data-theme='skeuomorph'] {
+  --display-sticky-note: block;
+
   /* Stitched leather border effect for main resume container */
   .resume__main {
     /* Leather border backing */

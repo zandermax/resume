@@ -19,10 +19,6 @@ Nostalgia Theme (Geocities 90s)
   --section-bg: oklch(100% 0.18 105); /* Crazy bright yellow */
   --header-bg: var(--color-magenta-pink);
   --accent-color: var(--color-green);
-
-  /* Show nostalgia-specific elements */
-  --display-nostalgia-elements: block;
-  --display-section-title-normal: none;
 }
 
 /* Dark Mode */
@@ -42,10 +38,6 @@ Nostalgia Theme (Geocities 90s)
   --section-bg: oklch(20% 0.09 264);
   --header-bg: oklch(26% 0.11 264);
   --accent-color: var(--color-yellow);
-
-  /* Show nostalgia-specific elements */
-  --display-nostalgia-elements: block;
-  --display-section-title-normal: none;
 }
 
 /* Blink animation */
@@ -189,6 +181,9 @@ Nostalgia Theme (Geocities 90s)
 }
 
 :root[data-theme='nostalgia'] {
+  --display-nostalgia-elements: block;
+  --display-section-title-normal: none;
+
   body {
     animation: rotateCursor 2s steps(4) infinite;
   }

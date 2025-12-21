@@ -30,19 +30,19 @@ Theme-Specific Custom Components
 /* Theme-specific element visibility */
 .nostalgia-elements,
 .resume-section__title.nostalgia {
-  display: var(--display-nostalgia-elements);
+  display: var(--display-nostalgia-elements, none);
 }
 
 .web2-badges {
-  display: var(--display-web2-badges);
+  display: var(--display-web2-badges, none);
 }
 
 .dashboard-status-banner {
-  display: var(--display-dashboard-status);
+  display: var(--display-dashboard-status, none);
 }
 
 .dashboard-metrics-grid {
-  display: var(--display-dashboard-metrics);
+  display: var(--display-dashboard-metrics, none);
 }
 
 .resume-section__title--normal {
@@ -50,7 +50,7 @@ Theme-Specific Custom Components
 }
 
 .terminal-log {
-  display: var(--display-terminal);
+  display: var(--display-terminal, none);
 }
 
 .glitchable {
@@ -63,7 +63,7 @@ Theme-Specific Custom Components
 }
 
 #sticky-note {
-  display: var(--display-sticky-note);
+  display: var(--display-sticky-note, none);
 }
 
 /* Cookie banner - hidden by default, shown only in brutal theme */

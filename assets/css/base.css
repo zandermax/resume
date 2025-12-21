@@ -27,19 +27,8 @@ Custom Properties
   --paper-shadow: none;
   --paper-texture: none;
 
-  /* Sticky note properties (used in components.css) */
-  --sticky-note-color: oklch(96% 0.1 105); /* Light yellow post-it */
-  --sticky-note-shadow: 0 4px 6px oklch(0% 0 0 / 0.1);
-  --sticky-note-rotation: -3deg;
-
   /* Theme-specific element visibility - Default: hidden */
-  --display-nostalgia-elements: none;
-  --display-sticky-note: none;
-  --display-web2-badges: none;
-  --display-dashboard-status: none;
-  --display-dashboard-metrics: none;
   --display-section-title-normal: block;
-  --display-terminal: none;
 
   /* Common component styling properties */
   /* Main container */
@@ -137,7 +126,6 @@ Custom Properties
   --dial-knob-border-style: solid;
   --dial-knob-box-shadow: none;
   --dial-knob-border-radius: 50%;
-  --dial-knob-clip-path: none;
 
   /* Dial selector indicator */
   --dial-indicator-box-shadow: none;
