@@ -7,25 +7,28 @@ Components
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
-  border: 3px solid var(--border-color);
-  padding: 0.75rem;
+  border: var(--skills-grid-border, 3px solid var(--border-color));
+  padding: var(--skills-grid-padding, 0.75rem);
   box-sizing: border-box;
+  background: var(--skills-grid-background, transparent);
+  box-shadow: var(--skills-grid-box-shadow, none);
 }
 
 .skills-grid__group {
-  border: 1px solid var(--border-color);
-  padding: 0.6rem 0.75rem;
+  border: var(--skills-group-border, 1px solid var(--border-color));
+  padding: var(--skills-group-padding, 0.6rem 0.75rem);
   box-sizing: border-box;
-  background-color: var(--section-bg, transparent);
+  background-color: var(--skills-group-background, var(--section-bg, transparent));
+  box-shadow: var(--skills-group-box-shadow, none);
 }
 
 .skills-grid__title {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  border-block-end: 2px solid var(--border-color);
-  padding-block-end: 0.25rem;
-  margin-block-end: 0.3rem;
+  border-block-end: var(--skills-title-border-width, 2px) var(--skills-title-border-style, solid) var(--border-color);
+  padding-block-end: var(--skills-title-padding-bottom, 0.25rem);
+  margin-block-end: var(--skills-title-margin-bottom, 0.3rem);
 }
 
 .skills-grid__items {
@@ -40,9 +43,13 @@ Components
 }
 
 .experience-item {
+  border: var(--experience-item-border, 0);
   border-block-start: 2px solid var(--border-color);
+  padding: var(--experience-item-padding, 0);
   padding-block-start: 0.9rem;
-  margin-block-start: 0.9rem;
+  margin-block-start: var(--experience-item-margin-top, 0.9rem);
+  background: var(--experience-item-background, transparent);
+  box-shadow: var(--experience-item-box-shadow, none);
 
   &:first-of-type {
     border-block-start: 3px solid var(--border-color);
@@ -79,10 +86,13 @@ Components
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 1px solid var(--border-color);
-  padding: 0.25rem 0.4rem;
+  border: var(--tech-badge-border, 1px solid var(--border-color));
+  padding: var(--tech-badge-padding, 0.25rem 0.4rem);
   display: inline-block;
   margin: 0.35rem 0 0.4rem;
+  background: var(--tech-badge-background, transparent);
+  box-shadow: var(--tech-badge-box-shadow, none);
+  text-shadow: var(--tech-badge-text-shadow, none);
 }
 
 .experience-item__bullets {
@@ -98,11 +108,12 @@ Components
     margin-block-end: 0.3rem;
 
     &::before {
-      content: '■';
+      content: var(--bullet-before-content, '■');
       position: absolute;
       left: 0;
       top: 0.1rem;
-      font-size: 0.6rem;
+      font-size: var(--bullet-font-size, 0.6rem);
+      text-shadow: var(--bullet-text-shadow, none);
     }
   }
 }
@@ -111,17 +122,19 @@ Components
 .community-list {
   list-style: none;
   padding-inline-start: 0;
+  padding: var(--list-padding, 0);
   margin: 0;
-  border: 3px solid var(--border-color);
+  border: var(--list-border, 3px solid var(--border-color));
   box-sizing: border-box;
-  background-color: var(--section-bg, transparent);
+  background-color: var(--list-background, var(--section-bg, transparent));
+  box-shadow: var(--list-box-shadow, none);
 }
 
 .community-list__item {
   font-size: 0.9rem;
   line-height: 1.5;
-  padding: 0.6rem 0.75rem;
-  border-block-start: 1px solid var(--border-color);
+  padding: var(--list-item-padding, 0.6rem 0.75rem);
+  border-block-start: var(--list-item-border-width, 1px) var(--list-item-border-style, solid) var(--border-color);
 
   &:first-child {
     border-block-start: 0;
@@ -130,10 +143,11 @@ Components
 
 /* Education */
 .education-item {
-  border: 2px solid var(--border-color);
-  padding: 0.75rem 0.85rem;
+  border: var(--education-item-border, 2px solid var(--border-color));
+  padding: var(--education-item-padding, 0.75rem 0.85rem);
   font-size: 0.9rem;
-  background-color: var(--section-bg, transparent);
+  background-color: var(--education-item-background, var(--section-bg, transparent));
+  box-shadow: var(--education-item-box-shadow, none);
 }
 
 .education-item__institution {
@@ -151,17 +165,18 @@ Components
   list-style: none;
   padding-inline-start: 0;
   margin: 0;
-  border: 3px solid var(--border-color);
-  padding: 0.7rem 0.8rem;
+  border: var(--list-border, 3px solid var(--border-color));
+  padding: var(--list-padding, 0.7rem 0.8rem);
   box-sizing: border-box;
-  background-color: var(--section-bg, transparent);
+  background-color: var(--list-background, var(--section-bg, transparent));
+  box-shadow: var(--list-box-shadow, none);
 }
 
 .principles-list__item {
   font-size: 0.9rem;
   line-height: 1.4;
-  padding: 0.25rem 0;
-  border-block-start: 1px dashed var(--border-color);
+  padding: var(--list-item-padding, 0.25rem 0);
+  border-block-start: var(--list-item-border-width, 1px) var(--list-item-border-style, dashed) var(--border-color);
 
   &:first-child {
     border-block-start: 0;
@@ -184,9 +199,9 @@ Components
   font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.55rem 1.1rem;
-  border: 4px solid var(--text-color);
-  background: var(--background-color);
+  padding: var(--printlink-padding, 0.55rem 1.1rem);
+  border: var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color);
+  background: var(--printlink-background, var(--background-color));
   color: var(--text-color);
   text-decoration: none;
   display: inline-flex;
@@ -195,10 +210,13 @@ Components
   white-space: nowrap;
   cursor: pointer;
   margin-block: 1rem;
+  box-shadow: var(--printlink-box-shadow, none);
+  font-weight: var(--printlink-font-weight, normal);
 
   &:hover {
     background: var(--text-color);
     color: var(--background-color);
+    box-shadow: var(--printlink-hover-shadow, none);
   }
 }
 

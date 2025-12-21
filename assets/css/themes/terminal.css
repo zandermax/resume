@@ -41,6 +41,57 @@ Terminal Theme (1992 CLI-inspired)
     inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
   --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+
+  /* Component overrides */
+  --main-border-width: 0;
+  --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
+  --main-padding: 2rem;
+  --section-title-border-width: 0;
+  --section-title-box-shadow: var(--terminal-inset-sunken-sm);
+  --section-title-padding: 0.5rem 0.75rem;
+  --section-title-background: var(--terminal-button-bg);
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: var(--terminal-window-bg);
+  --skills-grid-box-shadow: var(--terminal-inset-sunken-lg);
+  --skills-grid-padding: 1rem;
+  --skills-group-border: 0;
+  --skills-group-box-shadow: var(--terminal-inset-raised-sm);
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: 0.75rem;
+  --list-border: 0;
+  --list-background: var(--terminal-window-bg);
+  --list-box-shadow: var(--terminal-inset-sunken-lg);
+  --list-padding: 1rem;
+  --experience-item-border: 0;
+  --experience-item-box-shadow: var(--terminal-inset-raised-lg);
+  --experience-item-background: var(--section-bg);
+  --experience-item-padding: 1.25rem;
+  --experience-item-margin-top: 1.25rem;
+  --tech-badge-border: 0;
+  --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
+  --tech-badge-background: var(--terminal-button-bg);
+  --tech-badge-padding: 0.35rem 0.5rem;
+  --education-item-border: 0;
+  --education-item-box-shadow: var(--terminal-inset-raised-sm);
+  --education-item-background: var(--section-bg);
+  --education-item-padding: 1rem;
+  --header-border-width: 0;
+  --header-box-shadow: var(--terminal-inset-raised-lg);
+  --header-padding: 1.25rem;
+  --bullet-before-content: '▪';
+  --bullet-font-size: 0.7rem;
+  --printlink-border-width: 0;
+  --printlink-background: var(--terminal-button-bg);
+  --link-text-decoration: underline;
+  --dial-knob-border-width: 0;
+  --dial-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
+  --dial-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+  --dial-indicator-box-shadow: none;
+  --dial-indicator-width: 10px;
+  --dial-label-font-size: 0.85rem;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-spoke-stroke-width: 2px;
 }
 
 /* Dark Mode */
@@ -76,6 +127,57 @@ Terminal Theme (1992 CLI-inspired)
     inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
   --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+
+  /* Component overrides */
+  --main-border-width: 0;
+  --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
+  --main-padding: 2rem;
+  --section-title-border-width: 0;
+  --section-title-box-shadow: var(--terminal-inset-sunken-sm);
+  --section-title-padding: 0.5rem 0.75rem;
+  --section-title-background: var(--terminal-button-bg);
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: var(--terminal-window-bg);
+  --skills-grid-box-shadow: var(--terminal-inset-sunken-lg);
+  --skills-grid-padding: 1rem;
+  --skills-group-border: 0;
+  --skills-group-box-shadow: var(--terminal-inset-raised-sm);
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: 0.75rem;
+  --list-border: 0;
+  --list-background: var(--terminal-window-bg);
+  --list-box-shadow: var(--terminal-inset-sunken-lg);
+  --list-padding: 1rem;
+  --experience-item-border: 0;
+  --experience-item-box-shadow: var(--terminal-inset-raised-lg);
+  --experience-item-background: var(--section-bg);
+  --experience-item-padding: 1.25rem;
+  --experience-item-margin-top: 1.25rem;
+  --tech-badge-border: 0;
+  --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
+  --tech-badge-background: var(--terminal-button-bg);
+  --tech-badge-padding: 0.35rem 0.5rem;
+  --education-item-border: 0;
+  --education-item-box-shadow: var(--terminal-inset-raised-sm);
+  --education-item-background: var(--section-bg);
+  --education-item-padding: 1rem;
+  --header-border-width: 0;
+  --header-box-shadow: var(--terminal-inset-raised-lg);
+  --header-padding: 1.25rem;
+  --bullet-before-content: '▪';
+  --bullet-font-size: 0.7rem;
+  --printlink-border-width: 0;
+  --printlink-background: var(--terminal-button-bg);
+  --link-text-decoration: underline;
+  --dial-knob-border-width: 0;
+  --dial-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
+  --dial-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+  --dial-indicator-box-shadow: none;
+  --dial-indicator-width: 10px;
+  --dial-label-font-size: 0.85rem;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-spoke-stroke-width: 2px;
 }
 
 /* Loading bar reveal animation - contracting overlay */
@@ -125,51 +227,6 @@ Terminal Theme (1992 CLI-inspired)
 body[data-theme='terminal'] {
   font-family: var(--font-family);
 
-  /* Common 3D border patterns */
-  .resume__main,
-  .skills-grid,
-  .community-list,
-  .principles-list {
-    border: 0;
-    background: var(--terminal-window-bg);
-  }
-
-  /* Main container with 3D terminal window effect */
-  .resume__main {
-    box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
-    padding: 2rem;
-  }
-
-  /* Terminal-style 3D borders for sections */
-  .resume-section__title {
-    border: 0;
-    box-shadow: var(--terminal-inset-sunken-sm);
-    padding: 0.5rem 0.75rem;
-    background: var(--terminal-button-bg);
-    margin-block-end: 1rem;
-  }
-
-  /* Terminal window border for containers */
-  .skills-grid,
-  .community-list,
-  .principles-list {
-    box-shadow: var(--terminal-inset-sunken-lg);
-    padding: 1rem;
-  }
-
-  /* Common raised 3D effect */
-  .skills-grid__group,
-  .experience-item__tech,
-  .education-item {
-    border: 0;
-    box-shadow: var(--terminal-inset-raised-sm);
-    background: var(--section-bg);
-  }
-
-  .skills-grid__group {
-    padding: 0.75rem;
-  }
-
   .skills-grid__title {
     font-size: 0.9rem;
   }
@@ -179,12 +236,10 @@ body[data-theme='terminal'] {
     line-height: 1.5;
   }
 
-  /* Tech badges as terminal buttons */
+  /* Tech badges - using custom properties */
   .experience-item__tech {
-    background: var(--terminal-button-bg);
     color: var(--text-color);
     font-weight: normal;
-    padding: 0.35rem 0.5rem;
     font-size: 0.85rem;
   }
 
@@ -194,24 +249,15 @@ body[data-theme='terminal'] {
     line-height: 1.6;
   }
 
-  /* Education box with terminal style */
+  /* Education box - using custom properties */
   .education-item {
-    padding: 1rem;
     font-size: 0.95rem;
   }
 
-  /* Inset 3D panel effect */
+  /* Experience and header - using custom properties */
   .experience-item,
   .resume-header {
     position: relative;
-    padding: 1.25rem;
-    box-shadow: var(--terminal-inset-raised-lg);
-    border: 0;
-  }
-
-  .experience-item {
-    background: var(--section-bg);
-    margin-block-start: 1.25rem;
   }
 
   .experience-item__company {
@@ -226,18 +272,11 @@ body[data-theme='terminal'] {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-block-end: 0.5rem;
-
-    &::before {
-      content: '▪';
-      font-size: 0.7rem;
-      text-shadow: none;
-    }
   }
 
-  /* Header with terminal window style */
+  /* Header - using custom properties */
   .resume-header {
     background: var(--header-bg);
-    margin-block-end: 1.5rem;
   }
 
   .resume-header__meta {
@@ -282,13 +321,9 @@ body[data-theme='terminal'] {
   }
 
   .resume-header__printlink {
-    border: 0;
-    box-shadow: none;
     position: relative;
     transition: box-shadow 0.1s ease, transform 0.1s ease;
-    background: var(--terminal-button-bg);
     color: var(--text-color);
-    font-weight: normal;
 
     &::before {
       content: '[';
@@ -313,22 +348,15 @@ body[data-theme='terminal'] {
   /* Dial selector enhancements with CLI-style knob */
   dial-selector {
     .knob {
-      box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
-      border: 0;
-      /* Octagonal clip-path to look like a CLI GUI element */
-      clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+      /* Octagonal clip-path handled by custom property */
       background: var(--dial-knob-background);
     }
 
     .indicator {
-      width: 10px;
-      box-shadow: none;
       background: var(--dial-color-indicator);
     }
 
     .dial-label {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
       transition: background 0.15s ease, color 0.15s ease;
 
       &:hover > span {
@@ -342,15 +370,6 @@ body[data-theme='terminal'] {
         color: var(--dial-color-selection);
       }
     }
-
-    .spoke-line {
-      stroke-width: 2px;
-    }
-  }
-
-  /* Terminal link styling */
-  a:not(.resume-header__printlink) {
-    text-decoration: underline;
   }
 
   /* Typography enhancements */

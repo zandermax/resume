@@ -158,7 +158,6 @@ dial-selector .dial-label {
 }
 
 dial-selector .dial-label.active > span {
-  padding: 0.5em;
   color: var(--color-selection);
 }
 

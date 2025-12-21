@@ -21,6 +21,72 @@
   --accent-color: oklch(20% 0.08 60);
   --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
   --display-terminal: block;
+
+  /* Component overrides */
+  --main-border-width: 2px;
+  --main-border-style: solid;
+  --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+  --main-padding: 2rem;
+  --header-border-width: 2px;
+  --header-border-style: double;
+  --header-padding: 1rem 0;
+  --header-margin-bottom: 2rem;
+  --header-name-border-width: 2px;
+  --header-name-border-style: solid;
+  --header-name-text-shadow: 0 0 10px currentColor;
+  --section-title-border-width: 2px;
+  --section-title-border-style: solid;
+  --section-title-border-position: block-end;
+  --section-title-padding: 0.5rem 0;
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 1rem 0;
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-padding: 0.5rem 0;
+  --skills-title-border-width: 1px;
+  --skills-title-border-style: solid;
+  --skills-title-padding-bottom: 0.25rem;
+  --skills-title-margin-bottom: 0.5rem;
+  --experience-item-border: 0;
+  --experience-item-background: transparent;
+  --experience-item-padding: 1rem 0 0.5rem;
+  --experience-item-margin-top: 1.5rem;
+  --tech-badge-border: 1px solid var(--border-color);
+  --tech-badge-background: transparent;
+  --tech-badge-padding: 0.25rem 0.5rem;
+  --tech-badge-text-shadow: 0 0 6px currentColor;
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-padding: 0.5rem 0;
+  --list-border: 0;
+  --list-background: transparent;
+  --list-padding: 0;
+  --list-item-border-width: 1px;
+  --list-item-border-style: dotted;
+  --list-item-padding: 0.75rem 0;
+  --bullet-before-content: '>';
+  --bullet-font-size: 0.8rem;
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-padding: 0.5rem 1rem;
+  --printlink-font-weight: bold;
+  --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --heading-text-shadow: 0 0 2px currentColor;
+  --dial-knob-border-width: 2px;
+  --dial-knob-border-style: solid;
+  --dial-knob-border-radius: 50%;
+  --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+  --dial-indicator-box-shadow: 0 0 10px currentColor;
+  --dial-label-border-width: 1px;
+  --dial-label-border-style: solid;
+  --dial-label-font-size: 0.85rem;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-spoke-stroke-width: 1px;
+  --dial-spoke-opacity: 0.5;
 }
 
 /* Dark Mode */
@@ -42,6 +108,72 @@
   --accent-color: var(--color-green);
   --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
   --display-terminal: block;
+
+  /* Component overrides */
+  --main-border-width: 2px;
+  --main-border-style: solid;
+  --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+  --main-padding: 2rem;
+  --header-border-width: 2px;
+  --header-border-style: double;
+  --header-padding: 1rem 0;
+  --header-margin-bottom: 2rem;
+  --header-name-border-width: 2px;
+  --header-name-border-style: solid;
+  --header-name-text-shadow: 0 0 10px currentColor;
+  --section-title-border-width: 2px;
+  --section-title-border-style: solid;
+  --section-title-border-position: block-end;
+  --section-title-padding: 0.5rem 0;
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 1rem 0;
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-padding: 0.5rem 0;
+  --skills-title-border-width: 1px;
+  --skills-title-border-style: solid;
+  --skills-title-padding-bottom: 0.25rem;
+  --skills-title-margin-bottom: 0.5rem;
+  --experience-item-border: 0;
+  --experience-item-background: transparent;
+  --experience-item-padding: 1rem 0 0.5rem;
+  --experience-item-margin-top: 1.5rem;
+  --tech-badge-border: 1px solid var(--border-color);
+  --tech-badge-background: transparent;
+  --tech-badge-padding: 0.25rem 0.5rem;
+  --tech-badge-text-shadow: 0 0 6px currentColor;
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-padding: 0.5rem 0;
+  --list-border: 0;
+  --list-background: transparent;
+  --list-padding: 0;
+  --list-item-border-width: 1px;
+  --list-item-border-style: dotted;
+  --list-item-padding: 0.75rem 0;
+  --bullet-before-content: '>';
+  --bullet-font-size: 0.8rem;
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-padding: 0.5rem 1rem;
+  --printlink-font-weight: bold;
+  --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --heading-text-shadow: 0 0 2px currentColor;
+  --dial-knob-border-width: 2px;
+  --dial-knob-border-style: solid;
+  --dial-knob-border-radius: 50%;
+  --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+  --dial-indicator-box-shadow: 0 0 10px currentColor;
+  --dial-label-border-width: 1px;
+  --dial-label-border-style: solid;
+  --dial-label-font-size: 0.85rem;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-spoke-stroke-width: 1px;
+  --dial-spoke-opacity: 0.5;
 }
 
 /* Cursor blink animation */
@@ -133,12 +265,9 @@ body[data-theme='crt'] {
     letter-spacing: 0.02em;
   }
 
-  /* Main container with CRT glow */
+  /* Main container - using custom properties */
   .resume__main {
-    border: 2px solid currentColor;
-    box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
     background: var(--background-color);
-    padding: 2rem;
   }
 
   /* Terminal command log */
@@ -187,19 +316,15 @@ body[data-theme='crt'] {
     will-change: opacity;
   }
 
-  /* Header */
+  /* Header - using custom properties */
   .resume-header {
     border: 0;
-    border-block-end: 2px double currentColor;
-    padding: 1rem 0;
-    margin-block-end: 2rem;
+    border-block-end: var(--header-border-width) var(--header-border-style) currentColor;
   }
 
   .resume-header__name {
-    border-block-end: 2px solid currentColor;
     padding-block-end: 0.5rem;
     margin-block-end: 1rem;
-    text-shadow: 0 0 10px currentColor;
   }
 
   .resume-header__dial-selector {
@@ -208,9 +333,6 @@ body[data-theme='crt'] {
   }
 
   .resume-header__printlink {
-    border: 2px solid currentColor;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
     transition: all 0.1s ease;
 
     &::before {
@@ -218,53 +340,30 @@ body[data-theme='crt'] {
     }
 
     &:hover {
-      box-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
       text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
       border-width: 3px;
     }
   }
 
-  /* Section titles */
+  /* Section titles - using custom properties */
   .resume-section__title {
     border: 0;
-    border-block-end: 2px solid currentColor;
-    padding: 0.5rem 0;
-    margin-block-end: 1rem;
+    border-block-end: var(--section-title-border-width) var(--section-title-border-style) currentColor;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
-  /* Common transparent containers */
-  .skills-grid,
-  .skills-grid__group,
-  .community-list,
-  .principles-list,
-  .education-item,
-  .experience-item {
-    border: 0;
-    background: transparent;
-  }
-
-  /* Skills grid */
-  .skills-grid {
-    padding: 1rem 0;
-  }
-
+  /* Skills grid - using custom properties */
   .skills-grid__group {
-    padding: 0.5rem 0;
     margin-block-end: 1rem;
   }
 
   .skills-grid__title {
-    border-block-end: 1px solid currentColor;
-    padding-block-end: 0.25rem;
-    margin-block-end: 0.5rem;
+    border-block-end: var(--skills-title-border-width) var(--skills-title-border-style) currentColor;
   }
 
-  /* Experience items */
+  /* Experience items - using custom properties */
   .experience-item {
-    margin-block-start: 1.5rem;
-    padding: 1rem 0 0.5rem;
     border-block-start: 1px solid currentColor;
 
     &:first-of-type {
@@ -273,10 +372,6 @@ body[data-theme='crt'] {
   }
 
   .experience-item__tech {
-    border: 1px solid currentColor;
-    padding: 0.25rem 0.5rem;
-    text-shadow: 0 0 6px currentColor;
-
     &::before {
       content: '[';
       margin-inline-start: 2px;
@@ -289,56 +384,39 @@ body[data-theme='crt'] {
   }
 
   .experience-item__bullets li::before {
-    content: '>';
-    font-size: 0.8rem;
     margin-inline-start: 0.5rem;
   }
 
-  /* Community and principles lists */
+  /* Community and principles lists - using custom properties */
   .community-list__item,
   .principles-list__item {
-    padding: 0.75rem 0;
     border: 0;
-    border-block-start: 1px dotted currentColor;
+    border-block-start: var(--list-item-border-width) var(--list-item-border-style) currentColor;
 
     &:first-child {
       border-block-start: 0;
     }
   }
 
-  /* Education items */
-  .education-item {
-    padding: 0.5rem 0;
-  }
-
-  /* Links */
+  /* Links - using custom properties */
   a:not(.resume-header__printlink) {
-    text-decoration: underline;
-
     &:hover {
-      text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
       text-decoration: none;
       border-block-end: 2px solid currentColor;
     }
   }
 
-  /* Dial selector */
+  /* Dial selector - using custom properties */
   dial-selector {
     .knob {
-      border: 2px solid currentColor;
-      border-radius: 50%;
-      box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
       background: var(--dial-knob-background);
     }
 
     .indicator {
       background: currentColor;
-      box-shadow: 0 0 10px currentColor;
     }
 
     .dial-label {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
       border: 1px solid transparent;
       transition: all 0.15s ease;
 
@@ -353,11 +431,6 @@ body[data-theme='crt'] {
         border: 2px solid currentColor;
         box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
       }
-    }
-
-    .spoke-line {
-      stroke-width: 1px;
-      opacity: 0.5;
     }
   }
 

@@ -40,6 +40,124 @@ Custom Properties
   --display-dashboard-metrics: none;
   --display-section-title-normal: block;
   --display-terminal: none;
+
+  /* Common component styling properties */
+  /* Main container */
+  --main-border-width: 4px;
+  --main-border-style: solid;
+  --main-box-shadow: none;
+  --main-padding: 2.5rem 2.25rem;
+  --main-border-radius: 0;
+
+  /* Resume header */
+  --header-border-style: solid;
+  --header-border-width: 3px;
+  --header-padding: 0;
+  --header-margin-bottom: 1.5rem;
+
+  /* Header name */
+  --header-name-border-style: solid;
+  --header-name-border-width: 4px;
+  --header-name-text-shadow: none;
+
+  /* Print link button */
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-padding: 0.5rem 1rem;
+  --printlink-font-weight: normal;
+  --printlink-background: transparent;
+  --printlink-box-shadow: none;
+  --printlink-hover-shadow: none;
+
+  /* Section titles */
+  --section-title-border-style: solid;
+  --section-title-border-width: 3px;
+  --section-title-border-position: block; /* block, block-end, or none */
+  --section-title-padding: 0.45rem 0;
+  --section-title-margin-bottom: 0.75rem;
+  --section-title-background: transparent;
+  --section-title-box-shadow: none;
+
+  /* Skills grid */
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-box-shadow: none;
+  --skills-grid-padding: 0;
+
+  /* Skills grid group */
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-box-shadow: none;
+  --skills-group-padding: 0;
+
+  /* Skills grid title */
+  --skills-title-border-style: none;
+  --skills-title-border-width: 0;
+  --skills-title-padding-bottom: 0;
+  --skills-title-margin-bottom: 0;
+
+  /* Experience items */
+  --experience-item-border: 0;
+  --experience-item-background: transparent;
+  --experience-item-box-shadow: none;
+  --experience-item-padding: 0;
+  --experience-item-margin-top: 1rem;
+
+  /* Tech badges */
+  --tech-badge-border: 0;
+  --tech-badge-background: transparent;
+  --tech-badge-box-shadow: none;
+  --tech-badge-padding: 0.25rem 0.5rem;
+  --tech-badge-text-shadow: none;
+
+  /* Bullet points */
+  --bullet-before-content: '•';
+  --bullet-font-size: 1em;
+  --bullet-text-shadow: none;
+
+  /* Community/Principles lists */
+  --list-border: 0;
+  --list-background: transparent;
+  --list-box-shadow: none;
+  --list-padding: 0;
+
+  /* List items */
+  --list-item-border-style: none;
+  --list-item-border-width: 0;
+  --list-item-padding: 0.5rem 0;
+
+  /* Education items */
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-box-shadow: none;
+  --education-item-padding: 0;
+
+  /* Dial selector knob */
+  --dial-knob-border-width: 0;
+  --dial-knob-border-style: solid;
+  --dial-knob-box-shadow: none;
+  --dial-knob-border-radius: 50%;
+  --dial-knob-clip-path: none;
+
+  /* Dial selector indicator */
+  --dial-indicator-box-shadow: none;
+  --dial-indicator-width: 8px;
+
+  /* Dial selector labels */
+  --dial-label-border-width: 0;
+  --dial-label-border-style: solid;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-label-font-size: 0.85rem;
+
+  /* Dial selector spoke lines */
+  --dial-spoke-stroke-width: 1px;
+  --dial-spoke-opacity: 1;
+
+  /* Typography effects */
+  --text-shadow: none;
+  --heading-text-shadow: none;
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: none;
 }
 
 /* ===========================
@@ -87,9 +205,10 @@ h1.resume-header__name {
   font-size: 2.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-block-end: 4px solid var(--border-color);
+  border-block-end: var(--header-name-border-width, 4px) var(--header-name-border-style, solid) var(--border-color);
   padding-block-end: 0.35rem;
   margin-block-end: 0.35rem;
+  text-shadow: var(--header-name-text-shadow, none);
 }
 
 .resume-header__name-greeting,
@@ -118,10 +237,12 @@ h2.resume-section__title {
   font-size: 1.15rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  border-block: 3px solid var(--border-color);
-  padding: 0.45rem 0;
-  margin-block-end: 0.75rem;
+  border-block: var(--section-title-border-width, 3px) var(--section-title-border-style, solid) var(--border-color);
+  padding: var(--section-title-padding, 0.45rem 0);
+  margin-block-end: var(--section-title-margin-bottom, 0.75rem);
   color: var(--heading-color);
+  background: var(--section-title-background, transparent);
+  box-shadow: var(--section-title-box-shadow, none);
 }
 
 h3.experience-item__role,
@@ -129,14 +250,20 @@ h3.education-item__institution {
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: var(--heading-text-shadow, none);
 }
 
 /* Link colors using custom properties */
 a:not(.resume-header__printlink) {
   color: var(--link-color, inherit);
+  text-decoration: var(--link-text-decoration, underline);
 
   &:visited {
     color: var(--link-visited-color, inherit);
+  }
+
+  &:hover {
+    text-shadow: var(--link-hover-text-shadow, none);
   }
 }
 
@@ -148,12 +275,13 @@ Layout and Structure
 .resume__main {
   max-width: 960px;
   margin: 2rem auto;
-  padding: 2.5rem 2.25rem;
-  border: 4px solid var(--border-color);
+  padding: var(--main-padding, 2.5rem 2.25rem);
+  border: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-radius: var(--main-border-radius, 0);
   background-color: var(--section-bg, var(--background-color));
   background-image: var(--paper-texture);
   box-sizing: border-box;
-  box-shadow: var(--paper-shadow);
+  box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
   position: relative;
 }
 
@@ -165,9 +293,10 @@ Header Block
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  border-block-end: 3px solid var(--border-color);
+  border-block-end: var(--header-border-width, 3px) var(--header-border-style, solid) var(--border-color);
+  padding: var(--header-padding, 0);
   padding-block-end: 1rem;
-  margin-block-end: 1.5rem;
+  margin-block-end: var(--header-margin-bottom, 1.5rem);
 }
 
 .resume-header__dial-selector {
