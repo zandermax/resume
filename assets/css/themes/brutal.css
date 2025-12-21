@@ -348,22 +348,16 @@ body[data-theme='brutal'] {
       letter-spacing: 0.05em;
       transform: skewX(-3deg);
       color: var(--text-color);
+    }
 
-      &:hover {
-        border-color: var(--border-color);
-        background: var(--accent-color);
-        transform: skewX(-3deg) translate(-2px, -2px);
-        box-shadow: 4px 4px 0 var(--border-color);
-        color: var(--background-color);
-      }
-
-      &.active {
-        background: var(--text-color);
-        border-color: var(--border-color);
-        box-shadow: 6px 6px 0 var(--accent-color);
-        transform: skewX(-3deg) scale(1.05);
-        color: var(--background-color);
-      }
+    .dial-label > span:hover,
+    .dial-label.active > span {
+      border-color: var(--border-color);
+      background: var(--accent-color);
+      transform: skewX(-3deg) translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--border-color);
+      color: var(--background-color);
+      padding: 0.5rem 1rem;
     }
 
     .spoke-line {

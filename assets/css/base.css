@@ -43,6 +43,7 @@ Custom Properties
   --header-border-width: 3px;
   --header-padding: 0;
   --header-margin-bottom: 1.5rem;
+  --header-border-radius: var(--main-border-radius);
 
   /* Header name */
   --header-name-border-style: solid;
@@ -125,7 +126,6 @@ Custom Properties
   --dial-knob-border-width: 0;
   --dial-knob-border-style: solid;
   --dial-knob-box-shadow: none;
-  --dial-knob-border-radius: 50%;
 
   /* Dial selector indicator */
   --dial-indicator-box-shadow: none;
@@ -135,7 +135,11 @@ Custom Properties
   --dial-label-border-width: 0;
   --dial-label-border-style: solid;
   --dial-label-padding: 0.4rem 0.8rem;
-  --dial-label-font-size: 0.85rem;
+  --dial-label-font-size: clamp(16px, 1.5vw, 22px);
+  --dial-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
+  --dial-label-font-size--phone: clamp(12px, 2.5vw, 16px);
+  --dial-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
+  --dial-label-font-size--xs: clamp(12px, 3vw, 13px);
 
   /* Dial selector spoke lines */
   --dial-spoke-stroke-width: 1px;
@@ -285,6 +289,7 @@ Header Block
   padding: var(--header-padding, 0);
   padding-block-end: 1rem;
   margin-block-end: var(--header-margin-bottom, 1.5rem);
+  border-radius: var(--header-border-radius);
 }
 
 .resume-header__dial-selector {

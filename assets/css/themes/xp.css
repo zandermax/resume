@@ -110,6 +110,10 @@ Windows XP Theme (Luna)
   --xp-radius-sm: 4px;
   --xp-radius-md: 6px;
   --xp-radius-lg: 8px;
+
+  /* Header border radius matches main container */
+  --header-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
+  --main-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
 }
 
 /* Dark Mode */
@@ -162,6 +166,10 @@ Windows XP Theme (Luna)
   --xp-radius-sm: 4px;
   --xp-radius-md: 6px;
   --xp-radius-lg: 8px;
+
+  /* Header border radius matches main container */
+  --header-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
+  --main-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
 }
 
 /* Main XP theme styles */
@@ -483,8 +491,9 @@ body[data-theme='xp'] {
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .resume__main {
-      border-radius: 6px 6px 4px 4px;
+    :root[data-theme='xp'] {
+      --header-border-radius: 6px 6px 4px 4px;
+      --main-border-radius: 6px 6px 4px 4px;
     }
 
     .resume-header,
@@ -503,9 +512,12 @@ body[data-theme='xp'] {
   }
 
   @media (max-width: 500px) {
-    .resume__main {
-      border-radius: 4px 4px 3px 3px;
+    :root[data-theme='xp'] {
+      --header-border-radius: 4px 4px 3px 3px;
+      --main-border-radius: 4px 4px 3px 3px;
+    }
 
+    .resume__main {
       &::before {
         height: 28px;
       }

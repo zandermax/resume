@@ -79,13 +79,15 @@
     --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
     --heading-text-shadow: 0 0 2px currentColor;
     --dial-knob-border-width: 2px;
-    --dial-knob-border-style: solid;
-    --dial-knob-border-radius: 50%;
     --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
     --dial-indicator-box-shadow: 0 0 10px currentColor;
     --dial-label-border-width: 1px;
     --dial-label-border-style: solid;
     --dial-label-font-size: 0.85rem;
+    --dial-label-font-size--tablet: 0.75rem;
+    --dial-label-font-size--phone: 0.7rem;
+    --dial-label-font-size--phone-sm: 0.7rem;
+    --dial-label-font-size--xs: 0.65rem;
     --dial-label-padding: 0.4rem 0.8rem;
     --dial-spoke-stroke-width: 1px;
     --dial-spoke-opacity: 0.5;
@@ -165,13 +167,15 @@
     --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
     --heading-text-shadow: 0 0 2px currentColor;
     --dial-knob-border-width: 2px;
-    --dial-knob-border-style: solid;
-    --dial-knob-border-radius: 50%;
     --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
     --dial-indicator-box-shadow: 0 0 10px currentColor;
     --dial-label-border-width: 1px;
     --dial-label-border-style: solid;
-    --dial-label-font-size: 0.85rem;
+    --dial-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    --dial-label-font-size--tablet: 0.75rem;
+    --dial-label-font-size--phone: 0.7rem;
+    --dial-label-font-size--phone-sm: 0.7rem;
+    --dial-label-font-size--xs: 0.65rem;
     --dial-label-padding: 0.4rem 0.8rem;
     --dial-spoke-stroke-width: 1px;
     --dial-spoke-opacity: 0.5;
@@ -410,8 +414,6 @@ body[data-theme='crt'] {
   /* Dial selector - using custom properties */
   dial-selector {
     .knob {
-      border: var(--dial-knob-border-width) var(--dial-knob-border-style) currentColor;
-      border-radius: var(--dial-knob-border-radius);
       box-shadow: var(--dial-knob-box-shadow);
       background: var(--dial-knob-background);
     }
@@ -458,7 +460,6 @@ body[data-theme='crt'] {
     }
 
     dial-selector .dial-label {
-      font-size: 0.75rem;
       padding: 0.35rem 0.65rem;
     }
   }
@@ -473,7 +474,6 @@ body[data-theme='crt'] {
     }
 
     dial-selector .dial-label {
-      font-size: 0.7rem;
       padding: 0.3rem 0.55rem;
     }
 

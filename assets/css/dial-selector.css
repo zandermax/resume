@@ -28,7 +28,6 @@ dial-selector {
   --width-inner-circle: 2px;
   --color-inner-circle: var(--color-ink);
   /* Typography variables */
-  --font-size: clamp(16px, 1.5vw, 22px);
   --font-family: 'IBM Plex Mono', 'Courier New', monospace;
   /* Responsive sizing variables (set dynamically) */
   --knob-wrap-size: 320px;
@@ -145,7 +144,7 @@ dial-selector .knob::before {
 dial-selector .dial-label {
   text-decoration: none;
   color: inherit;
-  font-size: var(--font-size);
+  font-size: var(--dial-label-font-size);
   font-family: var(--font-family);
   letter-spacing: clamp(0.5px, 0.1vw, 1px);
   display: inline-flex;
@@ -194,7 +193,7 @@ dial-selector .advance {
 @media (max-width: 768px) {
   dial-selector {
     /* Reduce overall size for tablets/large phones */
-    --font-size: clamp(14px, 2.5vw, 18px);
+    --dial-label-font-size: var(--dial-label-font-size--tablet);
   }
 
   dial-selector .selector {
@@ -219,7 +218,7 @@ dial-selector .advance {
     --label-vertical-offset-scale: 105px; /* 75% of 140px */
     --horizontal-line-length: 40px; /* Significantly shorter horizontal lines */
     --max-spoke-length: 60px;
-    --font-size: clamp(12px, 2.5vw, 16px);
+    --dial-label-font-size: var(--dial-label-font-size--phone);
   }
 
   dial-selector .selector {
@@ -236,7 +235,7 @@ dial-selector .advance {
 @media (max-width: 480px) {
   dial-selector {
     --horizontal-line-length: 0px; /* NO horizontal lines - spokes only! */
-    --font-size: clamp(14px, 2.8vw, 14px);
+    --dial-label-font-size: var(--dial-label-font-size--phone-sm);
     --horizontal-line-end-offset: 0px; /* No offset needed without horizontal lines */
   }
 
@@ -262,7 +261,7 @@ dial-selector .advance {
   dial-selector {
     --horizontal-line-length: 0px;
     --max-spoke-length: 40px;
-    --font-size: clamp(12px, 3vw, 13px);
+    --dial-label-font-size: var(--dial-label-font-size--xs);
   }
 
   dial-selector .selector {

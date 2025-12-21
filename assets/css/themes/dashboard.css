@@ -30,6 +30,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
   --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
+
+  /* Border radius for main container and header */
+  --header-border-radius: 8px;
+  --main-border-radius: 8px;
 }
 
 /* Dark Mode */
@@ -59,6 +63,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
   --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
   --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
+
+  /* Border radius for main container and header */
+  --header-border-radius: 8px;
+  --main-border-radius: 8px;
 }
 
 @keyframes pulse-status {
