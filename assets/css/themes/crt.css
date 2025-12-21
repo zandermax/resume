@@ -409,15 +409,22 @@ body[data-theme='crt'] {
   /* Dial selector - using custom properties */
   dial-selector {
     .knob {
+      border: var(--dial-knob-border-width) var(--dial-knob-border-style) currentColor;
+      border-radius: var(--dial-knob-border-radius);
+      box-shadow: var(--dial-knob-box-shadow);
       background: var(--dial-knob-background);
     }
 
     .indicator {
+      width: var(--dial-indicator-width);
+      box-shadow: var(--dial-indicator-box-shadow);
       background: currentColor;
     }
 
     .dial-label {
-      border: 1px solid transparent;
+      font-size: var(--dial-label-font-size);
+      padding: var(--dial-label-padding);
+      border: var(--dial-label-border-width) var(--dial-label-border-style) transparent;
       transition: all 0.15s ease;
 
       &:hover > span {
@@ -431,6 +438,11 @@ body[data-theme='crt'] {
         border: 2px solid currentColor;
         box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
       }
+    }
+
+    .spoke-line {
+      stroke-width: var(--dial-spoke-stroke-width);
+      opacity: var(--dial-spoke-opacity);
     }
   }
 

@@ -348,15 +348,22 @@ body[data-theme='terminal'] {
   /* Dial selector enhancements with CLI-style knob */
   dial-selector {
     .knob {
-      /* Octagonal clip-path handled by custom property */
+      border: var(--dial-knob-border-width);
+      border-radius: var(--dial-knob-border-radius);
+      box-shadow: var(--dial-knob-box-shadow);
+      clip-path: var(--dial-knob-clip-path);
       background: var(--dial-knob-background);
     }
 
     .indicator {
+      width: var(--dial-indicator-width);
+      box-shadow: var(--dial-indicator-box-shadow);
       background: var(--dial-color-indicator);
     }
 
     .dial-label {
+      font-size: var(--dial-label-font-size);
+      padding: var(--dial-label-padding);
       transition: background 0.15s ease, color 0.15s ease;
 
       &:hover > span {
@@ -369,6 +376,10 @@ body[data-theme='terminal'] {
         box-shadow: var(--terminal-inset-sunken-sm);
         color: var(--dial-color-selection);
       }
+    }
+
+    .spoke-line {
+      stroke-width: var(--dial-spoke-stroke-width);
     }
   }
 
@@ -573,7 +584,7 @@ body[data-theme='terminal'] {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 0.25rem));
     padding: 1rem 6rem;
     pointer-events: none;
     cursor: pointer;
@@ -589,6 +600,17 @@ body[data-theme='terminal'] {
   /* Enable print overlay when dialog is open and animation completes */
   .terminal-dialog[open] .terminal-dialog__print-overlay {
     animation: terminal-print-overlay-enable 5s steps(1) 1 forwards;
+  }
+
+  /* Suppress focus outlines for both button and overlay */
+  .terminal-dialog__button,
+  .terminal-dialog__print-overlay {
+    outline: none;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   /* Responsive Adjustments */
