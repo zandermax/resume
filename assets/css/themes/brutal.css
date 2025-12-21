@@ -454,7 +454,6 @@ body[data-theme='brutal'] {
     inset: 0;
     background: oklch(0% 0 0 / 0.85);
     z-index: 9999;
-    animation: fadeInOverlay 0.5s ease 5s forwards;
     pointer-events: none;
     display: block !important;
     opacity: 0;
@@ -475,7 +474,6 @@ body[data-theme='brutal'] {
     box-shadow: 0 -10px 20px oklch(0% 0 0 / 0.5), inset 0 4px 0 var(--accent-color);
     padding: 1rem 1rem 0.75rem;
     transform: translateY(100%);
-    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 5s forwards;
     pointer-events: auto;
   }
 
@@ -624,6 +622,16 @@ body[data-theme='brutal'] {
     opacity: 0;
     width: 0;
     height: 0;
+    pointer-events: auto; /* Override parent's pointer-events: none */
+  }
+
+  /* Entrance animations - only play when checkbox is NOT checked */
+  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) {
+    animation: fadeInOverlay 0.5s ease 5s forwards;
+  }
+
+  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) .cookie-banner {
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 5s forwards;
   }
 
   /* When checkbox is checked, hide the banner with fade-out animation */

@@ -22,13 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
 
+  const existingCookie = getCookie('resume_cookie_consent');
+
   if (cookieBanner && cookieBannerDismiss) {
-    // Debug: Show all cookies
-    console.log('All cookies:', document.cookie);
-
-    const existingCookie = getCookie('resume_cookie_consent');
-    console.log('Looking for resume_cookie_consent, found:', existingCookie);
-
     if (existingCookie) {
       // Cookie exists - show the "EVERY TIME" message
       cookieBanner.classList.add('cookie-banner--returning');
@@ -37,13 +33,12 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       // No cookie - reset banner to hidden
       cookieBannerDismiss.checked = false;
-      console.log('🍪 No cookie found, showing initial message');
     }
   }
 
   // Cookie Banner - Set a real cookie when accepted
   const cookieBannerAccept = document.getElementById('cookie-banner-accept');
-  if (cookieBannerAccept) {
+  if (cookieBannerAccept && !existingCookie) {
     cookieBannerAccept.addEventListener('click', () => {
       // Set cookie that expires in 1 hour
       const now = new Date();
@@ -54,11 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
       document.cookie = `resume_cookie_consent=${encodeURIComponent(cookieValue)};${expires};path=/;SameSite=Lax`;
 
       console.log('🍪 Cookie set!');
-
-      // Explicitly check the checkbox to dismiss the banner
-      if (cookieBannerDismiss) {
-        cookieBannerDismiss.checked = true;
-      }
     });
   }
 });
