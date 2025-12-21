@@ -2,6 +2,11 @@
 BRUTAL Theme - Maximum Brutalism
 =========================== */
 
+/* Common properties for all modes */
+:root[data-theme='brutal'] {
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 /* Light Mode */
 :root[data-theme='brutal'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -12,7 +17,6 @@ BRUTAL Theme - Maximum Brutalism
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
   --dial-knob-background: oklch(19% 0.02 240);
-  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
@@ -32,7 +36,6 @@ BRUTAL Theme - Maximum Brutalism
   --dial-color-selection: var(--color-red-bright);
   --dial-color-indicator: var(--color-red-bright);
   --dial-knob-background: var(--color-dark-bg-alt);
-  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --link-color: oklch(92% 0 0);
   --link-visited-color: var(--color-gray-light);
   --accent-color: var(--color-red-bright);
@@ -44,7 +47,6 @@ BRUTAL Theme - Maximum Brutalism
 
 /* Harsh, unforgiving base */
 body[data-theme='brutal'] {
-  font-family: var(--font-family);
   font-weight: 900;
   letter-spacing: -0.02em;
 

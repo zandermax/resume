@@ -2,46 +2,15 @@
 Terminal Theme (1992 CLI-inspired)
 =========================== */
 
-/* Consolidated transparency values (used in both light and dark modes) */
+/* Common properties for all modes */
 :root[data-theme='terminal'] {
   --terminal-black-40: oklch(0% 0 0 / 0.4);
   --terminal-black-60: oklch(0% 0 0 / 0.6);
   --terminal-black-80: oklch(0% 0 0 / 0.8);
   --dial-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
-}
-
-/* Light Mode */
-:root[data-theme='terminal'][data-mode='light'] {
-  --background-color: var(--color-blue-sky);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-black);
-  --border-color: var(--color-gray-medium);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-yellow);
-  --dial-color-indicator: var(--color-yellow);
-  --dial-knob-background: var(--color-silver);
   --font-family: 'Courier New', 'Lucida Console', monospace;
   --background-image: none;
-  --link-color: var(--color-yellow);
-  --link-visited-color: var(--color-cyan);
-  --section-bg: var(--color-silver);
-  --header-bg: var(--color-gray-light);
-  --terminal-border-light: var(--color-white);
-  --terminal-border-dark: var(--color-black);
-  --terminal-window-bg: var(--color-silver);
-  --terminal-title-bg: var(--color-blue-navy);
-  --terminal-button-bg: var(--color-silver);
-  --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
-
-  /* Consolidated inset border patterns for 3D effects */
-  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
-    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
-  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
-    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+  --border-color: var(--color-gray-medium);
 
   /* Component overrides */
   --main-border-width: 0;
@@ -97,18 +66,46 @@ Terminal Theme (1992 CLI-inspired)
   --dial-spoke-stroke-width: 2px;
 }
 
+/* Light Mode */
+:root[data-theme='terminal'][data-mode='light'] {
+  --background-color: var(--color-blue-sky);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-yellow);
+  --dial-color-indicator: var(--color-yellow);
+  --dial-knob-background: var(--color-silver);
+  --link-color: var(--color-yellow);
+  --link-visited-color: var(--color-cyan);
+  --section-bg: var(--color-silver);
+  --header-bg: var(--color-gray-light);
+  --terminal-border-light: var(--color-white);
+  --terminal-border-dark: var(--color-black);
+  --terminal-window-bg: var(--color-silver);
+  --terminal-title-bg: var(--color-blue-navy);
+  --terminal-button-bg: var(--color-silver);
+  --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
+
+  /* Consolidated inset border patterns for 3D effects */
+  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
+    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
+  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
+    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+}
+
 /* Dark Mode */
 :root[data-theme='terminal'][data-mode='dark'] {
   --background-color: var(--color-blue-navy);
   --text-color: var(--color-white);
   --heading-color: var(--color-white);
-  --border-color: var(--color-gray-medium);
   --dial-color-ink: var(--color-gray-light);
   --dial-color-selection: var(--color-cyan);
   --dial-color-indicator: var(--color-cyan);
   --dial-knob-background: oklch(38% 0 0);
-  --font-family: 'Courier New', 'Lucida Console', monospace;
-  --background-image: none;
   --link-color: var(--color-cyan);
   --link-visited-color: var(--color-yellow);
   --section-bg: var(--color-blue-navy);
@@ -130,59 +127,6 @@ Terminal Theme (1992 CLI-inspired)
     inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
   --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
-
-  /* Component overrides */
-  --main-border-width: 0;
-  --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
-  --main-padding: 2rem;
-  --section-title-border-width: 0;
-  --section-title-box-shadow: var(--terminal-inset-sunken-sm);
-  --section-title-padding: 0.5rem 0.75rem;
-  --section-title-background: var(--terminal-button-bg);
-  --section-title-margin-bottom: 1rem;
-  --skills-grid-border: 0;
-  --skills-grid-background: var(--terminal-window-bg);
-  --skills-grid-box-shadow: var(--terminal-inset-sunken-lg);
-  --skills-grid-padding: 1rem;
-  --skills-group-border: 0;
-  --skills-group-box-shadow: var(--terminal-inset-raised-sm);
-  --skills-group-background: var(--section-bg);
-  --skills-group-padding: 0.75rem;
-  --list-border: 0;
-  --list-background: var(--terminal-window-bg);
-  --list-box-shadow: var(--terminal-inset-sunken-lg);
-  --list-padding: 1rem;
-  --experience-item-border: 0;
-  --experience-item-box-shadow: var(--terminal-inset-raised-lg);
-  --experience-item-background: var(--section-bg);
-  --experience-item-padding: 1.25rem;
-  --experience-item-margin-top: 1.25rem;
-  --tech-badge-border: 0;
-  --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
-  --tech-badge-background: var(--terminal-button-bg);
-  --tech-badge-padding: 0.35rem 0.5rem;
-  --education-item-border: 0;
-  --education-item-box-shadow: var(--terminal-inset-raised-sm);
-  --education-item-background: var(--section-bg);
-  --education-item-padding: 1rem;
-  --header-border-width: 0;
-  --header-box-shadow: var(--terminal-inset-raised-lg);
-  --header-padding: 1.25rem;
-  --bullet-before-content: '▪';
-  --bullet-font-size: 0.7rem;
-  --printlink-border-width: 0;
-  --printlink-background: var(--terminal-button-bg);
-  --link-text-decoration: underline;
-  --dial-knob-border-width: 0;
-  --dial-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
-  --dial-indicator-box-shadow: none;
-  --dial-indicator-width: 10px;
-  --dial-label-padding: 0.4rem 0.8rem;
-  --dial-label-font-size--tablet: 0.75rem;
-  --dial-label-font-size--phone: 0.7rem;
-  --dial-label-font-size--phone-sm: 0.7rem;
-  --dial-label-font-size--xs: 0.65rem;
-  --dial-spoke-stroke-width: 2px;
 }
 
 /* Loading bar reveal animation - contracting overlay */
@@ -230,8 +174,6 @@ Terminal Theme (1992 CLI-inspired)
 
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
-  font-family: var(--font-family);
-
   .skills-grid__title {
     font-size: 0.9rem;
   }

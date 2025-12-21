@@ -180,7 +180,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
 /* Base theme styling */
 body[data-theme='web2gloss'] {
-  font-family: var(--font-family);
   letter-spacing: 0.02em;
 
   /* Common glossy overlay mixin pattern */

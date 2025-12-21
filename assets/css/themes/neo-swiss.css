@@ -3,6 +3,18 @@ Neo-Swiss Theme - Post-Platform Modernism
 Ultra-modern minimalism with mathematical precision
 =========================== */
 
+/* Common properties for all modes */
+:root[data-theme='neoswiss'] {
+  --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --background-image: none;
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --dial-color-selection: var(--color-red);
+  --dial-color-indicator: var(--color-red);
+  --accent-color: var(--color-red);
+  --swiss-grid: 8px;
+}
+
 /* Light Mode */
 :root[data-theme='neoswiss'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -10,17 +22,9 @@ Ultra-modern minimalism with mathematical precision
   --heading-color: var(--color-black);
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-red);
-  --dial-color-indicator: var(--color-red);
   --dial-knob-background: var(--color-black);
-  --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --background-image: none;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-black);
-  --section-bg: transparent;
-  --header-bg: transparent;
-  --accent-color: var(--color-red);
-  --swiss-grid: 8px;
 }
 
 /* Dark Mode */
@@ -30,17 +34,9 @@ Ultra-modern minimalism with mathematical precision
   --heading-color: var(--color-white);
   --border-color: var(--color-white);
   --dial-color-ink: var(--color-white);
-  --dial-color-selection: var(--color-red);
-  --dial-color-indicator: var(--color-red);
   --dial-knob-background: var(--color-white);
-  --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  --background-image: none;
   --link-color: var(--color-white);
   --link-visited-color: var(--color-white);
-  --section-bg: transparent;
-  --header-bg: transparent;
-  --accent-color: var(--color-red);
-  --swiss-grid: 8px;
 }
 
 /* AI Modal Animations - Defined at root level */
@@ -109,7 +105,6 @@ Ultra-modern minimalism with mathematical precision
 
 /* Base theme - Pure minimalism */
 body[data-theme='neoswiss'] {
-  font-family: var(--font-family);
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.8;

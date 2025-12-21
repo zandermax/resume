@@ -2,58 +2,124 @@
 2039 GLITCH Theme - Dystopian Anti-Design
 =========================== */
 
-/* Light Mode */
-:root[data-theme='glitch'][data-mode='light'] {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --heading-color: #000000;
-  --border-color: #000000;
-  --dial-color-ink: #000000;
-  --dial-color-selection: #000000;
-  --dial-color-indicator: #ff0000;
-  --dial-knob-background: #f5f5f5;
+/* Common properties for all modes */
+:root[data-theme='glitch'] {
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: none;
-  --link-color: #000000;
-  --link-visited-color: #333333;
-  --section-bg: #fafafa;
-  --header-bg: #f0f0f0;
-  --accent-color: #000000;
-  --glitch-primary: #ff0000;
-  --glitch-secondary: #00ffff;
-  --glitch-tertiary: #0000ff;
+
+  /* Glitch colors - converted to oklch */
+  --glitch-primary: oklch(62.8% 0.258 29.2); /* #ff0000 red */
+  --glitch-secondary: oklch(91.1% 0.139 195.7); /* #00ffff cyan */
+  --glitch-tertiary: oklch(45.2% 0.313 264.1); /* #0000ff blue */
+  --dial-color-indicator: var(--glitch-primary);
 
   /* Glitch effect CSS variables */
   --glitch-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
   --glitch-box-shadow-sm: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-md: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
+  --glitch-box-shadow-list: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-header: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
+  --glitch-box-shadow-dial: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-section: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
   --glitch-text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
+  --glitch-text-shadow-sm: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+  --glitch-text-shadow-alt: 1px 0 var(--glitch-secondary), -1px 0 var(--glitch-primary);
+
+  /* Spacing variables */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border widths */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 3px;
+  --border-width-xl: 4px;
+  --border-width-xxl: 5px;
+  --border-width-accent: 6px;
+
+  /* Font sizes */
+  --font-size-xs: 0.85rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.4rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-hero: 3rem;
+
+  /* Filter effects */
+  --filter-contrast-base: contrast(1.1);
+  --filter-contrast-mid: contrast(1.15);
+  --filter-contrast-high: contrast(1.2);
+
+  /* Opacity levels */
+  --opacity-low: 0.3;
+  --opacity-mid: 0.4;
+
+  /* Transform values */
+  --skew-subtle: -0.3deg;
+  --skew-light: 0.2deg;
+  --skew-medium: -0.5deg;
+
+  /* Animation durations */
+  --duration-fast: 12s;
+  --duration-medium: 14s;
+  --duration-slow: 16s;
+  --duration-slower: 18s;
+  --duration-slowest: 20s;
+}
+
+/* Light Mode */
+:root[data-theme='glitch'][data-mode='light'] {
+  /* Base colors */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray-light: oklch(97% 0 0); /* #f5f5f5 */
+  --color-gray-lighter: oklch(98.4% 0 0); /* #fafafa */
+  --color-gray-medium: oklch(95.6% 0 0); /* #f0f0f0 */
+  --color-gray-dark: oklch(23.6% 0 0); /* #333333 */
+
+  /* Theme mappings */
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-black);
+  --dial-knob-background: var(--color-gray-light);
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-gray-dark);
+  --section-bg: var(--color-gray-lighter);
+  --header-bg: var(--color-gray-medium);
+  --accent-color: var(--color-black);
 }
 
 /* Dark Mode */
 :root[data-theme='glitch'][data-mode='dark'] {
-  --background-color: #000000;
-  --text-color: #ffffff;
-  --heading-color: #ffffff;
-  --border-color: #ffffff;
-  --dial-color-ink: #ffffff;
-  --dial-color-selection: #ffffff;
-  --dial-color-indicator: #ff0000;
-  --dial-knob-background: #1a1a1a;
-  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --background-image: none;
-  --link-color: #ffffff;
-  --link-visited-color: #cccccc;
-  --section-bg: #0a0a0a;
-  --header-bg: #111111;
-  --accent-color: #ffffff;
-  --glitch-primary: #ff0000;
-  --glitch-secondary: #00ffff;
-  --glitch-tertiary: #0000ff;
+  /* Base colors */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray-darkest: oklch(4.7% 0 0); /* #0a0a0a */
+  --color-gray-darker: oklch(8.3% 0 0); /* #111111 */
+  --color-gray-dark: oklch(13% 0 0); /* #1a1a1a */
+  --color-gray-medium: oklch(83% 0 0); /* #cccccc */
 
-  /* Glitch effect CSS variables */
-  --glitch-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-  --glitch-box-shadow-sm: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
-  --glitch-text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
+  /* Theme mappings */
+  --background-color: var(--color-black);
+  --text-color: var(--color-white);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-white);
+  --dial-color-ink: var(--color-white);
+  --dial-color-selection: var(--color-white);
+  --dial-knob-background: var(--color-gray-dark);
+  --link-color: var(--color-white);
+  --link-visited-color: var(--color-gray-medium);
+  --section-bg: var(--color-gray-darkest);
+  --header-bg: var(--color-gray-darker);
+  --accent-color: var(--color-white);
 }
 
 /* ===========================
@@ -380,7 +446,6 @@ BASE THEME STYLING
 =========================== */
 
 body[data-theme='glitch'] {
-  font-family: var(--font-family);
   letter-spacing: 0.03em;
   position: relative;
 
@@ -425,30 +490,30 @@ body[data-theme='glitch'] {
   .community-list,
   .principles-list,
   .resume-header__dial-selector {
-    border: 2px solid var(--border-color);
+    border: var(--border-width-md) solid var(--border-color);
     background: var(--section-bg);
-    padding: 1.5rem;
+    padding: var(--spacing-lg);
     position: relative;
   }
 
   .resume__main {
-    border-width: 3px;
-    padding: 2rem;
+    border-width: var(--border-width-lg);
+    padding: var(--spacing-xl);
   }
 
   /* Common card-style items */
   .experience-item,
   .education-item,
   .skills-grid__group {
-    border: 2px solid var(--border-color);
+    border: var(--border-width-md) solid var(--border-color);
     position: relative;
   }
 
   .experience-item,
   .education-item {
     background: var(--section-bg);
-    padding: 2rem;
-    animation: border-corrupt 16s infinite;
+    padding: var(--spacing-xl);
+    animation: border-corrupt var(--duration-slow) infinite;
 
     /* Performance optimizations */
     contain: layout;
@@ -456,7 +521,7 @@ body[data-theme='glitch'] {
   }
 
   .education-item {
-    animation-duration: 18s;
+    animation-duration: var(--duration-slower);
   }
 
   /* Common horizontal artifact lines */
@@ -466,16 +531,16 @@ body[data-theme='glitch'] {
     position: absolute;
     left: 0;
     right: 0;
-    height: 2px;
-    opacity: 0.3;
-    animation: h-displace 12s infinite;
+    height: var(--border-width-md);
+    opacity: var(--opacity-low);
+    animation: h-displace var(--duration-fast) infinite;
     will-change: transform, opacity;
   }
 
   .experience-item::before {
     top: 10%;
     background: var(--glitch-tertiary);
-    animation-duration: 14s;
+    animation-duration: var(--duration-medium);
   }
 
   .resume-header__dial-selector::before {
@@ -490,24 +555,24 @@ body[data-theme='glitch'] {
     bottom: 20%;
     left: 0;
     right: 0;
-    height: 1px;
+    height: var(--border-width-sm);
     background: var(--glitch-secondary);
-    opacity: 0.4;
-    animation: h-displace 16s infinite reverse;
+    opacity: var(--opacity-mid);
+    animation: h-displace var(--duration-slow) infinite reverse;
     will-change: transform, opacity;
   }
 
   /* Common list items */
   .community-list__item,
   .principles-list__item {
-    padding: 1rem;
-    margin-block-end: 0.75rem;
+    padding: var(--spacing-md);
+    margin-block-end: var(--spacing-sm);
     background: var(--section-bg);
-    border: 1px solid var(--border-color);
-    border-inline-start: 4px solid var(--border-color);
+    border: var(--border-width-sm) solid var(--border-color);
+    border-inline-start: var(--border-width-xl) solid var(--border-color);
     position: relative;
-    box-shadow: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
-    animation: pixel-drift 18s infinite steps(1, jump-end);
+    box-shadow: var(--glitch-box-shadow-list);
+    animation: pixel-drift var(--duration-slower) infinite steps(1, jump-end);
 
     /* Performance optimizations */
     contain: layout;
@@ -550,9 +615,9 @@ body[data-theme='glitch'] {
 
   .resume__main {
     overflow: visible;
-    transform: skewX(-0.3deg);
-    filter: contrast(1.15) saturate(1.2);
-    animation: main-tilt-glitch 12s infinite;
+    transform: skewX(var(--skew-subtle));
+    filter: var(--filter-contrast-mid) saturate(1.2);
+    animation: main-tilt-glitch var(--duration-fast) infinite;
 
     /* Performance optimizations */
     contain: layout paint;
@@ -576,14 +641,14 @@ body[data-theme='glitch'] {
   =========================== */
 
   .resume-header {
-    border: 2px solid var(--border-color);
-    border-block-end-width: 5px;
+    border: var(--border-width-md) solid var(--border-color);
+    border-block-end-width: var(--border-width-xxl);
     background: var(--header-bg);
-    padding: 2rem;
-    margin-block-end: 2rem;
+    padding: var(--spacing-xl);
+    margin-block-end: var(--spacing-xl);
     position: relative;
-    transform: skewX(0.2deg);
-    box-shadow: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
+    transform: skewX(var(--skew-light));
+    box-shadow: var(--glitch-box-shadow-header);
     animation: header-tilt-glitch 15s infinite;
 
     /* Performance optimizations */
@@ -598,43 +663,43 @@ body[data-theme='glitch'] {
     }
 
     &::before {
-      top: -2px;
+      top: calc(-1 * var(--border-width-md));
       left: 10%;
       width: 30%;
-      height: 4px;
+      height: var(--border-width-xl);
       background: var(--glitch-tertiary);
     }
 
     &::after {
-      bottom: -5px;
+      bottom: calc(-1 * var(--border-width-xxl));
       right: 20%;
       width: 40%;
-      height: 3px;
+      height: var(--border-width-lg);
       background: var(--glitch-secondary);
     }
   }
 
   h1.resume-header__name {
-    font-size: 3rem;
+    font-size: var(--font-size-hero);
     font-weight: 700;
     color: var(--text-color);
-    margin-block-end: 0.5rem;
+    margin-block-end: var(--spacing-xs);
     position: relative;
-    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
-    animation: text-glitch 20s infinite;
+    text-shadow: var(--glitch-text-shadow);
+    animation: text-glitch var(--duration-slowest) infinite;
     will-change: transform, text-shadow;
   }
 
   .resume-header__role {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     color: var(--text-color);
-    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
+    text-shadow: var(--glitch-text-shadow);
   }
 
   .resume-header__meta {
     color: var(--text-color);
-    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
-    filter: contrast(1.1);
+    text-shadow: var(--glitch-text-shadow-sm);
+    filter: var(--filter-contrast-base);
   }
 
   /* ===========================
@@ -644,18 +709,18 @@ body[data-theme='glitch'] {
   .resume-section__title {
     background: var(--section-bg);
     color: var(--text-color);
-    border: 2px solid var(--border-color);
-    border-inline-start: 6px solid var(--glitch-primary);
-    padding: 0.75rem 1.5rem;
-    margin: 1.5rem 0;
+    border: var(--border-width-md) solid var(--border-color);
+    border-inline-start: var(--border-width-accent) solid var(--glitch-primary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: var(--font-size-xl);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     position: relative;
-    transform: skewX(-0.5deg);
+    transform: skewX(var(--skew-medium));
     box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
-    animation: text-glitch 16s infinite;
+    animation: text-glitch var(--duration-slow) infinite;
 
     /* Performance optimizations */
     contain: layout;
@@ -667,7 +732,7 @@ body[data-theme='glitch'] {
       right: -5px;
       top: 50%;
       width: 20px;
-      height: 3px;
+      height: var(--border-width-lg);
       background: var(--glitch-secondary);
       animation: pixel-drift 6s infinite steps(1, jump-end);
       will-change: transform;
@@ -679,9 +744,9 @@ body[data-theme='glitch'] {
   =========================== */
 
   .experience-item {
-    margin: 1.5rem 0;
-    transform: skewX(0.2deg) rotate(0.1deg);
-    filter: contrast(1.1);
+    margin: var(--spacing-lg) 0;
+    transform: skewX(var(--skew-light)) rotate(0.1deg);
+    filter: var(--filter-contrast-base);
     box-shadow: var(--glitch-box-shadow);
 
     &:nth-child(even) {
@@ -689,7 +754,7 @@ body[data-theme='glitch'] {
     }
 
     &:hover {
-      filter: contrast(1.2);
+      filter: var(--filter-contrast-high);
       animation: pixel-drift 2s infinite steps(1, jump-end);
       will-change: transform;
     }
@@ -697,16 +762,16 @@ body[data-theme='glitch'] {
 
   .experience-item__role,
   .education-item__institution {
-    font-size: 1.5rem;
+    font-size: var(--font-size-xxl);
     font-weight: 700;
     color: var(--text-color);
-    margin-block-end: 0.5rem;
-    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
+    margin-block-end: var(--spacing-xs);
+    text-shadow: var(--glitch-text-shadow);
   }
 
   .experience-item__company {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: var(--font-size-md);
     color: var(--text-color);
   }
 
@@ -715,16 +780,16 @@ body[data-theme='glitch'] {
   =========================== */
 
   .experience-item__tech {
-    border: 2px solid var(--border-color);
+    border: var(--border-width-md) solid var(--border-color);
     background: var(--background-color);
     color: var(--text-color);
     font-weight: 600;
     padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
     position: relative;
     box-shadow: var(--glitch-box-shadow-sm);
-    filter: contrast(1.1);
-    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+    filter: var(--filter-contrast-base);
+    text-shadow: var(--glitch-text-shadow-sm);
 
     /* Performance optimizations */
     contain: layout;
@@ -778,10 +843,10 @@ body[data-theme='glitch'] {
   =========================== */
 
   .skills-grid {
-    border-width: 3px;
+    border-width: var(--border-width-lg);
     transform: skewX(-0.15deg);
     box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
-    animation: skills-tilt-glitch 14s infinite;
+    animation: skills-tilt-glitch var(--duration-medium) infinite;
 
     /* Performance optimizations */
     contain: layout paint;
@@ -807,10 +872,10 @@ body[data-theme='glitch'] {
 
   .skills-grid__group {
     background: var(--section-bg);
-    padding: 1rem;
-    margin-block-end: 1rem;
+    padding: var(--spacing-md);
+    margin-block-end: var(--spacing-md);
     box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
-    animation: pixel-drift 16s infinite steps(1, jump-end);
+    animation: pixel-drift var(--duration-slow) infinite steps(1, jump-end);
 
     /* Performance optimizations */
     contain: layout;
@@ -844,12 +909,12 @@ body[data-theme='glitch'] {
 
   .skills-grid__title {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: var(--font-size-md);
     color: var(--text-color);
-    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
-    border-block-end: 2px solid var(--border-color);
-    padding-block-end: 0.5rem;
-    margin-block-end: 0.75rem;
+    text-shadow: var(--glitch-text-shadow-sm);
+    border-block-end: var(--border-width-md) solid var(--border-color);
+    padding-block-end: var(--spacing-xs);
+    margin-block-end: var(--spacing-sm);
   }
 
   /* ===========================
@@ -858,8 +923,8 @@ body[data-theme='glitch'] {
 
   .community-list,
   .principles-list {
-    box-shadow: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
-    animation: list-tilt-glitch 16s infinite;
+    box-shadow: var(--glitch-box-shadow-section);
+    animation: list-tilt-glitch var(--duration-slow) infinite;
 
     /* Performance optimizations */
     contain: layout paint;
@@ -868,7 +933,7 @@ body[data-theme='glitch'] {
 
   .education-item {
     transform: skewX(-0.25deg) rotate(-0.2deg);
-    box-shadow: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
+    box-shadow: var(--glitch-box-shadow-md);
 
     &:nth-child(even) {
       transform: skewX(0.3deg) rotate(0.15deg) translateX(1px);
@@ -885,7 +950,7 @@ body[data-theme='glitch'] {
     text-decoration-color: var(--text-color);
     transition: all 0.2s ease;
     position: relative;
-    text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+    text-shadow: var(--glitch-text-shadow-sm);
 
     &:hover {
       text-decoration: none;
@@ -903,20 +968,20 @@ body[data-theme='glitch'] {
   =========================== */
 
   .resume-header__printlink {
-    border: 3px solid var(--border-color);
+    border: var(--border-width-lg) solid var(--border-color);
     background: var(--background-color);
     color: var(--text-color);
     font-weight: 700;
-    padding: 1rem 2rem;
+    padding: var(--spacing-md) var(--spacing-xl);
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     letter-spacing: 0.1em;
     position: relative;
     text-decoration: none;
     transform: skewX(-3deg);
     box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
-    filter: contrast(1.1);
-    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
+    filter: var(--filter-contrast-base);
+    text-shadow: var(--glitch-text-shadow);
 
     &:hover {
       filter: invert(1);
@@ -940,11 +1005,12 @@ body[data-theme='glitch'] {
 
   dial-selector {
     position: relative;
-    filter: contrast(1.1);
+    filter: var(--filter-contrast-base);
 
     .knob {
-      border: 3px solid var(--border-color);
-      box-shadow: 0 0 0 2px var(--glitch-primary), 0 0 0 4px var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
+      border: var(--border-width-lg) solid var(--border-color);
+      box-shadow: 0 0 0 var(--border-width-md) var(--glitch-primary),
+        0 0 0 var(--border-width-xl) var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
       background: var(--dial-knob-background);
     }
 
@@ -952,7 +1018,7 @@ body[data-theme='glitch'] {
       width: 14px;
       height: 14px;
       background: var(--dial-color-indicator);
-      border: 2px solid var(--border-color);
+      border: var(--border-width-md) solid var(--border-color);
       box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
       animation: pixel-drift 5s infinite steps(1, jump-end);
       will-change: transform;
@@ -960,14 +1026,14 @@ body[data-theme='glitch'] {
 
     .dial-label {
       background: var(--section-bg);
-      border: 2px solid var(--border-color);
-      padding: 0.4rem 1rem;
+      border: var(--border-width-md) solid var(--border-color);
+      padding: 0.4rem var(--spacing-md);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: var(--font-size-sm);
       color: var(--text-color);
-      box-shadow: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
-      text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
-      animation: pixel-drift 12s infinite steps(1, jump-end);
+      box-shadow: var(--glitch-box-shadow-dial);
+      text-shadow: var(--glitch-text-shadow-sm);
+      animation: pixel-drift var(--duration-fast) infinite steps(1, jump-end);
 
       /* Performance optimizations */
       contain: layout;
@@ -1013,8 +1079,8 @@ body[data-theme='glitch'] {
     }
 
     .spoke-line {
-      stroke-width: 2px;
-      opacity: 0.3;
+      stroke-width: var(--border-width-md);
+      opacity: var(--opacity-low);
       stroke: var(--border-color);
 
       &:nth-child(even) {
@@ -1025,7 +1091,7 @@ body[data-theme='glitch'] {
 
   .resume-header__dial-selector {
     box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
-    animation: dial-selector-tilt-glitch 18s infinite;
+    animation: dial-selector-tilt-glitch var(--duration-slower) infinite;
 
     /* Performance optimizations */
     contain: layout paint;
@@ -1033,9 +1099,9 @@ body[data-theme='glitch'] {
 
     h3 {
       color: var(--text-color);
-      margin-block-end: 1rem;
+      margin-block-end: var(--spacing-md);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: var(--font-size-md);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
@@ -1049,14 +1115,14 @@ body[data-theme='glitch'] {
     &::before {
       content: '◆';
       color: var(--text-color);
-      font-size: 0.9rem;
-      text-shadow: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+      font-size: var(--font-size-sm);
+      text-shadow: var(--glitch-text-shadow-sm);
     }
 
     &:nth-child(even)::before {
       content: '◇';
       color: var(--text-color);
-      text-shadow: 1px 0 var(--glitch-secondary), -1px 0 var(--glitch-primary);
+      text-shadow: var(--glitch-text-shadow-alt);
     }
   }
 
@@ -1065,10 +1131,10 @@ body[data-theme='glitch'] {
   =========================== */
 
   .resume-section {
-    padding: 2rem;
+    padding: var(--spacing-xl);
     position: relative;
     z-index: 2;
-    margin-block-end: 1.5rem;
+    margin-block-end: var(--spacing-lg);
   }
 
   /* ===========================
@@ -1081,15 +1147,15 @@ body[data-theme='glitch'] {
     }
 
     .resume-section__title {
-      font-size: 1.1rem;
-      padding: 0.6rem 1rem;
+      font-size: var(--font-size-md);
+      padding: 0.6rem var(--spacing-md);
     }
 
     .resume__main,
     .resume-section,
     .experience-item,
     .education-item {
-      padding: 1.5rem;
+      padding: var(--spacing-lg);
     }
   }
 
@@ -1099,15 +1165,15 @@ body[data-theme='glitch'] {
     }
 
     .resume-section__title {
-      font-size: 1rem;
-      padding: 0.5rem 0.8rem;
+      font-size: var(--font-size-base);
+      padding: var(--spacing-xs) 0.8rem;
     }
 
     .resume__main,
     .resume-section,
     .experience-item,
     .education-item {
-      padding: 1rem;
+      padding: var(--spacing-md);
     }
 
     dial-selector .dial-label {
@@ -1116,8 +1182,8 @@ body[data-theme='glitch'] {
     }
 
     .resume-header__printlink {
-      font-size: 0.85rem;
-      padding: 0.75rem 1.5rem;
+      font-size: var(--font-size-xs);
+      padding: var(--spacing-sm) var(--spacing-lg);
     }
   }
 
@@ -1131,7 +1197,7 @@ body[data-theme='glitch'] {
     color: var(--text-color);
     transform-origin: center;
     animation: glitch-char 0.3s infinite;
-    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
+    text-shadow: var(--glitch-text-shadow);
 
     /* Performance optimizations */
     will-change: transform, opacity;

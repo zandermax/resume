@@ -2,6 +2,14 @@
 DEFAULT Theme - Clean, Professional
 =========================== */
 
+/* Common properties for all modes */
+:root[data-theme='default'] {
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --background-image: none;
+  --section-bg: transparent;
+  --header-bg: transparent;
+}
+
 /* Light Mode */
 :root[data-theme='default'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -12,12 +20,8 @@ DEFAULT Theme - Clean, Professional
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
   --dial-knob-background: var(--color-dark-knob);
-  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --background-image: none;
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
-  --section-bg: transparent;
-  --header-bg: transparent;
   --accent-color: var(--color-red-crimson);
 }
 
@@ -31,11 +35,7 @@ DEFAULT Theme - Clean, Professional
   --dial-color-selection: var(--color-red-bright);
   --dial-color-indicator: var(--color-red-bright);
   --dial-knob-background: var(--color-dark-bg-alt);
-  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --background-image: none;
   --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
-  --section-bg: transparent;
-  --header-bg: transparent;
   --accent-color: var(--color-red-bright);
 }

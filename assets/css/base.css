@@ -156,6 +156,10 @@ Custom Properties
 Base + Typography
 =========================== */
 
+body {
+  font-family: var(--font-family);
+}
+
 html,
 body {
   margin: 0;

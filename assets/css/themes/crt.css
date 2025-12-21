@@ -2,10 +2,82 @@
 1985 Monochrome Terminal Theme
 =========================== */
 
-/* Light Mode */
+/* Common properties for all modes */
 :root[data-theme='crt'] {
   --display-terminal: block;
+  --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
+  --background-image: none;
+  --section-bg: transparent;
+  --header-bg: transparent;
 
+  /* Component overrides */
+  --main-border-width: 2px;
+  --main-border-style: solid;
+  --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+  --main-padding: 2rem;
+  --header-border-width: 2px;
+  --header-border-style: double;
+  --header-padding: 1rem 0;
+  --header-margin-bottom: 2rem;
+  --header-name-border-width: 2px;
+  --header-name-border-style: solid;
+  --header-name-text-shadow: 0 0 10px currentColor;
+  --section-title-border-width: 2px;
+  --section-title-border-style: solid;
+  --section-title-border-position: block-end;
+  --section-title-padding: 0.5rem 0;
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 1rem 0;
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-padding: 0.5rem 0;
+  --skills-title-border-width: 1px;
+  --skills-title-border-style: solid;
+  --skills-title-padding-bottom: 0.25rem;
+  --skills-title-margin-bottom: 0.5rem;
+  --experience-item-border: 0;
+  --experience-item-background: transparent;
+  --experience-item-padding: 1rem 0 0.5rem;
+  --experience-item-margin-top: 1.5rem;
+  --tech-badge-border: 1px solid var(--border-color);
+  --tech-badge-background: transparent;
+  --tech-badge-padding: 0.25rem 0.5rem;
+  --tech-badge-text-shadow: 0 0 6px currentColor;
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-padding: 0.5rem 0;
+  --list-border: 0;
+  --list-background: transparent;
+  --list-padding: 0;
+  --list-item-border-width: 1px;
+  --list-item-border-style: dotted;
+  --list-item-padding: 0.75rem 0;
+  --bullet-before-content: '>';
+  --bullet-font-size: 0.8rem;
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-padding: 0.5rem 1rem;
+  --printlink-font-weight: bold;
+  --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --heading-text-shadow: 0 0 2px currentColor;
+  --dial-knob-border-width: 2px;
+  --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+  --dial-indicator-box-shadow: 0 0 10px currentColor;
+  --dial-label-border-width: 1px;
+  --dial-label-border-style: solid;
+  --dial-label-font-size--tablet: 0.75rem;
+  --dial-label-font-size--phone: 0.7rem;
+  --dial-label-font-size--phone-sm: 0.7rem;
+  --dial-label-font-size--xs: 0.65rem;
+  --dial-label-padding: 0.4rem 0.8rem;
+  --dial-spoke-stroke-width: 1px;
+  --dial-spoke-opacity: 0.5;
+
+  /* Light Mode */
   &[data-mode='light'] {
     --background-color: oklch(78% 0.22 50); /* Bright amber/orange background */
     --text-color: oklch(20% 0.08 60); /* Dark text */
@@ -15,82 +87,11 @@
     --dial-color-selection: oklch(20% 0.08 60);
     --dial-color-indicator: oklch(20% 0.08 60);
     --dial-knob-background: oklch(82% 0.18 52); /* Lighter amber */
-    --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
-    --background-image: none;
     --link-color: oklch(20% 0.08 60);
     --link-visited-color: oklch(20% 0.08 60);
-    --section-bg: transparent;
-    --header-bg: transparent;
     --accent-color: oklch(20% 0.08 60);
     --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
-
-    /* Component overrides */
-    --main-border-width: 2px;
-    --main-border-style: solid;
-    --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
-    --main-padding: 2rem;
-    --header-border-width: 2px;
-    --header-border-style: double;
-    --header-padding: 1rem 0;
-    --header-margin-bottom: 2rem;
-    --header-name-border-width: 2px;
-    --header-name-border-style: solid;
-    --header-name-text-shadow: 0 0 10px currentColor;
-    --section-title-border-width: 2px;
-    --section-title-border-style: solid;
-    --section-title-border-position: block-end;
-    --section-title-padding: 0.5rem 0;
-    --section-title-margin-bottom: 1rem;
-    --skills-grid-border: 0;
-    --skills-grid-background: transparent;
-    --skills-grid-padding: 1rem 0;
-    --skills-group-border: 0;
-    --skills-group-background: transparent;
-    --skills-group-padding: 0.5rem 0;
-    --skills-title-border-width: 1px;
-    --skills-title-border-style: solid;
-    --skills-title-padding-bottom: 0.25rem;
-    --skills-title-margin-bottom: 0.5rem;
-    --experience-item-border: 0;
-    --experience-item-background: transparent;
-    --experience-item-padding: 1rem 0 0.5rem;
-    --experience-item-margin-top: 1.5rem;
-    --tech-badge-border: 1px solid var(--border-color);
-    --tech-badge-background: transparent;
-    --tech-badge-padding: 0.25rem 0.5rem;
-    --tech-badge-text-shadow: 0 0 6px currentColor;
-    --education-item-border: 0;
-    --education-item-background: transparent;
-    --education-item-padding: 0.5rem 0;
-    --list-border: 0;
-    --list-background: transparent;
-    --list-padding: 0;
-    --list-item-border-width: 1px;
-    --list-item-border-style: dotted;
-    --list-item-padding: 0.75rem 0;
-    --bullet-before-content: '>';
-    --bullet-font-size: 0.8rem;
-    --printlink-border-width: 2px;
-    --printlink-border-style: solid;
-    --printlink-padding: 0.5rem 1rem;
-    --printlink-font-weight: bold;
-    --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
-    --link-text-decoration: underline;
-    --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-    --heading-text-shadow: 0 0 2px currentColor;
-    --dial-knob-border-width: 2px;
-    --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
-    --dial-indicator-box-shadow: 0 0 10px currentColor;
-    --dial-label-border-width: 1px;
-    --dial-label-border-style: solid;
     --dial-label-font-size: 0.85rem;
-    --dial-label-font-size--tablet: 0.75rem;
-    --dial-label-font-size--phone: 0.7rem;
-    --dial-label-font-size--phone-sm: 0.7rem;
-    --dial-label-font-size--xs: 0.65rem;
-    --dial-label-padding: 0.4rem 0.8rem;
-    --dial-spoke-stroke-width: 1px;
-    --dial-spoke-opacity: 0.5;
   }
 
   /* Dark Mode */
@@ -103,82 +104,11 @@
     --dial-color-selection: var(--color-green);
     --dial-color-indicator: var(--color-green);
     --dial-knob-background: oklch(5% 0.02 142); /* Dark green tint */
-    --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
-    --background-image: none;
     --link-color: var(--color-green);
     --link-visited-color: var(--color-green);
-    --section-bg: transparent;
-    --header-bg: transparent;
     --accent-color: var(--color-green);
     --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
-
-    /* Component overrides */
-    --main-border-width: 2px;
-    --main-border-style: solid;
-    --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
-    --main-padding: 2rem;
-    --header-border-width: 2px;
-    --header-border-style: double;
-    --header-padding: 1rem 0;
-    --header-margin-bottom: 2rem;
-    --header-name-border-width: 2px;
-    --header-name-border-style: solid;
-    --header-name-text-shadow: 0 0 10px currentColor;
-    --section-title-border-width: 2px;
-    --section-title-border-style: solid;
-    --section-title-border-position: block-end;
-    --section-title-padding: 0.5rem 0;
-    --section-title-margin-bottom: 1rem;
-    --skills-grid-border: 0;
-    --skills-grid-background: transparent;
-    --skills-grid-padding: 1rem 0;
-    --skills-group-border: 0;
-    --skills-group-background: transparent;
-    --skills-group-padding: 0.5rem 0;
-    --skills-title-border-width: 1px;
-    --skills-title-border-style: solid;
-    --skills-title-padding-bottom: 0.25rem;
-    --skills-title-margin-bottom: 0.5rem;
-    --experience-item-border: 0;
-    --experience-item-background: transparent;
-    --experience-item-padding: 1rem 0 0.5rem;
-    --experience-item-margin-top: 1.5rem;
-    --tech-badge-border: 1px solid var(--border-color);
-    --tech-badge-background: transparent;
-    --tech-badge-padding: 0.25rem 0.5rem;
-    --tech-badge-text-shadow: 0 0 6px currentColor;
-    --education-item-border: 0;
-    --education-item-background: transparent;
-    --education-item-padding: 0.5rem 0;
-    --list-border: 0;
-    --list-background: transparent;
-    --list-padding: 0;
-    --list-item-border-width: 1px;
-    --list-item-border-style: dotted;
-    --list-item-padding: 0.75rem 0;
-    --bullet-before-content: '>';
-    --bullet-font-size: 0.8rem;
-    --printlink-border-width: 2px;
-    --printlink-border-style: solid;
-    --printlink-padding: 0.5rem 1rem;
-    --printlink-font-weight: bold;
-    --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
-    --link-text-decoration: underline;
-    --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-    --heading-text-shadow: 0 0 2px currentColor;
-    --dial-knob-border-width: 2px;
-    --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
-    --dial-indicator-box-shadow: 0 0 10px currentColor;
-    --dial-label-border-width: 1px;
-    --dial-label-border-style: solid;
     --dial-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-    --dial-label-font-size--tablet: 0.75rem;
-    --dial-label-font-size--phone: 0.7rem;
-    --dial-label-font-size--phone-sm: 0.7rem;
-    --dial-label-font-size--xs: 0.65rem;
-    --dial-label-padding: 0.4rem 0.8rem;
-    --dial-spoke-stroke-width: 1px;
-    --dial-spoke-opacity: 0.5;
   }
 }
 
@@ -239,7 +169,6 @@
 }
 
 body[data-theme='crt'] {
-  font-family: var(--font-family);
   text-shadow: 0 0 2px currentColor;
 
   /* Scanline effect overlay */

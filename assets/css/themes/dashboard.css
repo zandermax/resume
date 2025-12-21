@@ -3,27 +3,9 @@ DASHBOARD 2020 Theme - Pandemic Era Control Panel
 Inspired by COVID dashboards, Grafana, status pages, and data obsession
 =========================== */
 
-/* Light Mode */
-:root[data-theme='dashboard'][data-mode='light'] {
-  --background-color: oklch(97% 0.005 245);
-  --text-color: oklch(20% 0 0);
-  --heading-color: oklch(20% 0 0);
-  --border-color: oklch(92% 0.005 245);
-  --dial-color-ink: oklch(20% 0 0);
-  --dial-color-selection: var(--color-blue-dashboard);
-  --dial-color-indicator: var(--color-blue-dashboard);
-  --dial-knob-background: var(--color-white);
+/* Common properties for all modes */
+:root[data-theme='dashboard'] {
   --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --link-color: var(--color-blue-dashboard);
-  --link-visited-color: oklch(37% 0.25 260);
-  --accent-color: var(--color-blue-dashboard);
-  --panel-bg: var(--color-white);
-  --panel-border: oklch(92% 0.005 245);
-  --status-green: var(--color-green-success);
-  --status-yellow: var(--color-yellow-bright);
-  --status-red: var(--color-red-dark);
-  --metric-highlight: var(--color-blue-dashboard);
-  --panel-shadow: oklch(0% 0 0 / 0.08);
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
   /* Consolidated box-shadow patterns */
@@ -36,6 +18,28 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --main-border-radius: 8px;
 }
 
+/* Light Mode */
+:root[data-theme='dashboard'][data-mode='light'] {
+  --background-color: oklch(97% 0.005 245);
+  --text-color: oklch(20% 0 0);
+  --heading-color: oklch(20% 0 0);
+  --border-color: oklch(92% 0.005 245);
+  --dial-color-ink: oklch(20% 0 0);
+  --dial-color-selection: var(--color-blue-dashboard);
+  --dial-color-indicator: var(--color-blue-dashboard);
+  --dial-knob-background: var(--color-white);
+  --link-color: var(--color-blue-dashboard);
+  --link-visited-color: oklch(37% 0.25 260);
+  --accent-color: var(--color-blue-dashboard);
+  --panel-bg: var(--color-white);
+  --panel-border: oklch(92% 0.005 245);
+  --status-green: var(--color-green-success);
+  --status-yellow: var(--color-yellow-bright);
+  --status-red: var(--color-red-dark);
+  --metric-highlight: var(--color-blue-dashboard);
+  --panel-shadow: oklch(0% 0 0 / 0.08);
+}
+
 /* Dark Mode */
 :root[data-theme='dashboard'][data-mode='dark'] {
   --background-color: var(--color-dark-surface);
@@ -46,7 +50,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dial-color-selection: var(--color-blue-bright);
   --dial-color-indicator: var(--color-blue-bright);
   --dial-knob-background: oklch(17% 0.01 240);
-  --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --link-color: var(--color-blue-bright);
   --link-visited-color: oklch(72% 0.1 240);
   --accent-color: var(--color-blue-bright);
@@ -57,16 +60,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --status-red: oklch(68% 0.21 25);
   --metric-highlight: var(--color-blue-bright);
   --panel-shadow: oklch(0% 0 0 / 0.3);
-  --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
-
-  /* Consolidated box-shadow patterns */
-  --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
-  --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
-  --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
-
-  /* Border radius for main container and header */
-  --header-border-radius: 8px;
-  --main-border-radius: 8px;
 }
 
 @keyframes pulse-status {
@@ -175,7 +168,6 @@ body[data-theme='dashboard'] {
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
 
-  font-family: var(--font-family);
   font-weight: 400;
   letter-spacing: 0;
 

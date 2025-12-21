@@ -90,6 +90,14 @@ body[data-theme='metro'] .metro-chat-widget {
   }
 }
 
+/* Common properties for all modes */
+:root[data-theme='metro'] {
+  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  --background-image: none;
+  --header-bg: transparent;
+  --section-title-color: var(--color-white);
+}
+
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
@@ -100,14 +108,10 @@ body[data-theme='metro'] .metro-chat-widget {
   --dial-color-selection: var(--color-blue-metro);
   --dial-color-indicator: var(--color-blue-metro);
   --dial-knob-background: oklch(96% 0 0); /* Light gray */
-  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-  --background-image: none;
   --link-color: var(--color-blue-metro);
   --link-visited-color: oklch(52% 0.24 340); /* Magenta */
   --section-bg: oklch(96% 0 0);
-  --header-bg: transparent;
   --accent-color: var(--color-blue-metro);
-  --section-title-color: var(--color-white);
   --metro-blue: var(--color-blue-metro);
   --metro-green: oklch(64% 0.19 145); /* Metro green */
   --metro-orange: var(--color-orange);
@@ -127,14 +131,10 @@ body[data-theme='metro'] .metro-chat-widget {
   --dial-color-selection: var(--color-cyan-bright);
   --dial-color-indicator: var(--color-cyan-bright);
   --dial-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
-  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
-  --background-image: none;
   --link-color: var(--color-cyan-bright);
   --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(28% 0 0);
-  --header-bg: transparent;
   --accent-color: var(--color-cyan-bright);
-  --section-title-color: var(--color-white);
   --metro-blue: var(--color-cyan-bright);
   --metro-green: var(--color-green-bright);
   --metro-orange: oklch(78% 0.14 70); /* Light orange */
@@ -146,7 +146,6 @@ body[data-theme='metro'] .metro-chat-widget {
 
 /* Typography-first, flat colors, zero skeuomorphism */
 body[data-theme='metro'] {
-  font-family: var(--font-family);
   font-weight: 400;
   letter-spacing: 0;
 
