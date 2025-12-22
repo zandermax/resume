@@ -13,6 +13,206 @@ Ultra-modern minimalism with mathematical precision
   --dial-color-indicator: var(--color-red);
   --accent-color: var(--color-red);
   --swiss-grid: 8px;
+
+  /* Shared typography values */
+  --font-size-small: clamp(0.75rem, 1.5vw, 0.875rem);
+  --font-size-body: clamp(0.875rem, 1.5vw, 1rem);
+  --font-size-medium: clamp(1rem, 2vw, 1.25rem);
+  --font-size-large: clamp(1.25rem, 2vw, 1.75rem);
+  --font-size-xlarge: clamp(1.5rem, 3vw, 2.5rem);
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.1;
+  --line-height-base: 1.2;
+  --line-height-relaxed: 1.8;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0.02em;
+  --letter-spacing-wide: 0.15em;
+
+  /* Shared spacing values */
+  --spacing-2: calc(var(--swiss-grid) * 2);
+  --spacing-3: calc(var(--swiss-grid) * 3);
+  --spacing-4: calc(var(--swiss-grid) * 4);
+  --spacing-6: calc(var(--swiss-grid) * 6);
+  --spacing-8: calc(var(--swiss-grid) * 8);
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: var(--spacing-8);
+
+  /* Experience item custom properties */
+  --experience-item-position: relative;
+  --experience-item-padding: 0;
+  --experience-item-margin-top: var(--spacing-8);
+  --experience-item-transition: none;
+
+  /* Skills grid group custom properties */
+  --skills-group-padding: 0 0 var(--spacing-4) 0;
+  --skills-group-margin-bottom: var(--spacing-4);
+  --skills-group-transition: none;
+
+  /* Skills grid group custom properties */
+  --skills-group-margin: 0 0 var(--spacing-4) 0;
+  --skills-group-border: 0;
+  --skills-group-border-radius: 0;
+  --skills-group-box-shadow: none;
+  --skills-group-background: transparent;
+
+  /* Skills grid title custom properties */
+  --skills-title-padding-bottom: 0;
+  --skills-title-margin-bottom: var(--spacing-2);
+  --skills-title-margin: 0 0 var(--spacing-2) 0;
+  --skills-title-font-weight: var(--font-weight-bold);
+  --skills-title-color: var(--accent-color);
+  --skills-title-letter-spacing: var(--letter-spacing-wide);
+  --skills-title-line-height: var(--line-height-base);
+  --skills-title-text-transform: uppercase;
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: var(--font-size-xlarge);
+  --experience-role-font-weight: var(--font-weight-bold);
+  --experience-role-text-transform: none;
+  --experience-role-margin: 0 0 calc(var(--swiss-grid) * 1) 0;
+  --experience-role-line-height: var(--line-height-tight);
+  --experience-role-letter-spacing: var(--letter-spacing-tight);
+  --experience-role-color: var(--text-color);
+
+  /* Experience item company custom properties */
+  --experience-company-font-size: var(--font-size-small);
+  --experience-company-font-weight: var(--font-weight-medium);
+  --experience-company-color: var(--text-color);
+  --experience-company-letter-spacing: 0.12em;
+  --experience-company-text-transform: uppercase;
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 0;
+  --tech-badge-border-radius: 0;
+  --tech-badge-background: transparent;
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: 400;
+  --tech-badge-padding: 0 0 0 var(--spacing-2);
+  --tech-badge-font-size: var(--font-size-small);
+  --tech-badge-text-transform: none;
+  --tech-badge-position: relative;
+  --tech-badge-letter-spacing: var(--letter-spacing-normal);
+  --tech-badge-before-content: '•';
+  --tech-badge-before-display: inline;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-left: 0;
+  --tech-badge-before-color: var(--accent-color);
+  --tech-badge-before-font-weight: var(--font-weight-bold);
+
+  /* Skills grid custom properties */
+  --skills-grid-padding: 0;
+  --skills-grid-gap: var(--spacing-4);
+
+  /* Resume header custom properties */
+  --header-border-width: 1px;
+  --header-border-style: solid;
+
+  /* Header name custom properties */
+  --header-name-padding: 0;
+  --header-name-margin: 0 0 var(--spacing-2) 0;
+  --header-name-font-weight: 100;
+  --header-name-font-size: clamp(3rem, 8vw, 7rem);
+  --header-name-line-height: 0.95;
+  --header-name-text-transform: none;
+  --header-name-letter-spacing: -0.04em;
+  --header-name-color: var(--text-color);
+  --header-name-border: 0;
+
+  /* Section title custom properties */
+  --section-title-padding: 0 0 var(--spacing-2) 0;
+  --section-title-margin: 0 0 var(--spacing-6) 0;
+  --section-title-color: var(--text-color);
+  --section-title-font-weight: var(--font-weight-medium);
+  --section-title-font-size: var(--font-size-large);
+  --section-title-letter-spacing: var(--letter-spacing-wide);
+  --section-title-line-height: var(--line-height-base);
+  --section-title-text-transform: uppercase;
+  --section-title-width: 60%;
+  --section-title-max-width: none;
+  --section-title-border: none;
+  --section-title-border-block-end: 1px solid var(--accent-color);
+
+  /* Print link custom properties */
+  --printlink-font-size: var(--font-size-small);
+  --printlink-text-transform: uppercase;
+  --printlink-background: var(--accent-color);
+  --printlink-color: #ffffff;
+  --printlink-font-weight: var(--font-weight-medium);
+  --printlink-padding: var(--spacing-2) var(--spacing-4);
+  --printlink-letter-spacing: var(--letter-spacing-wide);
+  --printlink-transition: none;
+  --printlink-text-decoration: none;
+  --printlink-border: 0;
+  --printlink-border-radius: 0;
+  --printlink-box-shadow: none;
+  --printlink-hover-opacity: 0.9;
+  --printlink-active-opacity: 0.8;
+
+  /* Community/Principles list item custom properties */
+  --community-item-font-size: var(--font-size-body);
+  --community-item-font-weight: var(--font-weight-light);
+  --community-item-line-height: var(--line-height-relaxed);
+  --community-item-background: transparent;
+  --community-item-padding: var(--spacing-2) 0 var(--spacing-2) var(--spacing-3);
+  --community-item-margin-bottom: var(--spacing-3);
+  --community-item-transition: border-inline-start-color 50ms linear;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-font-size: var(--font-size-body);
+  --principles-item-font-weight: var(--font-weight-light);
+  --principles-item-line-height: var(--line-height-relaxed);
+  --principles-item-background: transparent;
+  --principles-item-padding: var(--spacing-2) 0 var(--spacing-2) var(--spacing-3);
+  --principles-item-margin-bottom: var(--spacing-3);
+  --principles-item-transition: border-inline-start-color 50ms linear;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Header role custom properties */
+  --header-role-font-weight: var(--font-weight-medium);
+  --header-role-font-size: var(--font-size-medium);
+  --header-role-text-transform: none;
+  --header-role-letter-spacing: var(--letter-spacing-normal);
+  --header-role-color: var(--text-color);
+  --header-role-margin-block-start: var(--spacing-2);
+  --header-role-padding-inline-start: var(--spacing-4);
+  --header-role-border-inline-start: calc(var(--swiss-grid) * 1) solid var(--accent-color);
+
+  /* Education institution custom properties */
+  --education-institution-font-size: var(--font-size-xlarge);
+  --education-institution-font-weight: var(--font-weight-bold);
+  --education-institution-text-transform: none;
+  --education-institution-margin: 0 0 calc(var(--swiss-grid) * 1) 0;
+  --education-institution-line-height: var(--line-height-tight);
+  --education-institution-letter-spacing: var(--letter-spacing-tight);
+  --education-institution-color: var(--text-color);
+
+  /* Experience bullets custom properties */
+  --experience-bullets-margin-block-start: var(--spacing-2);
+  --experience-bullets-li-font-size: var(--font-size-body);
+  --experience-bullets-li-font-weight: var(--font-weight-light);
+  --experience-bullets-li-line-height: var(--line-height-relaxed);
+  --experience-bullets-li-margin-block-end: var(--spacing-2);
+  --experience-bullets-li-padding-inline-start: var(--spacing-3);
+  --bullet-before-content: '—';
+  --bullet-color: var(--text-color);
+  --bullet-font-weight: var(--font-weight-light);
+
+  /* Section text (paragraph) custom properties */
+  --section-text-font-size: var(--font-size-body);
+  --section-text-line-height: var(--line-height-relaxed);
+  --section-text-font-weight: var(--font-weight-light);
+
+  /* Dial label active span padding */
+  --dial-label-active-span-padding-block: 0.1rem;
+  --dial-label-active-span-padding-inline: 0.6rem;
+  --dial-label-active-span-padding-block--tablet: 0.05rem;
+  --dial-label-active-span-padding-inline--tablet: 0.55rem;
+  --dial-label-active-span-padding-block--phone: 0.05rem;
+  --dial-label-active-span-padding-inline--phone: 0.5rem;
 }
 
 /* Light Mode */
@@ -105,9 +305,9 @@ Ultra-modern minimalism with mathematical precision
 
 /* Base theme - Pure minimalism */
 body[data-theme='neoswiss'] {
-  font-weight: 300;
+  font-weight: var(--font-weight-light);
   letter-spacing: -0.01em;
-  line-height: 1.8;
+  line-height: var(--line-height-relaxed);
 
   /* Common reset pattern - minimal decoration */
   .resume__main,
@@ -115,7 +315,6 @@ body[data-theme='neoswiss'] {
   .resume-header,
   h1.resume-header__name,
   .skills-grid,
-  .skills-grid__group,
   .skills-grid__title,
   .experience-item,
   .experience-item__tech,
@@ -132,51 +331,24 @@ body[data-theme='neoswiss'] {
     box-shadow: none;
   }
 
-  /* Common transparent backgrounds */
-  .resume-header,
-  .skills-grid,
-  .skills-grid__group,
-  .experience-item,
-  .experience-item__tech,
-  .community-list,
-  .principles-list,
-  .community-list__item,
-  .principles-list__item,
-  .education-item,
-  dial-selector .dial-label,
-  .resume-header__dial-selector {
-    background: transparent;
-  }
-
-  /* Common small font size */
-  .experience-item__company,
+  /* Common small font size - component-specific only */
   .experience-item__dates,
   .education-item__dates,
-  .experience-item__tech,
   dial-selector .dial-label,
-  .resume-header__dial-selector h3,
-  .resume-header__printlink {
-    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  .resume-header__dial-selector h3 {
+    font-size: var(--font-size-small);
   }
 
-  /* Common body text size */
-  .skills-grid__group li,
-  .community-list__item,
-  .principles-list__item,
-  .experience-item__bullets li,
-  p {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 300;
-    line-height: 1.8;
+  /* Common body text size - nested selectors only */
+  .skills-grid__group li {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-relaxed);
   }
 
-  /* Common uppercase text */
-  .resume-section__title,
-  .skills-grid__title,
-  .experience-item__company,
+  /* Common uppercase text - component-specific only */
   dial-selector .dial-label,
-  .resume-header__dial-selector h3,
-  .resume-header__printlink {
+  .resume-header__dial-selector h3 {
     text-transform: uppercase;
   }
 
@@ -187,79 +359,33 @@ body[data-theme='neoswiss'] {
     position: relative;
   }
 
-  /* SECTION TITLES - Minimal with mathematical precision */
-  .resume-section__title {
-    border-block-end: 1px solid var(--accent-color);
-    padding: 0 0 calc(var(--swiss-grid) * 2) 0;
-    margin: 0 0 calc(var(--swiss-grid) * 6) 0;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    letter-spacing: 0.15em;
-    line-height: 1.2;
-    width: 60%;
-    max-width: none;
-  }
-
   /* Header - Asymmetric, ultra-minimal */
   .resume-header {
-    padding: calc(var(--swiss-grid) * 8) calc(var(--swiss-grid) * 6);
-    margin: 0 0 calc(var(--swiss-grid) * 8) 0;
+    padding: var(--spacing-8) var(--spacing-6);
+    margin: 0 0 var(--spacing-8) 0;
     position: relative;
   }
 
   /* Header name - Ultra-light, massive scale */
-  h1.resume-header__name {
-    padding: 0;
-    margin: 0 0 calc(var(--swiss-grid) * 2) 0;
-    font-weight: 100;
-    font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 0.95;
-    text-transform: none;
-    letter-spacing: -0.04em;
-    color: var(--text-color);
-  }
-
   /* Common styles for name greeting and small */
   .resume-header__name-greeting,
   .resume-header__name-small {
     font-size: clamp(1.5rem, 4vw, 3.5rem);
     font-weight: 100;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--letter-spacing-tight);
     text-transform: none;
     color: var(--text-color);
-  }
-
-  /* Header role with accent */
-  .resume-header__role {
-    font-weight: 500;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    text-transform: none;
-    letter-spacing: 0.02em;
-    color: var(--text-color);
-    margin-block-start: calc(var(--swiss-grid) * 2);
-    padding-inline-start: calc(var(--swiss-grid) * 4);
-    border-inline-start: calc(var(--swiss-grid) * 1) solid var(--accent-color);
   }
 
   /* Skills grid */
-  .skills-grid {
-    padding: 0;
-    gap: calc(var(--swiss-grid) * 4);
-  }
-
   .skills-grid__group {
-    padding: 0 0 calc(var(--swiss-grid) * 4) 0;
-    margin: 0 0 calc(var(--swiss-grid) * 4) 0;
-    transition: none;
-
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: calc(var(--swiss-grid) * 2);
+      gap: var(--spacing-2);
     }
 
     li {
@@ -270,48 +396,23 @@ body[data-theme='neoswiss'] {
     }
   }
 
-  .skills-grid__title {
-    padding: 0;
-    margin: 0 0 calc(var(--swiss-grid) * 2) 0;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--accent-color);
-    line-height: 1.2;
-  }
-
   /* Experience items */
   .experience-item {
-    position: relative;
-    padding: 0;
-    margin: 0 0 calc(var(--swiss-grid) * 8) 0;
-    transition: none;
+    margin: 0 0 var(--spacing-8) 0;
   }
 
   /* Role - Large, bold */
-  h3.experience-item__role,
-  h3.education-item__institution {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 700;
-    text-transform: none;
-    margin: 0 0 calc(var(--swiss-grid) * 1) 0;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text-color);
-  }
 
   /* Company - Small caps */
   .experience-item__company {
-    font-weight: 500;
-    color: var(--text-color);
-    letter-spacing: 0.12em;
     opacity: 0.7;
-    margin-block-end: calc(var(--swiss-grid) * 2);
+    margin-block-end: var(--spacing-2);
   }
 
   /* Dates - Minimal */
   .experience-item__dates,
   .education-item__dates {
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     color: var(--text-color);
     opacity: 0.6;
     letter-spacing: 0.05em;
@@ -321,25 +422,8 @@ body[data-theme='neoswiss'] {
   .experience-item__tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--swiss-grid) * 2);
-    margin-block-start: calc(var(--swiss-grid) * 2);
-  }
-
-  .experience-item__tech {
-    color: var(--text-color);
-    font-weight: 400;
-    padding: 0 0 0 calc(var(--swiss-grid) * 2);
-    text-transform: none;
-    letter-spacing: 0.02em;
-    position: relative;
-
-    &::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-      font-weight: 700;
-    }
+    gap: var(--spacing-2);
+    margin-block-start: var(--spacing-2);
   }
 
   /* Lists */
@@ -351,39 +435,23 @@ body[data-theme='neoswiss'] {
   .community-list__item,
   .principles-list__item {
     border-inline-start: 2px solid var(--text-color);
-    padding: calc(var(--swiss-grid) * 2) 0 calc(var(--swiss-grid) * 2) calc(var(--swiss-grid) * 3);
-    margin-block-end: calc(var(--swiss-grid) * 3);
-    transition: border-inline-start-color 50ms linear;
 
     &:hover {
       border-inline-start-color: var(--accent-color);
-      padding-inline-start: calc(var(--swiss-grid) * 4);
+      padding-inline-start: var(--spacing-4);
     }
   }
 
   /* Education */
   .education-item {
     padding: 0;
-    margin-block-end: calc(var(--swiss-grid) * 6);
+    margin-block-end: var(--spacing-6);
   }
 
   /* Bullet points */
-  .experience-item__bullets {
-    margin-block-start: calc(var(--swiss-grid) * 2);
-
-    li {
-      margin-block-end: calc(var(--swiss-grid) * 2);
-      position: relative;
-      padding-inline-start: calc(var(--swiss-grid) * 3);
-
-      &::before {
-        content: '—';
-        position: absolute;
-        left: 0;
-        font-weight: 300;
-        color: var(--text-color);
-        opacity: 0.4;
-      }
+  .experience-item__bullets li {
+    &::before {
+      opacity: 0.4;
     }
   }
 
@@ -407,25 +475,6 @@ body[data-theme='neoswiss'] {
     }
   }
 
-  /* Print button - Solid red block */
-  .resume-header__printlink {
-    background: var(--accent-color);
-    color: #ffffff;
-    font-weight: 500;
-    padding: calc(var(--swiss-grid) * 2) calc(var(--swiss-grid) * 4);
-    letter-spacing: 0.15em;
-    transition: none;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 0.9;
-    }
-
-    &:active {
-      opacity: 0.8;
-    }
-  }
-
   /* Dial selector */
   dial-selector {
     .knob {
@@ -441,9 +490,9 @@ body[data-theme='neoswiss'] {
     }
 
     .dial-label {
-      padding: calc(var(--swiss-grid) * 1) calc(var(--swiss-grid) * 2);
+      padding: calc(var(--swiss-grid) * 1) var(--spacing-2);
       transition: color 50ms linear, background 50ms linear;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       letter-spacing: 0.1em;
       color: var(--dial-color-ink);
 
@@ -468,15 +517,15 @@ body[data-theme='neoswiss'] {
 
   /* Dial selector housing */
   .resume-header__dial-selector {
-    padding: calc(var(--swiss-grid) * 4);
+    padding: var(--spacing-4);
     border: 1px solid var(--border-color);
     position: relative;
 
     h3 {
       color: var(--text-color);
-      margin-block-end: calc(var(--swiss-grid) * 2);
-      font-weight: 500;
-      letter-spacing: 0.15em;
+      margin-block-end: var(--spacing-2);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: var(--letter-spacing-wide);
     }
   }
 
@@ -493,10 +542,10 @@ body[data-theme='neoswiss'] {
   .neoswiss-ai-button {
     display: flex;
     position: fixed;
-    bottom: calc(var(--swiss-grid) * 6);
-    right: calc(var(--swiss-grid) * 6);
-    width: calc(var(--swiss-grid) * 8);
-    height: calc(var(--swiss-grid) * 8);
+    bottom: var(--spacing-6);
+    right: var(--spacing-6);
+    width: var(--spacing-8);
+    height: var(--spacing-8);
     align-items: center;
     justify-content: center;
     background: var(--accent-color);
@@ -514,9 +563,9 @@ body[data-theme='neoswiss'] {
   .neoswiss-ai-button__label {
     position: relative;
     color: #ffffff;
-    font-weight: 700;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    letter-spacing: 0.15em;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    letter-spacing: var(--letter-spacing-wide);
     text-transform: uppercase;
     z-index: 2;
   }
@@ -593,7 +642,7 @@ body[data-theme='neoswiss'] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--swiss-grid) * 4);
+    padding: var(--spacing-4);
     border-block-end: 1px solid var(--accent-color);
     position: relative;
   }
@@ -602,18 +651,18 @@ body[data-theme='neoswiss'] {
     content: 'ANALYZING CANDIDATE...';
     position: absolute;
     top: calc(var(--swiss-grid) * 1);
-    left: calc(var(--swiss-grid) * 4);
-    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-    font-weight: 500;
-    letter-spacing: 0.15em;
+    left: var(--spacing-4);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
     color: var(--accent-color);
     opacity: 1;
     animation: statusMessage 8s ease-in-out forwards;
   }
 
   .neoswiss-ai-modal__title {
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    font-weight: 500;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
     letter-spacing: 0.2em;
     color: var(--text-color);
     margin: 0;
@@ -629,13 +678,13 @@ body[data-theme='neoswiss'] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--swiss-grid) * 6);
-    height: calc(var(--swiss-grid) * 6);
+    width: var(--spacing-6);
+    height: var(--spacing-6);
     background: transparent;
     border: 1px solid var(--text-color);
     color: var(--text-color);
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     line-height: 1;
     cursor: pointer;
     transition: background 100ms linear, color 100ms linear;
@@ -652,12 +701,12 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__content {
-    padding: calc(var(--swiss-grid) * 6);
+    padding: var(--spacing-6);
   }
 
   .neoswiss-ai-modal__section {
-    margin-block-end: calc(var(--swiss-grid) * 6);
-    padding-block-end: calc(var(--swiss-grid) * 6);
+    margin-block-end: var(--spacing-6);
+    padding-block-end: var(--spacing-6);
     border-block-end: 1px solid var(--text-color);
     opacity: 0;
     animation: sectionAppear 0.6s ease-out forwards;
@@ -695,12 +744,12 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__section-title {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 700;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent-color);
-    margin: 0 0 calc(var(--swiss-grid) * 3) 0;
+    margin: 0 0 var(--spacing-3) 0;
     opacity: 0;
     animation: contentFadeIn 0.4s ease-out forwards;
   }
@@ -727,9 +776,9 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__text {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 300;
-    line-height: 1.8;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-relaxed);
     color: var(--text-color);
     margin: 0;
     opacity: 0;
@@ -760,11 +809,11 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__list li {
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 300;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-light);
     line-height: 2;
     color: var(--text-color);
-    padding-inline-start: calc(var(--swiss-grid) * 3);
+    padding-inline-start: var(--spacing-3);
     position: relative;
     opacity: 0;
     animation: contentFadeIn 0.4s ease-out forwards;
@@ -797,23 +846,23 @@ body[data-theme='neoswiss'] {
 
   .neoswiss-ai-modal__metric {
     display: inline-block;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     letter-spacing: 0.1em;
     color: var(--text-color);
     min-width: 150px;
   }
 
   .neoswiss-ai-modal__score {
-    margin-block-end: calc(var(--swiss-grid) * 3);
+    margin-block-end: var(--spacing-3);
   }
 
   .neoswiss-ai-modal__score-bar {
     width: 100%;
-    height: calc(var(--swiss-grid) * 2);
+    height: var(--spacing-2);
     background: transparent;
     border: 1px solid var(--text-color);
     position: relative;
-    margin-block-end: calc(var(--swiss-grid) * 2);
+    margin-block-end: var(--spacing-2);
     opacity: 0;
     animation: contentFadeIn 0.4s ease-out forwards;
     animation-delay: 5.5s;
@@ -831,9 +880,9 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__score-label {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
     color: var(--text-color);
     opacity: 0;
     animation: contentFadeIn 0.4s ease-out forwards;
@@ -844,11 +893,11 @@ body[data-theme='neoswiss'] {
     display: block;
     background: var(--accent-color);
     color: #ffffff;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 700;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0.2em;
     text-align: center;
-    padding: calc(var(--swiss-grid) * 4);
+    padding: var(--spacing-4);
     text-decoration: none;
     border: 0;
     opacity: 0;
@@ -872,11 +921,11 @@ body[data-theme='neoswiss'] {
   /* Content padding - Mathematical grid */
   .resume-header,
   .resume-section {
-    padding-inline: calc(var(--swiss-grid) * 6);
+    padding-inline: var(--spacing-6);
   }
 
   .resume-section {
-    padding-block: 0 calc(var(--swiss-grid) * 8);
+    padding-block: 0 var(--spacing-8);
     border: 0;
     margin-block-end: 0;
   }
@@ -884,16 +933,16 @@ body[data-theme='neoswiss'] {
   /* Typography hierarchy */
   h2,
   h3 {
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
   }
 
   p {
-    margin-block-end: calc(var(--swiss-grid) * 2);
+    margin-block-end: var(--spacing-2);
   }
 
   strong {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
   }
 
   em {
@@ -902,46 +951,48 @@ body[data-theme='neoswiss'] {
 
   /* Summary section - Special treatment */
   .resume-section--summary p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-block-end: calc(var(--swiss-grid) * 3);
+    font-size: var(--font-size-medium);
+    margin-block-end: var(--spacing-3);
   }
 
   /* Ashby section - If present */
   .resume-section--ashby {
     border-block-start: 1px solid var(--accent-color);
-    padding-block-start: calc(var(--swiss-grid) * 8);
+    padding-block-start: var(--spacing-8);
   }
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    h1.resume-header__name {
-      font-size: clamp(2.5rem, 10vw, 4rem);
+    :root[data-theme='neoswiss'] {
+      --header-name-font-size: clamp(2.5rem, 10vw, 4rem);
+      --section-title-font-size: clamp(1.125rem, 3vw, 1.5rem);
+      --section-title-width: 80%;
+      --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+      --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
     }
 
-    .resume-section__title {
-      font-size: clamp(1.125rem, 3vw, 1.5rem);
-      width: 80%;
+    :root[data-theme='neoswiss'] {
+      --education-institution-font-size: clamp(1.25rem, 4vw, 2rem);
     }
 
-    h3.experience-item__role,
-    h3.education-item__institution {
-      font-size: clamp(1.25rem, 4vw, 2rem);
+    :root[data-theme='neo-swiss'] {
+      --experience-role-font-size: clamp(1.25rem, 4vw, 2rem);
     }
 
     .resume-header,
     .resume-section {
-      padding-inline: calc(var(--swiss-grid) * 4);
+      padding-inline: var(--spacing-4);
     }
 
     .resume-header {
-      padding-block: calc(var(--swiss-grid) * 6);
+      padding-block: var(--spacing-6);
     }
 
     .neoswiss-ai-button {
       width: calc(var(--swiss-grid) * 7);
       height: calc(var(--swiss-grid) * 7);
-      bottom: calc(var(--swiss-grid) * 4);
-      right: calc(var(--swiss-grid) * 4);
+      bottom: var(--spacing-4);
+      right: var(--spacing-4);
     }
 
     .neoswiss-ai-modal__container {
@@ -949,42 +1000,41 @@ body[data-theme='neoswiss'] {
     }
 
     .neoswiss-ai-modal__header {
-      padding: calc(var(--swiss-grid) * 3);
+      padding: var(--spacing-3);
     }
 
     .neoswiss-ai-modal__content {
-      padding: calc(var(--swiss-grid) * 4);
+      padding: var(--spacing-4);
     }
 
     .neoswiss-ai-modal__section {
-      margin-block-end: calc(var(--swiss-grid) * 4);
-      padding-block-end: calc(var(--swiss-grid) * 4);
+      margin-block-end: var(--spacing-4);
+      padding-block-end: var(--spacing-4);
     }
   }
 
   @media (max-width: 500px) {
-    h1.resume-header__name {
-      font-size: clamp(2rem, 12vw, 3rem);
-    }
-
-    .resume-section__title {
-      font-size: clamp(1rem, 4vw, 1.25rem);
-      padding-block-end: calc(var(--swiss-grid) * 1);
-      margin-block-end: calc(var(--swiss-grid) * 4);
-      width: 100%;
+    :root[data-theme='neoswiss'] {
+      --header-name-font-size: clamp(2rem, 12vw, 3rem);
+      --section-title-font-size: clamp(1rem, 4vw, 1.25rem);
+      --section-title-padding: 0 0 calc(var(--swiss-grid) * 1) 0;
+      --section-title-margin: 0 0 calc(var(--swiss-grid) * 4) 0;
+      --section-title-width: 100%;
+      --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+      --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
     }
 
     .resume-header,
     .resume-section {
-      padding-inline: calc(var(--swiss-grid) * 3);
+      padding-inline: var(--spacing-3);
     }
 
     .resume-header {
-      padding-block: calc(var(--swiss-grid) * 4);
+      padding-block: var(--spacing-4);
     }
 
     .experience-item {
-      margin-block-end: calc(var(--swiss-grid) * 6);
+      margin-block-end: var(--spacing-6);
     }
 
     dial-selector .dial-label {
@@ -992,20 +1042,15 @@ body[data-theme='neoswiss'] {
       padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 1.5);
     }
 
-    .resume-header__printlink {
-      font-size: clamp(0.625rem, 2vw, 0.75rem);
-      padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
-    }
-
     .neoswiss-ai-button {
-      width: calc(var(--swiss-grid) * 6);
-      height: calc(var(--swiss-grid) * 6);
-      bottom: calc(var(--swiss-grid) * 3);
-      right: calc(var(--swiss-grid) * 3);
+      width: var(--spacing-6);
+      height: var(--spacing-6);
+      bottom: var(--spacing-3);
+      right: var(--spacing-3);
     }
 
     .neoswiss-ai-button__label {
-      font-size: clamp(0.75rem, 2vw, 0.875rem);
+      font-size: var(--font-size-small);
     }
 
     .neoswiss-ai-button__spark {
@@ -1034,7 +1079,7 @@ body[data-theme='neoswiss'] {
     }
 
     .neoswiss-ai-modal__title {
-      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-size: var(--font-size-medium);
     }
 
     .neoswiss-ai-modal__close {
@@ -1043,12 +1088,12 @@ body[data-theme='neoswiss'] {
     }
 
     .neoswiss-ai-modal__content {
-      padding: calc(var(--swiss-grid) * 3);
+      padding: var(--spacing-3);
     }
 
     .neoswiss-ai-modal__section {
-      margin-block-end: calc(var(--swiss-grid) * 3);
-      padding-block-end: calc(var(--swiss-grid) * 3);
+      margin-block-end: var(--spacing-3);
+      padding-block-end: var(--spacing-3);
     }
 
     .neoswiss-ai-modal__metric {
@@ -1060,20 +1105,20 @@ body[data-theme='neoswiss'] {
 
   /* Print Styles - Maintain minimal aesthetic */
   @media print {
-    .resume-section__title {
-      border-block-end-color: #000000;
+    :root[data-theme='neoswiss'] {
+      --section-title-border-block-end: 1px solid #000000;
     }
 
     .resume-header__role {
       border-inline-start-color: #000000;
     }
 
-    .skills-grid__title {
-      color: #000000;
+    :root[data-theme='neo-swiss'] {
+      --skills-title-color: #000000;
     }
 
-    .experience-item__tech::before {
-      color: #000000;
+    :root[data-theme='neo-swiss'] {
+      --tech-badge-before-color: #000000;
     }
   }
 }

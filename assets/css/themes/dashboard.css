@@ -16,6 +16,129 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   /* Border radius for main container and header */
   --header-border-radius: 8px;
   --main-border-radius: 8px;
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
+
+  /* Experience item custom properties */
+  --experience-item-border: 1px solid var(--panel-border);
+  --experience-item-background: var(--panel-bg);
+  --experience-item-border-radius: 6px;
+  --experience-item-padding: 1.25rem;
+  --experience-item-margin-top: 1rem;
+  --experience-item-box-shadow: var(--dashboard-shadow-sm);
+  --experience-item-position: relative;
+  --experience-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Skills grid group custom properties */
+  --skills-group-margin-bottom: 0.5rem;
+  --skills-group-border: 1px solid var(--panel-border);
+  --skills-group-padding: 1rem;
+  --skills-group-background: var(--panel-bg);
+  --skills-group-border-radius: 6px;
+  --skills-group-margin: 0.5rem;
+  --skills-group-box-shadow: var(--dashboard-shadow-sm);
+  --skills-group-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --skills-group-hover-transform: translateY(-2px);
+  --skills-group-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Skills grid title custom properties */
+  --skills-title-font-size: 0.75rem;
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 1px;
+  --skills-title-padding-bottom: 0.5rem;
+  --skills-title-margin-bottom: 0.75rem;
+  --skills-title-font-weight: 600;
+  --skills-title-color: var(--accent-color);
+  --skills-title-display: flex;
+  --skills-title-letter-spacing: 0.1em;
+  --skills-title-align-items: center;
+  --skills-title-gap: 0.5rem;
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 500;
+  --experience-company-color: var(--accent-color);
+  --experience-company-font-size: 0.95rem;
+
+  /* Skills grid custom properties */
+  --skills-grid-padding: 0;
+
+  /* Skills grid items custom properties */
+  --skills-items-font-size: 0.85rem;
+  --skills-items-line-height: 1.6;
+  --skills-items-font-family: var(--mono-font);
+
+  /* Experience item title custom properties */
+  --experience-title-font-weight: 600;
+  --experience-title-font-size: 1rem;
+  --experience-title-color: var(--text-color);
+
+  /* Experience item duration custom properties */
+  --experience-duration-font-family: var(--mono-font);
+  --experience-duration-font-size: 0.8rem;
+  --experience-duration-color: var(--text-color);
+  --experience-duration-opacity: 0.7;
+
+  /* Experience item description custom properties */
+  --experience-description-line-height: 1.6;
+  --experience-description-color: var(--text-color);
+
+  /* Header meta custom properties */
+  --header-meta-font-family: var(--mono-font);
+  --header-meta-font-size: 0.85rem;
+  --header-meta-opacity: 0.85;
+
+  /* Header name custom properties */
+  --header-name-font-weight: 700;
+  --header-name-letter-spacing: -0.02em;
+
+  /* Section title custom properties */
+  --section-title-padding: 1.25rem 2rem;
+  --section-title-margin: 0;
+  --section-title-background: var(--panel-bg);
+  --section-title-color: var(--text-color);
+  --section-title-text-transform: uppercase;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 0.9rem;
+  --section-title-letter-spacing: 0.1em;
+
+  /* Section content custom properties */
+  --section-content-padding-inline: 2rem;
+  --section-title-line-height: 1;
+  --section-title-display: flex;
+  --section-title-border-inline-start: 4px solid var(--accent-color);
+  --section-title-border-block-end: 1px solid var(--panel-border);
+  --section-title-align-items: center;
+  --section-title-gap: 0.75rem;
+
+  /* Print link custom properties */
+  --printlink-border: 1px solid var(--panel-border);
+  --printlink-background: var(--panel-bg);
+  --printlink-padding: 0.625rem 1rem;
+  --printlink-border-radius: 6px;
+  --printlink-font-size: 0.85rem;
+  --printlink-font-weight: 600;
+  --printlink-text-transform: uppercase;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-transition: all 0.2s ease;
+  --printlink-box-shadow: var(--dashboard-shadow-sm);
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-hover-shadow: var(--dashboard-shadow-md);
+  --printlink-hover-border-color: var(--accent-color);
+  --printlink-hover-background: var(--accent-color);
+  --printlink-hover-color: var(--panel-bg);
+
+  /* Principles list item custom properties */
+  --principles-item-border: 1px solid var(--panel-border);
+  --principles-item-background: var(--panel-bg);
+  --principles-item-border-radius: 6px;
+  --principles-item-padding: 1rem 1rem 1rem 1.25rem;
+  --principles-item-margin-top: 0.75rem;
+  --principles-item-box-shadow: var(--dashboard-shadow-sm);
+  --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --principles-item-position: relative;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
 }
 
 /* Light Mode */
@@ -346,21 +469,6 @@ body[data-theme='dashboard'] {
 
   /* Section Titles - Panel Headers */
   .resume-section__title:not(.nostalgia) {
-    border-inline-start: 4px solid var(--accent-color);
-    border-block-end: 1px solid var(--panel-border);
-    padding: 1.25rem 2rem;
-    margin: 0;
-    background: var(--panel-bg);
-    color: var(--text-color);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
     &::before {
       content: '●';
       color: var(--status-green);
@@ -393,16 +501,6 @@ body[data-theme='dashboard'] {
     box-shadow: var(--dashboard-shadow-sm);
   }
 
-  .resume-header__name {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .resume-header__meta {
-    opacity: 0.85;
-  }
-
-  .resume-header__meta,
   .resume-header__contact,
   .resume-header__location,
   .resume-header__links {
@@ -410,63 +508,14 @@ body[data-theme='dashboard'] {
     font-size: 0.85rem;
   }
 
-  .resume-header__printlink {
-    border: 1px solid var(--panel-border);
-    background: var(--panel-bg);
-    padding: 0.625rem 1rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: all 0.2s ease;
-    box-shadow: var(--dashboard-shadow-sm);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--dashboard-shadow-md);
-      border-color: var(--accent-color);
-      background: var(--accent-color);
-      color: var(--panel-bg);
-    }
-  }
-
   /* Skills Grid - Metrics Cards */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
-    padding: 0;
-  }
-
-  .skills-grid__group {
-    margin: 0.5rem;
-    border: 1px solid var(--panel-border);
-    padding: 1rem;
-    background: var(--panel-bg);
-    border-radius: 6px;
-    box-shadow: var(--dashboard-shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--dashboard-shadow-md);
-    }
   }
 
   .skills-grid__title {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border-block-end: 1px solid var(--panel-border);
-    padding-block-end: 0.5rem;
-    margin-block-end: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
     &::before {
       content: '▸';
       color: var(--status-green);
@@ -474,23 +523,8 @@ body[data-theme='dashboard'] {
     }
   }
 
-  .skills-grid__items {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    font-family: var(--mono-font);
-  }
-
   /* Experience Items - Log Entry Style */
   .experience-item {
-    border: 1px solid var(--panel-border);
-    background: var(--panel-bg);
-    border-radius: 6px;
-    padding: 1.25rem;
-    margin-block-start: 1rem;
-    box-shadow: var(--dashboard-shadow-sm);
-    position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
     &:first-of-type {
       margin-block-start: 0;
     }
@@ -526,22 +560,16 @@ body[data-theme='dashboard'] {
   }
 
   .experience-item__title {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--text-color);
-  }
-
-  .experience-item__company {
-    font-weight: 500;
-    color: var(--accent-color);
-    font-size: 0.95rem;
+    font-size: var(--experience-title-font-size, 1rem);
+    font-weight: var(--experience-title-font-weight, normal);
+    color: var(--experience-title-color, inherit);
   }
 
   .experience-item__duration {
-    font-family: var(--mono-font);
-    font-size: 0.8rem;
-    color: var(--text-color);
-    opacity: 0.7;
+    font-size: var(--experience-duration-font-size, 0.8rem);
+    font-family: var(--experience-duration-font-family, inherit);
+    color: var(--experience-duration-color, inherit);
+    opacity: var(--experience-duration-opacity, 1);
     white-space: nowrap;
 
     &::before {
@@ -551,8 +579,8 @@ body[data-theme='dashboard'] {
   }
 
   .experience-item__description {
-    line-height: 1.6;
-    color: var(--text-color);
+    line-height: var(--experience-description-line-height, 1.6);
+    color: var(--experience-description-color, inherit);
   }
 
   /* Lists - Data readout style */
@@ -585,15 +613,6 @@ body[data-theme='dashboard'] {
 
   /* Principles list - Status items */
   .principles-list__item {
-    border: 1px solid var(--panel-border);
-    background: var(--panel-bg);
-    border-radius: 6px;
-    padding: 1rem 1rem 1rem 1.25rem;
-    margin-block-start: 0.75rem;
-    box-shadow: var(--dashboard-shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-
     &::before {
       content: '✓';
       position: absolute;

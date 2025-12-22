@@ -10,6 +10,9 @@
   --section-bg: transparent;
   --header-bg: transparent;
 
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
+
   /* Component overrides */
   --main-border-width: 2px;
   --main-border-style: solid;
@@ -33,8 +36,10 @@
   --skills-group-border: 0;
   --skills-group-background: transparent;
   --skills-group-padding: 0.5rem 0;
+  --skills-group-margin-bottom: 1rem;
   --skills-title-border-width: 1px;
   --skills-title-border-style: solid;
+  --skills-title-border-block-end-color: currentColor;
   --skills-title-padding-bottom: 0.25rem;
   --skills-title-margin-bottom: 0.5rem;
   --experience-item-border: 0;
@@ -45,6 +50,12 @@
   --tech-badge-background: transparent;
   --tech-badge-padding: 0.25rem 0.5rem;
   --tech-badge-text-shadow: 0 0 6px currentColor;
+  --tech-badge-before-content: '[';
+  --tech-badge-before-display: inline;
+  --tech-badge-before-margin-inline-start: 2px;
+  --tech-badge-after-content: ']';
+  --tech-badge-after-display: inline;
+  --tech-badge-after-margin-inline-start: 2px;
   --education-item-border: 0;
   --education-item-background: transparent;
   --education-item-padding: 0.5rem 0;
@@ -54,13 +65,29 @@
   --list-item-border-width: 1px;
   --list-item-border-style: dotted;
   --list-item-padding: 0.75rem 0;
+  --community-item-border: 0;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-border: 0;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
   --bullet-before-content: '>';
   --bullet-font-size: 0.8rem;
+  --bullet-margin-inline-start: 0.5rem;
+  --header-name-padding-block-end: 0.5rem;
+  --header-name-margin-block-end: 1rem;
+  --section-title-border: 0;
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.1em;
+  --section-title-border-block-end: var(--section-title-border-width) var(--section-title-border-style) currentColor;
+  --printlink-transition: all 0.1s ease;
   --printlink-border-width: 2px;
   --printlink-border-style: solid;
   --printlink-padding: 0.5rem 1rem;
   --printlink-font-weight: bold;
   --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --printlink-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --printlink-hover-border-width: 3px;
   --link-text-decoration: underline;
   --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
   --heading-text-shadow: 0 0 2px currentColor;
@@ -74,8 +101,20 @@
   --dial-label-font-size--phone-sm: 0.7rem;
   --dial-label-font-size--xs: 0.65rem;
   --dial-label-padding: 0.4rem 0.8rem;
+  --dial-label-active-span-padding-block: 0.4rem;
+  --dial-label-active-span-padding-inline: 0.6rem;
+  --dial-label-active-span-padding-block--tablet: 0.35rem;
+  --dial-label-active-span-padding-inline--tablet: 0.4rem;
+  --dial-label-active-span-padding-block--phone: 0.2rem;
+  --dial-label-active-span-padding-inline--phone: 0.25rem;
   --dial-spoke-stroke-width: 1px;
   --dial-spoke-opacity: 0.5;
+  --printlink-before-content: '>';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-end: 0.35em;
+  --printlink-after-content: '<';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 0.35em;
 
   /* Light Mode */
   &[data-mode='light'] {
@@ -256,45 +295,13 @@ body[data-theme='crt'] {
     border-block-end: var(--header-border-width) var(--header-border-style) currentColor;
   }
 
-  .resume-header__name {
-    padding-block-end: 0.5rem;
-    margin-block-end: 1rem;
-  }
-
   .resume-header__dial-selector {
-    padding: 1rem;
+    padding-block: 1rem;
     border: 1px solid currentColor;
   }
 
-  .resume-header__printlink {
-    transition: all 0.1s ease;
-
-    &::before {
-      content: '> ';
-    }
-
-    &:hover {
-      text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-      border-width: 3px;
-    }
-  }
-
   /* Section titles - using custom properties */
-  .resume-section__title {
-    border: 0;
-    border-block-end: var(--section-title-border-width) var(--section-title-border-style) currentColor;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
   /* Skills grid - using custom properties */
-  .skills-grid__group {
-    margin-block-end: 1rem;
-  }
-
-  .skills-grid__title {
-    border-block-end: var(--skills-title-border-width) var(--skills-title-border-style) currentColor;
-  }
 
   /* Experience items - using custom properties */
   .experience-item {
@@ -305,26 +312,9 @@ body[data-theme='crt'] {
     }
   }
 
-  .experience-item__tech {
-    &::before {
-      content: '[';
-      margin-inline-start: 2px;
-    }
-
-    &::after {
-      content: ']';
-      margin-inline-start: 2px;
-    }
-  }
-
-  .experience-item__bullets li::before {
-    margin-inline-start: 0.5rem;
-  }
-
   /* Community and principles lists - using custom properties */
   .community-list__item,
   .principles-list__item {
-    border: 0;
     border-block-start: var(--list-item-border-width) var(--list-item-border-style) currentColor;
 
     &:first-child {
@@ -385,11 +375,11 @@ body[data-theme='crt'] {
     }
 
     h1.resume-header__name {
-      font-size: 2rem;
+      --header-name-font-size: 2rem;
     }
 
     dial-selector .dial-label {
-      padding: 0.35rem 0.65rem;
+      padding: 0.35rem 0;
     }
   }
 
@@ -399,16 +389,16 @@ body[data-theme='crt'] {
     }
 
     h1.resume-header__name {
-      font-size: 1.7rem;
+      --header-name-font-size: 1.7rem;
     }
 
     dial-selector .dial-label {
-      padding: 0.3rem 0.55rem;
+      padding: 0.3rem 0rem;
     }
 
     .resume-header__printlink {
-      font-size: 0.7rem;
-      padding: 0.45rem 0.85rem;
+      --printlink-font-size: 0.7rem;
+      --printlink-padding: 0.45rem 0.85rem;
     }
   }
 }

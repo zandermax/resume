@@ -2,32 +2,20 @@
 Theme-Specific Custom Components
 =========================== */
 
-/* Visitor counter styling (Nostalgia/Web2.0 themes) */
-.visitor-counter {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--section-bg, transparent);
-  border: 3px ridge var(--accent-color, #000);
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 1rem 0;
-}
+/* Theme-specific custom components
 
-.visitor-counter__digit {
-  display: inline-block;
-  width: 1.5rem;
-  text-align: center;
-  background: #000;
-  color: #ff0000;
-  border: 2px inset #666;
-  padding: 0.25rem;
-  font-size: 1.5rem;
-}
+   - nostalgia.css: visitor-counter, retro-badge
+   - web2gloss.css: web2-badges
+   - dashboard.css: dashboard-status-banner, dashboard-metrics-grid
+   - crt.css: terminal-log
+   - xp.css: xp-close-btn, xp-dialog
+   - neo-swiss.css: neoswiss-ai-button, neoswiss-ai-modal
+   - metro.css: metro-chat-widget
+   - skeuomorph.css: sticky-note
+   - brutal.css: cookie-banner
+*/
 
-/* Theme-specific element visibility */
+/* Theme-specific element visibility controls */
 .nostalgia-elements,
 .resume-section__title.nostalgia {
   display: var(--display-nostalgia-elements, none);
@@ -67,7 +55,6 @@ Theme-Specific Custom Components
 }
 
 /* Cookie banner - hidden by default, shown only in brutal theme */
-/* Cookie Banner elements - hidden by default, shown only in brutal theme */
 .cookie-banner-dismiss {
   position: absolute;
   opacity: 0;
@@ -130,16 +117,4 @@ Theme-Specific Custom Components
       margin: 0 0.5em;
     }
   }
-}
-
-/* Retro badge */
-.retro-badge {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 3px solid;
-  border-color: #ff00ff #00ffff #00ffff #ff00ff;
-  background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
-  background-size: 400% 400%;
-  animation: gradientShift 3s ease infinite;
-  box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
 }

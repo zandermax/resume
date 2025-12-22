@@ -5,6 +5,152 @@ BRUTAL Theme - Maximum Brutalism
 /* Common properties for all modes */
 :root[data-theme='brutal'] {
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 3rem;
+
+  /* Experience item custom properties */
+  --experience-item-position: relative;
+  --experience-item-padding: 2rem;
+  --experience-item-background: var(--section-bg);
+  --experience-item-border: 6px solid var(--border-color);
+  --experience-item-margin-top: 2rem;
+  --experience-item-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
+  --experience-item-transform: rotate(-0.2deg);
+
+  /* Skills grid group custom properties */
+  --skills-group-border: 4px solid var(--border-color);
+  --skills-group-background: var(--background-color);
+  --skills-group-padding: 1rem;
+  --skills-group-margin-bottom: 1rem;
+  --skills-group-transform: skewX(-0.5deg);
+
+  /* Skills grid title custom properties */
+  --skills-title-border-width: 3px;
+  --skills-title-border-style: solid;
+  --skills-title-padding-bottom: 0.5rem;
+  --skills-title-margin-bottom: 0.75rem;
+  --skills-title-font-weight: 900;
+  --skills-title-font-size: 1.2rem;
+  --skills-title-border-block-end-color: var(--accent-color);
+  --skills-title-letter-spacing: -0.02em;
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: 1.8rem;
+  --experience-role-border-inline-start: 8px solid var(--accent-color);
+  --experience-role-padding-inline-start: 1rem;
+  --experience-role-margin-block-end: 0.5rem;
+  --experience-role-line-height: 1;
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 900;
+  --experience-company-font-size: 1.1rem;
+  --experience-company-text-transform: uppercase;
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 3px solid var(--border-color);
+  --tech-badge-background: var(--text-color);
+  --tech-badge-color: var(--background-color);
+  --tech-badge-font-weight: 900;
+  --tech-badge-padding: 0.6rem 1rem;
+  --tech-badge-font-size: 0.75rem;
+  --tech-badge-box-shadow: 4px 4px 0 var(--accent-color);
+  --tech-badge-letter-spacing: 0.05em;
+  --tech-badge-transform: skewX(-3deg);
+  --tech-badge-transition: transform 0.1s ease, box-shadow 0.1s ease;
+  --tech-badge-hover-transform: skewX(-3deg) translate(-2px, -2px);
+  --tech-badge-hover-box-shadow: 6px 6px 0 var(--accent-color);
+
+  /* Skills grid custom properties */
+  --skills-grid-border: 6px solid var(--border-color);
+  --skills-grid-background: var(--section-bg);
+  --skills-grid-padding: 2rem;
+  --skills-grid-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
+  --skills-grid-position: relative;
+
+  /* Community/Principles list item custom properties */
+  --community-item-padding: 1rem 1.5rem;
+  --community-item-margin-bottom: 1rem;
+  --community-item-background: var(--background-color);
+  --community-item-font-weight: 600;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-padding: 1rem 1.5rem;
+  --principles-item-margin-bottom: 1rem;
+  --principles-item-background: var(--background-color);
+  --principles-item-font-weight: 600;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Header name custom properties */
+  --header-name-border: none;
+  --header-name-border-inline-start: 12px solid var(--accent-color);
+  --header-name-padding-inline-start: 2rem;
+  --header-name-margin-block-end: 1rem;
+  --header-name-font-weight: 900;
+  --header-name-font-size: 4rem;
+  --header-name-line-height: 0.85;
+  --header-name-text-transform: uppercase;
+  --header-name-letter-spacing: -0.04em;
+
+  /* Section title custom properties */
+  --section-title-border: 0;
+  --section-title-border-radius: 0;
+  --section-title-padding: 1.5rem 2rem;
+  --section-title-margin: 0 0 2rem 0;
+  --section-title-background: var(--text-color);
+  --section-title-color: var(--background-color);
+  --section-title-text-transform: uppercase;
+  --section-title-font-weight: 900;
+  --section-title-font-size: 2rem;
+  --section-title-letter-spacing: -0.03em;
+
+  /* Section content custom properties */
+  --section-content-padding-inline: 2rem;
+  --section-title-border-inline-start: 16px solid var(--accent-color);
+  --section-title-border-block-end: 4px solid var(--border-color);
+  --section-title-line-height: 0.9;
+  --section-title-position: relative;
+  --section-title-transform: skewY(-1deg);
+
+  /* Print link custom properties */
+  --printlink-border: 6px solid var(--background-color);
+  --printlink-background: var(--accent-color);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: 900;
+  --printlink-padding: 1.5rem 3rem;
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: 1.2rem;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-box-shadow: 8px 8px 0 oklch(0% 0 0 / 0.4);
+  --printlink-transition: all 0.05s ease;
+  --printlink-transform: skewX(-5deg);
+  --printlink-hover-transform: skewX(-5deg) translate(-4px, -4px);
+  --printlink-hover-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
+  --printlink-hover-color: var(--color-white);
+  --printlink-active-transform: skewX(-5deg) translate(0, 0);
+  --printlink-active-box-shadow: 4px 4px 0 var(--brutal-shadow-light);
+
+  /* Header role custom properties */
+  --header-role-font-weight: 900;
+  --header-role-font-size: 1.5rem;
+  --header-role-text-transform: uppercase;
+  --header-role-letter-spacing: -0.02em;
+  --header-role-border-inline-start: 8px solid var(--accent-color);
+  --header-role-padding-inline-start: 2rem;
+  --header-role-margin-block-start: 1rem;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.8rem;
+  --education-institution-border-inline-start: 8px solid var(--accent-color);
+  --education-institution-padding-inline-start: 1rem;
+  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-line-height: 1;
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '■';
+  --bullet-font-size: 1rem;
+  --bullet-font-weight: 900;
 }
 
 /* Light Mode */
@@ -85,22 +231,6 @@ body[data-theme='brutal'] {
 
   /* MASSIVE section titles - brutalism is LOUD */
   .resume-section__title {
-    border: 0;
-    border-inline-start: 16px solid var(--accent-color);
-    border-block-end: 4px solid var(--border-color);
-    border-radius: 0;
-    padding: 1.5rem 2rem;
-    margin: 0 0 2rem 0;
-    background: var(--text-color);
-    color: var(--background-color);
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 2rem;
-    letter-spacing: -0.03em;
-    line-height: 0.9;
-    position: relative;
-    transform: skewY(-1deg);
-
     &::after {
       content: '';
       position: absolute;
@@ -120,12 +250,6 @@ body[data-theme='brutal'] {
 
   /* Skills grid - aggressive boxes */
   .skills-grid {
-    border: 6px solid var(--border-color);
-    background: var(--section-bg);
-    padding: 2rem;
-    box-shadow: 12px 12px 0 var(--brutal-shadow-light);
-    position: relative;
-
     &::before {
       content: '';
       position: absolute;
@@ -135,34 +259,8 @@ body[data-theme='brutal'] {
     }
   }
 
-  .skills-grid__group {
-    border: 4px solid var(--border-color);
-    background: var(--background-color);
-    padding: 1rem;
-    margin-block-end: 1rem;
-    transform: skewX(-0.5deg);
-  }
-
-  .skills-grid__title {
-    border-block-end: 3px solid var(--accent-color);
-    padding-block-end: 0.5rem;
-    margin-block-end: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-  }
-
   /* Experience items - IMPOSING boxes */
   .experience-item {
-    position: relative;
-    padding: 2rem;
-    background: var(--section-bg);
-    border: 6px solid var(--border-color);
-    margin-block-start: 2rem;
-    box-shadow: 12px 12px 0 var(--brutal-shadow-light);
-    transform: rotate(-0.2deg);
-
     &::before {
       content: '';
       position: absolute;
@@ -180,37 +278,6 @@ body[data-theme='brutal'] {
     }
   }
 
-  .experience-item__tech {
-    border: 3px solid var(--border-color);
-    background: var(--text-color);
-    color: var(--background-color);
-    font-weight: 900;
-    padding: 0.6rem 1rem;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    box-shadow: 4px 4px 0 var(--accent-color);
-    transform: skewX(-3deg);
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-
-    &:hover {
-      transform: skewX(-3deg) translate(-2px, -2px);
-      box-shadow: 6px 6px 0 var(--accent-color);
-    }
-  }
-
-  .experience-item__company {
-    font-weight: 900;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-  }
-
-  .experience-item__bullets li::before {
-    content: '■';
-    font-size: 1rem;
-    font-weight: 900;
-  }
-
   /* Lists with harsh borders */
   .community-list,
   .principles-list {
@@ -223,10 +290,6 @@ body[data-theme='brutal'] {
   .community-list__item,
   .principles-list__item {
     border-inline-start: 6px solid var(--accent-color);
-    padding: 1rem 1.5rem;
-    margin-block-end: 1rem;
-    background: var(--background-color);
-    font-weight: 600;
   }
 
   /* Education - concrete block style */
@@ -261,50 +324,8 @@ body[data-theme='brutal'] {
     }
   }
 
-  .resume-header__printlink {
-    border: 6px solid var(--background-color);
-    background: var(--accent-color);
-    color: var(--color-white);
-    font-weight: 900;
-    padding: 1.5rem 3rem;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    box-shadow: 8px 8px 0 oklch(0% 0 0 / 0.4);
-    transition: all 0.05s ease;
-    transform: skewX(-5deg);
-
-    &:hover {
-      transform: skewX(-5deg) translate(-4px, -4px);
-      box-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
-      color: var(--color-white);
-    }
-
-    &:active {
-      transform: skewX(-5deg) translate(0, 0);
-      box-shadow: 4px 4px 0 var(--brutal-shadow-light);
-    }
-  }
-
-  .resume-header__role {
-    font-weight: 900;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    border-inline-start: 8px solid var(--accent-color);
-    padding-inline-start: 2rem;
-    margin-block-start: 1rem;
-  }
-
   h1.resume-header__name {
-    border-inline-start: 12px solid var(--accent-color);
-    padding-inline-start: 2rem;
-    margin-block-end: 1rem;
-    font-weight: 900;
-    font-size: 4rem;
-    line-height: 0.85;
-    text-transform: uppercase;
-    letter-spacing: -0.04em;
+    border-inline-start: var(--header-name-border-inline-start, none);
   }
 
   /* AGGRESSIVE links */
@@ -394,6 +415,25 @@ body[data-theme='brutal'] {
       margin-block-end: 1rem;
       font-size: 1.5rem;
     }
+
+    /* Responsive padding reductions for small viewports */
+    @media (max-width: 600px) {
+      padding: 1.25rem;
+      border-width: 4px;
+      box-shadow: 6px 6px 0 var(--brutal-shadow-light);
+    }
+
+    @media (max-width: 480px) {
+      padding: 1rem;
+      border-width: 3px;
+      box-shadow: 4px 4px 0 var(--brutal-shadow-light);
+    }
+
+    @media (max-width: 380px) {
+      padding: 0.75rem;
+      border-width: 2px;
+      box-shadow: 3px 3px 0 var(--brutal-shadow-light);
+    }
   }
 
   /* ALL typography is BOLD and UNFORGIVING */
@@ -402,15 +442,6 @@ body[data-theme='brutal'] {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.02em;
-  }
-
-  h3.experience-item__role,
-  h3.education-item__institution {
-    font-size: 1.8rem;
-    border-inline-start: 8px solid var(--accent-color);
-    padding-inline-start: 1rem;
-    margin-block-end: 0.5rem;
-    line-height: 1;
   }
 
   p,
@@ -659,18 +690,17 @@ body[data-theme='brutal'] {
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    h1.resume-header__name {
-      font-size: 2.5rem;
+    :root[data-theme='brutal'] {
+      --header-name-font-size: 2.5rem;
+      --section-title-font-size: 1.5rem;
+      --section-title-padding: 1rem 1.5rem;
+      --printlink-font-size: 0.9rem;
+      --printlink-padding: 1rem 2rem;
+      --education-institution-font-size: 1.4rem;
     }
 
-    .resume-section__title {
-      font-size: 1.5rem;
-      padding: 1rem 1.5rem;
-    }
-
-    h3.experience-item__role,
-    h3.education-item__institution {
-      font-size: 1.4rem;
+    :root[data-theme='brutal'] {
+      --experience-role-font-size: 1.4rem;
     }
 
     dial-selector .dial-label > span {
@@ -681,6 +711,15 @@ body[data-theme='brutal'] {
     .resume__main {
       border-width: 6px;
       box-shadow: 10px 10px 0 oklch(0% 0 0 / 0.7), 20px 20px 0 var(--brutal-shadow-light);
+    }
+
+    .cookie-banner-overlay {
+      padding-inline: 1rem;
+    }
+
+    .cookie-banner {
+      width: calc(100% - 8px - 2rem); /* Account for 4px border each side + 1rem padding each side */
+      max-width: 100%;
     }
 
     .cookie-banner__title {
@@ -707,16 +746,15 @@ body[data-theme='brutal'] {
   }
 
   @media (max-width: 500px) {
-    h1.resume-header__name {
-      font-size: 2rem;
-      padding-inline-start: 1rem;
-      border-inline-start-width: 8px;
-    }
-
-    .resume-section__title {
-      font-size: 1.2rem;
-      padding: 0.75rem 1rem;
-      border-inline-start-width: 10px;
+    :root[data-theme='brutal'] {
+      --header-name-font-size: 2rem;
+      --header-name-padding-inline-start: 1rem;
+      --header-name-border-inline-start: 8px solid var(--accent-color);
+      --section-title-font-size: 1.2rem;
+      --section-title-padding: 0.75rem 1rem;
+      --printlink-font-size: 0.9rem;
+      --printlink-padding: 1rem 2rem;
+      --section-title-border-inline-start: 10px solid var(--accent-color);
     }
 
     .resume-header,
@@ -734,9 +772,10 @@ body[data-theme='brutal'] {
       padding: 0.5rem 0.8rem;
     }
 
-    .resume-header__printlink {
-      font-size: 0.9rem;
-      padding: 1rem 2rem;
+    .cookie-banner {
+      width: calc(100% - 2rem); /* Account for 1rem padding each side, no inline borders at this breakpoint */
+      max-width: 100%;
+      border-inline: 0;
     }
 
     .cookie-banner__returning-message {

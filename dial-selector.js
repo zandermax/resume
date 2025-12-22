@@ -36,11 +36,7 @@ const MAX_KNOB_WRAP_SIZE = 600;
 const LINE_OPACITY_INACTIVE = 0.4;
 const LINE_OPACITY_ACTIVE = 0.8;
 
-// Indicator dimensions (some remain fixed, some scale)
-const BASE_INDICATOR_HEIGHT = 60;
-
 // Animation and timing
-const TRANSITION_DELAY = 0.125;
 const INITIALIZATION_DELAY = 100;
 
 // Angle calculation threshold
@@ -165,15 +161,18 @@ class DialSelector extends HTMLElement {
     });
 
     window.addEventListener('resize', () => {
-      // Disable transitions during resize
-      this.classList.add('no-transitions');
-      this.updateDimensions();
-      // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
-      this.updateLines();
-      // Re-enable transitions after resize completes
+      // Defer to next frame to ensure CSS media queries have been applied
       requestAnimationFrame(() => {
+        // Disable transitions during resize
+        this.classList.add('no-transitions');
+        this.updateDimensions();
+        // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
+        this.updateLines();
+        // Re-enable transitions after resize completes
         requestAnimationFrame(() => {
-          this.classList.remove('no-transitions');
+          requestAnimationFrame(() => {
+            this.classList.remove('no-transitions');
+          });
         });
       });
     });
@@ -591,7 +590,11 @@ class DialSelector extends HTMLElement {
           });
         });
       });
-      this.resizeObserver.observe(this);
+      // Observe .knob-wrap (controlled by CSS variables) not dial-selector (100% width)
+      const knobWrap = this.querySelector('.knob-wrap');
+      if (knobWrap) {
+        this.resizeObserver.observe(knobWrap);
+      }
     }
   }
 
@@ -613,10 +616,41 @@ class DialSelector extends HTMLElement {
     const selector = this.querySelector('.selector');
     if (!selector) return;
 
-    // Check if height is explicitly set
+    // Check if width or height are explicitly set by user
+    const widthAttr = this.getAttribute('width');
     const heightAttr = this.getAttribute('height');
+    const hasExplicitWidth = !!widthAttr;
     const hasFixedHeight = !!heightAttr;
 
+    // CSS CONTROL MODE: No explicit sizing - let CSS media queries control sizing
+    if (!hasExplicitWidth && !hasFixedHeight) {
+      // Simply measure what CSS decided and update positioning
+      const actualSize = knobWrap.getBoundingClientRect().width;
+
+      // Store for positioning calculations only
+      this.knobWrapSize = actualSize;
+      this.knobCenter = actualSize / 2;
+
+      // Calculate scale for internal positioning logic
+      const scale = actualSize / BASE_KNOB_WRAP_SIZE;
+      this.labelColumnHeight = BASE_LABEL_COLUMN_HEIGHT * scale;
+      this.labelVerticalOffsetScale = BASE_LABEL_VERTICAL_OFFSET_SCALE * scale;
+      this.horizontalLineLength = BASE_HORIZONTAL_LINE_LENGTH * scale;
+      this.maxSpokeLength = BASE_MAX_SPOKE_LENGTH * scale;
+      this.hitAreaStrokeWidth = BASE_HIT_AREA_STROKE_WIDTH * scale;
+      this.horizontalLineEndOffset = BASE_HORIZONTAL_LINE_END_OFFSET * scale;
+
+      // Do NOT set any CSS variables - let CSS control everything
+      // Only update label positions
+      if (this.labels.length > 0) {
+        this.updateLabelPositions();
+      }
+
+      // Exit - CSS controls all sizing
+      return;
+    }
+
+    // EXPLICIT SIZING MODE: JavaScript takes full control
     // Calculate available space (accounting for gaps)
     const computedStyle = getComputedStyle(selector);
     const gap = parseFloat(computedStyle.gap) || 0;
@@ -635,8 +669,11 @@ class DialSelector extends HTMLElement {
       targetSize = Math.min(Math.max(MIN_KNOB_WRAP_SIZE, targetSize), MAX_KNOB_WRAP_SIZE);
     }
 
-    // Set the knob-wrap size via CSS variable
-    this.style.setProperty('--knob-wrap-size', `${targetSize}px`);
+    // Only set inline styles for knob-wrap-size if width/height are explicitly set
+    // Otherwise, let CSS (including media queries) control the size
+    if (hasExplicitWidth || hasFixedHeight) {
+      this.style.setProperty('--knob-wrap-size', `${targetSize}px`);
+    }
 
     // Force a reflow to ensure the browser has applied the size
     void knobWrap.offsetWidth;
@@ -676,17 +713,23 @@ class DialSelector extends HTMLElement {
     const scaledRadiusOuter = baseRadiusOuter * scale;
     const scaledRadiusInner = baseRadiusInner * scale;
 
-    // Update knob size CSS variables
-    this.style.setProperty('--radius-outer', `${scaledRadiusOuter}px`);
-    this.style.setProperty('--radius-inner', `${scaledRadiusInner}px`);
+    // Set dynamic values for responsive sizing (media queries can constrain these)
+    if (hasExplicitWidth || hasFixedHeight) {
+      // Explicit sizing - set directly
+      this.style.setProperty('--radius-outer', `${scaledRadiusOuter}px`);
+      this.style.setProperty('--radius-inner', `${scaledRadiusInner}px`);
+    }
 
     // Calculate and set scaled circle widths
     const baseWidthOuter = (BASE_WIDTH_OUTER_CIRCLE * this.widthOuterCirclePercentage) / 100;
     const baseWidthInner = (BASE_WIDTH_INNER_CIRCLE * this.widthInnerCirclePercentage) / 100;
     const scaledWidthOuter = baseWidthOuter * scale;
     const scaledWidthInner = baseWidthInner * scale;
-    this.style.setProperty('--width-outer-circle', `${scaledWidthOuter}px`);
-    this.style.setProperty('--width-inner-circle', `${scaledWidthInner}px`);
+
+    if (hasExplicitWidth || hasFixedHeight) {
+      this.style.setProperty('--width-outer-circle', `${scaledWidthOuter}px`);
+      this.style.setProperty('--width-inner-circle', `${scaledWidthInner}px`);
+    }
 
     // Scale center-indicator offset
     const baseCenterIndicator = (BASE_CENTER_INDICATOR * this.centerIndicatorPercentage) / 100;
@@ -698,17 +741,24 @@ class DialSelector extends HTMLElement {
     // Ratio: BASE_INDICATOR_LENGTH / BASE_KNOB_RADIUS_OUTER
     const indicatorLengthRatio = BASE_INDICATOR_LENGTH / BASE_KNOB_RADIUS_OUTER;
     const scaledIndicatorLength = scaledRadiusOuter * indicatorLengthRatio * (this.indicatorLengthPercentage / 100);
-    this.style.setProperty('--indicator-length', `${scaledIndicatorLength}px`);
+
+    if (hasExplicitWidth || hasFixedHeight) {
+      this.style.setProperty('--indicator-length', `${scaledIndicatorLength}px`);
+    }
 
     // Update remaining CSS custom properties
     this.style.setProperty('--knob-center', `${this.knobCenter}px`);
-    this.style.setProperty('--label-column-height', `${this.labelColumnHeight}px`);
-    this.style.setProperty('--label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
-    this.style.setProperty('--horizontal-line-length', `${this.horizontalLineLength}px`);
-    this.style.setProperty('--max-spoke-length', `${this.maxSpokeLength}px`);
+
+    if (hasExplicitWidth || hasFixedHeight) {
+      this.style.setProperty('--label-column-height', `${this.labelColumnHeight}px`);
+      this.style.setProperty('--label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
+      this.style.setProperty('--horizontal-line-length', `${this.horizontalLineLength}px`);
+      this.style.setProperty('--max-spoke-length', `${this.maxSpokeLength}px`);
+      this.style.setProperty('--indicator-width', `${this.indicatorWidth}px`);
+    }
+
     this.style.setProperty('--hit-area-stroke-width', `${this.hitAreaStrokeWidth}px`);
     this.style.setProperty('--horizontal-line-end-offset', `${this.horizontalLineEndOffset}px`);
-    this.style.setProperty('--indicator-width', `${this.indicatorWidth}px`);
 
     // Update label positions when dimensions change
     if (this.labels.length > 0) {
@@ -900,11 +950,26 @@ class DialSelector extends HTMLElement {
 
     const centerX = this.knobCenter;
     const centerY = this.knobCenter;
-    // Get the actual knob radius from CSS variable, with fallback to default
-    const computedStyle = getComputedStyle(this);
-    const radiusOuter = computedStyle.getPropertyValue('--radius-outer').trim() || '90px';
-    const knobRadius = parseFloat(radiusOuter);
-    const horizontalLength = this.horizontalLineLength;
+
+    // Create a temporary element to get computed CSS calc() values
+    const tempDiv = document.createElement('div');
+    tempDiv.style.cssText = `
+      position: absolute;
+      visibility: hidden;
+      width: var(--radius-outer);
+      height: var(--horizontal-line-length);
+      max-width: var(--max-spoke-length);
+      max-height: var(--horizontal-line-end-offset);
+    `;
+    this.appendChild(tempDiv);
+    const tempStyle = getComputedStyle(tempDiv);
+
+    const knobRadius = parseFloat(tempStyle.width) || 90;
+    const horizontalLength = parseFloat(tempStyle.height) || 100;
+    const maxSpokeLengthValue = parseFloat(tempStyle.maxWidth) || 80;
+    const horizontalLineEndOffsetValue = parseFloat(tempStyle.maxHeight) || 10;
+
+    this.removeChild(tempDiv);
 
     this.labels.forEach((label, index) => {
       const labelRect = label.getBoundingClientRect();
@@ -926,14 +991,14 @@ class DialSelector extends HTMLElement {
       // The spoke extends from spokeStart outward at the given angle
       // We need to find where it intersects with the horizontal line at labelY
       // But limit the spoke length so horizontal spokes don't extend too far
-      const maxSpokeLength = this.maxSpokeLength;
+      const maxSpokeLength = maxSpokeLengthValue;
 
       let intersectX, intersectY;
 
       if (Math.abs(Math.sin(angleRad)) < NEARLY_HORIZONTAL_THRESHOLD) {
-        // Nearly horizontal spoke - limit the extension
-        const maxExtension = isLeft ? -maxSpokeLength : maxSpokeLength;
-        intersectX = spokeStartX + maxExtension;
+        // For horizontal spokes, intersection is at the knob edge
+        // No need to extend beyond - the whole line is horizontal
+        intersectX = spokeStartX;
         intersectY = labelY;
       } else {
         // Parametric form: x = spokeStartX + t*cos(angle), y = spokeStartY + t*sin(angle)
@@ -957,8 +1022,8 @@ class DialSelector extends HTMLElement {
       // Horizontal line should extend from label to intersection
       // But we want it to stop a bit before the intersection for visual clarity
       const horizontalEndX = isLeft
-        ? Math.min(intersectX - this.horizontalLineEndOffset, labelX + horizontalLength)
-        : Math.max(intersectX + this.horizontalLineEndOffset, labelX - horizontalLength);
+        ? Math.min(intersectX - horizontalLineEndOffsetValue, labelX + horizontalLength)
+        : Math.max(intersectX + horizontalLineEndOffsetValue, labelX - horizontalLength);
       const horizontalEndY = labelY;
 
       // Create polyline: label -> horizontal end -> intersection -> spoke start

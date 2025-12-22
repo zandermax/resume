@@ -46,45 +46,201 @@ Custom Properties
   --header-border-radius: var(--main-border-radius);
 
   /* Header name */
+  --header-name-order: 1;
+  --header-name-font-size: 2.6rem;
+  --header-name-font-weight: normal;
+  --header-name-line-height: normal;
+  --header-name-letter-spacing: 0.08em;
+  --header-name-text-transform: uppercase;
+  --header-name-color: inherit;
+  --header-name-border: none;
   --header-name-border-style: solid;
   --header-name-border-width: 4px;
+  --header-name-border-color: var(--border-color);
+  --header-name-padding: 0;
+  --header-name-padding-block-end: 0.35rem;
+  --header-name-margin: 0;
+  --header-name-margin-block-end: 0.35rem;
   --header-name-text-shadow: none;
+  --header-name-position: static;
+  --header-name-animation: none;
+  --header-name-will-change: auto;
+
+  /* Header name wrapper */
+  --header-name-wrapper-margin-block-start: 2rem;
+
+  /* Header meta */
+  --header-meta-font-size: 0.85rem;
+  --header-meta-font-family: inherit;
+  --header-meta-text-transform: uppercase;
+  --header-meta-letter-spacing: 0.12em;
+  --header-meta-color: inherit;
+  --header-meta-opacity: 1;
+  --header-meta-text-shadow: none;
 
   /* Print link button */
   --printlink-border-width: 2px;
   --printlink-border-style: solid;
+  --printlink-border: none;
+  --printlink-border-radius: 0;
   --printlink-padding: 0.5rem 1rem;
+  --printlink-font-size: 0.8rem;
+  --printlink-font-family: inherit;
   --printlink-font-weight: normal;
+  --printlink-letter-spacing: 0.14em;
+  --printlink-text-transform: uppercase;
+  --printlink-color: inherit;
   --printlink-background: transparent;
   --printlink-box-shadow: none;
+  --printlink-text-shadow: none;
+  --printlink-text-decoration: none;
+  --printlink-position: relative;
+  --printlink-transition: none;
+  --printlink-transform: none;
+  --printlink-opacity: 1;
+  --printlink-filter: none;
   --printlink-hover-shadow: none;
+  --printlink-hover-background: var(--text-color);
+  --printlink-hover-color: var(--background-color);
+  --printlink-hover-text-shadow: none;
+  --printlink-hover-border-width: none;
+  --printlink-hover-border-color: none;
+  --printlink-hover-transform: none;
+  --printlink-hover-filter: none;
+  --printlink-hover-opacity: 1;
+  --printlink-hover-background-size: auto;
+  --printlink-hover-animation: none;
+  --printlink-active-transform: none;
+  --printlink-active-box-shadow: none;
+  --printlink-active-opacity: 1;
+
+  /* Print link pseudo-elements */
+  --printlink-before-content: none;
+  --printlink-before-display: none;
+  --printlink-before-position: static;
+  --printlink-before-inset: auto;
+  --printlink-before-margin-inline-start: 0;
+  --printlink-before-margin-inline-end: 0;
+  --printlink-before-font-size: inherit;
+  --printlink-before-transform: none;
+  --printlink-before-background: transparent;
+  --printlink-before-border-radius: 0;
+  --printlink-before-pointer-events: auto;
+  --printlink-after-content: none;
+  --printlink-after-display: none;
+  --printlink-after-position: static;
+  --printlink-after-margin-inline-start: 0;
+  --printlink-after-margin-inline-end: 0;
 
   /* Section titles */
+  --section-title-font-size: 1.15rem;
+  --section-title-font-weight: normal;
+  --section-title-line-height: normal;
+  --section-title-letter-spacing: 0.18em;
+  --section-title-text-transform: uppercase;
+  --section-title-color: inherit;
+  --section-title-border: none;
   --section-title-border-style: solid;
   --section-title-border-width: 3px;
+  --section-title-border-color: var(--border-color);
+  --section-title-border-radius: 0;
   --section-title-border-position: block; /* block, block-end, or none */
+  --section-title-border-inline-start: none;
+  --section-title-border-block-end: none;
   --section-title-padding: 0.45rem 0;
+  --section-title-margin: 0;
   --section-title-margin-bottom: 0.75rem;
+  --section-title-margin-top: 0;
   --section-title-background: transparent;
   --section-title-box-shadow: none;
+  --section-title-text-shadow: none;
+  --section-title-position: static;
+  --section-title-transform: none;
+  --section-title-display: block;
+  --section-title-width: auto;
+  --section-title-max-width: none;
+  --section-title-overflow: visible;
+  --section-title-contain: none;
+  --section-title-will-change: auto;
+  --section-title-animation: none;
+  --section-title-align-items: normal;
+  --section-title-gap: normal;
+
+  /* Section text */
+  --section-text-font-size: 0.95rem;
+  --section-text-line-height: 1.6;
+  --section-text-color: inherit;
+  --section-text-letter-spacing: normal;
+  --section-text-margin-block-end: 0.9rem;
+
+  /* Section content */
+  --section-content-padding-inline: 0;
 
   /* Skills grid */
   --skills-grid-border: 0;
   --skills-grid-background: transparent;
   --skills-grid-box-shadow: none;
   --skills-grid-padding: 0;
+  --skills-grid-border-radius: 0;
+  --skills-grid-position: relative;
+  --skills-grid-transform: none;
+  --skills-grid-gap: 1rem;
 
   /* Skills grid group */
   --skills-group-border: 0;
   --skills-group-background: transparent;
   --skills-group-box-shadow: none;
   --skills-group-padding: 0;
+  --skills-group-border-radius: 0;
+  --skills-group-margin: 0;
+  --skills-group-margin-bottom: 0;
+  --skills-group-position: relative;
+  --skills-group-transform: none;
+  --skills-group-transition: none;
+  --skills-group-overflow: visible;
+  --skills-group-animation: none;
+  --skills-group-contain: none;
+  --skills-group-will-change: auto;
+  --skills-group-hover-transform: none;
+  --skills-group-hover-box-shadow: none;
+  --skills-group-hover-background: none;
 
   /* Skills grid title */
   --skills-title-border-style: none;
   --skills-title-border-width: 0;
+  --skills-title-border-block-end-color: var(--border-color);
   --skills-title-padding-bottom: 0;
   --skills-title-margin-bottom: 0;
+  --skills-title-margin: 0;
+  --skills-title-font-weight: normal;
+  --skills-title-font-size: 0.9rem;
+  --skills-title-color: inherit;
+  --skills-title-text-shadow: none;
+  --skills-title-display: block;
+  --skills-title-text-transform: uppercase;
+  --skills-title-letter-spacing: 0.14em;
+  --skills-title-line-height: normal;
+  --skills-title-border: none;
+  --skills-title-align-items: normal;
+  --skills-title-gap: normal;
+
+  /* Experience item role */
+  --experience-role-font-size: 1.05rem;
+  --experience-role-font-weight: normal;
+  --experience-role-color: inherit;
+  --experience-role-text-transform: uppercase;
+  --experience-role-letter-spacing: 0.08em;
+  --experience-role-line-height: normal;
+  --experience-role-text-shadow: none;
+  --experience-role-margin: 0;
+  --experience-role-margin-block-end: 0;
+  --experience-role-border-inline-start: none;
+  --experience-role-padding-inline-start: 0;
+
+  /* Skills grid items */
+  --skills-items-font-size: 0.85rem;
+  --skills-items-line-height: 1.4;
+  --skills-items-font-family: inherit;
 
   /* Experience items */
   --experience-item-border: 0;
@@ -92,6 +248,32 @@ Custom Properties
   --experience-item-box-shadow: none;
   --experience-item-padding: 0;
   --experience-item-margin-top: 1rem;
+  --experience-item-border-radius: 0;
+  --experience-item-position: relative;
+  --experience-item-transform: none;
+  --experience-item-transition: none;
+
+  /* Experience item company */
+  --experience-company-font-size: 0.9rem;
+  --experience-company-font-weight: normal;
+  --experience-company-color: inherit;
+  --experience-company-text-transform: uppercase;
+  --experience-company-letter-spacing: 0.12em;
+
+  /* Experience item title */
+  --experience-title-font-size: 1rem;
+  --experience-title-font-weight: normal;
+  --experience-title-color: inherit;
+
+  /* Experience item duration */
+  --experience-duration-font-size: 0.8rem;
+  --experience-duration-font-family: inherit;
+  --experience-duration-color: inherit;
+  --experience-duration-opacity: 1;
+
+  /* Experience item description */
+  --experience-description-line-height: 1.6;
+  --experience-description-color: inherit;
 
   /* Tech badges */
   --tech-badge-border: 0;
@@ -99,11 +281,68 @@ Custom Properties
   --tech-badge-box-shadow: none;
   --tech-badge-padding: 0.25rem 0.5rem;
   --tech-badge-text-shadow: none;
+  --tech-badge-font-size: 0.8rem;
+  --tech-badge-font-weight: normal;
+  --tech-badge-color: inherit;
+  --tech-badge-border-radius: 0;
+  --tech-badge-position: relative;
+  --tech-badge-display: inline-block;
+  --tech-badge-margin: 0.35rem 0 0.4rem;
+  --tech-badge-text-transform: uppercase;
+  --tech-badge-letter-spacing: 0.08em;
+  --tech-badge-transform: none;
+  --tech-badge-transition: none;
+  --tech-badge-overflow: visible;
+  --tech-badge-filter: none;
+  --tech-badge-align-items: baseline;
+  --tech-badge-hover-filter: none;
+  --tech-badge-contain: none;
+
+  /* Tech badge pseudo-elements */
+  --tech-badge-before-content: none;
+  --tech-badge-before-display: none;
+  --tech-badge-before-position: static;
+  --tech-badge-before-inset: auto;
+  --tech-badge-before-left: auto;
+  --tech-badge-before-margin-inline-start: 0;
+  --tech-badge-before-margin-inline-end: 0;
+  --tech-badge-before-color: inherit;
+  --tech-badge-before-font-weight: normal;
+  --tech-badge-before-background: transparent;
+  --tech-badge-before-border-radius: 0;
+  --tech-badge-before-box-shadow: none;
+  --tech-badge-before-pointer-events: auto;
+  --tech-badge-before-z-index: auto;
+  --tech-badge-after-content: none;
+  --tech-badge-after-display: none;
+  --tech-badge-after-position: static;
+  --tech-badge-after-inset: auto;
+  --tech-badge-after-margin-inline-start: 0;
+  --tech-badge-after-border-radius: 0;
+  --tech-badge-after-box-shadow: none;
+  --tech-badge-after-pointer-events: auto;
+  --tech-badge-after-z-index: auto;
 
   /* Bullet points */
   --bullet-before-content: '•';
   --bullet-font-size: 1em;
   --bullet-text-shadow: none;
+  --bullet-color: inherit;
+  --bullet-font-weight: normal;
+  --bullet-margin-inline-start: 0;
+
+  /* Experience item bullets */
+  --experience-bullets-list-style: none;
+  --experience-bullets-padding-inline-start: 0;
+  --experience-bullets-margin: 0;
+  --experience-bullets-margin-block-start: 0;
+  --experience-bullets-li-position: relative;
+  --experience-bullets-li-padding-inline-start: 1.1rem;
+  --experience-bullets-li-font-size: 0.88rem;
+  --experience-bullets-li-font-weight: normal;
+  --experience-bullets-li-line-height: 1.5;
+  --experience-bullets-li-margin-block-end: 0.3rem;
+  --experience-bullets-li-color: inherit;
 
   /* Community/Principles lists */
   --list-border: 0;
@@ -111,16 +350,68 @@ Custom Properties
   --list-box-shadow: none;
   --list-padding: 0;
 
-  /* List items */
-  --list-item-border-style: none;
-  --list-item-border-width: 0;
-  --list-item-padding: 0.5rem 0;
+  /* Community list items */
+  --community-item-border-style: solid;
+  --community-item-border-width: 1px;
+  --community-item-padding: 0.6rem 0.75rem;
+  --community-item-font-size: 0.9rem;
+  --community-item-font-weight: normal;
+  --community-item-line-height: 1.5;
+  --community-item-margin-bottom: 0;
+  --community-item-margin-top: 0;
+  --community-item-background: transparent;
+  --community-item-box-shadow: none;
+  --community-item-border-radius: 0;
+  --community-item-position: relative;
+  --community-item-transition: none;
+
+  /* Principles list items */
+  --principles-item-border-style: dashed;
+  --principles-item-border-width: 1px;
+  --principles-item-padding: 0.25rem 0;
+  --principles-item-font-size: 0.9rem;
+  --principles-item-font-weight: normal;
+  --principles-item-line-height: 1.4;
+  --principles-item-margin-bottom: 0;
+  --principles-item-margin-top: 0;
+  --principles-item-background: transparent;
+  --principles-item-box-shadow: none;
+  --principles-item-border-radius: 0;
+  --principles-item-position: relative;
+  --principles-item-transition: none;
 
   /* Education items */
   --education-item-border: 0;
   --education-item-background: transparent;
   --education-item-box-shadow: none;
   --education-item-padding: 0;
+
+  /* Education item institution */
+  --education-institution-font-size: 1.05rem;
+  --education-institution-font-weight: normal;
+  --education-institution-color: inherit;
+  --education-institution-text-transform: uppercase;
+  --education-institution-letter-spacing: 0.08em;
+  --education-institution-line-height: normal;
+  --education-institution-text-shadow: none;
+  --education-institution-margin: 0;
+  --education-institution-margin-block-end: 0.15rem;
+  --education-institution-border-inline-start: none;
+  --education-institution-padding-inline-start: 0;
+
+  /* Resume header role */
+  --header-role-order: 3;
+  --header-role-font-size: 1.1rem;
+  --header-role-font-weight: normal;
+  --header-role-color: inherit;
+  --header-role-text-transform: uppercase;
+  --header-role-letter-spacing: 0.18em;
+  --header-role-line-height: normal;
+  --header-role-text-shadow: none;
+  --header-role-margin: 0;
+  --header-role-margin-block-start: 0;
+  --header-role-border-inline-start: none;
+  --header-role-padding-inline-start: 0;
 
   /* Dial selector knob */
   --dial-knob-border-width: 0;
@@ -140,6 +431,12 @@ Custom Properties
   --dial-label-font-size--phone: clamp(12px, 2.5vw, 16px);
   --dial-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
   --dial-label-font-size--xs: clamp(12px, 3vw, 13px);
+  --dial-label-active-span-padding-block: 0;
+  --dial-label-active-span-padding-inline: 0;
+  --dial-label-active-span-padding-block--tablet: 0;
+  --dial-label-active-span-padding-inline--tablet: 0;
+  --dial-label-active-span-padding-block--phone: 0;
+  --dial-label-active-span-padding-inline--phone: 0;
 
   /* Dial selector spoke lines */
   --dial-spoke-stroke-width: 1px;
@@ -190,6 +487,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  margin-block-start: var(--header-name-wrapper-margin-block-start, 2rem);
 
   > * {
     flex: 0 0 50%;
@@ -197,14 +495,25 @@ p {
 }
 
 h1.resume-header__name {
-  order: 1;
-  font-size: 2.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-block-end: var(--header-name-border-width, 4px) var(--header-name-border-style, solid) var(--border-color);
-  padding-block-end: 0.35rem;
-  margin-block-end: 0.35rem;
+  order: var(--header-name-order, 1);
+  font-size: var(--header-name-font-size, 2.6rem);
+  font-weight: var(--header-name-font-weight, normal);
+  line-height: var(--header-name-line-height, normal);
+  letter-spacing: var(--header-name-letter-spacing, 0.08em);
+  text-transform: var(--header-name-text-transform, uppercase);
+  color: var(--header-name-color, inherit);
+  border: var(--header-name-border, none);
+  border-block-end: var(--header-name-border-width, 4px) var(--header-name-border-style, solid)
+    var(--header-name-border-color, var(--border-color));
+  padding: var(--header-name-padding, 0);
+  padding-block-end: var(--header-name-padding-block-end, 0.35rem);
+  padding-inline-start: var(--header-name-padding-inline-start, 0);
+  margin: var(--header-name-margin, 0);
+  margin-block-end: var(--header-name-margin-block-end, 0.35rem);
   text-shadow: var(--header-name-text-shadow, none);
+  position: var(--header-name-position, static);
+  animation: var(--header-name-animation, none);
+  will-change: var(--header-name-will-change, auto);
 }
 
 .resume-header__name-greeting,
@@ -223,30 +532,80 @@ h1.resume-header__name {
 }
 
 .resume-header__role {
-  order: 3;
-  font-size: 1.1rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  order: var(--header-role-order, 3);
+  font-size: var(--header-role-font-size, 1.1rem);
+  font-weight: var(--header-role-font-weight, normal);
+  color: var(--header-role-color, inherit);
+  text-transform: var(--header-role-text-transform, uppercase);
+  letter-spacing: var(--header-role-letter-spacing, 0.18em);
+  line-height: var(--header-role-line-height, normal);
+  text-shadow: var(--header-role-text-shadow, none);
+  margin: var(--header-role-margin, 0);
+  margin-block-start: var(--header-role-margin-block-start, 0);
+  border-inline-start: var(--header-role-border-inline-start, none);
+  padding-inline-start: var(--header-role-padding-inline-start, 0);
 }
 
 h2.resume-section__title {
-  font-size: 1.15rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  border-block: var(--section-title-border-width, 3px) var(--section-title-border-style, solid) var(--border-color);
+  font-size: var(--section-title-font-size, 1.15rem);
+  font-weight: var(--section-title-font-weight, normal);
+  line-height: var(--section-title-line-height, normal);
+  letter-spacing: var(--section-title-letter-spacing, 0.18em);
+  text-transform: var(--section-title-text-transform, uppercase);
+  color: var(--section-title-color, var(--heading-color));
+  border: var(--section-title-border, none);
+  border-block: var(--section-title-border-width, 3px) var(--section-title-border-style, solid)
+    var(--section-title-border-color, var(--border-color));
+  border-inline-start: var(--section-title-border-inline-start, none);
+  border-block-end: var(--section-title-border-block-end, none);
+  border-radius: var(--section-title-border-radius, 0);
   padding: var(--section-title-padding, 0.45rem 0);
+  margin: var(--section-title-margin, 0);
   margin-block-end: var(--section-title-margin-bottom, 0.75rem);
-  color: var(--heading-color);
+  margin-top: var(--section-title-margin-top, 0);
   background: var(--section-title-background, transparent);
   box-shadow: var(--section-title-box-shadow, none);
+  text-shadow: var(--section-title-text-shadow, none);
+  position: var(--section-title-position, static);
+  transform: var(--section-title-transform, none);
+  display: var(--section-title-display, block);
+  width: var(--section-title-width, auto);
+  max-width: var(--section-title-max-width, none);
+  overflow: var(--section-title-overflow, visible);
+  contain: var(--section-title-contain, none);
+  will-change: var(--section-title-will-change, auto);
+  animation: var(--section-title-animation, none);
+  align-items: var(--section-title-align-items, normal);
+  gap: var(--section-title-gap, normal);
 }
 
-h3.experience-item__role,
+h3.experience-item__role {
+  font-size: var(--experience-role-font-size, 1.05rem);
+  font-weight: var(--experience-role-font-weight, normal);
+  color: var(--experience-role-color, inherit);
+  text-transform: var(--experience-role-text-transform, uppercase);
+  letter-spacing: var(--experience-role-letter-spacing, 0.08em);
+  line-height: var(--experience-role-line-height, normal);
+  text-shadow: var(--experience-role-text-shadow, none);
+  margin: var(--experience-role-margin, 0);
+  margin-block-end: var(--experience-role-margin-block-end, 0);
+  border-inline-start: var(--experience-role-border-inline-start, none);
+  padding-inline-start: var(--experience-role-padding-inline-start, 0);
+  position: relative;
+}
+
 h3.education-item__institution {
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-shadow: var(--heading-text-shadow, none);
+  font-size: var(--education-institution-font-size, 1.05rem);
+  font-weight: var(--education-institution-font-weight, normal);
+  color: var(--education-institution-color, inherit);
+  text-transform: var(--education-institution-text-transform, uppercase);
+  letter-spacing: var(--education-institution-letter-spacing, 0.08em);
+  line-height: var(--education-institution-line-height, normal);
+  text-shadow: var(--education-institution-text-shadow, none);
+  margin: var(--education-institution-margin, 0);
+  margin-block-end: var(--education-institution-margin-block-end, 0.15rem);
+  border-inline-start: var(--education-institution-border-inline-start, none);
+  padding-inline-start: var(--education-institution-padding-inline-start, 0);
 }
 
 /* Link colors using custom properties */
@@ -304,9 +663,13 @@ Header Block
 }
 
 .resume-header__meta {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-size: var(--header-meta-font-size, 0.85rem);
+  font-family: var(--header-meta-font-family, inherit);
+  text-transform: var(--header-meta-text-transform, uppercase);
+  letter-spacing: var(--header-meta-letter-spacing, 0.12em);
+  color: var(--header-meta-color, inherit);
+  opacity: var(--header-meta-opacity, 1);
+  text-shadow: var(--header-meta-text-shadow, none);
 }
 
 .resume-header__location,
@@ -342,12 +705,18 @@ Sections
 }
 
 .resume-section__text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--section-text-font-size, 0.95rem);
+  line-height: var(--section-text-line-height, 1.6);
+  color: var(--section-text-color, inherit);
+  letter-spacing: var(--section-text-letter-spacing, normal);
 
   &:not(:last-child) {
-    margin-block-end: 0.9rem;
+    margin-block-end: var(--section-text-margin-block-end, 0.9rem);
   }
+}
+
+.resume-section__content {
+  padding-inline: var(--section-content-padding-inline, 0);
 }
 
 /* ===========================
@@ -358,12 +727,15 @@ Resume Components
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: var(--skills-grid-gap, 1rem);
   border: var(--skills-grid-border, 3px solid var(--border-color));
   padding: var(--skills-grid-padding, 0.75rem);
   box-sizing: border-box;
   background: var(--skills-grid-background, transparent);
   box-shadow: var(--skills-grid-box-shadow, none);
+  border-radius: var(--skills-grid-border-radius, 0);
+  position: var(--skills-grid-position, relative);
+  transform: var(--skills-grid-transform, none);
 }
 
 .skills-grid__group {
@@ -372,20 +744,47 @@ Resume Components
   box-sizing: border-box;
   background-color: var(--skills-group-background, var(--section-bg, transparent));
   box-shadow: var(--skills-group-box-shadow, none);
+  border-radius: var(--skills-group-border-radius, 0);
+  margin: var(--skills-group-margin, 0);
+  margin-block-end: var(--skills-group-margin-bottom, 0);
+  position: var(--skills-group-position, relative);
+  transform: var(--skills-group-transform, none);
+  transition: var(--skills-group-transition, none);
+  overflow: var(--skills-group-overflow, visible);
+  animation: var(--skills-group-animation, none);
+  contain: var(--skills-group-contain, none);
+  will-change: var(--skills-group-will-change, auto);
+
+  &:hover {
+    transform: var(--skills-group-hover-transform, var(--skills-group-transform, none));
+    box-shadow: var(--skills-group-hover-box-shadow, var(--skills-group-box-shadow, none));
+    background: var(--skills-group-hover-background, var(--skills-group-background, transparent));
+  }
 }
 
 .skills-grid__title {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  border-block-end: var(--skills-title-border-width, 2px) var(--skills-title-border-style, solid) var(--border-color);
+  font-size: var(--skills-title-font-size, 0.9rem);
+  font-weight: var(--skills-title-font-weight, normal);
+  color: var(--skills-title-color, inherit);
+  text-transform: var(--skills-title-text-transform, uppercase);
+  letter-spacing: var(--skills-title-letter-spacing, 0.14em);
+  line-height: var(--skills-title-line-height, normal);
+  border: var(--skills-title-border, none);
+  border-block-end: var(--skills-title-border-width, 2px) var(--skills-title-border-style, solid)
+    var(--skills-title-border-block-end-color, var(--border-color));
   padding-block-end: var(--skills-title-padding-bottom, 0.25rem);
+  margin: var(--skills-title-margin, 0);
   margin-block-end: var(--skills-title-margin-bottom, 0.3rem);
+  text-shadow: var(--skills-title-text-shadow, none);
+  display: var(--skills-title-display, block);
+  align-items: var(--skills-title-align-items, normal);
+  gap: var(--skills-title-gap, normal);
 }
 
 .skills-grid__items {
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: var(--skills-items-font-size, 0.85rem);
+  line-height: var(--skills-items-line-height, 1.4);
+  font-family: var(--skills-items-font-family, inherit);
 }
 
 /* Experience */
@@ -402,6 +801,10 @@ Resume Components
   margin-block-start: var(--experience-item-margin-top, 0.9rem);
   background: var(--experience-item-background, transparent);
   box-shadow: var(--experience-item-box-shadow, none);
+  border-radius: var(--experience-item-border-radius, 0);
+  position: var(--experience-item-position, relative);
+  transform: var(--experience-item-transform, none);
+  transition: var(--experience-item-transition, none);
 
   &:first-of-type {
     border-block-start: 3px solid var(--border-color);
@@ -417,9 +820,11 @@ Resume Components
 }
 
 .experience-item__company {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-size: var(--experience-company-font-size, 0.9rem);
+  text-transform: var(--experience-company-text-transform, uppercase);
+  letter-spacing: var(--experience-company-letter-spacing, 0.12em);
+  font-weight: var(--experience-company-font-weight, normal);
+  color: var(--experience-company-color, inherit);
 }
 
 .experience-item__meta {
@@ -435,29 +840,79 @@ Resume Components
 }
 
 .experience-item__tech {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: var(--tech-badge-font-size, 0.8rem);
+  text-transform: var(--tech-badge-text-transform, uppercase);
+  letter-spacing: var(--tech-badge-letter-spacing, 0.08em);
   border: var(--tech-badge-border, 1px solid var(--border-color));
   padding: var(--tech-badge-padding, 0.25rem 0.4rem);
-  display: inline-block;
-  margin: 0.35rem 0 0.4rem;
+  display: var(--tech-badge-display, inline-block);
+  margin: var(--tech-badge-margin, 0.35rem 0 0.4rem);
   background: var(--tech-badge-background, transparent);
   box-shadow: var(--tech-badge-box-shadow, none);
   text-shadow: var(--tech-badge-text-shadow, none);
+  font-weight: var(--tech-badge-font-weight, normal);
+  color: var(--tech-badge-color, inherit);
+  border-radius: var(--tech-badge-border-radius, 0);
+  position: var(--tech-badge-position, relative);
+  transform: var(--tech-badge-transform, none);
+  transition: var(--tech-badge-transition, none);
+  overflow: var(--tech-badge-overflow, visible);
+  filter: var(--tech-badge-filter, none);
+  align-items: var(--tech-badge-align-items, baseline);
+  contain: var(--tech-badge-contain, none);
+
+  &:hover {
+    transform: var(--tech-badge-hover-transform, none);
+    box-shadow: var(--tech-badge-hover-box-shadow, var(--tech-badge-before-box-shadow, none));
+    background: var(--tech-badge-hover-background, var(--tech-badge-background));
+    filter: var(--tech-badge-hover-filter, none);
+  }
+
+  &::before {
+    content: var(--tech-badge-before-content, none);
+    display: var(--tech-badge-before-display, none);
+    position: var(--tech-badge-before-position, static);
+    inset: var(--tech-badge-before-inset, auto);
+    left: var(--tech-badge-before-left, auto);
+    margin-inline-start: var(--tech-badge-before-margin-inline-start, 0);
+    margin-inline-end: var(--tech-badge-before-margin-inline-end, 0);
+    color: var(--tech-badge-before-color, inherit);
+    font-weight: var(--tech-badge-before-font-weight, normal);
+    background: var(--tech-badge-before-background, transparent);
+    border-radius: var(--tech-badge-before-border-radius, 0);
+    box-shadow: var(--tech-badge-before-box-shadow, none);
+    pointer-events: var(--tech-badge-before-pointer-events, auto);
+    z-index: var(--tech-badge-before-z-index, auto);
+  }
+
+  &::after {
+    content: var(--tech-badge-after-content, none);
+    display: var(--tech-badge-after-display, none);
+    position: var(--tech-badge-after-position, static);
+    inset: var(--tech-badge-after-inset, auto);
+    margin-inline-start: var(--tech-badge-after-margin-inline-start, 0);
+    background: var(--tech-badge-after-background, transparent);
+    border-radius: var(--tech-badge-after-border-radius, 0);
+    box-shadow: var(--tech-badge-after-box-shadow, none);
+    pointer-events: var(--tech-badge-after-pointer-events, auto);
+    z-index: var(--tech-badge-after-z-index, auto);
+  }
 }
 
 .experience-item__bullets {
-  list-style: none;
-  padding-inline-start: 0;
-  margin: 0;
+  list-style: var(--experience-bullets-list-style, none);
+  padding-inline-start: var(--experience-bullets-padding-inline-start, 0);
+  margin: var(--experience-bullets-margin, 0);
+  margin-block-start: var(--experience-bullets-margin-block-start, 0);
 
   li {
-    position: relative;
-    padding-inline-start: 1.1rem;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    margin-block-end: 0.3rem;
+    position: var(--experience-bullets-li-position, relative);
+    padding-inline-start: var(--experience-bullets-li-padding-inline-start, 1.1rem);
+    font-size: var(--experience-bullets-li-font-size, 0.88rem);
+    font-weight: var(--experience-bullets-li-font-weight, normal);
+    line-height: var(--experience-bullets-li-line-height, 1.5);
+    margin-block-end: var(--experience-bullets-li-margin-block-end, 0.3rem);
+    color: var(--experience-bullets-li-color, inherit);
 
     &::before {
       content: var(--bullet-before-content, '■');
@@ -465,7 +920,10 @@ Resume Components
       left: 0;
       top: 0.1rem;
       font-size: var(--bullet-font-size, 0.6rem);
+      font-weight: var(--bullet-font-weight, normal);
+      color: var(--bullet-color, inherit);
       text-shadow: var(--bullet-text-shadow, none);
+      margin-inline-start: var(--bullet-margin-inline-start, 0);
     }
   }
 }
@@ -483,10 +941,19 @@ Resume Components
 }
 
 .community-list__item {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  padding: var(--list-item-padding, 0.6rem 0.75rem);
-  border-block-start: var(--list-item-border-width, 1px) var(--list-item-border-style, solid) var(--border-color);
+  font-size: var(--community-item-font-size, 0.9rem);
+  font-weight: var(--community-item-font-weight, normal);
+  line-height: var(--community-item-line-height, 1.5);
+  padding: var(--community-item-padding, 0.6rem 0.75rem);
+  border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
+    var(--border-color);
+  margin-block-end: var(--community-item-margin-bottom, 0);
+  margin-block-start: var(--community-item-margin-top, 0);
+  background: var(--community-item-background, transparent);
+  box-shadow: var(--community-item-box-shadow, none);
+  border-radius: var(--community-item-border-radius, 0);
+  position: var(--community-item-position, relative);
+  transition: var(--community-item-transition, none);
 
   &:first-child {
     border-block-start: 0;
@@ -500,12 +967,6 @@ Resume Components
   font-size: 0.9rem;
   background-color: var(--education-item-background, var(--section-bg, transparent));
   box-shadow: var(--education-item-box-shadow, none);
-}
-
-.education-item__institution {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-block-end: 0.15rem;
 }
 
 .education-item__degree {
@@ -525,10 +986,19 @@ Resume Components
 }
 
 .principles-list__item {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding: var(--list-item-padding, 0.25rem 0);
-  border-block-start: var(--list-item-border-width, 1px) var(--list-item-border-style, dashed) var(--border-color);
+  font-size: var(--principles-item-font-size, 0.9rem);
+  font-weight: var(--principles-item-font-weight, normal);
+  line-height: var(--principles-item-line-height, 1.4);
+  padding: var(--principles-item-padding, 0.25rem 0);
+  border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
+    var(--border-color);
+  margin-block-end: var(--principles-item-margin-bottom, 0);
+  margin-block-start: var(--principles-item-margin-top, 0);
+  background: var(--principles-item-background, transparent);
+  box-shadow: var(--principles-item-box-shadow, none);
+  border-radius: var(--principles-item-border-radius, 0);
+  position: var(--principles-item-position, relative);
+  transition: var(--principles-item-transition, none);
 
   &:first-child {
     border-block-start: 0;
@@ -547,15 +1017,20 @@ Resume Components
 }
 
 .resume-header__printlink {
-  font-family: inherit;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--printlink-font-family, inherit);
+  font-size: var(--printlink-font-size, 0.8rem);
+  letter-spacing: var(--printlink-letter-spacing, 0.14em);
+  text-transform: var(--printlink-text-transform, uppercase);
   padding: var(--printlink-padding, 0.55rem 1.1rem);
-  border: var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color);
+  border: var(
+    --printlink-border,
+    var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color)
+  );
+  border-radius: var(--printlink-border-radius, 0);
   background: var(--printlink-background, var(--background-color));
-  color: var(--text-color);
-  text-decoration: none;
+  color: var(--printlink-color, var(--text-color));
+  text-decoration: var(--printlink-text-decoration, none);
+  text-shadow: var(--printlink-text-shadow, none);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -564,10 +1039,51 @@ Resume Components
   margin-block: 1rem;
   box-shadow: var(--printlink-box-shadow, none);
   font-weight: var(--printlink-font-weight, normal);
+  position: var(--printlink-position, relative);
+  transition: var(--printlink-transition, none);
+  transform: var(--printlink-transform, none);
+  opacity: var(--printlink-opacity, 1);
+  filter: var(--printlink-filter, none);
 
   &:hover {
-    background: var(--text-color);
-    color: var(--background-color);
+    background: var(--printlink-hover-background, var(--text-color));
+    background-size: var(--printlink-hover-background-size, auto);
+    color: var(--printlink-hover-color, var(--background-color));
     box-shadow: var(--printlink-hover-shadow, none);
+    text-shadow: var(--printlink-hover-text-shadow, none);
+    border-width: var(--printlink-hover-border-width, inherit);
+    border-color: var(--printlink-hover-border-color, inherit);
+    transform: var(--printlink-hover-transform, var(--printlink-transform, none));
+    filter: var(--printlink-hover-filter, var(--printlink-filter, none));
+    opacity: var(--printlink-hover-opacity, var(--printlink-opacity, 1));
+    animation: var(--printlink-hover-animation, none);
+  }
+
+  &:active {
+    transform: var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)));
+    box-shadow: var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none));
+    opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
+  }
+
+  &::before {
+    content: var(--printlink-before-content, none);
+    display: var(--printlink-before-display, none);
+    position: var(--printlink-before-position, static);
+    inset: var(--printlink-before-inset, auto);
+    margin-inline-start: var(--printlink-before-margin-inline-start, 0);
+    margin-inline-end: var(--printlink-before-margin-inline-end, 0);
+    font-size: var(--printlink-before-font-size, inherit);
+    transform: var(--printlink-before-transform, none);
+    background: var(--printlink-before-background, transparent);
+    border-radius: var(--printlink-before-border-radius, 0);
+    pointer-events: var(--printlink-before-pointer-events, auto);
+  }
+
+  &::after {
+    content: var(--printlink-after-content, none);
+    display: var(--printlink-after-display, none);
+    position: var(--printlink-after-position, static);
+    margin-inline-start: var(--printlink-after-margin-inline-start, 0);
+    margin-inline-end: var(--printlink-after-margin-inline-end, 0);
   }
 }

@@ -15,30 +15,32 @@ dial-selector {
   --line-opacity-inactive: 0.4;
   --line-opacity-active: 0.8;
   --line-transition: opacity 0.3s ease, stroke 0.3s ease;
+  /* Typography variables */
+  --font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  /* KNOB SIZING - Single source of truth */
+  --knob-size: 200px; /* Master variable - media queries will override this */
+  /* Derived knob variables (calculated from --knob-size) */
+  --knob-wrap-size: var(--knob-size);
+  --knob-center: calc(var(--knob-size) / 2);
+  --radius-outer: calc(var(--knob-size) * 0.28125); /* 90/320 = 0.28125 */
+  --radius-inner: calc(var(--knob-size) * 0.225); /* 72/320 = 0.225 */
+  --width-outer-circle: calc(var(--knob-size) * 0.0125); /* 4/320 = 0.0125 */
+  --width-inner-circle: calc(var(--knob-size) * 0.00625); /* 2/320 = 0.00625 */
+  --color-outer-circle: var(--color-ink);
+  --color-inner-circle: var(--color-ink);
   /* Indicator styling variables */
-  --indicator-length: 60px;
+  --indicator-length: calc(var(--knob-size) * 0.1875); /* 60/320 = 0.1875 */
+  --indicator-width: calc(var(--knob-size) * 0.03125); /* 10/320 = 0.03125 */
   --indicator-vertical-offset: 46.75%;
   --center-indicator: 0px;
   --time-selection-delay: 0s;
-  /* Knob circle styling variables */
-  --radius-outer: 90px;
-  --width-outer-circle: 4px;
-  --color-outer-circle: var(--color-ink);
-  --radius-inner: 72px;
-  --width-inner-circle: 2px;
-  --color-inner-circle: var(--color-ink);
-  /* Typography variables */
-  --font-family: 'IBM Plex Mono', 'Courier New', monospace;
-  /* Responsive sizing variables (set dynamically) */
-  --knob-wrap-size: 320px;
-  --knob-center: 160px;
-  --label-column-height: 320px;
-  --label-vertical-offset-scale: 140px;
-  --horizontal-line-length: 100px;
-  --max-spoke-length: 80px;
-  --horizontal-line-end-offset: 10px;
-  --hit-area-stroke-width: 20px;
-  --indicator-width: 10px;
+  /* Other sizing variables for labels/lines */
+  --label-column-height: var(--knob-size);
+  --label-vertical-offset-scale: calc(var(--knob-size) * 0.4375); /* 140/320 */
+  --horizontal-line-length: calc(var(--knob-size) * 0.5); /* Increased from 0.3125 for better reach */
+  --max-spoke-length: calc(var(--knob-size) * 0.4); /* Increased from 0.25 for better reach */
+  --horizontal-line-end-offset: calc(var(--knob-size) * 0.05); /* Increased from 0.03125 */
+  --hit-area-stroke-width: calc(var(--knob-size) * 0.0625); /* 20/320 */
   /* Component dimensions */
   --component-width: 100%;
   --component-height: auto;
@@ -62,6 +64,8 @@ dial-selector * {
 
 dial-selector {
   --indicator-angle: 0deg;
+  max-width: 600px; /* Prevent component from getting too wide */
+  margin: 0 auto; /* Center when narrower than container */
 }
 
 dial-selector .selector {
@@ -81,7 +85,7 @@ dial-selector .label-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: var(--label-column-height, 320px);
+  height: var(--label-column-height);
   margin: 0;
   padding: 0;
 }
@@ -96,7 +100,9 @@ dial-selector .label-column.right {
 
 dial-selector .knob-wrap {
   position: relative;
-  width: var(--knob-wrap-size, 320px);
+  width: var(--knob-wrap-size);
+  max-width: var(--knob-wrap-size);
+  min-width: var(--knob-wrap-size);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -118,12 +124,12 @@ dial-selector .knob {
 
 dial-selector .indicator {
   position: absolute;
-  width: var(--indicator-width, 10px);
-  height: var(--indicator-length, 60px);
+  width: var(--indicator-width);
+  height: var(--indicator-length);
   background: var(--indicator-gradient, var(--color-indicator));
-  border-radius: calc(var(--indicator-width, 10px) / 2);
-  top: calc(var(--indicator-vertical-offset, 46.75%) - var(--indicator-length, 60px) / 2);
-  left: calc(40% + var(--radius-inner, 72px) - var(--width-inner-circle, 2px) + var(--center-indicator, 0px));
+  border-radius: calc(var(--indicator-width) / 2);
+  top: calc(var(--indicator-vertical-offset) - var(--indicator-length) / 2);
+  left: calc(40% + var(--radius-inner) - var(--width-inner-circle) + var(--center-indicator));
   transform-origin: 0% 50%;
   transform: rotate(90deg);
 }
@@ -160,6 +166,8 @@ dial-selector .dial-label {
 
 dial-selector .dial-label.active > span {
   color: var(--color-selection);
+  padding-block: var(--dial-label-active-span-padding-block);
+  padding-inline: var(--dial-label-active-span-padding-inline);
 }
 
 dial-selector #lineContainer {
@@ -192,8 +200,11 @@ dial-selector .advance {
 /* Mobile responsive breakpoints */
 @media (max-width: 768px) {
   dial-selector {
-    /* Reduce overall size for tablets/large phones */
+    /* Reduce size for tablets/large phones */
+    --knob-size: 160px;
     --dial-label-font-size: var(--dial-label-font-size--tablet);
+    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--tablet);
+    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--tablet);
   }
 
   dial-selector .selector {
@@ -209,16 +220,11 @@ dial-selector .advance {
 /* Reduced horizontal lines for small mobile */
 @media (max-width: 600px) {
   dial-selector {
-    /* Make knob 25% smaller (75% of original size) */
-    --knob-wrap-size: 240px; /* 75% of 320px */
-    --knob-center: 120px; /* 75% of 160px */
-    --label-column-height: 240px; /* 75% of 320px */
-    --radius-outer: 67.5px; /* 75% of 90px */
-    --radius-inner: 54px; /* 75% of 72px */
-    --label-vertical-offset-scale: 105px; /* 75% of 140px */
-    --horizontal-line-length: 40px; /* Significantly shorter horizontal lines */
-    --max-spoke-length: 60px;
+    /* Further reduce for phones */
+    --knob-size: 140px;
     --dial-label-font-size: var(--dial-label-font-size--phone);
+    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--phone);
+    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--phone);
   }
 
   dial-selector .selector {
@@ -228,48 +234,5 @@ dial-selector .advance {
   dial-selector .dial-label {
     padding: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
     letter-spacing: 0.3px;
-  }
-}
-
-/* Spokes-only mode for very small screens */
-@media (max-width: 480px) {
-  dial-selector {
-    --horizontal-line-length: 0px; /* NO horizontal lines - spokes only! */
-    --dial-label-font-size: var(--dial-label-font-size--phone-sm);
-    --horizontal-line-end-offset: 0px; /* No offset needed without horizontal lines */
-  }
-
-  dial-selector .selector {
-    gap: clamp(2px, 1vw, 6px);
-  }
-
-  dial-selector .dial-label {
-    padding: 2px 6px;
-    letter-spacing: 0.2px;
-  }
-
-  /* Move horizontal labels (middle options) up and in for better text visibility */
-  dial-selector .dial-label[data-angle='180'] > span,
-  dial-selector .dial-label[data-angle='0'] > span {
-    margin-block-end: 2lh !important;
-    margin-inline: -1em;
-  }
-}
-
-/* Ultra-compact for tiny screens */
-@media (max-width: 380px) {
-  dial-selector {
-    --horizontal-line-length: 0px;
-    --max-spoke-length: 40px;
-    --dial-label-font-size: var(--dial-label-font-size--xs);
-  }
-
-  dial-selector .selector {
-    gap: 2px;
-  }
-
-  dial-selector .dial-label {
-    padding: 1px 4px;
-    letter-spacing: 0;
   }
 }

@@ -51,6 +51,102 @@ Skeuomorphic Theme Effects
   --skeu-inset-highlight: inset 0 1px 0 var(--skeu-white-50);
   --skeu-inset-shadow: inset 0 -1px 0 var(--skeu-black-10);
 
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 2.25rem;
+
+  /* Experience item custom properties */
+  --experience-item-background: var(--paper-color);
+  --experience-item-padding: 1rem 1.25rem;
+  --experience-item-margin-top: 1.5rem;
+  --experience-item-box-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-05),
+    inset 0 1px 0 var(--skeu-white-50);
+
+  /* Skills grid group custom properties */
+  --skills-group-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
+    0 1px 3px var(--skeu-black-08);
+
+  /* Tech badge custom properties */
+  --tech-badge-position: relative;
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.7em 2.2em;
+  --tech-badge-border-radius: 5px;
+  --tech-badge-display: inline-flex;
+  --tech-badge-background: linear-gradient(135deg, oklch(0.28 0.03 45) 0%, oklch(0.22 0.02 45) 100%);
+  --tech-badge-box-shadow: 0 3px 6px var(--skeu-black-35), 0 6px 12px var(--skeu-black-25),
+    inset 0 1px 0 var(--skeu-white-05);
+  --tech-badge-align-items: center;
+  --tech-badge-before-content: '';
+  --tech-badge-before-display: block;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-inset: 5px;
+  --tech-badge-before-background: radial-gradient(ellipse at 25% 35%, var(--skeu-white-06) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 65%, var(--skeu-black-08) 0%, transparent 50%),
+    linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
+  --tech-badge-before-border-radius: 3px;
+  --tech-badge-before-box-shadow: 0 2px 4px var(--skeu-black-35), inset 0 1px 0 var(--skeu-white-12),
+    inset 0 -1px 0 var(--skeu-black-25);
+  --tech-badge-before-pointer-events: none;
+  --tech-badge-before-z-index: 0;
+  --tech-badge-after-content: '';
+  --tech-badge-after-display: block;
+  --tech-badge-after-position: absolute;
+  --tech-badge-after-inset: 0;
+  --tech-badge-after-background: radial-gradient(
+        circle at center,
+        oklch(0.88 0 0) 0%,
+        oklch(0.72 0 0) 45%,
+        oklch(0.6 0 0) 70%,
+        transparent 72%
+      )
+      left 10px center / 7px 7px no-repeat,
+    radial-gradient(circle at center, oklch(0.88 0 0) 0%, oklch(0.72 0 0) 45%, oklch(0.6 0 0) 70%, transparent 72%)
+      right 10px center / 7px 7px no-repeat;
+  --tech-badge-after-pointer-events: none;
+  --tech-badge-after-z-index: 2;
+
+  /* Experience bullets custom properties */
+  --bullet-color: var(--leather-color);
+  --bullet-text-shadow: 0 1px 0 var(--skeu-white-20);
+
+  /* Section title custom properties */
+  --section-title-position: relative;
+  --section-title-background: var(--paper-color);
+  --section-title-color: var(--text-color);
+  --section-title-padding: 0.6rem 1rem;
+  --section-title-margin: 0 0 1rem -0.5rem;
+  --section-title-box-shadow: 0 2px 4px var(--skeu-black-20), inset 0 1px 2px var(--skeu-white-10);
+  --section-title-border-inline-start: 4px solid var(--leather-color);
+  --section-title-border-inline-end: 4px solid var(--leather-color);
+  --section-title-text-shadow: 0 1px 0 var(--skeu-white-50), 0 2px 2px var(--skeu-black-10);
+  --section-title-font-weight: 700;
+
+  /* Print link custom properties */
+  --printlink-background: var(--metal-gradient);
+  --printlink-color: var(--print-button-text-color, var(--ink-color));
+  --printlink-border: 3px solid var(--stitch-color);
+  --printlink-box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
+    inset 0 -2px 4px var(--skeu-black-30);
+  --printlink-text-shadow: 0 1px 0 var(--skeu-white-30);
+  --printlink-font-weight: 700;
+  --printlink-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --printlink-hover-background: linear-gradient(
+    135deg,
+    oklch(0.65 0.11 75) 0%,
+    oklch(0.77 0.13 85) 20%,
+    oklch(0.88 0.18 100) 40%,
+    oklch(0.95 0.12 105) 50%,
+    oklch(0.88 0.18 100) 60%,
+    oklch(0.77 0.13 85) 80%,
+    oklch(0.65 0.11 75) 100%
+  );
+  --printlink-hover-background-size: 300% 300%;
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-hover-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
+    inset 0 -2px 4px var(--skeu-black-20);
+  --printlink-hover-animation: button-shimmer 2s linear infinite;
+  --printlink-active-transform: translateY(0);
+  --printlink-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
+
   &[data-mode='light'] {
     --background-color: oklch(0.36 0.05 45);
     --text-color: var(--color-brown);
@@ -310,67 +406,13 @@ body[data-theme='skeuomorph'] {
 
   /* Experience items get paper card treatment */
   .experience-item {
-    background: var(--paper-color);
     background-image: var(--paper-texture);
-    padding: 1rem 1.25rem;
     margin: 1.5rem -0.5rem;
-    box-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-05), inset 0 1px 0 var(--skeu-white-50);
     border-inline: 4px solid var(--leather-color);
   }
 
   /* Leather tag effect for tech stack */
   .experience-item__tech {
-    position: relative;
-    font-weight: 600;
-    padding: 0.7em 2.2em;
-    border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-
-    /* Darker leather backing layer */
-    background: linear-gradient(135deg, oklch(0.28 0.03 45) 0%, oklch(0.22 0.02 45) 100%);
-    box-shadow: 0 3px 6px var(--skeu-black-35), 0 6px 12px var(--skeu-black-25), inset 0 1px 0 var(--skeu-white-05);
-
-    /* Lighter placard overlay - using ::before */
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 5px;
-      background: linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
-      border-radius: 3px;
-      box-shadow: 0 2px 4px var(--skeu-black-35), inset 0 1px 0 var(--skeu-white-12),
-        inset 0 -1px 0 var(--skeu-black-25);
-      pointer-events: none;
-      z-index: 0;
-      /* Add subtle leather texture */
-      background-image: radial-gradient(ellipse at 25% 35%, var(--skeu-white-06) 0%, transparent 50%),
-        radial-gradient(ellipse at 75% 65%, var(--skeu-black-08) 0%, transparent 50%),
-        linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
-    }
-
-    /* Two rivets using ::after */
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 2;
-      background: radial-gradient(
-            circle at center,
-            oklch(0.88 0 0) 0%,
-            oklch(0.72 0 0) 45%,
-            oklch(0.6 0 0) 70%,
-            transparent 72%
-          )
-          left 10px center / 7px 7px no-repeat,
-        radial-gradient(circle at center, oklch(0.88 0 0) 0%, oklch(0.72 0 0) 45%, oklch(0.6 0 0) 70%, transparent 72%)
-          right 10px center / 7px 7px no-repeat;
-      filter: drop-shadow(0 1px 2px var(--skeu-black-50));
-    }
-
     /* Ensure all text has consistent light color */
     &,
     & *,
@@ -382,11 +424,6 @@ body[data-theme='skeuomorph'] {
   }
 
   /* Leather texture on bullets */
-  .experience-item__bullets li::before {
-    color: var(--leather-color);
-    text-shadow: 0 1px 0 var(--skeu-white-20);
-  }
-
   /* Dial selector enhancements */
   dial-selector {
     --dial-knob-background: var(--metal-gradient);
@@ -436,52 +473,10 @@ body[data-theme='skeuomorph'] {
   }
 
   /* Print button gets embossed metal look */
-  .resume-header__printlink {
-    background: var(--metal-gradient);
-    color: var(--print-button-text-color, var(--ink-color));
-    border: 3px solid var(--stitch-color);
-    box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
-      inset 0 -2px 4px var(--skeu-black-30);
-    text-shadow: 0 1px 0 var(--skeu-white-30);
-    font-weight: 700;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      background: linear-gradient(
-        135deg,
-        oklch(0.65 0.11 75) 0%,
-        oklch(0.77 0.13 85) 20%,
-        oklch(0.88 0.18 100) 40%,
-        oklch(0.95 0.12 105) 50%,
-        oklch(0.88 0.18 100) 60%,
-        oklch(0.77 0.13 85) 80%,
-        oklch(0.65 0.11 75) 100%
-      );
-      background-size: 300% 300%;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
-        inset 0 -2px 4px var(--skeu-black-20);
-      animation: button-shimmer 2s linear infinite;
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
-    }
-  }
 
   /* Add texture to section headings */
   .resume-section__title {
-    position: relative;
-    background: var(--paper-color);
     background-image: var(--paper-texture);
-    color: var(--text-color);
-    padding: 0.6rem 1rem;
-    margin: 0 0 1rem -0.5rem;
-    box-shadow: 0 2px 4px var(--skeu-black-20), inset 0 1px 2px var(--skeu-white-10);
-    border-inline: 4px solid var(--leather-color);
-    text-shadow: 0 1px 0 var(--skeu-white-50), 0 2px 2px var(--skeu-black-10);
-    font-weight: 700;
 
     &::before {
       content: '';
@@ -494,10 +489,6 @@ body[data-theme='skeuomorph'] {
   }
 
   /* Add depth to skills grid items */
-  .skills-grid__group {
-    box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
-  }
-
   /* Sticky note - all styling consolidated here */
   #sticky-note {
     position: absolute;

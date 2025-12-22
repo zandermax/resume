@@ -55,6 +55,165 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --web2-radius-lg: 12px;
   --web2-radius-md: 8px;
   --web2-radius-sm: 6px;
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 2rem;
+
+  /* Experience item custom properties */
+  --experience-item-position: relative;
+  --experience-item-border-radius: var(--web2-radius-lg);
+  --experience-item-background: linear-gradient(180deg, var(--section-bg) 0%, oklch(100% 0 0 / 0.9) 100%);
+  --experience-item-padding: 2rem;
+  --experience-item-border: 1px solid var(--border-color);
+  --experience-item-box-shadow: var(--web2-shadow-lg);
+  --experience-item-transition: var(--web2-transition-normal);
+  --experience-item-margin-top: 1.5rem;
+
+  /* Skills grid group custom properties */
+  --skills-group-border-radius: var(--web2-radius-md);
+  --skills-group-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.5) 100%);
+  --skills-group-padding: 1rem;
+  --skills-group-margin-bottom: 1rem;
+  --skills-group-border: 1px solid oklch(0% 0 0 / 0.1);
+  --skills-group-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+  --skills-group-position: relative;
+  --skills-group-transition: var(--web2-transition-fast);
+  --skills-group-overflow: hidden;
+  --skills-group-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08),
+    0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
+  --skills-group-hover-transform: translateY(-2px);
+
+  /* Skills grid title custom properties */
+  --skills-title-font-weight: 700;
+  --skills-title-font-size: 1.1rem;
+  --skills-title-color: var(--web2-primary);
+  --skills-title-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.8);
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 2px;
+  --skills-title-border: none;
+  --skills-title-border-block-end-color: var(--web2-primary);
+  --skills-title-padding-bottom: 0.5rem;
+  --skills-title-margin-bottom: 0.75rem;
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 600;
+  --experience-company-font-size: 1.1rem;
+  --experience-company-color: var(--text-color);
+
+  /* Tech badge custom properties */
+  --tech-badge-border-radius: var(--web2-radius-md);
+  --tech-badge-background: linear-gradient(135deg, var(--web2-success) 0%, oklch(67% 0.16 125) 100%);
+  --tech-badge-color: var(--color-white);
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.5rem 1rem;
+  --tech-badge-font-size: 0.85rem;
+  --tech-badge-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.3);
+  --tech-badge-position: relative;
+  --tech-badge-text-shadow: var(--web2-text-shadow-sm);
+  --tech-badge-overflow: hidden;
+  --tech-badge-border: none;
+  --tech-badge-before-content: '';
+  --tech-badge-before-display: block;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-inset: 0 0 50% 0;
+  --tech-badge-before-background: var(--web2-gloss-overlay-tech);
+  --tech-badge-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+  --tech-badge-before-pointer-events: none;
+
+  /* Header role custom properties */
+  --header-role-font-weight: 500;
+  --header-role-font-size: 1.2rem;
+  --header-role-text-shadow: var(--web2-text-shadow-md);
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.5rem;
+  --education-institution-font-weight: 700;
+  --education-institution-color: var(--web2-primary);
+  --education-institution-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.5);
+  --education-institution-margin-block-end: 0.5rem;
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '●';
+  --bullet-color: var(--web2-primary);
+  --bullet-font-size: 0.8rem;
+  --bullet-text-shadow: var(--web2-text-shadow-sm);
+
+  /* Community/Principles list item custom properties */
+  --community-item-border-radius: var(--web2-radius-sm);
+  --community-item-padding: 1rem;
+  --community-item-margin-bottom: 0.75rem;
+  --community-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
+  --community-item-border: 1px solid oklch(0% 0 0 / 0.05);
+  --community-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --community-item-transition: var(--web2-transition-fast);
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-border-radius: var(--web2-radius-sm);
+  --principles-item-padding: 1rem;
+  --principles-item-margin-bottom: 0.75rem;
+  --principles-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
+  --principles-item-border: 1px solid oklch(0% 0 0 / 0.05);
+  --principles-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --principles-item-transition: var(--web2-transition-fast);
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Header name custom properties */
+  --header-name-font-size: 3rem;
+  --header-name-font-weight: 700;
+  --header-name-letter-spacing: -0.02em;
+  --header-name-text-shadow: 0 1px 2px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
+  --header-name-border: none;
+  --header-name-padding: 0;
+  --header-name-margin-block-end: 0.5rem;
+
+  /* Section title custom properties */
+  --section-title-background: var(--web2-section-title-gradient);
+  --section-title-color: var(--section-title-color);
+  --section-title-text-shadow: var(--web2-text-shadow-lg);
+  --section-title-border: none;
+  --section-title-border-radius: var(--web2-radius-lg);
+  --section-title-padding: 1rem 1.5rem;
+  --section-title-margin: 0 0 1.5rem 0;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 1.3rem;
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.08em;
+  --section-title-position: relative;
+  --section-title-overflow: hidden;
+  --section-title-box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
+
+  /* Section content custom properties */
+  --section-content-padding-inline: 1.5rem;
+
+  /* Print link custom properties */
+  --printlink-border: none;
+  --printlink-border-radius: var(--web2-radius-md);
+  --printlink-background: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: 700;
+  --printlink-padding: 1rem 2rem;
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: 1rem;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15),
+    inset 0 1px 0 oklch(100% 0 0 / 0.3);
+  --printlink-text-shadow: 1px 1px 2px oklch(0% 0 0 / 0.3);
+  --printlink-position: relative;
+  --printlink-transition: var(--web2-transition-normal);
+  --printlink-hover-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2),
+    0 0 20px oklch(100% 0.25 45 / 0.4), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-hover-text-shadow: 0 0 8px oklch(100% 0 0 / 0.5);
+  --printlink-active-transform: translateY(0);
+  --printlink-active-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.2), inset 0 1px 3px oklch(0% 0 0 / 0.3);
+  --printlink-before-content: '';
+  --printlink-before-display: block;
+  --printlink-before-position: absolute;
+  --printlink-before-inset: 0 0 50% 0;
+  --printlink-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
+  --printlink-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+  --printlink-before-pointer-events: none;
 }
 
 /* Light Mode */
@@ -160,6 +319,19 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --web2-gloss-overlay-tech: linear-gradient(180deg, oklch(100% 0 0 / 0.35) 0%, transparent 100%);
   --web2-section-title-gradient: linear-gradient(90deg, var(--web2-primary) 0%, oklch(77% 0.15 215) 100%);
 
+  /* Skills grid group custom properties - dark mode overrides */
+  --skills-group-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
+  --skills-group-border: 1px solid oklch(82% 0.13 210 / 0.2);
+
+  /* Tech badge custom properties - dark mode overrides */
+  --tech-badge-color: var(--color-black);
+
+  /* Community/Principles list item custom properties - dark mode overrides */
+  --community-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
+  --community-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
+  --principles-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
+  --principles-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
+
   /* Consolidated box shadows */
   --web2-shadow-sm: 0 2px 4px var(--web2-shadow);
   --web2-shadow-md: 0 2px 4px var(--web2-shadow), 0 4px 8px var(--web2-shadow);
@@ -187,10 +359,19 @@ body[data-theme='web2gloss'] {
   .skills-grid,
   .community-list,
   .principles-list,
-  .experience-item,
   .education-item,
   .web2-badges {
     position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+
+  .experience-item {
     overflow: hidden;
 
     &::before {
@@ -237,22 +418,6 @@ body[data-theme='web2gloss'] {
     }
   }
 
-  h1.resume-header__name {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    text-shadow: 0 1px 2px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
-    border: none;
-    padding: 0;
-    margin-block-end: 0.5rem;
-  }
-
-  .resume-header__role {
-    font-weight: 500;
-    font-size: 1.2rem;
-    text-shadow: var(--web2-text-shadow-md);
-  }
-
   /* Section styling */
   .resume-section {
     padding: 2rem;
@@ -263,21 +428,6 @@ body[data-theme='web2gloss'] {
 
   /* Section titles - Glossy gradient bars */
   .resume-section__title {
-    background: var(--web2-section-title-gradient);
-    color: var(--section-title-color);
-    text-shadow: var(--web2-text-shadow-lg);
-    border: none;
-    border-radius: var(--web2-radius-lg);
-    padding: 1rem 1.5rem;
-    margin: 0 0 1.5rem 0;
-    font-weight: 600;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
-
     &::before {
       inset: 0 0 50% 0;
       background: var(--web2-gloss-overlay-strong);
@@ -306,37 +456,7 @@ body[data-theme='web2gloss'] {
     }
   }
 
-  .skills-grid__group {
-    border-radius: var(--web2-radius-md);
-    background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.5) 100%);
-    padding: 1rem;
-    margin-block-end: 1rem;
-    border: 1px solid oklch(0% 0 0 / 0.1);
-    box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
-    position: relative;
-    overflow: hidden;
-    transition: var(--web2-transition-fast);
-
-    &:hover {
-      box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08), 0 0 12px var(--web2-glow),
-        inset 0 1px 0 oklch(100% 0 0 / 0.6);
-      transform: translateY(-2px);
-    }
-  }
-
-  .skills-grid__title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--web2-primary);
-    text-shadow: 0 1px 2px oklch(100% 0 0 / 0.8);
-    border: none;
-    border-block-end: 2px solid var(--web2-primary);
-    padding-block-end: 0.5rem;
-    margin-block-end: 0.75rem;
-  }
-
   /* Experience items & Education - Floating glossy cards */
-  .experience-item,
   .education-item {
     border-radius: var(--web2-radius-lg);
     background: linear-gradient(180deg, var(--section-bg) 0%, oklch(100% 0 0 / 0.9) 100%);
@@ -355,6 +475,12 @@ body[data-theme='web2gloss'] {
   .experience-item {
     margin: 1.5rem 0;
 
+    &::before {
+      inset: 0 0 50% 0;
+      background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
+      border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+    }
+
     &:hover {
       box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 20px var(--web2-glow);
       transform: translateY(-3px);
@@ -362,59 +488,10 @@ body[data-theme='web2gloss'] {
   }
 
   .experience-item__role,
-  .education-item__institution {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--web2-primary);
-    text-shadow: 0 1px 2px oklch(100% 0 0 / 0.5);
-    margin-block-end: 0.5rem;
-  }
-
-  .experience-item__company {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-color);
-  }
-
-  /* Tech badges - Glossy pills */
-  .experience-item__tech {
-    border-radius: var(--web2-radius-md);
-    background: linear-gradient(135deg, var(--web2-success) 0%, oklch(67% 0.16 125) 100%);
-    color: var(--color-white);
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.3);
-    position: relative;
-    overflow: hidden;
-    text-shadow: var(--web2-text-shadow-sm);
-    border: none;
-
-    &::before {
-      inset: 0 0 50% 0;
-      background: var(--web2-gloss-overlay-tech);
-      border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
-    }
-  }
-
-  .experience-item__bullets li::before {
-    content: '●';
-    color: var(--web2-primary);
-    font-size: 0.8rem;
-    text-shadow: var(--web2-text-shadow-sm);
-  }
 
   /* List items */
   .community-list__item,
   .principles-list__item {
-    border-radius: var(--web2-radius-sm);
-    padding: 1rem;
-    margin-block-end: 0.75rem;
-    background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
-    border: 1px solid oklch(0% 0 0 / 0.05);
-    box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
-    transition: var(--web2-transition-fast);
-
     &:hover {
       box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 0 10px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.5);
       transform: translateX(4px);
@@ -450,43 +527,6 @@ body[data-theme='web2gloss'] {
     }
   }
 
-  /* Print button - BIG glossy button */
-  .resume-header__printlink {
-    border: none;
-    border-radius: var(--web2-radius-md);
-    background: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
-    color: var(--color-white) !important;
-    font-weight: 700;
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15), inset 0 1px 0 oklch(100% 0 0 / 0.3);
-    transition: var(--web2-transition-fast);
-    position: relative;
-    overflow: hidden;
-    text-shadow: var(--web2-text-shadow-md);
-    text-decoration: none;
-
-    &::before {
-      inset: 0 0 50% 0;
-      background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
-      border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
-    }
-
-    &:hover {
-      box-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2), 0 0 20px oklch(100% 0.25 45 / 0.4),
-        inset 0 1px 0 oklch(100% 0 0 / 0.4);
-      transform: translateY(-2px);
-      text-shadow: 0 0 8px oklch(100% 0 0 / 0.5);
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.2), inset 0 1px 3px oklch(0% 0 0 / 0.3);
-    }
-  }
-
   /* Dial selector - Glass orb knob */
   dial-selector {
     --indicator-vertical-offset: 55%;
@@ -514,26 +554,28 @@ body[data-theme='web2gloss'] {
     }
 
     .dial-label {
-      border-radius: var(--web2-radius-sm);
-      background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
-      border: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-color);
-      transition: var(--web2-transition-fast);
-      box-shadow: 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 1px 0 oklch(100% 0 0 / 0.5);
-      overflow: hidden;
+      span {
+        display: block;
+        border-radius: var(--web2-radius-sm);
+        background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
+        border: 1px solid var(--border-color);
+        padding: 0.35rem 0.75rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        transition: var(--web2-transition-fast);
+        box-shadow: 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+        overflow: hidden;
+      }
 
       &:hover > span {
         background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
         box-shadow: 0 2px 4px oklch(0% 0 0 / 0.15), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
-        transform: translateY(calc(-50% + 3px));
       }
 
       &.active > span {
         background: var(--web2-section-title-gradient);
-        border-color: var(--web2-primary);
+        border: 1px solid var(--web2-primary);
         box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
         color: var(--color-white);
         text-shadow: var(--web2-text-shadow-md);
@@ -707,16 +749,18 @@ body[data-theme='web2gloss'] {
     }
 
     h1.resume-header__name {
-      font-size: 2rem;
-    }
-
-    .resume-section__title {
-      font-size: 1.1rem;
-      padding: 0.75rem 1rem;
+      --header-name-font-size: 2rem;
+      --section-title-font-size: 1.1rem;
+      --section-title-padding: 0.75rem 1rem;
     }
 
     .resume-section {
       padding: 1.5rem;
+    }
+
+    dial-selector .dial-label span {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.65rem;
     }
   }
 
@@ -724,16 +768,13 @@ body[data-theme='web2gloss'] {
     :root[data-theme='web2gloss'] {
       --header-border-radius: var(--web2-radius-md);
       --main-border-radius: var(--web2-radius-md);
-    }
+      --section-title-font-size: 1rem;
+      --section-title-padding: 0.6rem 0.8rem;
+      --section-title-border-radius: var(--web2-radius-md);
+      --header-name-font-size: 1.75rem;
 
-    h1.resume-header__name {
-      font-size: 1.75rem;
-    }
-
-    .resume-section__title {
-      font-size: 1rem;
-      padding: 0.6rem 0.8rem;
-      border-radius: var(--web2-radius-md);
+      --printlink-font-size: 0.85rem;
+      --printlink-padding: 0.75rem 1.5rem;
     }
 
     .resume-section {
@@ -746,49 +787,43 @@ body[data-theme='web2gloss'] {
       border-radius: var(--web2-radius-md);
     }
 
-    dial-selector .dial-label {
+    dial-selector .dial-label span {
       font-size: 0.75rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    .resume-header__printlink {
-      font-size: 0.85rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.3rem 0.6rem;
     }
   }
 
   /* Dark mode overrides */
   &[data-mode='dark'] {
-    .skills-grid__group {
-      background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
-      border-color: oklch(82% 0.13 210 / 0.2);
-    }
-
     .experience-item,
     .education-item {
       background: linear-gradient(180deg, oklch(30% 0.06 250 / 0.6) 0%, oklch(18% 0.04 250 / 0.4) 100%);
     }
 
-    .community-list__item,
-    .principles-list__item {
-      background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
-      border-color: oklch(82% 0.13 210 / 0.15);
-    }
-
     dial-selector {
       .dial-label {
-        background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.4) 0%, oklch(57% 0.18 245 / 0.3) 100%);
-        border-color: oklch(82% 0.13 210 / 0.3);
+        span {
+          background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.4) 0%, oklch(57% 0.18 245 / 0.3) 100%);
+          border-color: oklch(82% 0.13 210 / 0.3);
+          box-shadow: 0 1px 3px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.15);
+        }
+
+        &:hover > span {
+          background: linear-gradient(180deg, oklch(82% 0.13 210 / 0.3) 0%, oklch(77% 0.15 215 / 0.2) 100%);
+          box-shadow: 0 2px 4px oklch(0% 0 0 / 0.3), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.2);
+        }
+
+        &.active > span {
+          background: var(--web2-section-title-gradient);
+          border-color: var(--web2-primary);
+          color: var(--color-white);
+        }
       }
 
       .spoke-line {
         opacity: 0.5;
         stroke: oklch(100% 0 0 / 0.6);
       }
-    }
-
-    .experience-item__tech {
-      color: var(--color-black);
     }
 
     .web2-badges {

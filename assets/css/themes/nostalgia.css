@@ -6,6 +6,9 @@ Nostalgia Theme (Geocities 90s)
 :root[data-theme='nostalgia'] {
   --font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   --border-color: var(--color-magenta);
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
 }
 
 /* Light Mode */
@@ -193,4 +196,50 @@ Nostalgia Theme (Geocities 90s)
     --dial-cursor: inherit;
     animation: rotateCursor 2s steps(4) infinite;
   }
+}
+
+/* Visitor counter styling (Nostalgia theme) */
+.visitor-counter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--section-bg, transparent);
+  border: 3px ridge var(--accent-color, #000);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+  margin: 1rem 0;
+  max-width: fit-content;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitor-counter > span:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.visitor-counter__digit {
+  display: inline-block;
+  min-width: 1.5rem;
+  text-align: center;
+  background: #000;
+  color: #ff0000;
+  border: 2px inset #666;
+  padding: 0.25rem;
+  font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.8rem);
+}
+
+/* Retro badge */
+.retro-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 3px solid;
+  border-color: #ff00ff #00ffff #00ffff #ff00ff;
+  background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+  box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
 }

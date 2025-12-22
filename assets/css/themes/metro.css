@@ -96,6 +96,173 @@ body[data-theme='metro'] .metro-chat-widget {
   --background-image: none;
   --header-bg: transparent;
   --section-title-color: var(--color-white);
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
+
+  /* Experience item custom properties */
+  --experience-item-position: relative;
+  --experience-item-padding: 2rem;
+  --experience-item-background: var(--section-bg);
+  --experience-item-border: 0;
+  --experience-item-border-radius: 0;
+  --experience-item-margin-top: 1.5rem;
+  --experience-item-box-shadow: none;
+  --experience-item-transition: border-inline-start-width 0.15s ease;
+
+  /* Skills grid group custom properties */
+  --skills-group-border: 0;
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: 1.5rem;
+  --skills-group-border-radius: 0;
+  --skills-group-margin: 0;
+  --skills-group-margin-bottom: 0;
+  --skills-group-box-shadow: none;
+  --skills-group-transition: background-color 0.15s ease;
+  --skills-group-hover-background: var(--metro-blue);
+
+  /* Skills grid title custom properties */
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 3px;
+  --skills-title-border: 0;
+  --skills-title-border-block-end-color: var(--accent-color);
+  --skills-title-letter-spacing: 0.05em;
+  --skills-title-padding-bottom: 0.75rem;
+  --skills-title-margin-bottom: 1rem;
+  --skills-title-font-weight: 600;
+  --skills-title-font-size: 1rem;
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: 1.3rem;
+  --experience-role-font-weight: 600;
+  --experience-role-text-transform: uppercase;
+  --experience-role-margin-block-end: 0.5rem;
+  --experience-role-line-height: 1.2;
+  --experience-role-letter-spacing: 0.02em;
+  --experience-role-color: var(--text-color);
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 400;
+  --experience-company-font-size: 1rem;
+  --experience-company-text-transform: none;
+  --experience-company-color: var(--text-color);
+  --experience-company-letter-spacing: 0;
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 0;
+  --tech-badge-border-radius: 0;
+  --tech-badge-background: var(--metro-blue);
+  --tech-badge-color: #ffffff;
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.5rem 1rem;
+  --tech-badge-font-size: 0.7rem;
+  --tech-badge-box-shadow: none;
+  --tech-badge-letter-spacing: 0.08em;
+  --tech-badge-transition: background-color 0.15s ease;
+  --tech-badge-hover-background: var(--metro-orange);
+
+  /* Skills grid custom properties */
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 0;
+  --skills-grid-gap: 0;
+  --skills-grid-border-radius: 0;
+  --skills-grid-box-shadow: none;
+
+  /* Community/Principles list item custom properties */
+  --community-item-border: 0;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --community-item-padding: 1rem 0 1rem 1.5rem;
+  --community-item-margin-bottom: 1rem;
+  --community-item-background: var(--section-bg);
+  --community-item-font-weight: 400;
+  --community-item-line-height: 1.6;
+  --community-item-transition: all 0.15s ease;
+  --principles-item-border: 0;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+  --principles-item-padding: 1rem 0 1rem 1.5rem;
+  --principles-item-margin-bottom: 1rem;
+  --principles-item-background: var(--section-bg);
+  --principles-item-font-weight: 400;
+  --principles-item-line-height: 1.6;
+  --principles-item-transition: all 0.15s ease;
+
+  /* Header name custom properties */
+  --header-name-border: 0;
+  --header-name-padding: 0;
+  --header-name-margin-block-end: 1rem;
+  --header-name-font-weight: 300;
+  --header-name-font-size: 3.5rem;
+  --header-name-line-height: 1;
+  --header-name-text-transform: none;
+  --header-name-letter-spacing: -0.02em;
+  --header-name-color: var(--text-color);
+
+  /* Section title custom properties */
+  --section-title-border: 0;
+  --section-title-border-radius: 0;
+  --section-title-padding: 1em;
+  --section-title-margin: 0 0 1.5rem 0;
+  --section-title-background: var(--metro-blue);
+  --section-title-color: var(--section-title-color);
+  --section-title-text-transform: uppercase;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 1.4rem;
+  --section-title-letter-spacing: 0.05em;
+  --section-title-line-height: 1;
+  --section-title-box-shadow: none;
+  --section-title-border-width: 0px;
+
+  /* Section content custom properties */
+  --section-content-padding-inline: 1em;
+
+  /* Print link custom properties */
+  --printlink-border: 0;
+  --printlink-border-radius: 0;
+  --printlink-background: var(--metro-green);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: 600;
+  --printlink-padding: 1rem 2rem;
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: 0.9rem;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-box-shadow: none;
+  --printlink-transition: background-color 0.15s ease;
+  --printlink-hover-background: var(--metro-blue);
+  --printlink-active-opacity: 0.8;
+
+  /* Header role custom properties */
+  --header-role-font-weight: 400;
+  --header-role-font-size: 1.2rem;
+  --header-role-text-transform: none;
+  --header-role-letter-spacing: 0;
+  --header-role-color: var(--text-color);
+  --header-role-margin-block-start: 0.5rem;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.3rem;
+  --education-institution-font-weight: 600;
+  --education-institution-text-transform: uppercase;
+  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-line-height: 1.2;
+  --education-institution-letter-spacing: 0.02em;
+  --education-institution-color: var(--text-color);
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '■';
+  --bullet-font-size: 0.8rem;
+  --bullet-font-weight: 400;
+  --bullet-color: var(--accent-color);
+
+  /* Dial label active span padding */
+  --dial-label-active-span-padding-block: 0.5rem;
+  --dial-label-active-span-padding-inline: 0.8rem;
+  --dial-label-active-span-padding-block--tablet: 0.45rem;
+  --dial-label-active-span-padding-inline--tablet: 0.7rem;
+  --dial-label-active-span-padding-block--phone: 0.4rem;
+  --dial-label-active-span-padding-inline--phone: 0.2rem;
 }
 
 /* Light Mode */
@@ -172,21 +339,6 @@ body[data-theme='metro'] {
     }
   }
 
-  h2.resume-section__title {
-    border: 0;
-    border-radius: 0;
-    padding: 1em;
-    margin: 0 0 1.5rem 0;
-    background: var(--metro-blue);
-    color: var(--section-title-color);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 0.05em;
-    line-height: 1;
-    box-shadow: none;
-  }
-
   /* Rotate through Metro colors for different sections */
   .resume-section:nth-of-type(1) h2.resume-section__title {
     background: var(--metro-blue);
@@ -214,56 +366,20 @@ body[data-theme='metro'] {
   }
 
   /* Skills grid - tile blocks */
-  .skills-grid {
-    border: 0;
-    background: transparent;
-    padding: 0;
-    gap: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
 
   .skills-grid__group {
-    border: 0;
-    background: var(--section-bg);
-    padding: 1.5rem;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-    transition: background-color 0.15s ease;
-
     &:hover {
-      background: var(--metro-blue);
-
       * {
         color: #ffffff;
       }
     }
   }
 
-  .skills-grid__title {
-    border: 0;
-    border-block-end: 3px solid var(--accent-color);
-    padding-block-end: 0.75rem;
-    margin-block-end: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-  }
-
   /* Experience items - clean tiles with accent bar */
   .experience-item {
-    position: relative;
-    padding: 2rem;
-    background: var(--section-bg);
-    border: 0;
     border-inline-start: 6px solid var(--metro-blue);
-    border-radius: 0;
     margin-block-start: 0;
     margin-block-end: 1.5rem;
-    box-shadow: none;
-    transition: border-inline-start-width 0.15s ease;
 
     &:hover {
       border-inline-start-width: 12px;
@@ -284,39 +400,6 @@ body[data-theme='metro'] {
     }
   }
 
-  .experience-item__tech {
-    border: 0;
-    border-radius: 0;
-    background: var(--metro-blue);
-    color: #ffffff;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    box-shadow: none;
-    transition: background-color 0.15s ease;
-
-    &:hover {
-      background: var(--metro-orange);
-    }
-  }
-
-  .experience-item__company {
-    font-weight: 400;
-    font-size: 1rem;
-    text-transform: none;
-    color: var(--text-color);
-    letter-spacing: 0;
-  }
-
-  .experience-item__bullets li::before {
-    content: '■';
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--accent-color);
-  }
-
   /* Lists - clean, minimal styling */
   .community-list,
   .principles-list {
@@ -329,14 +412,7 @@ body[data-theme='metro'] {
 
   .community-list__item,
   .principles-list__item {
-    border: 0;
     border-inline-start: 4px solid var(--metro-blue);
-    padding: 1rem 0 1rem 1.5rem;
-    margin-block-end: 1rem;
-    background: var(--section-bg);
-    font-weight: 400;
-    line-height: 1.6;
-    transition: all 0.15s ease;
 
     &:hover {
       border-inline-start-width: 8px;
@@ -375,28 +451,6 @@ body[data-theme='metro'] {
     box-shadow: none;
   }
 
-  .resume-header__printlink {
-    border: 0;
-    border-radius: 0;
-    background: var(--metro-green);
-    color: var(--color-white);
-    font-weight: 600;
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    box-shadow: none;
-    transition: background-color 0.15s ease;
-
-    &:hover {
-      background: var(--metro-blue);
-    }
-
-    &:active {
-      opacity: 0.8;
-    }
-  }
-
   .resume-header__name-greeting,
   .resume-header__name-small {
     font-size: 1.5rem;
@@ -404,27 +458,6 @@ body[data-theme='metro'] {
     letter-spacing: 0;
     text-transform: none;
     color: var(--metro-blue);
-  }
-
-  .resume-header__role {
-    font-weight: 400;
-    font-size: 1.2rem;
-    text-transform: none;
-    letter-spacing: 0;
-    color: var(--text-color);
-    margin-block-start: 0.5rem;
-  }
-
-  h1.resume-header__name {
-    border: 0;
-    padding: 0;
-    margin-block-end: 1rem;
-    font-weight: 300;
-    font-size: 3.5rem;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: -0.02em;
-    color: var(--text-color);
   }
 
   /* Flat links */
@@ -469,7 +502,8 @@ body[data-theme='metro'] {
 
   dial-selector .dial-label {
     font-size: 0.85rem;
-    padding: 0.6rem 1rem;
+    padding-block: 0.6rem;
+    padding-inline: 0.5rem;
     border-radius: 0;
     transition: all 0.15s ease;
     background: transparent;
@@ -502,6 +536,19 @@ body[data-theme='metro'] {
     border-radius: 0;
     box-shadow: none;
     position: relative;
+
+    /* Responsive padding reductions for small viewports */
+    @media (max-width: 600px) {
+      padding: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.75rem;
+    }
+
+    @media (max-width: 380px) {
+      padding: 0.5rem;
+    }
   }
 
   .resume-header__dial-selector h3 {
@@ -517,17 +564,6 @@ body[data-theme='metro'] {
   h3 {
     font-weight: 600;
     letter-spacing: 0;
-  }
-
-  h3.experience-item__role,
-  h3.education-item__institution {
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-block-end: 0.5rem;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: var(--text-color);
   }
 
   p,
@@ -559,18 +595,17 @@ body[data-theme='metro'] {
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    h1.resume-header__name {
-      font-size: 2.5rem;
+    :root[data-theme='metro'] {
+      --header-name-font-size: 2.5rem;
+      --section-title-font-size: 1.2rem;
+      --section-title-padding: 1rem 1.5rem;
+      --printlink-font-size: 0.75rem;
+      --printlink-padding: 0.75rem 1.5rem;
+      --education-institution-font-size: 1.1rem;
     }
 
-    .resume-section__title {
-      font-size: 1.2rem;
-      padding: 1rem 1.5rem;
-    }
-
-    h3.experience-item__role,
-    h3.education-item__institution {
-      font-size: 1.1rem;
+    :root[data-theme='metro'] {
+      --experience-role-font-size: 1.1rem;
     }
 
     dial-selector .dial-label {
@@ -586,13 +621,12 @@ body[data-theme='metro'] {
   }
 
   @media (max-width: 500px) {
-    h1.resume-header__name {
-      font-size: 2rem;
-    }
-
-    .resume-section__title {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
+    :root[data-theme='metro'] {
+      --header-name-font-size: 2rem;
+      --section-title-font-size: 1rem;
+      --section-title-padding: 0.75rem 1rem;
+      --printlink-font-size: 0.75rem;
+      --printlink-padding: 0.75rem 1.5rem;
     }
 
     .resume-header,
@@ -604,11 +638,6 @@ body[data-theme='metro'] {
     dial-selector .dial-label {
       font-size: 0.7rem;
       padding: 0.4rem 0.7rem;
-    }
-
-    .resume-header__printlink {
-      font-size: 0.75rem;
-      padding: 0.75rem 1.5rem;
     }
 
     .experience-item,
@@ -730,6 +759,9 @@ body[data-theme='metro'] {
   }
 
   @media (max-width: 500px) {
+    .dial-selector .dial-label {
+      padding: 0.3rem 0.25rem;
+    }
     .metro-chat-widget {
       width: 220px;
       bottom: 1rem;

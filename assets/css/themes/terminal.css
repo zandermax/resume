@@ -12,6 +12,9 @@ Terminal Theme (1992 CLI-inspired)
   --background-image: none;
   --border-color: var(--color-gray-medium);
 
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1rem;
+
   /* Component overrides */
   --main-border-width: 0;
   --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
@@ -21,6 +24,8 @@ Terminal Theme (1992 CLI-inspired)
   --section-title-padding: 0.5rem 0.75rem;
   --section-title-background: var(--terminal-button-bg);
   --section-title-margin-bottom: 1rem;
+  --section-title-font-size: 1.1rem;
+  --section-title-text-transform: uppercase;
   --skills-grid-border: 0;
   --skills-grid-background: var(--terminal-window-bg);
   --skills-grid-box-shadow: var(--terminal-inset-sunken-lg);
@@ -29,6 +34,23 @@ Terminal Theme (1992 CLI-inspired)
   --skills-group-box-shadow: var(--terminal-inset-raised-sm);
   --skills-group-background: var(--section-bg);
   --skills-group-padding: 0.75rem;
+  --skills-title-font-size: 0.9rem;
+  --section-text-line-height: 1.6;
+  --section-text-letter-spacing: 0;
+  --section-text-font-size: 0.95rem;
+  --experience-role-line-height: 1.6;
+  --experience-role-letter-spacing: 0;
+  --experience-role-font-size: 0.95rem;
+  --experience-company-font-size: 0.9rem;
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: normal;
+  --tech-badge-font-size: 0.85rem;
+  --skills-items-font-size: 0.9rem;
+  --skills-items-line-height: 1.5;
+  --community-item-font-size: 0.95rem;
+  --community-item-line-height: 1.6;
+  --principles-item-font-size: 0.95rem;
+  --principles-item-line-height: 1.6;
   --list-border: 0;
   --list-background: var(--terminal-window-bg);
   --list-box-shadow: var(--terminal-inset-sunken-lg);
@@ -51,14 +73,49 @@ Terminal Theme (1992 CLI-inspired)
   --header-padding: 1.25rem;
   --bullet-before-content: '▪';
   --bullet-font-size: 0.7rem;
+  --header-meta-font-size: 0.9rem;
+  --header-name-font-size: 2.5rem;
+  --header-name-line-height: 1.3;
+  --header-name-border-color: var(--terminal-border-dark);
   --printlink-border-width: 0;
   --printlink-background: var(--terminal-button-bg);
+  --printlink-position: relative;
+  --printlink-transition: box-shadow 0.1s ease, transform 0.1s ease;
+  --printlink-color: var(--text-color);
+  --printlink-hover-background: var(--terminal-button-bg);
+  --printlink-hover-color: var(--text-color);
+  --printlink-active-transform: translate(1px, 1px);
+  --printlink-before-content: '[';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-start: 4px;
+  --printlink-after-content: ']';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 4px;
   --link-text-decoration: underline;
+
+  /* Header role custom properties */
+  --header-role-font-size: 1rem;
+  --header-role-line-height: 1.5;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.05rem;
+
+  /* Experience bullets custom properties */
+  --experience-bullets-li-font-size: 0.95rem;
+  --experience-bullets-li-line-height: 1.6;
+  --experience-bullets-li-margin-block-end: 0.5rem;
+
   --dial-knob-border-width: 0;
   --dial-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
   --dial-indicator-box-shadow: none;
   --dial-indicator-width: 10px;
   --dial-label-padding: 0.4rem 0.8rem;
+  --dial-label-active-span-padding-block: 0.25rem;
+  --dial-label-active-span-padding-inline: 0.7rem;
+  --dial-label-active-span-padding-block--tablet: 0.2rem;
+  --dial-label-active-span-padding-inline--tablet: 0.6rem;
+  --dial-label-active-span-padding-block--phone: 0.2rem;
+  --dial-label-active-span-padding-inline--phone: 0.55rem;
   --dial-label-font-size--tablet: 0.75rem;
   --dial-label-font-size--phone: 0.7rem;
   --dial-label-font-size--phone-sm: 0.7rem;
@@ -174,28 +231,6 @@ Terminal Theme (1992 CLI-inspired)
 
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
-  .skills-grid__title {
-    font-size: 0.9rem;
-  }
-
-  .skills-grid__items {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  /* Tech badges - using custom properties */
-  .experience-item__tech {
-    color: var(--text-color);
-    font-weight: normal;
-    font-size: 0.85rem;
-  }
-
-  .community-list__item,
-  .principles-list__item {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
   /* Education box - using custom properties */
   .education-item {
     font-size: 0.95rem;
@@ -207,27 +242,13 @@ body[data-theme='terminal'] {
     position: relative;
   }
 
-  .experience-item__company {
-    font-size: 0.9rem;
-  }
-
   .experience-item__meta {
     font-size: 0.85rem;
-  }
-
-  .experience-item__bullets li {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-block-end: 0.5rem;
   }
 
   /* Header - using custom properties */
   .resume-header {
     background: var(--header-bg);
-  }
-
-  .resume-header__meta {
-    font-size: 0.9rem;
   }
 
   /* Button container */
@@ -267,38 +288,13 @@ body[data-theme='terminal'] {
     }
   }
 
-  .resume-header__printlink {
-    position: relative;
-    transition: box-shadow 0.1s ease, transform 0.1s ease;
-    color: var(--text-color);
-
-    &::before {
-      content: '[';
-      margin-inline-start: 4px;
-    }
-
-    &::after {
-      content: ']';
-      margin-inline-start: 4px;
-    }
-
-    &:hover {
-      background: var(--terminal-button-bg);
-      color: var(--text-color);
-    }
-
-    &:active {
-      transform: translate(1px, 1px);
-    }
-  }
-
   /* Dial selector enhancements with CLI-style knob */
   dial-selector {
     .knob {
       border: var(--dial-knob-border-width);
       box-shadow: var(--dial-knob-box-shadow);
-      clip-path: var(--dial-knob-clip-path);
       background: var(--dial-knob-background);
+      clip-path: var(--dial-knob-clip-path);
     }
 
     .indicator {
@@ -337,33 +333,10 @@ body[data-theme='terminal'] {
     letter-spacing: 0.05em;
   }
 
-  h1.resume-header__name {
-    font-size: 2.5rem;
-    line-height: 1.3;
-    border-color: var(--terminal-border-dark);
-  }
-
   .resume-header__name-greeting,
   .resume-header__name-small,
-  h3.experience-item__role,
-  h3.education-item__institution {
-    font-size: 1.05rem;
-  }
-
-  .resume-header__role {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  h2.resume-section__title {
-    font-size: 1.1rem;
-    padding: 0.5rem 0.75rem;
-    text-transform: uppercase;
-  }
-
   p,
-  li,
-  .resume-section__text {
+  li {
     line-height: 1.6;
     letter-spacing: 0;
     font-size: 0.95rem;
@@ -566,7 +539,7 @@ body[data-theme='terminal'] {
     }
 
     h1.resume-header__name {
-      font-size: 2.1rem;
+      --header-name-font-size: 2.1rem;
     }
 
     .resume-header__name-greeting,
@@ -574,8 +547,8 @@ body[data-theme='terminal'] {
       font-size: 0.95rem;
     }
 
-    .resume-header__role {
-      font-size: 0.9rem;
+    :root[data-theme='terminal'] {
+      --header-role-font-size: 0.9rem;
     }
 
     dial-selector .dial-label {
@@ -593,7 +566,7 @@ body[data-theme='terminal'] {
     }
 
     h1.resume-header__name {
-      font-size: 1.7rem;
+      --header-name-font-size: 1.7rem;
     }
 
     dial-selector .dial-label {
@@ -601,8 +574,8 @@ body[data-theme='terminal'] {
     }
 
     .resume-header__printlink {
-      font-size: 0.7rem;
-      padding: 0.45rem 0.85rem;
+      --printlink-font-size: 0.7rem;
+      --printlink-padding: 0.45rem 0.85rem;
     }
 
     .resume-header__buttons {

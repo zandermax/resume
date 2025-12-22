@@ -70,6 +70,162 @@
   --duration-slow: 16s;
   --duration-slower: 18s;
   --duration-slowest: 20s;
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 2.5rem;
+
+  /* Experience item custom properties */
+  --experience-item-border: var(--border-width-md) solid var(--border-color);
+  --experience-item-position: relative;
+  --experience-item-background: var(--section-bg);
+  --experience-item-padding: var(--spacing-xl);
+  --experience-item-margin-top: var(--spacing-lg);
+  --experience-item-transform: skewX(var(--skew-light)) rotate(0.1deg);
+  --experience-item-box-shadow: var(--glitch-box-shadow);
+
+  /* Skills grid group custom properties */
+  --skills-group-border: var(--border-width-md) solid var(--border-color);
+  --skills-group-position: relative;
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: var(--spacing-md);
+  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
+  --skills-group-animation: pixel-drift var(--duration-slow) infinite steps(1, jump-end);
+  --skills-group-contain: layout;
+  --skills-group-will-change: transform;
+
+  /* Skills grid title custom properties */
+  --skills-title-font-weight: 700;
+  --skills-title-font-size: var(--font-size-md);
+  --skills-title-color: var(--text-color);
+  --skills-title-text-shadow: var(--glitch-text-shadow-sm);
+  --skills-title-border-style: solid;
+  --skills-title-border-width: var(--border-width-md);
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: var(--font-size-xxl);
+  --experience-role-font-weight: 700;
+  --experience-role-color: var(--text-color);
+  --experience-role-margin-block-end: var(--spacing-xs);
+  --experience-role-text-shadow: var(--glitch-text-shadow);
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 600;
+  --experience-company-font-size: var(--font-size-md);
+  --experience-company-color: var(--text-color);
+
+  /* Tech badge custom properties */
+  --tech-badge-border: var(--border-width-md) solid var(--border-color);
+  --tech-badge-background: var(--background-color);
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.4rem 0.9rem;
+  --tech-badge-font-size: var(--font-size-xs);
+  --tech-badge-position: relative;
+  --tech-badge-box-shadow: var(--glitch-box-shadow-sm);
+  --tech-badge-text-shadow: var(--glitch-text-shadow-sm);
+  --tech-badge-filter: var(--filter-contrast-base);
+  --tech-badge-hover-filter: invert(1);
+  --tech-badge-contain: layout;
+
+  /* Header meta custom properties */
+  --header-meta-color: var(--text-color);
+  --header-meta-text-shadow: var(--glitch-text-shadow-sm);
+
+  /* Header name custom properties */
+  --header-name-font-size: var(--font-size-hero);
+  --header-name-font-weight: 700;
+  --header-name-color: var(--text-color);
+  --header-name-margin-block-end: var(--spacing-xs);
+  --header-name-position: relative;
+  --header-name-text-shadow: var(--glitch-text-shadow);
+  --header-name-animation: text-glitch var(--duration-slowest) infinite;
+  --header-name-will-change: transform, text-shadow;
+
+  /* Print link custom properties */
+  --printlink-border: var(--border-width-lg) solid var(--border-color);
+  --printlink-background: var(--background-color);
+  --printlink-color: var(--text-color);
+  --printlink-font-weight: 700;
+  --printlink-padding: var(--spacing-md) var(--spacing-xl);
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: var(--font-size-base);
+  --printlink-letter-spacing: 0.1em;
+  --printlink-position: relative;
+  --printlink-text-decoration: none;
+  --printlink-transform: skewX(-3deg);
+  --printlink-box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
+  --printlink-filter: var(--filter-contrast-base);
+  --printlink-text-shadow: var(--glitch-text-shadow);
+  --printlink-hover-filter: invert(1);
+  --printlink-hover-transform: skewX(3deg);
+  --printlink-before-content: '⚠';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-end: 1em;
+  --printlink-after-content: '⚠';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 1em;
+
+  /* Skills grid custom properties */
+  --skills-grid-border: var(--border-width-lg) solid var(--border-color);
+  --skills-grid-transform: skewX(-0.15deg);
+  --skills-grid-box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
+
+  /* Section title custom properties */
+  --section-title-background: var(--section-bg);
+  --section-title-color: var(--text-color);
+  --section-title-border: var(--border-width-md) solid var(--border-color);
+  --section-title-padding: var(--spacing-sm) var(--spacing-lg);
+  --section-title-margin: var(--spacing-lg) 0;
+  --section-title-font-weight: 700;
+  --section-title-font-size: var(--font-size-xl);
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.15em;
+  --section-title-position: relative;
+  --section-title-transform: skewX(var(--skew-medium));
+  --section-title-border-inline-start: var(--border-width-accent) solid var(--glitch-primary);
+  --section-title-box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
+  --section-title-animation: text-glitch var(--duration-slow) infinite;
+  --section-title-contain: layout;
+  --section-title-will-change: transform, text-shadow;
+
+  /* Header role custom properties */
+  --header-role-font-size: var(--font-size-lg);
+  --header-role-color: var(--text-color);
+  --header-role-text-shadow: var(--glitch-text-shadow);
+
+  /* Education institution custom properties */
+  --education-institution-font-size: var(--font-size-xxl);
+  --education-institution-font-weight: 700;
+  --education-institution-color: var(--text-color);
+  --education-institution-margin-block-end: var(--spacing-xs);
+  --education-institution-text-shadow: var(--glitch-text-shadow);
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '◆';
+  --bullet-color: var(--text-color);
+  --bullet-font-size: var(--font-size-sm);
+  --bullet-text-shadow: var(--glitch-text-shadow-sm);
+
+  /* Community/Principles list item custom properties */
+  --community-item-padding: var(--spacing-md);
+  --community-item-margin-bottom: var(--spacing-sm);
+  --community-item-background: var(--section-bg);
+  --community-item-border: var(--border-width-sm) solid var(--border-color);
+  --community-item-border-width: var(--border-width-sm);
+  --community-item-border-style: solid;
+  --community-item-position: relative;
+  --community-item-box-shadow: var(--glitch-box-shadow-list);
+  --principles-item-padding: var(--spacing-md);
+  --principles-item-margin-bottom: var(--spacing-sm);
+  --principles-item-background: var(--section-bg);
+  --principles-item-border: var(--border-width-sm) solid var(--border-color);
+  --principles-item-border-width: var(--border-width-sm);
+  --principles-item-border-style: solid;
+  --principles-item-position: relative;
+  --principles-item-box-shadow: var(--glitch-box-shadow-list);
 }
 
 /* Light Mode */
@@ -502,17 +658,13 @@ body[data-theme='glitch'] {
   }
 
   /* Common card-style items */
-  .experience-item,
-  .education-item,
-  .skills-grid__group {
+  .education-item {
     border: var(--border-width-md) solid var(--border-color);
     position: relative;
   }
 
   .experience-item,
   .education-item {
-    background: var(--section-bg);
-    padding: var(--spacing-xl);
     animation: border-corrupt var(--duration-slow) infinite;
 
     /* Performance optimizations */
@@ -521,6 +673,8 @@ body[data-theme='glitch'] {
   }
 
   .education-item {
+    background: var(--section-bg);
+    padding: var(--spacing-xl);
     animation-duration: var(--duration-slower);
   }
 
@@ -565,13 +719,7 @@ body[data-theme='glitch'] {
   /* Common list items */
   .community-list__item,
   .principles-list__item {
-    padding: var(--spacing-md);
-    margin-block-end: var(--spacing-sm);
-    background: var(--section-bg);
-    border: var(--border-width-sm) solid var(--border-color);
     border-inline-start: var(--border-width-xl) solid var(--border-color);
-    position: relative;
-    box-shadow: var(--glitch-box-shadow-list);
     animation: pixel-drift var(--duration-slower) infinite steps(1, jump-end);
 
     /* Performance optimizations */
@@ -679,26 +827,7 @@ body[data-theme='glitch'] {
     }
   }
 
-  h1.resume-header__name {
-    font-size: var(--font-size-hero);
-    font-weight: 700;
-    color: var(--text-color);
-    margin-block-end: var(--spacing-xs);
-    position: relative;
-    text-shadow: var(--glitch-text-shadow);
-    animation: text-glitch var(--duration-slowest) infinite;
-    will-change: transform, text-shadow;
-  }
-
-  .resume-header__role {
-    font-size: var(--font-size-lg);
-    color: var(--text-color);
-    text-shadow: var(--glitch-text-shadow);
-  }
-
   .resume-header__meta {
-    color: var(--text-color);
-    text-shadow: var(--glitch-text-shadow-sm);
     filter: var(--filter-contrast-base);
   }
 
@@ -707,21 +836,6 @@ body[data-theme='glitch'] {
   =========================== */
 
   .resume-section__title {
-    background: var(--section-bg);
-    color: var(--text-color);
-    border: var(--border-width-md) solid var(--border-color);
-    border-inline-start: var(--border-width-accent) solid var(--glitch-primary);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    margin: var(--spacing-lg) 0;
-    font-weight: 700;
-    font-size: var(--font-size-xl);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    position: relative;
-    transform: skewX(var(--skew-medium));
-    box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
-    animation: text-glitch var(--duration-slow) infinite;
-
     /* Performance optimizations */
     contain: layout;
     will-change: transform, text-shadow;
@@ -745,9 +859,7 @@ body[data-theme='glitch'] {
 
   .experience-item {
     margin: var(--spacing-lg) 0;
-    transform: skewX(var(--skew-light)) rotate(0.1deg);
     filter: var(--filter-contrast-base);
-    box-shadow: var(--glitch-box-shadow);
 
     &:nth-child(even) {
       transform: skewX(-0.25deg) rotate(-0.15deg) translateY(1px);
@@ -760,37 +872,11 @@ body[data-theme='glitch'] {
     }
   }
 
-  .experience-item__role,
-  .education-item__institution {
-    font-size: var(--font-size-xxl);
-    font-weight: 700;
-    color: var(--text-color);
-    margin-block-end: var(--spacing-xs);
-    text-shadow: var(--glitch-text-shadow);
-  }
-
-  .experience-item__company {
-    font-weight: 600;
-    font-size: var(--font-size-md);
-    color: var(--text-color);
-  }
-
   /* ===========================
   TECH BADGES
   =========================== */
 
   .experience-item__tech {
-    border: var(--border-width-md) solid var(--border-color);
-    background: var(--background-color);
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 0.4rem 0.9rem;
-    font-size: var(--font-size-xs);
-    position: relative;
-    box-shadow: var(--glitch-box-shadow-sm);
-    filter: var(--filter-contrast-base);
-    text-shadow: var(--glitch-text-shadow-sm);
-
     /* Performance optimizations */
     contain: layout;
 
@@ -832,7 +918,6 @@ body[data-theme='glitch'] {
     }
 
     &:hover {
-      filter: invert(1);
       animation: pixel-drift 1s infinite steps(1, jump-end);
       will-change: transform;
     }
@@ -843,9 +928,6 @@ body[data-theme='glitch'] {
   =========================== */
 
   .skills-grid {
-    border-width: var(--border-width-lg);
-    transform: skewX(-0.15deg);
-    box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
     animation: skills-tilt-glitch var(--duration-medium) infinite;
 
     /* Performance optimizations */
@@ -871,12 +953,6 @@ body[data-theme='glitch'] {
   }
 
   .skills-grid__group {
-    background: var(--section-bg);
-    padding: var(--spacing-md);
-    margin-block-end: var(--spacing-md);
-    box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
-    animation: pixel-drift var(--duration-slow) infinite steps(1, jump-end);
-
     /* Performance optimizations */
     contain: layout;
     will-change: transform;
@@ -907,15 +983,7 @@ body[data-theme='glitch'] {
     }
   }
 
-  .skills-grid__title {
-    font-weight: 700;
-    font-size: var(--font-size-md);
-    color: var(--text-color);
-    text-shadow: var(--glitch-text-shadow-sm);
-    border-block-end: var(--border-width-md) solid var(--border-color);
-    padding-block-end: var(--spacing-xs);
-    margin-block-end: var(--spacing-sm);
-  }
+  /* Skills title styles already handled by custom properties */
 
   /* ===========================
   LISTS
@@ -960,42 +1028,6 @@ body[data-theme='glitch'] {
 
     &:visited {
       opacity: 0.7;
-    }
-  }
-
-  /* ===========================
-  PRINT BUTTON
-  =========================== */
-
-  .resume-header__printlink {
-    border: var(--border-width-lg) solid var(--border-color);
-    background: var(--background-color);
-    color: var(--text-color);
-    font-weight: 700;
-    padding: var(--spacing-md) var(--spacing-xl);
-    text-transform: uppercase;
-    font-size: var(--font-size-base);
-    letter-spacing: 0.1em;
-    position: relative;
-    text-decoration: none;
-    transform: skewX(-3deg);
-    box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
-    filter: var(--filter-contrast-base);
-    text-shadow: var(--glitch-text-shadow);
-
-    &:hover {
-      filter: invert(1);
-      transform: skewX(3deg);
-    }
-
-    &::before {
-      content: '⚠';
-      margin-inline-end: 1em;
-    }
-
-    &::after {
-      content: '⚠';
-      margin-inline-start: 1em;
     }
   }
 
@@ -1112,16 +1144,8 @@ body[data-theme='glitch'] {
   =========================== */
 
   .experience-item__bullets li {
-    &::before {
-      content: '◆';
-      color: var(--text-color);
-      font-size: var(--font-size-sm);
-      text-shadow: var(--glitch-text-shadow-sm);
-    }
-
     &:nth-child(even)::before {
       content: '◇';
-      color: var(--text-color);
       text-shadow: var(--glitch-text-shadow-alt);
     }
   }
@@ -1142,13 +1166,12 @@ body[data-theme='glitch'] {
   =========================== */
 
   @media (max-width: 768px) {
-    h1.resume-header__name {
-      font-size: 2rem;
-    }
-
-    .resume-section__title {
-      font-size: var(--font-size-md);
-      padding: 0.6rem var(--spacing-md);
+    :root[data-theme='glitch'] {
+      --header-name-font-size: 2rem;
+      --section-title-font-size: var(--font-size-md);
+      --section-title-padding: 0.6rem var(--spacing-md);
+      --printlink-font-size: var(--font-size-xs);
+      --printlink-padding: var(--spacing-sm) var(--spacing-lg);
     }
 
     .resume__main,
@@ -1160,13 +1183,12 @@ body[data-theme='glitch'] {
   }
 
   @media (max-width: 500px) {
-    h1.resume-header__name {
-      font-size: 1.75rem;
-    }
-
-    .resume-section__title {
-      font-size: var(--font-size-base);
-      padding: var(--spacing-xs) 0.8rem;
+    :root[data-theme='glitch'] {
+      --header-name-font-size: 1.75rem;
+      --section-title-font-size: var(--font-size-base);
+      --section-title-padding: var(--spacing-xs) 0.8rem;
+      --printlink-font-size: var(--font-size-xs);
+      --printlink-padding: var(--spacing-sm) var(--spacing-lg);
     }
 
     .resume__main,
@@ -1179,11 +1201,6 @@ body[data-theme='glitch'] {
     dial-selector .dial-label {
       font-size: 0.75rem;
       padding: 0.3rem 0.7rem;
-    }
-
-    .resume-header__printlink {
-      font-size: var(--font-size-xs);
-      padding: var(--spacing-sm) var(--spacing-lg);
     }
   }
 
