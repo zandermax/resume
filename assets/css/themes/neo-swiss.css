@@ -654,7 +654,7 @@ body[data-theme='neoswiss'] {
     content: 'ANALYZING CANDIDATE...';
     position: absolute;
     top: calc(var(--swiss-grid) * 1);
-    left: var(--spacing-4);
+    left: var(--spacing-3);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-medium);
     letter-spacing: var(--letter-spacing-wide);

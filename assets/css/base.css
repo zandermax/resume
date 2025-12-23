@@ -1017,14 +1017,19 @@ Resume Components
 
 .resume-header__savelink {
   display: none; /* Hidden by default, shown only in terminal theme */
-}
-
-#resume-header__printlink {
-  font-family: var(--printlink-font-family, inherit);
-  font-size: var(--printlink-font-size, 0.8rem);
-  letter-spacing: var(--printlink-letter-spacing, 0.14em);
-  text-transform: var(--printlink-text-transform, uppercase);
+  align-items: center;
+  justify-content: center;
   padding: var(--printlink-padding, 0.55rem 1.1rem);
+  font-size: var(--printlink-font-size, 0.8rem);
+  font-family: var(--printlink-font-family, inherit);
+  letter-spacing: var(--printlink-letter-spacing, 0.14em);
+  font-weight: var(--printlink-font-weight, normal);
+  text-transform: var(--printlink-text-transform, uppercase);
+  text-decoration: var(--printlink-text-decoration, none);
+  text-shadow: var(--printlink-text-shadow, none);
+  white-space: nowrap;
+  cursor: pointer;
+  margin-block: 1rem;
   border: var(
     --printlink-border,
     var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color)
@@ -1032,16 +1037,14 @@ Resume Components
   border-radius: var(--printlink-border-radius, 0);
   background: var(--printlink-background, var(--background-color));
   color: var(--printlink-color, var(--text-color));
-  text-decoration: var(--printlink-text-decoration, none);
-  text-shadow: var(--printlink-text-shadow, none);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  cursor: pointer;
-  margin-block: 1rem;
   box-shadow: var(--printlink-box-shadow, none);
-  font-weight: var(--printlink-font-weight, normal);
+}
+
+/* Save button colors are defined in terminal.css theme */
+
+/* Print button - always visible in all themes */
+#resume-header__printlink {
+  display: inline-flex; /* Override the display: none from .resume-header__savelink class */
   position: var(--printlink-position, relative);
   transition: var(--printlink-transition, none);
   transform: var(--printlink-transform, none);

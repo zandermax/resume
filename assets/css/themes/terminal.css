@@ -112,7 +112,7 @@ Terminal Theme (1992 CLI-inspired)
   --dial-indicator-width: 10px;
   --dial-label-padding: 0.4rem 0.8rem;
   --dial-label-active-span-padding-block: 0.25rem;
-  --dial-label-active-span-padding-inline: 0.7rem;
+  --dial-label-active-span-padding-inline: 0.3rem;
   --dial-label-active-span-padding-block--tablet: 0.2rem;
   --dial-label-active-span-padding-inline--tablet: 0.6rem;
   --dial-label-active-span-padding-block--phone: 0.2rem;
@@ -304,6 +304,7 @@ body[data-theme='terminal'] {
       box-shadow: var(--dial-knob-box-shadow);
       background: var(--dial-knob-background);
       clip-path: var(--dial-knob-clip-path);
+      border-radius: 0;
     }
 
     .indicator {
