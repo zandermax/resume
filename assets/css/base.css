@@ -1047,6 +1047,7 @@ Resume Components
   transform: var(--printlink-transform, none);
   opacity: var(--printlink-opacity, 1);
   filter: var(--printlink-filter, none);
+  box-sizing: border-box;
 
   &:hover {
     background: var(--printlink-hover-background, var(--text-color));
@@ -1054,12 +1055,13 @@ Resume Components
     color: var(--printlink-hover-color, var(--background-color));
     box-shadow: var(--printlink-hover-shadow, none);
     text-shadow: var(--printlink-hover-text-shadow, none);
-    border-width: var(--printlink-hover-border-width, inherit);
     border-color: var(--printlink-hover-border-color, inherit);
     transform: var(--printlink-hover-transform, var(--printlink-transform, none));
     filter: var(--printlink-hover-filter, var(--printlink-filter, none));
     opacity: var(--printlink-hover-opacity, var(--printlink-opacity, 1));
     animation: var(--printlink-hover-animation, none);
+    outline: var(--printlink-hover-border-width, 0) solid var(--printlink-hover-border-color, currentColor);
+    outline-offset: calc(-1 * var(--printlink-hover-border-width, 0px));
   }
 
   &:active {
