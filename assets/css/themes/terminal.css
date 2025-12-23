@@ -122,6 +122,23 @@ Terminal Theme (1992 CLI-inspired)
   --dial-label-font-size--phone-sm: 0.7rem;
   --dial-label-font-size--xs: 0.65rem;
   --dial-spoke-stroke-width: 2px;
+
+  /* Typography adjustments */
+  --heading-letter-spacing: 0.05em;
+  --body-text-letter-spacing: 0;
+
+  /* Print/Save button hover/active states */
+  --printlink-hover-filter: brightness(1.15);
+  --printlink-active-box-shadow-override: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
+  --printlink-active-transform-override: translate(1px, 1px);
+
+  /* Dial selector hover/active states */
+  --dial-label-hover-background: var(--terminal-button-bg);
+  --dial-label-hover-box-shadow: var(--terminal-inset-raised-sm);
+  --dial-label-active-background: var(--terminal-title-bg);
+  --dial-label-active-box-shadow: var(--terminal-inset-sunken-sm);
+  --dial-label-active-color: var(--dial-color-selection);
 }
 
 /* Light Mode */
@@ -252,10 +269,10 @@ body[data-theme='terminal'] {
     background: var(--header-bg);
   }
 
-  /* Save Resume and Print button - blue in light mode, light in dark mode */
+  /* Save Resume and Print button - shown in terminal theme, styled via custom properties */
   .resume-header__savelink,
   #resume-header__printlink {
-    display: inline-flex; /* Show in terminal theme */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -271,17 +288,6 @@ body[data-theme='terminal'] {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border: 2px solid var(--terminal-border-dark);
-
-    &:hover {
-      filter: brightness(1.15);
-    }
-
-    &:active {
-      /* Inverted/pressed state with thicker inset borders */
-      box-shadow: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
-        inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
-      transform: translate(1px, 1px);
-    }
   }
 
   /* Dial selector enhancements with CLI-style knob */
@@ -306,14 +312,14 @@ body[data-theme='terminal'] {
       transition: background 0.15s ease, color 0.15s ease;
 
       &:hover > span {
-        background: var(--terminal-button-bg);
-        box-shadow: var(--terminal-inset-raised-sm);
+        background: var(--dial-label-hover-background);
+        box-shadow: var(--dial-label-hover-box-shadow);
       }
 
       &.active > span {
-        background: var(--terminal-title-bg);
-        box-shadow: var(--terminal-inset-sunken-sm);
-        color: var(--dial-color-selection);
+        background: var(--dial-label-active-background);
+        box-shadow: var(--dial-label-active-box-shadow);
+        color: var(--dial-label-active-color);
       }
     }
 
@@ -322,12 +328,11 @@ body[data-theme='terminal'] {
     }
   }
 
-  /* Typography enhancements */
+  /* Typography enhancements - using custom properties */
   h1,
   h2,
   h3 {
     text-shadow: none;
-    letter-spacing: 0.05em;
   }
 
   .resume-header__name-greeting,
@@ -335,7 +340,6 @@ body[data-theme='terminal'] {
   p,
   li {
     line-height: 1.6;
-    letter-spacing: 0;
     font-size: 0.95rem;
   }
 

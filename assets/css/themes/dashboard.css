@@ -8,6 +8,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
 
+  /* Body typography */
+  --body-font-weight: 400;
+  --body-letter-spacing: 0;
+
   /* Consolidated box-shadow patterns */
   --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
   --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
@@ -141,6 +145,65 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --principles-item-position: relative;
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
+
+  /* Section title pseudo-element */
+  --section-title-before-content: '●';
+  --section-title-before-display: inline;
+  --section-title-before-color: var(--status-green);
+  --section-title-before-font-size: 0.75rem;
+  --section-title-before-animation: pulse-dot 3s ease-in-out infinite;
+  --section-title-before-will-change: opacity;
+
+  /* Skills title pseudo-element */
+  --skills-title-before-content: '▸';
+  --skills-title-before-display: inline;
+  --skills-title-before-color: var(--status-green);
+  --skills-title-before-font-size: 0.875rem;
+
+  /* Experience item hover */
+  --experience-item-hover-transform: translateX(4px);
+  --experience-item-hover-box-shadow: var(--dashboard-shadow-md);
+  --experience-item-hover-border-color: var(--accent-color);
+
+  /* Experience item before pseudo-element */
+  --experience-item-before-content: '';
+  --experience-item-before-display: block;
+  --experience-item-before-position: absolute;
+  --experience-item-before-inset: 0 auto 0 0;
+  --experience-item-before-width: 3px;
+  --experience-item-before-background: var(--accent-color);
+  --experience-item-before-border-radius: 6px 0 0 6px;
+  --experience-item-before-opacity: 0;
+  --experience-item-before-transition: opacity 0.2s ease;
+  --experience-item-before-hover-opacity: 1;
+
+  /* Experience duration pseudo-element */
+  --experience-duration-before-content: '◷ ';
+  --experience-duration-before-opacity: 0.5;
+
+  /* Link hover extended */
+  --link-hover-border-block-end-color: var(--link-color);
+  --link-hover-color: var(--accent-color);
+
+  /* Principles/Community list item pseudo-element */
+  --list-item-before-content: '✓';
+  --list-item-before-position: absolute;
+  --list-item-before-left: 0.25rem;
+  --list-item-before-top: 0.75rem;
+  --list-item-before-color: var(--status-green);
+  --list-item-before-font-weight: 700;
+  --list-item-before-font-size: 1rem;
+
+  /* Principles/Community list item hover */
+  --list-item-hover-transform: translateX(4px);
+  --list-item-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Education item hover */
+  --education-item-hover-transform: translateX(4px);
+  --education-item-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Education item transition */
+  --education-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Light Mode */
@@ -292,9 +355,6 @@ body[data-theme='dashboard'] {
   /* Show dashboard-specific elements */
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
-
-  font-weight: 400;
-  letter-spacing: 0;
 
   /* Main container - central dashboard panel */
   .resume__main {
@@ -470,16 +530,7 @@ body[data-theme='dashboard'] {
     opacity: 0.8;
   }
 
-  /* Section Titles - Panel Headers */
-  .resume-section__title:not(.nostalgia) {
-    &::before {
-      content: '●';
-      color: var(--status-green);
-      font-size: 0.75rem;
-      animation: pulse-dot 3s ease-in-out infinite;
-      will-change: opacity;
-    }
-  }
+  /* Section Titles - Panel Headers controlled by custom properties */
 
   /* Resume sections - panel style */
   .resume-section {
@@ -518,39 +569,12 @@ body[data-theme='dashboard'] {
     gap: 1rem;
   }
 
-  .skills-grid__title {
-    &::before {
-      content: '▸';
-      color: var(--status-green);
-      font-size: 0.875rem;
-    }
-  }
+  /* Skills grid title controlled by custom properties */
 
-  /* Experience Items - Log Entry Style */
+  /* Experience Items - Log Entry Style controlled by custom properties */
   .experience-item {
     &:first-of-type {
       margin-block-start: 0;
-    }
-
-    &:hover {
-      transform: translateX(4px);
-      box-shadow: var(--dashboard-shadow-md);
-      border-color: var(--accent-color);
-
-      &::before {
-        opacity: 1;
-      }
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 3px;
-      background: var(--accent-color);
-      border-radius: 6px 0 0 6px;
-      opacity: 0;
-      transition: opacity 0.2s ease;
     }
   }
 
@@ -574,11 +598,7 @@ body[data-theme='dashboard'] {
     color: var(--experience-duration-color, inherit);
     opacity: var(--experience-duration-opacity, 1);
     white-space: nowrap;
-
-    &::before {
-      content: '◷ ';
-      opacity: 0.5;
-    }
+    /* ::before controlled by custom properties */
   }
 
   .experience-item__description {
@@ -607,30 +627,10 @@ body[data-theme='dashboard'] {
     border-block-end: 1px solid transparent;
     transition: border-color 0.2s ease, color 0.2s ease;
     font-weight: 500;
-
-    &:hover {
-      border-block-end-color: var(--link-color);
-      color: var(--accent-color);
-    }
+    /* :hover controlled by custom properties */
   }
 
-  /* Principles list - Status items */
-  .principles-list__item {
-    &::before {
-      content: '✓';
-      position: absolute;
-      left: 0.25rem;
-      top: 0.75rem;
-      color: var(--status-green);
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    &:hover {
-      transform: translateX(4px);
-      box-shadow: var(--dashboard-shadow-md);
-    }
-  }
+  /* Principles list - Status items controlled by custom properties */
 
   /* Education items - Timeline entries */
   .education-item {
@@ -640,12 +640,7 @@ body[data-theme='dashboard'] {
     padding: 1rem;
     margin-block-start: 0.75rem;
     box-shadow: var(--dashboard-shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateX(4px);
-      box-shadow: var(--dashboard-shadow-md);
-    }
+    /* transition and :hover controlled by custom properties */
   }
 
   .education-item__school {

@@ -467,6 +467,103 @@ Custom Properties
   --heading-text-shadow: none;
   --link-text-decoration: underline;
   --link-hover-text-shadow: none;
+
+  /* Body pseudo-element properties */
+  --body-before-content: none;
+  --body-before-display: none;
+  --body-before-position: static;
+  --body-before-inset: auto;
+  --body-before-background: transparent;
+  --body-before-pointer-events: auto;
+  --body-before-z-index: auto;
+
+  /* Typography letter-spacing overrides */
+  --heading-letter-spacing: normal;
+  --body-text-letter-spacing: normal;
+
+  /* Link hover behavior */
+  --link-hover-text-decoration: none;
+  --link-hover-border-block-end: none;
+
+  /* Dial selector hover/active states */
+  --dial-label-hover-text-shadow: none;
+  --dial-label-hover-border-color: transparent;
+  --dial-label-hover-background: transparent;
+  --dial-label-hover-box-shadow: none;
+  --dial-label-active-text-shadow: none;
+  --dial-label-active-font-weight: normal;
+  --dial-label-active-border: none;
+  --dial-label-active-box-shadow: none;
+  --dial-label-active-background: transparent;
+  --dial-label-active-color: inherit;
+
+  /* Print link animation */
+  --printlink-animation: none;
+
+  /* Print/Save button hover/active states */
+  --printlink-hover-filter: none;
+  --printlink-active-box-shadow-override: none;
+  --printlink-active-transform-override: none;
+
+  /* Body typography */
+  --body-font-weight: normal;
+  --body-letter-spacing: normal;
+
+  /* Section title pseudo-element */
+  --section-title-before-content: none;
+  --section-title-before-display: none;
+  --section-title-before-color: inherit;
+  --section-title-before-font-size: inherit;
+  --section-title-before-animation: none;
+  --section-title-before-will-change: auto;
+
+  /* Skills title pseudo-element */
+  --skills-title-before-content: none;
+  --skills-title-before-display: none;
+  --skills-title-before-color: inherit;
+  --skills-title-before-font-size: inherit;
+
+  /* Experience item hover states */
+  --experience-item-hover-transform: none;
+  --experience-item-hover-box-shadow: none;
+  --experience-item-hover-border-color: inherit;
+
+  /* Experience item pseudo-element */
+  --experience-item-before-content: none;
+  --experience-item-before-display: none;
+  --experience-item-before-position: static;
+  --experience-item-before-inset: auto;
+  --experience-item-before-width: auto;
+  --experience-item-before-background: transparent;
+  --experience-item-before-border-radius: 0;
+  --experience-item-before-opacity: 1;
+  --experience-item-before-transition: none;
+  --experience-item-before-hover-opacity: 1;
+
+  /* Experience duration pseudo-element */
+  --experience-duration-before-content: none;
+  --experience-duration-before-opacity: 1;
+
+  /* Link hover extended */
+  --link-hover-border-block-end-color: transparent;
+  --link-hover-color: inherit;
+
+  /* Principles/Community list item pseudo-elements */
+  --list-item-before-content: none;
+  --list-item-before-position: static;
+  --list-item-before-left: auto;
+  --list-item-before-top: auto;
+  --list-item-before-color: inherit;
+  --list-item-before-font-weight: normal;
+  --list-item-before-font-size: inherit;
+
+  /* Principles/Community list item hover */
+  --list-item-hover-transform: none;
+  --list-item-hover-box-shadow: none;
+
+  /* Education item hover */
+  --education-item-hover-transform: none;
+  --education-item-hover-box-shadow: none;
 }
 
 /* ===========================
@@ -491,6 +588,20 @@ body.resume {
   background-image: var(--background-image);
   -webkit-font-smoothing: antialiased;
   position: relative;
+  text-shadow: var(--text-shadow);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+
+  /* Body pseudo-element support */
+  &::before {
+    content: var(--body-before-content);
+    display: var(--body-before-display);
+    position: var(--body-before-position);
+    inset: var(--body-before-inset);
+    background: var(--body-before-background);
+    pointer-events: var(--body-before-pointer-events);
+    z-index: var(--body-before-z-index);
+  }
 }
 
 /* Reset margins for common elements */
@@ -514,6 +625,12 @@ p {
   }
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: var(--heading-letter-spacing, normal);
+}
+
 h1.resume-header__name {
   order: var(--header-name-order, 1);
   font-size: var(--header-name-font-size, 2.6rem);
@@ -534,6 +651,11 @@ h1.resume-header__name {
   position: var(--header-name-position, static);
   animation: var(--header-name-animation, none);
   will-change: var(--header-name-will-change, auto);
+}
+
+p,
+li {
+  letter-spacing: var(--body-text-letter-spacing, normal);
 }
 
 .resume-header__name-greeting,
@@ -597,6 +719,15 @@ h2.resume-section__title {
   animation: var(--section-title-animation, none);
   align-items: var(--section-title-align-items, normal);
   gap: var(--section-title-gap, normal);
+
+  &::before {
+    content: var(--section-title-before-content);
+    display: var(--section-title-before-display);
+    color: var(--section-title-before-color);
+    font-size: var(--section-title-before-font-size);
+    animation: var(--section-title-before-animation);
+    will-change: var(--section-title-before-will-change);
+  }
 }
 
 h3.experience-item__role {
@@ -638,6 +769,10 @@ a:not(#resume-header__printlink) {
   }
 
   &:hover {
+    text-decoration: var(--link-hover-text-decoration, underline);
+    border-block-end: var(--link-hover-border-block-end, none);
+    border-block-end-color: var(--link-hover-border-block-end-color);
+    color: var(--link-hover-color);
     text-shadow: var(--link-hover-text-shadow, none);
   }
 }
@@ -802,6 +937,13 @@ Resume Components
   display: var(--skills-title-display, block);
   align-items: var(--skills-title-align-items, normal);
   gap: var(--skills-title-gap, normal);
+
+  &::before {
+    content: var(--skills-title-before-content);
+    display: var(--skills-title-before-display);
+    color: var(--skills-title-before-color);
+    font-size: var(--skills-title-before-font-size);
+  }
 }
 
 .skills-grid__items {
@@ -832,6 +974,28 @@ Resume Components
   &:first-of-type {
     border-block-start: 3px solid var(--border-color);
   }
+
+  &::before {
+    content: var(--experience-item-before-content);
+    display: var(--experience-item-before-display);
+    position: var(--experience-item-before-position);
+    inset: var(--experience-item-before-inset);
+    width: var(--experience-item-before-width);
+    background: var(--experience-item-before-background);
+    border-radius: var(--experience-item-before-border-radius);
+    opacity: var(--experience-item-before-opacity);
+    transition: var(--experience-item-before-transition);
+  }
+
+  &:hover {
+    transform: var(--experience-item-hover-transform);
+    box-shadow: var(--experience-item-hover-box-shadow);
+    border-color: var(--experience-item-hover-border-color);
+
+    &::before {
+      opacity: var(--experience-item-before-hover-opacity);
+    }
+  }
 }
 
 .experience-item__header {
@@ -857,8 +1021,14 @@ Resume Components
   letter-spacing: 0.12em;
 }
 
-.experience-item__dates {
+.experience-item__dates,
+.experience-item__duration {
   white-space: nowrap;
+
+  &::before {
+    content: var(--experience-duration-before-content);
+    opacity: var(--experience-duration-before-opacity);
+  }
 }
 
 .experience-item__tech {
@@ -980,6 +1150,21 @@ Resume Components
   &:first-child {
     border-block-start: 0;
   }
+
+  &::before {
+    content: var(--list-item-before-content);
+    position: var(--list-item-before-position);
+    left: var(--list-item-before-left);
+    top: var(--list-item-before-top);
+    color: var(--list-item-before-color);
+    font-weight: var(--list-item-before-font-weight);
+    font-size: var(--list-item-before-font-size);
+  }
+
+  &:hover {
+    transform: var(--list-item-hover-transform);
+    box-shadow: var(--list-item-hover-box-shadow);
+  }
 }
 
 /* Education */
@@ -989,6 +1174,12 @@ Resume Components
   font-size: 0.9rem;
   background-color: var(--education-item-background, var(--section-bg, transparent));
   box-shadow: var(--education-item-box-shadow, none);
+  transition: var(--education-item-transition, none);
+
+  &:hover {
+    transform: var(--education-item-hover-transform);
+    box-shadow: var(--education-item-hover-box-shadow);
+  }
 }
 
 .education-item__degree {
@@ -1024,6 +1215,21 @@ Resume Components
 
   &:first-child {
     border-block-start: 0;
+  }
+
+  &::before {
+    content: var(--list-item-before-content);
+    position: var(--list-item-before-position);
+    left: var(--list-item-before-left);
+    top: var(--list-item-before-top);
+    color: var(--list-item-before-color);
+    font-weight: var(--list-item-before-font-weight);
+    font-size: var(--list-item-before-font-size);
+  }
+
+  &:hover {
+    transform: var(--list-item-hover-transform);
+    box-shadow: var(--list-item-hover-box-shadow);
   }
 }
 
@@ -1081,8 +1287,14 @@ Resume Components
   }
 
   &:active {
-    transform: var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)));
-    box-shadow: var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none));
+    transform: var(
+      --printlink-active-transform-override,
+      var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)))
+    );
+    box-shadow: var(
+      --printlink-active-box-shadow-override,
+      var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none))
+    );
     opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
   }
 }
@@ -1097,6 +1309,7 @@ Resume Components
   transform: var(--printlink-transform, none);
   opacity: var(--printlink-opacity, 1);
   filter: var(--printlink-filter, none);
+  animation: var(--printlink-animation, none);
   box-sizing: border-box;
 
   &:hover {
@@ -1115,8 +1328,14 @@ Resume Components
   }
 
   &:active {
-    transform: var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)));
-    box-shadow: var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none));
+    transform: var(
+      --printlink-active-transform-override,
+      var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)))
+    );
+    box-shadow: var(
+      --printlink-active-box-shadow-override,
+      var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none))
+    );
     opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
   }
 
