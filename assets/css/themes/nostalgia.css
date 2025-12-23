@@ -208,14 +208,14 @@ Nostalgia Theme (Geocities 90s)
 .visitor-counter {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
   background: var(--section-bg, transparent);
-  border: 3px ridge var(--accent-color, #000);
+  border: var(--border-width-thick) ridge var(--accent-color, #000);
   font-family: 'Courier New', monospace;
   font-weight: bold;
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
-  margin: 1rem 0;
+  font-size: clamp(var(--spacing-md), 2vw + var(--spacing-xs), var(--spacing-lg));
+  margin: var(--spacing-md) 0;
   max-width: fit-content;
   margin-inline: auto;
   justify-content: center;
@@ -233,16 +233,16 @@ Nostalgia Theme (Geocities 90s)
   text-align: center;
   background: #000;
   color: #ff0000;
-  border: 2px inset #666;
+  border: var(--border-width-normal) inset #666;
   padding: 0.25rem;
-  font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.8rem);
+  font-size: clamp(1.2rem, 2.5vw + var(--spacing-xs), 1.8rem);
 }
 
 /* Retro badge */
 .retro-badge {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 3px solid;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: var(--border-width-thick) solid;
   border-color: #ff00ff #00ffff #00ffff #ff00ff;
   background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
   background-size: 400% 400%;
@@ -254,10 +254,10 @@ Nostalgia Theme (Geocities 90s)
 :root[data-theme='nostalgia'][data-mode='light'] {
   --printlink-background: linear-gradient(135deg, #ff0099 0%, #ff6600 50%, #ffff00 100%);
   --printlink-color: var(--color-white);
-  --printlink-border: 4px outset #ff00ff;
+  --printlink-border: var(--border-width-extra-thick) outset #ff00ff;
   --printlink-border-radius: 8px;
-  --printlink-padding: 0.85rem 1.75rem;
-  --printlink-font-size: 1rem;
+  --printlink-padding: var(--font-size-sm) var(--spacing-lg);
+  --printlink-font-size: var(--spacing-md);
   --printlink-font-weight: bold;
   --printlink-letter-spacing: 0.08em;
   --printlink-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
@@ -275,10 +275,10 @@ Nostalgia Theme (Geocities 90s)
 :root[data-theme='nostalgia'][data-mode='dark'] {
   --printlink-background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
   --printlink-color: var(--color-blue-navy);
-  --printlink-border: 4px outset #00ffff;
+  --printlink-border: var(--border-width-extra-thick) outset #00ffff;
   --printlink-border-radius: 8px;
-  --printlink-padding: 0.85rem 1.75rem;
-  --printlink-font-size: 1rem;
+  --printlink-padding: var(--font-size-sm) var(--spacing-lg);
+  --printlink-font-size: var(--spacing-md);
   --printlink-font-weight: bold;
   --printlink-letter-spacing: 0.08em;
   --printlink-text-shadow: 2px 2px 4px oklch(100% 0 0 / 0.5);

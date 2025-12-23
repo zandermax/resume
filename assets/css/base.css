@@ -9,6 +9,26 @@ Custom Properties
   --background-color: var(--color-white);
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+  /* Spacing system */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border width system */
+  --border-width-thin: 1px;
+  --border-width-normal: 2px;
+  --border-width-thick: 3px;
+  --border-width-extra-thick: 4px;
+
+  /* Font size system */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 0.95rem;
+  --font-size-lg: 1.05rem;
+
   /* Dial-selector custom properties */
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
@@ -1038,6 +1058,33 @@ Resume Components
   background: var(--printlink-background, var(--background-color));
   color: var(--printlink-color, var(--text-color));
   box-shadow: var(--printlink-box-shadow, none);
+  position: var(--printlink-position, relative);
+  transition: var(--printlink-transition, none);
+  transform: var(--printlink-transform, none);
+  opacity: var(--printlink-opacity, 1);
+  filter: var(--printlink-filter, none);
+  box-sizing: border-box;
+
+  &:hover {
+    background: var(--printlink-hover-background, var(--text-color));
+    background-size: var(--printlink-hover-background-size, auto);
+    color: var(--printlink-hover-color, var(--background-color));
+    box-shadow: var(--printlink-hover-shadow, none);
+    text-shadow: var(--printlink-hover-text-shadow, none);
+    border-color: var(--printlink-hover-border-color, inherit);
+    transform: var(--printlink-hover-transform, var(--printlink-transform, none));
+    filter: var(--printlink-hover-filter, var(--printlink-filter, none));
+    opacity: var(--printlink-hover-opacity, var(--printlink-opacity, 1));
+    animation: var(--printlink-hover-animation, none);
+    outline: var(--printlink-hover-border-width, 0) solid var(--printlink-hover-border-color, currentColor);
+    outline-offset: calc(-1 * var(--printlink-hover-border-width, 0px));
+  }
+
+  &:active {
+    transform: var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)));
+    box-shadow: var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none));
+    opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
+  }
 }
 
 /* Save button colors are defined in terminal.css theme */

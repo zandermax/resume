@@ -21,33 +21,33 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --header-name-wrapper-margin-block-start: 1.5rem;
 
   /* Experience item custom properties */
-  --experience-item-border: 1px solid var(--panel-border);
+  --experience-item-border: var(--border-width-thin) solid var(--panel-border);
   --experience-item-background: var(--panel-bg);
   --experience-item-border-radius: 6px;
-  --experience-item-padding: 1.25rem;
-  --experience-item-margin-top: 1rem;
+  --experience-item-padding: var(--spacing-md);
+  --experience-item-margin-top: var(--spacing-md);
   --experience-item-box-shadow: var(--dashboard-shadow-sm);
   --experience-item-position: relative;
   --experience-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   /* Skills grid group custom properties */
-  --skills-group-margin-bottom: 0.5rem;
-  --skills-group-border: 1px solid var(--panel-border);
-  --skills-group-padding: 1rem;
+  --skills-group-margin-bottom: var(--spacing-xs);
+  --skills-group-border: var(--border-width-thin) solid var(--panel-border);
+  --skills-group-padding: var(--spacing-md);
   --skills-group-background: var(--panel-bg);
   --skills-group-border-radius: 6px;
-  --skills-group-margin: 0.5rem;
+  --skills-group-margin: var(--spacing-xs);
   --skills-group-box-shadow: var(--dashboard-shadow-sm);
   --skills-group-transition: transform 0.2s ease, box-shadow 0.2s ease;
   --skills-group-hover-transform: translateY(-2px);
   --skills-group-hover-box-shadow: var(--dashboard-shadow-md);
 
   /* Skills grid title custom properties */
-  --skills-title-font-size: 0.75rem;
+  --skills-title-font-size: var(--spacing-sm);
   --skills-title-border-style: solid;
-  --skills-title-border-width: 1px;
-  --skills-title-padding-bottom: 0.5rem;
-  --skills-title-margin-bottom: 0.75rem;
+  --skills-title-border-width: var(--border-width-thin);
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
   --skills-title-font-weight: 600;
   --skills-title-color: var(--accent-color);
   --skills-title-display: flex;
@@ -58,19 +58,19 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   /* Experience item company custom properties */
   --experience-company-font-weight: 500;
   --experience-company-color: var(--accent-color);
-  --experience-company-font-size: 0.95rem;
+  --experience-company-font-size: var(--font-size-md);
 
   /* Skills grid custom properties */
   --skills-grid-padding: 0;
 
   /* Skills grid items custom properties */
-  --skills-items-font-size: 0.85rem;
+  --skills-items-font-size: var(--font-size-sm);
   --skills-items-line-height: 1.6;
   --skills-items-font-family: var(--mono-font);
 
   /* Experience item title custom properties */
   --experience-title-font-weight: 600;
-  --experience-title-font-size: 1rem;
+  --experience-title-font-size: var(--spacing-md);
   --experience-title-color: var(--text-color);
 
   /* Experience item duration custom properties */
@@ -85,7 +85,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
 
   /* Header meta custom properties */
   --header-meta-font-family: var(--mono-font);
-  --header-meta-font-size: 0.85rem;
+  --header-meta-font-size: var(--font-size-sm);
   --header-meta-opacity: 0.85;
 
   /* Header name custom properties */
@@ -93,7 +93,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --header-name-letter-spacing: -0.02em;
 
   /* Section title custom properties */
-  --section-title-padding: 1.25rem 2rem;
+  --section-title-padding: var(--spacing-md) var(--spacing-xl);
   --section-title-margin: 0;
   --section-title-background: var(--panel-bg);
   --section-title-color: var(--text-color);
@@ -112,10 +112,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --section-title-gap: 0.75rem;
 
   /* Print link custom properties */
-  --printlink-border: 2px solid var(--accent-color);
+  --printlink-border: var(--border-width-normal) solid var(--accent-color);
   --printlink-background: var(--accent-color);
   --printlink-color: #ffffff;
-  --printlink-padding: 0.75rem 1.5rem;
+  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
   --printlink-border-radius: 6px;
   --printlink-font-size: 0.9rem;
   --printlink-font-weight: 700;
@@ -134,8 +134,8 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --principles-item-border: 1px solid var(--panel-border);
   --principles-item-background: var(--panel-bg);
   --principles-item-border-radius: 6px;
-  --principles-item-padding: 1rem 1rem 1rem 1.25rem;
-  --principles-item-margin-top: 0.75rem;
+  --principles-item-padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  --principles-item-margin-top: var(--spacing-sm);
   --principles-item-box-shadow: var(--dashboard-shadow-sm);
   --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
   --principles-item-position: relative;

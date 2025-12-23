@@ -253,7 +253,7 @@ body[data-theme='crt'] {
     background: var(--text-color);
     color: var(--background-color);
     font-family: var(--font-family);
-    font-size: 0.85rem;
+    font-size: var(--font-size-sm);
     line-height: 1.4;
     text-shadow: 0 0 8px var(--background-color);
     box-shadow: 0 0 20px var(--text-color), inset 0 0 40px oklch(0% 0 0 / 0.3);
@@ -390,7 +390,7 @@ body[data-theme='crt'] {
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .resume__main {
-      padding: 1.5rem;
+      padding: var(--spacing-lg);
     }
 
     h1.resume-header__name {
@@ -404,7 +404,7 @@ body[data-theme='crt'] {
 
   @media (max-width: 500px) {
     .resume__main {
-      padding: 1rem;
+      padding: var(--spacing-md);
     }
 
     h1.resume-header__name {

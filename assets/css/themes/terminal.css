@@ -70,7 +70,7 @@ Terminal Theme (1992 CLI-inspired)
   --education-item-padding: 1rem;
   --header-border-width: 0;
   --header-box-shadow: var(--terminal-inset-raised-lg);
-  --header-padding: 1.25rem;
+  --header-padding: 0.5rem;
   --bullet-before-content: '▪';
   --bullet-font-size: 0.7rem;
   --header-meta-font-size: 0.9rem;
@@ -234,7 +234,7 @@ Terminal Theme (1992 CLI-inspired)
 body[data-theme='terminal'] {
   /* Education box - using custom properties */
   .education-item {
-    font-size: 0.95rem;
+    font-size: var(--font-size-md);
   }
 
   /* Experience and header - using custom properties */
@@ -244,7 +244,7 @@ body[data-theme='terminal'] {
   }
 
   .experience-item__meta {
-    font-size: 0.85rem;
+    font-size: var(--font-size-sm);
   }
 
   /* Header - using custom properties */
@@ -252,23 +252,25 @@ body[data-theme='terminal'] {
     background: var(--header-bg);
   }
 
-  /* Save Resume button - flat dark blue box with blocky borders */
-  .resume-header__savelink {
+  /* Save Resume and Print button - blue in light mode, light in dark mode */
+  .resume-header__savelink,
+  #resume-header__printlink {
     display: inline-flex; /* Show in terminal theme */
     align-items: center;
     justify-content: center;
-    padding: 0.55rem 1.1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: 0.9rem;
     font-family: var(--font-family);
     cursor: pointer;
     transition: none;
     border-radius: 0;
-    background: var(--terminal-button-bg);
-    color: var(--text-color);
+    background: var(--terminal-title-bg);
+    color: var(--color-white);
     font-weight: bold;
     box-shadow: var(--terminal-inset-raised-lg);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    border: 2px solid var(--terminal-border-dark);
 
     &:hover {
       filter: brightness(1.15);
@@ -279,21 +281,6 @@ body[data-theme='terminal'] {
       box-shadow: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
         inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
       transform: translate(1px, 1px);
-    }
-  }
-
-  /* Print button - bordered style with hover lift */
-  #resume-header__printlink {
-    border: 2px solid var(--text-color);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 2px 2px 0 var(--terminal-black-80);
-      filter: brightness(0.95);
-    }
-
-    &:active {
-      transform: translateY(0);
     }
   }
 
@@ -477,21 +464,16 @@ body[data-theme='terminal'] {
       }
     }
 
-    /* Make Save button more noticeable in dark mode */
-    .resume-header__savelink {
-      background: var(--terminal-title-bg);
-      color: var(--dial-color-selection);
-      border: 2px solid var(--terminal-border-light);
-    }
-
-    /* Make Print button more noticeable in dark mode */
+    /* Make both buttons light and bright in dark mode */
+    .resume-header__savelink,
     #resume-header__printlink {
-      border-color: var(--dial-color-indicator);
+      background: var(--terminal-button-bg);
+      color: var(--dial-color-indicator);
+      border: 2px solid var(--dial-color-indicator);
 
       &:hover {
-        border-color: var(--dial-color-selection);
-        box-shadow: 0 0 8px var(--dial-color-selection / 0.4);
-        filter: brightness(1.15);
+        background: var(--terminal-border-light);
+        color: var(--dial-color-indicator);
       }
     }
   }
@@ -563,7 +545,7 @@ body[data-theme='terminal'] {
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .resume__main {
-      padding: 1.5rem;
+      padding: var(--spacing-lg);
     }
 
     h1.resume-header__name {
@@ -576,7 +558,7 @@ body[data-theme='terminal'] {
     }
 
     dial-selector .dial-label {
-      padding: 0.35rem 0.65rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .terminal-dialog {
@@ -586,7 +568,7 @@ body[data-theme='terminal'] {
 
   @media (max-width: 500px) {
     .resume__main {
-      padding: 1rem;
+      padding: var(--spacing-md);
     }
 
     .resume-header {
@@ -598,14 +580,7 @@ body[data-theme='terminal'] {
     }
 
     dial-selector .dial-label {
-      padding: 0.3rem 0.55rem;
-    }
-
-    #resume-header__printlink {
-      --printlink-font-size: 0.7rem;
-      --printlink-padding: 0.5rem 0.85rem;
-      --printlink-before-content: '[[';
-      --printlink-after-content: ']]';
+      padding: var(--spacing-xs) var(--spacing-xs);
     }
 
     .resume-header__buttons {
@@ -613,13 +588,43 @@ body[data-theme='terminal'] {
       gap: 0.5rem;
     }
 
-    .resume-header__savelink {
-      font-size: 0.7rem;
-      padding: 0.5rem 1rem;
+    .resume-header__savelink,
+    #resume-header__printlink {
+      font-size: 0.85rem;
+      padding-block: 0.65rem;
+      padding-inline: var(--spacing-xs);
     }
 
     .terminal-dialog {
       box-shadow: 6px 6px 0 var(--terminal-black-80), 12px 12px 0 var(--terminal-black-40);
+    }
+
+    .terminal-dialog__button {
+      bottom: 1.65rem;
+      padding: 0.6rem 4.5rem;
+    }
+
+    .terminal-dialog__print-overlay {
+      bottom: 1.65rem;
+      padding: 0.6rem 4.5rem;
+    }
+
+    .terminal-dialog__loading-bar {
+      --block-size: 1.25ch;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .resume-header__buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .resume-header__savelink,
+    #resume-header__printlink {
+      font-size: 0.85rem;
+      padding-block: 0.65rem;
+      padding-inline: var(--spacing-xs);
     }
 
     .terminal-dialog__frame {
@@ -627,37 +632,21 @@ body[data-theme='terminal'] {
     }
 
     .terminal-dialog__button {
-      bottom: 1.65rem;
-      padding: 0.6rem 4.5rem;
+      padding: 0.6rem 3.5rem;
     }
 
     .terminal-dialog__print-overlay {
-      bottom: 1.65rem;
-      padding: 0.6rem 4.5rem;
+      padding: 0.6rem 3.5rem;
     }
 
     .terminal-dialog__loading-bar {
-      width: 25ch;
-      --block-size: 1.25ch;
+      --block-size: 1ch;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     .terminal-dialog__frame {
-      font-size: 0.7rem;
-    }
-
-    .terminal-dialog__button {
-      padding: 0.6rem 3.5rem;
-    }
-
-    .terminal-dialog__print-overlay {
-      padding: 0.6rem 3.5rem;
-    }
-
-    .terminal-dialog__loading-bar {
-      width: 20ch;
-      --block-size: 1ch;
+      font-size: 0.6rem;
     }
   }
 }

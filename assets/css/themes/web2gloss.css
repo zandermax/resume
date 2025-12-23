@@ -57,24 +57,24 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --web2-radius-sm: 6px;
 
   /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 2rem;
+  --header-name-wrapper-margin-block-start: var(--spacing-xl);
 
   /* Experience item custom properties */
   --experience-item-position: relative;
   --experience-item-border-radius: var(--web2-radius-lg);
   --experience-item-background: linear-gradient(180deg, var(--section-bg) 0%, oklch(100% 0 0 / 0.9) 100%);
-  --experience-item-padding: 2rem;
-  --experience-item-border: 1px solid var(--border-color);
+  --experience-item-padding: var(--spacing-xl);
+  --experience-item-border: var(--border-width-thin) solid var(--border-color);
   --experience-item-box-shadow: var(--web2-shadow-lg);
   --experience-item-transition: var(--web2-transition-normal);
-  --experience-item-margin-top: 1.5rem;
+  --experience-item-margin-top: var(--spacing-lg);
 
   /* Skills grid group custom properties */
   --skills-group-border-radius: var(--web2-radius-md);
   --skills-group-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.5) 100%);
-  --skills-group-padding: 1rem;
-  --skills-group-margin-bottom: 1rem;
-  --skills-group-border: 1px solid oklch(0% 0 0 / 0.1);
+  --skills-group-padding: var(--spacing-md);
+  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.1);
   --skills-group-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
   --skills-group-position: relative;
   --skills-group-transition: var(--web2-transition-fast);
@@ -89,11 +89,11 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --skills-title-color: var(--web2-primary);
   --skills-title-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.8);
   --skills-title-border-style: solid;
-  --skills-title-border-width: 2px;
+  --skills-title-border-width: var(--border-width-normal);
   --skills-title-border: none;
   --skills-title-border-block-end-color: var(--web2-primary);
-  --skills-title-padding-bottom: 0.5rem;
-  --skills-title-margin-bottom: 0.75rem;
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
 
   /* Experience item company custom properties */
   --experience-company-font-weight: 600;
@@ -105,8 +105,8 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --tech-badge-background: linear-gradient(135deg, var(--web2-success) 0%, oklch(67% 0.16 125) 100%);
   --tech-badge-color: var(--color-white);
   --tech-badge-font-weight: 600;
-  --tech-badge-padding: 0.5rem 1rem;
-  --tech-badge-font-size: 0.85rem;
+  --tech-badge-padding: var(--spacing-xs) var(--spacing-md);
+  --tech-badge-font-size: var(--font-size-sm);
   --tech-badge-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.3);
   --tech-badge-position: relative;
   --tech-badge-text-shadow: var(--web2-text-shadow-sm);
@@ -140,10 +140,10 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
   /* Community/Principles list item custom properties */
   --community-item-border-radius: var(--web2-radius-sm);
-  --community-item-padding: 1rem;
-  --community-item-margin-bottom: 0.75rem;
+  --community-item-padding: var(--spacing-md);
+  --community-item-margin-bottom: var(--spacing-sm);
   --community-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
-  --community-item-border: 1px solid oklch(0% 0 0 / 0.05);
+  --community-item-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.05);
   --community-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
   --community-item-transition: var(--web2-transition-fast);
   --community-item-border-width: 0;

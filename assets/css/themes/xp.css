@@ -60,30 +60,30 @@ Windows XP Theme (Luna)
   --xp-white-80: oklch(100% 0 0 / 0.8);
 
   /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 1.75rem;
+  --header-name-wrapper-margin-block-start: var(--spacing-lg);
 
   /* Experience item custom properties */
   --experience-item-border: 0;
   --experience-item-background: var(--section-bg);
   --experience-item-border-radius: var(--xp-radius-md);
   --experience-item-box-shadow: var(--xp-panel-shadow), 0 2px 4px var(--xp-black-10);
-  --experience-item-padding: 1.25rem;
-  --experience-item-margin-top: 1.25rem;
+  --experience-item-padding: var(--spacing-md);
+  --experience-item-margin-top: var(--spacing-md);
 
   /* Skills grid group custom properties */
   --skills-group-border: 0;
   --skills-group-background: var(--section-bg);
   --skills-group-border-radius: var(--xp-radius-sm);
   --skills-group-box-shadow: var(--xp-panel-shadow);
-  --skills-group-padding: 0.75rem;
+  --skills-group-padding: var(--spacing-sm);
 
   /* Skills grid title custom properties */
   --skills-title-border-style: solid;
-  --skills-title-border-width: 2px;
+  --skills-title-border-width: var(--border-width-normal);
   --skills-title-border-block-end-color: var(--xp-window-border-block-start);
   --skills-title-color: var(--text-color);
   --skills-title-padding-bottom: 0.4rem;
-  --skills-title-margin-bottom: 0.5rem;
+  --skills-title-margin-bottom: var(--spacing-xs);
   --skills-title-font-weight: bold;
 
   /* Section text custom properties */
@@ -115,7 +115,7 @@ Windows XP Theme (Luna)
   /* Skills grid custom properties */
   --skills-grid-border: 0;
   --skills-grid-background: var(--xp-button-face);
-  --skills-grid-padding: 1rem;
+  --skills-grid-padding: var(--spacing-md);
   --skills-grid-border-radius: var(--xp-radius-md);
   --skills-grid-box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
     inset -1px -1px 0 var(--xp-button-dark-shadow);
@@ -124,13 +124,13 @@ Windows XP Theme (Luna)
   --community-item-padding: 0.75rem 0.5rem;
   --community-item-border-width: 0;
   --community-item-border-style: solid;
-  --principles-item-padding: 0.75rem 0.5rem;
+  --principles-item-padding: var(--spacing-sm) var(--spacing-xs);
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
 
   /* Header name custom properties */
   --header-name-border-color: var(--xp-window-border-block-start);
-  --header-name-border-width: 3px;
+  --header-name-border-width: var(--border-width-thick);
   --header-name-color: var(--text-color);
   --header-name-text-shadow: 2px 2px 4px var(--xp-black-10);
 
@@ -139,8 +139,8 @@ Windows XP Theme (Luna)
   --section-title-border-radius: var(--xp-radius-sm);
   --section-title-background: linear-gradient(180deg, oklch(47% 0.27 264) 0%, oklch(60% 0.2 245) 100%);
   --section-title-color: var(--section-title-color);
-  --section-title-padding: 0.6rem 1rem;
-  --section-title-margin: 0 -0.5rem 1rem;
+  --section-title-padding: 0.6rem var(--spacing-md);
+  --section-title-margin: 0 -var(--spacing-xs) var(--spacing-md);
   --section-title-box-shadow: 0 2px 4px var(--xp-black-20), inset 0 1px 0 var(--xp-white-30);
   --section-title-text-shadow: var(--xp-text-shadow, 1px 1px 2px var(--xp-black-30));
   --section-title-font-weight: bold;
@@ -159,7 +159,7 @@ Windows XP Theme (Luna)
   --printlink-color: var(--color-white);
   --printlink-font-weight: bold;
   --printlink-border-radius: 20px;
-  --printlink-padding: 0.6rem 1.5rem;
+  --printlink-padding: 0.6rem var(--spacing-lg);
   --printlink-box-shadow: var(--xp-button-shadow-hover);
   --printlink-text-shadow: 1px 1px 2px var(--xp-black-30);
   --printlink-transition: all 0.15s ease;

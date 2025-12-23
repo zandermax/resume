@@ -278,15 +278,15 @@ body[data-theme='metro'] .metro-chat-widget {
   --dial-color-indicator: var(--color-blue-metro);
   --dial-knob-background: oklch(96% 0 0); /* Light gray */
   --link-color: var(--color-blue-metro);
-  --link-visited-color: oklch(52% 0.24 340); /* Magenta */
+  --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(96% 0 0);
   --accent-color: var(--color-blue-metro);
   --metro-blue: var(--color-blue-metro);
-  --metro-green: oklch(64% 0.19 145); /* Metro green */
+  --metro-green: oklch(64% 0.19 145);
   --metro-orange: var(--color-orange);
   --metro-yellow: var(--color-yellow);
   --metro-magenta: oklch(52% 0.24 340);
-  --metro-red: oklch(60% 0.24 25); /* Metro red */
+  --metro-red: oklch(60% 0.24 25);
   --metro-purple: var(--color-purple);
 }
 
@@ -306,11 +306,11 @@ body[data-theme='metro'] .metro-chat-widget {
   --accent-color: var(--color-cyan-bright);
   --metro-blue: var(--color-cyan-bright);
   --metro-green: var(--color-green-bright);
-  --metro-orange: oklch(78% 0.14 70); /* Light orange */
-  --metro-yellow: oklch(85% 0.15 95); /* Light yellow */
+  --metro-orange: oklch(78% 0.14 70);
+  --metro-yellow: oklch(85% 0.15 95);
   --metro-magenta: var(--color-magenta-bright);
-  --metro-red: oklch(68% 0.22 25); /* Light red */
-  --metro-purple: oklch(60% 0.2 315); /* Purple */
+  --metro-red: oklch(68% 0.22 25);
+  --metro-purple: oklch(60% 0.2 315);
 }
 
 /* Typography-first, flat colors, zero skeuomorphism */
@@ -330,14 +330,14 @@ body[data-theme='metro'] {
 
   /* SECTION TITLES - Bold colored bars (Metro live tiles aesthetic) */
   .resume-section {
-    padding-block-start: 2rem;
-    padding-block-end: 2rem;
-    padding-inline-start: 2rem;
-    padding-inline-end: 2rem;
+    padding-block-start: var(--spacing-xl);
+    padding-block-end: var(--spacing-xl);
+    padding-inline-start: var(--spacing-xl);
+    padding-inline-end: var(--spacing-xl);
     margin-block-end: 0;
 
     &:not(:first-of-type) {
-      border-block-start: 3px solid var(--border-color);
+      border-block-start: var(--border-width-thick) solid var(--border-color);
     }
   }
 
@@ -379,9 +379,9 @@ body[data-theme='metro'] {
 
   /* Experience items - clean tiles with accent bar */
   .experience-item {
-    border-inline-start: 6px solid var(--metro-blue);
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
     margin-block-start: 0;
-    margin-block-end: 1.5rem;
+    margin-block-end: var(--spacing-lg);
 
     &:hover {
       border-inline-start-width: 12px;
@@ -408,17 +408,17 @@ body[data-theme='metro'] {
     border: 0;
     border-radius: 0;
     background: transparent;
-    padding: 1.5rem 0;
+    padding: var(--spacing-lg) 0;
     box-shadow: none;
   }
 
   .community-list__item,
   .principles-list__item {
-    border-inline-start: 4px solid var(--metro-blue);
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
 
     &:hover {
       border-inline-start-width: 8px;
-      padding-inline-start: 1.25rem;
+      padding-inline-start: var(--spacing-md);
     }
 
     /* Alternate colors for list items */
@@ -436,9 +436,9 @@ body[data-theme='metro'] {
   /* Education - tile style */
   .education-item {
     border: 0;
-    border-inline-start: 6px solid var(--metro-purple);
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-purple);
     background: var(--section-bg);
-    padding: 2rem;
+    padding: var(--spacing-xl);
     border-radius: 0;
     box-shadow: none;
     position: relative;
@@ -447,8 +447,8 @@ body[data-theme='metro'] {
   /* Header - bold, clean typography */
   .resume-header {
     border: 0;
-    border-block-end: 4px solid var(--metro-blue);
-    padding: 2rem;
+    border-block-end: var(--border-width-extra-thick) solid var(--metro-blue);
+    padding: var(--spacing-xl);
     background: transparent;
     box-shadow: none;
   }
@@ -460,7 +460,7 @@ body[data-theme='metro'] {
 
   .resume-header__name-greeting,
   .resume-header__name-small {
-    font-size: 1.5rem;
+    font-size: var(--spacing-lg);
     font-weight: 300;
     letter-spacing: 0;
     text-transform: none;
@@ -537,7 +537,7 @@ body[data-theme='metro'] {
 
   /* Dial selector housing - clean panel */
   .resume-header__dial-selector {
-    padding: 1.5rem;
+    padding: var(--spacing-lg);
     background: var(--section-bg);
     border: 0;
     border-radius: 0;
@@ -546,22 +546,22 @@ body[data-theme='metro'] {
 
     /* Responsive padding reductions for small viewports */
     @media (max-width: 600px) {
-      padding: 1rem;
+      padding: var(--spacing-md);
     }
 
     @media (max-width: 480px) {
-      padding: 0.75rem;
+      padding: var(--spacing-sm);
     }
 
     @media (max-width: 380px) {
-      padding: 0.5rem;
+      padding: var(--spacing-xs);
     }
   }
 
   .resume-header__dial-selector h3 {
     color: var(--text-color);
-    margin-block-end: 1rem;
-    font-size: 1rem;
+    margin-block-end: var(--spacing-md);
+    font-size: var(--spacing-md);
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
@@ -593,6 +593,7 @@ body[data-theme='metro'] {
     .metro-chat-widget__status-text {
       /* Dark mode text fade-in animation - cycles infinitely */
       animation: text-fade-in-dark 10s steps(1) infinite;
+      background: oklch(32% 0 0);
 
       &::before {
         color: var(--color-white);
@@ -603,34 +604,34 @@ body[data-theme='metro'] {
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     dial-selector .dial-label {
-      font-size: 0.75rem;
-      padding: 0.5rem 0.8rem;
+      font-size: var(--spacing-sm);
+      padding: var(--spacing-xs) 0.8rem;
     }
 
     .resume-header,
     .resume-section {
-      padding-inline-start: 1.5rem;
-      padding-inline-end: 1.5rem;
+      padding-inline-start: var(--spacing-lg);
+      padding-inline-end: var(--spacing-lg);
     }
   }
 
   @media (max-width: 500px) {
     .resume-header,
     .resume-section {
-      padding-inline-start: 1rem;
-      padding-inline-end: 1rem;
+      padding-inline-start: var(--spacing-md);
+      padding-inline-end: var(--spacing-md);
     }
 
     dial-selector .dial-label {
-      font-size: 0.7rem;
-      padding: 0.4rem 0.7rem;
+      font-size: var(--font-size-xs);
+      padding: 0.4rem var(--font-size-xs);
     }
 
     .experience-item,
     .education-item,
     .community-list__item,
     .principles-list__item {
-      padding: 1.25rem;
+      padding: var(--spacing-md);
     }
   }
 
@@ -711,6 +712,7 @@ body[data-theme='metro'] {
     font-weight: 400;
     line-height: 1.4;
     color: var(--color-black);
+    background: oklch(32% 0 0);
     position: relative;
 
     /* Initially hide the actual text content, cycle visibility */
