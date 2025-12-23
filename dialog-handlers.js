@@ -80,3 +80,39 @@ terminalDialog?.addEventListener('click', (e) => {
     terminalDialog.close();
   }
 });
+
+// Neo-Swiss AI Modal - Auto-scroll to keep latest section visible
+const neoswissToggle = document.getElementById('neoswiss-ai-toggle');
+if (neoswissToggle) {
+  neoswissToggle.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      // Modal just opened - set up auto-scroll behavior
+      const container = document.querySelector('.neoswiss-ai-modal__container');
+      const sections = document.querySelectorAll('.neoswiss-ai-modal__section');
+
+      if (container && sections.length > 0) {
+        // Reset scroll position to top when modal opens
+        container.scrollTop = 0;
+
+        // Set up auto-scroll for each section based on its animation delay
+        sections.forEach((section, index) => {
+          // Get the animation delay from computed styles
+          const computedStyle = window.getComputedStyle(section);
+          const animationDelay = parseFloat(computedStyle.animationDelay) || 0;
+
+          // Schedule scroll to happen partway through the section's appearance
+          // This ensures the user sees it enter from below
+          const scrollDelay = animationDelay * 1000 + 400; // 400ms after animation starts
+
+          setTimeout(() => {
+            section.scrollIntoView({
+              behavior: 'smooth',
+              block: 'end', // Align to bottom of viewport
+              inline: 'nearest',
+            });
+          }, scrollDelay);
+        });
+      }
+    }
+  });
+}

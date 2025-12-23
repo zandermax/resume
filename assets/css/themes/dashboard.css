@@ -103,7 +103,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --section-title-letter-spacing: 0.1em;
 
   /* Section content custom properties */
-  --section-content-padding-inline: 2rem;
+  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.05), 2rem);
   --section-title-line-height: 1;
   --section-title-display: flex;
   --section-title-border-inline-start: 4px solid var(--accent-color);
@@ -112,21 +112,23 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --section-title-gap: 0.75rem;
 
   /* Print link custom properties */
-  --printlink-border: 1px solid var(--panel-border);
-  --printlink-background: var(--panel-bg);
-  --printlink-padding: 0.625rem 1rem;
+  --printlink-border: 2px solid var(--accent-color);
+  --printlink-background: var(--accent-color);
+  --printlink-color: #ffffff;
+  --printlink-padding: 0.75rem 1.5rem;
   --printlink-border-radius: 6px;
-  --printlink-font-size: 0.85rem;
-  --printlink-font-weight: 600;
+  --printlink-font-size: 0.9rem;
+  --printlink-font-weight: 700;
   --printlink-text-transform: uppercase;
-  --printlink-letter-spacing: 0.05em;
+  --printlink-letter-spacing: 0.08em;
   --printlink-transition: all 0.2s ease;
-  --printlink-box-shadow: var(--dashboard-shadow-sm);
-  --printlink-hover-transform: translateY(-2px);
-  --printlink-hover-shadow: var(--dashboard-shadow-md);
+  --printlink-box-shadow: var(--dashboard-shadow-md), 0 0 0 0 var(--accent-color);
+  --printlink-hover-transform: translateY(-3px);
+  --printlink-hover-shadow: var(--dashboard-shadow-lg), 0 0 20px var(--accent-color);
   --printlink-hover-border-color: var(--accent-color);
   --printlink-hover-background: var(--accent-color);
-  --printlink-hover-color: var(--panel-bg);
+  --printlink-hover-color: #ffffff;
+  --printlink-hover-opacity: 0.9;
 
   /* Principles list item custom properties */
   --principles-item-border: 1px solid var(--panel-border);
@@ -599,7 +601,7 @@ body[data-theme='dashboard'] {
   }
 
   /* Links - Button-like readouts */
-  a:not(.resume-header__printlink) {
+  a:not(#resume-header__printlink) {
     text-decoration: none;
     border-block-end: 1px solid transparent;
     transition: border-color 0.2s ease, color 0.2s ease;
@@ -684,6 +686,10 @@ body[data-theme='dashboard'] {
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
+    ul {
+      padding-inline-start: 0;
+    }
+
     .dashboard-status-banner__content {
       flex-direction: column;
       align-items: flex-start;
@@ -692,6 +698,18 @@ body[data-theme='dashboard'] {
 
     .dashboard-metrics-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-card {
+      padding: 0.75rem;
+    }
+
+    .technologies-monitored .dashboard-card__label {
+      margin-inline-start: -0.25rem;
+    }
+
+    .resume-header__links {
+      margin-block-start: 1rem;
     }
 
     .skills-grid {

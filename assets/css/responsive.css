@@ -58,15 +58,14 @@ Mobile layout
     padding: 0;
   }
 
-  .resume-header__printlink {
+  #resume-header__printlink {
     margin-inline-start: 0;
     margin-block-start: 0.65rem;
-    align-self: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .resume-header__printlink {
-    padding: 0.55rem 0.5rem;
+  #resume-header__printlink {
+    padding: 0.85rem 0.5rem;
   }
 }

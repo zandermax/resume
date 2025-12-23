@@ -13,7 +13,6 @@ Print Styles
     padding: 0.5in 0.65in;
   }
 
-
   /* Avoid awkward splits across pages */
   .resume-section {
     page-break-inside: avoid;
@@ -29,8 +28,7 @@ Print Styles
   }
 
   /* Hide this element when printing the main page */
-  .resume-header__printlink {
+  #resume-header__printlink {
     display: none !important;
   }
 }
-

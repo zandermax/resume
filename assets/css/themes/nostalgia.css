@@ -243,3 +243,46 @@ Nostalgia Theme (Geocities 90s)
   animation: gradientShift 3s ease infinite;
   box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
 }
+
+/* Print Link Button Styling - 90s Style! */
+:root[data-theme='nostalgia'][data-mode='light'] {
+  --printlink-background: linear-gradient(135deg, #ff0099 0%, #ff6600 50%, #ffff00 100%);
+  --printlink-color: var(--color-white);
+  --printlink-border: 4px outset #ff00ff;
+  --printlink-border-radius: 8px;
+  --printlink-padding: 0.85rem 1.75rem;
+  --printlink-font-size: 1rem;
+  --printlink-font-weight: bold;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
+  --printlink-box-shadow: 0 6px 0 #cc0066, 0 8px 15px oklch(0% 0 0 / 0.3);
+  --printlink-transition: all 0.15s ease;
+  --printlink-transform: translateY(0);
+
+  --printlink-hover-background: linear-gradient(135deg, #ff00ff 0%, #ff9900 50%, #ffff00 100%);
+  --printlink-hover-color: var(--color-white);
+  --printlink-hover-shadow: 0 4px 0 #cc0066, 0 6px 12px oklch(0% 0 0 / 0.4);
+  --printlink-hover-transform: translateY(2px);
+  --printlink-hover-text-shadow: 2px 2px 6px oklch(0% 0 0 / 0.7);
+}
+
+:root[data-theme='nostalgia'][data-mode='dark'] {
+  --printlink-background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
+  --printlink-color: var(--color-blue-navy);
+  --printlink-border: 4px outset #00ffff;
+  --printlink-border-radius: 8px;
+  --printlink-padding: 0.85rem 1.75rem;
+  --printlink-font-size: 1rem;
+  --printlink-font-weight: bold;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-text-shadow: 2px 2px 4px oklch(100% 0 0 / 0.5);
+  --printlink-box-shadow: 0 6px 0 #006666, 0 8px 15px oklch(100% 0 0 / 0.3);
+  --printlink-transition: all 0.15s ease;
+  --printlink-transform: translateY(0);
+
+  --printlink-hover-background: linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #ffff00 100%);
+  --printlink-hover-color: var(--color-blue-navy);
+  --printlink-hover-shadow: 0 4px 0 #006666, 0 6px 12px oklch(100% 0 0 / 0.4);
+  --printlink-hover-transform: translateY(2px);
+  --printlink-hover-text-shadow: 2px 2px 6px oklch(100% 0 0 / 0.7);
+}

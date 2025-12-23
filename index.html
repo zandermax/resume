@@ -67,8 +67,8 @@
 			<div class="resume-header__top-row">
 				<div class="resume-header__dial-selector">
 					<h3>Year:</h3>
-					<dial-selector id="theme-selector" options="Now,1985,1992,1996,2001,2004,2007,2012,2017,2020,2027,2039"
-						default-option="Now"></dial-selector>
+					<dial-selector id="theme-selector" options="Today,1985,1992,1996,2001,2004,2007,2012,2017,2020,2027,2039"
+						default-option="Today"></dial-selector>
 				</div>
 				<div class="resume-header__dial-selector">
 					<h3>Mode:</h3>
@@ -91,7 +91,7 @@
 					<label for="terminal-dialog-toggle" id="terminal-save-btn" class="resume-header__savelink">
 						Save resume
 					</label>
-					<a href="./print.html" class="resume-header__printlink" target="_blank" rel="noreferrer">
+					<a href="./print.html" id="resume-header__printlink" target="_blank" rel="noreferrer">
 						Printable CV - click here
 					</a>
 				</div>
@@ -291,7 +291,8 @@
 			</div>
 			<div class="metro-chat-widget__status">
 				<span class="metro-chat-widget__indicator metro-chat-widget__indicator--offline"></span>
-				<span class="metro-chat-widget__status-text">Live status: no agents online</span>
+				<span class="metro-chat-widget__status-text metro-chat-widget__status-text--full">Live status: no agents online</span>
+				<span class="metro-chat-widget__status-text metro-chat-widget__status-text--short">No agents online</span>
 			</div>
 		</div>
 

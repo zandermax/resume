@@ -251,28 +251,21 @@ body[data-theme='terminal'] {
     background: var(--header-bg);
   }
 
-  /* Button container */
-  .resume-header__buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
   /* Save Resume button - flat dark blue box with blocky borders */
   .resume-header__savelink {
     display: inline-flex; /* Show in terminal theme */
     align-items: center;
     justify-content: center;
-    padding: 0.6rem 1.2rem;
+    padding: 0.55rem 1.1rem;
     font-size: 0.9rem;
     font-family: var(--font-family);
     cursor: pointer;
     transition: none;
     border-radius: 0;
-    background: var(--terminal-title-bg);
-    color: var(--dial-color-selection);
+    background: var(--terminal-button-bg);
+    color: var(--text-color);
     font-weight: bold;
-    box-shadow: none;
+    box-shadow: var(--terminal-inset-raised-lg);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
@@ -466,6 +459,13 @@ body[data-theme='terminal'] {
         background: var(--terminal-window-bg);
       }
     }
+
+    /* Make Save button more noticeable in dark mode */
+    .resume-header__savelink {
+      background: var(--terminal-title-bg);
+      color: var(--dial-color-selection);
+      border: 2px solid var(--terminal-border-light);
+    }
   }
 
   /* Respect reduced motion preference */
@@ -547,10 +547,6 @@ body[data-theme='terminal'] {
       font-size: 0.95rem;
     }
 
-    :root[data-theme='terminal'] {
-      --header-role-font-size: 0.9rem;
-    }
-
     dial-selector .dial-label {
       padding: 0.35rem 0.65rem;
     }
@@ -565,6 +561,10 @@ body[data-theme='terminal'] {
       padding: 1rem;
     }
 
+    .resume-header {
+      padding: 0;
+    }
+
     h1.resume-header__name {
       --header-name-font-size: 1.7rem;
     }
@@ -573,9 +573,11 @@ body[data-theme='terminal'] {
       padding: 0.3rem 0.55rem;
     }
 
-    .resume-header__printlink {
+    #resume-header__printlink {
       --printlink-font-size: 0.7rem;
-      --printlink-padding: 0.45rem 0.85rem;
+      --printlink-padding: 0.5rem 0.85rem;
+      --printlink-before-content: '[[';
+      --printlink-after-content: ']]';
     }
 
     .resume-header__buttons {
@@ -584,7 +586,7 @@ body[data-theme='terminal'] {
     }
 
     .resume-header__savelink {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       padding: 0.5rem 1rem;
     }
 
@@ -629,5 +631,12 @@ body[data-theme='terminal'] {
       width: 20ch;
       --block-size: 1ch;
     }
+  }
+}
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='terminal'] {
+    --header-role-font-size: 0.9rem;
   }
 }

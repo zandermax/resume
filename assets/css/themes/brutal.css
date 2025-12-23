@@ -106,7 +106,7 @@ BRUTAL Theme - Maximum Brutalism
   --section-title-letter-spacing: -0.03em;
 
   /* Section content custom properties */
-  --section-content-padding-inline: 2rem;
+  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.05), 2rem);
   --section-title-border-inline-start: 16px solid var(--accent-color);
   --section-title-border-block-end: 4px solid var(--border-color);
   --section-title-line-height: 0.9;
@@ -329,7 +329,7 @@ body[data-theme='brutal'] {
   }
 
   /* AGGRESSIVE links */
-  a:not(.resume-header__printlink) {
+  a:not(#resume-header__printlink) {
     text-decoration: none;
     font-weight: 900;
     border-block-end: 4px solid var(--accent-color);
@@ -391,7 +391,9 @@ body[data-theme='brutal'] {
 
   /* Dial selector housing - industrial frame */
   .resume-header__dial-selector {
-    padding: 2rem;
+    /* Fluid inline-padding that scales to 0 at smallest viewports */
+    padding-block: 2rem;
+    padding-inline: clamp(0rem, calc((100vw - 320px) * 0.05), 2rem);
     background: var(--background-color);
     border: 6px solid var(--border-color);
     box-shadow: 8px 8px 0 var(--brutal-shadow-light);
@@ -416,21 +418,21 @@ body[data-theme='brutal'] {
       font-size: 1.5rem;
     }
 
-    /* Responsive padding reductions for small viewports */
+    /* Responsive adjustments for small viewports */
     @media (max-width: 600px) {
-      padding: 1.25rem;
+      padding-block: 1.25rem;
       border-width: 4px;
       box-shadow: 6px 6px 0 var(--brutal-shadow-light);
     }
 
     @media (max-width: 480px) {
-      padding: 1rem;
+      padding-block: 1rem;
       border-width: 3px;
       box-shadow: 4px 4px 0 var(--brutal-shadow-light);
     }
 
     @media (max-width: 380px) {
-      padding: 0.75rem;
+      padding-block: 0.75rem;
       border-width: 2px;
       box-shadow: 3px 3px 0 var(--brutal-shadow-light);
     }
@@ -663,16 +665,16 @@ body[data-theme='brutal'] {
 
   /* When checkbox is checked, hide the banner with fade-out animation */
   .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) {
-    animation: fadeOut 0.3s ease forwards;
+    animation: fadeOut 0.5s ease forwards;
     pointer-events: none;
-    /* Actually hide the element after animation */
-    opacity: 0;
+    /* Hide from accessibility tree after animation completes */
     visibility: hidden;
+    transition: visibility 0s 0.5s;
   }
 
   /* Also animate the banner sliding down when dismissed */
   .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) .cookie-banner {
-    animation: slideDown 0.3s ease forwards;
+    animation: slideDown 0.5s ease forwards;
   }
 
   .cookie-banner__footer {
@@ -690,19 +692,6 @@ body[data-theme='brutal'] {
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    :root[data-theme='brutal'] {
-      --header-name-font-size: 2.5rem;
-      --section-title-font-size: 1.5rem;
-      --section-title-padding: 1rem 1.5rem;
-      --printlink-font-size: 0.9rem;
-      --printlink-padding: 1rem 2rem;
-      --education-institution-font-size: 1.4rem;
-    }
-
-    :root[data-theme='brutal'] {
-      --experience-role-font-size: 1.4rem;
-    }
-
     dial-selector .dial-label > span {
       font-size: 0.75rem;
       padding: 0.6rem 1rem;
@@ -746,17 +735,6 @@ body[data-theme='brutal'] {
   }
 
   @media (max-width: 500px) {
-    :root[data-theme='brutal'] {
-      --header-name-font-size: 2rem;
-      --header-name-padding-inline-start: 1rem;
-      --header-name-border-inline-start: 8px solid var(--accent-color);
-      --section-title-font-size: 1.2rem;
-      --section-title-padding: 0.75rem 1rem;
-      --printlink-font-size: 0.9rem;
-      --printlink-padding: 1rem 2rem;
-      --section-title-border-inline-start: 10px solid var(--accent-color);
-    }
-
     .resume-header,
     .resume-section {
       padding-inline: 1rem;
@@ -769,7 +747,12 @@ body[data-theme='brutal'] {
 
     dial-selector .dial-label > span {
       font-size: 0.7rem;
-      padding: 0.5rem 0.8rem;
+      padding: 0.35rem 0.6rem;
+    }
+
+    dial-selector .dial-label > span:hover,
+    dial-selector .dial-label.active > span {
+      padding: 0.35rem 0.8rem;
     }
 
     .cookie-banner {
@@ -811,6 +794,55 @@ body[data-theme='brutal'] {
     .cookie-banner__fine-print {
       font-size: 0.525rem;
     }
+  }
+
+  /* Ultra-small screens - tone down the brutality for usability */
+  @media (max-width: 320px) {
+    .resume__main {
+      transform: rotate(-0.1deg); /* Less aggressive tilt */
+      border-width: 3px;
+      box-shadow: 4px 4px 0 oklch(0% 0 0 / 0.7), 8px 8px 0 var(--brutal-shadow-light);
+    }
+
+    .resume-header {
+      transform: skewY(-0.2deg); /* Reduce header skew */
+    }
+
+    dial-selector .dial-label > span {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.4rem; /* Minimal padding for non-selected */
+    }
+
+    dial-selector .dial-label > span:hover,
+    dial-selector .dial-label.active > span {
+      padding: 0.35rem 0.8rem; /* Keep aggressive padding on selected */
+    }
+  }
+}
+
+/* Responsive adjustments for :root variables */
+@media (max-width: 768px) {
+  :root[data-theme='brutal'] {
+    --header-name-font-size: 2.5rem;
+    --section-title-font-size: 1.5rem;
+    --section-title-padding: 1rem 1.5rem;
+    --printlink-font-size: 0.9rem;
+    --printlink-padding: 1rem 2rem;
+    --education-institution-font-size: 1.4rem;
+    --experience-role-font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='brutal'] {
+    --header-name-font-size: 2rem;
+    --header-name-padding-inline-start: 1rem;
+    --header-name-border-inline-start: 8px solid var(--accent-color);
+    --section-title-font-size: 1.2rem;
+    --section-title-padding: 0.75rem 1rem;
+    --printlink-font-size: 0.9rem;
+    --printlink-padding: 1rem 2rem;
+    --section-title-border-inline-start: 10px solid var(--accent-color);
   }
 }
 

@@ -609,7 +609,7 @@ h3.education-item__institution {
 }
 
 /* Link colors using custom properties */
-a:not(.resume-header__printlink) {
+a:not(#resume-header__printlink) {
   color: var(--link-color, inherit);
   text-decoration: var(--link-text-decoration, underline);
 
@@ -1010,13 +1010,14 @@ Resume Components
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: center;
 }
 
 .resume-header__savelink {
   display: none; /* Hidden by default, shown only in terminal theme */
 }
 
-.resume-header__printlink {
+#resume-header__printlink {
   font-family: var(--printlink-font-family, inherit);
   font-size: var(--printlink-font-size, 0.8rem);
   letter-spacing: var(--printlink-letter-spacing, 0.14em);

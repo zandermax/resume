@@ -435,7 +435,7 @@ body[data-theme='xp'] {
   }
 
   /* Links */
-  a:not(.resume-header__printlink) {
+  a:not(#resume-header__printlink) {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: color 0.15s ease;
@@ -481,11 +481,6 @@ body[data-theme='xp'] {
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    :root[data-theme='xp'] {
-      --header-border-radius: 6px 6px 4px 4px;
-      --main-border-radius: 6px 6px 4px 4px;
-    }
-
     .resume-header,
     .resume-section {
       margin-inline: 1.25rem;
@@ -502,11 +497,6 @@ body[data-theme='xp'] {
   }
 
   @media (max-width: 500px) {
-    :root[data-theme='xp'] {
-      --header-border-radius: 4px 4px 3px 3px;
-      --main-border-radius: 4px 4px 3px 3px;
-    }
-
     .resume__main {
       &::before {
         height: 28px;
@@ -532,7 +522,7 @@ body[data-theme='xp'] {
       padding: 0.5rem;
     }
 
-    .resume-header__printlink {
+    #resume-header__printlink {
       --printlink-font-size: 0.75rem;
       --printlink-padding: 0.5rem 1.2rem;
     }
@@ -544,11 +534,6 @@ body[data-theme='xp'] {
     .principles-list,
     .education-item {
       background: white;
-    }
-
-    :root[data-theme='xp'][data-mode='light'] {
-      --education-institution-color: var(--xp-window-border-block-start);
-      --experience-role-color: var(--xp-window-border-block-start);
     }
 
     .skills-grid__title,
@@ -811,4 +796,25 @@ body[data-theme='xp'] {
 .xp-dialog__button--yes {
   border: 2px solid oklch(0% 0 0);
   padding: 3px 15px;
+}
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='xp'] {
+    --header-border-radius: 6px 6px 4px 4px;
+    --main-border-radius: 6px 6px 4px 4px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='xp'] {
+    --header-border-radius: 4px 4px 3px 3px;
+    --main-border-radius: 4px 4px 3px 3px;
+  }
+}
+
+/* Light mode :root adjustments - at top level */
+:root[data-theme='xp'][data-mode='light'] {
+  --education-institution-color: var(--xp-window-border-block-start);
+  --experience-role-color: var(--xp-window-border-block-start);
 }

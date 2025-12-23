@@ -219,7 +219,7 @@ Skeuomorphic Theme Effects
     --text-color: oklch(0.86 0.03 60);
     --heading-color: oklch(0.86 0.03 60);
     --border-color: oklch(0.5 0.04 50);
-    --print-button-text-color: var(--border-color);
+    --print-button-text-color: oklch(0.28 0.08 58);
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
@@ -470,6 +470,17 @@ body[data-theme='skeuomorph'] {
       opacity: 0.4;
       pointer-events: none;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      padding: 1rem;
+      margin: 0.25rem;
+    }
+
+    @media (max-width: 500px) {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   /* Print button gets embossed metal look */
@@ -492,7 +503,7 @@ body[data-theme='skeuomorph'] {
   /* Sticky note - all styling consolidated here */
   #sticky-note {
     position: absolute;
-    top: 50em;
+    top: 29em; /* Right at the level of my name on mobile, next to mode selector on desktop */
     left: clamp(40px, calc(100% - 260px), 1000px);
     width: 220px;
     min-height: 160px;

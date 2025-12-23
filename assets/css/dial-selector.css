@@ -37,9 +37,9 @@ dial-selector {
   /* Other sizing variables for labels/lines */
   --label-column-height: var(--knob-size);
   --label-vertical-offset-scale: calc(var(--knob-size) * 0.4375); /* 140/320 */
-  --horizontal-line-length: calc(var(--knob-size) * 0.5); /* Increased from 0.3125 for better reach */
-  --max-spoke-length: calc(var(--knob-size) * 0.4); /* Increased from 0.25 for better reach */
-  --horizontal-line-end-offset: calc(var(--knob-size) * 0.05); /* Increased from 0.03125 */
+  --horizontal-line-length: calc(var(--knob-size) * 0.5);
+  --max-spoke-length: calc(var(--knob-size) * 0.4);
+  --horizontal-line-end-offset: calc(var(--knob-size) * 0.05);
   --hit-area-stroke-width: calc(var(--knob-size) * 0.0625); /* 20/320 */
   /* Component dimensions */
   --component-width: 100%;
@@ -228,11 +228,23 @@ dial-selector .advance {
   }
 
   dial-selector .selector {
-    gap: clamp(4px, 1.5vw, 12px);
+    gap: clamp(8px, 2.5vw, 16px);
   }
 
   dial-selector .dial-label {
     padding: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
     letter-spacing: 0.3px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  dial-selector {
+    /* Even smaller for very small screens */
+    --knob-size: 120px;
+  }
+
+  dial-selector .selector {
+    gap: clamp(4px, 1.5vw, 10px);
   }
 }

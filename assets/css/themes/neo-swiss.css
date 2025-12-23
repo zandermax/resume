@@ -207,11 +207,11 @@ Ultra-modern minimalism with mathematical precision
   --section-text-font-weight: var(--font-weight-light);
 
   /* Dial label active span padding */
-  --dial-label-active-span-padding-block: 0.1rem;
+  --dial-label-active-span-padding-block: 0.05rem;
   --dial-label-active-span-padding-inline: 0.6rem;
-  --dial-label-active-span-padding-block--tablet: 0.05rem;
+  --dial-label-active-span-padding-block--tablet: 0.025rem;
   --dial-label-active-span-padding-inline--tablet: 0.55rem;
-  --dial-label-active-span-padding-block--phone: 0.05rem;
+  --dial-label-active-span-padding-block--phone: 0.025rem;
   --dial-label-active-span-padding-inline--phone: 0.5rem;
 }
 
@@ -321,7 +321,7 @@ body[data-theme='neoswiss'] {
   .community-list,
   .principles-list,
   .education-item,
-  .resume-header__printlink,
+  #resume-header__printlink,
   dial-selector .knob,
   dial-selector .indicator,
   dial-selector .dial-label,
@@ -456,7 +456,7 @@ body[data-theme='neoswiss'] {
   }
 
   /* Links - Invisible until hover */
-  a:not(.resume-header__printlink) {
+  a:not(#resume-header__printlink) {
     text-decoration: none;
     border-block-end: 0;
     transition: border-block-end 50ms linear;
@@ -963,22 +963,6 @@ body[data-theme='neoswiss'] {
 
   /* Responsive Adjustments */
   @media (max-width: 768px) {
-    :root[data-theme='neoswiss'] {
-      --header-name-font-size: clamp(2.5rem, 10vw, 4rem);
-      --section-title-font-size: clamp(1.125rem, 3vw, 1.5rem);
-      --section-title-width: 80%;
-      --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
-      --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
-    }
-
-    :root[data-theme='neoswiss'] {
-      --education-institution-font-size: clamp(1.25rem, 4vw, 2rem);
-    }
-
-    :root[data-theme='neo-swiss'] {
-      --experience-role-font-size: clamp(1.25rem, 4vw, 2rem);
-    }
-
     .resume-header,
     .resume-section {
       padding-inline: var(--spacing-4);
@@ -986,6 +970,10 @@ body[data-theme='neoswiss'] {
 
     .resume-header {
       padding-block: var(--spacing-6);
+    }
+
+    .resume-header__buttons {
+      justify-content: flex-start;
     }
 
     .neoswiss-ai-button {
@@ -1014,16 +1002,6 @@ body[data-theme='neoswiss'] {
   }
 
   @media (max-width: 500px) {
-    :root[data-theme='neoswiss'] {
-      --header-name-font-size: clamp(2rem, 12vw, 3rem);
-      --section-title-font-size: clamp(1rem, 4vw, 1.25rem);
-      --section-title-padding: 0 0 calc(var(--swiss-grid) * 1) 0;
-      --section-title-margin: 0 0 calc(var(--swiss-grid) * 4) 0;
-      --section-title-width: 100%;
-      --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
-      --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
-    }
-
     .resume-header,
     .resume-section {
       padding-inline: var(--spacing-3);
@@ -1033,6 +1011,10 @@ body[data-theme='neoswiss'] {
       padding-block: var(--spacing-4);
     }
 
+    .resume-header__buttons {
+      justify-content: flex-start;
+    }
+
     .experience-item {
       margin-block-end: var(--spacing-6);
     }
@@ -1040,6 +1022,10 @@ body[data-theme='neoswiss'] {
     dial-selector .dial-label {
       font-size: clamp(0.625rem, 2vw, 0.75rem);
       padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 1.5);
+    }
+
+    .resume-header__dial-selector {
+      padding: 0;
     }
 
     .neoswiss-ai-button {
@@ -1105,20 +1091,8 @@ body[data-theme='neoswiss'] {
 
   /* Print Styles - Maintain minimal aesthetic */
   @media print {
-    :root[data-theme='neoswiss'] {
-      --section-title-border-block-end: 1px solid #000000;
-    }
-
     .resume-header__role {
       border-inline-start-color: #000000;
-    }
-
-    :root[data-theme='neo-swiss'] {
-      --skills-title-color: #000000;
-    }
-
-    :root[data-theme='neo-swiss'] {
-      --tech-badge-before-color: #000000;
     }
   }
 }
@@ -1131,4 +1105,44 @@ body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) .neoswiss-ai-modal 
 /* Prevent body scroll when modal is open */
 body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
   overflow: hidden;
+}
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='neoswiss'] {
+    --header-name-font-size: clamp(2.5rem, 10vw, 4rem);
+    --section-title-font-size: clamp(1.125rem, 3vw, 1.5rem);
+    --section-title-width: 80%;
+    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
+    --education-institution-font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  :root[data-theme='neo-swiss'] {
+    --experience-role-font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='neoswiss'] {
+    --header-name-font-size: clamp(2rem, 12vw, 3rem);
+    --section-title-font-size: clamp(1rem, 4vw, 1.25rem);
+    --section-title-padding: 0 0 calc(var(--swiss-grid) * 1) 0;
+    --section-title-margin: 0 0 calc(var(--swiss-grid) * 4) 0;
+    --section-title-width: 100%;
+    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
+  }
+}
+
+/* Print Styles - at top level */
+@media print {
+  :root[data-theme='neoswiss'] {
+    --section-title-border-block-end: 1px solid #000000;
+  }
+
+  :root[data-theme='neo-swiss'] {
+    --skills-title-color: #000000;
+    --tech-badge-before-color: #000000;
+  }
 }

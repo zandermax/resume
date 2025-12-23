@@ -184,7 +184,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --section-title-box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
 
   /* Section content custom properties */
-  --section-content-padding-inline: 1.5rem;
+  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.0375), 1.5rem);
 
   /* Print link custom properties */
   --printlink-border: none;
@@ -499,7 +499,7 @@ body[data-theme='web2gloss'] {
   }
 
   /* Links - Glossy with glow on hover */
-  a:not(.resume-header__printlink):not(.web2-badge) {
+  a:not(#resume-header__printlink):not(.web2-badge) {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: var(--web2-transition-fast);
@@ -743,11 +743,6 @@ body[data-theme='web2gloss'] {
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    :root[data-theme='web2gloss'] {
-      --header-border-radius: var(--web2-top-border-radius);
-      --main-border-radius: var(--web2-top-border-radius);
-    }
-
     h1.resume-header__name {
       --header-name-font-size: 2rem;
       --section-title-font-size: 1.1rem;
@@ -758,6 +753,15 @@ body[data-theme='web2gloss'] {
       padding: 1.5rem;
     }
 
+    /* Reduce header padding to fit dial-selector */
+    .resume-header {
+      padding: 2rem 1.5rem;
+    }
+
+    .resume-header__dial-selector {
+      padding: 1.25rem;
+    }
+
     dial-selector .dial-label span {
       font-size: 0.8rem;
       padding: 0.3rem 0.65rem;
@@ -765,18 +769,6 @@ body[data-theme='web2gloss'] {
   }
 
   @media (max-width: 500px) {
-    :root[data-theme='web2gloss'] {
-      --header-border-radius: var(--web2-radius-md);
-      --main-border-radius: var(--web2-radius-md);
-      --section-title-font-size: 1rem;
-      --section-title-padding: 0.6rem 0.8rem;
-      --section-title-border-radius: var(--web2-radius-md);
-      --header-name-font-size: 1.75rem;
-
-      --printlink-font-size: 0.85rem;
-      --printlink-padding: 0.75rem 1.5rem;
-    }
-
     .resume-section {
       padding: 1rem;
     }
@@ -787,9 +779,57 @@ body[data-theme='web2gloss'] {
       border-radius: var(--web2-radius-md);
     }
 
+    /* Further reduce header padding for smaller screens */
+    .resume-header {
+      padding: 1.5rem 1rem;
+    }
+
+    .resume-header__dial-selector {
+      padding: 0.75rem;
+    }
+
     dial-selector .dial-label span {
-      font-size: 0.75rem;
-      padding: 0.3rem 0.6rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border-width: 0.5px;
+      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+    }
+
+    /* Increase grid gap for better spacing */
+    dial-selector .selector {
+      gap: clamp(8px, 3vw, 20px);
+    }
+  }
+
+  /* Extra small screens - more aggressive scaling */
+  @media (max-width: 400px) {
+    /* Minimal padding for very small screens */
+    .resume-header {
+      padding: 1.25rem 0.5rem;
+      padding-inline: 0.75rem;
+    }
+
+    .resume-header__dial-selector {
+      padding: 0.5rem;
+    }
+
+    /* Make labels much smaller on very small screens */
+    dial-selector .dial-label span {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.45rem;
+      font-weight: 500;
+      border-width: 0.5px;
+      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+    }
+
+    /* Reduce knob size even more */
+    dial-selector {
+      --knob-size: 120px;
+    }
+
+    /* Tighter grid gap */
+    dial-selector .selector {
+      gap: clamp(2px, 1vw, 8px);
     }
   }
 
@@ -831,5 +871,34 @@ body[data-theme='web2gloss'] {
       border-color: oklch(25% 0 0);
       box-shadow: 0 2px 4px oklch(0% 0 0 / 0.4), 0 4px 8px oklch(0% 0 0 / 0.3), inset 0 1px 0 oklch(100% 0 0 / 0.1);
     }
+  }
+}
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='web2gloss'] {
+    --header-border-radius: var(--web2-top-border-radius);
+    --main-border-radius: var(--web2-top-border-radius);
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='web2gloss'] {
+    --header-border-radius: var(--web2-radius-md);
+    --main-border-radius: var(--web2-radius-md);
+    --section-title-font-size: 1rem;
+    --section-title-padding: 0.6rem 0.8rem;
+    --section-title-border-radius: var(--web2-radius-md);
+    --header-name-font-size: 1.75rem;
+    --printlink-font-size: 0.85rem;
+    --printlink-padding: 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  :root[data-theme='web2gloss'] {
+    --header-name-font-size: 1.5rem;
+    --section-title-font-size: 0.9rem;
+    --web2-radius-sm: 4px;
   }
 }

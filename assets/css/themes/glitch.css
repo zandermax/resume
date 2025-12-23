@@ -65,7 +65,7 @@
   --skew-medium: -0.5deg;
 
   /* Animation durations */
-  --duration-fast: 12s;
+  --duration-fast: 3s;
   --duration-medium: 14s;
   --duration-slow: 16s;
   --duration-slower: 18s;
@@ -434,18 +434,35 @@ KEYFRAME ANIMATIONS
 
 /* Main content tilt and glitch animation */
 @keyframes main-tilt-glitch {
-  0% {
+  0%,
+  80% {
     transform: rotate(0deg) skewX(-0.3deg);
   }
-  6.25% {
+  85% {
     transform: rotate(0.7deg) skewX(-0.3deg);
   }
-  18.75% {
+  95% {
     transform: rotate(0.7deg) skewX(-0.3deg);
   }
-  18.76% {
+  95.1%,
+  100% {
     transform: rotate(0deg) skewX(-0.3deg);
   }
+}
+
+/* Main content tilt and glitch animation - mobile variant with reduced rotation */
+@keyframes main-tilt-glitch-mobile {
+  0%,
+  70% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  75% {
+    transform: rotate(0.3deg) skewX(-0.3deg);
+  }
+  85% {
+    transform: rotate(0.3deg) skewX(-0.3deg);
+  }
+  85.1%,
   100% {
     transform: rotate(0deg) skewX(-0.3deg);
   }
@@ -1012,7 +1029,7 @@ body[data-theme='glitch'] {
   LINKS
   =========================== */
 
-  a:not(.resume-header__printlink) {
+  a:not(#resume-header__printlink) {
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-color: var(--text-color);
@@ -1172,6 +1189,10 @@ body[data-theme='glitch'] {
       --section-title-padding: 0.6rem var(--spacing-md);
       --printlink-font-size: var(--font-size-xs);
       --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .resume__main {
+      animation: main-tilt-glitch-mobile var(--duration-fast) infinite;
     }
 
     .resume__main,
