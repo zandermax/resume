@@ -644,7 +644,10 @@ body[data-theme='neoswiss'] {
     align-items: center;
     padding: var(--spacing-4);
     border-block-end: 1px solid var(--accent-color);
-    position: relative;
+    position: sticky;
+    top: 0;
+    background: var(--background-color);
+    z-index: 1;
   }
 
   .neoswiss-ai-modal__header::after {
@@ -746,6 +749,7 @@ body[data-theme='neoswiss'] {
   .neoswiss-ai-modal__section-title {
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent-color);
@@ -891,8 +895,9 @@ body[data-theme='neoswiss'] {
 
   .neoswiss-ai-modal__recommendation {
     display: block;
+    text-transform: uppercase;
     background: var(--accent-color);
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.2em;
@@ -909,12 +914,12 @@ body[data-theme='neoswiss'] {
 
     &:hover {
       opacity: 0.9;
-      color: #ffffff;
+      color: #ffffff !important;
       border: 0;
     }
 
     &:visited {
-      color: #ffffff;
+      color: #ffffff !important;
     }
   }
 
@@ -989,6 +994,10 @@ body[data-theme='neoswiss'] {
 
     .neoswiss-ai-modal__header {
       padding: var(--spacing-3);
+      position: sticky;
+      top: 0;
+      background: var(--background-color);
+      z-index: 1;
     }
 
     .neoswiss-ai-modal__content {
