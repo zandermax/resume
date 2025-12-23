@@ -237,7 +237,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: radial-gradient(ellipse at center, oklch(96% 0.02 230) 0%, oklch(90% 0.05 230) 100%);
-  --link-color: oklch(62% 0.17 240);
+  --link-color: oklch(52% 0.17 240);
   --link-visited-color: oklch(48% 0.14 300);
   --section-bg: var(--color-white);
   --header-bg: linear-gradient(180deg, oklch(62% 0.17 240) 0%, oklch(57% 0.18 245) 100%);
@@ -673,11 +673,11 @@ body[data-theme='web2gloss'] {
   }
 
   /* RSS icon for badges */
-  .rss-icon {
+  #rss-icon {
     position: relative;
   }
 
-  .rss-icon::before {
+  #rss-icon::before {
     content: '';
     display: inline-block;
     width: 16px;
@@ -692,7 +692,8 @@ body[data-theme='web2gloss'] {
   }
 
   /* RSS Feed Badge with attention-grabbing animation */
-  .web2-badge--orange-alt:has(.rss-icon) {
+  .web2-badge--orange-alt:has(#rss-icon) {
+    color: var(--color-white);
     animation: web2-rss-wobble 4s ease-in-out infinite;
     cursor: pointer;
     transition: var(--web2-transition-fast);
@@ -884,8 +885,8 @@ body[data-theme='web2gloss'] {
 
 @media (max-width: 500px) {
   :root[data-theme='web2gloss'] {
-    --header-border-radius: var(--web2-radius-md);
-    --main-border-radius: var(--web2-radius-md);
+    --header-border-radius: 14px;
+    --main-border-radius: 14px;
     --section-title-font-size: 1rem;
     --section-title-padding: 0.6rem 0.8rem;
     --section-title-border-radius: var(--web2-radius-md);

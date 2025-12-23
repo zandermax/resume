@@ -1030,7 +1030,7 @@ body[data-theme='neoswiss'] {
 
     dial-selector .dial-label {
       font-size: clamp(0.625rem, 2vw, 0.75rem);
-      padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 1.5);
+      padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
     }
 
     .resume-header__dial-selector {

@@ -673,9 +673,12 @@ Header Block
 }
 
 .resume-header__location,
-.resume-header__contact,
-.resume-header__links {
+.resume-header__contact {
   margin-block-start: 0.15rem;
+}
+
+.resume-header__links {
+  margin-block-start: 1rem;
 }
 
 .resume-header__link {
@@ -834,7 +837,6 @@ Resume Components
   letter-spacing: 0.12em;
 }
 
-.experience-item__location,
 .experience-item__dates {
   white-space: nowrap;
 }

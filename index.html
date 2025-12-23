@@ -115,7 +115,7 @@
 			</div>
 
 			<!-- Terminal Command Log (CRT Theme Only) -->
-			<div class="terminal-log">
+			<div class="terminal-log" id="terminal-log" role="button" tabindex="0" aria-label="Click to view full terminal log">
 				<div class="terminal-log__content">
 					<div class="terminal-log__line">$ ./evaluate_candidate.sh --name="Zander Maxwell"</div>
 					<div class="terminal-log__line">Initializing candidate evaluation system...</div>
@@ -213,15 +213,15 @@
 			</div>
 			<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
 				<div class="web2-badge web2-badge--orange">
-					<!-- "< POWERED BY HTML >" -->
-					<span>&lt; POWERED BY HTML &gt;</span>
+					<!-- "< POWERED BY HTML />" -->
+					<span>&lt; POWERED BY HTML /&gt;</span>
 				</div>
 				<div class="web2-badge web2-badge--blue">
 					<!-- "{ } VALID CSS" -->
 					<span>&lbrace; &rbrace; VALID CSS</span>
 				</div>
 				<a href="./feed.xml.html" target="_blank" rel="noreferrer" class="web2-badge web2-badge--orange-alt" style="text-decoration: none;">
-					<span class="rss-icon">RSS FEED</span>
+					<span id="rss-icon">RSS FEED</span>
 				</a>
 				<div class="web2-badge web2-badge--green">
 					<span>⚡ AJAX ENABLED</span>
@@ -284,7 +284,7 @@
 		</div>
 
 		<!-- Metro Live Chat Widget (metro theme only) -->
-		<div class="metro-chat-widget">
+		<div class="metro-chat-widget" id="metro-chat-widget" role="button" tabindex="0" aria-label="Open live chat">
 			<div class="metro-chat-widget__header">
 				<span class="metro-chat-widget__icon">💬</span>
 				<span class="metro-chat-widget__title">LIVE SUPPORT</span>
@@ -371,12 +371,10 @@
 			<h2 class="resume-section__title" data-nostalgia-decoration="blink" data-nostalgia-icon="🔥"><span>Professional Summary</span></h2>
 			<div class="resume-section__content">
 				<p class="resume-section__text">
-					I'm a design-focused Software Engineer with 8+ years of experience building product UIs, design systems, and
-					end-to-end features in React, TypeScript, and Node. I like working in the space where product, design, and
+					I'm a design-focused Software Engineer with 8+ years of experience building product UIs, contributing to design systems, and
+					end-to-end features, usually in React, TypeScript, and Node. I like working in the space where product, design, and
 					engineering combine. At Ashby this would look something like taking a problem brief, talking to users, sketching flows, iterating
-					in
-					Figma or
-					low-fidelity prototypes, and then turning those into polished, composable components in code.
+					in Figma or low-fidelity prototypes, and then turning those into polished, composable components in code.
 				</p>
 				<p class="resume-section__text">
 					Across roles at CHECK24, Amazon Web Services, Microsoft, and earlier-stage companies, I've led front-end
@@ -388,9 +386,7 @@
 					I'm applying to Ashby because I'm looking for a place where engineers are trusted to own the full loop, including
 					understanding customer problems, writing product specs, wireframing solutions, and implementing them end-to-end
 					in a shared design system. I would thrive in the environment described at Ashby: minimal process, deep ownership, and a strong
-					focus
-					on
-					high-quality tools for working professionals.
+					focus on high-quality tools for working professionals.
 				</p>
 			</div>
 		</section>
@@ -837,6 +833,390 @@
 			<button class="terminal-dialog__button" id="terminal-dialog-cancel" aria-label="Cancel"></button>
 			<a href="./print.html?print=true" target="_blank" rel="noreferrer" class="terminal-dialog__print-overlay"
 				aria-label="Print Resume"></a>
+		</div>
+	</dialog>
+
+	<!-- CRT Terminal Log Dialog (visible only when triggered) -->
+	<dialog class="crt-terminal-dialog" id="crt-terminal-dialog">
+		<div class="crt-terminal-dialog__container">
+			<div class="crt-terminal-dialog__header">
+				<span class="crt-terminal-dialog__title">SYSTEM LOG VIEWER</span>
+				<button class="crt-terminal-dialog__close" id="crt-terminal-dialog-close" aria-label="Close">×</button>
+			</div>
+			<div class="crt-terminal-dialog__content">
+				<div class="crt-terminal-dialog__line">$ ./evaluate_candidate.sh --name="Zander Maxwell"</div>
+				<div class="crt-terminal-dialog__line">Initializing candidate evaluation system...</div>
+				<div class="crt-terminal-dialog__line">Loading resume data... [OK]</div>
+				<div class="crt-terminal-dialog__line">Parsing experience: 8+ years... [OK]</div>
+				<div class="crt-terminal-dialog__line">Checking React knowledge... [EXCELLENT]</div>
+				<div class="crt-terminal-dialog__line">Checking TypeScript skills... [EXCELLENT]</div>
+				<div class="crt-terminal-dialog__line">Analyzing design system experience... [STRONG]</div>
+				<div class="crt-terminal-dialog__line">Verifying front-end architecture skills... [ADVANCED]</div>
+				<div class="crt-terminal-dialog__line">Testing UX/UI sensibilities... [OUTSTANDING]</div>
+				<div class="crt-terminal-dialog__line">Evaluating cultural fit... [HIGH]</div>
+				<div class="crt-terminal-dialog__line">Checking problem-solving approach... [EXCELLENT]</div>
+				<div class="crt-terminal-dialog__line">Assessing communication style... [CLEAR]</div>
+				<div class="crt-terminal-dialog__line">Running compatibility check with Ashby values... [MATCH]</div>
+				<div class="crt-terminal-dialog__line">Calculating overall score... 94/100</div>
+				<div class="crt-terminal-dialog__line">Logging results to 'candidates.log'... [OK]</div>
+				<div class="crt-terminal-dialog__line">Generating recommendation report...</div>
+				<div class="crt-terminal-dialog__line">$ cat evaluation_result.txt</div>
+				<div class="crt-terminal-dialog__line">STATUS: ✓ APPROVED</div>
+				<div class="crt-terminal-dialog__line">RECOMMENDATION: STRONG HIRE</div>
+				<div class="crt-terminal-dialog__line">CONFIDENCE: 98%</div>
+				<div class="crt-terminal-dialog__line">$ echo "Let's build something great together!"</div>
+				<div class="crt-terminal-dialog__line">Let's build something great together!</div>
+				<div class="crt-terminal-dialog__line">$ <span class="crt-terminal-dialog__cursor"></span></div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Dashboard Metrics Detail Dialog -->
+	<dialog class="dashboard-metrics-dialog" id="dashboard-metrics-dialog">
+		<div class="dashboard-metrics-dialog__container">
+			<div class="dashboard-metrics-dialog__header">
+				<span class="dashboard-metrics-dialog__title" id="dashboard-dialog-title">Metric Details</span>
+				<button class="dashboard-metrics-dialog__close" id="dashboard-metrics-dialog-close" aria-label="Close">×</button>
+			</div>
+			<div class="dashboard-metrics-dialog__content" id="dashboard-dialog-content">
+
+				<!-- Years Experience Content -->
+				<div class="dashboard-dialog-data" data-card-type="years-experience">
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Total Experience</span>
+						<span class="dashboard-dialog-metric__value">8.5 years</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Frontend Development</span>
+						<span class="dashboard-dialog-metric__value">8.5 years</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">React Expertise</span>
+						<span class="dashboard-dialog-metric__value">6+ years</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">TypeScript Usage</span>
+						<span class="dashboard-dialog-metric__value">5+ years</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Design Systems</span>
+						<span class="dashboard-dialog-metric__value">4+ years</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Leadership</span>
+						<span class="dashboard-dialog-metric__value">3+ years</span>
+					</div>
+					<div class="dashboard-dialog-chart">
+						<div class="dashboard-dialog-chart__title">Experience Distribution</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">React</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 95%">
+									<div class="dashboard-dialog-chart__bar-value">95%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">TypeScript</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 92%">
+									<div class="dashboard-dialog-chart__bar-value">92%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">JavaScript</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 98%">
+									<div class="dashboard-dialog-chart__bar-value">98%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">CSS/Sass</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 96%">
+									<div class="dashboard-dialog-chart__bar-value">96%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Node.js</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 85%">
+									<div class="dashboard-dialog-chart__bar-value">85%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dashboard-dialog-status">
+						<div class="dashboard-dialog-status__dot"></div>
+						<div class="dashboard-dialog-status__text">STATUS: VERIFIED</div>
+					</div>
+				</div>
+
+				<!-- Technologies Monitored Content -->
+				<div class="dashboard-dialog-data" data-card-type="technologies-monitored">
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Primary Languages</span>
+						<span class="dashboard-dialog-metric__value">5</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Frameworks</span>
+						<span class="dashboard-dialog-metric__value">12+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Tools & Libraries</span>
+						<span class="dashboard-dialog-metric__value">30+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Design Systems</span>
+						<span class="dashboard-dialog-metric__value">3</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Testing Frameworks</span>
+						<span class="dashboard-dialog-metric__value">6+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Cloud Platforms</span>
+						<span class="dashboard-dialog-metric__value">4</span>
+					</div>
+					<div class="dashboard-dialog-chart">
+						<div class="dashboard-dialog-chart__title">Technology Proficiency</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">React</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 98%">
+									<div class="dashboard-dialog-chart__bar-value">98%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Next.js</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 90%">
+									<div class="dashboard-dialog-chart__bar-value">90%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">TypeScript</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 95%">
+									<div class="dashboard-dialog-chart__bar-value">95%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Tailwind</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 88%">
+									<div class="dashboard-dialog-chart__bar-value">88%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">GraphQL</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 82%">
+									<div class="dashboard-dialog-chart__bar-value">82%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dashboard-dialog-status">
+						<div class="dashboard-dialog-status__dot"></div>
+						<div class="dashboard-dialog-status__text">STATUS: ACTIVE</div>
+					</div>
+				</div>
+
+				<!-- Projects Shipped Content -->
+				<div class="dashboard-dialog-data" data-card-type="projects-shipped">
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Total Projects</span>
+						<span class="dashboard-dialog-metric__value">50+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Production Deployments</span>
+						<span class="dashboard-dialog-metric__value">200+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Features Delivered</span>
+						<span class="dashboard-dialog-metric__value">500+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Bug Fixes</span>
+						<span class="dashboard-dialog-metric__value">1000+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Code Reviews</span>
+						<span class="dashboard-dialog-metric__value">2000+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">On-Time Delivery</span>
+						<span class="dashboard-dialog-metric__value">96%</span>
+					</div>
+					<div class="dashboard-dialog-chart">
+						<div class="dashboard-dialog-chart__title">Project Success Metrics</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">On-Time</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 96%">
+									<div class="dashboard-dialog-chart__bar-value">96%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Quality</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 94%">
+									<div class="dashboard-dialog-chart__bar-value">94%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">User Satisfaction</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 92%">
+									<div class="dashboard-dialog-chart__bar-value">92%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Performance</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 95%">
+									<div class="dashboard-dialog-chart__bar-value">95%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Accessibility</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 90%">
+									<div class="dashboard-dialog-chart__bar-value">90%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dashboard-dialog-status">
+						<div class="dashboard-dialog-status__dot"></div>
+						<div class="dashboard-dialog-status__text">STATUS: DEPLOYED</div>
+					</div>
+				</div>
+
+				<!-- Code Quality Content -->
+				<div class="dashboard-dialog-data" data-card-type="code-quality">
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Code Quality Score</span>
+						<span class="dashboard-dialog-metric__value">A+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Test Coverage</span>
+						<span class="dashboard-dialog-metric__value">85%+</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Code Review Approval</span>
+						<span class="dashboard-dialog-metric__value">98%</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Documentation</span>
+						<span class="dashboard-dialog-metric__value">Excellent</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Performance Score</span>
+						<span class="dashboard-dialog-metric__value">94/100</span>
+					</div>
+					<div class="dashboard-dialog-metric">
+						<span class="dashboard-dialog-metric__label">Accessibility Score</span>
+						<span class="dashboard-dialog-metric__value">96/100</span>
+					</div>
+					<div class="dashboard-dialog-chart">
+						<div class="dashboard-dialog-chart__title">Quality Indicators</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Clean Code</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 96%">
+									<div class="dashboard-dialog-chart__bar-value">96%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Best Practices</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 94%">
+									<div class="dashboard-dialog-chart__bar-value">94%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Security</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 98%">
+									<div class="dashboard-dialog-chart__bar-value">98%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Maintainability</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 92%">
+									<div class="dashboard-dialog-chart__bar-value">92%</div>
+								</div>
+							</div>
+						</div>
+						<div class="dashboard-dialog-chart__bar">
+							<div class="dashboard-dialog-chart__bar-label">Scalability</div>
+							<div class="dashboard-dialog-chart__bar-container">
+								<div class="dashboard-dialog-chart__bar-fill" style="width: 90%">
+									<div class="dashboard-dialog-chart__bar-value">90%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dashboard-dialog-status">
+						<div class="dashboard-dialog-status__dot"></div>
+						<div class="dashboard-dialog-status__text">STATUS: OPTIMAL</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</dialog>
+
+	<!-- Metro Chat Dialog -->
+	<dialog class="metro-chat-dialog" id="metro-chat-dialog">
+		<div class="metro-chat-dialog__container">
+			<div class="metro-chat-dialog__header">
+				<div class="metro-chat-dialog__header-content">
+					<span class="metro-chat-dialog__icon">💬</span>
+					<span class="metro-chat-dialog__title">LIVE SUPPORT</span>
+				</div>
+				<button class="metro-chat-dialog__close" id="metro-chat-dialog-close" aria-label="Close">×</button>
+			</div>
+			<div class="metro-chat-dialog__messages">
+				<div class="metro-chat-dialog__message metro-chat-dialog__message--agent">
+					<div class="metro-chat-dialog__message-bubble">
+						<div class="metro-chat-dialog__message-header">Support Agent</div>
+						<div class="metro-chat-dialog__message-text">Thank you for contacting support!</div>
+					</div>
+				</div>
+				<div class="metro-chat-dialog__message metro-chat-dialog__message--agent">
+					<div class="metro-chat-dialog__message-bubble">
+						<div class="metro-chat-dialog__message-text">Unfortunately, there are no agents available at the moment.</div>
+					</div>
+				</div>
+				<div class="metro-chat-dialog__message metro-chat-dialog__message--agent">
+					<div class="metro-chat-dialog__message-bubble">
+						<div class="metro-chat-dialog__message-text">But honestly, if you're seeing this resume, I'd love to chat! Feel free to reach
+							out at <strong>zandermaxwell@hey.com</strong></div>
+					</div>
+				</div>
+			</div>
+			<div class="metro-chat-dialog__input-area">
+				<input type="text" class="metro-chat-dialog__input" placeholder="Type a message..." disabled aria-label="Message input (disabled)">
+				<button class="metro-chat-dialog__send-btn" disabled aria-label="Send message (disabled)">SEND</button>
+			</div>
 		</div>
 	</dialog>
 

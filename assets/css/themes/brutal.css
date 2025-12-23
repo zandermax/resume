@@ -322,6 +322,14 @@ body[data-theme='brutal'] {
     * {
       color: var(--background-color);
     }
+
+    a:not(#resume-header__printlink) {
+      color: var(--background-color);
+
+      &:hover {
+        color: var(--background-color);
+      }
+    }
   }
 
   h1.resume-header__name {

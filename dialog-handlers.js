@@ -10,6 +10,11 @@ function getCookie(name) {
   return null;
 }
 
+// Helper to close dialog on backdrop click
+function closeOnBackdrop(dialog) {
+  dialog?.addEventListener('click', (e) => e.target === dialog && dialog.close());
+}
+
 // Reset all dialog/modal states on page load
 window.addEventListener('DOMContentLoaded', () => {
   // Reset Neo-Swiss AI modal
@@ -21,17 +26,14 @@ window.addEventListener('DOMContentLoaded', () => {
   // Check if cookie is already set and update banner message
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
-
   const existingCookie = getCookie('resume_cookie_consent');
 
   if (cookieBanner && cookieBannerDismiss) {
     if (existingCookie) {
-      // Cookie exists - show the "EVERY TIME" message
       cookieBanner.classList.add('cookie-banner--returning');
-      cookieBannerDismiss.checked = false; // Show the banner again
+      cookieBannerDismiss.checked = false;
       console.log('🍪 Cookie found:', existingCookie);
     } else {
-      // No cookie - reset banner to hidden
       cookieBannerDismiss.checked = false;
     }
   }
@@ -40,79 +42,146 @@ window.addEventListener('DOMContentLoaded', () => {
   const cookieBannerAccept = document.getElementById('cookie-banner-accept');
   if (cookieBannerAccept && !existingCookie) {
     cookieBannerAccept.addEventListener('click', () => {
-      // Set cookie that expires in 1 hour
       const now = new Date();
       now.setTime(now.getTime() + 60 * 60 * 1000);
       const expires = 'expires=' + now.toUTCString();
-
       const cookieValue = "Wow I can't believe you actually checked if a cookie was set. Well, indeed it is.";
       document.cookie = `resume_cookie_consent=${encodeURIComponent(cookieValue)};${expires};path=/;SameSite=Lax`;
-
       console.log('🍪 Cookie set!');
     });
   }
 });
 
-// XP Dialog minimal JS using native dialog
+// XP Dialog
 const xpCloseBtn = document.getElementById('xp-close-btn');
 const xpDialog = document.getElementById('xp-dialog');
-
 xpCloseBtn?.addEventListener('click', () => xpDialog?.showModal());
 xpDialog?.addEventListener('click', (e) => {
   if (e.target.id === 'xp-dialog-ok') {
-    window.close(); // Actually try to close the window!
+    window.close();
   } else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
     xpDialog.close();
   }
 });
 
-// Terminal Dialog minimal JS using native dialog
-const terminalSaveBtn = document.getElementById('terminal-save-btn');
+// Terminal Dialog
 const terminalDialog = document.getElementById('terminal-dialog');
-const terminalDialogCancel = document.getElementById('terminal-dialog-cancel');
+document.getElementById('terminal-save-btn')?.addEventListener('click', () => terminalDialog?.showModal());
+document.getElementById('terminal-dialog-cancel')?.addEventListener('click', () => terminalDialog?.close());
+closeOnBackdrop(terminalDialog);
 
-terminalSaveBtn?.addEventListener('click', () => terminalDialog?.showModal());
-terminalDialogCancel?.addEventListener('click', () => terminalDialog?.close());
-
-// Close dialog when clicking the backdrop
-terminalDialog?.addEventListener('click', (e) => {
-  if (e.target === terminalDialog) {
-    terminalDialog.close();
-  }
+// CRT Terminal Log Dialog
+const crtTerminalDialog = document.getElementById('crt-terminal-dialog');
+const terminalLog = document.getElementById('terminal-log');
+terminalLog?.addEventListener('click', () => crtTerminalDialog?.showModal());
+terminalLog?.addEventListener('keydown', (e) => {
+  (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), crtTerminalDialog?.showModal());
 });
+document.getElementById('crt-terminal-dialog-close')?.addEventListener('click', () => crtTerminalDialog?.close());
+closeOnBackdrop(crtTerminalDialog);
 
-// Neo-Swiss AI Modal - Auto-scroll to keep latest section visible
+// Neo-Swiss AI Modal - Auto-scroll
 const neoswissToggle = document.getElementById('neoswiss-ai-toggle');
 if (neoswissToggle) {
   neoswissToggle.addEventListener('change', (e) => {
     if (e.target.checked) {
-      // Modal just opened - set up auto-scroll behavior
       const container = document.querySelector('.neoswiss-ai-modal__container');
       const sections = document.querySelectorAll('.neoswiss-ai-modal__section');
-
       if (container && sections.length > 0) {
-        // Reset scroll position to top when modal opens
         container.scrollTop = 0;
-
-        // Set up auto-scroll for each section based on its animation delay
-        sections.forEach((section, index) => {
-          // Get the animation delay from computed styles
+        sections.forEach((section) => {
           const computedStyle = window.getComputedStyle(section);
           const animationDelay = parseFloat(computedStyle.animationDelay) || 0;
-
-          // Schedule scroll to happen partway through the section's appearance
-          // This ensures the user sees it enter from below
-          const scrollDelay = animationDelay * 1000 + 400; // 400ms after animation starts
-
+          const scrollDelay = animationDelay * 1000 + 400;
           setTimeout(() => {
-            section.scrollIntoView({
-              behavior: 'smooth',
-              block: 'end', // Align to bottom of viewport
-              inline: 'nearest',
-            });
+            section.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
           }, scrollDelay);
         });
       }
     }
   });
 }
+
+// Dashboard Metrics Dialog
+const dashboardMetricsDialog = document.getElementById('dashboard-metrics-dialog');
+const dashboardDialogClose = document.getElementById('dashboard-metrics-dialog-close');
+
+// Dialog title mapping
+const dashboardTitles = {
+  'years-experience': 'YEARS EXPERIENCE BREAKDOWN',
+  'technologies-monitored': 'TECHNOLOGIES MONITORED',
+  'projects-shipped': 'PROJECTS SHIPPED ANALYTICS',
+  'code-quality': 'CODE QUALITY METRICS',
+};
+
+// Function to show appropriate dashboard dialog content
+function showDashboardDialog(cardType) {
+  const dialogTitle = document.getElementById('dashboard-dialog-title');
+  const allDataSections = document.querySelectorAll('.dashboard-dialog-data');
+
+  // Update title
+  dialogTitle.textContent = dashboardTitles[cardType] || 'Metric Details';
+
+  // Hide all content sections
+  allDataSections.forEach((section) => {
+    section.style.display = 'none';
+  });
+
+  // Show the appropriate content section
+  const activeSection = document.querySelector(`.dashboard-dialog-data[data-card-type="${cardType}"]`);
+  if (activeSection) {
+    activeSection.style.display = 'block';
+  }
+}
+
+// Add click handlers to dashboard cards
+document.addEventListener('DOMContentLoaded', () => {
+  const dashboardCards = document.querySelectorAll('.dashboard-card');
+  dashboardCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const cardType = card.classList.value.split(' ').find((cls) => cls !== 'dashboard-card');
+      if (cardType && dashboardTitles[cardType]) {
+        showDashboardDialog(cardType);
+        dashboardMetricsDialog?.showModal();
+      }
+    });
+
+    // Add keyboard support
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const cardType = card.classList.value.split(' ').find((cls) => cls !== 'dashboard-card');
+        if (cardType && dashboardTitles[cardType]) {
+          showDashboardDialog(cardType);
+          dashboardMetricsDialog?.showModal();
+        }
+      }
+    });
+  });
+});
+
+// Close dashboard metrics dialog
+dashboardDialogClose?.addEventListener('click', () => dashboardMetricsDialog?.close());
+closeOnBackdrop(dashboardMetricsDialog);
+
+// Metro Chat Dialog
+const metroChatWidget = document.getElementById('metro-chat-widget');
+const metroChatDialog = document.getElementById('metro-chat-dialog');
+const metroChatDialogClose = document.getElementById('metro-chat-dialog-close');
+
+// Open chat dialog when clicking widget
+metroChatWidget?.addEventListener('click', () => metroChatDialog?.showModal());
+
+// Keyboard support for chat widget
+metroChatWidget?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    metroChatDialog?.showModal();
+  }
+});
+
+// Close chat dialog
+metroChatDialogClose?.addEventListener('click', () => metroChatDialog?.close());
+closeOnBackdrop(metroChatDialog);
