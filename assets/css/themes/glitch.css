@@ -226,6 +226,109 @@
   --principles-item-border-style: solid;
   --principles-item-position: relative;
   --principles-item-box-shadow: var(--glitch-box-shadow-list);
+
+  /* Body letter-spacing */
+  --body-letter-spacing: 0.03em;
+
+  /* Body ::before - global scan line overlay */
+  --body-before-content: '';
+  --body-before-display: block;
+  --body-before-position: fixed;
+  --body-before-inset: 0;
+  --body-before-background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    oklch(0% 0 0 / 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  --body-before-pointer-events: none;
+  --body-before-z-index: 9999;
+
+  /* Resume main ::after - compression artifact overlay */
+  --resume-main-after-content: '';
+  --resume-main-after-position: absolute;
+  --resume-main-after-inset: 0;
+  --resume-main-after-background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      var(--glitch-primary) 8px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(0deg, transparent 0px, var(--glitch-secondary) 8px, transparent 16px);
+  --resume-main-after-pointer-events: none;
+  --resume-main-after-z-index: 1;
+  --resume-main-after-opacity: 0.03;
+
+  /* Resume header ::before - corrupted border effect */
+  --resume-header-before-content: '';
+  --resume-header-before-position: absolute;
+  --resume-header-before-top: calc(-1 * var(--border-width-md));
+  --resume-header-before-left: 10%;
+  --resume-header-before-width: 30%;
+  --resume-header-before-height: var(--border-width-xl);
+  --resume-header-before-background: var(--glitch-tertiary);
+
+  /* Resume header ::after - corrupted border effect */
+  --resume-header-after-content: '';
+  --resume-header-after-position: absolute;
+  --resume-header-after-bottom: calc(-1 * var(--border-width-xxl));
+  --resume-header-after-right: 20%;
+  --resume-header-after-width: 40%;
+  --resume-header-after-height: var(--border-width-lg);
+  --resume-header-after-background: var(--glitch-secondary);
+
+  /* Section title ::after - glitch artifact */
+  --section-title-after-content: '';
+  --section-title-after-display: block;
+  --section-title-after-position: absolute;
+  --section-title-after-right: -5px;
+  --section-title-after-top: 50%;
+  --section-title-after-width: 20px;
+  --section-title-after-height: var(--border-width-lg);
+  --section-title-after-background: var(--glitch-secondary);
+  --section-title-after-animation: pixel-drift 6s infinite steps(1, jump-end);
+  --section-title-after-will-change: transform;
+
+  /* Experience item ::after - horizontal artifact */
+  --experience-item-after-content: '';
+  --experience-item-after-position: absolute;
+  --experience-item-after-bottom: 20%;
+  --experience-item-after-left: 0;
+  --experience-item-after-right: 0;
+  --experience-item-after-height: var(--border-width-sm);
+  --experience-item-after-background: var(--glitch-secondary);
+  --experience-item-after-opacity: var(--opacity-mid);
+  --experience-item-after-animation: h-displace var(--duration-slow) infinite reverse;
+  --experience-item-after-will-change: transform, opacity;
+
+  /* Dial selector housing ::before - artifact line */
+  --dial-selector-housing-before-top: 50%;
+  --dial-selector-housing-before-left: 0;
+  --dial-selector-housing-before-right: 0;
+  --dial-selector-housing-before-opacity: var(--opacity-low);
+  --dial-selector-housing-before-animation: h-displace 10s infinite;
+  --dial-selector-housing-before-will-change: transform, opacity;
+
+  /* Skills grid ::before - vertical artifact pattern */
+  --skills-grid-before-content: '';
+  --skills-grid-before-display: block;
+  --skills-grid-before-position: absolute;
+  --skills-grid-before-inset: 0 60% 0 30%;
+  --skills-grid-before-background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    var(--glitch-primary) 1px,
+    transparent 2px,
+    transparent 3px,
+    var(--glitch-secondary) 4px,
+    transparent 5px
+  );
+  --skills-grid-before-pointer-events: none;
+  --skills-grid-before-opacity: 0.05;
+
+  /* List item hover filter */
+  --list-item-hover-filter: invert(1);
 }
 
 /* Light Mode */
@@ -276,6 +379,15 @@
   --section-bg: var(--color-gray-darkest);
   --header-bg: var(--color-gray-darker);
   --accent-color: var(--color-white);
+
+  /* Dark mode scan lines (different from light mode) */
+  --body-before-background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    oklch(100% 0 0 / 0.02) 1px,
+    transparent 2px,
+    transparent 4px
+  );
 }
 
 /* ===========================
@@ -619,39 +731,12 @@ BASE THEME STYLING
 =========================== */
 
 body[data-theme='glitch'] {
-  letter-spacing: 0.03em;
+  /* Letter-spacing and ::before controlled by custom properties */
   position: relative;
 
   /* Performance optimizations */
   contain: layout style;
   /* Body-level containment for overall theme isolation */
-
-  /* Global scan line overlay */
-  &::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      oklch(0% 0 0 / 0.03) 1px,
-      transparent 2px,
-      transparent 4px
-    );
-    pointer-events: none;
-    z-index: 9999;
-  }
-
-  /* Dark mode scan lines */
-  &[data-mode='dark']::before {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      oklch(100% 0 0 / 0.02) 1px,
-      transparent 2px,
-      transparent 4px
-    );
-  }
 
   /* ===========================
   SHARED PATTERNS
@@ -695,43 +780,29 @@ body[data-theme='glitch'] {
     animation-duration: var(--duration-slower);
   }
 
-  /* Common horizontal artifact lines */
-  .experience-item::before,
-  .resume-header__dial-selector::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: var(--border-width-md);
-    opacity: var(--opacity-low);
-    animation: h-displace var(--duration-fast) infinite;
-    will-change: transform, opacity;
-  }
-
+  /* Common horizontal artifact lines - theme-specific positioning */
   .experience-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
     top: 10%;
+    height: var(--border-width-md);
     background: var(--glitch-tertiary);
-    animation-duration: var(--duration-medium);
+    opacity: var(--opacity-low);
+    animation: h-displace var(--duration-medium) infinite;
+    will-change: transform, opacity;
   }
 
   .resume-header__dial-selector::before {
-    top: 50%;
-    background: var(--glitch-tertiary);
-    animation-duration: 10s;
-  }
-
-  .experience-item::after {
+    /* Controlled by custom properties with theme-specific additions */
     content: '';
     position: absolute;
-    bottom: 20%;
-    left: 0;
-    right: 0;
-    height: var(--border-width-sm);
-    background: var(--glitch-secondary);
-    opacity: var(--opacity-mid);
-    animation: h-displace var(--duration-slow) infinite reverse;
-    will-change: transform, opacity;
+    height: var(--border-width-md);
+    background: var(--glitch-tertiary);
   }
+
+  /* Experience item ::after controlled by custom properties */
 
   /* Common list items */
   .community-list__item,
@@ -743,7 +814,7 @@ body[data-theme='glitch'] {
     contain: layout;
     will-change: transform;
 
-    /* Broken misaligned transforms for list items */
+    /* Broken misaligned transforms for list items - theme-specific glitch effect */
     &:nth-child(1) {
       transform: skewX(-0.3deg) rotate(-0.1deg);
     }
@@ -768,8 +839,8 @@ body[data-theme='glitch'] {
       animation-delay: 6s;
     }
 
+    /* :hover filter controlled by custom properties */
     &:hover {
-      filter: invert(1);
       transform: translateX(3px);
     }
   }
@@ -788,17 +859,7 @@ body[data-theme='glitch'] {
     contain: layout paint;
     will-change: transform, filter;
 
-    /* Compression artifact overlay */
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(90deg, transparent 0px, var(--glitch-primary) 8px, transparent 16px),
-        repeating-linear-gradient(0deg, transparent 0px, var(--glitch-secondary) 8px, transparent 16px);
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.03;
-    }
+    /* Compression artifact overlay controlled by custom properties */
   }
 
   /* ===========================
@@ -820,28 +881,7 @@ body[data-theme='glitch'] {
     contain: layout paint;
     will-change: transform;
 
-    /* Corrupted header border effects */
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-    }
-
-    &::before {
-      top: calc(-1 * var(--border-width-md));
-      left: 10%;
-      width: 30%;
-      height: var(--border-width-xl);
-      background: var(--glitch-tertiary);
-    }
-
-    &::after {
-      bottom: calc(-1 * var(--border-width-xxl));
-      right: 20%;
-      width: 40%;
-      height: var(--border-width-lg);
-      background: var(--glitch-secondary);
-    }
+    /* Corrupted header border effects controlled by custom properties */
   }
 
   .resume-header__meta {
@@ -857,17 +897,7 @@ body[data-theme='glitch'] {
     contain: layout;
     will-change: transform, text-shadow;
 
-    &::after {
-      content: '';
-      position: absolute;
-      right: -5px;
-      top: 50%;
-      width: 20px;
-      height: var(--border-width-lg);
-      background: var(--glitch-secondary);
-      animation: pixel-drift 6s infinite steps(1, jump-end);
-      will-change: transform;
-    }
+    /* ::after controlled by custom properties */
   }
 
   /* ===========================
@@ -951,22 +981,7 @@ body[data-theme='glitch'] {
     contain: layout paint;
     will-change: transform;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 60% 0 30%;
-      background: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        var(--glitch-primary) 1px,
-        transparent 2px,
-        transparent 3px,
-        var(--glitch-secondary) 4px,
-        transparent 5px
-      );
-      pointer-events: none;
-      opacity: 0.05;
-    }
+    /* ::before controlled by custom properties */
   }
 
   .skills-grid__group {

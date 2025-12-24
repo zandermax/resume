@@ -151,6 +151,117 @@ BRUTAL Theme - Maximum Brutalism
   --bullet-before-content: '■';
   --bullet-font-size: 1rem;
   --bullet-font-weight: 900;
+
+  /* Body typography */
+  --body-font-weight: 900;
+  --body-letter-spacing: -0.02em;
+
+  /* Resume main ::before - Brutal texture grid */
+  --resume-main-before-content: '';
+  --resume-main-before-display: block;
+  --resume-main-before-position: absolute;
+  --resume-main-before-inset: 0;
+  --resume-main-before-background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--brutal-texture) 2px,
+      var(--brutal-texture) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      var(--brutal-texture) 2px,
+      var(--brutal-texture) 4px
+    );
+  --resume-main-before-pointer-events: none;
+  --resume-main-before-opacity: 0.5;
+
+  /* Section title ::after - Striped accent underline */
+  --section-title-after-content: '';
+  --section-title-after-display: block;
+  --section-title-after-position: absolute;
+  --section-title-after-bottom: -8px;
+  --section-title-after-left: 0;
+  --section-title-after-right: 0;
+  --section-title-after-height: 4px;
+  --section-title-after-background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+
+  /* Skills grid ::before - Accent border overlay */
+  --skills-grid-before-content: '';
+  --skills-grid-before-display: block;
+  --skills-grid-before-position: absolute;
+  --skills-grid-before-inset: -3px;
+  --skills-grid-before-border: 3px solid var(--accent-color);
+  --skills-grid-before-pointer-events: none;
+
+  /* Experience item ::before - Striped top decoration */
+  --experience-item-before-content: '';
+  --experience-item-before-display: block;
+  --experience-item-before-position: absolute;
+  --experience-item-before-top: -3px;
+  --experience-item-before-left: -3px;
+  --experience-item-before-width: calc(100% + 6px);
+  --experience-item-before-height: 12px;
+  --experience-item-before-background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+
+  /* Education item ::before - Left accent bar */
+  --education-item-before-content: '';
+  --education-item-before-position: absolute;
+  --education-item-before-inset: 0 auto 0 0;
+  --education-item-before-width: 8px;
+  --education-item-before-background: var(--accent-color);
+  --education-item-position: relative;
+
+  /* Link hover - Aggressive transform + box-shadow */
+  --link-hover-background: var(--accent-color);
+  --link-hover-color: var(--background-color);
+  --link-hover-border-block-end-color: var(--border-color);
+  --link-hover-transform: translate(-2px, -2px);
+  --link-hover-box-shadow: 4px 4px 0 var(--border-color);
+
+  /* Dial selector housing ::before - Striped top decoration */
+  --dial-selector-housing-before-content: '';
+  --dial-selector-housing-before-position: absolute;
+  --dial-selector-housing-before-inset: 0 0 auto 0;
+  --dial-selector-housing-before-height: 8px;
+  --dial-selector-housing-before-background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 16px,
+    transparent 16px,
+    transparent 32px
+  );
+
+  /* Typography overrides */
+  --h2-h3-font-weight: 900;
+  --h2-h3-text-transform: uppercase;
+  --h2-h3-letter-spacing: -0.02em;
+  --p-li-font-weight: 600;
+  --p-li-line-height: 1.5;
+
+  /* Dial selector Brutal styling */
+  --dial-knob-border: 8px solid var(--border-color);
+  --dial-knob-border-radius: 0;
+  --dial-knob-box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
+
+  --dial-indicator-background: var(--accent-color);
+  --dial-indicator-border: 3px solid var(--border-color);
+
+  --dial-spoke-line-stroke-width: 4px;
 }
 
 /* Light Mode */
@@ -193,8 +304,7 @@ BRUTAL Theme - Maximum Brutalism
 
 /* Harsh, unforgiving base */
 body[data-theme='brutal'] {
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  /* Typography controlled by custom properties */
 
   /* AGGRESSIVE main container - raw concrete block */
   .resume__main {
@@ -205,78 +315,10 @@ body[data-theme='brutal'] {
     position: relative;
     transform: rotate(-0.3deg);
 
-    /* Visual noise/texture for raw concrete feel */
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          var(--brutal-texture) 2px,
-          var(--brutal-texture) 4px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 2px,
-          var(--brutal-texture) 2px,
-          var(--brutal-texture) 4px
-        );
-      pointer-events: none;
-      opacity: 0.5;
-    }
+    /* Visual noise/texture controlled by custom properties */
   }
 
-  /* MASSIVE section titles - brutalism is LOUD */
-  .resume-section__title {
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--accent-color) 0px,
-        var(--accent-color) 8px,
-        transparent 8px,
-        transparent 16px
-      );
-    }
-  }
-
-  /* Skills grid - aggressive boxes */
-  .skills-grid {
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border: 3px solid var(--accent-color);
-      pointer-events: none;
-    }
-  }
-
-  /* Experience items - IMPOSING boxes */
-  .experience-item {
-    &::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      width: calc(100% + 6px);
-      height: 12px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--accent-color) 0px,
-        var(--accent-color) 12px,
-        transparent 12px,
-        transparent 24px
-      );
-    }
-  }
+  /* Section titles, skills grid, experience items controlled by custom properties */
 
   /* Lists with harsh borders */
   .community-list,
@@ -298,15 +340,7 @@ body[data-theme='brutal'] {
     background: var(--section-bg);
     padding: var(--spacing-xl);
     box-shadow: 10px 10px 0 var(--brutal-shadow-light);
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 8px;
-      background: var(--accent-color);
-    }
+    /* ::before controlled by custom properties */
   }
 
   /* Header - MASSIVE and confrontational */
@@ -344,30 +378,25 @@ body[data-theme='brutal'] {
     transition: all 0.05s ease;
     position: relative;
 
-    &:hover {
-      background: var(--accent-color);
-      color: var(--background-color);
-      border-block-end-color: var(--border-color);
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0 var(--border-color);
-    }
+    /* :hover controlled by custom properties */
   }
 
   /* Dial selector enhancements */
   dial-selector {
     margin-block-start: -3em;
 
+    /* Knob, indicator, spoke-line controlled by custom properties */
     .knob {
-      border: 8px solid var(--border-color);
-      border-radius: 0;
-      box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
       background: var(--dial-knob-background);
+      border-radius: var(--dial-knob-border-radius);
+      border: var(--dial-knob-border);
+      box-shadow: var(--dial-knob-box-shadow);
     }
 
     .indicator {
-      background: var(--accent-color);
+      background: var(--dial-indicator-background);
       width: 16px;
-      border: 3px solid var(--border-color);
+      border: var(--dial-indicator-border);
     }
 
     .dial-label > span {
@@ -392,7 +421,7 @@ body[data-theme='brutal'] {
     }
 
     .spoke-line {
-      stroke-width: 4px;
+      stroke-width: var(--dial-spoke-line-stroke-width);
       opacity: 0.8;
     }
   }
@@ -407,19 +436,7 @@ body[data-theme='brutal'] {
     box-shadow: 8px 8px 0 var(--brutal-shadow-light);
     position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 8px;
-      background: repeating-linear-gradient(
-        90deg,
-        var(--accent-color) 0px,
-        var(--accent-color) 16px,
-        transparent 16px,
-        transparent 32px
-      );
-    }
+    /* ::before controlled by custom properties */
 
     h3 {
       margin-block-end: var(--spacing-md);
@@ -446,19 +463,7 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* ALL typography is BOLD and UNFORGIVING */
-  h2,
-  h3 {
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-  }
-
-  p,
-  li {
-    font-weight: 600;
-    line-height: 1.5;
-  }
+  /* ALL typography controlled by custom properties */
 
   /* Content padding */
   .resume-header,

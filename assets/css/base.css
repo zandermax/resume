@@ -611,6 +611,130 @@ Custom Properties
   --scrollbar-button-border: none;
   --scrollbar-button-height: auto;
   --scrollbar-button-width: auto;
+
+  /* Resume main ::before extended (for Brutal texture grid) */
+  --resume-main-before-background-image: none;
+  --resume-main-before-opacity: 1;
+
+  /* Section title ::after pseudo-element */
+  --section-title-after-content: none;
+  --section-title-after-display: none;
+  --section-title-after-position: static;
+  --section-title-after-bottom: auto;
+  --section-title-after-left: auto;
+  --section-title-after-right: auto;
+  --section-title-after-height: auto;
+  --section-title-after-background: transparent;
+
+  /* Skills grid ::before pseudo-element */
+  --skills-grid-before-content: none;
+  --skills-grid-before-display: none;
+  --skills-grid-before-position: static;
+  --skills-grid-before-inset: auto;
+  --skills-grid-before-border: none;
+  --skills-grid-before-pointer-events: auto;
+
+  /* Experience item ::before extended (Brutal striped decoration) */
+  --experience-item-before-top: auto;
+  --experience-item-before-left: auto;
+  --experience-item-before-width-calc: auto;
+  --experience-item-before-height: auto;
+  --experience-item-before-background-image: none;
+
+  /* Education item ::before extended (Brutal left bar) */
+  --education-item-before-content: none;
+  --education-item-before-position: static;
+  --education-item-before-inset: auto;
+  --education-item-before-width: auto;
+  --education-item-before-background: transparent;
+
+  /* Link hover extended (Brutal aggressive transform) */
+  --link-hover-background: transparent;
+  --link-hover-transform: none;
+  --link-hover-box-shadow: none;
+
+  /* Dial selector housing ::before */
+  --dial-selector-housing-before-content: none;
+  --dial-selector-housing-before-position: static;
+  --dial-selector-housing-before-inset: auto;
+  --dial-selector-housing-before-height: auto;
+  --dial-selector-housing-before-background: transparent;
+
+  /* Typography overrides */
+  --h2-h3-font-weight: normal;
+  --h2-h3-text-transform: none;
+  --h2-h3-letter-spacing: normal;
+  --p-li-font-weight: normal;
+  --p-li-line-height: normal;
+
+  /* Glitch theme - Body ::before for scan lines */
+  --body-before-content: none;
+  --body-before-position: static;
+  --body-before-inset: auto;
+  --body-before-background: transparent;
+  --body-before-pointer-events: auto;
+  --body-before-z-index: auto;
+
+  /* Resume main ::after for overlays */
+  --resume-main-after-content: none;
+  --resume-main-after-position: static;
+  --resume-main-after-inset: auto;
+  --resume-main-after-background: transparent;
+  --resume-main-after-pointer-events: auto;
+  --resume-main-after-z-index: auto;
+  --resume-main-after-opacity: 1;
+
+  /* Resume header ::before */
+  --resume-header-before-content: none;
+  --resume-header-before-position: static;
+  --resume-header-before-top: auto;
+  --resume-header-before-left: auto;
+  --resume-header-before-width: auto;
+  --resume-header-before-height: auto;
+  --resume-header-before-background: transparent;
+
+  /* Resume header ::after */
+  --resume-header-after-content: none;
+  --resume-header-after-position: static;
+  --resume-header-after-bottom: auto;
+  --resume-header-after-right: auto;
+  --resume-header-after-width: auto;
+  --resume-header-after-height: auto;
+  --resume-header-after-background: transparent;
+
+  /* Section title ::after extended (Glitch) */
+  --section-title-after-right: auto;
+  --section-title-after-top: auto;
+  --section-title-after-width: auto;
+  --section-title-after-animation: none;
+  --section-title-after-will-change: auto;
+
+  /* Experience item ::after */
+  --experience-item-after-content: none;
+  --experience-item-after-position: static;
+  --experience-item-after-bottom: auto;
+  --experience-item-after-left: auto;
+  --experience-item-after-right: auto;
+  --experience-item-after-height: auto;
+  --experience-item-after-background: transparent;
+  --experience-item-after-opacity: 1;
+  --experience-item-after-animation: none;
+  --experience-item-after-will-change: auto;
+
+  /* Dial selector housing ::before extended */
+  --dial-selector-housing-before-top: auto;
+  --dial-selector-housing-before-left: auto;
+  --dial-selector-housing-before-right: auto;
+  --dial-selector-housing-before-opacity: 1;
+  --dial-selector-housing-before-animation: none;
+  --dial-selector-housing-before-will-change: auto;
+
+  /* Skills grid ::before extended */
+  --skills-grid-before-background: transparent;
+  --skills-grid-before-opacity: 1;
+
+  /* List item hover extended */
+  --list-item-hover-filter: none;
 }
 
 /* ===========================
@@ -682,6 +806,13 @@ h3 {
   letter-spacing: var(--heading-letter-spacing, normal);
 }
 
+h2,
+h3 {
+  font-weight: var(--h2-h3-font-weight, normal);
+  text-transform: var(--h2-h3-text-transform, none);
+  letter-spacing: var(--h2-h3-letter-spacing, var(--heading-letter-spacing, normal));
+}
+
 h1.resume-header__name {
   order: var(--header-name-order, 1);
   font-size: var(--header-name-font-size, 2.6rem);
@@ -707,6 +838,8 @@ h1.resume-header__name {
 p,
 li {
   letter-spacing: var(--body-text-letter-spacing, normal);
+  font-weight: var(--p-li-font-weight, normal);
+  line-height: var(--p-li-line-height, normal);
 }
 
 .resume-header__name-greeting,
@@ -779,6 +912,21 @@ h2.resume-section__title {
     animation: var(--section-title-before-animation);
     will-change: var(--section-title-before-will-change);
   }
+
+  &::after {
+    content: var(--section-title-after-content);
+    display: var(--section-title-after-display);
+    position: var(--section-title-after-position);
+    bottom: var(--section-title-after-bottom);
+    left: var(--section-title-after-left);
+    right: var(--section-title-after-right);
+    top: var(--section-title-after-top);
+    width: var(--section-title-after-width);
+    height: var(--section-title-after-height);
+    background: var(--section-title-after-background);
+    animation: var(--section-title-after-animation);
+    will-change: var(--section-title-after-will-change);
+  }
 }
 
 h3.experience-item__role {
@@ -825,6 +973,9 @@ a:not(#resume-header__printlink) {
     border-block-end-color: var(--link-hover-border-block-end-color);
     color: var(--link-hover-color);
     text-shadow: var(--link-hover-text-shadow, none);
+    background: var(--link-hover-background);
+    transform: var(--link-hover-transform);
+    box-shadow: var(--link-hover-box-shadow);
   }
 }
 
@@ -852,10 +1003,22 @@ Layout and Structure
     inset: var(--resume-main-before-inset);
     height: var(--resume-main-before-height);
     background: var(--resume-main-before-background);
+    background-image: var(--resume-main-before-background-image);
     border-radius: var(--resume-main-before-border-radius);
     box-shadow: var(--resume-main-before-box-shadow);
     z-index: var(--resume-main-before-z-index);
     pointer-events: var(--resume-main-before-pointer-events);
+    opacity: var(--resume-main-before-opacity);
+  }
+
+  &::after {
+    content: var(--resume-main-after-content);
+    position: var(--resume-main-after-position);
+    inset: var(--resume-main-after-inset);
+    background: var(--resume-main-after-background);
+    pointer-events: var(--resume-main-after-pointer-events);
+    z-index: var(--resume-main-after-z-index);
+    opacity: var(--resume-main-after-opacity);
   }
 }
 
@@ -872,6 +1035,26 @@ Header Block
   padding-block-end: 1rem;
   margin-block-end: var(--header-margin-bottom, 1.5rem);
   border-radius: var(--header-border-radius);
+
+  &::before {
+    content: var(--resume-header-before-content);
+    position: var(--resume-header-before-position);
+    top: var(--resume-header-before-top);
+    left: var(--resume-header-before-left);
+    width: var(--resume-header-before-width);
+    height: var(--resume-header-before-height);
+    background: var(--resume-header-before-background);
+  }
+
+  &::after {
+    content: var(--resume-header-after-content);
+    position: var(--resume-header-after-position);
+    bottom: var(--resume-header-after-bottom);
+    right: var(--resume-header-after-right);
+    width: var(--resume-header-after-width);
+    height: var(--resume-header-after-height);
+    background: var(--resume-header-after-background);
+  }
 }
 
 .resume-header__dial-selector {
@@ -879,6 +1062,21 @@ Header Block
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  &::before {
+    content: var(--dial-selector-housing-before-content);
+    position: var(--dial-selector-housing-before-position);
+    inset: var(--dial-selector-housing-before-inset);
+    top: var(--dial-selector-housing-before-top);
+    left: var(--dial-selector-housing-before-left);
+    right: var(--dial-selector-housing-before-right);
+    height: var(--dial-selector-housing-before-height);
+    background: var(--dial-selector-housing-before-background);
+    opacity: var(--dial-selector-housing-before-opacity);
+    animation: var(--dial-selector-housing-before-animation);
+    will-change: var(--dial-selector-housing-before-will-change);
+  }
 }
 
 .resume-header__meta {
@@ -958,6 +1156,17 @@ Resume Components
   border-radius: var(--skills-grid-border-radius, 0);
   position: var(--skills-grid-position, relative);
   transform: var(--skills-grid-transform, none);
+
+  &::before {
+    content: var(--skills-grid-before-content);
+    display: var(--skills-grid-before-display);
+    position: var(--skills-grid-before-position);
+    inset: var(--skills-grid-before-inset);
+    border: var(--skills-grid-before-border);
+    background: var(--skills-grid-before-background);
+    pointer-events: var(--skills-grid-before-pointer-events);
+    opacity: var(--skills-grid-before-opacity);
+  }
 }
 
 .skills-grid__group {
@@ -1044,11 +1253,28 @@ Resume Components
     display: var(--experience-item-before-display);
     position: var(--experience-item-before-position);
     inset: var(--experience-item-before-inset);
+    top: var(--experience-item-before-top);
+    left: var(--experience-item-before-left);
     width: var(--experience-item-before-width);
+    height: var(--experience-item-before-height);
     background: var(--experience-item-before-background);
+    background-image: var(--experience-item-before-background-image);
     border-radius: var(--experience-item-before-border-radius);
     opacity: var(--experience-item-before-opacity);
     transition: var(--experience-item-before-transition);
+  }
+
+  &::after {
+    content: var(--experience-item-after-content);
+    position: var(--experience-item-after-position);
+    bottom: var(--experience-item-after-bottom);
+    left: var(--experience-item-after-left);
+    right: var(--experience-item-after-right);
+    height: var(--experience-item-after-height);
+    background: var(--experience-item-after-background);
+    opacity: var(--experience-item-after-opacity);
+    animation: var(--experience-item-after-animation);
+    will-change: var(--experience-item-after-will-change);
   }
 
   &:hover {
@@ -1228,6 +1454,7 @@ Resume Components
   &:hover {
     transform: var(--list-item-hover-transform);
     box-shadow: var(--list-item-hover-box-shadow);
+    filter: var(--list-item-hover-filter);
   }
 }
 
@@ -1239,6 +1466,15 @@ Resume Components
   background-color: var(--education-item-background, var(--section-bg, transparent));
   box-shadow: var(--education-item-box-shadow, none);
   transition: var(--education-item-transition, none);
+  position: var(--education-item-position, static);
+
+  &::before {
+    content: var(--education-item-before-content);
+    position: var(--education-item-before-position);
+    inset: var(--education-item-before-inset);
+    width: var(--education-item-before-width);
+    background: var(--education-item-before-background);
+  }
 
   &:hover {
     transform: var(--education-item-hover-transform);
@@ -1294,6 +1530,7 @@ Resume Components
   &:hover {
     transform: var(--list-item-hover-transform);
     box-shadow: var(--list-item-hover-box-shadow);
+    filter: var(--list-item-hover-filter);
   }
 }
 
