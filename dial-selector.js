@@ -161,15 +161,15 @@ class DialSelector extends HTMLElement {
     });
 
     window.addEventListener('resize', () => {
-      // Defer to next frame to ensure CSS media queries have been applied
+      // Double RAF to ensure CSS media queries have been fully applied
       requestAnimationFrame(() => {
-        // Disable transitions during resize
-        this.classList.add('no-transitions');
-        this.updateDimensions();
-        // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
-        this.updateLines();
-        // Re-enable transitions after resize completes
         requestAnimationFrame(() => {
+          // Disable transitions during resize
+          this.classList.add('no-transitions');
+          this.updateDimensions();
+          // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
+          this.updateLines();
+          // Re-enable transitions after resize completes
           requestAnimationFrame(() => {
             this.classList.remove('no-transitions');
           });
@@ -578,15 +578,18 @@ class DialSelector extends HTMLElement {
   setupResizeObserver() {
     if (typeof ResizeObserver !== 'undefined') {
       this.resizeObserver = new ResizeObserver(() => {
-        // Disable transitions during resize
-        this.classList.add('no-transitions');
-        this.updateDimensions();
-        // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
-        this.updateLines();
-        // Re-enable transitions after resize completes
+        // Double RAF to ensure CSS media queries have been fully applied
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            this.classList.remove('no-transitions');
+            // Disable transitions during resize
+            this.classList.add('no-transitions');
+            this.updateDimensions();
+            // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
+            this.updateLines();
+            // Re-enable transitions after resize completes
+            requestAnimationFrame(() => {
+              this.classList.remove('no-transitions');
+            });
           });
         });
       });
