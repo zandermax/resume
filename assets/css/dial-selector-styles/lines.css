@@ -1,0 +1,26 @@
+/* ===========================
+   Dial Selector - Lines & SVG
+   =========================== */
+
+dial-selector #lineContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+dial-selector .spoke-line {
+  transition: var(--line-transition, opacity 0.3s ease, stroke 0.3s ease);
+}
+
+dial-selector .spoke-line-hit-area {
+  cursor: var(--dial-cursor);
+}
+
+dial-selector .advance {
+  position: absolute;
+  inset: 0;
+  cursor: var(--dial-cursor);
+  pointer-events: auto;
+  background: transparent;
+}

@@ -1,0 +1,32 @@
+/* ===========================
+   Dial Selector - Base Component
+   =========================== */
+
+dial-selector {
+  display: block;
+  font-family: var(--font-family);
+  min-width: var(--component-min-width);
+  max-width: var(--component-width);
+  width: var(--component-width);
+  height: var(--component-height);
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 600px; /* Prevent component from getting too wide */
+  margin: 0 auto; /* Center when narrower than container */
+}
+
+dial-selector * {
+  box-sizing: border-box;
+}
+
+/* No transitions class for instant updates */
+dial-selector.no-transitions .knob {
+  transition: none;
+}
+
+dial-selector.no-transitions .spoke-line {
+  transition: none;
+}
+

@@ -1,0 +1,50 @@
+/* ===========================
+   Dial Selector - Knob & Indicator
+   =========================== */
+
+dial-selector .knob {
+  position: relative;
+  width: calc(var(--radius-outer) * 2);
+  height: calc(var(--radius-outer) * 2);
+  border: var(--width-outer-circle) solid var(--color-outer-circle);
+  border-radius: 50%;
+  background: var(--dial-knob-background, #11161c);
+  background-image: var(--ds-knob-background-image);
+  background-size: var(--ds-knob-background-size);
+  background-position: var(--ds-knob-background-position);
+  background-repeat: var(--ds-knob-background-repeat);
+  box-shadow: var(--shadow);
+  z-index: 2;
+  transform: rotate(var(--indicator-angle)) scale(var(--ds-knob-transform-scale));
+  transition: transform 0.25s ease-in var(--time-selection-delay, 0s);
+  filter: var(--ds-knob-filter);
+  opacity: var(--ds-knob-opacity);
+  animation: var(--ds-knob-animation);
+  animation-play-state: var(--ds-knob-animation-play-state);
+  will-change: var(--ds-knob-will-change);
+}
+
+dial-selector .knob::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--radius-outer) - var(--radius-inner));
+  border: var(--width-inner-circle) solid var(--color-inner-circle);
+  border-radius: 50%;
+  opacity: var(--ds-knob-before-opacity);
+  filter: var(--ds-knob-before-filter);
+}
+
+dial-selector .indicator {
+  position: absolute;
+  width: var(--indicator-width);
+  height: var(--indicator-length);
+  background: var(--ds-indicator-gradient);
+  border-radius: calc(var(--indicator-width) / 2);
+  top: calc(var(--indicator-vertical-offset) - var(--indicator-length) / 2);
+  left: calc(40% + var(--radius-inner) - var(--width-inner-circle) + var(--center-indicator));
+  transform-origin: 0% 50%;
+  transform: rotate(90deg);
+  opacity: var(--ds-indicator-opacity);
+  filter: var(--ds-indicator-filter);
+}
+

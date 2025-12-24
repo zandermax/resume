@@ -1,0 +1,56 @@
+/* ===========================
+   Dial Selector - Responsive Design
+   =========================== */
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  dial-selector {
+    /* Reduce size for tablets/large phones */
+    --knob-size: 160px;
+    --dial-label-font-size: var(--dial-label-font-size--tablet);
+    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--tablet);
+    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--tablet);
+  }
+
+  dial-selector .selector {
+    gap: clamp(8px, 2vw, 20px);
+  }
+
+  dial-selector .dial-label {
+    padding: clamp(3px, 0.8vw, 6px) clamp(5px, 1.2vw, 10px);
+    letter-spacing: clamp(0.3px, 0.08vw, 0.8px);
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 600px) {
+  dial-selector {
+    /* Further reduce for phones */
+    --knob-size: 140px;
+    --dial-label-font-size: var(--dial-label-font-size--phone);
+    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--phone);
+    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--phone);
+  }
+
+  dial-selector .selector {
+    gap: clamp(8px, 2.5vw, 16px);
+  }
+
+  dial-selector .dial-label {
+    padding: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  dial-selector {
+    /* Even smaller for very small screens */
+    --knob-size: 120px;
+  }
+
+  dial-selector .selector {
+    gap: clamp(4px, 1.5vw, 10px);
+  }
+}
+
