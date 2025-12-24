@@ -1130,6 +1130,10 @@ body[data-theme='glitch'] {
 
       &:hover > span {
         filter: invert(1);
+        animation: text-glitch 0.5s infinite;
+        text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
+        transform: translateX(2px);
+        will-change: transform, text-shadow;
       }
 
       &.active > span {
