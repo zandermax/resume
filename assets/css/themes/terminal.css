@@ -306,22 +306,7 @@ body[data-theme='terminal'] {
       background: var(--dial-color-indicator);
     }
 
-    .dial-label {
-      font-size: var(--dial-label-font-size);
-      padding: var(--dial-label-padding);
-      transition: background 0.15s ease, color 0.15s ease;
-
-      &:hover > span {
-        background: var(--dial-label-hover-background);
-        box-shadow: var(--dial-label-hover-box-shadow);
-      }
-
-      &.active > span {
-        background: var(--dial-label-active-background);
-        box-shadow: var(--dial-label-active-box-shadow);
-        color: var(--dial-label-active-color);
-      }
-    }
+    /* Terminal dial styling is handled by dial-selector.css using custom properties defined above */
 
     .spoke-line {
       stroke-width: var(--dial-spoke-stroke-width);

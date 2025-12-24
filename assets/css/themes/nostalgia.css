@@ -9,6 +9,10 @@ Nostalgia Theme (Geocities 90s)
 
   /* Header name wrapper custom properties */
   --header-name-wrapper-margin-block-start: 1.5rem;
+
+  /* Dial label hover properties */
+  --dial-label-hover-background: var(--accent-color);
+  --dial-label-hover-color: var(--background-color);
 }
 
 /* Light Mode */
@@ -26,6 +30,9 @@ Nostalgia Theme (Geocities 90s)
   --section-bg: oklch(100% 0.18 105); /* Crazy bright yellow */
   --header-bg: var(--color-magenta-pink);
   --accent-color: var(--color-green);
+
+  /* Dial label hover properties (light mode) - dark text on bright background */
+  --dial-label-hover-color: var(--color-black);
 }
 
 /* Dark Mode */

@@ -116,6 +116,10 @@
   --printlink-after-display: inline;
   --printlink-after-margin-inline-start: 0.35em;
 
+  /* Dial label hover properties */
+  --dial-label-hover-text-shadow: 0 0 10px currentColor;
+  --dial-label-hover-border-color: currentColor;
+
   /* Body pseudo-element: scanline overlay */
   --body-before-content: '';
   --body-before-display: block;
@@ -350,23 +354,13 @@ body[data-theme='crt'] {
       background: currentColor;
     }
 
-    .dial-label {
-      font-size: var(--dial-label-font-size);
-      padding: var(--dial-label-padding);
-      border: var(--dial-label-border-width) var(--dial-label-border-style) transparent;
-      transition: all 0.15s ease;
+    /* CRT dial styling is handled by dial-selector.css using custom properties defined above */
 
-      &:hover > span {
-        text-shadow: 0 0 10px currentColor;
-        border-color: currentColor;
-      }
-
-      &.active > span {
-        text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-        font-weight: bold;
-        border: 2px solid currentColor;
-        box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
-      }
+    .dial-label.active > span {
+      text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+      font-weight: bold;
+      border: 2px solid currentColor;
+      box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
     }
 
     .spoke-line {

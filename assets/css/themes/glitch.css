@@ -310,6 +310,13 @@
   --dial-selector-housing-before-animation: h-displace 10s infinite;
   --dial-selector-housing-before-will-change: transform, opacity;
 
+  /* Dial label hover properties */
+  --dial-label-hover-filter: invert(1);
+  --dial-label-hover-animation: text-glitch 0.5s infinite;
+  --dial-label-hover-text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
+  --dial-label-hover-transform: translateX(2px);
+  --dial-label-hover-will-change: transform, text-shadow;
+
   /* Skills grid ::before - vertical artifact pattern */
   --skills-grid-before-content: '';
   --skills-grid-before-display: block;
@@ -1129,11 +1136,11 @@ body[data-theme='glitch'] {
       }
 
       &:hover > span {
-        filter: invert(1);
-        animation: text-glitch 0.5s infinite;
-        text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
-        transform: translateX(2px);
-        will-change: transform, text-shadow;
+        filter: var(--dial-label-hover-filter);
+        animation: var(--dial-label-hover-animation);
+        text-shadow: var(--dial-label-hover-text-shadow);
+        transform: var(--dial-label-hover-transform);
+        will-change: var(--dial-label-hover-will-change);
       }
 
       &.active > span {

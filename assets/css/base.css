@@ -89,6 +89,9 @@ Custom Properties
   /* Header name wrapper */
   --header-name-wrapper-margin-block-start: 2rem;
 
+  /* Header top row */
+  --header-top-row-margin-block-end: 0;
+
   /* Header meta */
   --header-meta-font-size: 0.85rem;
   --header-meta-font-family: inherit;
@@ -490,6 +493,13 @@ Custom Properties
   --dial-label-hover-border-color: transparent;
   --dial-label-hover-background: transparent;
   --dial-label-hover-box-shadow: none;
+  --dial-label-hover-color: inherit;
+  --dial-label-hover-opacity: 1;
+  --dial-label-hover-transform: none;
+  --dial-label-hover-filter: none;
+  --dial-label-hover-animation: none;
+  --dial-label-hover-padding: inherit;
+  --dial-label-hover-will-change: auto;
   --dial-label-active-text-shadow: none;
   --dial-label-active-font-weight: normal;
   --dial-label-active-border: none;
@@ -1055,6 +1065,10 @@ Header Block
     height: var(--resume-header-after-height);
     background: var(--resume-header-after-background);
   }
+}
+
+.resume-header__top-row {
+  margin-block-end: var(--header-top-row-margin-block-end);
 }
 
 .resume-header__dial-selector {

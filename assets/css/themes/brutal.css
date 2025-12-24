@@ -262,6 +262,14 @@ BRUTAL Theme - Maximum Brutalism
   --dial-indicator-border: 3px solid var(--border-color);
 
   --dial-spoke-line-stroke-width: 4px;
+
+  /* Dial label hover properties */
+  --dial-label-hover-border-color: var(--border-color);
+  --dial-label-hover-background: var(--accent-color);
+  --dial-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
+  --dial-label-hover-box-shadow: 4px 4px 0 var(--border-color);
+  --dial-label-hover-color: var(--background-color);
+  --dial-label-hover-padding: var(--spacing-xs) var(--spacing-md);
 }
 
 /* Light Mode */
@@ -410,7 +418,6 @@ body[data-theme='brutal'] {
       color: var(--text-color);
     }
 
-    .dial-label > span:hover,
     .dial-label.active > span {
       border-color: var(--border-color);
       background: var(--accent-color);
@@ -763,7 +770,6 @@ body[data-theme='brutal'] {
       padding: 0.35rem 0.6rem;
     }
 
-    dial-selector .dial-label > span:hover,
     dial-selector .dial-label.active > span {
       padding: 0.35rem var(--spacing-sm);
     }
@@ -826,7 +832,6 @@ body[data-theme='brutal'] {
       padding: 0.25rem 0.4rem; /* Minimal padding for non-selected */
     }
 
-    dial-selector .dial-label > span:hover,
     dial-selector .dial-label.active > span {
       padding: 0.35rem 0.8rem; /* Keep aggressive padding on selected */
     }

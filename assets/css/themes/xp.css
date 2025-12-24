@@ -62,6 +62,9 @@ Windows XP Theme (Luna)
   /* Header name wrapper custom properties */
   --header-name-wrapper-margin-block-start: var(--spacing-lg);
 
+  /* Header top row custom properties */
+  --header-top-row-margin-block-end: 2rem;
+
   /* Resume main ::before - XP title bar */
   --resume-main-before-content: '';
   --resume-main-before-display: block;
@@ -111,6 +114,7 @@ Windows XP Theme (Luna)
   --dial-label-font-weight: 700;
   --dial-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
   --dial-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
+  --dial-label-hover-padding: 0.45rem 0.25rem;
   --dial-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
   --dial-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
     0 2px 4px var(--xp-black-20);
@@ -392,6 +396,20 @@ body[data-theme='xp'] {
     padding: 0;
     overflow: visible;
     position: relative;
+
+    /* XP title bar */
+    &::before {
+      content: var(--resume-main-before-content);
+      display: var(--resume-main-before-display);
+      position: var(--resume-main-before-position);
+      inset: var(--resume-main-before-inset);
+      height: var(--resume-main-before-height);
+      background: var(--resume-main-before-background);
+      border-radius: var(--resume-main-before-border-radius);
+      box-shadow: var(--resume-main-before-box-shadow);
+      z-index: var(--resume-main-before-z-index);
+      pointer-events: var(--resume-main-before-pointer-events);
+    }
   }
 
   /* Header and section spacing */
@@ -402,7 +420,8 @@ body[data-theme='xp'] {
 
   .resume-header {
     margin-block-start: 3rem;
-    padding-block: 1rem;
+    padding-block-start: 3rem;
+    padding-block-end: 1rem;
     border-block-end: 2px solid var(--xp-button-shadow);
     background: transparent;
   }
@@ -463,7 +482,7 @@ body[data-theme='xp'] {
       stroke-width: var(--dial-spoke-line-stroke-width);
     }
 
-    /* dial-label hover and active states controlled by custom properties in base.css */
+    /* XP dial styling is handled by dial-selector.css using custom properties defined above */
   }
 
   .resume-header__dial-selector {
@@ -485,6 +504,11 @@ body[data-theme='xp'] {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--link-hover-color);
+      border-block-end-color: var(--link-hover-border-block-end-color);
+    }
 
     &:visited {
       border-block-end-color: var(--link-visited-color);

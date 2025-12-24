@@ -159,14 +159,35 @@ dial-selector .dial-label {
   gap: 0;
   cursor: var(--dial-cursor);
   user-select: none;
-  padding: clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px);
+  padding: var(--dial-label-padding, clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px));
   position: absolute;
   transform: translateY(-50%);
   white-space: nowrap;
+  transition: var(--dial-label-transition, background-color 0.2s ease, color 0.2s ease);
+  background: var(--dial-label-background, transparent);
+  border-radius: var(--dial-label-border-radius, 0);
+  border: var(--dial-label-border-width, 0) var(--dial-label-border-style, solid) transparent;
+}
+
+dial-selector .dial-label:hover > span {
+  background: var(--dial-label-hover-background, var(--color-ink));
+  color: var(--dial-label-hover-color, var(--dial-knob-background, #11161c));
+  opacity: var(--dial-label-hover-opacity, 1);
+  transform: var(--dial-label-hover-transform, none);
+  filter: var(--dial-label-hover-filter, none);
+  animation: var(--dial-label-hover-animation, none);
+  text-shadow: var(--dial-label-hover-text-shadow, none);
+  box-shadow: var(--dial-label-hover-box-shadow, none);
+  border-color: var(--dial-label-hover-border-color, transparent);
+  padding: var(--dial-label-hover-padding, inherit);
+  will-change: var(--dial-label-hover-will-change, auto);
 }
 
 dial-selector .dial-label.active > span {
-  color: var(--color-selection);
+  color: var(--dial-label-active-color, var(--color-selection));
+  background: var(--dial-label-active-background, transparent);
+  box-shadow: var(--dial-label-active-box-shadow, none);
+  text-shadow: var(--dial-label-active-text-shadow, none);
   padding-block: var(--dial-label-active-span-padding-block);
   padding-inline: var(--dial-label-active-span-padding-inline);
 }

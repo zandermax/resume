@@ -23,6 +23,11 @@ DEFAULT Theme - Clean, Professional
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
+
+  /* Dial label hover properties */
+  --dial-label-hover-opacity: 0.7;
+  --dial-label-hover-transform: translateY(-1px);
+  --dial-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
 }
 
 /* Dark Mode */
@@ -38,6 +43,11 @@ DEFAULT Theme - Clean, Professional
   --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
   --accent-color: var(--color-red-bright);
+
+  /* Dial label hover properties */
+  --dial-label-hover-opacity: 0.7;
+  --dial-label-hover-transform: translateY(-1px);
+  --dial-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
 }
 
 /* Print Link Button Styling */

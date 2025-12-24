@@ -147,6 +147,12 @@ Skeuomorphic Theme Effects
   --printlink-active-transform: translateY(0);
   --printlink-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
 
+  /* Dial label hover properties - no hover effect for realism (skeuomorphic dials don't respond to hover) */
+  --dial-label-hover-box-shadow: none;
+  --dial-label-hover-background: transparent;
+  --dial-label-hover-color: inherit;
+  --dial-label-hover-transform: none;
+
   &[data-mode='light'] {
     --background-color: oklch(0.36 0.05 45);
     --text-color: var(--color-brown);
@@ -401,6 +407,14 @@ body[data-theme='skeuomorph'] {
     &.active > span {
       color: var(--dial-color-selection);
       font-weight: 700;
+    }
+
+    /* Remove hover effect from active label for realism */
+    &.active:hover > span {
+      background: transparent;
+      color: var(--dial-color-selection);
+      transform: none;
+      box-shadow: none;
     }
   }
 

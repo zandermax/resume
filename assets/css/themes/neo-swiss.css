@@ -213,6 +213,10 @@ Ultra-modern minimalism with mathematical precision
   --dial-label-active-span-padding-inline--tablet: 0.55rem;
   --dial-label-active-span-padding-block--phone: 0.025rem;
   --dial-label-active-span-padding-inline--phone: 0.5rem;
+
+  /* Dial label hover properties */
+  --dial-label-hover-background: transparent;
+  --dial-label-hover-color: var(--accent-color);
 }
 
 /* Light Mode */
@@ -496,10 +500,6 @@ body[data-theme='neoswiss'] {
       letter-spacing: 0.1em;
       color: var(--dial-color-ink);
 
-      &:hover > span {
-        background: transparent;
-        color: var(--accent-color);
-      }
 
       &.active > span {
         background: var(--accent-color);
