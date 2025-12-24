@@ -440,7 +440,8 @@ body[data-theme='skeuomorph'] {
   /* Leather texture on bullets */
   /* Dial selector enhancements */
   dial-selector {
-    --dial-knob-background: var(--metal-gradient);
+    --dial-knob-background: #11161c; /* Fallback solid color */
+    --ds-knob-background-image: var(--metal-gradient); /* Use gradient as background-image */
 
     .knob {
       box-shadow: var(--knob-shadow);

@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<script src="./dial-selector.js"></script>
+	<script type="module" src="./dial-selector/index.js"></script>
 	<script src="./theme-manager.js"></script>
 
 	<script type="application/ld+json">
@@ -1215,10 +1215,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="metro-chat-dialog__input-area">
-				<input type="text" class="metro-chat-dialog__input" placeholder="Type a message..." disabled aria-label="Message input (disabled)">
-				<button class="metro-chat-dialog__send-btn" disabled aria-label="Send message (disabled)">SEND</button>
-			</div>
+		<div class="metro-chat-dialog__input-area">
+			<label for="metro-chat-input" class="visually-hidden">Chat message</label>
+			<input type="text" id="metro-chat-input" name="metro-chat-input" class="metro-chat-dialog__input" placeholder="Type a message..." disabled aria-label="Message input (disabled)">
+			<button class="metro-chat-dialog__send-btn" disabled aria-label="Send message (disabled)">SEND</button>
+		</div>
 		</div>
 	</dialog>
 

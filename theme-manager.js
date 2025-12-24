@@ -53,6 +53,14 @@ function markGlitchableCharacters() {
 // Theme Management
 // ===========================
 
+// Helper to reset multiple checkboxes
+function resetCheckboxes(...ids) {
+  ids.forEach((id) => {
+    const checkbox = document.getElementById(id);
+    if (checkbox) checkbox.checked = false;
+  });
+}
+
 // Map display names to internal theme names
 const THEME_DISPLAY_TO_INTERNAL = {
   today: 'default',
@@ -134,26 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reset cookie banner checkbox on page load (browsers remember form state)
-  const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
-  if (cookieBannerDismiss) {
-    cookieBannerDismiss.checked = false;
-  }
-  // Same for the sticky note checkbox
-  const stickyNoteCheckbox = document.getElementById('sticky-note-disappear');
-  if (stickyNoteCheckbox) {
-    stickyNoteCheckbox.checked = false;
-  }
-  // Same for the XP dialog checkbox
-  const xpDialogToggle = document.getElementById('xp-dialog-toggle');
-  if (xpDialogToggle) {
-    xpDialogToggle.checked = false;
-  }
-  // Same for the terminal dialog checkbox
-  const terminalDialogToggle = document.getElementById('terminal-dialog-toggle');
-  if (terminalDialogToggle) {
-    terminalDialogToggle.checked = false;
-  }
+  // Reset checkboxes on page load (browsers remember form state)
+  resetCheckboxes(
+    'cookie-banner-dismiss',
+    'sticky-note-disappear',
+    'xp-dialog-toggle',
+    'terminal-dialog-toggle'
+  );
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');

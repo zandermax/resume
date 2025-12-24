@@ -15,6 +15,24 @@ function closeOnBackdrop(dialog) {
   dialog?.addEventListener('click', (e) => e.target === dialog && dialog.close());
 }
 
+// Helper to add keyboard click handler (Enter/Space)
+function addKeyboardClickHandler(element, callback) {
+  element?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      callback(e);
+    }
+  });
+}
+
+// Helper to setup clickable card with keyboard support
+function setupClickableCard(card, onClick) {
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('click', onClick);
+  addKeyboardClickHandler(card, onClick);
+}
+
 // Reset all dialog/modal states on page load
 window.addEventListener('DOMContentLoaded', () => {
   // Reset Neo-Swiss AI modal
@@ -74,9 +92,7 @@ closeOnBackdrop(terminalDialog);
 const crtTerminalDialog = document.getElementById('crt-terminal-dialog');
 const terminalLog = document.getElementById('terminal-log');
 terminalLog?.addEventListener('click', () => crtTerminalDialog?.showModal());
-terminalLog?.addEventListener('keydown', (e) => {
-  (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), crtTerminalDialog?.showModal());
-});
+addKeyboardClickHandler(terminalLog, () => crtTerminalDialog?.showModal());
 document.getElementById('crt-terminal-dialog-close')?.addEventListener('click', () => crtTerminalDialog?.close());
 closeOnBackdrop(crtTerminalDialog);
 
@@ -138,25 +154,11 @@ function showDashboardDialog(cardType) {
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardCards = document.querySelectorAll('.dashboard-card');
   dashboardCards.forEach((card) => {
-    card.addEventListener('click', () => {
+    setupClickableCard(card, () => {
       const cardType = card.classList.value.split(' ').find((cls) => cls !== 'dashboard-card');
       if (cardType && dashboardTitles[cardType]) {
         showDashboardDialog(cardType);
         dashboardMetricsDialog?.showModal();
-      }
-    });
-
-    // Add keyboard support
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const cardType = card.classList.value.split(' ').find((cls) => cls !== 'dashboard-card');
-        if (cardType && dashboardTitles[cardType]) {
-          showDashboardDialog(cardType);
-          dashboardMetricsDialog?.showModal();
-        }
       }
     });
   });
@@ -173,14 +175,7 @@ const metroChatDialogClose = document.getElementById('metro-chat-dialog-close');
 
 // Open chat dialog when clicking widget
 metroChatWidget?.addEventListener('click', () => metroChatDialog?.showModal());
-
-// Keyboard support for chat widget
-metroChatWidget?.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    metroChatDialog?.showModal();
-  }
-});
+addKeyboardClickHandler(metroChatWidget, () => metroChatDialog?.showModal());
 
 // Close chat dialog
 metroChatDialogClose?.addEventListener('click', () => metroChatDialog?.close());
