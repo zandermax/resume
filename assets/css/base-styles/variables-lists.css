@@ -1,0 +1,74 @@
+/**
+ * CSS variables for community and principles list components
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .community-list (container for "Open Source & Community" section)
+ *   - .community-list__item (individual community/open source items)
+ *   - .principles-list (container for "Why Ashby" and "How I Work" sections)
+ *   - .principles-list__item (individual principle/value items)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --section-bg, etc.)
+ *
+ * RELATED FILES:
+ *   - lists.css (applies these variables)
+ *
+ * VARIABLES DEFINED: ~35 variables controlling:
+ *   - List containers (borders, backgrounds, padding)
+ *   - Community items (solid borders, padding, hover states)
+ *   - Principles items (dashed borders, padding, hover states)
+ *   - List item pseudo-elements for decorations
+ */
+
+:root {
+  /* === LIST CONTAINERS === */
+  --list-border: 0;
+  --list-background: transparent;
+  --list-box-shadow: none;
+  --list-padding: 0;
+
+  /* === COMMUNITY LIST ITEMS === */
+  --community-item-border-style: solid;
+  --community-item-border-width: 1px;
+  --community-item-padding: 0.6rem 0.75rem;
+  --community-item-font-size: 0.9rem;
+  --community-item-font-weight: normal;
+  --community-item-line-height: 1.5;
+  --community-item-margin-bottom: 0;
+  --community-item-margin-top: 0;
+  --community-item-background: transparent;
+  --community-item-box-shadow: none;
+  --community-item-border-radius: 0;
+  --community-item-position: relative;
+  --community-item-transition: none;
+
+  /* === PRINCIPLES LIST ITEMS === */
+  --principles-item-border-style: dashed;
+  --principles-item-border-width: 1px;
+  --principles-item-padding: 0.25rem 0;
+  --principles-item-font-size: 0.9rem;
+  --principles-item-font-weight: normal;
+  --principles-item-line-height: 1.4;
+  --principles-item-margin-bottom: 0;
+  --principles-item-margin-top: 0;
+  --principles-item-background: transparent;
+  --principles-item-box-shadow: none;
+  --principles-item-border-radius: 0;
+  --principles-item-position: relative;
+  --principles-item-transition: none;
+
+  /* === LIST ITEM PSEUDO-ELEMENTS === */
+  --list-item-before-content: none;
+  --list-item-before-position: static;
+  --list-item-before-left: auto;
+  --list-item-before-top: auto;
+  --list-item-before-color: inherit;
+  --list-item-before-font-weight: normal;
+  --list-item-before-font-size: inherit;
+
+  /* === LIST ITEM HOVER STATES === */
+  --list-item-hover-transform: none;
+  --list-item-hover-box-shadow: none;
+  --list-item-hover-filter: none;
+}
+

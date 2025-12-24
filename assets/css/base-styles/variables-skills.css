@@ -1,0 +1,95 @@
+/**
+ * CSS variables for skills grid component
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .skills-grid (2-column grid container)
+ *   - .skills-grid__group (individual skill category boxes)
+ *   - .skills-grid__title (skill category titles like "Front-end & UI")
+ *   - .skills-grid__items (skill list text content)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --spacing-*, --section-bg)
+ *
+ * RELATED FILES:
+ *   - skills.css (applies these variables to skills grid styles)
+ *
+ * VARIABLES DEFINED: ~30 variables controlling:
+ *   - Grid layout (gap, columns, border, background)
+ *   - Group boxes (borders, padding, shadows, hover states, animations)
+ *   - Title styling (font, borders, spacing, pseudo-elements)
+ *   - Items text (font size, line height, font family)
+ */
+
+:root {
+  /* === SKILLS GRID CONTAINER === */
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-box-shadow: none;
+  --skills-grid-padding: 0;
+  --skills-grid-border-radius: 0;
+  --skills-grid-position: relative;
+  --skills-grid-transform: none;
+  --skills-grid-gap: 1rem;
+
+  /* === SKILLS GRID PSEUDO-ELEMENTS === */
+  --skills-grid-before-content: none;
+  --skills-grid-before-display: none;
+  --skills-grid-before-position: static;
+  --skills-grid-before-inset: auto;
+  --skills-grid-before-border: none;
+  --skills-grid-before-pointer-events: auto;
+  --skills-grid-before-background: transparent;
+  --skills-grid-before-opacity: 1;
+
+  /* === SKILLS GROUP BOXES === */
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-box-shadow: none;
+  --skills-group-padding: 0;
+  --skills-group-border-radius: 0;
+  --skills-group-margin: 0;
+  --skills-group-margin-bottom: 0;
+  --skills-group-position: relative;
+  --skills-group-transform: none;
+  --skills-group-transition: none;
+  --skills-group-overflow: visible;
+  --skills-group-animation: none;
+  --skills-group-contain: none;
+  --skills-group-will-change: auto;
+
+  /* === SKILLS GROUP HOVER STATES === */
+  --skills-group-hover-transform: none;
+  --skills-group-hover-box-shadow: none;
+  --skills-group-hover-background: none;
+
+  /* === SKILLS TITLE === */
+  --skills-title-border-style: none;
+  --skills-title-border-width: 0;
+  --skills-title-border-block-end-color: var(--border-color);
+  --skills-title-padding-bottom: 0;
+  --skills-title-margin-bottom: 0;
+  --skills-title-margin: 0;
+  --skills-title-font-weight: normal;
+  --skills-title-font-size: 0.9rem;
+  --skills-title-color: inherit;
+  --skills-title-text-shadow: none;
+  --skills-title-display: block;
+  --skills-title-text-transform: uppercase;
+  --skills-title-letter-spacing: 0.14em;
+  --skills-title-line-height: normal;
+  --skills-title-border: none;
+  --skills-title-align-items: normal;
+  --skills-title-gap: normal;
+
+  /* === SKILLS TITLE PSEUDO-ELEMENTS === */
+  --skills-title-before-content: none;
+  --skills-title-before-display: none;
+  --skills-title-before-color: inherit;
+  --skills-title-before-font-size: inherit;
+
+  /* === SKILLS ITEMS TEXT === */
+  --skills-items-font-size: 0.85rem;
+  --skills-items-line-height: 1.4;
+  --skills-items-font-family: inherit;
+}
+

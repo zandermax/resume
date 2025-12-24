@@ -1,0 +1,243 @@
+/**
+ * Layout-level variables for main container, header structure, and section layouts
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume__main (main container)
+ *   - .resume-header (header structure)
+ *   - .resume-header__name (h1 name)
+ *   - .resume-header__role (role title)
+ *   - .resume-header__meta (contact info)
+ *   - .resume-section (section containers)
+ *   - .resume-section__title (h2 section titles)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --spacing-*, etc.)
+ *
+ * RELATED FILES:
+ *   - layout.css (uses --main-* variables)
+ *   - header.css (uses --header-* variables)
+ *   - sections.css (uses --section-* variables)
+ *   - typography.css (uses typography-related variables)
+ *
+ * VARIABLES DEFINED: ~120 variables controlling:
+ *   - Main container (border, padding, shadow, pseudo-elements)
+ *   - Header layout (border, padding, name, role, meta styling)
+ *   - Section structure (titles, content, spacing)
+ *   - Typography effects (shadows, letter-spacing)
+ *   - Body pseudo-elements
+ */
+
+:root {
+  /* === MAIN CONTAINER === */
+  --main-border-width: 4px;
+  --main-border-style: solid;
+  --main-box-shadow: none;
+  --main-padding: 2.5rem 2.25rem;
+  --main-border-radius: 0;
+
+  /* === RESUME HEADER === */
+  --header-border-style: solid;
+  --header-border-width: 3px;
+  --header-padding: 0;
+  --header-margin-bottom: 1.5rem;
+  --header-border-radius: var(--main-border-radius);
+
+  /* === HEADER NAME === */
+  --header-name-order: 1;
+  --header-name-font-size: 2.6rem;
+  --header-name-font-weight: normal;
+  --header-name-line-height: normal;
+  --header-name-letter-spacing: 0.08em;
+  --header-name-text-transform: uppercase;
+  --header-name-color: inherit;
+  --header-name-border: none;
+  --header-name-border-style: solid;
+  --header-name-border-width: 4px;
+  --header-name-border-color: var(--border-color);
+  --header-name-padding: 0;
+  --header-name-padding-block-end: 0.35rem;
+  --header-name-margin: 0;
+  --header-name-margin-block-end: 0.35rem;
+  --header-name-text-shadow: none;
+  --header-name-position: static;
+  --header-name-animation: none;
+  --header-name-will-change: auto;
+
+  /* === HEADER NAME WRAPPER === */
+  --header-name-wrapper-margin-block-start: 2rem;
+
+  /* === HEADER TOP ROW === */
+  --header-top-row-margin-block-end: 0;
+
+  /* === HEADER META === */
+  --header-meta-font-size: 0.85rem;
+  --header-meta-font-family: inherit;
+  --header-meta-text-transform: uppercase;
+  --header-meta-letter-spacing: 0.12em;
+  --header-meta-color: inherit;
+  --header-meta-opacity: 1;
+  --header-meta-text-shadow: none;
+
+  /* === SECTION TITLES === */
+  --section-title-font-size: 1.15rem;
+  --section-title-font-weight: normal;
+  --section-title-line-height: normal;
+  --section-title-letter-spacing: 0.18em;
+  --section-title-text-transform: uppercase;
+  --section-title-color: inherit;
+  --section-title-border: none;
+  --section-title-border-style: solid;
+  --section-title-border-width: 3px;
+  --section-title-border-color: var(--border-color);
+  --section-title-border-radius: 0;
+  --section-title-border-position: block; /* block, block-end, or none */
+  --section-title-border-inline-start: none;
+  --section-title-border-block-end: none;
+  --section-title-padding: 0.45rem 0;
+  --section-title-margin: 0;
+  --section-title-margin-bottom: 0.75rem;
+  --section-title-margin-top: 0;
+  --section-title-background: transparent;
+  --section-title-box-shadow: none;
+  --section-title-text-shadow: none;
+  --section-title-position: static;
+  --section-title-transform: none;
+  --section-title-display: block;
+  --section-title-width: auto;
+  --section-title-max-width: none;
+  --section-title-overflow: visible;
+  --section-title-contain: none;
+  --section-title-will-change: auto;
+  --section-title-animation: none;
+  --section-title-align-items: normal;
+  --section-title-gap: normal;
+
+  /* === SECTION TITLE PSEUDO-ELEMENTS === */
+  --section-title-before-content: none;
+  --section-title-before-display: none;
+  --section-title-before-color: inherit;
+  --section-title-before-font-size: inherit;
+  --section-title-before-animation: none;
+  --section-title-before-will-change: auto;
+  --section-title-after-content: none;
+  --section-title-after-display: none;
+  --section-title-after-position: static;
+  --section-title-after-bottom: auto;
+  --section-title-after-left: auto;
+  --section-title-after-right: auto;
+  --section-title-after-top: auto;
+  --section-title-after-width: auto;
+  --section-title-after-height: auto;
+  --section-title-after-background: transparent;
+  --section-title-after-animation: none;
+  --section-title-after-will-change: auto;
+
+  /* === SECTION TEXT === */
+  --section-text-font-size: 0.95rem;
+  --section-text-line-height: 1.6;
+  --section-text-color: inherit;
+  --section-text-letter-spacing: normal;
+  --section-text-margin-block-end: 0.9rem;
+
+  /* === SECTION CONTENT === */
+  --section-content-padding-inline: 0;
+
+  /* === RESUME HEADER ROLE === */
+  --header-role-order: 3;
+  --header-role-font-size: 1.1rem;
+  --header-role-font-weight: normal;
+  --header-role-color: inherit;
+  --header-role-text-transform: uppercase;
+  --header-role-letter-spacing: 0.18em;
+  --header-role-line-height: normal;
+  --header-role-text-shadow: none;
+  --header-role-margin: 0;
+  --header-role-margin-block-start: 0;
+  --header-role-border-inline-start: none;
+  --header-role-padding-inline-start: 0;
+
+  /* === TYPOGRAPHY EFFECTS === */
+  --text-shadow: none;
+  --heading-text-shadow: none;
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: none;
+  --heading-letter-spacing: normal;
+  --body-text-letter-spacing: normal;
+  --link-hover-text-decoration: none;
+  --link-hover-border-block-end: none;
+  --link-hover-border-block-end-color: transparent;
+  --link-hover-color: inherit;
+  --link-hover-background: transparent;
+  --link-hover-transform: none;
+  --link-hover-box-shadow: none;
+
+  /* === BODY TYPOGRAPHY === */
+  --body-font-weight: normal;
+  --body-letter-spacing: normal;
+
+  /* === TYPOGRAPHY OVERRIDES === */
+  --h2-h3-font-weight: normal;
+  --h2-h3-text-transform: none;
+  --h2-h3-letter-spacing: normal;
+  --p-li-font-weight: normal;
+  --p-li-line-height: normal;
+
+  /* === BODY PSEUDO-ELEMENT === */
+  --body-before-content: none;
+  --body-before-display: none;
+  --body-before-position: static;
+  --body-before-inset: auto;
+  --body-before-background: transparent;
+  --body-before-pointer-events: auto;
+  --body-before-z-index: auto;
+
+  /* === RESUME MAIN PSEUDO-ELEMENTS === */
+  --resume-main-before-content: none;
+  --resume-main-before-display: none;
+  --resume-main-before-position: static;
+  --resume-main-before-inset: auto;
+  --resume-main-before-height: auto;
+  --resume-main-before-background: transparent;
+  --resume-main-before-border-radius: 0;
+  --resume-main-before-box-shadow: none;
+  --resume-main-before-z-index: auto;
+  --resume-main-before-pointer-events: auto;
+  --resume-main-before-background-image: none;
+  --resume-main-before-opacity: 1;
+  --resume-main-after-content: none;
+  --resume-main-after-position: static;
+  --resume-main-after-inset: auto;
+  --resume-main-after-background: transparent;
+  --resume-main-after-pointer-events: auto;
+  --resume-main-after-z-index: auto;
+  --resume-main-after-opacity: 1;
+
+  /* === RESUME HEADER PSEUDO-ELEMENTS === */
+  --resume-header-before-content: none;
+  --resume-header-before-position: static;
+  --resume-header-before-top: auto;
+  --resume-header-before-left: auto;
+  --resume-header-before-width: auto;
+  --resume-header-before-height: auto;
+  --resume-header-before-background: transparent;
+  --resume-header-after-content: none;
+  --resume-header-after-position: static;
+  --resume-header-after-bottom: auto;
+  --resume-header-after-right: auto;
+  --resume-header-after-width: auto;
+  --resume-header-after-height: auto;
+  --resume-header-after-background: transparent;
+
+  /* === SCROLLBAR STYLING === */
+  --scrollbar-width: auto;
+  --scrollbar-height: auto;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: transparent;
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: transparent;
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: none;
+  --scrollbar-button-height: auto;
+  --scrollbar-button-width: auto;
+}

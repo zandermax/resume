@@ -1,0 +1,230 @@
+/**
+ * Experience items with tech badges and bullet points
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-section--experience (experience section)
+ *   - .experience-item (experience card containers)
+ *   - .experience-item__header (header row with company/dates)
+ *   - .experience-item__main (role and company info column)
+ *   - .experience-item__meta (dates and location column)
+ *   - .experience-item__company (company name)
+ *   - .experience-item__dates, .experience-item__duration (date info)
+ *   - .experience-item__tech (tech stack badges)
+ *   - .experience-item__bullets (achievement lists)
+ *
+ * DEPENDENCIES:
+ *   - variables-experience.css (all experience-specific variables)
+ *   - variables-base.css (uses --border-color)
+ *   - sections.css (experience is a section child)
+ *   - typography.css (role title styling)
+ */
+
+/* === EXPERIENCE SECTION === */
+
+.resume-section--experience {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+/* === EXPERIENCE ITEM CONTAINER === */
+
+.experience-item {
+  border: var(--experience-item-border, 0);
+  border-block-start: 2px solid var(--border-color);
+  padding: var(--experience-item-padding, 0);
+  padding-block-start: 0.9rem;
+  margin-block-start: var(--experience-item-margin-top, 0.9rem);
+  background: var(--experience-item-background, transparent);
+  box-shadow: var(--experience-item-box-shadow, none);
+  border-radius: var(--experience-item-border-radius, 0);
+  position: var(--experience-item-position, relative);
+  transform: var(--experience-item-transform, none);
+  transition: var(--experience-item-transition, none);
+
+  &:first-of-type {
+    border-block-start: 3px solid var(--border-color);
+  }
+
+  /* === PSEUDO-ELEMENTS === */
+  /* Used by themes for decorative bars, backgrounds, etc. */
+
+  &::before {
+    content: var(--experience-item-before-content);
+    display: var(--experience-item-before-display);
+    position: var(--experience-item-before-position);
+    inset: var(--experience-item-before-inset);
+    top: var(--experience-item-before-top);
+    left: var(--experience-item-before-left);
+    width: var(--experience-item-before-width);
+    height: var(--experience-item-before-height);
+    background: var(--experience-item-before-background);
+    background-image: var(--experience-item-before-background-image);
+    border-radius: var(--experience-item-before-border-radius);
+    opacity: var(--experience-item-before-opacity);
+    transition: var(--experience-item-before-transition);
+  }
+
+  &::after {
+    content: var(--experience-item-after-content);
+    position: var(--experience-item-after-position);
+    bottom: var(--experience-item-after-bottom);
+    left: var(--experience-item-after-left);
+    right: var(--experience-item-after-right);
+    height: var(--experience-item-after-height);
+    background: var(--experience-item-after-background);
+    opacity: var(--experience-item-after-opacity);
+    animation: var(--experience-item-after-animation);
+    will-change: var(--experience-item-after-will-change);
+  }
+
+  /* === HOVER STATE === */
+
+  &:hover {
+    transform: var(--experience-item-hover-transform);
+    box-shadow: var(--experience-item-hover-box-shadow);
+    border-color: var(--experience-item-hover-border-color);
+
+    &::before {
+      opacity: var(--experience-item-before-hover-opacity);
+    }
+  }
+}
+
+/* === EXPERIENCE HEADER === */
+
+.experience-item__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-block-end: 0.3rem;
+}
+
+/* === COMPANY NAME === */
+
+.experience-item__company {
+  font-size: var(--experience-company-font-size, 0.9rem);
+  text-transform: var(--experience-company-text-transform, uppercase);
+  letter-spacing: var(--experience-company-letter-spacing, 0.12em);
+  font-weight: var(--experience-company-font-weight, normal);
+  color: var(--experience-company-color, inherit);
+}
+
+/* === META INFO (DATES/LOCATION) === */
+
+.experience-item__meta {
+  text-align: right;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.experience-item__dates,
+.experience-item__duration {
+  white-space: nowrap;
+
+  &::before {
+    content: var(--experience-duration-before-content);
+    opacity: var(--experience-duration-before-opacity);
+  }
+}
+
+/* === TECH BADGES === */
+
+.experience-item__tech {
+  font-size: var(--tech-badge-font-size, 0.8rem);
+  text-transform: var(--tech-badge-text-transform, uppercase);
+  letter-spacing: var(--tech-badge-letter-spacing, 0.08em);
+  border: var(--tech-badge-border, 1px solid var(--border-color));
+  padding: var(--tech-badge-padding, 0.25rem 0.4rem);
+  display: var(--tech-badge-display, inline-block);
+  margin: var(--tech-badge-margin, 0.35rem 0 0.4rem);
+  background: var(--tech-badge-background, transparent);
+  box-shadow: var(--tech-badge-box-shadow, none);
+  text-shadow: var(--tech-badge-text-shadow, none);
+  font-weight: var(--tech-badge-font-weight, normal);
+  color: var(--tech-badge-color, inherit);
+  border-radius: var(--tech-badge-border-radius, 0);
+  position: var(--tech-badge-position, relative);
+  transform: var(--tech-badge-transform, none);
+  transition: var(--tech-badge-transition, none);
+  overflow: var(--tech-badge-overflow, visible);
+  filter: var(--tech-badge-filter, none);
+  align-items: var(--tech-badge-align-items, baseline);
+  contain: var(--tech-badge-contain, none);
+
+  /* === HOVER STATE === */
+
+  &:hover {
+    transform: var(--tech-badge-hover-transform, none);
+    box-shadow: var(--tech-badge-hover-box-shadow, var(--tech-badge-before-box-shadow, none));
+    background: var(--tech-badge-hover-background, var(--tech-badge-background));
+    filter: var(--tech-badge-hover-filter, none);
+  }
+
+  /* === PSEUDO-ELEMENTS === */
+  /* Used by themes for decorative elements on badges */
+
+  &::before {
+    content: var(--tech-badge-before-content, none);
+    display: var(--tech-badge-before-display, none);
+    position: var(--tech-badge-before-position, static);
+    inset: var(--tech-badge-before-inset, auto);
+    left: var(--tech-badge-before-left, auto);
+    margin-inline-start: var(--tech-badge-before-margin-inline-start, 0);
+    margin-inline-end: var(--tech-badge-before-margin-inline-end, 0);
+    color: var(--tech-badge-before-color, inherit);
+    font-weight: var(--tech-badge-before-font-weight, normal);
+    background: var(--tech-badge-before-background, transparent);
+    border-radius: var(--tech-badge-before-border-radius, 0);
+    box-shadow: var(--tech-badge-before-box-shadow, none);
+    pointer-events: var(--tech-badge-before-pointer-events, auto);
+    z-index: var(--tech-badge-before-z-index, auto);
+  }
+
+  &::after {
+    content: var(--tech-badge-after-content, none);
+    display: var(--tech-badge-after-display, none);
+    position: var(--tech-badge-after-position, static);
+    inset: var(--tech-badge-after-inset, auto);
+    margin-inline-start: var(--tech-badge-after-margin-inline-start, 0);
+    background: var(--tech-badge-after-background, transparent);
+    border-radius: var(--tech-badge-after-border-radius, 0);
+    box-shadow: var(--tech-badge-after-box-shadow, none);
+    pointer-events: var(--tech-badge-after-pointer-events, auto);
+    z-index: var(--tech-badge-after-z-index, auto);
+  }
+}
+
+/* === EXPERIENCE BULLETS === */
+
+.experience-item__bullets {
+  list-style: var(--experience-bullets-list-style, none);
+  padding-inline-start: var(--experience-bullets-padding-inline-start, 0);
+  margin: var(--experience-bullets-margin, 0);
+  margin-block-start: var(--experience-bullets-margin-block-start, 0);
+
+  li {
+    position: var(--experience-bullets-li-position, relative);
+    padding-inline-start: var(--experience-bullets-li-padding-inline-start, 1.1rem);
+    font-size: var(--experience-bullets-li-font-size, 0.88rem);
+    font-weight: var(--experience-bullets-li-font-weight, normal);
+    line-height: var(--experience-bullets-li-line-height, 1.5);
+    margin-block-end: var(--experience-bullets-li-margin-block-end, 0.3rem);
+    color: var(--experience-bullets-li-color, inherit);
+
+    /* === BULLET POINT === */
+
+    &::before {
+      content: var(--bullet-before-content, '■');
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      font-size: var(--bullet-font-size, 0.6rem);
+      font-weight: var(--bullet-font-weight, normal);
+      color: var(--bullet-color, inherit);
+      text-shadow: var(--bullet-text-shadow, none);
+      margin-inline-start: var(--bullet-margin-inline-start, 0);
+    }
+  }
+}

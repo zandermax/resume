@@ -1,0 +1,124 @@
+/**
+ * Resume header structure, metadata, and dial selector positioning
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-header (main header container)
+ *   - .resume-header__top-row (contains dial selectors and name)
+ *   - .resume-header__dial-selector (dial selector positioning)
+ *   - .resume-header__meta (contact info section)
+ *   - .resume-header__location, .resume-header__contact (meta subsections)
+ *   - .resume-header__links (social/professional links)
+ *   - .resume-header__link (individual links)
+ *
+ * DEPENDENCIES:
+ *   - variables-layout.css (uses --header-*, --dial-selector-housing-* variables)
+ *   - variables-buttons.css (dial selector uses dial variables)
+ *   - typography.css (name and role text inherit from there)
+ *
+ * RELATED FILES:
+ *   - buttons.css (buttons appear in header)
+ *   - dial-selector.js (custom element styled here)
+ */
+
+/* === HEADER CONTAINER === */
+
+.resume-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-block-end: var(--header-border-width, 3px) var(--header-border-style, solid) var(--border-color);
+  padding: var(--header-padding, 0);
+  padding-block-end: 1rem;
+  margin-block-end: var(--header-margin-bottom, 1.5rem);
+  border-radius: var(--header-border-radius);
+
+  /* === PSEUDO-ELEMENTS === */
+  /* Used by themes for decorative elements */
+
+  &::before {
+    content: var(--resume-header-before-content);
+    position: var(--resume-header-before-position);
+    top: var(--resume-header-before-top);
+    left: var(--resume-header-before-left);
+    width: var(--resume-header-before-width);
+    height: var(--resume-header-before-height);
+    background: var(--resume-header-before-background);
+  }
+
+  &::after {
+    content: var(--resume-header-after-content);
+    position: var(--resume-header-after-position);
+    bottom: var(--resume-header-after-bottom);
+    right: var(--resume-header-after-right);
+    width: var(--resume-header-after-width);
+    height: var(--resume-header-after-height);
+    background: var(--resume-header-after-background);
+  }
+}
+
+/* === HEADER TOP ROW === */
+
+.resume-header__top-row {
+  margin-block-end: var(--header-top-row-margin-block-end);
+}
+
+/* === DIAL SELECTOR POSITIONING === */
+
+.resume-header__dial-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  /* === PSEUDO-ELEMENT === */
+  /* Used by themes for dial housing/background effects */
+
+  &::before {
+    content: var(--dial-selector-housing-before-content);
+    position: var(--dial-selector-housing-before-position);
+    inset: var(--dial-selector-housing-before-inset);
+    top: var(--dial-selector-housing-before-top);
+    left: var(--dial-selector-housing-before-left);
+    right: var(--dial-selector-housing-before-right);
+    height: var(--dial-selector-housing-before-height);
+    background: var(--dial-selector-housing-before-background);
+    opacity: var(--dial-selector-housing-before-opacity);
+    animation: var(--dial-selector-housing-before-animation);
+    will-change: var(--dial-selector-housing-before-will-change);
+  }
+}
+
+/* === HEADER META === */
+
+.resume-header__meta {
+  font-size: var(--header-meta-font-size, 0.85rem);
+  font-family: var(--header-meta-font-family, inherit);
+  text-transform: var(--header-meta-text-transform, uppercase);
+  letter-spacing: var(--header-meta-letter-spacing, 0.12em);
+  color: var(--header-meta-color, inherit);
+  opacity: var(--header-meta-opacity, 1);
+  text-shadow: var(--header-meta-text-shadow, none);
+}
+
+.resume-header__location,
+.resume-header__contact {
+  margin-block-start: 0.15rem;
+}
+
+/* === HEADER LINKS === */
+
+.resume-header__links {
+  margin-block-start: 1rem;
+}
+
+.resume-header__link {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+
+  &:hover {
+    text-decoration-style: wavy;
+  }
+}

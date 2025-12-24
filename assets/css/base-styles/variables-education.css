@@ -1,0 +1,55 @@
+/**
+ * CSS variables for education section component
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .education-item (education card container)
+ *   - .education-item__institution (h3 university/school names)
+ *   - .education-item__degree (degree and major text)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --section-bg, etc.)
+ *
+ * RELATED FILES:
+ *   - education.css (applies these variables)
+ *   - typography.css (uses --education-institution-* for h3 styling)
+ *
+ * VARIABLES DEFINED: ~15 variables controlling:
+ *   - Education item container (borders, padding, backgrounds)
+ *   - Institution name (font, text transform, spacing)
+ *   - Hover states and pseudo-elements
+ */
+
+:root {
+  /* === EDUCATION ITEM CONTAINER === */
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-box-shadow: none;
+  --education-item-padding: 0;
+  --education-item-position: static;
+  --education-item-transition: none;
+
+  /* === EDUCATION ITEM PSEUDO-ELEMENTS === */
+  --education-item-before-content: none;
+  --education-item-before-position: static;
+  --education-item-before-inset: auto;
+  --education-item-before-width: auto;
+  --education-item-before-background: transparent;
+
+  /* === EDUCATION ITEM HOVER === */
+  --education-item-hover-transform: none;
+  --education-item-hover-box-shadow: none;
+
+  /* === EDUCATION INSTITUTION (H3) === */
+  --education-institution-font-size: 1.05rem;
+  --education-institution-font-weight: normal;
+  --education-institution-color: inherit;
+  --education-institution-text-transform: uppercase;
+  --education-institution-letter-spacing: 0.08em;
+  --education-institution-line-height: normal;
+  --education-institution-text-shadow: none;
+  --education-institution-margin: 0;
+  --education-institution-margin-block-end: 0.15rem;
+  --education-institution-border-inline-start: none;
+  --education-institution-padding-inline-start: 0;
+}
+

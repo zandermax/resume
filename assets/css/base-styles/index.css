@@ -1,0 +1,74 @@
+/**
+ * Main entry point for all base styles - imports modules in dependency order
+ *
+ * LOAD ORDER:
+ *   1. Variables (no dependencies on each other)
+ *   2. Reset (uses base variables)
+ *   3. Typography (uses layout variables)
+ *   4. Layout structures (main, header, sections)
+ *   5. Components (skills, experience, lists, education, buttons)
+ *
+ * DEPENDENCIES: None (this file imports all others)
+ * RELATED FILES: All files in /base-styles/ directory
+ */
+
+/* ===========================
+   CSS VARIABLES
+   Load first - no dependencies
+   =========================== */
+
+/* Core design tokens */
+@import './variables-base.css';
+
+/* Layout-level variables */
+@import './variables-layout.css';
+
+/* Component-specific variables */
+@import './variables-skills.css';
+@import './variables-experience.css';
+@import './variables-lists.css';
+@import './variables-education.css';
+@import './variables-buttons.css';
+
+/* ===========================
+   BASE STYLES
+   =========================== */
+
+/* HTML/body resets */
+@import './reset.css';
+
+/* All text styling */
+@import './typography.css';
+
+/* ===========================
+   LAYOUT STRUCTURE
+   =========================== */
+
+/* Main container */
+@import './layout.css';
+
+/* Header structure */
+@import './header.css';
+
+/* Section containers */
+@import './sections.css';
+
+/* ===========================
+   COMPONENTS
+   =========================== */
+
+/* Skills grid */
+@import './skills.css';
+
+/* Experience items */
+@import './experience.css';
+
+/* Community/principles lists */
+@import './lists.css';
+
+/* Education */
+@import './education.css';
+
+/* Print/save buttons */
+@import './buttons.css';
+

@@ -1,0 +1,64 @@
+/**
+ * Core design tokens - colors, spacing, typography, borders, and theme base properties
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - All elements (via CSS inheritance and variable usage)
+ *
+ * DEPENDENCIES:
+ *   - None (loads first, depends on color variables from colors.css)
+ *
+ * RELATED FILES:
+ *   - All other variable files extend these base tokens
+ *
+ * VARIABLES DEFINED: ~20 core design tokens controlling:
+ *   - Color system (border, text, heading, background)
+ *   - Spacing scale (xs to 2xl)
+ *   - Border width system (thin to extra-thick)
+ *   - Font size scale (xs to lg)
+ *   - Theme properties (background, links, sections)
+ */
+
+:root {
+  /* === CORE COLORS === */
+  /* Note: not necessarily used when printing */
+  --border-color: var(--color-black);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --background-color: var(--color-white);
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* === SPACING SYSTEM === */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* === BORDER WIDTH SYSTEM === */
+  --border-width-thin: 1px;
+  --border-width-normal: 2px;
+  --border-width-thick: 3px;
+  --border-width-extra-thick: 4px;
+
+  /* === FONT SIZE SYSTEM === */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 0.95rem;
+  --font-size-lg: 1.05rem;
+
+  /* === THEME BASE PROPERTIES === */
+  --background-image: none;
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-purple-link);
+  --section-bg: transparent;
+  --header-bg: transparent;
+  --accent-color: var(--color-red-crimson);
+
+  /* === PAPER/TEXTURE PROPERTIES === */
+  --paper-shadow: none;
+  --paper-texture: none;
+
+  /* === THEME ELEMENT VISIBILITY === */
+  --display-section-title-normal: block;
+}

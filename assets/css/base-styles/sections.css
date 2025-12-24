@@ -1,0 +1,50 @@
+/**
+ * Section container base styles for resume sections
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-section (main section containers)
+ *   - .resume-section--summary (summary section variant)
+ *   - .resume-section__text (text paragraphs within sections)
+ *   - .resume-section__content (section content wrapper)
+ *
+ * DEPENDENCIES:
+ *   - variables-layout.css (uses --section-* variables)
+ *   - variables-base.css (uses --border-color)
+ *   - typography.css (section titles inherit from there)
+ *
+ * RELATED FILES:
+ *   - skills.css, experience.css, lists.css, education.css (section children)
+ */
+
+/* === SECTION CONTAINERS === */
+
+.resume-section {
+  margin-block-end: 1.75rem;
+  padding: 1rem 0 0;
+  border-block-start: 1px solid var(--border-color);
+}
+
+.resume-section--summary {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+/* === SECTION TEXT === */
+
+.resume-section__text {
+  font-size: var(--section-text-font-size, 0.95rem);
+  line-height: var(--section-text-line-height, 1.6);
+  color: var(--section-text-color, inherit);
+  letter-spacing: var(--section-text-letter-spacing, normal);
+
+  &:not(:last-child) {
+    margin-block-end: var(--section-text-margin-block-end, 0.9rem);
+  }
+}
+
+/* === SECTION CONTENT === */
+
+.resume-section__content {
+  padding-inline: var(--section-content-padding-inline, 0);
+}
+

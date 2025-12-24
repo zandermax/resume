@@ -1,0 +1,67 @@
+/**
+ * HTML/body resets and base body.resume styles
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - html, body (margin/padding resets, overflow control)
+ *   - body.resume (font, colors, background, smoothing)
+ *   - h1, h2, h3, p (margin/padding resets)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --font-family, --text-color, --background-color, etc.)
+ *   - variables-layout.css (uses --text-shadow, --body-* variables)
+ *
+ * RELATED FILES:
+ *   - typography.css (builds on these reset styles)
+ *   - All component files (inherit from body.resume)
+ */
+
+/* === BASE STYLES === */
+
+body {
+  font-family: var(--font-family);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
+}
+
+body.resume {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  text-shadow: var(--text-shadow);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+
+  /* === BODY PSEUDO-ELEMENT === */
+  &::before {
+    content: var(--body-before-content);
+    display: var(--body-before-display);
+    position: var(--body-before-position);
+    inset: var(--body-before-inset);
+    background: var(--body-before-background);
+    pointer-events: var(--body-before-pointer-events);
+    z-index: var(--body-before-z-index);
+  }
+}
+
+/* === RESET MARGINS === */
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+

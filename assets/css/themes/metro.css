@@ -526,7 +526,6 @@ body[data-theme='metro'] {
     letter-spacing: 0.05em;
     border: 0;
 
-
     &.active > span {
       background: var(--accent-color);
       box-shadow: none;
@@ -584,7 +583,6 @@ body[data-theme='metro'] {
 
   /* Dark mode adjustments */
   &[data-mode='dark'] {
-
     .metro-chat-widget__status {
       background: oklch(32% 0 0);
       color: var(--color-white);

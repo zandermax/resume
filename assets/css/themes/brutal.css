@@ -168,13 +168,7 @@ BRUTAL Theme - Maximum Brutalism
       var(--brutal-texture) 2px,
       var(--brutal-texture) 4px
     ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      var(--brutal-texture) 2px,
-      var(--brutal-texture) 4px
-    );
+    repeating-linear-gradient(90deg, transparent, transparent 2px, var(--brutal-texture) 2px, var(--brutal-texture) 4px);
   --resume-main-before-pointer-events: none;
   --resume-main-before-opacity: 0.5;
 

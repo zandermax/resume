@@ -1,0 +1,123 @@
+/**
+ * Community and principles lists (Why Ashby, How I Work sections)
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .community-list (container for "Open Source & Community" section)
+ *   - .community-list__item (individual community/open source items)
+ *   - .principles-list (container for "Why Ashby" and "How I Work" sections)
+ *   - .principles-list__item (individual principle/value items)
+ *
+ * DEPENDENCIES:
+ *   - variables-lists.css (all list-specific variables)
+ *   - variables-base.css (uses --border-color, --section-bg)
+ *   - sections.css (lists are section children)
+ */
+
+/* === COMMUNITY LIST === */
+
+.community-list {
+  list-style: none;
+  padding-inline-start: 0;
+  padding: var(--list-padding, 0);
+  margin: 0;
+  border: var(--list-border, 3px solid var(--border-color));
+  box-sizing: border-box;
+  background-color: var(--list-background, var(--section-bg, transparent));
+  box-shadow: var(--list-box-shadow, none);
+}
+
+.community-list__item {
+  font-size: var(--community-item-font-size, 0.9rem);
+  font-weight: var(--community-item-font-weight, normal);
+  line-height: var(--community-item-line-height, 1.5);
+  padding: var(--community-item-padding, 0.6rem 0.75rem);
+  border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
+    var(--border-color);
+  margin-block-end: var(--community-item-margin-bottom, 0);
+  margin-block-start: var(--community-item-margin-top, 0);
+  background: var(--community-item-background, transparent);
+  box-shadow: var(--community-item-box-shadow, none);
+  border-radius: var(--community-item-border-radius, 0);
+  position: var(--community-item-position, relative);
+  transition: var(--community-item-transition, none);
+
+  &:first-child {
+    border-block-start: 0;
+  }
+
+  /* === PSEUDO-ELEMENT === */
+  /* Used by themes for decorative icons/markers */
+
+  &::before {
+    content: var(--list-item-before-content);
+    position: var(--list-item-before-position);
+    left: var(--list-item-before-left);
+    top: var(--list-item-before-top);
+    color: var(--list-item-before-color);
+    font-weight: var(--list-item-before-font-weight);
+    font-size: var(--list-item-before-font-size);
+  }
+
+  /* === HOVER STATE === */
+
+  &:hover {
+    transform: var(--list-item-hover-transform);
+    box-shadow: var(--list-item-hover-box-shadow);
+    filter: var(--list-item-hover-filter);
+  }
+}
+
+/* === PRINCIPLES LIST === */
+
+.principles-list {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+  border: var(--list-border, 3px solid var(--border-color));
+  padding: var(--list-padding, 0.7rem 0.8rem);
+  box-sizing: border-box;
+  background-color: var(--list-background, var(--section-bg, transparent));
+  box-shadow: var(--list-box-shadow, none);
+}
+
+.principles-list__item {
+  font-size: var(--principles-item-font-size, 0.9rem);
+  font-weight: var(--principles-item-font-weight, normal);
+  line-height: var(--principles-item-line-height, 1.4);
+  padding: var(--principles-item-padding, 0.25rem 0);
+  border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
+    var(--border-color);
+  margin-block-end: var(--principles-item-margin-bottom, 0);
+  margin-block-start: var(--principles-item-margin-top, 0);
+  background: var(--principles-item-background, transparent);
+  box-shadow: var(--principles-item-box-shadow, none);
+  border-radius: var(--principles-item-border-radius, 0);
+  position: var(--principles-item-position, relative);
+  transition: var(--principles-item-transition, none);
+
+  &:first-child {
+    border-block-start: 0;
+  }
+
+  /* === PSEUDO-ELEMENT === */
+  /* Used by themes for decorative icons/markers */
+
+  &::before {
+    content: var(--list-item-before-content);
+    position: var(--list-item-before-position);
+    left: var(--list-item-before-left);
+    top: var(--list-item-before-top);
+    color: var(--list-item-before-color);
+    font-weight: var(--list-item-before-font-weight);
+    font-size: var(--list-item-before-font-size);
+  }
+
+  /* === HOVER STATE === */
+
+  &:hover {
+    transform: var(--list-item-hover-transform);
+    box-shadow: var(--list-item-hover-box-shadow);
+    filter: var(--list-item-hover-filter);
+  }
+}
+

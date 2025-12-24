@@ -1,0 +1,229 @@
+/**
+ * All text styling - headings, paragraphs, links, and text-based components
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - h1, h2, h3 (heading base styles)
+ *   - h1.resume-header__name (main name heading)
+ *   - h2.resume-section__title (section titles)
+ *   - h3.experience-item__role (job titles)
+ *   - h3.education-item__institution (school names)
+ *   - p, li (paragraph and list text)
+ *   - a (links with hover states)
+ *   - .resume-header__name-greeting, .resume-header__name-small
+ *   - .resume-header__role (role/title text)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (font sizes, spacing)
+ *   - variables-layout.css (typography variables for headers, sections)
+ *   - variables-experience.css (experience role variables)
+ *   - variables-education.css (education institution variables)
+ *
+ * RELATED FILES:
+ *   - All component files (inherit these text styles)
+ */
+
+/* === BASE HEADING STYLES === */
+
+h1,
+h2,
+h3 {
+  letter-spacing: var(--heading-letter-spacing, normal);
+}
+
+h2,
+h3 {
+  font-weight: var(--h2-h3-font-weight, normal);
+  text-transform: var(--h2-h3-text-transform, none);
+  letter-spacing: var(--h2-h3-letter-spacing, var(--heading-letter-spacing, normal));
+}
+
+/* === PARAGRAPH AND LIST TEXT === */
+
+p,
+li {
+  letter-spacing: var(--body-text-letter-spacing, normal);
+  font-weight: var(--p-li-font-weight, normal);
+  line-height: var(--p-li-line-height, normal);
+}
+
+/* === HEADER NAME (H1) === */
+
+.resume-header__name-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-block-start: var(--header-name-wrapper-margin-block-start, 2rem);
+
+  > * {
+    flex: 0 0 50%;
+  }
+}
+
+h1.resume-header__name {
+  order: var(--header-name-order, 1);
+  font-size: var(--header-name-font-size, 2.6rem);
+  font-weight: var(--header-name-font-weight, normal);
+  line-height: var(--header-name-line-height, normal);
+  letter-spacing: var(--header-name-letter-spacing, 0.08em);
+  text-transform: var(--header-name-text-transform, uppercase);
+  color: var(--header-name-color, inherit);
+  border: var(--header-name-border, none);
+  border-block-end: var(--header-name-border-width, 4px) var(--header-name-border-style, solid)
+    var(--header-name-border-color, var(--border-color));
+  padding: var(--header-name-padding, 0);
+  padding-block-end: var(--header-name-padding-block-end, 0.35rem);
+  padding-inline-start: var(--header-name-padding-inline-start, 0);
+  margin: var(--header-name-margin, 0);
+  margin-block-end: var(--header-name-margin-block-end, 0.35rem);
+  text-shadow: var(--header-name-text-shadow, none);
+  position: var(--header-name-position, static);
+  animation: var(--header-name-animation, none);
+  will-change: var(--header-name-will-change, auto);
+}
+
+.resume-header__name-greeting,
+.resume-header__name-small {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-header__name-greeting {
+  margin-block-end: -0.2rem;
+}
+
+.resume-header__name-small {
+  margin-block-start: -0.2rem;
+}
+
+/* === HEADER ROLE === */
+
+.resume-header__role {
+  order: var(--header-role-order, 3);
+  font-size: var(--header-role-font-size, 1.1rem);
+  font-weight: var(--header-role-font-weight, normal);
+  color: var(--header-role-color, inherit);
+  text-transform: var(--header-role-text-transform, uppercase);
+  letter-spacing: var(--header-role-letter-spacing, 0.18em);
+  line-height: var(--header-role-line-height, normal);
+  text-shadow: var(--header-role-text-shadow, none);
+  margin: var(--header-role-margin, 0);
+  margin-block-start: var(--header-role-margin-block-start, 0);
+  border-inline-start: var(--header-role-border-inline-start, none);
+  padding-inline-start: var(--header-role-padding-inline-start, 0);
+}
+
+/* === SECTION TITLES (H2) === */
+
+h2.resume-section__title {
+  font-size: var(--section-title-font-size, 1.15rem);
+  font-weight: var(--section-title-font-weight, normal);
+  line-height: var(--section-title-line-height, normal);
+  letter-spacing: var(--section-title-letter-spacing, 0.18em);
+  text-transform: var(--section-title-text-transform, uppercase);
+  color: var(--section-title-color, var(--heading-color));
+  border: var(--section-title-border, none);
+  border-block: var(--section-title-border-width, 3px) var(--section-title-border-style, solid)
+    var(--section-title-border-color, var(--border-color));
+  border-inline-start: var(--section-title-border-inline-start, none);
+  border-block-end: var(--section-title-border-block-end, none);
+  border-radius: var(--section-title-border-radius, 0);
+  padding: var(--section-title-padding, 0.45rem 0);
+  margin: var(--section-title-margin, 0);
+  margin-block-end: var(--section-title-margin-bottom, 0.75rem);
+  margin-top: var(--section-title-margin-top, 0);
+  background: var(--section-title-background, transparent);
+  box-shadow: var(--section-title-box-shadow, none);
+  text-shadow: var(--section-title-text-shadow, none);
+  position: var(--section-title-position, static);
+  transform: var(--section-title-transform, none);
+  display: var(--section-title-display, block);
+  width: var(--section-title-width, auto);
+  max-width: var(--section-title-max-width, none);
+  overflow: var(--section-title-overflow, visible);
+  contain: var(--section-title-contain, none);
+  will-change: var(--section-title-will-change, auto);
+  animation: var(--section-title-animation, none);
+  align-items: var(--section-title-align-items, normal);
+  gap: var(--section-title-gap, normal);
+
+  /* === PSEUDO-ELEMENTS === */
+  &::before {
+    content: var(--section-title-before-content);
+    display: var(--section-title-before-display);
+    color: var(--section-title-before-color);
+    font-size: var(--section-title-before-font-size);
+    animation: var(--section-title-before-animation);
+    will-change: var(--section-title-before-will-change);
+  }
+
+  &::after {
+    content: var(--section-title-after-content);
+    display: var(--section-title-after-display);
+    position: var(--section-title-after-position);
+    bottom: var(--section-title-after-bottom);
+    left: var(--section-title-after-left);
+    right: var(--section-title-after-right);
+    top: var(--section-title-after-top);
+    width: var(--section-title-after-width);
+    height: var(--section-title-after-height);
+    background: var(--section-title-after-background);
+    animation: var(--section-title-after-animation);
+    will-change: var(--section-title-after-will-change);
+  }
+}
+
+/* === EXPERIENCE ROLE (H3) === */
+
+h3.experience-item__role {
+  font-size: var(--experience-role-font-size, 1.05rem);
+  font-weight: var(--experience-role-font-weight, normal);
+  color: var(--experience-role-color, inherit);
+  text-transform: var(--experience-role-text-transform, uppercase);
+  letter-spacing: var(--experience-role-letter-spacing, 0.08em);
+  line-height: var(--experience-role-line-height, normal);
+  text-shadow: var(--experience-role-text-shadow, none);
+  margin: var(--experience-role-margin, 0);
+  margin-block-end: var(--experience-role-margin-block-end, 0);
+  border-inline-start: var(--experience-role-border-inline-start, none);
+  padding-inline-start: var(--experience-role-padding-inline-start, 0);
+  position: relative;
+}
+
+/* === EDUCATION INSTITUTION (H3) === */
+
+h3.education-item__institution {
+  font-size: var(--education-institution-font-size, 1.05rem);
+  font-weight: var(--education-institution-font-weight, normal);
+  color: var(--education-institution-color, inherit);
+  text-transform: var(--education-institution-text-transform, uppercase);
+  letter-spacing: var(--education-institution-letter-spacing, 0.08em);
+  line-height: var(--education-institution-line-height, normal);
+  text-shadow: var(--education-institution-text-shadow, none);
+  margin: var(--education-institution-margin, 0);
+  margin-block-end: var(--education-institution-margin-block-end, 0.15rem);
+  border-inline-start: var(--education-institution-border-inline-start, none);
+  padding-inline-start: var(--education-institution-padding-inline-start, 0);
+}
+
+/* === LINKS === */
+
+a:not(#resume-header__printlink) {
+  color: var(--link-color, inherit);
+  text-decoration: var(--link-text-decoration, underline);
+
+  &:visited {
+    color: var(--link-visited-color, inherit);
+  }
+
+  &:hover {
+    text-decoration: var(--link-hover-text-decoration, underline);
+    border-block-end: var(--link-hover-border-block-end, none);
+    border-block-end-color: var(--link-hover-border-block-end-color);
+    color: var(--link-hover-color);
+    text-shadow: var(--link-hover-text-shadow, none);
+    background: var(--link-hover-background);
+    transform: var(--link-hover-transform);
+    box-shadow: var(--link-hover-box-shadow);
+  }
+}

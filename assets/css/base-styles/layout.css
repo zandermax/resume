@@ -1,0 +1,58 @@
+/**
+ * Main resume container with pseudo-elements for theme decorations
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume__main (main container for entire resume)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --background-color, --section-bg)
+ *   - variables-layout.css (uses --main-*, --paper-*, --resume-main-* variables)
+ *   - reset.css (builds on body reset styles)
+ *
+ * RELATED FILES:
+ *   - All component files (children of .resume__main)
+ */
+
+/* === MAIN CONTAINER === */
+
+.resume__main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: var(--main-padding, 2.5rem 2.25rem);
+  border: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-radius: var(--main-border-radius, 0);
+  background-color: var(--section-bg, var(--background-color));
+  background-image: var(--paper-texture);
+  box-sizing: border-box;
+  box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
+  position: relative;
+
+  /* === PSEUDO-ELEMENTS === */
+  /* Used by themes for title bars, texture grids, overlays, etc. */
+
+  &::before {
+    content: var(--resume-main-before-content);
+    display: var(--resume-main-before-display);
+    position: var(--resume-main-before-position);
+    inset: var(--resume-main-before-inset);
+    height: var(--resume-main-before-height);
+    background: var(--resume-main-before-background);
+    background-image: var(--resume-main-before-background-image);
+    border-radius: var(--resume-main-before-border-radius);
+    box-shadow: var(--resume-main-before-box-shadow);
+    z-index: var(--resume-main-before-z-index);
+    pointer-events: var(--resume-main-before-pointer-events);
+    opacity: var(--resume-main-before-opacity);
+  }
+
+  &::after {
+    content: var(--resume-main-after-content);
+    position: var(--resume-main-after-position);
+    inset: var(--resume-main-after-inset);
+    background: var(--resume-main-after-background);
+    pointer-events: var(--resume-main-after-pointer-events);
+    z-index: var(--resume-main-after-z-index);
+    opacity: var(--resume-main-after-opacity);
+  }
+}
+
