@@ -712,7 +712,6 @@ body[data-theme='metro'] {
     font-weight: 400;
     line-height: 1.4;
     color: var(--color-black);
-    background: oklch(32% 0 0);
     position: relative;
 
     /* Initially hide the actual text content, cycle visibility */

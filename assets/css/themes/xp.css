@@ -62,6 +62,84 @@ Windows XP Theme (Luna)
   /* Header name wrapper custom properties */
   --header-name-wrapper-margin-block-start: var(--spacing-lg);
 
+  /* Resume main ::before - XP title bar */
+  --resume-main-before-content: '';
+  --resume-main-before-display: block;
+  --resume-main-before-position: absolute;
+  --resume-main-before-inset: 0 0 auto 0;
+  --resume-main-before-height: 32px;
+  --resume-main-before-background: linear-gradient(
+    180deg,
+    var(--xp-window-title-start) 0%,
+    var(--xp-window-title-end) 100%
+  );
+  --resume-main-before-border-radius: var(--xp-radius-md) var(--xp-radius-md) 0 0;
+  --resume-main-before-box-shadow: var(--xp-title-shadow);
+  --resume-main-before-z-index: 10;
+  --resume-main-before-pointer-events: none;
+
+  /* Link hover extended for XP theme */
+  --link-hover-color: var(--xp-start-green);
+  --link-hover-border-block-end-color: var(--xp-start-green);
+
+  /* Dial selector knob (XP specific 3D effect) */
+  --dial-knob-border-radius: 50%;
+  --dial-knob-border: 3px solid var(--xp-button-shadow);
+  --dial-knob-box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
+    inset 0 0 20px var(--xp-white-20);
+
+  /* Dial selector indicator (XP specific 3D effect) */
+  --dial-indicator-border-radius: 3px;
+  --dial-indicator-background: linear-gradient(
+    180deg,
+    oklch(82% 0.14 130) 0%,
+    var(--xp-start-green) 50%,
+    oklch(61% 0.12 130) 100%
+  );
+  --dial-indicator-box-shadow: 0 2px 4px var(--xp-black-40), inset 0 1px 0 var(--xp-white-50);
+  --dial-indicator-border: 1px solid var(--xp-black-20);
+
+  /* Dial spoke line */
+  --dial-spoke-line-stroke-width: 2px;
+
+  /* Dial label XP styling */
+  --dial-label-font-size: 0.85rem;
+  --dial-label-padding: 0.45rem 0.8rem;
+  --dial-label-border-radius: 3px;
+  --dial-label-transition: all 0.15s ease;
+  --dial-label-background: transparent;
+  --dial-label-font-weight: 700;
+  --dial-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
+  --dial-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
+  --dial-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
+  --dial-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
+    0 2px 4px var(--xp-black-20);
+  --dial-label-active-color: var(--color-white);
+  --dial-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
+
+  /* Scrollbar styling (XP theme) */
+  --scrollbar-width: 16px;
+  --scrollbar-height: 16px;
+  --scrollbar-track-background: oklch(94% 0.01 85);
+  --scrollbar-track-border: 1px solid oklch(70% 0.01 85);
+  --scrollbar-thumb-background: linear-gradient(
+    90deg,
+    oklch(94% 0.01 85) 0%,
+    oklch(86% 0.01 85) 50%,
+    oklch(70% 0.01 85) 100%
+  );
+  --scrollbar-thumb-border: 1px solid oklch(51% 0.01 85);
+  --scrollbar-thumb-hover-background: linear-gradient(
+    90deg,
+    oklch(95% 0 0) 0%,
+    oklch(87% 0.01 85) 50%,
+    oklch(71% 0.01 85) 100%
+  );
+  --scrollbar-button-background: oklch(94% 0.01 85);
+  --scrollbar-button-border: 1px solid oklch(51% 0.01 85);
+  --scrollbar-button-height: 16px;
+  --scrollbar-button-width: 16px;
+
   /* Experience item custom properties */
   --experience-item-border: 0;
   --experience-item-background: var(--section-bg);
@@ -207,12 +285,12 @@ Windows XP Theme (Luna)
   --xp-radius-sm: 4px;
   --xp-radius-md: 6px;
   --xp-radius-lg: 8px;
-  --dial-label-active-span-padding-block: 0.35rem;
-  --dial-label-active-span-padding-inline: 0.7rem;
-  --dial-label-active-span-padding-block--tablet: 0.2rem;
-  --dial-label-active-span-padding-inline--tablet: 0.65rem;
-  --dial-label-active-span-padding-block--phone: 0.2rem;
-  --dial-label-active-span-padding-inline--phone: 0.2rem;
+  --dial-label-active-span-padding-block: 0;
+  --dial-label-active-span-padding-inline: 0;
+  --dial-label-active-span-padding-block--tablet: 0;
+  --dial-label-active-span-padding-inline--tablet: 0;
+  --dial-label-active-span-padding-block--phone: 0;
+  --dial-label-active-span-padding-inline--phone: 0;
 
   /* Consolidated XP shadows and borders */
   --xp-button-shadow-raised: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
@@ -312,21 +390,8 @@ body[data-theme='xp'] {
       0 8px 16px var(--xp-black-20);
     background: var(--xp-button-face);
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
-
-    /* XP title bar */
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 32px;
-      background: linear-gradient(180deg, var(--xp-window-title-start) 0%, var(--xp-window-title-end) 100%);
-      border-radius: var(--xp-radius-md) var(--xp-radius-md) 0 0;
-      box-shadow: var(--xp-title-shadow);
-      z-index: 10;
-      pointer-events: none;
-    }
   }
 
   /* Header and section spacing */
@@ -378,46 +443,27 @@ body[data-theme='xp'] {
     }
   }
 
-  /* Dial selector */
+  /* Dial selector - 3D XP styling controlled by custom properties */
   dial-selector {
     .knob {
-      border-radius: 50%;
-      border: 3px solid var(--xp-button-shadow);
-      box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50), inset 0 0 20px var(--xp-white-20);
+      border-radius: var(--dial-knob-border-radius);
+      border: var(--dial-knob-border);
+      box-shadow: var(--dial-knob-box-shadow);
       background: var(--dial-knob-background);
     }
 
     .indicator {
-      border-radius: 3px;
-      background: linear-gradient(180deg, oklch(82% 0.14 130) 0%, var(--xp-start-green) 50%, oklch(61% 0.12 130) 100%);
-      box-shadow: 0 2px 4px var(--xp-black-40), inset 0 1px 0 var(--xp-white-50);
-      border: 1px solid var(--xp-black-20);
+      border-radius: var(--dial-indicator-border-radius);
+      background: var(--dial-indicator-background);
+      box-shadow: var(--dial-indicator-box-shadow);
+      border: var(--dial-indicator-border);
     }
 
     .spoke-line {
-      stroke-width: 2px;
+      stroke-width: var(--dial-spoke-line-stroke-width);
     }
 
-    .dial-label {
-      font-size: 0.85rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: 3px;
-      transition: all 0.15s ease;
-      background: transparent;
-      font-weight: 600;
-
-      &:hover {
-        background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
-        box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
-      }
-
-      &.active > span {
-        background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
-        box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30), 0 2px 4px var(--xp-black-20);
-        color: var(--color-white);
-        text-shadow: 1px 1px 2px var(--xp-black-40);
-      }
-    }
+    /* dial-label hover and active states controlled by custom properties in base.css */
   }
 
   .resume-header__dial-selector {
@@ -440,11 +486,6 @@ body[data-theme='xp'] {
     border-block-end: 1px solid var(--link-color);
     transition: color 0.15s ease;
 
-    &:hover {
-      color: var(--xp-start-green);
-      border-block-end-color: var(--xp-start-green);
-    }
-
     &:visited {
       border-block-end-color: var(--link-visited-color);
     }
@@ -452,31 +493,31 @@ body[data-theme='xp'] {
 
   /* Header and text styling */
 
-  /* Scrollbar styling */
+  /* Scrollbar styling controlled by custom properties */
   ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-height);
   }
 
   ::-webkit-scrollbar-track {
-    background: oklch(94% 0.01 85);
-    border: 1px solid oklch(70% 0.01 85);
+    background: var(--scrollbar-track-background);
+    border: var(--scrollbar-track-border);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, oklch(94% 0.01 85) 0%, oklch(86% 0.01 85) 50%, oklch(70% 0.01 85) 100%);
-    border: 1px solid oklch(51% 0.01 85);
+    background: var(--scrollbar-thumb-background);
+    border: var(--scrollbar-thumb-border);
 
     &:hover {
-      background: linear-gradient(90deg, oklch(95% 0 0) 0%, oklch(87% 0.01 85) 50%, oklch(71% 0.01 85) 100%);
+      background: var(--scrollbar-thumb-hover-background);
     }
   }
 
   ::-webkit-scrollbar-button {
-    background: oklch(94% 0.01 85);
-    border: 1px solid oklch(51% 0.01 85);
-    height: 16px;
-    width: 16px;
+    background: var(--scrollbar-button-background);
+    border: var(--scrollbar-button-border);
+    height: var(--scrollbar-button-height);
+    width: var(--scrollbar-button-width);
   }
 
   /* Responsive adjustments */

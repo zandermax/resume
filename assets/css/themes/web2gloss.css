@@ -6,22 +6,25 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 @keyframes web2-rss-wobble {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg) scale(1);
   }
   10% {
-    transform: translateY(-3px) rotate(-3deg) scale(1.05);
+    transform: translateY(-3px) rotate(-3deg) scale(1.08);
   }
   20% {
-    transform: translateY(-3px) rotate(3deg) scale(1.05);
+    transform: translateY(-3px) rotate(3deg) scale(1.08);
   }
   30% {
-    transform: translateY(-3px) rotate(-3deg) scale(1.05);
+    transform: translateY(-3px) rotate(-3deg) scale(1.08);
   }
   40% {
-    transform: translateY(-3px) rotate(3deg) scale(1.05);
+    transform: translateY(-3px) rotate(3deg) scale(1.08);
   }
   50% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg) scale(1.02);
+  }
+  60% {
+    transform: translateY(0) rotate(0deg) scale(1);
   }
 }
 
@@ -240,7 +243,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --link-color: oklch(40% 0.17 240);
   --link-visited-color: oklch(48% 0.14 300);
   --section-bg: var(--color-white);
-  --header-bg: linear-gradient(180deg, oklch(62% 0.17 240) 0%, oklch(57% 0.18 245) 100%);
+  --header-bg: linear-gradient(180deg, oklch(75% 0.17 240) 0%, oklch(70% 0.18 245) 100%);
   --accent-color: var(--color-orange-bright);
   --section-title-color: var(--color-white);
   --web2-primary: oklch(62% 0.17 240);
@@ -281,7 +284,8 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --background-color: oklch(18% 0.04 250);
   --text-color: oklch(96% 0.02 230);
   --heading-color: var(--color-white);
-  --border-color: var(--color-blue-dashboard);
+  --web2-blue-dark: oklch(50% 0.18 240);
+  --border-color: var(--web2-blue-dark);
   --dial-color-ink: oklch(82% 0.13 210);
   --dial-color-selection: oklch(82% 0.13 210);
   --dial-color-indicator: oklch(82% 0.13 210);
@@ -290,7 +294,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --display-web2-badges: block;
   --dial-knob-background: radial-gradient(
     circle at 30% 30%,
-    var(--color-blue-dashboard) 0%,
+    var(--web2-blue-dark) 0%,
     oklch(30% 0.06 250) 40%,
     oklch(18% 0.04 250) 80%,
     oklch(10% 0.03 250) 100%
@@ -300,7 +304,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --link-color: oklch(82% 0.13 210);
   --link-visited-color: oklch(65% 0.12 300);
   --section-bg: oklch(30% 0.06 250);
-  --header-bg: linear-gradient(180deg, var(--color-blue-dashboard) 0%, oklch(30% 0.06 250) 100%);
+  --header-bg: linear-gradient(180deg, var(--web2-blue-dark) 0%, oklch(30% 0.06 250) 100%);
   --accent-color: oklch(75% 0.15 60);
   --section-title-color: var(--color-white);
   --web2-primary: oklch(82% 0.13 210);

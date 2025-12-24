@@ -152,6 +152,7 @@ dial-selector .dial-label {
   color: inherit;
   font-size: var(--dial-label-font-size);
   font-family: var(--font-family);
+  font-weight: var(--dial-label-font-weight);
   letter-spacing: clamp(0.5px, 0.1vw, 1px);
   display: inline-flex;
   align-items: center;

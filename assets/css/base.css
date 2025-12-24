@@ -564,6 +564,53 @@ Custom Properties
   /* Education item hover */
   --education-item-hover-transform: none;
   --education-item-hover-box-shadow: none;
+
+  /* Resume main ::before pseudo-element (for XP title bar, etc) */
+  --resume-main-before-content: none;
+  --resume-main-before-display: none;
+  --resume-main-before-position: static;
+  --resume-main-before-inset: auto;
+  --resume-main-before-height: auto;
+  --resume-main-before-background: transparent;
+  --resume-main-before-border-radius: 0;
+  --resume-main-before-box-shadow: none;
+  --resume-main-before-z-index: auto;
+  --resume-main-before-pointer-events: auto;
+
+  /* Dial selector knob styling */
+  --dial-knob-border-radius: 50%;
+  --dial-knob-border: none;
+  --dial-knob-box-shadow: none;
+
+  /* Dial selector indicator styling */
+  --dial-indicator-border-radius: 0;
+  --dial-indicator-background: var(--dial-color-indicator);
+  --dial-indicator-box-shadow: none;
+  --dial-indicator-border: none;
+
+  /* Dial selector spoke line */
+  --dial-spoke-line-stroke-width: 1px;
+
+  /* Dial label styling */
+  --dial-label-font-size: inherit;
+  --dial-label-padding: 0;
+  --dial-label-border-radius: 0;
+  --dial-label-transition: none;
+  --dial-label-background: transparent;
+  --dial-label-font-weight: normal;
+
+  /* Scrollbar styling */
+  --scrollbar-width: auto;
+  --scrollbar-height: auto;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: transparent;
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: transparent;
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: none;
+  --scrollbar-button-height: auto;
+  --scrollbar-button-width: auto;
 }
 
 /* ===========================
@@ -793,6 +840,19 @@ Layout and Structure
   box-sizing: border-box;
   box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
   position: relative;
+
+  &::before {
+    content: var(--resume-main-before-content);
+    display: var(--resume-main-before-display);
+    position: var(--resume-main-before-position);
+    inset: var(--resume-main-before-inset);
+    height: var(--resume-main-before-height);
+    background: var(--resume-main-before-background);
+    border-radius: var(--resume-main-before-border-radius);
+    box-shadow: var(--resume-main-before-box-shadow);
+    z-index: var(--resume-main-before-z-index);
+    pointer-events: var(--resume-main-before-pointer-events);
+  }
 }
 
 /* ===========================
