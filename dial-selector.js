@@ -161,17 +161,19 @@ class DialSelector extends HTMLElement {
     });
 
     window.addEventListener('resize', () => {
-      // Double RAF to ensure CSS media queries have been fully applied
+      // Triple RAF to ensure CSS media queries have been fully applied before measuring
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          // Disable transitions during resize
-          this.classList.add('no-transitions');
-          this.updateDimensions();
-          // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
-          this.updateLines();
-          // Re-enable transitions after resize completes
           requestAnimationFrame(() => {
-            this.classList.remove('no-transitions');
+            // Disable transitions during resize
+            this.classList.add('no-transitions');
+            this.updateDimensions();
+            // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
+            this.updateLines();
+            // Re-enable transitions after resize completes
+            requestAnimationFrame(() => {
+              this.classList.remove('no-transitions');
+            });
           });
         });
       });
@@ -578,17 +580,19 @@ class DialSelector extends HTMLElement {
   setupResizeObserver() {
     if (typeof ResizeObserver !== 'undefined') {
       this.resizeObserver = new ResizeObserver(() => {
-        // Double RAF to ensure CSS media queries have been fully applied
+        // Triple RAF to ensure CSS media queries have been fully applied before measuring
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            // Disable transitions during resize
-            this.classList.add('no-transitions');
-            this.updateDimensions();
-            // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
-            this.updateLines();
-            // Re-enable transitions after resize completes
             requestAnimationFrame(() => {
-              this.classList.remove('no-transitions');
+              // Disable transitions during resize
+              this.classList.add('no-transitions');
+              this.updateDimensions();
+              // updateLines() is called after updateDimensions(), which also calls updateLabelPositions()
+              this.updateLines();
+              // Re-enable transitions after resize completes
+              requestAnimationFrame(() => {
+                this.classList.remove('no-transitions');
+              });
             });
           });
         });
@@ -973,6 +977,13 @@ class DialSelector extends HTMLElement {
     const horizontalLineEndOffsetValue = parseFloat(tempStyle.maxHeight) || 10;
 
     this.removeChild(tempDiv);
+
+    // Force a style recalculation to ensure all CSS (including media queries) is fully applied
+    // This is critical when crossing media query breakpoints during resize
+    void getComputedStyle(knobWrap).width;
+    if (this.labels.length > 0) {
+      void getComputedStyle(this.labels[0]).top;
+    }
 
     this.labels.forEach((label, index) => {
       const labelRect = label.getBoundingClientRect();
