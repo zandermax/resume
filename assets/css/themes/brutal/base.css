@@ -227,36 +227,36 @@ BRUTAL Theme - Maximum Brutalism
   --h2-h3-letter-spacing: -0.02em;
   --p-li-font-weight: 600;
   --p-li-line-height: 1.5;
-}
 
-/* Light Mode */
-:root[data-theme='brutal'][data-mode='light'] {
-  --background-color: var(--color-white);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-white);
-  --border-color: var(--color-black);
-  --link-color: var(--color-black);
-  --link-visited-color: var(--color-purple-link);
-  --accent-color: var(--color-red-crimson);
-  --brutal-shadow-dark: oklch(0% 0 0 / 0.9);
-  --brutal-shadow-medium: oklch(0% 0 0 / 0.5);
-  --brutal-shadow-light: oklch(0% 0 0 / 0.3);
-  --brutal-texture: oklch(0% 0 0 / 0.03);
-}
+  /* Light Mode */
+  [data-mode='light'] {
+    --background-color: var(--color-white);
+    --text-color: var(--color-black);
+    --heading-color: var(--color-white);
+    --border-color: var(--color-black);
+    --link-color: var(--color-black);
+    --link-visited-color: var(--color-purple-link);
+    --accent-color: var(--color-red-crimson);
+    --brutal-shadow-dark: oklch(0% 0 0 / 0.9);
+    --brutal-shadow-medium: oklch(0% 0 0 / 0.5);
+    --brutal-shadow-light: oklch(0% 0 0 / 0.3);
+    --brutal-texture: oklch(0% 0 0 / 0.03);
+  }
 
-/* Dark Mode */
-:root[data-theme='brutal'][data-mode='dark'] {
-  --background-color: var(--color-dark-bg);
-  --text-color: oklch(92% 0 0);
-  --heading-color: var(--color-dark-bg);
-  --border-color: var(--color-gray-dark);
-  --link-color: oklch(92% 0 0);
-  --link-visited-color: var(--color-gray-light);
-  --accent-color: var(--color-red-bright);
-  --brutal-shadow-dark: oklch(100% 0 0 / 0.1);
-  --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
-  --brutal-shadow-light: oklch(100% 0 0 / 0.1);
-  --brutal-texture: oklch(100% 0 0 / 0.03);
+  /* Dark Mode */
+  [data-mode='dark'] {
+    --background-color: var(--color-dark-bg);
+    --text-color: oklch(92% 0 0);
+    --heading-color: var(--color-dark-bg);
+    --border-color: var(--color-gray-dark);
+    --link-color: oklch(92% 0 0);
+    --link-visited-color: var(--color-gray-light);
+    --accent-color: var(--color-red-bright);
+    --brutal-shadow-dark: oklch(100% 0 0 / 0.1);
+    --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
+    --brutal-shadow-light: oklch(100% 0 0 / 0.1);
+    --brutal-texture: oklch(100% 0 0 / 0.03);
+  }
 }
 
 /* Harsh, unforgiving base */
@@ -271,11 +271,7 @@ body[data-theme='brutal'] {
     padding: clamp(0.75rem, calc(0.75rem + (100vw - var(--min-screen-width)) * 0.025), 2.5rem);
     position: relative;
     transform: rotate(-0.3deg);
-
-    /* Visual noise/texture controlled by custom properties */
   }
-
-  /* Section titles, skills grid, experience items controlled by custom properties */
 
   /* Lists with harsh borders */
   .community-list,
@@ -335,8 +331,6 @@ body[data-theme='brutal'] {
   /* Dial selector enhancements */
   dial-selector {
     margin-block-start: var(--ds-margin-block-start);
-
-    /* Knob, indicator, spoke-line controlled by custom properties */
 
     .dial-label > span {
       /* font-size: var(--ds-label-span-font-size); */

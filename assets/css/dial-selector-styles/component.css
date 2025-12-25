@@ -14,7 +14,7 @@ dial-selector {
   margin: 0;
   margin-block-start: var(--ds-margin-block-start, 0);
   padding: 0;
-  max-width: 600px; /* Prevent component from getting too wide */
+  max-width: var(--screen-width-mobile-large); /* Prevent component from getting too wide */
   margin-inline: auto; /* Center when narrower than container */
 }
 

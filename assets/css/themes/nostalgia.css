@@ -8,9 +8,10 @@ Nostalgia Theme (Geocities 90s)
   --border-color: var(--color-magenta);
 
   /* Header custom properties */
-
   --header-name-wrapper-margin-block-start: 1.5rem;
   --header-padding: 1rem;
+  --main-padding-responsive-500: var(--spacing-sm);
+
   /* Dial label hover properties */
   --ds-label-hover-background: var(--accent-color);
   --ds-label-hover-color: var(--background-color);

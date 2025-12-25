@@ -29,6 +29,10 @@
 
   /* === RESPONSIVE BREAKPOINTS === */
   --min-screen-width: 320px;
+  --screen-width-mobile-small: 480px;
+  --screen-width-mobile: 500px;
+  --screen-width-mobile-large: 600px;
+  --screen-width-tablet: 768px;
 
   /* === SPACING SYSTEM === */
   --spacing-xs: 0.5rem;

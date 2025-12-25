@@ -687,7 +687,7 @@ body[data-theme='dashboard'] {
     padding: 0;
     background: var(--panel-bg);
     box-shadow: var(--dashboard-shadow-lg), 0 0 0 1px var(--panel-border);
-    max-width: 600px;
+    max-width: var(--screen-width-mobile-large);
     width: 90vw;
 
     &::backdrop {

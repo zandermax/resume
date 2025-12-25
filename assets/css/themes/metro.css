@@ -789,9 +789,9 @@ body[data-theme='metro'] {
     border: 0;
     border-radius: 0;
     padding: 0;
-    max-width: 480px;
+    max-width: var(--screen-width-mobile-small);
     width: 90vw;
-    max-height: 600px;
+    max-height: var(--screen-width-mobile-large);
     background: transparent;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 
@@ -803,7 +803,7 @@ body[data-theme='metro'] {
   .metro-chat-dialog__container {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: var(--screen-width-mobile-large);
     max-height: 80vh;
     background: var(--background-color);
   }
@@ -991,7 +991,7 @@ body[data-theme='metro'] {
     }
 
     .metro-chat-dialog__container {
-      height: 500px;
+      height: var(--screen-width-mobile);
     }
 
     .metro-chat-dialog__messages {

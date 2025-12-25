@@ -55,6 +55,7 @@ li {
   flex-direction: column;
   gap: 0.4rem;
   margin-block-start: var(--header-name-wrapper-margin-block-start, 2rem);
+  padding-inline: 0.5rem;
 
   > * {
     flex: 0 0 50%;
