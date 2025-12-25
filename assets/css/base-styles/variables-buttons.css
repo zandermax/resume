@@ -106,7 +106,7 @@
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --dial-knob-background: var(--color-dark-knob);
+  --ds-knob-background: var(--color-dark-knob);
 
   /* === DIAL SELECTOR KNOB === */
   --dial-knob-border-width: 0;
@@ -160,7 +160,7 @@
   --ds-label-active-color: inherit;
 
   /* === DIAL SELECTOR HOUSING PSEUDO-ELEMENT === */
-  --dial-selector-housing-before-content: none;
+  --dial-selector-housing-before-content: unset;
   --dial-selector-housing-before-position: static;
   --dial-selector-housing-before-inset: auto;
   --dial-selector-housing-before-height: auto;

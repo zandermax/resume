@@ -208,7 +208,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --section-title-border-width: 0px;
 
   /* Section content custom properties */
-  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.025), 1em);
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.025), 1em);
 
   /* Print link custom properties */
   --printlink-border: 0;
@@ -301,7 +301,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-blue-metro);
   --dial-color-indicator: var(--color-blue-metro);
-  --dial-knob-background: oklch(96% 0 0); /* Light gray */
+  --ds-knob-background: oklch(96% 0 0); /* Light gray */
   --link-color: var(--color-blue-metro);
   --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(96% 0 0);
@@ -324,7 +324,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-cyan-bright);
   --dial-color-indicator: var(--color-cyan-bright);
-  --dial-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
+  --ds-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
   --link-color: var(--color-cyan-bright);
   --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(28% 0 0);
@@ -1007,7 +1007,7 @@ body[data-theme='metro'] {
   @media (max-width: 500px) {
     #metro-chat-dialog {
       width: 100vw;
-      min-width: 320px;
+      min-width: var(--min-screen-width);
       max-width: 100vw;
       margin-inline: 0;
     }

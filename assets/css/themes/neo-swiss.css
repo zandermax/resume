@@ -246,7 +246,7 @@ Ultra-modern minimalism with mathematical precision
   --heading-color: var(--color-black);
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
-  --dial-knob-background: var(--color-black);
+  --ds-knob-background: var(--color-black);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-black);
 }
@@ -258,7 +258,7 @@ Ultra-modern minimalism with mathematical precision
   --heading-color: var(--color-white);
   --border-color: var(--color-white);
   --dial-color-ink: var(--color-white);
-  --dial-knob-background: var(--color-white);
+  --ds-knob-background: var(--color-white);
   --link-color: var(--color-white);
   --link-visited-color: var(--color-white);
 }

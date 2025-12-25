@@ -12,9 +12,10 @@ dial-selector {
   overflow: hidden;
   box-sizing: border-box;
   margin: 0;
+  margin-block-start: var(--ds-margin-block-start, 0);
   padding: 0;
   max-width: 600px; /* Prevent component from getting too wide */
-  margin: 0 auto; /* Center when narrower than container */
+  margin-inline: auto; /* Center when narrower than container */
 }
 
 dial-selector * {

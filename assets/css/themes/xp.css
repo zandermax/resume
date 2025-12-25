@@ -297,7 +297,7 @@ Windows XP Theme (Luna)
   --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --dial-color-ink: var(--color-blue-dark);
-  --dial-knob-background: linear-gradient(
+  --ds-knob-background: linear-gradient(
     180deg,
     oklch(97% 0.02 245) 0%,
     oklch(92% 0.04 245) 50%,
@@ -329,7 +329,7 @@ Windows XP Theme (Luna)
   --text-color: var(--color-white);
   --heading-color: var(--color-white);
   --dial-color-ink: oklch(77% 0.13 245);
-  --dial-knob-background: linear-gradient(
+  --ds-knob-background: linear-gradient(
     180deg,
     oklch(47% 0.08 250) 0%,
     oklch(34% 0.08 250) 50%,
@@ -449,7 +449,7 @@ body[data-theme='xp'] {
       border-radius: var(--dial-knob-border-radius);
       border: var(--dial-knob-border);
       box-shadow: var(--dial-knob-box-shadow);
-      background: var(--dial-knob-background);
+      background: var(--ds-knob-background);
     }
 
     .spoke-line {

@@ -35,7 +35,7 @@ DEFAULT Theme - Clean, Professional
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --dial-knob-background: var(--color-dark-knob);
+  --ds-knob-background: var(--color-dark-knob);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
@@ -50,7 +50,7 @@ DEFAULT Theme - Clean, Professional
   --dial-color-ink: var(--color-gray-pure-light);
   --dial-color-selection: var(--color-red-bright);
   --dial-color-indicator: var(--color-red-bright);
-  --dial-knob-background: var(--color-dark-bg-alt);
+  --ds-knob-background: var(--color-dark-bg-alt);
   --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
   --accent-color: var(--color-red-bright);

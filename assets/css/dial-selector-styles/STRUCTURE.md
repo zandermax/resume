@@ -106,6 +106,6 @@ The dial selector uses CSS custom properties that can be overridden by themes:
 - `--dial-color-ink` - Main text/line color
 - `--dial-color-selection` - Active selection color
 - `--dial-color-indicator` - Knob indicator color
-- `--dial-knob-background` - Knob background color
+- `--ds-knob-background` - Knob background color
 
 Themes can also override component-specific variables with the `--ds-*` prefix for advanced customization.

@@ -19,7 +19,7 @@
 
 body {
   font-family: var(--font-family);
-  min-width: 320px;
+  min-width: var(--min-screen-width);
 }
 
 html,

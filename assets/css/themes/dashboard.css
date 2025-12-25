@@ -102,7 +102,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --section-title-letter-spacing: 0.1em;
 
   /* Section content custom properties */
-  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.05), 2rem);
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
   --section-title-line-height: 1;
   --section-title-display: flex;
   --section-title-border-inline-start: 4px solid var(--accent-color);
@@ -215,7 +215,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dial-color-ink: oklch(20% 0 0);
   --dial-color-selection: var(--color-blue-dashboard);
   --dial-color-indicator: var(--color-blue-dashboard);
-  --dial-knob-background: var(--color-white);
+  --ds-knob-background: var(--color-white);
   --link-color: var(--color-blue-dashboard);
   --link-visited-color: oklch(37% 0.25 260);
   --accent-color: var(--color-blue-dashboard);
@@ -237,7 +237,7 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --dial-color-ink: oklch(93% 0.005 245);
   --dial-color-selection: var(--color-blue-bright);
   --dial-color-indicator: var(--color-blue-bright);
-  --dial-knob-background: oklch(17% 0.01 240);
+  --ds-knob-background: oklch(17% 0.01 240);
   --link-color: var(--color-blue-bright);
   --link-visited-color: oklch(72% 0.1 240);
   --accent-color: var(--color-blue-bright);

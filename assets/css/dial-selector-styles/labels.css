@@ -28,9 +28,20 @@ dial-selector .dial-label {
   text-shadow: var(--ds-label-text-shadow);
 }
 
+dial-selector .dial-label > span {
+  font-size: var(--ds-label-span-font-size, inherit);
+  font-weight: var(--ds-label-span-font-weight, inherit);
+  border: var(--ds-label-span-border, none);
+  transition: var(--ds-label-span-transition, inherit);
+  text-transform: var(--ds-label-span-text-transform, inherit);
+  letter-spacing: var(--ds-label-span-letter-spacing, inherit);
+  transform: var(--ds-label-span-transform, none);
+  color: var(--ds-label-span-color, inherit);
+}
+
 dial-selector .dial-label:not(.active):hover > span {
   background: var(--ds-label-hover-background, var(--ds-color-ink));
-  color: var(--ds-label-hover-color, var(--dial-knob-background, #11161c));
+  color: var(--ds-label-hover-color, var(--ds-knob-background, #11161c));
   opacity: var(--ds-label-hover-opacity, 1);
   transform: var(--ds-label-hover-transform, none);
   filter: var(--ds-label-hover-filter, none);
@@ -43,11 +54,14 @@ dial-selector .dial-label:not(.active):hover > span {
 }
 
 dial-selector .dial-label.active > span {
-  color: var(--ds-label-active-color, var(--ds-color-selection));
-  background: var(--ds-label-active-background, transparent);
+  color: var(--ds-label-active-span-color, var(--ds-label-active-color, var(--ds-color-selection)));
+  background: var(--ds-label-active-span-background, var(--ds-label-active-background, transparent));
+  border-color: var(--ds-label-active-span-border-color, transparent);
   border: var(--ds-label-span-active-border);
-  box-shadow: var(--ds-label-active-box-shadow, none);
+  box-shadow: var(--ds-label-active-span-box-shadow, var(--ds-label-active-box-shadow, none));
   text-shadow: var(--ds-label-active-text-shadow, none);
+  transform: var(--ds-label-active-span-transform, none);
+  padding: var(--ds-label-active-span-padding, inherit);
   padding-block: var(--ds-label-active-span-padding-block);
   padding-inline: var(--ds-label-active-span-padding-inline);
   font-weight: var(--ds-label-span-active-font-weight);

@@ -30,7 +30,7 @@ dial-selector {
 
   /* Knob styling */
   --ds-knob-border: var(--ds-width-outer-circle) solid var(--ds-color-outer-circle);
-  --ds-knob-border-radius: unset; /* Is set inline to 50% */
+  --ds-knob-border-radius: 50%;
   --ds-knob-background-image: none;
   --ds-knob-background-size: cover;
   --ds-knob-background-position: center;

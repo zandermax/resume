@@ -160,7 +160,7 @@ Skeuomorphic Theme Effects
     --dial-color-ink: var(--color-brown);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
-    --dial-knob-background: radial-gradient(
+    --ds-knob-background: radial-gradient(
       circle at 35% 35%,
       oklch(0.93 0 0) 0%,
       var(--color-silver) 30%,
@@ -227,7 +227,7 @@ Skeuomorphic Theme Effects
     --dial-color-ink: oklch(0.86 0.03 60);
     --dial-color-selection: oklch(0.63 0.13 20);
     --dial-color-indicator: oklch(0.63 0.13 20);
-    --dial-knob-background: radial-gradient(
+    --ds-knob-background: radial-gradient(
       circle at 30% 30%,
       oklch(0.45 0 0) 0%,
       oklch(0.33 0 0) 40%,
@@ -437,7 +437,7 @@ body[data-theme='skeuomorph'] {
   /* Leather texture on bullets */
   /* Dial selector enhancements */
   dial-selector {
-    --dial-knob-background: #11161c; /* Fallback solid color */
+    --ds-knob-background: #11161c; /* Fallback solid color */
     --ds-knob-background-image: var(--metal-gradient); /* Use gradient as background-image */
     --ds-indicator-gradient: var(--ds-color-indicator);
     --ds-indicator-box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),

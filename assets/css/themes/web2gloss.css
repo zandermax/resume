@@ -178,7 +178,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --section-title-box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
 
   /* Section content custom properties */
-  --section-content-padding-inline: clamp(0rem, calc((100vw - 320px) * 0.0375), 1.5rem);
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.0375), 1.5rem);
 
   /* Print link custom properties */
   --printlink-border: none;
@@ -228,7 +228,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
   /* Show web2 badges in web2gloss theme */
   --display-web2-badges: block;
-  --dial-knob-background: radial-gradient(
+  --ds-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--color-white) 0%,
     oklch(96% 0.02 230) 30%,
@@ -289,7 +289,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
   /* Show web2 badges in web2gloss theme */
   --display-web2-badges: block;
-  --dial-knob-background: radial-gradient(
+  --ds-knob-background: radial-gradient(
     circle at 30% 30%,
     var(--web2-blue-dark) 0%,
     oklch(30% 0.06 250) 40%,
@@ -541,7 +541,7 @@ body[data-theme='web2gloss'] {
       border: 2px solid oklch(100% 0 0 / 0.5);
       box-shadow: 0 4px 12px var(--web2-shadow), 0 8px 24px var(--web2-shadow), inset 0 2px 4px oklch(100% 0 0 / 0.3),
         inset 0 -2px 4px oklch(0% 0 0 / 0.2);
-      background: var(--dial-knob-background);
+      background: var(--ds-knob-background);
     }
 
     .spoke-line {

@@ -196,7 +196,7 @@ Terminal Theme (1992 CLI-inspired)
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-yellow);
   --dial-color-indicator: var(--color-yellow);
-  --dial-knob-background: var(--color-silver);
+  --ds-knob-background: var(--color-silver);
   --link-color: var(--color-yellow);
   --link-visited-color: var(--color-cyan);
   --section-bg: var(--color-silver);
@@ -217,7 +217,7 @@ Terminal Theme (1992 CLI-inspired)
   --dial-color-ink: var(--color-gray-light);
   --dial-color-selection: var(--color-cyan);
   --dial-color-indicator: var(--color-cyan);
-  --dial-knob-background: oklch(38% 0 0);
+  --ds-knob-background: oklch(38% 0 0);
   --link-color: var(--color-cyan);
   --link-visited-color: var(--color-yellow);
   --section-bg: var(--color-blue-navy);

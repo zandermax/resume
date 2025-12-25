@@ -341,7 +341,7 @@
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-black);
-  --dial-knob-background: var(--color-gray-light);
+  --ds-knob-background: var(--color-gray-light);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-gray-dark);
   --section-bg: var(--color-gray-lighter);
@@ -366,7 +366,7 @@
   --border-color: var(--color-white);
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-white);
-  --dial-knob-background: var(--color-gray-dark);
+  --ds-knob-background: var(--color-gray-dark);
   --link-color: var(--color-white);
   --link-visited-color: var(--color-gray-medium);
   --section-bg: var(--color-gray-darkest);
@@ -1071,7 +1071,7 @@ body[data-theme='glitch'] {
       border: var(--border-width-lg) solid var(--border-color);
       box-shadow: 0 0 0 var(--border-width-md) var(--glitch-primary),
         0 0 0 var(--border-width-xl) var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
-      background: var(--dial-knob-background);
+      background: var(--ds-knob-background);
     }
 
     .indicator {
