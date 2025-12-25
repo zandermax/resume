@@ -1085,8 +1085,8 @@ body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) .neoswiss-ai-modal 
   display: flex;
 }
 
-/* Prevent body scroll when modal is open */
-body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
+/* Prevent scroll when modal is open - must target html element */
+html[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
   overflow: hidden;
 }
 

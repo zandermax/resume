@@ -296,3 +296,8 @@ body[data-theme='brutal'] {
     }
   }
 }
+
+/* Prevent scroll when cookie banner is visible - must target html element at top level */
+html[data-theme='brutal']:has(#cookie-banner-dismiss:not(:checked)) {
+  overflow: hidden;
+}
