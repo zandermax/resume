@@ -1061,6 +1061,11 @@ body[data-theme='glitch'] {
   dial-selector {
     position: relative;
     filter: var(--filter-contrast-base);
+    --ds-indicator-width-override: 14px;
+    --ds-indicator-height-override: 14px;
+    --ds-indicator-gradient: var(--dial-color-indicator);
+    --ds-indicator-border: var(--border-width-md) solid var(--border-color);
+    --ds-indicator-box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
 
     .knob {
       border: var(--border-width-lg) solid var(--border-color);
@@ -1070,11 +1075,6 @@ body[data-theme='glitch'] {
     }
 
     .indicator {
-      width: 14px;
-      height: 14px;
-      background: var(--dial-color-indicator);
-      border: var(--border-width-md) solid var(--border-color);
-      box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
       animation: pixel-drift 5s infinite steps(1, jump-end);
       will-change: transform;
     }

@@ -51,7 +51,7 @@ dial-selector .indicator {
   height: var(--ds-indicator-height-override);
   background: var(--ds-indicator-gradient);
   border: var(--ds-indicator-border);
-  border-radius: calc(var(--ds-indicator-width-override) / 2);
+  border-radius: var(--ds-indicator-border-radius, calc(var(--ds-indicator-width-override) / 2));
   box-shadow: var(--ds-indicator-box-shadow);
   top: calc(var(--ds-indicator-vertical-offset) - var(--ds-indicator-height-override) / 2);
   left: calc(40% + var(--ds-radius-inner) - var(--ds-width-inner-circle) + var(--ds-center-indicator));

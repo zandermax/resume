@@ -1,0 +1,220 @@
+/* ===========================
+BRUTAL Theme - Extra Features
+=========================== */
+
+/* Cookie Banner - 2017 Parody */
+body[data-theme='brutal'] {
+  .cookie-banner-overlay {
+    /* Banner visibility controlled by CSS - show only in brutal theme when not dismissed */
+    position: fixed;
+    inset: 0;
+    background: oklch(0% 0 0 / 0.85);
+    z-index: 9999;
+    pointer-events: none;
+    display: block !important;
+    opacity: 0;
+    visibility: visible;
+  }
+
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin-inline: auto;
+    overflow-y: auto;
+    background: var(--background-color);
+    border-block-start: 6px solid var(--accent-color);
+    border-inline: 4px solid var(--border-color);
+    box-shadow: 0 -10px 20px oklch(0% 0 0 / 0.5), inset 0 4px 0 var(--accent-color);
+    padding: 1rem 1rem 0.75rem;
+    transform: translateY(100%);
+    pointer-events: auto;
+  }
+
+  .cookie-banner__header {
+    border-block-end: 3px solid var(--border-color);
+    padding-block-end: 0.5rem;
+    margin-block-end: 0.75rem;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      var(--accent-color) 5px,
+      var(--accent-color) 6px
+    );
+    padding: 0.5rem;
+  }
+
+  .cookie-banner__title {
+    font-size: 1.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-align: center;
+    color: var(--text-color);
+    background: var(--background-color);
+    padding: 0.5rem;
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
+    margin: 0;
+    animation: pulse 2s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .cookie-banner__content {
+    margin-block-end: 1rem;
+  }
+
+  /* Show/hide content based on whether cookie is already set */
+  .cookie-banner__content--initial {
+    display: block;
+  }
+
+  .cookie-banner__content--returning {
+    display: none;
+  }
+
+  .cookie-banner.cookie-banner--returning .cookie-banner__content--initial {
+    display: none;
+  }
+
+  .cookie-banner.cookie-banner--returning .cookie-banner__content--returning {
+    display: block;
+  }
+
+  .cookie-banner__returning-message {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.3;
+    margin: 2rem 0 1rem 0;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    strong {
+      color: var(--accent-color);
+      font-size: 1.3em;
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .cookie-banner__returning-subtext {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .cookie-banner__warning {
+    background: var(--accent-color);
+    color: var(--color-white);
+    padding: 0.75rem;
+    border: 3px solid var(--border-color);
+    margin-block-end: 0.75rem;
+    font-size: 0.825rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
+    animation: shake 0.5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .cookie-banner__text,
+  .cookie-banner__legal {
+    background: var(--section-bg);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem;
+    margin-block-end: 0.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 0.75rem;
+    box-shadow: 3px 3px 0 var(--brutal-shadow-light);
+  }
+
+  .cookie-banner__buttons {
+    display: flex;
+    justify-content: center;
+    margin-block-end: 0.75rem;
+  }
+
+  .cookie-banner__accept {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--color-white);
+    border: 4px solid var(--border-color);
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 var(--brutal-shadow-dark);
+    transition: all 0.1s ease;
+    transform: skewX(-5deg);
+    animation: bounce 1s ease-in-out infinite;
+    font-family: var(--font-family);
+    will-change: transform;
+
+    &:hover {
+      transform: skewX(-5deg) translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--brutal-shadow-dark);
+    }
+
+    &:active {
+      transform: skewX(-5deg) translate(0, 0);
+      box-shadow: 2px 2px 0 var(--brutal-shadow-dark);
+    }
+  }
+
+  /* Hide the dismiss checkbox visually but keep it functional */
+  #cookie-banner-dismiss {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: auto; /* Override parent's pointer-events: none */
+  }
+
+  /* Entrance animations - only play when checkbox is NOT checked */
+  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) {
+    animation: fadeInOverlay 0.5s ease 5s forwards;
+  }
+
+  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) .cookie-banner {
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 5s forwards;
+  }
+
+  /* When checkbox is checked, hide the banner with fade-out animation */
+  .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) {
+    animation: fadeOut 0.5s ease forwards;
+    pointer-events: none;
+    /* Hide from accessibility tree after animation completes */
+    visibility: hidden;
+    transition: visibility 0s 0.5s;
+  }
+
+  /* Also animate the banner sliding down when dismissed */
+  .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) .cookie-banner {
+    animation: slideDown 0.5s ease forwards;
+  }
+
+  .cookie-banner__footer {
+    border-block-start: 2px solid var(--border-color);
+    padding-block-start: 0.5rem;
+  }
+
+  .cookie-banner__fine-print {
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+  }
+}
+

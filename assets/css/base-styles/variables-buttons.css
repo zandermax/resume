@@ -115,13 +115,6 @@
   --dial-knob-border-radius: 50%;
   --dial-knob-border: none;
 
-  /* === DIAL SELECTOR INDICATOR === */
-  --dial-indicator-box-shadow: none;
-  --dial-indicator-width: 8px;
-  --dial-indicator-border-radius: 0;
-  --dial-indicator-background: var(--dial-color-indicator);
-  --dial-indicator-border: none;
-
   /* === DIAL SELECTOR LABELS === */
   --ds-label-border-width: 0;
   --ds-label-border-style: solid;

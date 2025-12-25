@@ -10,7 +10,7 @@ Resume Styles - Modular Import
 @import url('./print.css');
 
 /* Themes - Individual theme files */
-@import url('./themes/brutal.css');
+@import url('./themes/brutal/index.css');
 @import url('./themes/nostalgia.css');
 @import url('./themes/crt.css');
 @import url('./themes/skeuomorph.css');

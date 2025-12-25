@@ -8,7 +8,6 @@ dial-selector {
   --ds-color-selection: var(--dial-color-selection, #f13b3b);
   --ds-color-line: var(--dial-color-ink, #c7c2b5);
   --ds-color-indicator: var(--dial-color-indicator, #f13b3b);
-  --ds-label-radius: 150px;
   --ds-cursor: pointer;
 
   /* Line styling variables */
@@ -21,15 +20,7 @@ dial-selector {
   --ds-font-family: 'IBM Plex Mono', 'Courier New', monospace;
 
   /* Dial selector component-level properties */
-  --ds-border: none;
-  --ds-border-radius: 0;
-  --ds-background: transparent;
   --ds-knob-box-shadow: unset; /* Is set inline to none */
-  --ds-padding: 0;
-  --ds-position: relative;
-  --ds-overflow: hidden;
-  --ds-transform: none;
-  --ds-filter: none;
 
   /* Grid layout */
   --ds-selector-gap: clamp(12px, 4vw, 40px);
@@ -55,10 +46,28 @@ dial-selector {
   --ds-knob-before-opacity: 0.6;
   --ds-knob-before-filter: none;
 
-  /* Indicator styling */
+  /* ===========================
+     Indicator Styling Variables
+     ===========================
+
+     Override these variables in themes to customize the indicator:
+
+     --ds-indicator-width-override: Width in px (default: calc based on knob size)
+     --ds-indicator-height-override: Height/length in px (default: calc based on knob size)
+     --ds-indicator-gradient: Color or gradient (default: --ds-color-indicator)
+     --ds-indicator-border: Border style (default: none)
+     --ds-indicator-border-radius: Border radius (default: half of width)
+     --ds-indicator-box-shadow: Shadow effects (default: none)
+     --ds-indicator-opacity: Opacity 0-1 (default: 1)
+     --ds-indicator-filter: CSS filters (default: none)
+     --ds-indicator-vertical-offset: Top position percentage (default: 46.75%)
+     ===========================  */
   --ds-indicator-width-override: var(--ds-indicator-width);
   --ds-indicator-height-override: var(--ds-indicator-length);
   --ds-indicator-gradient: var(--ds-color-indicator);
+  --ds-indicator-border: none;
+  --ds-indicator-border-radius: unset; /* Falls back to calc based on width */
+  --ds-indicator-box-shadow: none;
   --ds-indicator-opacity: 1;
   --ds-indicator-filter: none;
 

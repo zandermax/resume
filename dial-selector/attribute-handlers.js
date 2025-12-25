@@ -47,12 +47,12 @@ export const AttributeHandlers = {
     if (gradientColors) {
       const colors = gradientColors.split(',').map((color) => color.trim());
       const gradient = this.createGradientFromColors(colors);
-      this.style.setProperty('--indicator-gradient', gradient);
+      this.style.setProperty('--ds-indicator-gradient', gradient);
     } else if (this.hasAttribute('indicator-rainbow')) {
       const gradient = this.createGradientFromColors(RAINBOW_COLORS);
-      this.style.setProperty('--indicator-gradient', gradient);
+      this.style.setProperty('--ds-indicator-gradient', gradient);
     } else {
-      this.style.removeProperty('--indicator-gradient');
+      this.style.removeProperty('--ds-indicator-gradient');
     }
   },
 

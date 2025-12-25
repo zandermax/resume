@@ -1,0 +1,10 @@
+/* ===========================
+BRUTAL Theme - Main Entry Point
+=========================== */
+
+@import url('./base.css');
+@import url('./dial-selector.css');
+@import url('./extras.css');
+@import url('./responsive.css');
+@import url('./animations.css');
+

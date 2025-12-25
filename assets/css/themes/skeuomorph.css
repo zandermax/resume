@@ -439,6 +439,10 @@ body[data-theme='skeuomorph'] {
   dial-selector {
     --dial-knob-background: #11161c; /* Fallback solid color */
     --ds-knob-background-image: var(--metal-gradient); /* Use gradient as background-image */
+    --ds-indicator-gradient: var(--ds-color-indicator);
+    --ds-indicator-box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),
+      inset 0 1px 2px var(--skeu-white-30);
+    --ds-indicator-border: 1px solid var(--skeu-black-30);
 
     .knob {
       box-shadow: var(--knob-shadow);
@@ -454,14 +458,6 @@ body[data-theme='skeuomorph'] {
         background: repeating-conic-gradient(from 0deg, var(--skeu-black-15) 0deg 4deg, transparent 4deg 8deg);
         pointer-events: none;
       }
-    }
-
-    /* Enhanced indicator appearance */
-    .indicator {
-      background: var(--ds-color-indicator);
-      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),
-        inset 0 1px 2px var(--skeu-white-30);
-      border: 1px solid var(--skeu-black-30);
     }
   }
 

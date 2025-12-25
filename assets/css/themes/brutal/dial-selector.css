@@ -1,0 +1,62 @@
+/* ===========================
+BRUTAL Theme - Dial Selector Custom Properties
+=========================== */
+
+/* Common dial-selector properties */
+:root[data-theme='brutal'] {
+  dial-selector {
+    /* Dial selector Brutal styling */
+    --dial-knob-border: 8px solid var(--border-color);
+    --dial-knob-border-radius: 0;
+    --dial-knob-box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
+    --ds-indicator-border-radius: 0;
+
+    /* Dial selector housing ::before - Striped top decoration */
+    --dial-selector-housing-before-content: '';
+    --dial-selector-housing-before-position: absolute;
+    --dial-selector-housing-before-inset: 0 0 auto 0;
+    --dial-selector-housing-before-height: 8px;
+    --dial-selector-housing-before-background: repeating-linear-gradient(
+      90deg,
+      var(--accent-color) 0px,
+      var(--accent-color) 16px,
+      transparent 16px,
+      transparent 32px
+    );
+
+    --ds-indicator-width-override: 16px;
+    --ds-indicator-gradient: var(--accent-color);
+    --ds-indicator-border: 3px solid var(--border-color);
+
+    --ds-spoke-line-stroke-width: 4px;
+
+    /* Dial label hover properties */
+    --ds-label-hover-border-color: var(--border-color);
+    --ds-label-hover-background: var(--accent-color);
+    --ds-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
+    --ds-label-hover-box-shadow: 4px 4px 0 var(--border-color);
+    --ds-label-hover-color: var(--background-color);
+    --ds-label-hover-padding: var(--spacing-xs) var(--spacing-md);
+  }
+}
+
+/* Light Mode dial-selector */
+:root[data-theme='brutal'][data-mode='light'] {
+  dial-selector {
+    --dial-color-ink: var(--color-black);
+    --dial-color-selection: var(--color-red-crimson);
+    --dial-color-indicator: var(--color-red-crimson);
+    --dial-knob-background: oklch(19% 0.02 240);
+  }
+}
+
+/* Dark Mode dial-selector */
+:root[data-theme='brutal'][data-mode='dark'] {
+  dial-selector {
+    --dial-color-ink: oklch(92% 0 0);
+    --dial-color-selection: var(--color-red-bright);
+    --dial-color-indicator: var(--color-red-bright);
+    --dial-knob-background: var(--color-dark-bg-alt);
+    --ds-indicator-box-shadow: 0 0 20px var(--accent-color);
+  }
+}
