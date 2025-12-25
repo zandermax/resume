@@ -41,6 +41,7 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-span-font-size: 0.9rem;
     --ds-label-span-font-weight: 900;
     --ds-label-span-border: 3px solid transparent;
+    --ds-label-span-active-border: 3px solid transparent;
     --ds-label-span-transition: all 0.05s ease;
     --ds-label-span-text-transform: uppercase;
     --ds-label-span-letter-spacing: 0.05em;
@@ -60,13 +61,14 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-hover-background: var(--accent-color);
     --ds-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
     --ds-label-hover-box-shadow: 4px 4px 0 var(--border-color);
-    --ds-label-hover-color: var(--background-color);
     --ds-label-hover-padding: var(--spacing-xs) var(--spacing-md);
   }
 
   [data-mode='light'] {
     dial-selector {
+      --ds-label-span-color: var(--color-black);
       --dial-color-ink: var(--color-black);
+      --ds-label-hover-color: var(--color-white);
       --dial-color-selection: var(--color-red-crimson);
       --dial-color-indicator: var(--color-red-crimson);
       --ds-knob-background: oklch(19% 0.02 240);
@@ -76,6 +78,8 @@ BRUTAL Theme - Dial Selector Custom Properties
   [data-mode='dark'] {
     dial-selector {
       --dial-color-ink: oklch(92% 0 0);
+      --ds-label-hover-color: var(--color-white);
+      --ds-label-span-color: var(--color-black);
       --dial-color-selection: var(--color-red-bright);
       --dial-color-indicator: var(--color-red-bright);
       --ds-knob-background: var(--color-dark-bg-alt);

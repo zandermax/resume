@@ -30,6 +30,7 @@
   /* === COMMUNITY LIST ITEMS === */
   --community-item-border-style: solid;
   --community-item-border-width: 1px;
+  --community-item-border-inline-start: none;
   --community-item-padding: 0.6rem 0.75rem;
   --community-item-font-size: 0.9rem;
   --community-item-font-weight: normal;
@@ -45,6 +46,7 @@
   /* === PRINCIPLES LIST ITEMS === */
   --principles-item-border-style: dashed;
   --principles-item-border-width: 1px;
+  --principles-item-border-inline-start: none;
   --principles-item-padding: 0.25rem 0;
   --principles-item-font-size: 0.9rem;
   --principles-item-font-weight: normal;

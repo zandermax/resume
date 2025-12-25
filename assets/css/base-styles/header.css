@@ -29,11 +29,25 @@
   border-block-end: var(--header-border-width, 3px) var(--header-border-style, solid) var(--border-color);
   padding: var(--header-padding, 0);
   padding-block-end: 1rem;
+  padding-inline-start: var(--header-padding-inline-start, 0);
+  padding-inline-end: var(--header-padding-inline-end, 0);
+  margin: var(--header-margin, 0 0 1.5rem 0);
   margin-block-end: var(--header-margin-bottom, 1.5rem);
   border-radius: var(--header-border-radius);
   background: var(--header-background, transparent);
+  color: var(--header-color, inherit);
   position: var(--header-position, static);
   box-shadow: var(--header-box-shadow, none);
+  transform: var(--header-transform, none);
+
+  /* Links in header */
+  a:not(#resume-header__printlink) {
+    color: var(--header-link-color, inherit);
+
+    &:hover {
+      color: var(--header-link-hover-color, inherit);
+    }
+  }
 
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for decorative elements */
@@ -72,7 +86,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  padding-block: var(--dial-selector-housing-padding-block, 0);
+  padding-inline: var(--dial-selector-housing-padding-inline, 0);
+  background: var(--dial-selector-housing-background, transparent);
+  border: var(--dial-selector-housing-border, none);
+  box-shadow: var(--dial-selector-housing-box-shadow, none);
+  position: var(--dial-selector-housing-position, relative);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for dial housing/background effects */
@@ -89,6 +108,11 @@
     opacity: var(--dial-selector-housing-before-opacity);
     animation: var(--dial-selector-housing-before-animation);
     will-change: var(--dial-selector-housing-before-will-change);
+  }
+
+  h3 {
+    margin-block-end: var(--dial-selector-housing-h3-margin-block-end, 0);
+    font-size: var(--dial-selector-housing-h3-font-size, inherit);
   }
 }
 

@@ -33,6 +33,7 @@
   padding: var(--community-item-padding, 0.6rem 0.75rem);
   border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
     var(--border-color);
+  border-inline-start: var(--community-item-border-inline-start, none);
   margin-block-end: var(--community-item-margin-bottom, 0);
   margin-block-start: var(--community-item-margin-top, 0);
   background: var(--community-item-background, transparent);
@@ -87,6 +88,7 @@
   padding: var(--principles-item-padding, 0.25rem 0);
   border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
     var(--border-color);
+  border-inline-start: var(--principles-item-border-inline-start, none);
   margin-block-end: var(--principles-item-margin-bottom, 0);
   margin-block-start: var(--principles-item-margin-top, 0);
   background: var(--principles-item-background, transparent);

@@ -37,17 +37,26 @@
   --main-padding-responsive-768: var(--main-padding);
   --main-padding-responsive-500: var(--main-padding);
   --main-background-image: none;
+  --main-position: relative;
+  --main-transform: none;
 
   /* === RESUME HEADER === */
   --header-border-style: solid;
   --header-border-width: 3px;
   --header-padding: unset; /* 0 default */
+  --header-padding-inline-start: 0;
+  --header-padding-inline-end: 0;
+  --header-margin: 0 0 1.5rem 0;
   --header-margin-bottom: 1.5rem;
   --header-border-radius: var(--main-border-radius);
   --header-background: transparent;
+  --header-color: inherit;
   --header-position: static;
   --header-box-shadow: none;
+  --header-transform: none;
   --header-padding-responsive-500: var(--header-padding);
+  --header-link-color: inherit;
+  --header-link-hover-color: inherit;
 
   /* === HEADER BUTTONS === */
   --header-buttons-flex-direction: row;
@@ -69,8 +78,10 @@
   --header-name-border-style: solid;
   --header-name-border-width: 4px;
   --header-name-border-color: var(--border-color);
+  --header-name-border-inline-start: none;
   --header-name-padding: 0;
   --header-name-padding-block-end: 0.35rem;
+  --header-name-padding-inline-start: 0;
   --header-name-margin: 0;
   --header-name-margin-block-end: 0.35rem;
   --header-name-text-shadow: none;
@@ -154,6 +165,12 @@
   --section-text-letter-spacing: normal;
   --section-text-margin-block-end: 0.9rem;
 
+  /* === SECTION CONTAINER === */
+  --section-padding-inline-start: 0;
+  --section-padding-inline-end: 0;
+  --section-padding-block-start: 0;
+  --section-padding-block-end: 0;
+
   /* === SECTION CONTENT === */
   --section-content-padding-inline: 0;
 
@@ -175,6 +192,11 @@
   --text-shadow: none;
   --heading-text-shadow: none;
   --link-text-decoration: underline;
+  --link-font-weight: normal;
+  --link-border-block-end: none;
+  --link-border-block-end-color: transparent;
+  --link-transition: none;
+  --link-position: static;
   --link-hover-text-shadow: none;
   --heading-letter-spacing: normal;
   --body-text-letter-spacing: normal;

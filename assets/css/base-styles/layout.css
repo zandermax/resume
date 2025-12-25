@@ -25,7 +25,8 @@
   background-image: var(--main-background-image), var(--paper-texture);
   box-sizing: border-box;
   box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
-  position: relative;
+  position: var(--main-position, relative);
+  transform: var(--main-transform, none);
 
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for title bars, texture grids, overlays, etc. */

@@ -53,6 +53,7 @@ dial-selector .dial-label:not(.active):hover > span {
   will-change: var(--ds-label-hover-will-change, auto);
 }
 
+/* Active option */
 dial-selector .dial-label.active > span {
   color: var(--ds-label-active-span-color, var(--ds-label-active-color, var(--ds-color-selection)));
   background: var(--ds-label-active-span-background, var(--ds-label-active-background, transparent));
@@ -64,5 +65,5 @@ dial-selector .dial-label.active > span {
   padding: var(--ds-label-active-span-padding, inherit);
   padding-block: var(--ds-label-active-span-padding-block);
   padding-inline: var(--ds-label-active-span-padding-inline);
-  font-weight: var(--ds-label-span-active-font-weight);
+  font-weight: var(--ds-label-span-active-font-weight, var(--ds-label-span-font-weight));
 }

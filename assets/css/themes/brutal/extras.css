@@ -3,6 +3,16 @@ BRUTAL Theme - Extra Features
 =========================== */
 
 /* Cookie Banner - 2017 Parody */
+
+:root[data-theme='brutal'] {
+  [data-mode='light'] {
+    --cookie-banner-color: var(--color-black);
+  }
+  [data-mode='dark'] {
+    --cookie-banner-color: var(--color-white);
+  }
+}
+
 body[data-theme='brutal'] {
   .cookie-banner-overlay {
     /* Banner visibility controlled by CSS - show only in brutal theme when not dismissed */
@@ -14,6 +24,10 @@ body[data-theme='brutal'] {
     display: block !important;
     opacity: 0;
     visibility: visible;
+
+    @media (max-width: 500px) {
+      padding-inline: var(--spacing-md);
+    }
   }
 
   .cookie-banner {
@@ -31,6 +45,16 @@ body[data-theme='brutal'] {
     padding: 1rem 1rem 0.75rem;
     transform: translateY(100%);
     pointer-events: auto;
+
+    @media (max-width: 768px) {
+      width: calc(100% - 8px - var(--spacing-xl)); /* Account for 4px border each side + 1rem padding each side */
+    }
+
+    @media (max-width: 500px) {
+      width: calc(100% - 2rem); /* Account for 1rem padding each side, no inline borders at this breakpoint */
+      max-width: 100%;
+      border-inline: 0;
+    }
   }
 
   .cookie-banner__header {
@@ -54,7 +78,7 @@ body[data-theme='brutal'] {
     letter-spacing: -0.02em;
     line-height: 1;
     text-align: center;
-    color: var(--text-color);
+    color: var(--cookie-banner-color);
     background: var(--background-color);
     padding: 0.5rem;
     border: 3px solid var(--border-color);
@@ -62,6 +86,14 @@ body[data-theme='brutal'] {
     margin: 0;
     animation: pulse 2s ease-in-out infinite;
     will-change: transform;
+
+    @media (max-width: 768px) {
+      font-size: var(--spacing-lg);
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1.35rem;
+    }
   }
 
   .cookie-banner__content {
@@ -91,24 +123,36 @@ body[data-theme='brutal'] {
     text-align: center;
     line-height: 1.3;
     margin: 2rem 0 1rem 0;
-    color: var(--text-color);
+    color: var(--cookie-banner-color);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+
+    @media (max-width: 500px) {
+      font-size: 1.5rem;
+    }
 
     strong {
       color: var(--accent-color);
       font-size: 1.3em;
       display: block;
       margin: 0.5rem 0;
+
+      @media (max-width: 500px) {
+        font-size: 1.2em;
+      }
     }
   }
 
   .cookie-banner__returning-subtext {
     text-align: center;
     font-size: 0.875rem;
-    color: var(--text-color);
+    color: var(--cookie-banner-color);
     opacity: 0.8;
     margin: 0;
+
+    @media (max-width: 500px) {
+      font-size: 0.75rem;
+    }
   }
 
   .cookie-banner__warning {
@@ -123,11 +167,19 @@ body[data-theme='brutal'] {
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
     animation: shake 0.5s ease-in-out infinite;
     will-change: transform;
+
+    @media (max-width: 768px) {
+      font-size: var(--spacing-sm);
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.675rem;
+    }
   }
 
   .cookie-banner__text,
   .cookie-banner__legal {
-    background: var(--section-bg);
+    background: var(--color-white);
     border: 2px solid var(--border-color);
     padding: 0.75rem;
     margin-block-end: 0.5rem;
@@ -135,6 +187,14 @@ body[data-theme='brutal'] {
     line-height: 1.4;
     font-size: 0.75rem;
     box-shadow: 3px 3px 0 var(--brutal-shadow-light);
+
+    @media (max-width: 768px) {
+      font-size: 0.675rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.6rem;
+    }
   }
 
   .cookie-banner__buttons {
@@ -160,6 +220,16 @@ body[data-theme='brutal'] {
     animation: bounce 1s ease-in-out infinite;
     font-family: var(--font-family);
     will-change: transform;
+
+    @media (max-width: 768px) {
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-size: 0.975rem;
+    }
+
+    @media (max-width: 500px) {
+      padding: 0.5rem 1rem;
+      font-size: 0.825rem;
+    }
 
     &:hover {
       transform: skewX(-5deg) translate(-2px, -2px);
@@ -210,11 +280,19 @@ body[data-theme='brutal'] {
   }
 
   .cookie-banner__fine-print {
+    color: var(--cookie-banner-color);
     font-size: 0.675rem;
     font-weight: 700;
     text-align: center;
     font-style: italic;
     opacity: 0.8;
+
+    @media (max-width: 768px) {
+      font-size: 0.6rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.525rem;
+    }
   }
 }
-

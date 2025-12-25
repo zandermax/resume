@@ -529,7 +529,7 @@ body[data-theme='web2gloss'] {
 
   /* Dial selector - Glass orb knob */
   dial-selector {
-    --ds-indicator-vertical-offset: 55%;
+    --ds-indicator-vertical-offset: 41.75%;
     --ds-indicator-width-override: 12px;
     --ds-indicator-height-override: 12px;
     --ds-indicator-border-radius: 50%;

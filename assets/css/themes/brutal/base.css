@@ -63,6 +63,12 @@ BRUTAL Theme - Maximum Brutalism
   --skills-grid-padding: 2rem;
   --skills-grid-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
 
+  /* List container custom properties */
+  --list-border: var(--border-width-extra-thick) solid var(--border-color);
+  --list-background: var(--section-bg);
+  --list-padding: var(--spacing-xl);
+  --list-box-shadow: 8px 8px 0 var(--brutal-shadow-light);
+
   /* Community/Principles list item custom properties */
   --community-item-padding: 1rem 1.5rem;
   --community-item-margin-bottom: 1rem;
@@ -70,12 +76,25 @@ BRUTAL Theme - Maximum Brutalism
   --community-item-font-weight: 600;
   --community-item-border-width: 0;
   --community-item-border-style: solid;
+  --community-item-border-inline-start: var(--border-width-extra-thick) solid var(--accent-color);
   --principles-item-padding: 1rem 1.5rem;
   --principles-item-margin-bottom: 1rem;
   --principles-item-background: var(--background-color);
   --principles-item-font-weight: 600;
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
+  --principles-item-border-inline-start: var(--border-width-extra-thick) solid var(--accent-color);
+
+  /* Header container custom properties */
+  --header-border-width: 12px;
+  --header-padding: var(--spacing-2xl) var(--spacing-xl);
+  --header-background: var(--text-color);
+  --header-color: var(--background-color);
+  --header-margin: 0 0 var(--spacing-2xl) 0;
+  --header-box-shadow: inset 0 -8px 0 var(--accent-color);
+  --header-transform: skewY(-0.5deg);
+  --header-link-color: var(--background-color);
+  --header-link-hover-color: var(--background-color);
 
   /* Header name custom properties */
   --header-name-border: none;
@@ -124,6 +143,27 @@ BRUTAL Theme - Maximum Brutalism
   --printlink-hover-color: var(--color-white);
   --printlink-active-transform: skewX(-5deg) translate(0, 0);
   --printlink-active-box-shadow: 4px 4px 0 var(--brutal-shadow-light);
+
+  /* Dial selector housing custom properties */
+  --dial-selector-housing-padding-block: var(--spacing-xl);
+  --dial-selector-housing-padding-inline: clamp(
+    0rem,
+    calc((100vw - var(--min-screen-width)) * 0.05),
+    var(--spacing-xl)
+  );
+  --dial-selector-housing-background: var(--background-color);
+  --dial-selector-housing-border: var(--border-width-extra-thick) solid var(--border-color);
+  --dial-selector-housing-box-shadow: 8px 8px 0 var(--brutal-shadow-light);
+  --dial-selector-housing-h3-margin-block-end: var(--spacing-md);
+  --dial-selector-housing-h3-font-size: var(--spacing-lg);
+
+  /* Header and section padding custom properties */
+  --header-padding-inline-start: var(--spacing-xl);
+  --header-padding-inline-end: var(--spacing-xl);
+  --section-padding-inline-start: var(--spacing-xl);
+  --section-padding-inline-end: var(--spacing-xl);
+  --section-padding-block-start: var(--spacing-xl);
+  --section-padding-block-end: var(--spacing-xl);
 
   /* Header role custom properties */
   --header-role-font-weight: 900;
@@ -206,13 +246,26 @@ BRUTAL Theme - Maximum Brutalism
     transparent 24px
   );
 
+  /* Education item custom properties */
+  --education-item-border: var(--border-width-extra-thick) solid var(--border-color);
+  --education-item-background: var(--section-bg);
+  --education-item-padding: var(--spacing-xl);
+  --education-item-box-shadow: 10px 10px 0 var(--brutal-shadow-light);
+  --education-item-position: relative;
+
   /* Education item ::before - Left accent bar */
   --education-item-before-content: '';
   --education-item-before-position: absolute;
   --education-item-before-inset: 0 auto 0 0;
   --education-item-before-width: 8px;
   --education-item-before-background: var(--accent-color);
-  --education-item-position: relative;
+
+  /* Link custom properties */
+  --link-text-decoration: none;
+  --link-font-weight: 900;
+  --link-border-block-end: 4px solid var(--accent-color);
+  --link-transition: all 0.05s ease;
+  --link-position: relative;
 
   /* Link hover - Aggressive transform + box-shadow */
   --link-hover-background: var(--accent-color);
@@ -227,6 +280,12 @@ BRUTAL Theme - Maximum Brutalism
   --h2-h3-letter-spacing: -0.02em;
   --p-li-font-weight: 600;
   --p-li-line-height: 1.5;
+
+  /* Main container custom properties */
+  --main-border-width: 8px;
+  --main-box-shadow: 16px 16px 0 var(--brutal-shadow-dark), 32px 32px 0 var(--brutal-shadow-medium);
+  --main-padding: clamp(0.75rem, calc(0.75rem + (100vw - var(--min-screen-width)) * 0.025), 2.5rem);
+  --main-transform: rotate(-0.3deg);
 
   /* Light Mode */
   [data-mode='light'] {
@@ -246,7 +305,9 @@ BRUTAL Theme - Maximum Brutalism
   /* Dark Mode */
   [data-mode='dark'] {
     --background-color: var(--color-dark-bg);
-    --text-color: oklch(92% 0 0);
+    --section-text-color: oklch(92% 0 0);
+    --experience-item-background: var(--color-white);
+    --education-item-background: var(--color-white);
     --heading-color: var(--color-dark-bg);
     --border-color: var(--color-gray-dark);
     --link-color: oklch(92% 0 0);
@@ -256,155 +317,11 @@ BRUTAL Theme - Maximum Brutalism
     --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
     --brutal-shadow-light: oklch(100% 0 0 / 0.1);
     --brutal-texture: oklch(100% 0 0 / 0.03);
+
+    /* Main container dark mode overrides */
+    --main-border-width: 12px;
+    --main-box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
   }
 }
 
-/* Harsh, unforgiving base */
-body[data-theme='brutal'] {
-  /* Typography controlled by custom properties */
-
-  /* AGGRESSIVE main container - raw concrete block */
-  .resume__main {
-    border: 8px solid var(--border-color);
-    box-shadow: 16px 16px 0 var(--brutal-shadow-dark), 32px 32px 0 var(--brutal-shadow-medium);
-    background: var(--background-color);
-    padding: clamp(0.75rem, calc(0.75rem + (100vw - var(--min-screen-width)) * 0.025), 2.5rem);
-    position: relative;
-    transform: rotate(-0.3deg);
-  }
-
-  /* Lists with harsh borders */
-  .community-list,
-  .principles-list {
-    border: var(--border-width-extra-thick) solid var(--border-color);
-    background: var(--section-bg);
-    padding: var(--spacing-xl);
-    box-shadow: 8px 8px 0 var(--brutal-shadow-light);
-  }
-
-  .community-list__item,
-  .principles-list__item {
-    border-inline-start: var(--border-width-extra-thick) solid var(--accent-color);
-  }
-
-  /* Education - concrete block style */
-  .education-item {
-    border: var(--border-width-extra-thick) solid var(--border-color);
-    background: var(--section-bg);
-    padding: var(--spacing-xl);
-    box-shadow: 10px 10px 0 var(--brutal-shadow-light);
-    /* ::before controlled by custom properties */
-  }
-
-  /* Header - MASSIVE and confrontational */
-  .resume-header {
-    border-block-end: 12px solid var(--border-color);
-    padding: var(--spacing-2xl) var(--spacing-xl);
-    background: var(--text-color);
-    color: var(--background-color);
-    margin: 0 0 var(--spacing-2xl) 0;
-    box-shadow: inset 0 -8px 0 var(--accent-color);
-    transform: skewY(-0.5deg);
-
-    a:not(#resume-header__printlink) {
-      color: var(--background-color);
-
-      &:hover {
-        color: var(--background-color);
-      }
-    }
-  }
-
-  h1.resume-header__name {
-    border-inline-start: var(--header-name-border-inline-start, none);
-  }
-
-  /* AGGRESSIVE links */
-  a:not(#resume-header__printlink) {
-    text-decoration: none;
-    font-weight: 900;
-    border-block-end: 4px solid var(--accent-color);
-    transition: all 0.05s ease;
-    position: relative;
-  }
-
-  /* Dial selector enhancements */
-  dial-selector {
-    margin-block-start: var(--ds-margin-block-start);
-
-    .dial-label > span {
-      /* font-size: var(--ds-label-span-font-size); */
-      font-weight: var(--ds-label-span-font-weight);
-      border: var(--ds-label-span-border);
-      transition: var(--ds-label-span-transition);
-      text-transform: var(--ds-label-span-text-transform);
-      letter-spacing: var(--ds-label-span-letter-spacing);
-      transform: var(--ds-label-span-transform);
-      /* color: var(--ds-label-span-color); */
-    }
-
-    .spoke-line {
-      stroke-width: var(--ds-spoke-line-stroke-width);
-      opacity: var(--ds-spoke-line-opacity);
-    }
-  }
-
-  /* Dial selector housing - industrial frame */
-  .resume-header__dial-selector {
-    /* Fluid inline-padding that scales to 0 at smallest viewports */
-    padding-block: var(--spacing-xl);
-    padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), var(--spacing-xl));
-    background: var(--background-color);
-    border: var(--border-width-extra-thick) solid var(--border-color);
-    box-shadow: 8px 8px 0 var(--brutal-shadow-light);
-    position: relative;
-
-    /* ::before controlled by custom properties */
-
-    h3 {
-      margin-block-end: var(--spacing-md);
-      font-size: var(--spacing-lg);
-    }
-
-    /* Responsive adjustments for small viewports */
-    @media (max-width: 600px) {
-      padding-block: 1.25rem;
-      border-width: 4px;
-      box-shadow: 6px 6px 0 var(--brutal-shadow-light);
-    }
-
-    @media (max-width: 480px) {
-      padding-block: 1rem;
-      border-width: 3px;
-      box-shadow: 4px 4px 0 var(--brutal-shadow-light);
-    }
-
-    @media (max-width: 380px) {
-      padding-block: 0.75rem;
-      border-width: 2px;
-      box-shadow: 3px 3px 0 var(--brutal-shadow-light);
-    }
-  }
-
-  /* ALL typography controlled by custom properties */
-
-  /* Content padding */
-  .resume-header,
-  .resume-section {
-    padding-inline-start: var(--spacing-xl);
-    padding-inline-end: var(--spacing-xl);
-  }
-
-  .resume-section {
-    padding-block-start: var(--spacing-xl);
-    padding-block-end: var(--spacing-xl);
-  }
-
-  /* Dark mode gets even more aggressive */
-  &[data-mode='dark'] {
-    .resume__main {
-      border-width: 12px;
-      box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
-    }
-  }
-}
+/* All styling controlled by custom properties */
