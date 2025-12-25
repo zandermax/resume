@@ -146,11 +146,11 @@ Skeuomorphic Theme Effects
   --printlink-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
 
   /* Dial label hover properties - no hover effect for realism (skeuomorphic dials don't respond to hover) */
-  --dial-label-hover-box-shadow: none;
-  --dial-label-hover-background: transparent;
-  --dial-label-hover-color: var(--dial-color-ink);
-  --dial-label-hover-transform: none;
-  --dial-label-hover-padding: 0;
+  --ds-label-hover-box-shadow: none;
+  --ds-label-hover-background: transparent;
+  --ds-label-hover-color: var(--dial-color-ink);
+  --ds-label-hover-transform: none;
+  --ds-label-hover-padding: 0;
 
   &[data-mode='light'] {
     --background-color: oklch(0.36 0.05 45);
@@ -459,7 +459,8 @@ body[data-theme='skeuomorph'] {
     /* Enhanced indicator appearance */
     .indicator {
       background: var(--ds-color-indicator);
-      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator), inset 0 1px 2px var(--skeu-white-30);
+      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),
+        inset 0 1px 2px var(--skeu-white-30);
       border: 1px solid var(--skeu-black-30);
     }
   }

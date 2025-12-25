@@ -99,25 +99,25 @@ Windows XP Theme (Luna)
   --dial-indicator-border: 1px solid var(--xp-black-20);
 
   /* Dial spoke line */
-  --dial-spoke-line-stroke-width: 2px;
+  --ds-spoke-line-stroke-width: 2px;
 
   /* Dial label XP styling */
-  --dial-label-font-size: 0.85rem;
-  --dial-label-padding: 0.45rem 0.8rem;
-  --dial-label-border-radius: 3px;
-  --dial-label-transition: all 0.15s ease;
-  --dial-label-background: transparent;
-  --dial-label-font-weight: 700;
-  --dial-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
-  --dial-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
-  --dial-label-hover-padding: 0.45rem 0.25rem;
-  --dial-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
-  --dial-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
+  --ds-label-font-size: 0.85rem;
+  --ds-label-padding: 0.45rem 0.8rem;
+  --ds-label-border-radius: 3px;
+  --ds-label-transition: all 0.15s ease;
+  --ds-label-background: transparent;
+  --ds-label-font-weight: 700;
+  --ds-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
+  --ds-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
+  --ds-label-hover-padding: 0.45rem 0.25rem;
+  --ds-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
+  --ds-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
     0 2px 4px var(--xp-black-20);
-  --dial-label-active-color: var(--color-white);
-  --dial-label-active-span-padding-inline: 0.25rem;
-  --dial-label-active-span-padding-block: 0.25rem;
-  --dial-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
+  --ds-label-active-color: var(--color-white);
+  --ds-label-active-span-padding-inline: 0.25rem;
+  --ds-label-active-span-padding-block: 0.25rem;
+  --ds-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
 
   /* Scrollbar styling (XP theme) */
   --scrollbar-width: 16px;
@@ -458,7 +458,7 @@ body[data-theme='xp'] {
     }
 
     .spoke-line {
-      stroke-width: var(--dial-spoke-line-stroke-width);
+      stroke-width: var(--ds-spoke-line-stroke-width);
     }
   }
 

@@ -193,10 +193,10 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --list-item-hover-box-shadow: var(--dashboard-shadow-md);
 
   /* Dial label hover properties */
-  --dial-label-hover-border-color: var(--accent-color);
-  --dial-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
-  --dial-label-hover-color: var(--accent-color);
-  --dial-label-hover-transform: translateY(-2px);
+  --ds-label-hover-border-color: var(--accent-color);
+  --ds-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
+  --ds-label-hover-color: var(--accent-color);
+  --ds-label-hover-transform: translateY(-2px);
 
   /* Education item hover */
   --education-item-hover-transform: translateX(4px);

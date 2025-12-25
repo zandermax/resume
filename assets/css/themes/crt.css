@@ -93,21 +93,21 @@
   --dial-knob-border-width: 2px;
   --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
   --dial-indicator-box-shadow: 0 0 10px currentColor;
-  --dial-label-border-width: 1px;
-  --dial-label-border-style: solid;
-  --dial-label-font-size--tablet: 0.75rem;
-  --dial-label-font-size--phone: 0.7rem;
-  --dial-label-font-size--phone-sm: 0.7rem;
-  --dial-label-font-size--xs: 0.65rem;
-  --dial-label-padding: 0.4rem 0.8rem;
-  --dial-label-active-span-padding-block: 0.4rem;
-  --dial-label-active-span-padding-inline: 0.6rem;
-  --dial-label-active-span-padding-block--tablet: 0.35rem;
-  --dial-label-active-span-padding-inline--tablet: 0.4rem;
-  --dial-label-active-span-padding-block--phone: 0.2rem;
-  --dial-label-active-span-padding-inline--phone: 0.25rem;
-  --dial-spoke-stroke-width: 1px;
-  --dial-spoke-opacity: 0.5;
+  --ds-label-border-width: 1px;
+  --ds-label-border-style: solid;
+  --ds-label-font-size--tablet: 0.75rem;
+  --ds-label-font-size--phone: 0.7rem;
+  --ds-label-font-size--phone-sm: 0.7rem;
+  --ds-label-font-size--xs: 0.65rem;
+  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-active-span-padding-block: 0.4rem;
+  --ds-label-active-span-padding-inline: 0.6rem;
+  --ds-label-active-span-padding-block--tablet: 0.35rem;
+  --ds-label-active-span-padding-inline--tablet: 0.4rem;
+  --ds-label-active-span-padding-block--phone: 0.2rem;
+  --ds-label-active-span-padding-inline--phone: 0.25rem;
+  --ds-spoke-stroke-width: 1px;
+  --ds-spoke-opacity: 0.5;
   --printlink-before-content: '>';
   --printlink-before-display: inline;
   --printlink-before-margin-inline-end: 0.35em;
@@ -116,10 +116,10 @@
   --printlink-after-margin-inline-start: 0.35em;
 
   /* Dial label hover properties */
-  --dial-label-hover-text-shadow: 0 0 10px currentColor;
-  --dial-label-hover-border-color: currentColor;
-  --dial-label-hover-color: var(--dial-color-ink);
-  --dial-label-hover-padding: 0rem 0.5rem;
+  --ds-label-hover-text-shadow: 0 0 10px currentColor;
+  --ds-label-hover-border-color: currentColor;
+  --ds-label-hover-color: var(--dial-color-ink);
+  --ds-label-hover-padding: 0rem 0.5rem;
 
   /* Dial selector knob styling */
   --ds-knob-box-shadow: var(--dial-knob-box-shadow);
@@ -130,14 +130,14 @@
   --ds-indicator-gradient: currentColor;
 
   /* Dial selector label active state */
-  --dial-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  --ds-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
   --ds-label-span-active-font-weight: bold;
   --ds-label-span-active-border: 2px solid currentColor;
-  --dial-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+  --ds-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
 
   /* Dial selector spoke lines */
-  --ds-spoke-stroke-width: var(--dial-spoke-stroke-width);
-  --ds-spoke-opacity: var(--dial-spoke-opacity);
+  --ds-spoke-stroke-width: var(--ds-spoke-stroke-width);
+  --ds-spoke-opacity: var(--ds-spoke-opacity);
 
   /* Body pseudo-element: scanline overlay */
   --body-before-content: '';
@@ -177,7 +177,7 @@
     --link-visited-color: oklch(20% 0.08 60);
     --accent-color: oklch(20% 0.08 60);
     --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
-    --dial-label-font-size: 0.85rem;
+    --ds-label-font-size: 0.85rem;
   }
 
   /* Dark Mode */
@@ -194,7 +194,7 @@
     --link-visited-color: var(--color-green);
     --accent-color: var(--color-green);
     --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
-    --dial-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    --ds-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
   }
 }
 
@@ -325,12 +325,6 @@ body[data-theme='crt'] {
     vertical-align: text-bottom;
     box-shadow: 0 0 8px var(--background-color);
     will-change: opacity;
-  }
-
-  /* Header - using custom properties */
-  .resume-header {
-    border: 0;
-    border-block-end: var(--header-border-width) var(--header-border-style) currentColor;
   }
 
   .resume-header__dial-selector {
@@ -569,12 +563,12 @@ body[data-theme='crt'] {
 /* Responsive :root adjustments - at top level */
 @media (max-width: 768px) {
   :root[data-theme='crt'] {
-    --dial-label-padding: 0.35rem 0;
+    --ds-label-padding: 0.35rem 0;
   }
 }
 
 @media (max-width: 500px) {
   :root[data-theme='crt'] {
-    --dial-label-padding: 0.3rem 0;
+    --ds-label-padding: 0.3rem 0;
   }
 }

@@ -249,16 +249,16 @@ body[data-theme='metro'] .metro-chat-widget {
   --bullet-color: var(--accent-color);
 
   /* Dial label active span padding */
-  --dial-label-active-span-padding-block: 0.5rem;
-  --dial-label-active-span-padding-inline: 0.8rem;
-  --dial-label-active-span-padding-block--tablet: 0.45rem;
-  --dial-label-active-span-padding-inline--tablet: 0.7rem;
-  --dial-label-active-span-padding-block--phone: 0.25rem;
-  --dial-label-active-span-padding-inline--phone: 0.1rem;
+  --ds-label-active-span-padding-block: 0.5rem;
+  --ds-label-active-span-padding-inline: 0.8rem;
+  --ds-label-active-span-padding-block--tablet: 0.45rem;
+  --ds-label-active-span-padding-inline--tablet: 0.7rem;
+  --ds-label-active-span-padding-block--phone: 0.25rem;
+  --ds-label-active-span-padding-inline--phone: 0.1rem;
 
   /* Dial label hover properties */
-  --dial-label-hover-background: oklch(57% 0.17 246 / 0.15);
-  --dial-label-hover-box-shadow: none;
+  --ds-label-hover-background: oklch(57% 0.17 246 / 0.15);
+  --ds-label-hover-box-shadow: none;
 
   /* Dial selector knob styling */
   --ds-knob-border-radius: 50%;
@@ -272,21 +272,21 @@ body[data-theme='metro'] .metro-chat-widget {
   --ds-indicator-width-override: 4px;
 
   /* Dial selector label styling */
-  --dial-label-font-size: 0.85rem;
-  --dial-label-hover-color: var(--dial-color-ink);
-  --dial-label-padding: 0.6rem 0.5rem;
-  --dial-label-border-radius: 0;
-  --dial-label-transition: all 0.15s ease;
-  --dial-label-background: transparent;
-  --dial-label-font-weight: 600;
-  --dial-label-text-transform: uppercase;
+  --ds-label-font-size: 0.85rem;
+  --ds-label-hover-color: var(--dial-color-ink);
+  --ds-label-padding: 0.6rem 0.5rem;
+  --ds-label-border-radius: 0;
+  --ds-label-transition: all 0.15s ease;
+  --ds-label-background: transparent;
+  --ds-label-font-weight: 600;
+  --ds-label-text-transform: uppercase;
   --ds-label-letter-spacing: 0.05em;
-  --dial-label-border-width: 0;
+  --ds-label-border-width: 0;
 
   /* Dial selector label active state */
-  --dial-label-active-background: var(--accent-color);
-  --dial-label-active-box-shadow: none;
-  --dial-label-active-color: #ffffff;
+  --ds-label-active-background: var(--accent-color);
+  --ds-label-active-box-shadow: none;
+  --ds-label-active-color: #ffffff;
 
   /* Dial selector spoke lines */
   --ds-spoke-stroke-width: 2px;
@@ -338,7 +338,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --metro-purple: oklch(60% 0.2 315);
 
   /* Dial label hover properties (dark mode) */
-  --dial-label-hover-background: oklch(75% 0.14 210 / 0.2);
+  --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
 }
 
 /* Typography-first, flat colors, zero skeuomorphism */
@@ -1069,8 +1069,8 @@ body[data-theme='metro'] {
 
 @media (max-width: 768px) {
   :root[data-theme='metro'] {
-    --dial-label-font-size: var(--spacing-sm);
-    --dial-label-padding: var(--spacing-xs) 0.8rem;
+    --ds-label-font-size: var(--spacing-sm);
+    --ds-label-padding: var(--spacing-xs) 0.8rem;
   }
 }
 
@@ -1081,7 +1081,7 @@ body[data-theme='metro'] {
     --section-title-padding: 0.75rem 1rem;
     --printlink-font-size: 0.75rem;
     --printlink-padding: 0.75rem 1.5rem;
-    --dial-label-font-size: var(--font-size-xs);
-    --dial-label-padding: 0.4rem var(--font-size-xs);
+    --ds-label-font-size: var(--font-size-xs);
+    --ds-label-padding: 0.4rem var(--font-size-xs);
   }
 }

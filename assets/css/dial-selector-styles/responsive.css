@@ -7,9 +7,9 @@
   dial-selector {
     /* Reduce size for tablets/large phones */
     --ds-knob-size: 160px;
-    --dial-label-font-size: var(--dial-label-font-size--tablet);
-    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--tablet);
-    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--tablet);
+    --ds-label-font-size: var(--ds-label-font-size--tablet);
+    --ds-label-active-span-padding-block: var(--ds-label-active-span-padding-block--tablet);
+    --ds-label-active-span-padding-inline: var(--ds-label-active-span-padding-inline--tablet);
   }
 
   dial-selector .selector {
@@ -27,9 +27,9 @@
   dial-selector {
     /* Further reduce for phones */
     --ds-knob-size: 140px;
-    --dial-label-font-size: var(--dial-label-font-size--phone);
-    --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--phone);
-    --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--phone);
+    --ds-label-font-size: var(--ds-label-font-size--phone);
+    --ds-label-active-span-padding-block: var(--ds-label-active-span-padding-block--phone);
+    --ds-label-active-span-padding-inline: var(--ds-label-active-span-padding-inline--phone);
   }
 
   dial-selector .selector {

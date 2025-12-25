@@ -108,18 +108,18 @@ Terminal Theme (1992 CLI-inspired)
   --dial-knob-border-width: 0;
   --dial-indicator-box-shadow: none;
   --dial-indicator-width: 10px;
-  --dial-label-padding: 0.4rem 0.8rem;
-  --dial-label-active-span-padding-block: 0.25rem;
-  --dial-label-active-span-padding-inline: 0.3rem;
-  --dial-label-active-span-padding-block--tablet: 0.2rem;
-  --dial-label-active-span-padding-inline--tablet: 0.6rem;
-  --dial-label-active-span-padding-block--phone: 0.2rem;
-  --dial-label-active-span-padding-inline--phone: 0.55rem;
-  --dial-label-font-size--tablet: 0.75rem;
-  --dial-label-font-size--phone: 0.7rem;
-  --dial-label-font-size--phone-sm: 0.7rem;
-  --dial-label-font-size--xs: 0.65rem;
-  --dial-spoke-stroke-width: 2px;
+  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-active-span-padding-block: 0.25rem;
+  --ds-label-active-span-padding-inline: 0.3rem;
+  --ds-label-active-span-padding-block--tablet: 0.2rem;
+  --ds-label-active-span-padding-inline--tablet: 0.6rem;
+  --ds-label-active-span-padding-block--phone: 0.2rem;
+  --ds-label-active-span-padding-inline--phone: 0.55rem;
+  --ds-label-font-size--tablet: 0.75rem;
+  --ds-label-font-size--phone: 0.7rem;
+  --ds-label-font-size--phone-sm: 0.7rem;
+  --ds-label-font-size--xs: 0.65rem;
+  --ds-spoke-stroke-width: 2px;
 
   /* Typography adjustments */
   --heading-letter-spacing: 0.05em;
@@ -132,13 +132,13 @@ Terminal Theme (1992 CLI-inspired)
   --printlink-active-transform-override: translate(1px, 1px);
 
   /* Dial selector hover/active states */
-  --dial-label-hover-color: var(--dial-color-ink);
-  --dial-label-hover-background: var(--terminal-button-bg);
-  --dial-label-hover-padding: 0rem 0.5rem;
-  --dial-label-hover-box-shadow: var(--terminal-inset-raised-sm);
-  --dial-label-active-background: var(--terminal-title-bg);
-  --dial-label-active-box-shadow: var(--terminal-inset-sunken-sm);
-  --dial-label-active-color: var(--dial-color-selection);
+  --ds-label-hover-color: var(--dial-color-ink);
+  --ds-label-hover-background: var(--terminal-button-bg);
+  --ds-label-hover-padding: 0rem 0.5rem;
+  --ds-label-hover-box-shadow: var(--terminal-inset-raised-sm);
+  --ds-label-active-background: var(--terminal-title-bg);
+  --ds-label-active-box-shadow: var(--terminal-inset-sunken-sm);
+  --ds-label-active-color: var(--dial-color-selection);
 
   /* Dial selector knob styling */
   --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
@@ -529,7 +529,7 @@ body[data-theme='terminal'] {
 @media (max-width: 768px) {
   :root[data-theme='terminal'] {
     --header-role-font-size: 0.9rem;
-    --dial-label-padding: var(--spacing-xs) var(--spacing-sm);
+    --ds-label-padding: var(--spacing-xs) var(--spacing-sm);
     --main-padding-responsive-768: var(--spacing-lg);
     --header-name-font-size: 2.1rem;
     --header-name-greeting-font-size: 0.95rem;
@@ -539,7 +539,7 @@ body[data-theme='terminal'] {
 
 @media (max-width: 500px) {
   :root[data-theme='terminal'] {
-    --dial-label-padding: var(--spacing-xs) var(--spacing-xs);
+    --ds-label-padding: var(--spacing-xs) var(--spacing-xs);
     --main-padding-responsive-500: var(--spacing-md);
     --header-padding-responsive-500: 0;
     --header-name-font-size: 1.7rem;

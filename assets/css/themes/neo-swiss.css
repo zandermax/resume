@@ -197,16 +197,16 @@ Ultra-modern minimalism with mathematical precision
   --section-text-font-weight: var(--font-weight-light);
 
   /* Dial label active span padding */
-  --dial-label-active-span-padding-block: 0.05rem;
-  --dial-label-active-span-padding-inline: 0.6rem;
-  --dial-label-active-span-padding-block--tablet: 0.025rem;
-  --dial-label-active-span-padding-inline--tablet: 0.55rem;
-  --dial-label-active-span-padding-block--phone: 0.025rem;
-  --dial-label-active-span-padding-inline--phone: 0.5rem;
+  --ds-label-active-span-padding-block: 0.05rem;
+  --ds-label-active-span-padding-inline: 0.6rem;
+  --ds-label-active-span-padding-block--tablet: 0.025rem;
+  --ds-label-active-span-padding-inline--tablet: 0.55rem;
+  --ds-label-active-span-padding-block--phone: 0.025rem;
+  --ds-label-active-span-padding-inline--phone: 0.5rem;
 
   /* Dial label hover properties */
-  --dial-label-hover-background: transparent;
-  --dial-label-hover-color: var(--accent-color);
+  --ds-label-hover-background: transparent;
+  --ds-label-hover-color: var(--accent-color);
 
   /* Dial selector knob styling */
   --ds-knob-border: 2px solid var(--dial-color-ink);
@@ -218,17 +218,17 @@ Ultra-modern minimalism with mathematical precision
   --ds-indicator-height-override: 24px;
 
   /* Dial selector label styling */
-  --dial-label-font-size: var(--font-size-small);
-  --dial-label-padding: calc(var(--swiss-grid) * 1) var(--spacing-2);
-  --dial-label-transition: color 50ms linear, background 50ms linear;
-  --dial-label-font-weight: var(--font-weight-medium);
-  --dial-label-text-transform: uppercase;
+  --ds-label-font-size: var(--font-size-small);
+  --ds-label-padding: calc(var(--swiss-grid) * 1) var(--spacing-2);
+  --ds-label-transition: color 50ms linear, background 50ms linear;
+  --ds-label-font-weight: var(--font-weight-medium);
+  --ds-label-text-transform: uppercase;
   --ds-label-letter-spacing: 0.1em;
   --ds-label-color: var(--dial-color-ink);
 
   /* Dial selector label active state */
-  --dial-label-active-background: var(--accent-color);
-  --dial-label-active-color: #ffffff;
+  --ds-label-active-background: var(--accent-color);
+  --ds-label-active-color: #ffffff;
   --ds-label-span-active-font-weight: 600;
 
   /* Dial selector spoke lines */
@@ -1113,8 +1113,8 @@ body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
     --section-title-width: 100%;
     --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
     --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
-    --dial-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
-    --dial-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
+    --ds-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --ds-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
   }
 }
 

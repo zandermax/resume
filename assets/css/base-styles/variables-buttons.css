@@ -123,48 +123,48 @@
   --dial-indicator-border: none;
 
   /* === DIAL SELECTOR LABELS === */
-  --dial-label-border-width: 0;
-  --dial-label-border-style: solid;
-  --dial-label-padding: 0.4rem 0.8rem;
-  --dial-label-font-size: clamp(16px, 1.5vw, 22px);
-  --dial-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
-  --dial-label-font-size--phone: clamp(12px, 2.5vw, 16px);
-  --dial-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
-  --dial-label-font-size--xs: clamp(12px, 3vw, 13px);
-  --dial-label-active-span-padding-block: 0;
-  --dial-label-active-span-padding-inline: 0;
-  --dial-label-active-span-padding-block--tablet: 0;
-  --dial-label-active-span-padding-inline--tablet: 0;
-  --dial-label-active-span-padding-block--phone: 0;
-  --dial-label-active-span-padding-inline--phone: 0;
-  --dial-label-border-radius: 0;
-  --dial-label-transition: none;
-  --dial-label-background: transparent;
-  --dial-label-font-weight: normal;
+  --ds-label-border-width: 0;
+  --ds-label-border-style: solid;
+  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-font-size: clamp(16px, 1.5vw, 22px);
+  --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
+  --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
+  --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
+  --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
+  --ds-label-active-span-padding-block: 0;
+  --ds-label-active-span-padding-inline: 0;
+  --ds-label-active-span-padding-block--tablet: 0;
+  --ds-label-active-span-padding-inline--tablet: 0;
+  --ds-label-active-span-padding-block--phone: 0;
+  --ds-label-active-span-padding-inline--phone: 0;
+  --ds-label-border-radius: 0;
+  --ds-label-transition: none;
+  --ds-label-background: transparent;
+  --ds-label-font-weight: normal;
 
   /* === DIAL SELECTOR SPOKE LINES === */
-  --dial-spoke-stroke-width: 1px;
-  --dial-spoke-opacity: 1;
-  --dial-spoke-line-stroke-width: 1px;
+  --ds-spoke-stroke-width: 1px;
+  --ds-spoke-opacity: 1;
+  --ds-spoke-line-stroke-width: 1px;
 
   /* === DIAL SELECTOR HOVER/ACTIVE STATES === */
-  --dial-label-hover-text-shadow: none;
-  --dial-label-hover-border-color: transparent;
-  --dial-label-hover-background: transparent;
-  --dial-label-hover-box-shadow: none;
-  --dial-label-hover-color: inherit;
-  --dial-label-hover-opacity: 1;
-  --dial-label-hover-transform: none;
-  --dial-label-hover-filter: none;
-  --dial-label-hover-animation: none;
-  --dial-label-hover-padding: inherit;
-  --dial-label-hover-will-change: auto;
-  --dial-label-active-text-shadow: none;
-  --dial-label-active-font-weight: normal;
-  --dial-label-active-border: none;
-  --dial-label-active-box-shadow: none;
-  --dial-label-active-background: transparent;
-  --dial-label-active-color: inherit;
+  --ds-label-hover-text-shadow: none;
+  --ds-label-hover-border-color: transparent;
+  --ds-label-hover-background: transparent;
+  --ds-label-hover-box-shadow: none;
+  --ds-label-hover-color: inherit;
+  --ds-label-hover-opacity: 1;
+  --ds-label-hover-transform: none;
+  --ds-label-hover-filter: none;
+  --ds-label-hover-animation: none;
+  --ds-label-hover-padding: inherit;
+  --ds-label-hover-will-change: auto;
+  --ds-label-active-text-shadow: none;
+  --ds-label-active-font-weight: normal;
+  --ds-label-active-border: none;
+  --ds-label-active-box-shadow: none;
+  --ds-label-active-background: transparent;
+  --ds-label-active-color: inherit;
 
   /* === DIAL SELECTOR HOUSING PSEUDO-ELEMENT === */
   --dial-selector-housing-before-content: none;
