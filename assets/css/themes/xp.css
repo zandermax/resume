@@ -59,11 +59,7 @@ Windows XP Theme (Luna)
   --xp-white-60: oklch(100% 0 0 / 0.6);
   --xp-white-80: oklch(100% 0 0 / 0.8);
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: var(--spacing-lg);
-
   /* Header top row custom properties */
-  --header-top-row-margin-block-end: 2rem;
 
   /* Resume main ::before - XP title bar */
   --resume-main-before-content: '';
@@ -171,15 +167,10 @@ Windows XP Theme (Luna)
   --skills-title-font-weight: bold;
 
   /* Section text custom properties */
-  --section-text-color: var(--text-color);
   --section-text-line-height: 1.6;
 
   /* Experience item role custom properties */
-  --experience-role-color: var(--text-color);
   --experience-role-font-size: 1.05rem;
-
-  /* Experience item company custom properties */
-  --experience-company-color: var(--text-color);
 
   /* Tech badge custom properties */
   --tech-badge-border: 0;
@@ -208,21 +199,18 @@ Windows XP Theme (Luna)
   --community-item-padding: 0.75rem 0.5rem;
   --community-item-border-width: 0;
   --community-item-border-style: solid;
-  --principles-item-padding: var(--spacing-sm) var(--spacing-xs);
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
 
   /* Header name custom properties */
   --header-name-border-color: var(--xp-window-border-block-start);
   --header-name-border-width: var(--border-width-thick);
-  --header-name-color: var(--text-color);
   --header-name-text-shadow: 2px 2px 4px var(--xp-black-10);
 
   /* Section title custom properties */
   --section-title-border: 0;
   --section-title-border-radius: var(--xp-radius-sm);
   --section-title-background: linear-gradient(180deg, oklch(47% 0.27 264) 0%, oklch(60% 0.2 245) 100%);
-  --section-title-color: var(--section-title-color);
   --section-title-padding: 0.6rem var(--spacing-md);
   --section-title-margin: 0 -var(--spacing-xs) var(--spacing-md);
   --section-title-box-shadow: 0 2px 4px var(--xp-black-20), inset 0 1px 0 var(--xp-white-30);
@@ -264,15 +252,10 @@ Windows XP Theme (Luna)
   --printlink-before-font-size: 0.7em;
   --printlink-before-transform: rotate(90deg);
 
-  /* Header role custom properties */
-  --header-role-color: var(--text-color);
-
   /* Education institution custom properties */
-  --education-institution-color: var(--text-color);
   --education-institution-font-size: 1.05rem;
 
   /* Experience bullets custom properties */
-  --experience-bullets-li-color: var(--text-color);
   --experience-bullets-li-line-height: 1.6;
   --bullet-before-content: '■';
   --bullet-color: var(--xp-start-green);
@@ -418,7 +401,7 @@ body[data-theme='xp'] {
     margin-block-start: 3rem;
     padding-block-start: 3rem;
     padding-block-end: 1rem;
-    border-block-end: 2px solid var(--xp-button-shadow);
+    border-block-end: none;
     background: transparent;
   }
 
@@ -565,6 +548,7 @@ body[data-theme='xp'] {
     .resume-header,
     .resume-section {
       padding-block-start: 0;
+      margin-block-start: 0;
       margin-inline: 1rem;
     }
 

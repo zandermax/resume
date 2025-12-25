@@ -141,26 +141,15 @@ Terminal Theme (1992 CLI-inspired)
   --dial-label-active-color: var(--dial-color-selection);
 
   /* Dial selector knob styling */
-  --ds-knob-border: var(--dial-knob-border-width);
   --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
   --ds-knob-border-radius: 0;
   --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
 
-  /* Dial selector indicator styling */
-  --ds-indicator-width-override: var(--dial-indicator-width);
-  --ds-indicator-box-shadow: var(--dial-indicator-box-shadow);
-
-  /* Dial selector spoke lines */
-  --ds-spoke-stroke-width: var(--dial-spoke-stroke-width);
-
   /* Education and experience styling */
-  --education-item-font-size: var(--font-size-md);
   --experience-item-position: relative;
-  --experience-item-meta-font-size: var(--font-size-sm);
 
   /* Header styling */
   --header-position: relative;
-  --header-background: var(--header-bg);
 
   /* Print/save button styling */
   --savelink-display: inline-flex;
@@ -168,7 +157,6 @@ Terminal Theme (1992 CLI-inspired)
   --printlink-justify-content: center;
   --printlink-padding: var(--spacing-sm) var(--spacing-md);
   --printlink-font-size: 0.9rem;
-  --printlink-font-family: var(--font-family);
   --printlink-cursor: pointer;
   --printlink-transition: none;
   --printlink-border-radius: 0;
@@ -179,6 +167,16 @@ Terminal Theme (1992 CLI-inspired)
   --printlink-text-transform: uppercase;
   --printlink-letter-spacing: 0.1em;
   --printlink-border: 2px solid var(--terminal-border-dark);
+
+  /* Consolidated inset border patterns for 3D effects */
+  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
+    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
+  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
+    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
 
   /* Typography styling */
   --h1-h2-h3-text-shadow: none;
@@ -202,23 +200,13 @@ Terminal Theme (1992 CLI-inspired)
   --link-color: var(--color-yellow);
   --link-visited-color: var(--color-cyan);
   --section-bg: var(--color-silver);
-  --header-bg: var(--color-gray-light);
+  --header-background: var(--color-gray-light);
   --terminal-border-light: var(--color-white);
   --terminal-border-dark: var(--color-black);
   --terminal-window-bg: var(--color-silver);
   --terminal-title-bg: var(--color-blue-navy);
   --terminal-button-bg: var(--color-silver);
   --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
-
-  /* Consolidated inset border patterns for 3D effects */
-  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
-    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
-  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
-    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
 }
 
 /* Dark Mode */
@@ -233,7 +221,7 @@ Terminal Theme (1992 CLI-inspired)
   --link-color: var(--color-cyan);
   --link-visited-color: var(--color-yellow);
   --section-bg: var(--color-blue-navy);
-  --header-bg: var(--color-blue-navy);
+  --header-background: var(--color-blue-navy);
   --accent-color: var(--color-cyan);
   --terminal-border-light: oklch(45% 0.22 264);
   --terminal-border-dark: oklch(8% 0.08 264);
@@ -241,16 +229,6 @@ Terminal Theme (1992 CLI-inspired)
   --terminal-title-bg: var(--color-blue-navy);
   --terminal-button-bg: oklch(28% 0.16 264);
   --terminal-shadow: 2px 2px 0 var(--color-black / 0.5);
-
-  /* Consolidated inset border patterns for 3D effects */
-  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
-    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
-  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
-    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
-  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
-    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
 
   /* Dark mode button styling */
   --printlink-dark-background: var(--terminal-button-bg);

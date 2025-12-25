@@ -21,9 +21,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --header-border-radius: 8px;
   --main-border-radius: 8px;
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 1.5rem;
-
   /* Experience item custom properties */
   --experience-item-border: var(--border-width-thin) solid var(--panel-border);
   --experience-item-background: var(--panel-bg);
@@ -31,7 +28,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --experience-item-padding: var(--spacing-md);
   --experience-item-margin-top: var(--spacing-md);
   --experience-item-box-shadow: var(--dashboard-shadow-sm);
-  --experience-item-position: relative;
   --experience-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   /* Skills grid group custom properties */
@@ -61,7 +57,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
 
   /* Experience item company custom properties */
   --experience-company-font-weight: 500;
-  --experience-company-color: var(--accent-color);
   --experience-company-font-size: var(--font-size-md);
 
   /* Skills grid custom properties */
@@ -142,7 +137,6 @@ Inspired by COVID dashboards, Grafana, status pages, and data obsession
   --principles-item-margin-top: var(--spacing-sm);
   --principles-item-box-shadow: var(--dashboard-shadow-sm);
   --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
-  --principles-item-position: relative;
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
 

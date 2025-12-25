@@ -41,7 +41,7 @@
   /* === RESUME HEADER === */
   --header-border-style: solid;
   --header-border-width: 3px;
-  --header-padding: 0;
+  --header-padding: unset; /* 0 default */
   --header-margin-bottom: 1.5rem;
   --header-border-radius: var(--main-border-radius);
   --header-background: transparent;

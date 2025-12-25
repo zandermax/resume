@@ -94,14 +94,10 @@ body[data-theme='metro'] .metro-chat-widget {
 :root[data-theme='metro'] {
   --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
   --background-image: none;
-  --header-bg: transparent;
+  --header-background: transparent;
   --section-title-color: var(--color-white);
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 1.5rem;
-
   /* Experience item custom properties */
-  --experience-item-position: relative;
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);
   --experience-item-border: 0;
@@ -139,13 +135,11 @@ body[data-theme='metro'] .metro-chat-widget {
   --experience-role-margin-block-end: 0.5rem;
   --experience-role-line-height: 1.2;
   --experience-role-letter-spacing: 0.02em;
-  --experience-role-color: var(--text-color);
 
   /* Experience item company custom properties */
   --experience-company-font-weight: 400;
   --experience-company-font-size: 1rem;
   --experience-company-text-transform: none;
-  --experience-company-color: var(--text-color);
   --experience-company-letter-spacing: 0;
 
   /* Tech badge custom properties */
@@ -198,7 +192,6 @@ body[data-theme='metro'] .metro-chat-widget {
   --header-name-line-height: 1;
   --header-name-text-transform: none;
   --header-name-letter-spacing: -0.02em;
-  --header-name-color: var(--text-color);
 
   /* Section title custom properties */
   --section-title-border: 0;
@@ -206,7 +199,6 @@ body[data-theme='metro'] .metro-chat-widget {
   --section-title-padding: 1em;
   --section-title-margin: 0 0 1.5rem 0;
   --section-title-background: var(--metro-blue);
-  --section-title-color: var(--section-title-color);
   --section-title-text-transform: uppercase;
   --section-title-font-weight: 600;
   --section-title-font-size: 1.4rem;
@@ -240,7 +232,6 @@ body[data-theme='metro'] .metro-chat-widget {
   --header-role-font-size: 1.2rem;
   --header-role-text-transform: none;
   --header-role-letter-spacing: 0;
-  --header-role-color: var(--text-color);
   --header-role-margin-block-start: 0.5rem;
 
   /* Education institution custom properties */
@@ -250,7 +241,6 @@ body[data-theme='metro'] .metro-chat-widget {
   --education-institution-margin-block-end: 0.5rem;
   --education-institution-line-height: 1.2;
   --education-institution-letter-spacing: 0.02em;
-  --education-institution-color: var(--text-color);
 
   /* Experience bullets custom properties */
   --bullet-before-content: '■';

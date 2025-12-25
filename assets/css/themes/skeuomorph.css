@@ -66,7 +66,6 @@ Skeuomorphic Theme Effects
     0 1px 3px var(--skeu-black-08);
 
   /* Tech badge custom properties */
-  --tech-badge-position: relative;
   --tech-badge-font-weight: 600;
   --tech-badge-padding: 0.7em 2.2em;
   --tech-badge-border-radius: 5px;
@@ -109,7 +108,6 @@ Skeuomorphic Theme Effects
   --bullet-text-shadow: 0 1px 0 var(--skeu-white-20);
 
   /* Section title custom properties */
-  --section-title-position: relative;
   --section-title-background: var(--paper-color);
   --section-title-color: var(--text-color);
   --section-title-padding: 0.6rem var(--spacing-md);
@@ -183,7 +181,7 @@ Skeuomorphic Theme Effects
     --link-color: oklch(0.38 0.04 40);
     --link-visited-color: oklch(0.27 0.03 40);
     --section-bg: var(--color-cream);
-    --header-bg: var(--color-tan);
+    --header-background: var(--color-tan);
     --accent-color: oklch(0.42 0.11 50);
     --leather-color: var(--color-tan);
     --paper-color: var(--color-cream);
@@ -250,7 +248,7 @@ Skeuomorphic Theme Effects
     --link-color: oklch(0.77 0.13 85);
     --link-visited-color: oklch(0.65 0.11 75);
     --section-bg: oklch(0.38 0.04 50);
-    --header-bg: oklch(0.33 0.03 45);
+    --header-background: oklch(0.33 0.03 45);
     --accent-color: oklch(0.77 0.13 85);
     --leather-color: oklch(0.33 0.03 45);
     --paper-color: oklch(0.38 0.04 50);

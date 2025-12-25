@@ -6,11 +6,7 @@ BRUTAL Theme - Maximum Brutalism
 :root[data-theme='brutal'] {
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 3rem;
-
   /* Experience item custom properties */
-  --experience-item-position: relative;
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);
   --experience-item-border: 6px solid var(--border-color);
@@ -66,7 +62,6 @@ BRUTAL Theme - Maximum Brutalism
   --skills-grid-background: var(--section-bg);
   --skills-grid-padding: 2rem;
   --skills-grid-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
-  --skills-grid-position: relative;
 
   /* Community/Principles list item custom properties */
   --community-item-padding: 1rem 1.5rem;
@@ -110,7 +105,6 @@ BRUTAL Theme - Maximum Brutalism
   --section-title-border-inline-start: 16px solid var(--accent-color);
   --section-title-border-block-end: 4px solid var(--border-color);
   --section-title-line-height: 0.9;
-  --section-title-position: relative;
   --section-title-transform: skewY(-1deg);
 
   /* Print link custom properties */

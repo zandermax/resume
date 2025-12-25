@@ -8,7 +8,6 @@
   --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
   --background-image: none;
   --section-bg: transparent;
-  --header-bg: transparent;
 
   /* Header name wrapper custom properties */
   --header-name-wrapper-margin-block-start: 1.5rem;

@@ -59,11 +59,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --web2-radius-md: 8px;
   --web2-radius-sm: 6px;
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: var(--spacing-xl);
-
   /* Experience item custom properties */
-  --experience-item-position: relative;
   --experience-item-border-radius: var(--web2-radius-lg);
   --experience-item-background: linear-gradient(180deg, var(--section-bg) 0%, oklch(100% 0 0 / 0.9) 100%);
   --experience-item-padding: var(--spacing-xl);
@@ -79,7 +75,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --skills-group-margin-bottom: var(--spacing-md);
   --skills-group-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.1);
   --skills-group-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
-  --skills-group-position: relative;
   --skills-group-transition: var(--web2-transition-fast);
   --skills-group-overflow: hidden;
   --skills-group-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08),
@@ -101,7 +96,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   /* Experience item company custom properties */
   --experience-company-font-weight: 600;
   --experience-company-font-size: 1.1rem;
-  --experience-company-color: var(--text-color);
 
   /* Tech badge custom properties */
   --tech-badge-border-radius: var(--web2-radius-md);
@@ -111,7 +105,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --tech-badge-padding: var(--spacing-xs) var(--spacing-md);
   --tech-badge-font-size: var(--font-size-sm);
   --tech-badge-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.3);
-  --tech-badge-position: relative;
   --tech-badge-text-shadow: var(--web2-text-shadow-sm);
   --tech-badge-overflow: hidden;
   --tech-badge-border: none;
@@ -172,7 +165,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
   /* Section title custom properties */
   --section-title-background: var(--web2-section-title-gradient);
-  --section-title-color: var(--section-title-color);
   --section-title-text-shadow: var(--web2-text-shadow-lg);
   --section-title-border: none;
   --section-title-border-radius: var(--web2-radius-lg);
@@ -182,7 +174,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --section-title-font-size: 1.3rem;
   --section-title-text-transform: uppercase;
   --section-title-letter-spacing: 0.08em;
-  --section-title-position: relative;
   --section-title-overflow: hidden;
   --section-title-box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
 
@@ -202,7 +193,6 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --printlink-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15),
     inset 0 1px 0 oklch(100% 0 0 / 0.3);
   --printlink-text-shadow: 1px 1px 2px oklch(0% 0 0 / 0.3);
-  --printlink-position: relative;
   --printlink-transition: var(--web2-transition-normal);
   --printlink-hover-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2),
     0 0 20px oklch(100% 0.25 45 / 0.4), inset 0 1px 0 oklch(100% 0 0 / 0.4);
@@ -220,7 +210,8 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
 
   /* Dial label hover properties */
   --dial-label-hover-background: linear-gradient(180deg, oklch(100% 0 0 / 0.9) 0%, oklch(100% 0 0 / 0.7) 100%);
-  --dial-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
+  --dial-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08),
+    0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
   --dial-label-hover-transform: translateY(-2px);
   --dial-label-hover-color: var(--web2-primary);
 }
@@ -249,7 +240,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --link-color: oklch(40% 0.17 240);
   --link-visited-color: oklch(48% 0.14 300);
   --section-bg: var(--color-white);
-  --header-bg: linear-gradient(180deg, oklch(75% 0.17 240) 0%, oklch(70% 0.18 245) 100%);
+  --header-background: linear-gradient(180deg, oklch(75% 0.17 240) 0%, oklch(70% 0.18 245) 100%);
   --accent-color: var(--color-orange-bright);
   --section-title-color: var(--color-white);
   --web2-primary: oklch(62% 0.17 240);
@@ -310,7 +301,7 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --link-color: oklch(82% 0.13 210);
   --link-visited-color: oklch(65% 0.12 300);
   --section-bg: oklch(30% 0.06 250);
-  --header-bg: linear-gradient(180deg, var(--web2-blue-dark) 0%, oklch(30% 0.06 250) 100%);
+  --header-background: linear-gradient(180deg, var(--web2-blue-dark) 0%, oklch(30% 0.06 250) 100%);
   --accent-color: oklch(75% 0.15 60);
   --section-title-color: var(--color-white);
   --web2-primary: oklch(82% 0.13 210);
@@ -408,7 +399,6 @@ body[data-theme='web2gloss'] {
 
   /* Header - Big glossy banner */
   .resume-header {
-    background: var(--header-bg);
     border: none;
     padding: 2.5rem 2rem;
     margin: 0;
@@ -539,7 +529,7 @@ body[data-theme='web2gloss'] {
 
   /* Dial selector - Glass orb knob */
   dial-selector {
-    --indicator-vertical-offset: 55%;
+    --ds-indicator-vertical-offset: 55%;
 
     .knob {
       border-radius: 50%;

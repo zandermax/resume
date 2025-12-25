@@ -7,8 +7,23 @@ DEFAULT Theme - Clean, Professional
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: none;
   --section-bg: transparent;
-  --header-bg: transparent;
+  --header-background: transparent;
+
+  /* Dial label hover properties */
   --dial-label-hover-color: var(--dial-color-ink);
+  --dial-label-hover-opacity: 0.7;
+  --dial-label-hover-transform: translateY(-1px);
+  --dial-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
+
+  /* Print link common properties */
+  --printlink-border-radius: 4px;
+  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+  --printlink-font-size: 0.9rem;
+  --printlink-font-weight: 600;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-transition: all 0.2s ease;
+  --printlink-hover-color: var(--color-white);
+  --printlink-hover-transform: translateY(-1px);
 }
 
 /* Light Mode */
@@ -24,11 +39,6 @@ DEFAULT Theme - Clean, Professional
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
-
-  /* Dial label hover properties */
-  --dial-label-hover-opacity: 0.7;
-  --dial-label-hover-transform: translateY(-1px);
-  --dial-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
 }
 
 /* Dark Mode */
@@ -44,11 +54,6 @@ DEFAULT Theme - Clean, Professional
   --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
   --accent-color: var(--color-red-bright);
-
-  /* Dial label hover properties */
-  --dial-label-hover-opacity: 0.7;
-  --dial-label-hover-transform: translateY(-1px);
-  --dial-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
 }
 
 /* Print Link Button Styling */
@@ -56,36 +61,20 @@ DEFAULT Theme - Clean, Professional
   --printlink-background: var(--color-black);
   --printlink-color: var(--color-white);
   --printlink-border: var(--border-width-normal) solid var(--color-black);
-  --printlink-border-radius: 4px;
-  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
-  --printlink-font-size: 0.9rem;
-  --printlink-font-weight: 600;
-  --printlink-letter-spacing: 0.05em;
   --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
-  --printlink-transition: all 0.2s ease;
 
   --printlink-hover-background: var(--color-red-crimson);
-  --printlink-hover-color: var(--color-white);
   --printlink-hover-border-color: var(--color-red-crimson);
   --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
-  --printlink-hover-transform: translateY(-1px);
 }
 
 :root[data-theme='default'][data-mode='dark'] {
   --printlink-background: var(--color-gray-pure-light);
   --printlink-color: var(--color-dark-bg);
   --printlink-border: var(--border-width-normal) solid var(--color-gray-pure-light);
-  --printlink-border-radius: 4px;
-  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
-  --printlink-font-size: 0.9rem;
-  --printlink-font-weight: 600;
-  --printlink-letter-spacing: 0.05em;
   --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
-  --printlink-transition: all 0.2s ease;
 
   --printlink-hover-background: var(--color-red-bright);
-  --printlink-hover-color: var(--color-white);
   --printlink-hover-border-color: var(--color-red-bright);
   --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.4), 0 3px 6px oklch(0% 0 0 / 0.25);
-  --printlink-hover-transform: translateY(-1px);
 }

@@ -8,7 +8,7 @@ Ultra-modern minimalism with mathematical precision
   --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --background-image: none;
   --section-bg: transparent;
-  --header-bg: transparent;
+  --header-background: transparent;
   --dial-color-selection: var(--color-red);
   --dial-color-indicator: var(--color-red);
   --accent-color: var(--color-red);
@@ -37,11 +37,7 @@ Ultra-modern minimalism with mathematical precision
   --spacing-6: calc(var(--swiss-grid) * 6);
   --spacing-8: calc(var(--swiss-grid) * 8);
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: var(--spacing-8);
-
   /* Experience item custom properties */
-  --experience-item-position: relative;
   --experience-item-padding: 0;
   --experience-item-margin-top: var(--spacing-8);
   --experience-item-transition: none;
@@ -75,12 +71,10 @@ Ultra-modern minimalism with mathematical precision
   --experience-role-margin: 0 0 calc(var(--swiss-grid) * 1) 0;
   --experience-role-line-height: var(--line-height-tight);
   --experience-role-letter-spacing: var(--letter-spacing-tight);
-  --experience-role-color: var(--text-color);
 
   /* Experience item company custom properties */
   --experience-company-font-size: var(--font-size-small);
   --experience-company-font-weight: var(--font-weight-medium);
-  --experience-company-color: var(--text-color);
   --experience-company-letter-spacing: 0.12em;
   --experience-company-text-transform: uppercase;
 
@@ -93,7 +87,6 @@ Ultra-modern minimalism with mathematical precision
   --tech-badge-padding: 0 0 0 var(--spacing-2);
   --tech-badge-font-size: var(--font-size-small);
   --tech-badge-text-transform: none;
-  --tech-badge-position: relative;
   --tech-badge-letter-spacing: var(--letter-spacing-normal);
   --tech-badge-before-content: '•';
   --tech-badge-before-display: inline;
@@ -118,7 +111,6 @@ Ultra-modern minimalism with mathematical precision
   --header-name-line-height: 0.95;
   --header-name-text-transform: none;
   --header-name-letter-spacing: -0.04em;
-  --header-name-color: var(--text-color);
   --header-name-border: 0;
 
   /* Section title custom properties */
@@ -176,7 +168,6 @@ Ultra-modern minimalism with mathematical precision
   --header-role-font-size: var(--font-size-medium);
   --header-role-text-transform: none;
   --header-role-letter-spacing: var(--letter-spacing-normal);
-  --header-role-color: var(--text-color);
   --header-role-margin-block-start: var(--spacing-2);
   --header-role-padding-inline-start: var(--spacing-4);
   --header-role-border-inline-start: calc(var(--swiss-grid) * 1) solid var(--accent-color);
@@ -188,7 +179,6 @@ Ultra-modern minimalism with mathematical precision
   --education-institution-margin: 0 0 calc(var(--swiss-grid) * 1) 0;
   --education-institution-line-height: var(--line-height-tight);
   --education-institution-letter-spacing: var(--letter-spacing-tight);
-  --education-institution-color: var(--text-color);
 
   /* Experience bullets custom properties */
   --experience-bullets-margin-block-start: var(--spacing-2);

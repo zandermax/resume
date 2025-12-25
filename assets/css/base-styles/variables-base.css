@@ -52,7 +52,7 @@
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --section-bg: transparent;
-  --header-bg: transparent;
+  --header-background: transparent;
   --accent-color: var(--color-red-crimson);
 
   /* === PAPER/TEXTURE PROPERTIES === */

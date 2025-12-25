@@ -71,12 +71,8 @@
   --duration-slower: 18s;
   --duration-slowest: 20s;
 
-  /* Header name wrapper custom properties */
-  --header-name-wrapper-margin-block-start: 2.5rem;
-
   /* Experience item custom properties */
   --experience-item-border: var(--border-width-md) solid var(--border-color);
-  --experience-item-position: relative;
   --experience-item-background: var(--section-bg);
   --experience-item-padding: var(--spacing-xl);
   --experience-item-margin-top: var(--spacing-lg);
@@ -85,7 +81,6 @@
 
   /* Skills grid group custom properties */
   --skills-group-border: var(--border-width-md) solid var(--border-color);
-  --skills-group-position: relative;
   --skills-group-background: var(--section-bg);
   --skills-group-padding: var(--spacing-md);
   --skills-group-margin-bottom: var(--spacing-md);
@@ -107,14 +102,12 @@
   /* Experience item role custom properties */
   --experience-role-font-size: var(--font-size-xxl);
   --experience-role-font-weight: 700;
-  --experience-role-color: var(--text-color);
   --experience-role-margin-block-end: var(--spacing-xs);
   --experience-role-text-shadow: var(--glitch-text-shadow);
 
   /* Experience item company custom properties */
   --experience-company-font-weight: 600;
   --experience-company-font-size: var(--font-size-md);
-  --experience-company-color: var(--text-color);
 
   /* Tech badge custom properties */
   --tech-badge-border: var(--border-width-md) solid var(--border-color);
@@ -123,7 +116,6 @@
   --tech-badge-font-weight: 600;
   --tech-badge-padding: 0.4rem 0.9rem;
   --tech-badge-font-size: var(--font-size-xs);
-  --tech-badge-position: relative;
   --tech-badge-box-shadow: var(--glitch-box-shadow-sm);
   --tech-badge-text-shadow: var(--glitch-text-shadow-sm);
   --tech-badge-filter: var(--filter-contrast-base);
@@ -131,15 +123,12 @@
   --tech-badge-contain: layout;
 
   /* Header meta custom properties */
-  --header-meta-color: var(--text-color);
   --header-meta-text-shadow: var(--glitch-text-shadow-sm);
 
   /* Header name custom properties */
   --header-name-font-size: var(--font-size-hero);
   --header-name-font-weight: 700;
-  --header-name-color: var(--text-color);
   --header-name-margin-block-end: var(--spacing-xs);
-  --header-name-position: relative;
   --header-name-text-shadow: var(--glitch-text-shadow);
   --header-name-animation: text-glitch var(--duration-slowest) infinite;
   --header-name-will-change: transform, text-shadow;
@@ -153,7 +142,6 @@
   --printlink-text-transform: uppercase;
   --printlink-font-size: var(--font-size-base);
   --printlink-letter-spacing: 0.1em;
-  --printlink-position: relative;
   --printlink-text-decoration: none;
   --printlink-transform: skewX(-3deg);
   --printlink-box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
@@ -183,7 +171,6 @@
   --section-title-font-size: var(--font-size-xl);
   --section-title-text-transform: uppercase;
   --section-title-letter-spacing: 0.15em;
-  --section-title-position: relative;
   --section-title-transform: skewX(var(--skew-medium));
   --section-title-border-inline-start: var(--border-width-accent) solid var(--glitch-primary);
   --section-title-box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
@@ -193,7 +180,6 @@
 
   /* Header role custom properties */
   --header-role-font-size: var(--font-size-lg);
-  --header-role-color: var(--text-color);
   --header-role-text-shadow: var(--glitch-text-shadow);
 
   /* Education institution custom properties */
@@ -359,7 +345,7 @@
   --link-color: var(--color-black);
   --link-visited-color: var(--color-gray-dark);
   --section-bg: var(--color-gray-lighter);
-  --header-bg: var(--color-gray-medium);
+  --header-background: var(--color-gray-medium);
   --accent-color: var(--color-black);
 }
 
@@ -384,7 +370,7 @@
   --link-color: var(--color-white);
   --link-visited-color: var(--color-gray-medium);
   --section-bg: var(--color-gray-darkest);
-  --header-bg: var(--color-gray-darker);
+  --header-background: var(--color-gray-darker);
   --accent-color: var(--color-white);
 
   /* Dark mode scan lines (different from light mode) */
@@ -876,7 +862,7 @@ body[data-theme='glitch'] {
   .resume-header {
     border: var(--border-width-md) solid var(--border-color);
     border-block-end-width: var(--border-width-xxl);
-    background: var(--header-bg);
+    background: var(--header-background);
     padding: var(--spacing-xl);
     margin-block-end: var(--spacing-xl);
     position: relative;
