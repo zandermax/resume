@@ -4,11 +4,11 @@
 
 dial-selector {
   display: block;
-  font-family: var(--font-family);
-  min-width: var(--component-min-width);
-  max-width: var(--component-width);
-  width: var(--component-width);
-  height: var(--component-height);
+  font-family: var(--ds-font-family);
+  min-width: var(--ds-component-min-width);
+  max-width: var(--ds-component-width);
+  width: var(--ds-component-width);
+  height: var(--ds-component-height);
   overflow: hidden;
   box-sizing: border-box;
   margin: 0;

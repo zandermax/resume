@@ -4,21 +4,21 @@
 
 dial-selector {
   /* Color variables */
-  --color-ink: var(--dial-color-ink, #f4f4f4);
-  --color-selection: var(--dial-color-selection, #f13b3b);
-  --color-line: var(--dial-color-ink, #c7c2b5);
-  --color-indicator: var(--dial-color-indicator, #f13b3b);
-  --label-radius: 150px;
-  --dial-cursor: pointer;
+  --ds-color-ink: var(--dial-color-ink, #f4f4f4);
+  --ds-color-selection: var(--dial-color-selection, #f13b3b);
+  --ds-color-line: var(--dial-color-ink, #c7c2b5);
+  --ds-color-indicator: var(--dial-color-indicator, #f13b3b);
+  --ds-label-radius: 150px;
+  --ds-cursor: pointer;
 
   /* Line styling variables */
-  --line-stroke-width: 2;
-  --line-opacity-inactive: 0.4;
-  --line-opacity-active: 0.8;
-  --line-transition: opacity 0.3s ease, stroke 0.3s ease;
+  --ds-line-stroke-width: 2;
+  --ds-line-opacity-inactive: 0.4;
+  --ds-line-opacity-active: 0.8;
+  --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
 
   /* Typography variables */
-  --font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  --ds-font-family: 'IBM Plex Mono', 'Courier New', monospace;
 
   /* Dial selector component-level properties */
   --ds-border: none;
@@ -38,7 +38,7 @@ dial-selector {
   --ds-selector-gap-xs: clamp(4px, 1.5vw, 10px);
 
   /* Knob styling */
-  --ds-knob-border: var(--width-outer-circle) solid var(--color-outer-circle);
+  --ds-knob-border: var(--ds-width-outer-circle) solid var(--ds-color-outer-circle);
   --ds-knob-border-radius: unset; /* Is set inline to 50% */
   --ds-knob-background-image: none;
   --ds-knob-background-size: cover;
@@ -56,9 +56,9 @@ dial-selector {
   --ds-knob-before-filter: none;
 
   /* Indicator styling */
-  --ds-indicator-width-override: var(--indicator-width);
-  --ds-indicator-height-override: var(--indicator-length);
-  --ds-indicator-gradient: var(--color-indicator);
+  --ds-indicator-width-override: var(--ds-indicator-width);
+  --ds-indicator-height-override: var(--ds-indicator-length);
+  --ds-indicator-gradient: var(--ds-color-indicator);
   --ds-indicator-opacity: 1;
   --ds-indicator-filter: none;
 
@@ -67,7 +67,7 @@ dial-selector {
   --ds-label-opacity: 1;
   --ds-label-filter: none;
   --ds-label-text-shadow: none;
-  --ds-label-font-family: var(--font-family);
+  --ds-label-font-family: var(--ds-font-family);
   --ds-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
   --ds-label-text-transform: none;
   --ds-label-transform: none;
@@ -114,7 +114,7 @@ dial-selector {
   --ds-label-span-active-background: transparent;
   --ds-label-span-active-border: none;
   --ds-label-span-active-border-color: transparent;
-  --ds-label-span-active-color: var(--color-selection);
+  --ds-label-span-active-color: var(--ds-color-selection);
   --ds-label-span-active-text-shadow: none;
   --ds-label-span-active-box-shadow: none;
   --ds-label-span-active-transform: none;
@@ -122,47 +122,47 @@ dial-selector {
   --ds-label-span-active-font-weight: inherit;
 
   /* Spoke line styling */
-  --ds-spoke-stroke: var(--color-line);
-  --ds-spoke-stroke-width: var(--line-stroke-width);
-  --ds-spoke-opacity: var(--line-opacity-inactive);
-  --ds-spoke-transition: var(--line-transition);
-  --ds-spoke-active-opacity: var(--line-opacity-active);
-  --ds-spoke-active-stroke: var(--color-selection);
+  --ds-spoke-stroke: var(--ds-color-line);
+  --ds-spoke-stroke-width: var(--ds-line-stroke-width);
+  --ds-spoke-opacity: var(--ds-line-opacity-inactive);
+  --ds-spoke-transition: var(--ds-line-transition);
+  --ds-spoke-active-opacity: var(--ds-line-opacity-active);
+  --ds-spoke-active-stroke: var(--ds-color-selection);
 
   /* KNOB SIZING - Single source of truth */
-  --knob-size: 200px; /* Master variable - media queries will override this */
+  --ds-knob-size: 200px; /* Master variable - media queries will override this */
 
-  /* Derived knob variables (calculated from --knob-size) */
-  --knob-wrap-size: var(--knob-size);
-  --knob-center: calc(var(--knob-size) / 2);
-  --radius-outer: calc(var(--knob-size) * 0.28125); /* 90/320 = 0.28125 */
-  --radius-inner: calc(var(--knob-size) * 0.225); /* 72/320 = 0.225 */
-  --width-outer-circle: calc(var(--knob-size) * 0.0125); /* 4/320 = 0.0125 */
-  --width-inner-circle: calc(var(--knob-size) * 0.00625); /* 2/320 = 0.00625 */
-  --color-outer-circle: var(--color-ink);
-  --color-inner-circle: var(--color-ink);
+  /* Derived knob variables (calculated from --ds-knob-size) */
+  --ds-knob-wrap-size: var(--ds-knob-size);
+  --ds-knob-center: calc(var(--ds-knob-size) / 2);
+  --ds-radius-outer: calc(var(--ds-knob-size) * 0.28125); /* 90/320 = 0.28125 */
+  --ds-radius-inner: calc(var(--ds-knob-size) * 0.225); /* 72/320 = 0.225 */
+  --ds-width-outer-circle: calc(var(--ds-knob-size) * 0.0125); /* 4/320 = 0.0125 */
+  --ds-width-inner-circle: calc(var(--ds-knob-size) * 0.00625); /* 2/320 = 0.00625 */
+  --ds-color-outer-circle: var(--ds-color-ink);
+  --ds-color-inner-circle: var(--ds-color-ink);
 
   /* Indicator sizing variables */
-  --indicator-length: calc(var(--knob-size) * 0.1875); /* 60/320 = 0.1875 */
-  --indicator-width: calc(var(--knob-size) * 0.03125); /* 10/320 = 0.03125 */
-  --indicator-vertical-offset: 46.75%;
-  --center-indicator: 0px;
-  --time-selection-delay: 0s;
+  --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 = 0.1875 */
+  --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 = 0.03125 */
+  --ds-indicator-vertical-offset: 46.75%;
+  --ds-center-indicator: 0px;
+  --ds-time-selection-delay: 0s;
 
   /* Other sizing variables for labels/lines */
-  --label-column-height: var(--knob-size);
-  --label-vertical-offset-scale: calc(var(--knob-size) * 0.4375); /* 140/320 */
-  --horizontal-line-length: calc(var(--knob-size) * 0.5);
-  --max-spoke-length: calc(var(--knob-size) * 0.4);
-  --horizontal-line-end-offset: calc(var(--knob-size) * 0.05);
-  --hit-area-stroke-width: calc(var(--knob-size) * 0.0625); /* 20/320 */
+  --ds-label-column-height: var(--ds-knob-size);
+  --ds-label-vertical-offset-scale: calc(var(--ds-knob-size) * 0.4375); /* 140/320 */
+  --ds-horizontal-line-length: calc(var(--ds-knob-size) * 0.5);
+  --ds-max-spoke-length: calc(var(--ds-knob-size) * 0.4);
+  --ds-horizontal-line-end-offset: calc(var(--ds-knob-size) * 0.05);
+  --ds-hit-area-stroke-width: calc(var(--ds-knob-size) * 0.0625); /* 20/320 */
 
   /* Component dimensions */
-  --component-width: 100%;
-  --component-height: auto;
-  --component-min-width: 200px;
-  --component-min-height: 200px;
+  --ds-component-width: 100%;
+  --ds-component-height: auto;
+  --ds-component-min-width: 200px;
+  --ds-component-min-height: 200px;
 
   /* Indicator angle (dynamic) */
-  --indicator-angle: 0deg;
+  --ds-indicator-angle: 0deg;
 }

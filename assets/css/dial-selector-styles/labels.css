@@ -13,7 +13,7 @@ dial-selector .dial-label {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  cursor: var(--dial-cursor);
+  cursor: var(--ds-cursor);
   user-select: none;
   padding: var(--dial-label-padding, clamp(4px, 1vw, 8px) clamp(6px, 1.5vw, 12px));
   position: absolute;
@@ -29,7 +29,7 @@ dial-selector .dial-label {
 }
 
 dial-selector .dial-label:not(.active):hover > span {
-  background: var(--dial-label-hover-background, var(--color-ink));
+  background: var(--dial-label-hover-background, var(--ds-color-ink));
   color: var(--dial-label-hover-color, var(--dial-knob-background, #11161c));
   opacity: var(--dial-label-hover-opacity, 1);
   transform: var(--dial-label-hover-transform, none);
@@ -43,7 +43,7 @@ dial-selector .dial-label:not(.active):hover > span {
 }
 
 dial-selector .dial-label.active > span {
-  color: var(--dial-label-active-color, var(--color-selection));
+  color: var(--dial-label-active-color, var(--ds-color-selection));
   background: var(--dial-label-active-background, transparent);
   border: var(--ds-label-span-active-border);
   box-shadow: var(--dial-label-active-box-shadow, none);

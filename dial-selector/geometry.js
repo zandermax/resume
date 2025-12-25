@@ -135,8 +135,8 @@ export const Geometry = {
     const scaledRadiusInner = baseRadiusInner * scale;
 
     if (hasExplicitWidth || hasFixedHeight) {
-      this.style.setProperty('--radius-outer', `${scaledRadiusOuter}px`);
-      this.style.setProperty('--radius-inner', `${scaledRadiusInner}px`);
+      this.style.setProperty('--ds-radius-outer', `${scaledRadiusOuter}px`);
+      this.style.setProperty('--ds-radius-inner', `${scaledRadiusInner}px`);
     }
 
     const baseWidthOuter = (BASE_WIDTH_OUTER_CIRCLE * this.widthOuterCirclePercentage) / 100;
@@ -145,33 +145,33 @@ export const Geometry = {
     const scaledWidthInner = baseWidthInner * scale;
 
     if (hasExplicitWidth || hasFixedHeight) {
-      this.style.setProperty('--width-outer-circle', `${scaledWidthOuter}px`);
-      this.style.setProperty('--width-inner-circle', `${scaledWidthInner}px`);
+      this.style.setProperty('--ds-width-outer-circle', `${scaledWidthOuter}px`);
+      this.style.setProperty('--ds-width-inner-circle', `${scaledWidthInner}px`);
     }
 
     const baseCenterIndicator = (BASE_CENTER_INDICATOR * this.centerIndicatorPercentage) / 100;
     const scaledCenterIndicator = baseCenterIndicator * scale;
-    this.style.setProperty('--center-indicator', `${scaledCenterIndicator}px`);
+    this.style.setProperty('--ds-center-indicator', `${scaledCenterIndicator}px`);
 
     const indicatorLengthRatio = BASE_INDICATOR_LENGTH / BASE_KNOB_RADIUS_OUTER;
     const scaledIndicatorLength = scaledRadiusOuter * indicatorLengthRatio * (this.indicatorLengthPercentage / 100);
 
     if (hasExplicitWidth || hasFixedHeight) {
-      this.style.setProperty('--indicator-length', `${scaledIndicatorLength}px`);
+      this.style.setProperty('--ds-indicator-length', `${scaledIndicatorLength}px`);
     }
 
-    this.style.setProperty('--knob-center', `${this.knobCenter}px`);
+    this.style.setProperty('--ds-knob-center', `${this.knobCenter}px`);
 
     if (hasExplicitWidth || hasFixedHeight) {
-      this.style.setProperty('--label-column-height', `${this.labelColumnHeight}px`);
-      this.style.setProperty('--label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
-      this.style.setProperty('--horizontal-line-length', `${this.horizontalLineLength}px`);
-      this.style.setProperty('--max-spoke-length', `${this.maxSpokeLength}px`);
-      this.style.setProperty('--indicator-width', `${this.indicatorWidth}px`);
+      this.style.setProperty('--ds-label-column-height', `${this.labelColumnHeight}px`);
+      this.style.setProperty('--ds-label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
+      this.style.setProperty('--ds-horizontal-line-length', `${this.horizontalLineLength}px`);
+      this.style.setProperty('--ds-max-spoke-length', `${this.maxSpokeLength}px`);
+      this.style.setProperty('--ds-indicator-width', `${this.indicatorWidth}px`);
     }
 
-    this.style.setProperty('--hit-area-stroke-width', `${this.hitAreaStrokeWidth}px`);
-    this.style.setProperty('--horizontal-line-end-offset', `${this.horizontalLineEndOffset}px`);
+    this.style.setProperty('--ds-hit-area-stroke-width', `${this.hitAreaStrokeWidth}px`);
+    this.style.setProperty('--ds-horizontal-line-end-offset', `${this.horizontalLineEndOffset}px`);
 
     if (this.labels.length > 0) {
       this.updateLabelPositions();

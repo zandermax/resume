@@ -6,7 +6,7 @@
 @media (max-width: 768px) {
   dial-selector {
     /* Reduce size for tablets/large phones */
-    --knob-size: 160px;
+    --ds-knob-size: 160px;
     --dial-label-font-size: var(--dial-label-font-size--tablet);
     --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--tablet);
     --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--tablet);
@@ -26,7 +26,7 @@
 @media (max-width: 600px) {
   dial-selector {
     /* Further reduce for phones */
-    --knob-size: 140px;
+    --ds-knob-size: 140px;
     --dial-label-font-size: var(--dial-label-font-size--phone);
     --dial-label-active-span-padding-block: var(--dial-label-active-span-padding-block--phone);
     --dial-label-active-span-padding-inline: var(--dial-label-active-span-padding-inline--phone);
@@ -46,7 +46,7 @@
 @media (max-width: 400px) {
   dial-selector {
     /* Even smaller for very small screens */
-    --knob-size: 120px;
+    --ds-knob-size: 120px;
   }
 
   dial-selector .selector {

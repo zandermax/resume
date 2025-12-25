@@ -19,7 +19,7 @@ dial-selector .label-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: var(--label-column-height);
+  height: var(--ds-label-column-height);
   margin: 0;
   padding: 0;
 }
@@ -34,9 +34,9 @@ dial-selector .label-column.right {
 
 dial-selector .knob-wrap {
   position: relative;
-  width: var(--knob-wrap-size);
-  max-width: var(--knob-wrap-size);
-  min-width: var(--knob-wrap-size);
+  width: var(--ds-knob-wrap-size);
+  max-width: var(--ds-knob-wrap-size);
+  min-width: var(--ds-knob-wrap-size);
   aspect-ratio: 1;
   display: grid;
   place-items: center;

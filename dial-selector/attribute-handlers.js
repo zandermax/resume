@@ -22,7 +22,7 @@ export const AttributeHandlers = {
   },
 
   updateIndicatorColor() {
-    this.updateColorProperty('color-indicator', '--color-indicator');
+    this.updateColorProperty('color-indicator', '--ds-color-indicator');
   },
 
   createGradientFromColors(colors) {
@@ -57,7 +57,7 @@ export const AttributeHandlers = {
   },
 
   updateSelectionColor() {
-    this.updateColorProperty('color-selection', '--color-selection');
+    this.updateColorProperty('color-selection', '--ds-color-selection');
   },
 
   updateLineThickness() {
@@ -65,10 +65,10 @@ export const AttributeHandlers = {
     if (lineThickness) {
       this.lineThicknessPercentage = this.parsePercentageAttr(lineThickness);
       const actualThickness = (DEFAULT_LINE_STROKE_WIDTH * this.lineThicknessPercentage) / 100;
-      this.style.setProperty('--line-stroke-width', `${actualThickness}px`);
+      this.style.setProperty('--ds-line-stroke-width', `${actualThickness}px`);
     } else {
       this.lineThicknessPercentage = 100;
-      this.style.removeProperty('--line-stroke-width');
+      this.style.removeProperty('--ds-line-stroke-width');
     }
   },
 
@@ -144,18 +144,18 @@ export const AttributeHandlers = {
   updateFontFamily() {
     const fontFamily = this.getAttribute('font-family');
     if (fontFamily) {
-      this.style.setProperty('--font-family', fontFamily);
+      this.style.setProperty('--ds-font-family', fontFamily);
     } else {
-      this.style.removeProperty('--font-family');
+      this.style.removeProperty('--ds-font-family');
     }
   },
 
   updateCursor() {
     const cursor = this.getAttribute('cursor');
     if (cursor) {
-      this.style.setProperty('--dial-cursor', cursor);
+      this.style.setProperty('--ds-cursor', cursor);
     } else {
-      this.style.removeProperty('--dial-cursor');
+      this.style.removeProperty('--ds-cursor');
     }
   },
 

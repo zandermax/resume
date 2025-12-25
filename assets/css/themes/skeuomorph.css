@@ -169,8 +169,8 @@ Skeuomorphic Theme Effects
       oklch(0.67 0 0) 60%,
       oklch(0.51 0 0) 100%
     );
-    --color-outer-circle: oklch(0.6 0.13 80);
-    --color-inner-circle: oklch(0.36 0.05 45);
+    --ds-color-outer-circle: oklch(0.6 0.13 80);
+    --ds-color-inner-circle: oklch(0.36 0.05 45);
     --knob-shadow: 0 8px 16px var(--skeu-black-60), 0 16px 32px var(--skeu-black-40), 0 4px 8px var(--skeu-black-50),
       inset 0 3px 6px var(--skeu-white-30), inset 0 -4px 8px var(--skeu-black-50);
     --background-image: repeating-linear-gradient(
@@ -236,8 +236,8 @@ Skeuomorphic Theme Effects
       oklch(0.26 0 0) 70%,
       oklch(0.18 0 0) 100%
     );
-    --color-outer-circle: oklch(0.77 0.13 85);
-    --color-inner-circle: oklch(0.54 0.04 50);
+    --ds-color-outer-circle: oklch(0.77 0.13 85);
+    --ds-color-inner-circle: oklch(0.54 0.04 50);
     --knob-shadow: 0 12px 24px var(--skeu-black-80), 0 24px 48px var(--skeu-black-60), 0 6px 12px var(--skeu-black-70),
       inset 0 3px 6px var(--skeu-white-08), inset 0 -5px 10px var(--skeu-black-80);
     --background-image: repeating-linear-gradient(
@@ -444,7 +444,7 @@ body[data-theme='skeuomorph'] {
 
     .knob {
       box-shadow: var(--knob-shadow);
-      border: 3px solid var(--color-outer-circle);
+      border: 3px solid var(--ds-color-outer-circle);
       position: relative;
 
       /* Add ridges for grip */
@@ -460,8 +460,8 @@ body[data-theme='skeuomorph'] {
 
     /* Enhanced indicator appearance */
     .indicator {
-      background: var(--color-indicator);
-      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--color-indicator), inset 0 1px 2px var(--skeu-white-30);
+      background: var(--ds-color-indicator);
+      box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator), inset 0 1px 2px var(--skeu-white-30);
       border: 1px solid var(--skeu-black-30);
     }
   }

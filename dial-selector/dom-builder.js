@@ -104,9 +104,9 @@ export const DOMBuilder = {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
       line.setAttribute('class', 'spoke-line');
       line.setAttribute('fill', 'none');
-      line.setAttribute('stroke', 'var(--color-ink)');
-      line.setAttribute('stroke-width', `var(--line-stroke-width, ${DEFAULT_LINE_STROKE_WIDTH})`);
-      line.setAttribute('opacity', `var(--line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
+      line.setAttribute('stroke', 'var(--ds-color-ink)');
+      line.setAttribute('stroke-width', `var(--ds-line-stroke-width, ${DEFAULT_LINE_STROKE_WIDTH})`);
+      line.setAttribute('opacity', `var(--ds-line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
       line.setAttribute('stroke-linejoin', 'miter');
       line.setAttribute('pointer-events', 'none');
       line.dataset.index = index;
@@ -136,10 +136,10 @@ export const DOMBuilder = {
     tempDiv.style.cssText = `
       position: absolute;
       visibility: hidden;
-      width: var(--radius-outer);
-      height: var(--horizontal-line-length);
-      max-width: var(--max-spoke-length);
-      max-height: var(--horizontal-line-end-offset);
+      width: var(--ds-radius-outer);
+      height: var(--ds-horizontal-line-length);
+      max-width: var(--ds-max-spoke-length);
+      max-height: var(--ds-horizontal-line-end-offset);
     `;
     this.appendChild(tempDiv);
     const tempStyle = getComputedStyle(tempDiv);
@@ -230,20 +230,20 @@ export const DOMBuilder = {
       this.currentAngle = this.currentAngle + delta;
     }
 
-    this.style.setProperty('--indicator-angle', `${this.currentAngle}deg`);
+    this.style.setProperty('--ds-indicator-angle', `${this.currentAngle}deg`);
 
     this.labels.forEach((label, index) => {
       const line = this.lines[index];
       if (index === this.currentIndex) {
         label.classList.add('active');
         line.classList.add('active');
-        line.setAttribute('opacity', `var(--line-opacity-active, ${LINE_OPACITY_ACTIVE})`);
-        line.setAttribute('stroke', 'var(--color-selection)');
+        line.setAttribute('opacity', `var(--ds-line-opacity-active, ${LINE_OPACITY_ACTIVE})`);
+        line.setAttribute('stroke', 'var(--ds-color-selection)');
       } else {
         label.classList.remove('active');
         line.classList.remove('active');
-        line.setAttribute('opacity', `var(--line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
-        line.setAttribute('stroke', 'var(--color-ink)');
+        line.setAttribute('opacity', `var(--ds-line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
+        line.setAttribute('stroke', 'var(--ds-color-ink)');
       }
     });
 

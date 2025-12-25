@@ -10,17 +10,17 @@ dial-selector #lineContainer {
 }
 
 dial-selector .spoke-line {
-  transition: var(--line-transition, opacity 0.3s ease, stroke 0.3s ease);
+  transition: var(--ds-line-transition, opacity 0.3s ease, stroke 0.3s ease);
 }
 
 dial-selector .spoke-line-hit-area {
-  cursor: var(--dial-cursor);
+  cursor: var(--ds-cursor);
 }
 
 dial-selector .advance {
   position: absolute;
   inset: 0;
-  cursor: var(--dial-cursor);
+  cursor: var(--ds-cursor);
   pointer-events: auto;
   background: transparent;
 }
