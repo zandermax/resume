@@ -212,4 +212,3 @@ export const AttributeHandlers = {
     console.warn(`dial-selector: default-option "${defaultOption}" not found. Using index 0.`);
   },
 };
-

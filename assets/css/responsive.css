@@ -2,22 +2,26 @@
 Responsive Layout
 =========================== */
 
-/* Responsive: stack skills on small screens */
-@media (max-width: 700px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+/* Always have room to breathe */
+@media (max-width: 960px) {
+  .resume__main {
+    margin: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .resume__main {
-    margin: 1rem;
-    padding: 1.5rem 1.25rem;
+    padding: var(--main-padding-responsive-768, 1.5rem 1.25rem);
     border-width: 3px;
   }
 
   .resume-header {
     border-block-end-width: 2px;
+  }
+
+  .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-768, row);
+    gap: var(--header-buttons-gap-responsive-768, 1rem);
   }
 
   .experience-item__header {
@@ -27,6 +31,13 @@ Responsive Layout
 
   .experience-item__meta {
     text-align: left;
+  }
+}
+
+/* Responsive: stack skills on small screens */
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -58,8 +69,42 @@ Mobile layout
     padding: 0;
   }
 
+  .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-600, row);
+    gap: var(--header-buttons-gap-responsive-600, 1rem);
+  }
+
+  .resume-header__savelink,
+  #resume-header__printlink {
+    font-size: var(--printlink-font-size-responsive-600, var(--printlink-font-size));
+    padding-block: var(--printlink-padding-block-responsive-600, 0.5rem);
+    padding-inline: var(--printlink-padding-inline-responsive-600, 1rem);
+  }
+
   #resume-header__printlink {
     margin-inline-start: 0;
     margin-block-start: 0.65rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .resume__main {
+    padding: var(--main-padding-responsive-500, 1.5rem 1.25rem);
+  }
+
+  .resume-header {
+    padding: var(--header-padding-responsive-500, 0);
+  }
+
+  .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-500, row);
+    gap: var(--header-buttons-gap-responsive-500, 1rem);
+  }
+
+  .resume-header__savelink,
+  #resume-header__printlink {
+    font-size: var(--printlink-font-size-responsive-500, var(--printlink-font-size));
+    padding-block: var(--printlink-padding-block-responsive-500, 0.5rem);
+    padding-inline: var(--printlink-padding-inline-responsive-500, 1rem);
   }
 }

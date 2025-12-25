@@ -7,7 +7,6 @@ Terminal Theme (1992 CLI-inspired)
   --terminal-black-40: oklch(0% 0 0 / 0.4);
   --terminal-black-60: oklch(0% 0 0 / 0.6);
   --terminal-black-80: oklch(0% 0 0 / 0.8);
-  --dial-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
   --font-family: 'Courier New', 'Lucida Console', monospace;
   --background-image: none;
   --border-color: var(--color-gray-medium);
@@ -107,7 +106,6 @@ Terminal Theme (1992 CLI-inspired)
   --experience-bullets-li-margin-block-end: 0.5rem;
 
   --dial-knob-border-width: 0;
-  --dial-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
   --dial-indicator-box-shadow: none;
   --dial-indicator-width: 10px;
   --dial-label-padding: 0.4rem 0.8rem;
@@ -134,11 +132,62 @@ Terminal Theme (1992 CLI-inspired)
   --printlink-active-transform-override: translate(1px, 1px);
 
   /* Dial selector hover/active states */
+  --dial-label-hover-color: var(--dial-color-ink);
   --dial-label-hover-background: var(--terminal-button-bg);
+  --dial-label-hover-padding: 0rem 0.5rem;
   --dial-label-hover-box-shadow: var(--terminal-inset-raised-sm);
   --dial-label-active-background: var(--terminal-title-bg);
   --dial-label-active-box-shadow: var(--terminal-inset-sunken-sm);
   --dial-label-active-color: var(--dial-color-selection);
+
+  /* Dial selector knob styling */
+  --ds-knob-border: var(--dial-knob-border-width);
+  --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+  --ds-knob-border-radius: 0;
+  --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
+
+  /* Dial selector indicator styling */
+  --ds-indicator-width-override: var(--dial-indicator-width);
+  --ds-indicator-box-shadow: var(--dial-indicator-box-shadow);
+
+  /* Dial selector spoke lines */
+  --ds-spoke-stroke-width: var(--dial-spoke-stroke-width);
+
+  /* Education and experience styling */
+  --education-item-font-size: var(--font-size-md);
+  --experience-item-position: relative;
+  --experience-item-meta-font-size: var(--font-size-sm);
+
+  /* Header styling */
+  --header-position: relative;
+  --header-background: var(--header-bg);
+
+  /* Print/save button styling */
+  --savelink-display: inline-flex;
+  --printlink-align-items: center;
+  --printlink-justify-content: center;
+  --printlink-padding: var(--spacing-sm) var(--spacing-md);
+  --printlink-font-size: 0.9rem;
+  --printlink-font-family: var(--font-family);
+  --printlink-cursor: pointer;
+  --printlink-transition: none;
+  --printlink-border-radius: 0;
+  --printlink-background: var(--terminal-title-bg);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: bold;
+  --printlink-box-shadow: var(--terminal-inset-raised-lg);
+  --printlink-text-transform: uppercase;
+  --printlink-letter-spacing: 0.1em;
+  --printlink-border: 2px solid var(--terminal-border-dark);
+
+  /* Typography styling */
+  --h1-h2-h3-text-shadow: none;
+  --header-name-greeting-font-size: 0.95rem;
+  --header-name-greeting-line-height: 1.6;
+  --header-name-small-font-size: 0.95rem;
+  --header-name-small-line-height: 1.6;
+  --p-li-font-size: 0.95rem;
+  --p-li-line-height: 1.6;
 }
 
 /* Light Mode */
@@ -202,6 +251,13 @@ Terminal Theme (1992 CLI-inspired)
     inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
   --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+
+  /* Dark mode button styling */
+  --printlink-dark-background: var(--terminal-button-bg);
+  --printlink-dark-color: var(--dial-color-indicator);
+  --printlink-dark-border: 2px solid var(--dial-color-indicator);
+  --printlink-dark-hover-background: var(--terminal-border-light);
+  --printlink-dark-hover-color: var(--dial-color-indicator);
 }
 
 /* Loading bar reveal animation - contracting overlay */
@@ -249,85 +305,6 @@ Terminal Theme (1992 CLI-inspired)
 
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
-  /* Education box - using custom properties */
-  .education-item {
-    font-size: var(--font-size-md);
-  }
-
-  /* Experience and header - using custom properties */
-  .experience-item,
-  .resume-header {
-    position: relative;
-  }
-
-  .experience-item__meta {
-    font-size: var(--font-size-sm);
-  }
-
-  /* Header - using custom properties */
-  .resume-header {
-    background: var(--header-bg);
-  }
-
-  /* Save Resume and Print button - shown in terminal theme, styled via custom properties */
-  .resume-header__savelink,
-  #resume-header__printlink {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.9rem;
-    font-family: var(--font-family);
-    cursor: pointer;
-    transition: none;
-    border-radius: 0;
-    background: var(--terminal-title-bg);
-    color: var(--color-white);
-    font-weight: bold;
-    box-shadow: var(--terminal-inset-raised-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 2px solid var(--terminal-border-dark);
-  }
-
-  /* Dial selector enhancements with CLI-style knob */
-  dial-selector {
-    .knob {
-      border: var(--dial-knob-border-width);
-      box-shadow: var(--dial-knob-box-shadow);
-      background: var(--dial-knob-background);
-      clip-path: var(--dial-knob-clip-path);
-      border-radius: 0;
-    }
-
-    .indicator {
-      width: var(--dial-indicator-width);
-      box-shadow: var(--dial-indicator-box-shadow);
-      background: var(--dial-color-indicator);
-    }
-
-    /* Terminal dial styling is handled by dial-selector.css using custom properties defined above */
-
-    .spoke-line {
-      stroke-width: var(--dial-spoke-stroke-width);
-    }
-  }
-
-  /* Typography enhancements - using custom properties */
-  h1,
-  h2,
-  h3 {
-    text-shadow: none;
-  }
-
-  .resume-header__name-greeting,
-  .resume-header__name-small,
-  p,
-  li {
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-
   /* Terminal Dialog - 1992 CLI-style modal with ASCII box-drawing */
   .terminal-dialog {
     background: var(--terminal-window-bg);
@@ -346,7 +323,7 @@ body[data-theme='terminal'] {
     font-family: var(--font-family);
     min-width: auto;
     max-width: none;
-    overflow: hidden; /* Prevent any overflow */
+    overflow: hidden;
 
     /* Performance optimizations */
     contain: layout paint style;
@@ -452,19 +429,6 @@ body[data-theme='terminal'] {
         background: var(--terminal-window-bg);
       }
     }
-
-    /* Make both buttons light and bright in dark mode */
-    .resume-header__savelink,
-    #resume-header__printlink {
-      background: var(--terminal-button-bg);
-      color: var(--dial-color-indicator);
-      border: 2px solid var(--dial-color-indicator);
-
-      &:hover {
-        background: var(--terminal-border-light);
-        color: var(--dial-color-indicator);
-      }
-    }
   }
 
   /* Respect reduced motion preference */
@@ -531,59 +495,14 @@ body[data-theme='terminal'] {
     }
   }
 
-  /* Responsive Adjustments */
+  /* Responsive Adjustments - theme-specific elements only */
   @media (max-width: 768px) {
-    .resume__main {
-      padding: var(--spacing-lg);
-    }
-
-    h1.resume-header__name {
-      --header-name-font-size: 2.1rem;
-    }
-
-    .resume-header__name-greeting,
-    .resume-header__name-small {
-      font-size: 0.95rem;
-    }
-
-    dial-selector .dial-label {
-      padding: var(--spacing-xs) var(--spacing-sm);
-    }
-
     .terminal-dialog {
       min-width: 300px;
     }
   }
 
   @media (max-width: 500px) {
-    .resume__main {
-      padding: var(--spacing-md);
-    }
-
-    .resume-header {
-      padding: 0;
-    }
-
-    h1.resume-header__name {
-      --header-name-font-size: 1.7rem;
-    }
-
-    dial-selector .dial-label {
-      padding: var(--spacing-xs) var(--spacing-xs);
-    }
-
-    .resume-header__buttons {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .resume-header__savelink,
-    #resume-header__printlink {
-      font-size: 0.85rem;
-      padding-block: 0.65rem;
-      padding-inline: var(--spacing-xs);
-    }
-
     .terminal-dialog {
       box-shadow: 6px 6px 0 var(--terminal-black-80), 12px 12px 0 var(--terminal-black-40);
     }
@@ -604,18 +523,6 @@ body[data-theme='terminal'] {
   }
 
   @media (max-width: 600px) {
-    .resume-header__buttons {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .resume-header__savelink,
-    #resume-header__printlink {
-      font-size: 0.85rem;
-      padding-block: 0.65rem;
-      padding-inline: var(--spacing-xs);
-    }
-
     .terminal-dialog__frame {
       font-size: 0.85rem;
     }
@@ -644,5 +551,34 @@ body[data-theme='terminal'] {
 @media (max-width: 768px) {
   :root[data-theme='terminal'] {
     --header-role-font-size: 0.9rem;
+    --dial-label-padding: var(--spacing-xs) var(--spacing-sm);
+    --main-padding-responsive-768: var(--spacing-lg);
+    --header-name-font-size: 2.1rem;
+    --header-name-greeting-font-size: 0.95rem;
+    --header-name-small-font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='terminal'] {
+    --dial-label-padding: var(--spacing-xs) var(--spacing-xs);
+    --main-padding-responsive-500: var(--spacing-md);
+    --header-padding-responsive-500: 0;
+    --header-name-font-size: 1.7rem;
+    --header-buttons-flex-direction-responsive-500: column;
+    --header-buttons-gap-responsive-500: 0.5rem;
+    --printlink-font-size-responsive-500: 0.85rem;
+    --printlink-padding-block-responsive-500: 0.65rem;
+    --printlink-padding-inline-responsive-500: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 600px) {
+  :root[data-theme='terminal'] {
+    --header-buttons-flex-direction-responsive-600: column;
+    --header-buttons-gap-responsive-600: 0.5rem;
+    --printlink-font-size-responsive-600: 0.85rem;
+    --printlink-padding-block-responsive-600: 0.65rem;
+    --printlink-padding-inline-responsive-600: var(--spacing-xs);
   }
 }

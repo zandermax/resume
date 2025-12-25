@@ -31,6 +31,9 @@
   padding-block-end: 1rem;
   margin-block-end: var(--header-margin-bottom, 1.5rem);
   border-radius: var(--header-border-radius);
+  background: var(--header-background, transparent);
+  position: var(--header-position, static);
+  box-shadow: var(--header-box-shadow, none);
 
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for decorative elements */

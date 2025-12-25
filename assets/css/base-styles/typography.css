@@ -28,6 +28,7 @@ h1,
 h2,
 h3 {
   letter-spacing: var(--heading-letter-spacing, normal);
+  text-shadow: var(--h1-h2-h3-text-shadow, none);
 }
 
 h2,
@@ -44,6 +45,7 @@ li {
   letter-spacing: var(--body-text-letter-spacing, normal);
   font-weight: var(--p-li-font-weight, normal);
   line-height: var(--p-li-line-height, normal);
+  font-size: var(--p-li-font-size, inherit);
 }
 
 /* === HEADER NAME (H1) === */
@@ -83,7 +85,8 @@ h1.resume-header__name {
 
 .resume-header__name-greeting,
 .resume-header__name-small {
-  font-size: 1.2rem;
+  font-size: var(--header-name-greeting-font-size, 1.2rem);
+  line-height: var(--header-name-greeting-line-height, normal);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

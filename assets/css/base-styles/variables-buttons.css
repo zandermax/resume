@@ -45,6 +45,9 @@
   --printlink-opacity: 1;
   --printlink-filter: none;
   --printlink-animation: none;
+  --printlink-align-items: center;
+  --printlink-justify-content: center;
+  --printlink-cursor: pointer;
 
   /* === PRINT/SAVE BUTTON HOVER STATES === */
   --printlink-hover-shadow: none;
@@ -58,6 +61,21 @@
   --printlink-hover-opacity: 1;
   --printlink-hover-background-size: auto;
   --printlink-hover-animation: none;
+
+  /* === PRINT/SAVE BUTTON DARK MODE === */
+  --printlink-dark-background: var(--printlink-background);
+  --printlink-dark-color: var(--printlink-color);
+  --printlink-dark-border: var(--printlink-border);
+  --printlink-dark-hover-background: var(--printlink-hover-background);
+  --printlink-dark-hover-color: var(--printlink-hover-color);
+
+  /* === PRINT/SAVE BUTTON RESPONSIVE === */
+  --printlink-font-size-responsive-500: var(--printlink-font-size);
+  --printlink-padding-block-responsive-500: 0.5rem;
+  --printlink-padding-inline-responsive-500: 1rem;
+  --printlink-font-size-responsive-600: var(--printlink-font-size);
+  --printlink-padding-block-responsive-600: 0.5rem;
+  --printlink-padding-inline-responsive-600: 1rem;
 
   /* === PRINT/SAVE BUTTON ACTIVE STATES === */
   --printlink-active-transform: none;

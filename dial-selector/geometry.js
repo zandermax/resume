@@ -31,9 +31,7 @@ export const Geometry = {
   generateAngles(count, arcStart, arcEnd) {
     const angles = [];
     for (let i = 0; i < count; i++) {
-      angles.push(
-        count === 1 ? (arcStart + arcEnd) / 2 : arcStart + ((arcEnd - arcStart) * i) / (count - 1)
-      );
+      angles.push(count === 1 ? (arcStart + arcEnd) / 2 : arcStart + ((arcEnd - arcStart) * i) / (count - 1));
     }
     return angles;
   },
@@ -193,4 +191,3 @@ export const Geometry = {
     });
   },
 };
-

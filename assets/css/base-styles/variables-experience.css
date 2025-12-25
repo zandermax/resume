@@ -88,6 +88,9 @@
   --experience-company-text-transform: uppercase;
   --experience-company-letter-spacing: 0.12em;
 
+  /* === EXPERIENCE META === */
+  --experience-item-meta-font-size: 0.8rem;
+
   /* === EXPERIENCE TITLE === */
   --experience-title-font-size: 1rem;
   --experience-title-font-weight: normal;

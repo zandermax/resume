@@ -8,6 +8,7 @@ DEFAULT Theme - Clean, Professional
   --background-image: none;
   --section-bg: transparent;
   --header-bg: transparent;
+  --dial-label-hover-color: var(--dial-color-ink);
 }
 
 /* Light Mode */

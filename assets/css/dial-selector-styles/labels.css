@@ -8,7 +8,8 @@ dial-selector .dial-label {
   font-size: var(--dial-label-font-size);
   font-family: var(--ds-label-font-family);
   font-weight: var(--dial-label-font-weight);
-  letter-spacing: clamp(0.5px, 0.1vw, 1px);
+  letter-spacing: var(--ds-label-letter-spacing);
+  text-transform: var(--dial-label-text-transform, none);
   display: inline-flex;
   align-items: center;
   gap: 0;
@@ -27,7 +28,7 @@ dial-selector .dial-label {
   text-shadow: var(--ds-label-text-shadow);
 }
 
-dial-selector .dial-label:hover > span {
+dial-selector .dial-label:not(.active):hover > span {
   background: var(--dial-label-hover-background, var(--color-ink));
   color: var(--dial-label-hover-color, var(--dial-knob-background, #11161c));
   opacity: var(--dial-label-hover-opacity, 1);
@@ -44,9 +45,10 @@ dial-selector .dial-label:hover > span {
 dial-selector .dial-label.active > span {
   color: var(--dial-label-active-color, var(--color-selection));
   background: var(--dial-label-active-background, transparent);
+  border: var(--ds-label-span-active-border);
   box-shadow: var(--dial-label-active-box-shadow, none);
   text-shadow: var(--dial-label-active-text-shadow, none);
   padding-block: var(--dial-label-active-span-padding-block);
   padding-inline: var(--dial-label-active-span-padding-inline);
+  font-weight: var(--ds-label-span-active-font-weight);
 }
-

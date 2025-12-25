@@ -119,6 +119,26 @@
   /* Dial label hover properties */
   --dial-label-hover-text-shadow: 0 0 10px currentColor;
   --dial-label-hover-border-color: currentColor;
+  --dial-label-hover-color: var(--dial-color-ink);
+  --dial-label-hover-padding: 0rem 0.5rem;
+
+  /* Dial selector knob styling */
+  --ds-knob-box-shadow: var(--dial-knob-box-shadow);
+
+  /* Dial selector indicator styling */
+  --ds-indicator-width-override: var(--dial-indicator-width);
+  --ds-indicator-box-shadow: var(--dial-indicator-box-shadow);
+  --ds-indicator-gradient: currentColor;
+
+  /* Dial selector label active state */
+  --dial-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  --ds-label-span-active-font-weight: bold;
+  --ds-label-span-active-border: 2px solid currentColor;
+  --dial-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+
+  /* Dial selector spoke lines */
+  --ds-spoke-stroke-width: var(--dial-spoke-stroke-width);
+  --ds-spoke-opacity: var(--dial-spoke-opacity);
 
   /* Body pseudo-element: scanline overlay */
   --body-before-content: '';
@@ -341,34 +361,6 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Dial selector - using custom properties */
-  dial-selector {
-    .knob {
-      box-shadow: var(--dial-knob-box-shadow);
-      background: var(--dial-knob-background);
-    }
-
-    .indicator {
-      width: var(--dial-indicator-width);
-      box-shadow: var(--dial-indicator-box-shadow);
-      background: currentColor;
-    }
-
-    /* CRT dial styling is handled by dial-selector.css using custom properties defined above */
-
-    .dial-label.active > span {
-      text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-      font-weight: bold;
-      border: 2px solid currentColor;
-      box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
-    }
-
-    .spoke-line {
-      stroke-width: var(--dial-spoke-stroke-width);
-      opacity: var(--dial-spoke-opacity);
-    }
-  }
-
   /* Print button always has glowing CRT styling */
   #resume-header__printlink {
     border-width: 3px;
@@ -385,10 +377,6 @@ body[data-theme='crt'] {
     h1.resume-header__name {
       --header-name-font-size: 2rem;
     }
-
-    dial-selector .dial-label {
-      padding: 0.35rem 0;
-    }
   }
 
   @media (max-width: 500px) {
@@ -398,10 +386,6 @@ body[data-theme='crt'] {
 
     h1.resume-header__name {
       --header-name-font-size: 1.7rem;
-    }
-
-    dial-selector .dial-label {
-      padding: 0.3rem 0rem;
     }
 
     #resume-header__printlink {
@@ -580,5 +564,18 @@ body[data-theme='crt'] {
       font-size: 1.25rem;
       padding: 0.2rem 0.4rem;
     }
+  }
+}
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='crt'] {
+    --dial-label-padding: 0.35rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='crt'] {
+    --dial-label-padding: 0.3rem 0;
   }
 }

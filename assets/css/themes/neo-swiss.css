@@ -217,6 +217,34 @@ Ultra-modern minimalism with mathematical precision
   /* Dial label hover properties */
   --dial-label-hover-background: transparent;
   --dial-label-hover-color: var(--accent-color);
+
+  /* Dial selector knob styling */
+  --ds-knob-border: 2px solid var(--dial-color-ink);
+  --ds-knob-border-radius: 50%;
+  --ds-knob-box-shadow: none; /* Reset knob box-shadow */
+
+  /* Dial selector indicator styling */
+  --ds-indicator-width-override: 2px;
+  --ds-indicator-height-override: 24px;
+
+  /* Dial selector label styling */
+  --dial-label-font-size: var(--font-size-small);
+  --dial-label-padding: calc(var(--swiss-grid) * 1) var(--spacing-2);
+  --dial-label-transition: color 50ms linear, background 50ms linear;
+  --dial-label-font-weight: var(--font-weight-medium);
+  --dial-label-text-transform: uppercase;
+  --ds-label-letter-spacing: 0.1em;
+  --ds-label-color: var(--dial-color-ink);
+
+  /* Dial selector label active state */
+  --dial-label-active-background: var(--accent-color);
+  --dial-label-active-color: #ffffff;
+  --ds-label-span-active-font-weight: 600;
+
+  /* Dial selector spoke lines */
+  --ds-spoke-stroke-width: 1px;
+  --ds-spoke-opacity: 0.2;
+  --ds-spoke-stroke: var(--dial-color-ink);
 }
 
 /* Light Mode */
@@ -326,9 +354,6 @@ body[data-theme='neoswiss'] {
   .principles-list,
   .education-item,
   #resume-header__printlink,
-  dial-selector .knob,
-  dial-selector .indicator,
-  dial-selector .dial-label,
   .resume-header__dial-selector {
     border: 0;
     border-radius: 0;
@@ -338,7 +363,6 @@ body[data-theme='neoswiss'] {
   /* Common small font size - component-specific only */
   .experience-item__dates,
   .education-item__dates,
-  dial-selector .dial-label,
   .resume-header__dial-selector h3 {
     font-size: var(--font-size-small);
   }
@@ -351,7 +375,6 @@ body[data-theme='neoswiss'] {
   }
 
   /* Common uppercase text - component-specific only */
-  dial-selector .dial-label,
   .resume-header__dial-selector h3 {
     text-transform: uppercase;
   }
@@ -476,42 +499,6 @@ body[data-theme='neoswiss'] {
       &:hover {
         border-block-end: 1px solid var(--accent-color);
       }
-    }
-  }
-
-  /* Dial selector */
-  dial-selector {
-    .knob {
-      border-radius: 50%;
-      border: 2px solid var(--dial-color-ink);
-      background: var(--dial-knob-background);
-    }
-
-    .indicator {
-      background: var(--accent-color);
-      width: 2px;
-      height: 24px;
-    }
-
-    .dial-label {
-      padding: calc(var(--swiss-grid) * 1) var(--spacing-2);
-      transition: color 50ms linear, background 50ms linear;
-      font-weight: var(--font-weight-medium);
-      letter-spacing: 0.1em;
-      color: var(--dial-color-ink);
-
-
-      &.active > span {
-        background: var(--accent-color);
-        color: #ffffff;
-        font-weight: 600;
-      }
-    }
-
-    .spoke-line {
-      stroke-width: 1px;
-      opacity: 0.2;
-      stroke: var(--dial-color-ink);
     }
   }
 
@@ -1028,11 +1015,6 @@ body[data-theme='neoswiss'] {
       margin-block-end: var(--spacing-6);
     }
 
-    dial-selector .dial-label {
-      font-size: clamp(0.625rem, 2vw, 0.75rem);
-      padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
-    }
-
     .resume-header__dial-selector {
       padding: 0;
     }
@@ -1141,6 +1123,8 @@ body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
     --section-title-width: 100%;
     --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
     --printlink-padding: calc(var(--swiss-grid) * 1.5) calc(var(--swiss-grid) * 3);
+    --dial-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --dial-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
   }
 }
 

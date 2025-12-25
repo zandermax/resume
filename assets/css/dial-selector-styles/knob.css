@@ -6,17 +6,18 @@ dial-selector .knob {
   position: relative;
   width: calc(var(--radius-outer) * 2);
   height: calc(var(--radius-outer) * 2);
-  border: var(--width-outer-circle) solid var(--color-outer-circle);
-  border-radius: 50%;
+  border: var(--ds-knob-border);
+  border-radius: var(--ds-knob-border-radius, 50%);
   background: var(--dial-knob-background, #11161c);
-  background-image: var(--ds-knob-background-image);
+  background-image: var(--ds-knob-background-image, none);
   background-size: var(--ds-knob-background-size);
   background-position: var(--ds-knob-background-position);
   background-repeat: var(--ds-knob-background-repeat);
-  box-shadow: var(--shadow);
+  box-shadow: var(--ds-knob-box-shadow, none);
   z-index: 2;
   transform: rotate(var(--indicator-angle)) scale(var(--ds-knob-transform-scale));
   transition: transform 0.25s ease-in var(--time-selection-delay, 0s);
+  clip-path: var(--ds-knob-clip-path);
   filter: var(--ds-knob-filter);
   opacity: var(--ds-knob-opacity);
   animation: var(--ds-knob-animation);
@@ -34,17 +35,28 @@ dial-selector .knob::before {
   filter: var(--ds-knob-before-filter);
 }
 
+dial-selector .knob::after {
+  content: var(--ds-knob-after-content, none);
+  display: var(--ds-knob-after-display);
+  position: var(--ds-knob-after-position);
+  inset: var(--ds-knob-after-inset);
+  border-radius: var(--ds-knob-after-border-radius);
+  background: var(--ds-knob-after-background, none);
+  pointer-events: var(--ds-knob-after-pointer-events);
+}
+
 dial-selector .indicator {
   position: absolute;
-  width: var(--indicator-width);
-  height: var(--indicator-length);
+  width: var(--ds-indicator-width-override);
+  height: var(--ds-indicator-height-override);
   background: var(--ds-indicator-gradient);
-  border-radius: calc(var(--indicator-width) / 2);
-  top: calc(var(--indicator-vertical-offset) - var(--indicator-length) / 2);
+  border: var(--ds-indicator-border);
+  border-radius: calc(var(--ds-indicator-width-override) / 2);
+  box-shadow: var(--ds-indicator-box-shadow);
+  top: calc(var(--indicator-vertical-offset) - var(--ds-indicator-height-override) / 2);
   left: calc(40% + var(--radius-inner) - var(--width-inner-circle) + var(--center-indicator));
   transform-origin: 0% 50%;
   transform: rotate(90deg);
   opacity: var(--ds-indicator-opacity);
   filter: var(--ds-indicator-filter);
 }
-

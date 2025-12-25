@@ -25,6 +25,7 @@
   --education-item-background: transparent;
   --education-item-box-shadow: none;
   --education-item-padding: 0;
+  --education-item-font-size: 0.9rem;
   --education-item-position: static;
   --education-item-transition: none;
 
@@ -52,4 +53,3 @@
   --education-institution-border-inline-start: none;
   --education-institution-padding-inline-start: 0;
 }
-

@@ -19,7 +19,8 @@
 
 .resume-header__buttons {
   display: flex;
-  gap: 1rem;
+  flex-direction: var(--header-buttons-flex-direction, row);
+  gap: var(--header-buttons-gap, 1rem);
   align-items: center;
   justify-content: center;
 }
@@ -28,9 +29,9 @@
 /* Shared by both save and print buttons */
 
 .resume-header__savelink {
-  display: none; /* Hidden by default, shown only in terminal theme */
-  align-items: center;
-  justify-content: center;
+  display: var(--savelink-display, none); /* Hidden by default, shown only in terminal theme */
+  align-items: var(--printlink-align-items, center);
+  justify-content: var(--printlink-justify-content, center);
   padding: var(--printlink-padding, 0.55rem 1.1rem);
   font-size: var(--printlink-font-size, 0.8rem);
   font-family: var(--printlink-font-family, inherit);
@@ -40,7 +41,7 @@
   text-decoration: var(--printlink-text-decoration, none);
   text-shadow: var(--printlink-text-shadow, none);
   white-space: nowrap;
-  cursor: pointer;
+  cursor: var(--printlink-cursor, pointer);
   margin-block: 1rem;
   border: var(
     --printlink-border,
@@ -94,6 +95,8 @@
 
 #resume-header__printlink {
   display: inline-flex;
+  align-items: center;
+  justify-content: var(--printlink-justify-content, center);
   position: var(--printlink-position, relative);
   transition: var(--printlink-transition, none);
   transform: var(--printlink-transform, none);
@@ -101,6 +104,7 @@
   filter: var(--printlink-filter, none);
   animation: var(--printlink-animation, none);
   box-sizing: border-box;
+  cursor: var(--printlink-cursor, pointer);
 
   /* === HOVER STATE === */
 
@@ -158,4 +162,3 @@
     margin-inline-end: var(--printlink-after-margin-inline-end, 0);
   }
 }
-

@@ -143,12 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reset checkboxes on page load (browsers remember form state)
-  resetCheckboxes(
-    'cookie-banner-dismiss',
-    'sticky-note-disappear',
-    'xp-dialog-toggle',
-    'terminal-dialog-toggle'
-  );
+  resetCheckboxes('cookie-banner-dismiss', 'sticky-note-disappear', 'xp-dialog-toggle', 'terminal-dialog-toggle');
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');

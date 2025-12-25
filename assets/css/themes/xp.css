@@ -119,6 +119,8 @@ Windows XP Theme (Luna)
   --dial-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
     0 2px 4px var(--xp-black-20);
   --dial-label-active-color: var(--color-white);
+  --dial-label-active-span-padding-inline: 0.25rem;
+  --dial-label-active-span-padding-block: 0.25rem;
   --dial-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
 
   /* Scrollbar styling (XP theme) */
@@ -289,12 +291,6 @@ Windows XP Theme (Luna)
   --xp-radius-sm: 4px;
   --xp-radius-md: 6px;
   --xp-radius-lg: 8px;
-  --dial-label-active-span-padding-block: 0;
-  --dial-label-active-span-padding-inline: 0;
-  --dial-label-active-span-padding-block--tablet: 0;
-  --dial-label-active-span-padding-inline--tablet: 0;
-  --dial-label-active-span-padding-block--phone: 0;
-  --dial-label-active-span-padding-inline--phone: 0;
 
   /* Consolidated XP shadows and borders */
   --xp-button-shadow-raised: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
@@ -481,8 +477,6 @@ body[data-theme='xp'] {
     .spoke-line {
       stroke-width: var(--dial-spoke-line-stroke-width);
     }
-
-    /* XP dial styling is handled by dial-selector.css using custom properties defined above */
   }
 
   .resume-header__dial-selector {

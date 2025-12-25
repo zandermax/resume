@@ -22,7 +22,7 @@
   border: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
   border-radius: var(--main-border-radius, 0);
   background-color: var(--section-bg, var(--background-color));
-  background-image: var(--paper-texture);
+  background-image: var(--main-background-image), var(--paper-texture);
   box-sizing: border-box;
   box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
   position: relative;
@@ -55,4 +55,3 @@
     opacity: var(--resume-main-after-opacity);
   }
 }
-
