@@ -27,6 +27,9 @@
 }
 
 .community-list__item {
+  /* Set default accent color, overridden by nth-child below */
+  --item-accent-color: var(--theme-accent-1, var(--border-color));
+
   font-size: var(--community-item-font-size, 0.9rem);
   font-weight: var(--community-item-font-weight, normal);
   line-height: var(--community-item-line-height, 1.5);
@@ -34,6 +37,7 @@
   border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
     var(--border-color);
   border-inline-start: var(--community-item-border-inline-start, none);
+  border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
   margin-block-end: var(--community-item-margin-bottom, 0);
   margin-block-start: var(--community-item-margin-top, 0);
   background: var(--community-item-background, transparent);
@@ -44,6 +48,19 @@
 
   &:first-child {
     border-block-start: 0;
+  }
+
+  /* === ACCENT COLOR ROTATION === */
+  /* Assign accent colors to items for themes to use */
+
+  &:nth-child(2n) {
+    --item-accent-color: var(--theme-accent-2, var(--border-color));
+  }
+  &:nth-child(3n) {
+    --item-accent-color: var(--theme-accent-3, var(--border-color));
+  }
+  &:nth-child(4n) {
+    --item-accent-color: var(--theme-accent-4, var(--border-color));
   }
 
   /* === PSEUDO-ELEMENT === */
@@ -65,6 +82,8 @@
     transform: var(--list-item-hover-transform);
     box-shadow: var(--list-item-hover-box-shadow);
     filter: var(--list-item-hover-filter);
+    border-inline-start-width: var(--community-item-hover-border-inline-start-width, inherit);
+    padding-inline-start: var(--community-item-hover-padding-inline-start, inherit);
   }
 }
 
@@ -82,6 +101,9 @@
 }
 
 .principles-list__item {
+  /* Set default accent color, overridden by nth-child below */
+  --item-accent-color: var(--theme-accent-1, var(--border-color));
+
   font-size: var(--principles-item-font-size, 0.9rem);
   font-weight: var(--principles-item-font-weight, normal);
   line-height: var(--principles-item-line-height, 1.4);
@@ -89,6 +111,7 @@
   border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
     var(--border-color);
   border-inline-start: var(--principles-item-border-inline-start, none);
+  border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
   margin-block-end: var(--principles-item-margin-bottom, 0);
   margin-block-start: var(--principles-item-margin-top, 0);
   background: var(--principles-item-background, transparent);
@@ -99,6 +122,19 @@
 
   &:first-child {
     border-block-start: 0;
+  }
+
+  /* === ACCENT COLOR ROTATION === */
+  /* Assign accent colors to items for themes to use */
+
+  &:nth-child(2n) {
+    --item-accent-color: var(--theme-accent-2, var(--border-color));
+  }
+  &:nth-child(3n) {
+    --item-accent-color: var(--theme-accent-3, var(--border-color));
+  }
+  &:nth-child(4n) {
+    --item-accent-color: var(--theme-accent-4, var(--border-color));
   }
 
   /* === PSEUDO-ELEMENT === */
@@ -120,6 +156,8 @@
     transform: var(--list-item-hover-transform);
     box-shadow: var(--list-item-hover-box-shadow);
     filter: var(--list-item-hover-filter);
+    border-inline-start-width: var(--principles-item-hover-border-inline-start-width, inherit);
+    padding-inline-start: var(--principles-item-hover-padding-inline-start, inherit);
   }
 }
 

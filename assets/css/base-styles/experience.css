@@ -23,17 +23,23 @@
 
 .resume-section--experience {
   border-block-start: 0;
-  padding-block-start: 0;
+  padding-block-start: var(--experience-section-padding-block-start);
 }
 
 /* === EXPERIENCE ITEM CONTAINER === */
 
 .experience-item {
+  /* Set default accent color, overridden by nth-of-type below */
+  --item-accent-color: var(--theme-accent-1, var(--border-color));
+
   border: var(--experience-item-border, 0);
   border-block-start: 2px solid var(--border-color);
+  border-inline-start: var(--experience-item-border-inline-start, none);
+  border-inline-start-color: var(--experience-item-border-inline-start-color, var(--item-accent-color));
   padding: var(--experience-item-padding, 0);
   padding-block-start: 0.9rem;
   margin-block-start: var(--experience-item-margin-top, 0.9rem);
+  margin-block-end: var(--experience-item-margin-block-end, 0);
   background: var(--experience-item-background, transparent);
   box-shadow: var(--experience-item-box-shadow, none);
   border-radius: var(--experience-item-border-radius, 0);
@@ -43,6 +49,22 @@
 
   &:first-of-type {
     border-block-start: 3px solid var(--border-color);
+  }
+
+  /* === ACCENT COLOR ROTATION === */
+  /* Assign accent colors to items for themes to use */
+
+  &:nth-of-type(2n) {
+    --item-accent-color: var(--theme-accent-2, var(--border-color));
+  }
+  &:nth-of-type(3n) {
+    --item-accent-color: var(--theme-accent-3, var(--border-color));
+  }
+  &:nth-of-type(4n) {
+    --item-accent-color: var(--theme-accent-4, var(--border-color));
+  }
+  &:nth-of-type(5n) {
+    --item-accent-color: var(--theme-accent-5, var(--border-color));
   }
 
   /* === PSEUDO-ELEMENTS === */
@@ -83,6 +105,7 @@
     transform: var(--experience-item-hover-transform);
     box-shadow: var(--experience-item-hover-box-shadow);
     border-color: var(--experience-item-hover-border-color);
+    border-inline-start-width: var(--experience-item-hover-border-inline-start-width, inherit);
 
     &::before {
       opacity: var(--experience-item-before-hover-opacity);

@@ -333,7 +333,24 @@ Bold borders, aggressive shadows, skewed transforms
   --dial-selector-housing-border: var(--border-width-extra-thick) solid var(--border-color);
   --dial-selector-housing-box-shadow: 8px 8px 0 var(--brutal-shadow-light);
   --dial-selector-housing-h3-margin-block-end: var(--spacing-md);
-  --dial-selector-housing-h3-font-size: var(--spacing-lg);
+  --dial-selector-housing-h3-font-size: var(
+    --spacing-lg
+  ); /* Dial Selector Housing - Pseudo-element (striped top decoration) */
+
+  --dial-selector-housing-before-content: '';
+  --dial-selector-housing-before-position: absolute;
+  --dial-selector-housing-before-inset: 0;
+  --dial-selector-housing-before-top: 0;
+  --dial-selector-housing-before-left: 0;
+  --dial-selector-housing-before-right: 0;
+  --dial-selector-housing-before-height: 8px;
+  --dial-selector-housing-before-background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 16px,
+    transparent 16px,
+    transparent 32px
+  );
 
   /* ==================== LINKS ==================== */
 

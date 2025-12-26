@@ -29,27 +29,7 @@ BRUTAL Theme - Dial Selector Custom Properties
   }
 }
 
-/* ==================== DIAL SELECTOR HOUSING ==================== */
-
 :root[data-theme='brutal'] {
-  /* Dial Selector Housing - Pseudo-element (striped top decoration) */
-  --dial-selector-housing-before-content: '';
-  --dial-selector-housing-before-position: absolute;
-  --dial-selector-housing-before-inset: 0;
-  --dial-selector-housing-before-top: 0;
-  --dial-selector-housing-before-left: 0;
-  --dial-selector-housing-before-right: 0;
-  --dial-selector-housing-before-height: 8px;
-  --dial-selector-housing-before-background: repeating-linear-gradient(
-    90deg,
-    var(--accent-color) 0px,
-    var(--accent-color) 16px,
-    transparent 16px,
-    transparent 32px
-  );
-
-  /* ==================== DIAL SELECTOR OVERRIDES ==================== */
-
   dial-selector {
     /* Positioning */
     --ds-margin-block-start: -3em;

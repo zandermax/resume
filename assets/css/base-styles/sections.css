@@ -59,3 +59,35 @@
 .resume-section__content {
   padding-inline: var(--section-content-padding-inline, 0);
 }
+
+/* === SECTION ACCENT COLOR ROTATION === */
+/* Assign accent colors to sections for themes to use */
+
+.resume-section:nth-of-type(1) {
+  --section-accent-color: var(--theme-accent-1, var(--border-color));
+}
+.resume-section:nth-of-type(2) {
+  --section-accent-color: var(--theme-accent-2, var(--border-color));
+}
+.resume-section:nth-of-type(3) {
+  --section-accent-color: var(--theme-accent-3, var(--border-color));
+}
+.resume-section:nth-of-type(4) {
+  --section-accent-color: var(--theme-accent-4, var(--border-color));
+}
+.resume-section:nth-of-type(5) {
+  --section-accent-color: var(--theme-accent-5, var(--border-color));
+}
+.resume-section:nth-of-type(6) {
+  --section-accent-color: var(--theme-accent-6, var(--border-color));
+}
+.resume-section:nth-of-type(7) {
+  --section-accent-color: var(--theme-accent-1, var(--border-color));
+}
+.resume-section:nth-of-type(8) {
+  --section-accent-color: var(--theme-accent-2, var(--border-color));
+}
+
+.resume-section__title {
+  background: var(--section-title-background, var(--section-accent-color));
+}

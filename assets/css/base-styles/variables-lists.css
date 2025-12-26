@@ -76,5 +76,9 @@
   --list-item-hover-transform: none;
   --list-item-hover-box-shadow: none;
   --list-item-hover-filter: none;
+  --community-item-hover-border-inline-start-width: inherit;
+  --community-item-hover-padding-inline-start: inherit;
+  --principles-item-hover-border-inline-start-width: inherit;
+  --principles-item-hover-padding-inline-start: inherit;
 }
 

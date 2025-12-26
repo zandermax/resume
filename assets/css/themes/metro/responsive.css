@@ -98,8 +98,7 @@ METRO Theme - Responsive Adjustments
   body[data-theme='metro'] {
     .resume-header,
     .resume-section {
-      padding-inline-start: var(--spacing-md);
-      padding-inline-end: var(--spacing-md);
+      padding-inline: 0;
     }
 
     .experience-item,
