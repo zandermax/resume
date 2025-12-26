@@ -221,15 +221,19 @@ body[data-theme='metro'] {
 
   .metro-chat-dialog__message {
     display: flex;
-    animation: slide-in 0.3s ease;
+    animation: slide-in 0.6s ease both;
+  }
 
-    &--agent {
-      justify-content: flex-start;
-    }
+  .metro-chat-dialog__message:nth-child(1) {
+    animation-delay: 0.5;
+  }
 
-    &--user {
-      justify-content: flex-end;
-    }
+  .metro-chat-dialog__message:nth-child(2) {
+    animation-delay: 2.5s;
+  }
+
+  .metro-chat-dialog__message:nth-child(3) {
+    animation-delay: 4s;
   }
 
   .metro-chat-dialog__message-bubble {
@@ -321,4 +325,3 @@ body[data-theme='metro'] {
     }
   }
 }
-
