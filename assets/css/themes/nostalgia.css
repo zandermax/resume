@@ -10,6 +10,7 @@ Nostalgia Theme (Geocities 90s)
   /* Header custom properties */
   --header-name-wrapper-margin-block-start: 1.5rem;
   --header-padding: 1rem;
+  --header-border: 5px dotted;
   --main-padding-responsive-500: var(--spacing-sm);
 
   /* Dial label hover properties */
