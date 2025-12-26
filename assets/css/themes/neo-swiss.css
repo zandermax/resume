@@ -233,9 +233,9 @@ Ultra-modern minimalism with mathematical precision
     --ds-label-span-active-font-weight: 600;
 
     /* Dial selector spoke lines */
-    --ds-spoke-stroke-width: 1px;
-    --ds-spoke-opacity: 0.2;
-    --ds-spoke-stroke: var(--dial-color-ink);
+    --ds-line-width: 1px;
+    --ds-line-opacity: 0.2;
+    --ds-line-stroke: var(--dial-color-ink);
   }
 }
 

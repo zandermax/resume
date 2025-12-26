@@ -65,10 +65,13 @@ export const AttributeHandlers = {
     if (lineThickness) {
       this.lineThicknessPercentage = this.parsePercentageAttr(lineThickness);
       const actualThickness = (DEFAULT_LINE_STROKE_WIDTH * this.lineThicknessPercentage) / 100;
-      this.style.setProperty('--ds-line-stroke-width', `${actualThickness}px`);
+      // Note: We set internal --ds-internal-* variables here, which feed into
+      // the public --ds-line-* variables used by CSS. This allows proper
+      // cascading and theme overrides at multiple levels.
+      this.style.setProperty('--ds-internal-line-stroke-width', `${actualThickness}px`);
     } else {
       this.lineThicknessPercentage = 100;
-      this.style.removeProperty('--ds-line-stroke-width');
+      this.style.removeProperty('--ds-internal-line-stroke-width');
     }
   },
 

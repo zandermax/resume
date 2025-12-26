@@ -123,8 +123,6 @@ Terminal Theme (1992 CLI-inspired)
 
   /* Print/save button styling */
   --savelink-display: inline-flex;
-  --printlink-align-items: center;
-  --printlink-justify-content: center;
   --printlink-padding: var(--spacing-sm) var(--spacing-md);
   --printlink-font-size: 0.9rem;
   --printlink-cursor: pointer;
@@ -196,13 +194,6 @@ Terminal Theme (1992 CLI-inspired)
     --terminal-title-bg: var(--color-blue-navy);
     --terminal-button-bg: oklch(28% 0.16 264);
     --terminal-shadow: 2px 2px 0 var(--color-black / 0.5);
-
-    /* Dark mode button styling */
-    --printlink-dark-background: var(--terminal-button-bg);
-    --printlink-dark-color: var(--dial-color-indicator);
-    --printlink-dark-border: 2px solid var(--dial-color-indicator);
-    --printlink-dark-hover-background: var(--terminal-border-light);
-    --printlink-dark-hover-color: var(--dial-color-indicator);
   }
 
   dial-selector {
@@ -220,7 +211,7 @@ Terminal Theme (1992 CLI-inspired)
     --ds-label-font-size--phone: 0.7rem;
     --ds-label-font-size--phone-sm: 0.7rem;
     --ds-label-font-size--xs: 0.65rem;
-    --ds-spoke-stroke-width: 2px;
+    --ds-line-width: 2px;
 
     /* Dial selector hover/active states */
     --ds-label-hover-color: var(--dial-color-ink);

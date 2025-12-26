@@ -289,7 +289,7 @@ body[data-theme='metro'] .metro-chat-widget {
   --ds-label-active-color: #ffffff;
 
   /* Dial selector spoke lines */
-  --ds-spoke-stroke-width: 2px;
+  --ds-line-width: 2px;
 }
 
 /* Light Mode */

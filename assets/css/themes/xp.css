@@ -269,7 +269,7 @@ Windows XP Theme (Luna)
     --ds-indicator-border: 1px solid var(--xp-black-20);
 
     /* Dial spoke line */
-    --ds-spoke-line-stroke-width: 2px;
+    --ds-line-width: 2px;
 
     /* Dial label XP styling */
     --ds-label-font-size: 0.85rem;
@@ -434,8 +434,6 @@ body[data-theme='xp'] {
     }
   }
 
-  /* Education and experience role styling */
-
   /* Experience items */
   .experience-item {
     &:first-of-type {
@@ -446,14 +444,13 @@ body[data-theme='xp'] {
   /* Dial selector - 3D XP styling controlled by custom properties */
   dial-selector {
     .knob {
-      border-radius: var(--dial-knob-border-radius);
       border: var(--dial-knob-border);
       box-shadow: var(--dial-knob-box-shadow);
       background: var(--ds-knob-background);
     }
 
     .spoke-line {
-      stroke-width: var(--ds-spoke-line-stroke-width);
+      stroke-width: var(--ds-line-width);
     }
   }
 

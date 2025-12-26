@@ -9,12 +9,6 @@ DEFAULT Theme - Clean, Professional
   --section-bg: transparent;
   --header-background: transparent;
 
-  /* Dial label hover properties */
-  --ds-label-hover-color: var(--dial-color-ink);
-  --ds-label-hover-opacity: 0.7;
-  --ds-label-hover-transform: translateY(-1px);
-  --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
-
   /* Print link common properties */
   --printlink-border-radius: 4px;
   --printlink-padding: var(--spacing-sm) var(--spacing-lg);
@@ -24,57 +18,56 @@ DEFAULT Theme - Clean, Professional
   --printlink-transition: all 0.2s ease;
   --printlink-hover-color: var(--color-white);
   --printlink-hover-transform: translateY(-1px);
-}
 
-/* Light Mode */
-:root[data-theme='default'][data-mode='light'] {
-  --background-color: var(--color-white);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-black);
-  --border-color: var(--color-black);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-red-crimson);
-  --dial-color-indicator: var(--color-red-crimson);
-  --ds-knob-background: var(--color-dark-knob);
-  --link-color: var(--color-black);
-  --link-visited-color: var(--color-purple-link);
-  --accent-color: var(--color-red-crimson);
-}
+  [data-mode='light'] {
+    --background-color: var(--color-white);
+    --text-color: var(--color-black);
+    --heading-color: var(--color-black);
+    --border-color: var(--color-black);
+    --dial-color-ink: var(--color-black);
+    --dial-color-selection: var(--color-red-crimson);
+    --dial-color-indicator: var(--color-red-crimson);
+    --ds-knob-background: var(--color-dark-knob);
+    --link-color: var(--color-black);
+    --link-visited-color: var(--color-purple-link);
+    --accent-color: var(--color-red-crimson);
+    --printlink-background: var(--color-black);
+    --printlink-color: var(--color-white);
+    --printlink-border: var(--border-width-normal) solid var(--color-black);
+    --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
 
-/* Dark Mode */
-:root[data-theme='default'][data-mode='dark'] {
-  --background-color: var(--color-dark-bg);
-  --text-color: var(--color-gray-pure-light);
-  --heading-color: var(--color-gray-pure-light);
-  --border-color: var(--color-gray-dark);
-  --dial-color-ink: var(--color-gray-pure-light);
-  --dial-color-selection: var(--color-red-bright);
-  --dial-color-indicator: var(--color-red-bright);
-  --ds-knob-background: var(--color-dark-bg-alt);
-  --link-color: var(--color-gray-pure-light);
-  --link-visited-color: var(--color-gray-light);
-  --accent-color: var(--color-red-bright);
-}
+    --printlink-hover-background: var(--color-red-crimson);
+    --printlink-hover-border-color: var(--color-red-crimson);
+    --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
+  }
 
-/* Print Link Button Styling */
-:root[data-theme='default'][data-mode='light'] {
-  --printlink-background: var(--color-black);
-  --printlink-color: var(--color-white);
-  --printlink-border: var(--border-width-normal) solid var(--color-black);
-  --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
+  /* Dark Mode */
+  [data-mode='dark'] {
+    --background-color: var(--color-dark-bg);
+    --text-color: var(--color-gray-pure-light);
+    --heading-color: var(--color-gray-pure-light);
+    --border-color: var(--color-gray-dark);
+    --dial-color-ink: var(--color-gray-pure-light);
+    --dial-color-selection: var(--color-red-bright);
+    --dial-color-indicator: var(--color-red-bright);
+    --ds-knob-background: var(--color-dark-bg-alt);
+    --link-color: var(--color-gray-pure-light);
+    --link-visited-color: var(--color-gray-light);
+    --accent-color: var(--color-red-bright);
+    --printlink-background: var(--color-gray-pure-light);
+    --printlink-color: var(--color-dark-bg);
+    --printlink-border: var(--border-width-normal) solid var(--color-gray-pure-light);
+    --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
 
-  --printlink-hover-background: var(--color-red-crimson);
-  --printlink-hover-border-color: var(--color-red-crimson);
-  --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
-}
+    --printlink-hover-background: var(--color-red-bright);
+    --printlink-hover-border-color: var(--color-red-bright);
+    --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.4), 0 3px 6px oklch(0% 0 0 / 0.25);
+  }
 
-:root[data-theme='default'][data-mode='dark'] {
-  --printlink-background: var(--color-gray-pure-light);
-  --printlink-color: var(--color-dark-bg);
-  --printlink-border: var(--border-width-normal) solid var(--color-gray-pure-light);
-  --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
-
-  --printlink-hover-background: var(--color-red-bright);
-  --printlink-hover-border-color: var(--color-red-bright);
-  --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.4), 0 3px 6px oklch(0% 0 0 / 0.25);
+  dial-selector {
+    --ds-label-hover-color: var(--dial-color-ink);
+    --ds-label-hover-opacity: 0.7;
+    --ds-label-hover-transform: translateY(-1px);
+    --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
+  }
 }

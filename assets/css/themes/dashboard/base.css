@@ -251,6 +251,9 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --experience-item-header-flex-direction-responsive-768: column;
   --experience-item-header-align-items-responsive-768: flex-start;
 
+  --header-padding-responsive-500: 1rem;
+  --main-padding-responsive-500: 1rem;
+
   @media (max-width: 768px) {
     --section-title-padding: var(--spacing-md) var(--spacing-lg);
     --section-padding-inline-start: var(--spacing-md);

@@ -15,14 +15,8 @@ CRT Theme - Dial Selector Styles
     --ds-label-font-size--phone-sm: 0.7rem;
     --ds-label-font-size--xs: 0.65rem;
     --ds-label-padding: 0.4rem 0.8rem;
-    --ds-label-active-span-padding-block: 0.4rem;
-    --ds-label-active-span-padding-inline: 0.6rem;
-    --ds-label-active-span-padding-block--tablet: 0.35rem;
-    --ds-label-active-span-padding-inline--tablet: 0.4rem;
-    --ds-label-active-span-padding-block--phone: 0.2rem;
-    --ds-label-active-span-padding-inline--phone: 0.25rem;
-    --ds-spoke-stroke-width: 1px;
-    --ds-spoke-opacity: 0.5;
+    --ds-line-width: 1px;
+    --ds-line-opacity: 0.5;
 
     /* Dial label hover properties */
     --ds-label-hover-text-shadow: 0 0 10px currentColor;
@@ -37,14 +31,18 @@ CRT Theme - Dial Selector Styles
     --ds-indicator-gradient: currentColor;
 
     /* Dial selector label active state */
+    --ds-label-active-span-padding-block: 0.25rem;
+    --ds-label-active-span-padding-inline: 0.6rem;
+    --ds-label-active-span-padding-block--tablet: 0.35rem;
+    --ds-label-active-span-padding-inline--tablet: 0.4rem;
+    --ds-label-active-span-padding-block--phone: 0.2rem;
+    --ds-label-active-span-padding-inline--phone: 0.25rem;
     --ds-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
     --ds-label-span-active-font-weight: bold;
     --ds-label-span-active-border: 2px solid currentColor;
     --ds-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
 
-    /* Dial selector spoke lines */
-    --ds-spoke-stroke-width: var(--ds-spoke-stroke-width);
-    --ds-spoke-opacity: var(--ds-spoke-opacity);
+    /* Dial selector spoke lines - removed self-referencing variables */
   }
 
   /* Light Mode */

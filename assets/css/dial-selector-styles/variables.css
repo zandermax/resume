@@ -10,11 +10,16 @@ dial-selector {
   --ds-color-indicator: var(--dial-color-indicator, #f13b3b);
   --ds-cursor: pointer;
 
-  /* Line styling variables */
-  --ds-line-stroke-width: 2;
-  --ds-line-opacity-inactive: 0.4;
-  --ds-line-opacity-active: 0.8;
-  --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
+  /* Internal line styling variables (not part of public API) */
+  --ds-internal-line-stroke-width: 2;
+  --ds-internal-line-opacity-inactive: 0.4;
+  --ds-internal-line-opacity-active: 0.8;
+  --ds-internal-line-transition: opacity 0.3s ease, stroke 0.3s ease;
+
+  /* Public spoke line styling variables */
+  --ds-line-width: var(--ds-internal-line-stroke-width);
+  --ds-line-opacity: var(--ds-internal-line-opacity-inactive);
+  --ds-line-opacity-active: var(--ds-internal-line-opacity-active);
 
   /* Typography variables */
   --ds-font-family: 'IBM Plex Mono', 'Courier New', monospace;
@@ -116,27 +121,13 @@ dial-selector {
   --ds-label-span-hover-font-weight: inherit;
 
   /* Label span active states */
-  --ds-label-span-active-padding: inherit;
-  --ds-label-span-active-padding-block: inherit;
-  --ds-label-span-active-padding-inline: inherit;
-  --ds-label-span-active-border-radius: inherit;
-  --ds-label-span-active-background: transparent;
   --ds-label-span-active-border: none;
-  --ds-label-span-active-border-color: transparent;
-  --ds-label-span-active-color: var(--ds-color-selection);
-  --ds-label-span-active-text-shadow: none;
-  --ds-label-span-active-box-shadow: none;
-  --ds-label-span-active-transform: none;
-  --ds-label-span-active-filter: none;
   --ds-label-span-active-font-weight: inherit;
 
-  /* Spoke line styling */
-  --ds-spoke-stroke: var(--ds-color-line);
-  --ds-spoke-stroke-width: var(--ds-line-stroke-width);
-  --ds-spoke-opacity: var(--ds-line-opacity-inactive);
-  --ds-spoke-transition: var(--ds-line-transition);
-  --ds-spoke-active-opacity: var(--ds-line-opacity-active);
-  --ds-spoke-active-stroke: var(--ds-color-selection);
+  /* Spoke line styling (legacy - kept for backwards compatibility) */
+  --ds-line-stroke: var(--ds-color-line);
+  --ds-line-transition: var(--ds-internal-line-transition);
+  --ds-line-active-stroke: var(--ds-color-selection);
 
   /* KNOB SIZING - Single source of truth */
   --ds-knob-size: 200px; /* Master variable - media queries will override this */
@@ -162,7 +153,7 @@ dial-selector {
   --ds-label-column-height: var(--ds-knob-size);
   --ds-label-vertical-offset-scale: calc(var(--ds-knob-size) * 0.4375); /* 140/320 */
   --ds-horizontal-line-length: calc(var(--ds-knob-size) * 0.5);
-  --ds-max-spoke-length: calc(var(--ds-knob-size) * 0.4);
+  --ds-max-line-length: calc(var(--ds-knob-size) * 0.4);
   --ds-horizontal-line-end-offset: calc(var(--ds-knob-size) * 0.05);
   --ds-hit-area-stroke-width: calc(var(--ds-knob-size) * 0.0625); /* 20/320 */
 

@@ -46,8 +46,6 @@
   --printlink-opacity: 1;
   --printlink-filter: none;
   --printlink-animation: none;
-  --printlink-align-items: center;
-  --printlink-justify-content: center;
   --printlink-cursor: pointer;
 
   /* === PRINT/SAVE BUTTON HOVER STATES === */
@@ -62,13 +60,6 @@
   --printlink-hover-opacity: 1;
   --printlink-hover-background-size: auto;
   --printlink-hover-animation: none;
-
-  /* === PRINT/SAVE BUTTON DARK MODE === */
-  --printlink-dark-background: var(--printlink-background);
-  --printlink-dark-color: var(--printlink-color);
-  --printlink-dark-border: var(--printlink-border);
-  --printlink-dark-hover-background: var(--printlink-hover-background);
-  --printlink-dark-hover-color: var(--printlink-hover-color);
 
   /* === PRINT/SAVE BUTTON RESPONSIVE === */
   --printlink-font-size-responsive-500: var(--printlink-font-size);
@@ -111,10 +102,6 @@
 
   /* === DIAL SELECTOR KNOB === */
   --ds-knob-border: 0;
-  --dial-knob-border-style: solid;
-  --dial-knob-box-shadow: none;
-  --dial-knob-border-radius: 50%;
-
   /* === DIAL SELECTOR LABELS === */
   --ds-label-border-width: 0;
   --ds-label-border-style: solid;
@@ -136,9 +123,8 @@
   --ds-label-font-weight: normal;
 
   /* === DIAL SELECTOR SPOKE LINES === */
-  --ds-spoke-stroke-width: 1px;
-  --ds-spoke-opacity: 1;
-  --ds-spoke-line-stroke-width: 1px;
+  --ds-line-width: 1px;
+  --ds-line-opacity: 1;
 
   /* === DIAL SELECTOR HOVER/ACTIVE STATES === */
   --ds-label-hover-text-shadow: none;

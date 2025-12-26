@@ -30,8 +30,6 @@
 
 .resume-header__savelink {
   display: var(--savelink-display, none); /* Hidden by default, shown only in terminal theme */
-  align-items: var(--printlink-align-items, center);
-  justify-content: var(--printlink-justify-content, center);
   padding: var(--printlink-padding, 0.55rem 1.1rem);
   font-size: var(--printlink-font-size, 0.8rem);
   font-family: var(--printlink-font-family, inherit);
@@ -97,7 +95,6 @@
 #resume-header__printlink {
   display: inline-flex;
   align-items: center;
-  justify-content: var(--printlink-justify-content, center);
   position: var(--printlink-position, relative);
   transition: var(--printlink-transition, none);
   transform: var(--printlink-transform, none);

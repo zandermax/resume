@@ -166,7 +166,7 @@ export const Geometry = {
       this.style.setProperty('--ds-label-column-height', `${this.labelColumnHeight}px`);
       this.style.setProperty('--ds-label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
       this.style.setProperty('--ds-horizontal-line-length', `${this.horizontalLineLength}px`);
-      this.style.setProperty('--ds-max-spoke-length', `${this.maxSpokeLength}px`);
+      this.style.setProperty('--ds-max-line-length', `${this.maxSpokeLength}px`);
       this.style.setProperty('--ds-indicator-width-override', `${this.indicatorWidth}px`);
     }
 

@@ -34,8 +34,8 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-indicator-gradient: var(--accent-color);
     --ds-indicator-border: 3px solid var(--border-color);
 
-    --ds-spoke-line-stroke-width: 4px;
-    --ds-spoke-line-opacity: 0.8;
+    --ds-line-width: 4px;
+    --ds-line-opacity: 0.8;
 
     /* Dial label span properties */
     --ds-label-span-font-size: 0.9rem;
