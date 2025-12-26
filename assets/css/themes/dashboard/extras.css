@@ -1,14 +1,14 @@
 /* ===========================
 DASHBOARD Theme - Extra Features
+Dashboard-specific interactive components
 =========================== */
 
-/* Base typography - system fonts for dashboard aesthetic */
 body[data-theme='dashboard'] {
-  /* Show dashboard-specific elements */
+  /* ==================== VISIBILITY CONTROLS ==================== */
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
 
-  /* Dark mode specific adjustments for dashboard components */
+  /* ==================== DARK MODE ENHANCEMENTS ==================== */
   &[data-mode='dark'] {
     .dashboard-card {
       border-color: var(--panel-border);
@@ -23,7 +23,8 @@ body[data-theme='dashboard'] {
     }
   }
 
-  /* Dashboard Status Banner - System Health Indicator */
+  /* ==================== DASHBOARD STATUS BANNER ==================== */
+  /* System Health Indicator */
   .dashboard-status-banner {
     display: flex;
     align-items: center;
@@ -72,6 +73,8 @@ body[data-theme='dashboard'] {
     background: var(--status-green);
   }
 
+  /* ==================== DASHBOARD METRICS (BANNER) ==================== */
+
   .dashboard-metric {
     display: flex;
     align-items: center;
@@ -101,7 +104,8 @@ body[data-theme='dashboard'] {
     }
   }
 
-  /* Dashboard Metrics Grid - Key Performance Indicators */
+  /* ==================== DASHBOARD METRICS GRID ==================== */
+  /* Key Performance Indicators Cards */
   .dashboard-metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -158,7 +162,9 @@ body[data-theme='dashboard'] {
     line-height: 1;
   }
 
-  /* Years Experience - Animated content */
+  /* ==================== ANIMATED METRIC CARDS ==================== */
+
+  /* Years Experience */
   .years-experience .dashboard-card__value {
     animation: count-years 10s linear infinite;
     counter-set: years-count var(--years-count);
@@ -207,7 +213,8 @@ body[data-theme='dashboard'] {
     opacity: 0.8;
   }
 
-  /* Dashboard Metrics Detail Dialog */
+  /* ==================== DASHBOARD METRICS DIALOG ==================== */
+  /* Detailed metrics modal */
   .dashboard-metrics-dialog {
     border: 2px solid var(--panel-border);
     border-radius: 8px;
@@ -281,10 +288,12 @@ body[data-theme='dashboard'] {
     flex: 1;
   }
 
+  /* Dialog Data Container */
   .dashboard-dialog-data {
     display: none;
   }
 
+  /* Dialog Metric Rows */
   .dashboard-dialog-metric {
     display: flex;
     justify-content: space-between;
@@ -323,6 +332,7 @@ body[data-theme='dashboard'] {
     color: var(--metric-highlight);
   }
 
+  /* Dialog Chart Section */
   .dashboard-dialog-chart {
     margin-block-end: 1.5rem;
     padding: 1.25rem;
@@ -388,6 +398,7 @@ body[data-theme='dashboard'] {
     font-family: var(--mono-font);
   }
 
+  /* Dialog Status Indicator */
   .dashboard-dialog-status {
     display: flex;
     align-items: center;
