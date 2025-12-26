@@ -9,6 +9,7 @@ Flat Design / Material Zero
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
+  --header-background: var(--color-white);
   --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);
@@ -33,6 +34,7 @@ Flat Design / Material Zero
 /* Dark Mode */
 :root[data-theme='metro'][data-mode='dark'] {
   --background-color: oklch(24% 0 0); /* Dark gray */
+  --header-background: oklch(24% 0 0); /* Dark gray */
   --text-color: var(--color-white);
   --heading-color: var(--color-white);
   --border-color: var(--color-cyan-bright);
@@ -62,7 +64,6 @@ Flat Design / Material Zero
 :root[data-theme='metro'] {
   --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
   --background-image: none;
-  --header-background: transparent;
   --section-title-color: var(--color-white);
 
   /* ==================== HEADER ==================== */
@@ -243,6 +244,7 @@ Flat Design / Material Zero
   --main-box-shadow: none;
   --main-padding: 0;
   --main-position: relative;
+  --resume-main-background: var(--background-color);
 
   /* Section spacing - uniform padding across all sections */
   --section-padding-block-start: var(--spacing-xl);
@@ -271,7 +273,6 @@ Flat Design / Material Zero
   /* Header styling */
   --header-border: 0;
   --header-padding: var(--spacing-xl);
-  --header-background: transparent;
   --header-box-shadow: none;
 
   /* Header name greeting/small */
@@ -300,11 +301,13 @@ Flat Design / Material Zero
 body[data-theme='metro'] {
   /* ==================== SECTIONS ==================== */
 
-  .resume-section {
-    &:not(:first-of-type) {
-      border-block-start: var(--border-width-thick) solid var(--border-color);
-    }
-  }
+  /* Sections - only show border between sections (not before first) */
+  --section-border-block-start-width: 0;
+  --section-border-block-start-style: none;
+  --section-not-first-border-block-start-width: var(--border-width-thick);
+  --section-not-first-border-block-start-style: solid;
+  --section-not-first-border-block-start-color: var(--border-color);
+  --resume-section-background: var(--background-color);
 
   /* Rotate through Metro colors for different sections */
   .resume-section:nth-of-type(1) h2.resume-section__title {
@@ -361,20 +364,14 @@ body[data-theme='metro'] {
   /* ==================== SKILLS SECTION ==================== */
 
   /* Skills grid - tile blocks */
-  .skills-grid__group {
-    &:hover {
-      * {
-        color: #ffffff;
-      }
-    }
-  }
+  --skills-group-hover-child-color: #ffffff;
 
   /* ==================== EDUCATION SECTION ==================== */
 
   /* Education - tile style with Metro-colored accent bar */
-  .education-item {
-    border-inline-start: var(--border-width-extra-thick) solid var(--metro-purple);
-  }
+  --education-item-border-inline-start-width: var(--border-width-extra-thick);
+  --education-item-border-inline-start-style: solid;
+  --education-item-border-inline-start-color: var(--metro-purple);
 
   /* ==================== COMMUNITY & PRINCIPLES ==================== */
 
@@ -403,56 +400,39 @@ body[data-theme='metro'] {
   /* ==================== HEADER ==================== */
 
   /* Header - Metro blue accent bar at bottom */
-  .resume-header {
-    border-block-end: var(--border-width-extra-thick) solid var(--metro-blue);
-  }
+  --header-border-width: var(--border-width-extra-thick);
+  --header-border-block-end-color: var(--metro-blue);
 
   /* Align buttons to the start */
-  .resume-header__buttons {
-    justify-content: flex-start;
-  }
+  --header-buttons-justify-content: flex-start;
 
   /* Header greeting/small text - Metro blue, lighter weight */
-  .resume-header__name-greeting,
-  .resume-header__name-small {
-    font-weight: 300;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--metro-blue);
-  }
+  --header-name-greeting-font-weight: 300;
+  --header-name-greeting-letter-spacing: 0;
+  --header-name-greeting-text-transform: none;
+  --header-name-greeting-color: var(--metro-blue);
 
   /* ==================== LINKS ==================== */
 
   /* Flat links */
-  a:not(#resume-header__printlink) {
-    text-decoration: none;
-    font-weight: 600;
-    border-block-end: 2px solid var(--link-color);
-    transition: all 0.15s ease;
-    position: relative;
-
-    &:hover {
-      background: var(--link-color);
-      color: #ffffff;
-      border-block-end-color: var(--link-color);
-    }
-
-    &:visited {
-      border-block-end-color: var(--link-visited-color);
-
-      &:hover {
-        background: var(--link-visited-color);
-        color: #ffffff;
-      }
-    }
-  }
+  --link-text-decoration: none;
+  --link-font-weight: 600;
+  --link-border-block-end: 2px solid var(--link-color);
+  --link-border-block-end-color: var(--link-color);
+  --link-transition: all 0.15s ease;
+  --link-position: relative;
+  --link-hover-background: var(--link-color);
+  --link-hover-color: #ffffff;
+  --link-hover-border-block-end-color: var(--link-color);
+  --link-visited-border-block-end-color: var(--link-visited-color);
+  --link-visited-hover-background: var(--link-visited-color);
+  --link-visited-hover-color: #ffffff;
+  --link-visited-hover-border-block-end-color: var(--link-visited-color);
 
   /* ==================== DIAL SELECTOR ==================== */
 
   /* Dial selector housing h3 - uppercase with tight letter-spacing */
-  .resume-header__dial-selector h3 {
-    color: var(--text-color);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
+  --dial-selector-housing-h3-color: var(--text-color);
+  --dial-selector-housing-h3-text-transform: uppercase;
+  --dial-selector-housing-h3-letter-spacing: 0.08em;
 }

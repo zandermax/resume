@@ -42,6 +42,7 @@
   --header-border-style: solid;
   --header-border-width: 3px;
   --header-border-block-end: none;
+  --header-border-block-end-color: var(--border-color);
   --header-padding: unset; /* 0 default */
   --header-padding-inline-start: 0;
   --header-padding-inline-end: 0;
@@ -56,6 +57,11 @@
   --header-padding-responsive-500: var(--header-padding);
   --header-link-color: inherit;
   --header-link-hover-color: inherit;
+  --header-buttons-justify-content: center;
+  --header-name-greeting-font-weight: normal;
+  --header-name-greeting-letter-spacing: 0.12em;
+  --header-name-greeting-text-transform: uppercase;
+  --header-name-greeting-color: inherit;
 
   /* === HEADER BUTTONS === */
   --header-buttons-flex-direction: row;
@@ -170,6 +176,12 @@
   --section-padding-inline-end: 0;
   --section-padding-block-start: 0;
   --section-padding-block-end: 0;
+  --section-border-block-start-width: 1px;
+  --section-border-block-start-style: solid;
+  --section-border-block-start-color: var(--border-color);
+  --section-not-first-border-block-start-width: 0;
+  --section-not-first-border-block-start-style: none;
+  --section-not-first-border-block-start-color: transparent;
   --section-border-block-end: none;
   --section-padding-responsive-768: unset;
   --section-padding-responsive-500: unset;

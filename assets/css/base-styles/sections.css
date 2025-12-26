@@ -25,7 +25,15 @@
   padding-inline-end: var(--section-padding-inline-end, 0);
   padding-block-start: var(--section-padding-block-start, 0);
   padding-block-end: var(--section-padding-block-end, 0);
-  border-block-start: 1px solid var(--border-color);
+  border-block-start: var(--section-border-block-start-width, 1px) var(--section-border-block-start-style, solid)
+    var(--section-border-block-start-color, var(--border-color));
+  background: var(--resume-section-background);
+
+  &:not(:first-of-type) {
+    border-block-start: var(--section-not-first-border-block-start-width, 0)
+      var(--section-not-first-border-block-start-style, none)
+      var(--section-not-first-border-block-start-color, transparent);
+  }
 }
 
 .resume-section--summary {

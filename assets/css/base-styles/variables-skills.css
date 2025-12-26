@@ -64,6 +64,7 @@
   --skills-group-hover-transform: none;
   --skills-group-hover-box-shadow: none;
   --skills-group-hover-background: none;
+  --skills-group-hover-child-color: inherit;
 
   /* === SKILLS TITLE === */
   --skills-title-border-style: none;

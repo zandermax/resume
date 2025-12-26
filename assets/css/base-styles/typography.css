@@ -89,8 +89,10 @@ h1.resume-header__name {
 .resume-header__name-small {
   font-size: var(--header-name-greeting-font-size, 1.2rem);
   line-height: var(--header-name-greeting-line-height, normal);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: var(--header-name-greeting-font-weight, normal);
+  letter-spacing: var(--header-name-greeting-letter-spacing, 0.12em);
+  text-transform: var(--header-name-greeting-text-transform, uppercase);
+  color: var(--header-name-greeting-color, inherit);
 }
 
 .resume-header__name-greeting {
@@ -224,6 +226,13 @@ a:not(#resume-header__printlink) {
 
   &:visited {
     color: var(--link-visited-color, inherit);
+    border-block-end-color: var(--link-visited-border-block-end-color, var(--link-border-block-end-color, transparent));
+
+    &:hover {
+      background: var(--link-visited-hover-background, var(--link-hover-background));
+      color: var(--link-visited-hover-color, var(--link-hover-color));
+      border-block-end-color: var(--link-visited-hover-border-block-end-color, var(--link-visited-border-block-end-color, var(--link-hover-border-block-end-color)));
+    }
   }
 
   &:hover {

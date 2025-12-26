@@ -22,6 +22,9 @@
 :root {
   /* === EDUCATION ITEM CONTAINER === */
   --education-item-border: 0;
+  --education-item-border-inline-start-width: 0;
+  --education-item-border-inline-start-style: none;
+  --education-item-border-inline-start-color: transparent;
   --education-item-background: transparent;
   --education-item-box-shadow: none;
   --education-item-padding: 0;

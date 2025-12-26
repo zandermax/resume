@@ -68,6 +68,10 @@
     transform: var(--skills-group-hover-transform, var(--skills-group-transform, none));
     box-shadow: var(--skills-group-hover-box-shadow, var(--skills-group-box-shadow, none));
     background: var(--skills-group-hover-background, var(--skills-group-background, transparent));
+
+    * {
+      color: var(--skills-group-hover-child-color, inherit);
+    }
   }
 }
 

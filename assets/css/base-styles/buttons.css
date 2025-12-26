@@ -22,7 +22,7 @@
   flex-direction: var(--header-buttons-flex-direction, row);
   gap: var(--header-buttons-gap, 1rem);
   align-items: center;
-  justify-content: center;
+  justify-content: var(--header-buttons-justify-content, center);
 }
 
 /* === BASE BUTTON STYLES === */
