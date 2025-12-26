@@ -141,10 +141,12 @@ export class DialSelector extends HTMLElement {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           this.classList.add('no-transitions');
+          this.classList.add('calculating-layout');
           this.updateDimensions();
           this.updateLines();
           requestAnimationFrame(() => {
             this.classList.remove('no-transitions');
+            this.classList.remove('calculating-layout');
           });
         });
       });
