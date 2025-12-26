@@ -1,14 +1,17 @@
 /* ===========================
 CRT Theme - Extra Features
+CRT-specific interactive components
 =========================== */
 
 body[data-theme='crt'] {
-  /* Main container - using custom properties */
+  /* ==================== MAIN CONTAINER ==================== */
+
   .resume__main {
     background: var(--background-color);
   }
 
-  /* Terminal command log */
+  /* ==================== TERMINAL LOG ==================== */
+  /* Animated command log display */
   .terminal-log {
     margin-block-start: 1.5rem;
     padding: 1rem;
@@ -64,15 +67,14 @@ body[data-theme='crt'] {
     will-change: opacity;
   }
 
+  /* ==================== DIAL SELECTOR ==================== */
+
   .resume-header__dial-selector {
     padding-block: 1rem;
     border: 1px solid currentColor;
   }
 
-  /* Section titles - using custom properties */
-  /* Skills grid - using custom properties */
-
-  /* Experience items - using custom properties */
+  /* ==================== EXPERIENCE ITEMS ==================== */
   .experience-item {
     border-block-start: 1px solid currentColor;
 
@@ -81,7 +83,7 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Community and principles lists - using custom properties */
+  /* ==================== COMMUNITY & PRINCIPLES LISTS ==================== */
   .community-list__item,
   .principles-list__item {
     border-block-start: var(--list-item-border-width) var(--list-item-border-style) currentColor;
@@ -91,14 +93,15 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Print button always has glowing CRT styling */
+  /* ==================== PRINT BUTTON ==================== */
   #resume-header__printlink {
     border-width: 3px;
     box-shadow: 0 0 20px currentColor, inset 0 0 10px var(--crt-glow);
     text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
   }
 
-  /* CRT Terminal Log Dialog */
+  /* ==================== CRT TERMINAL DIALOG ==================== */
+  /* Full-screen terminal log viewer */
   .crt-terminal-dialog {
     max-width: 90vw;
     max-height: 90vh;
@@ -127,6 +130,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Container */
   .crt-terminal-dialog__container {
     display: flex;
     flex-direction: column;
@@ -151,6 +155,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Header */
   .crt-terminal-dialog__header {
     display: flex;
     justify-content: space-between;
@@ -170,6 +175,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Title */
   .crt-terminal-dialog__title {
     font-family: var(--font-family);
     font-size: 1rem;
@@ -186,6 +192,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Close Button */
   .crt-terminal-dialog__close {
     background: transparent;
     border: 2px solid var(--background-color);
@@ -213,6 +220,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Content */
   .crt-terminal-dialog__content {
     padding: 1.5rem;
     overflow-y: auto;
@@ -235,6 +243,7 @@ body[data-theme='crt'] {
     }
   }
 
+  /* Dialog Line (text) */
   .crt-terminal-dialog__line {
     margin-block-end: 0.5rem;
     white-space: pre-wrap;
@@ -242,6 +251,7 @@ body[data-theme='crt'] {
     animation: crt-line-fade-in 0.3s ease-out;
   }
 
+  /* Dialog Cursor */
   .crt-terminal-dialog__cursor {
     display: inline-block;
     background: currentColor;
