@@ -87,7 +87,7 @@
   margin: var(--skills-title-margin, 0);
   margin-block-end: var(--skills-title-margin-bottom, 0.3rem);
   text-shadow: var(--skills-title-text-shadow, none);
-  display: var(--skills-title-display, block);
+  display: block;
   align-items: var(--skills-title-align-items, normal);
   gap: var(--skills-title-gap, normal);
 
@@ -109,4 +109,3 @@
   line-height: var(--skills-items-line-height, 1.4);
   font-family: var(--skills-items-font-family, inherit);
 }
-

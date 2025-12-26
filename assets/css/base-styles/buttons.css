@@ -42,7 +42,8 @@
   text-shadow: var(--printlink-text-shadow, none);
   white-space: nowrap;
   cursor: var(--printlink-cursor, pointer);
-  margin-block: 1rem;
+  margin-block-start: 1rem;
+  margin-block-end: var(--printlink-margin-block-end, 1rem);
   border: var(
     --printlink-border,
     var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color)

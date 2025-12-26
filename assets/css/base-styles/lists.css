@@ -52,8 +52,8 @@
   &::before {
     content: var(--list-item-before-content);
     position: var(--list-item-before-position);
-    left: var(--list-item-before-left);
-    top: var(--list-item-before-top);
+    left: var(--community-item-before-left);
+    top: var(--community-item-before-top);
     color: var(--list-item-before-color);
     font-weight: var(--list-item-before-font-weight);
     font-size: var(--list-item-before-font-size);

@@ -1,0 +1,67 @@
+/* ===========================
+CRT Theme - Dial Selector Styles
+=========================== */
+
+/* Common dial-selector properties */
+:root[data-theme='crt'] {
+  dial-selector {
+    --ds-knob-border: 2px;
+    --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+    --ds-indicator-box-shadow: 0 0 10px currentColor;
+    --ds-label-border-width: 1px;
+    --ds-label-border-style: solid;
+    --ds-label-font-size--tablet: 0.75rem;
+    --ds-label-font-size--phone: 0.7rem;
+    --ds-label-font-size--phone-sm: 0.7rem;
+    --ds-label-font-size--xs: 0.65rem;
+    --ds-label-padding: 0.4rem 0.8rem;
+    --ds-label-active-span-padding-block: 0.4rem;
+    --ds-label-active-span-padding-inline: 0.6rem;
+    --ds-label-active-span-padding-block--tablet: 0.35rem;
+    --ds-label-active-span-padding-inline--tablet: 0.4rem;
+    --ds-label-active-span-padding-block--phone: 0.2rem;
+    --ds-label-active-span-padding-inline--phone: 0.25rem;
+    --ds-spoke-stroke-width: 1px;
+    --ds-spoke-opacity: 0.5;
+
+    /* Dial label hover properties */
+    --ds-label-hover-text-shadow: 0 0 10px currentColor;
+    --ds-label-hover-border-color: currentColor;
+    --ds-label-hover-color: var(--dial-color-ink);
+    --ds-label-hover-padding: 0rem 0.5rem;
+
+    /* Dial selector knob styling */
+    --ds-knob-box-shadow: var(--dial-knob-box-shadow);
+
+    /* Dial selector indicator styling */
+    --ds-indicator-gradient: currentColor;
+
+    /* Dial selector label active state */
+    --ds-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+    --ds-label-span-active-font-weight: bold;
+    --ds-label-span-active-border: 2px solid currentColor;
+    --ds-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+
+    /* Dial selector spoke lines */
+    --ds-spoke-stroke-width: var(--ds-spoke-stroke-width);
+    --ds-spoke-opacity: var(--ds-spoke-opacity);
+  }
+
+  /* Light Mode */
+  &[data-mode='light'] {
+    --dial-color-ink: oklch(20% 0.08 60);
+    --dial-color-selection: oklch(20% 0.08 60);
+    --dial-color-indicator: oklch(20% 0.08 60);
+    --ds-knob-background: oklch(82% 0.18 52); /* Lighter amber */
+    --ds-label-font-size: 0.85rem;
+  }
+
+  /* Dark Mode */
+  &[data-mode='dark'] {
+    --dial-color-ink: var(--color-green);
+    --dial-color-selection: var(--color-green);
+    --dial-color-indicator: var(--color-green);
+    --ds-knob-background: oklch(5% 0.02 142); /* Dark green tint */
+    --ds-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  }
+}

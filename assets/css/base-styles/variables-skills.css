@@ -22,6 +22,9 @@
 
 :root {
   /* === SKILLS GRID CONTAINER === */
+  --skills-grid-display: block;
+  --skills-grid-grid-template-columns: none;
+  --skills-grid-grid-template-columns-responsive-768: none;
   --skills-grid-border: 0;
   --skills-grid-background: transparent;
   --skills-grid-box-shadow: none;
@@ -73,7 +76,6 @@
   --skills-title-font-size: 0.9rem;
   --skills-title-color: inherit;
   --skills-title-text-shadow: none;
-  --skills-title-display: block;
   --skills-title-text-transform: uppercase;
   --skills-title-letter-spacing: 0.14em;
   --skills-title-line-height: normal;
@@ -92,4 +94,3 @@
   --skills-items-line-height: 1.4;
   --skills-items-font-family: inherit;
 }
-

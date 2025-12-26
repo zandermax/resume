@@ -34,8 +34,6 @@
   --main-box-shadow: none;
   --main-padding: 2.5rem 2.25rem;
   --main-border-radius: 0;
-  --main-padding-responsive-768: var(--main-padding);
-  --main-padding-responsive-500: var(--main-padding);
   --main-background-image: none;
   --main-position: relative;
   --main-transform: none;
@@ -43,6 +41,7 @@
   /* === RESUME HEADER === */
   --header-border-style: solid;
   --header-border-width: 3px;
+  --header-border-block-end: none;
   --header-padding: unset; /* 0 default */
   --header-padding-inline-start: 0;
   --header-padding-inline-end: 0;
@@ -166,13 +165,18 @@
   --section-text-margin-block-end: 0.9rem;
 
   /* === SECTION CONTAINER === */
+  --section-margin: 0 0 1.75rem 0;
   --section-padding-inline-start: 0;
   --section-padding-inline-end: 0;
   --section-padding-block-start: 0;
   --section-padding-block-end: 0;
+  --section-border-block-end: none;
+  --section-padding-responsive-768: unset;
+  --section-padding-responsive-500: unset;
 
   /* === SECTION CONTENT === */
   --section-content-padding-inline: 0;
+  --section-content-margin-block-start: 0;
 
   /* === RESUME HEADER ROLE === */
   --header-role-order: 3;

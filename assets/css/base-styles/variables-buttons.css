@@ -29,6 +29,7 @@
   --printlink-border: none;
   --printlink-border-radius: 0;
   --printlink-padding: 0.5rem 1rem;
+  --printlink-margin-block-end: 1rem;
   --printlink-font-size: 0.8rem;
   --printlink-font-family: inherit;
   --printlink-font-weight: normal;
@@ -109,11 +110,10 @@
   --ds-knob-background: var(--color-dark-knob);
 
   /* === DIAL SELECTOR KNOB === */
-  --dial-knob-border-width: 0;
+  --ds-knob-border: 0;
   --dial-knob-border-style: solid;
   --dial-knob-box-shadow: none;
   --dial-knob-border-radius: 50%;
-  --dial-knob-border: none;
 
   /* === DIAL SELECTOR LABELS === */
   --ds-label-border-width: 0;

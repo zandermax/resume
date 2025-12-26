@@ -1,0 +1,104 @@
+/* ===========================
+DASHBOARD Theme - Animations
+=========================== */
+
+@keyframes pulse-status {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--status-green);
+  }
+  50% {
+    box-shadow: 0 0 0 4px transparent;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Animated Dashboard Metrics - Simplified with CSS @property */
+@property --years-count {
+  syntax: '<integer>';
+  initial-value: 8;
+  inherits: false;
+}
+
+@property --projects-count {
+  syntax: '<integer>';
+  initial-value: 43;
+  inherits: false;
+}
+
+@property --technologies-count {
+  syntax: '<integer>';
+  initial-value: 22;
+  inherits: false;
+}
+
+@property --processes-count {
+  syntax: '<integer>';
+  initial-value: 7;
+  inherits: false;
+}
+
+/* Animation keyframes */
+@keyframes count-years {
+  from {
+    --years-count: 8;
+  }
+  to {
+    --years-count: 9;
+  }
+}
+
+@keyframes count-projects {
+  from {
+    --projects-count: 43;
+  }
+  to {
+    --projects-count: 65;
+  }
+}
+
+@keyframes count-technologies {
+  from {
+    --technologies-count: 22;
+  }
+  to {
+    --technologies-count: 30;
+  }
+}
+
+@keyframes count-processes {
+  0%,
+  100% {
+    --processes-count: 8;
+  }
+  25% {
+    --processes-count: 9;
+  }
+  50% {
+    --processes-count: 7;
+  }
+  75% {
+    --processes-count: 10;
+  }
+}
+
+@keyframes quality-cycle {
+  0%,
+  49% {
+    content: 'A+';
+  }
+  50%,
+  100% {
+    content: 'A++';
+  }
+}
+

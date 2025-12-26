@@ -68,6 +68,10 @@
   --list-item-before-font-weight: normal;
   --list-item-before-font-size: inherit;
 
+  /* === COMMUNITY ITEM PSEUDO-ELEMENT (specific positioning) === */
+  --community-item-before-left: var(--list-item-before-left);
+  --community-item-before-top: var(--list-item-before-top);
+
   /* === LIST ITEM HOVER STATES === */
   --list-item-hover-transform: none;
   --list-item-hover-box-shadow: none;

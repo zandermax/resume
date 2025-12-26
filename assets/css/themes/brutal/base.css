@@ -2,7 +2,6 @@
 BRUTAL Theme - Maximum Brutalism
 =========================== */
 
-/* Common properties for all modes */
 :root[data-theme='brutal'] {
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -323,5 +322,3 @@ BRUTAL Theme - Maximum Brutalism
     --main-box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
   }
 }
-
-/* All styling controlled by custom properties */

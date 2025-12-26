@@ -36,6 +36,15 @@
   --experience-item-transform: none;
   --experience-item-transition: none;
 
+  /* === EXPERIENCE ITEM HEADER === */
+  --experience-item-header-display: block;
+  --experience-item-header-justify-content: normal;
+  --experience-item-header-align-items: normal;
+  --experience-item-header-margin-block-end: 0;
+  --experience-item-header-gap: normal;
+  --experience-item-header-flex-direction-responsive-768: unset;
+  --experience-item-header-align-items-responsive-768: unset;
+
   /* === EXPERIENCE ITEM HOVER STATES === */
   --experience-item-hover-transform: none;
   --experience-item-hover-box-shadow: none;

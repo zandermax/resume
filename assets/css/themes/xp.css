@@ -252,8 +252,8 @@ Windows XP Theme (Luna)
 
   dial-selector {
     /* Dial selector knob (XP specific 3D effect) */
-    --dial-knob-border-radius: 50%;
-    --dial-knob-border: 3px solid var(--xp-button-shadow);
+    --ds-knob-border-radius: 50%;
+    --ds-knob-border: 3px solid var(--xp-button-shadow);
     --dial-knob-box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
       inset 0 0 20px var(--xp-white-20);
 

@@ -1,0 +1,294 @@
+/* ===========================
+DASHBOARD Theme - Base Styles
+Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='dashboard'] {
+  --font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono-font: 'SF Mono', 'Monaco', 'Courier New', monospace;
+
+  /* Body typography */
+  --body-font-weight: 400;
+  --body-letter-spacing: 0;
+
+  /* Consolidated box-shadow patterns */
+  --dashboard-shadow-sm: 0 1px 3px var(--panel-shadow);
+  --dashboard-shadow-md: 0 2px 8px var(--panel-shadow);
+  --dashboard-shadow-lg: 0 4px 12px var(--panel-shadow);
+
+  /* Border radius for main container and header */
+  --header-border-radius: 8px;
+  --main-border-radius: 8px;
+
+  /* Experience item custom properties */
+  --experience-item-border: var(--border-width-thin) solid var(--panel-border);
+  --experience-item-background: var(--panel-bg);
+  --experience-item-border-radius: 6px;
+  --experience-item-padding: var(--spacing-md);
+  --experience-item-margin-top: var(--spacing-md);
+  --experience-item-box-shadow: var(--dashboard-shadow-sm);
+  --experience-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Skills grid group custom properties */
+  --skills-group-margin-bottom: var(--spacing-xs);
+  --skills-group-border: var(--border-width-thin) solid var(--panel-border);
+  --skills-group-padding: var(--spacing-md);
+  --skills-group-background: var(--panel-bg);
+  --skills-group-border-radius: 6px;
+  --skills-group-margin: var(--spacing-xs);
+  --skills-group-box-shadow: var(--dashboard-shadow-sm);
+  --skills-group-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --skills-group-hover-transform: translateY(-2px);
+  --skills-group-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Skills grid title custom properties */
+  --skills-title-font-size: var(--spacing-sm);
+  --skills-title-border-style: solid;
+  --skills-title-border-width: var(--border-width-thin);
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
+  --skills-title-font-weight: 600;
+  --skills-title-color: var(--accent-color);
+  --skills-title-letter-spacing: 0.1em;
+  --skills-title-align-items: center;
+  --skills-title-gap: 0.5rem;
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 500;
+  --experience-company-font-size: var(--font-size-md);
+
+  /* Skills grid custom properties */
+  --skills-grid-padding: 0;
+
+  /* Skills grid items custom properties */
+  --skills-items-font-size: var(--font-size-sm);
+  --skills-items-line-height: 1.6;
+  --skills-items-font-family: var(--mono-font);
+
+  /* Experience item title custom properties */
+  --experience-title-font-weight: 600;
+  --experience-title-font-size: var(--spacing-md);
+  --experience-title-color: var(--text-color);
+
+  /* Experience item duration custom properties */
+  --experience-duration-font-family: var(--mono-font);
+  --experience-duration-font-size: 0.8rem;
+  --experience-duration-color: var(--text-color);
+  --experience-duration-opacity: 0.7;
+
+  /* Experience item description custom properties */
+  --experience-description-line-height: 1.6;
+  --experience-description-color: var(--text-color);
+
+  /* Header meta custom properties */
+  --header-meta-font-family: var(--mono-font);
+  --header-meta-font-size: var(--font-size-sm);
+  --header-meta-opacity: 0.85;
+
+  /* Header name custom properties */
+  --header-name-font-weight: 700;
+  --header-name-letter-spacing: -0.02em;
+
+  /* Section title custom properties */
+  --section-title-padding: var(--spacing-md) var(--spacing-xl);
+  --section-title-margin: 0;
+  --section-title-background: var(--panel-bg);
+  --section-title-color: var(--text-color);
+  --section-title-text-transform: uppercase;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 0.9rem;
+  --section-title-letter-spacing: 0.1em;
+
+  /* Section content custom properties */
+  --section-margin: 0;
+  --section-padding-inline-start: var(--spacing-xl);
+  --section-padding-inline-end: var(--spacing-xl);
+  --section-padding-block-start: var(--spacing-xl);
+  --section-padding-block-end: var(--spacing-lg);
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
+  --section-title-line-height: 1;
+  --section-title-display: flex;
+  --section-title-border-inline-start: 4px solid var(--accent-color);
+  --section-title-border-block-end: 1px solid var(--panel-border);
+  --section-title-align-items: center;
+  --section-title-gap: 0.75rem;
+
+  /* Print link custom properties */
+  --printlink-border: var(--border-width-normal) solid var(--accent-color);
+  --printlink-background: var(--accent-color);
+  --printlink-color: #ffffff;
+  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+  --printlink-border-radius: 6px;
+  --printlink-font-size: 0.9rem;
+  --printlink-font-weight: 700;
+  --printlink-text-transform: uppercase;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-transition: all 0.2s ease;
+  --printlink-box-shadow: var(--dashboard-shadow-md), 0 0 0 0 var(--accent-color);
+  --printlink-hover-transform: translateY(-3px);
+  --printlink-hover-shadow: var(--dashboard-shadow-lg), 0 0 20px var(--accent-color);
+  --printlink-hover-border-color: var(--accent-color);
+  --printlink-hover-background: var(--accent-color);
+  --printlink-hover-color: #ffffff;
+  --printlink-hover-opacity: 0.9;
+
+  /* Principles list item custom properties */
+  --principles-item-border: 1px solid var(--panel-border);
+  --principles-item-background: var(--panel-bg);
+  --principles-item-border-radius: 6px;
+  --principles-item-padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  --principles-item-margin-top: var(--spacing-sm);
+  --principles-item-box-shadow: var(--dashboard-shadow-sm);
+  --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Section title pseudo-element */
+  --section-title-before-content: '●';
+  --section-title-before-display: inline;
+  --section-title-before-color: var(--status-green);
+  --section-title-before-font-size: 0.75rem;
+  --section-title-before-animation: pulse-dot 3s ease-in-out infinite;
+  --section-title-before-will-change: opacity;
+
+  /* Skills title pseudo-element */
+  --skills-title-before-content: '▸';
+  --skills-title-before-display: inline;
+  --skills-title-before-color: var(--status-green);
+  --skills-title-before-font-size: 0.875rem;
+
+  /* Experience item hover */
+  --experience-item-hover-transform: translateX(4px);
+  --experience-item-hover-box-shadow: var(--dashboard-shadow-md);
+  --experience-item-hover-border-color: var(--accent-color);
+
+  /* Experience item before pseudo-element */
+  --experience-item-before-content: '';
+  --experience-item-before-display: block;
+  --experience-item-before-position: absolute;
+  --experience-item-before-inset: 0 auto 0 0;
+  --experience-item-before-width: 3px;
+  --experience-item-before-background: var(--accent-color);
+  --experience-item-before-border-radius: 6px 0 0 6px;
+  --experience-item-before-opacity: 0;
+  --experience-item-before-transition: opacity 0.2s ease;
+  --experience-item-before-hover-opacity: 1;
+
+  /* Experience duration pseudo-element */
+  --experience-duration-before-content: '◷ ';
+  --experience-duration-before-opacity: 0.5;
+
+  /* Link hover extended */
+  --link-hover-border-block-end-color: var(--link-color);
+  --link-hover-color: var(--accent-color);
+
+  /* Principles/Community list item pseudo-element */
+  --list-item-before-content: '✓';
+  --list-item-before-position: absolute;
+  --list-item-before-left: 0.1rem;
+  --list-item-before-top: 0.75rem;
+  --list-item-before-color: var(--status-green);
+  --list-item-before-font-weight: 700;
+  --list-item-before-font-size: 1rem;
+
+  /* Community list item specific positioning */
+  --community-item-before-left: -0.25rem;
+  --community-item-before-top: 0.5rem;
+
+  /* Principles/Community list item hover */
+  --list-item-hover-transform: translateX(4px);
+  --list-item-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Education item hover */
+  --education-item-hover-transform: translateX(4px);
+  --education-item-hover-box-shadow: var(--dashboard-shadow-md);
+
+  /* Education item transition */
+  --education-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Resume main container custom properties */
+  --main-border: 1px solid var(--panel-border);
+  --main-border-radius: 8px;
+  --main-box-shadow: var(--dashboard-shadow-lg), 0 0 0 1px var(--panel-border);
+  --main-background: var(--panel-bg);
+  --main-padding: 0;
+  --main-position: relative;
+
+  /* Section title pseudo-element custom properties */
+  --section-title-before-text-shadow: none;
+  --section-title-before-text-shadow-dark: 0 0 8px var(--status-green);
+
+  /* Resume section custom properties */
+  --section-border-block-end: 1px solid var(--panel-border);
+  --section-padding-responsive-768: 1.5rem 1.5rem 1rem;
+  --section-padding-responsive-500: 1.25rem 1.25rem 1rem;
+
+  /* Resume section content custom properties */
+  --section-content-margin-block-start: 1em;
+
+  /* Resume header custom properties */
+  --header-background: var(--panel-bg);
+  --header-border-block-end: 2px solid var(--panel-border);
+  --header-padding: 1.5rem;
+  --header-box-shadow: var(--dashboard-shadow-sm);
+
+  /* Header meta (contact/location/links) custom properties */
+  --header-meta-font-family: var(--mono-font);
+  --header-meta-font-size: 0.85rem;
+
+  /* Skills grid custom properties */
+  --skills-grid-display: grid;
+  --skills-grid-grid-template-columns: repeat(2, minmax(0, 1fr));
+  --skills-grid-grid-template-columns-responsive-768: 1fr;
+
+  /* Experience item header custom properties */
+  --experience-item-header-display: flex;
+  --experience-item-header-justify-content: space-between;
+  --experience-item-header-align-items: flex-start;
+  --experience-item-header-margin-block-end: 0.75rem;
+  --experience-item-header-gap: 1rem;
+  --experience-item-header-flex-direction-responsive-768: column;
+  --experience-item-header-align-items-responsive-768: flex-start;
+
+  @media (max-width: 768px) {
+    --section-title-padding: var(--spacing-md) var(--spacing-lg);
+    --section-padding-inline-start: var(--spacing-md);
+  }
+}
+
+/* Light Mode */
+:root[data-theme='dashboard'][data-mode='light'] {
+  --background-color: oklch(97% 0.005 245);
+  --text-color: oklch(20% 0 0);
+  --heading-color: oklch(20% 0 0);
+  --border-color: oklch(92% 0.005 245);
+  --link-color: var(--color-blue-dashboard);
+  --link-visited-color: oklch(37% 0.25 260);
+  --accent-color: var(--color-blue-dashboard);
+  --panel-bg: var(--color-white);
+  --panel-border: oklch(92% 0.005 245);
+  --status-green: var(--color-green-success);
+  --status-yellow: var(--color-yellow-bright);
+  --status-red: var(--color-red-dark);
+  --metric-highlight: var(--color-blue-dashboard);
+  --panel-shadow: oklch(0% 0 0 / 0.08);
+}
+
+/* Dark Mode */
+:root[data-theme='dashboard'][data-mode='dark'] {
+  --background-color: var(--color-dark-surface);
+  --text-color: oklch(93% 0.005 245);
+  --heading-color: oklch(93% 0.005 245);
+  --border-color: var(--color-dark-border);
+  --link-color: var(--color-blue-bright);
+  --link-visited-color: oklch(72% 0.1 240);
+  --accent-color: var(--color-blue-bright);
+  --panel-bg: oklch(17% 0.01 240);
+  --panel-border: var(--color-dark-border);
+  --status-green: oklch(67% 0.17 150);
+  --status-yellow: oklch(74% 0.14 75);
+  --status-red: oklch(68% 0.21 25);
+  --metric-highlight: var(--color-blue-bright);
+  --panel-shadow: oklch(0% 0 0 / 0.3);
+}

@@ -105,22 +105,6 @@ Terminal Theme (1992 CLI-inspired)
   --experience-bullets-li-line-height: 1.6;
   --experience-bullets-li-margin-block-end: 0.5rem;
 
-  --dial-knob-border-width: 0;
-  --ds-indicator-box-shadow: none;
-  --ds-indicator-width-override: 10px;
-  --ds-label-padding: 0.4rem 0.8rem;
-  --ds-label-active-span-padding-block: 0.25rem;
-  --ds-label-active-span-padding-inline: 0.3rem;
-  --ds-label-active-span-padding-block--tablet: 0.2rem;
-  --ds-label-active-span-padding-inline--tablet: 0.6rem;
-  --ds-label-active-span-padding-block--phone: 0.2rem;
-  --ds-label-active-span-padding-inline--phone: 0.55rem;
-  --ds-label-font-size--tablet: 0.75rem;
-  --ds-label-font-size--phone: 0.7rem;
-  --ds-label-font-size--phone-sm: 0.7rem;
-  --ds-label-font-size--xs: 0.65rem;
-  --ds-spoke-stroke-width: 2px;
-
   /* Typography adjustments */
   --heading-letter-spacing: 0.05em;
   --body-text-letter-spacing: 0;
@@ -130,20 +114,6 @@ Terminal Theme (1992 CLI-inspired)
   --printlink-active-box-shadow-override: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
     inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
   --printlink-active-transform-override: translate(1px, 1px);
-
-  /* Dial selector hover/active states */
-  --ds-label-hover-color: var(--dial-color-ink);
-  --ds-label-hover-background: var(--terminal-button-bg);
-  --ds-label-hover-padding: 0rem 0.5rem;
-  --ds-label-hover-box-shadow: var(--terminal-inset-raised-sm);
-  --ds-label-active-background: var(--terminal-title-bg);
-  --ds-label-active-box-shadow: var(--terminal-inset-sunken-sm);
-  --ds-label-active-color: var(--dial-color-selection);
-
-  /* Dial selector knob styling */
-  --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
-  --ds-knob-border-radius: 0;
-  --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
 
   /* Education and experience styling */
   --experience-item-position: relative;
@@ -186,56 +156,86 @@ Terminal Theme (1992 CLI-inspired)
   --header-name-small-line-height: 1.6;
   --p-li-font-size: 0.95rem;
   --p-li-line-height: 1.6;
-}
 
-/* Light Mode */
-:root[data-theme='terminal'][data-mode='light'] {
-  --background-color: var(--color-blue-sky);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-black);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-yellow);
-  --dial-color-indicator: var(--color-yellow);
-  --ds-knob-background: var(--color-silver);
-  --link-color: var(--color-yellow);
-  --link-visited-color: var(--color-cyan);
-  --section-bg: var(--color-silver);
-  --header-background: var(--color-gray-light);
-  --terminal-border-light: var(--color-white);
-  --terminal-border-dark: var(--color-black);
-  --terminal-window-bg: var(--color-silver);
-  --terminal-title-bg: var(--color-blue-navy);
-  --terminal-button-bg: var(--color-silver);
-  --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
-}
+  &[data-mode='light'] {
+    --background-color: var(--color-blue-sky);
+    --text-color: var(--color-black);
+    --heading-color: var(--color-black);
+    --dial-color-ink: var(--color-black);
+    --dial-color-selection: var(--color-yellow);
+    --dial-color-indicator: var(--color-yellow);
+    --ds-knob-background: var(--color-silver);
+    --link-color: var(--color-yellow);
+    --link-visited-color: var(--color-cyan);
+    --section-bg: var(--color-silver);
+    --header-background: var(--color-gray-light);
+    --terminal-border-light: var(--color-white);
+    --terminal-border-dark: var(--color-black);
+    --terminal-window-bg: var(--color-silver);
+    --terminal-title-bg: var(--color-blue-navy);
+    --terminal-button-bg: var(--color-silver);
+    --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
+  }
 
-/* Dark Mode */
-:root[data-theme='terminal'][data-mode='dark'] {
-  --background-color: var(--color-blue-navy);
-  --text-color: var(--color-white);
-  --heading-color: var(--color-white);
-  --dial-color-ink: var(--color-gray-light);
-  --dial-color-selection: var(--color-cyan);
-  --dial-color-indicator: var(--color-cyan);
-  --ds-knob-background: oklch(38% 0 0);
-  --link-color: var(--color-cyan);
-  --link-visited-color: var(--color-yellow);
-  --section-bg: var(--color-blue-navy);
-  --header-background: var(--color-blue-navy);
-  --accent-color: var(--color-cyan);
-  --terminal-border-light: oklch(45% 0.22 264);
-  --terminal-border-dark: oklch(8% 0.08 264);
-  --terminal-window-bg: var(--color-blue-navy);
-  --terminal-title-bg: var(--color-blue-navy);
-  --terminal-button-bg: oklch(28% 0.16 264);
-  --terminal-shadow: 2px 2px 0 var(--color-black / 0.5);
+  &[data-mode='dark'] {
+    --background-color: var(--color-blue-navy);
+    --text-color: var(--color-white);
+    --heading-color: var(--color-white);
+    --dial-color-ink: var(--color-gray-light);
+    --dial-color-selection: var(--color-cyan);
+    --dial-color-indicator: var(--color-cyan);
+    --ds-knob-background: oklch(38% 0 0);
+    --link-color: var(--color-cyan);
+    --link-visited-color: var(--color-yellow);
+    --section-bg: var(--color-blue-navy);
+    --header-background: var(--color-blue-navy);
+    --accent-color: var(--color-cyan);
+    --terminal-border-light: oklch(45% 0.22 264);
+    --terminal-border-dark: oklch(8% 0.08 264);
+    --terminal-window-bg: var(--color-blue-navy);
+    --terminal-title-bg: var(--color-blue-navy);
+    --terminal-button-bg: oklch(28% 0.16 264);
+    --terminal-shadow: 2px 2px 0 var(--color-black / 0.5);
 
-  /* Dark mode button styling */
-  --printlink-dark-background: var(--terminal-button-bg);
-  --printlink-dark-color: var(--dial-color-indicator);
-  --printlink-dark-border: 2px solid var(--dial-color-indicator);
-  --printlink-dark-hover-background: var(--terminal-border-light);
-  --printlink-dark-hover-color: var(--dial-color-indicator);
+    /* Dark mode button styling */
+    --printlink-dark-background: var(--terminal-button-bg);
+    --printlink-dark-color: var(--dial-color-indicator);
+    --printlink-dark-border: 2px solid var(--dial-color-indicator);
+    --printlink-dark-hover-background: var(--terminal-border-light);
+    --printlink-dark-hover-color: var(--dial-color-indicator);
+  }
+
+  dial-selector {
+    --ds-knob-border: 0;
+    --ds-indicator-box-shadow: none;
+    --ds-indicator-width-override: 10px;
+    --ds-label-padding: 0.4rem 0.8rem;
+    --ds-label-active-span-padding-block: 0.25rem;
+    --ds-label-active-span-padding-inline: 0.3rem;
+    --ds-label-active-span-padding-block--tablet: 0.2rem;
+    --ds-label-active-span-padding-inline--tablet: 0.6rem;
+    --ds-label-active-span-padding-block--phone: 0.2rem;
+    --ds-label-active-span-padding-inline--phone: 0.55rem;
+    --ds-label-font-size--tablet: 0.75rem;
+    --ds-label-font-size--phone: 0.7rem;
+    --ds-label-font-size--phone-sm: 0.7rem;
+    --ds-label-font-size--xs: 0.65rem;
+    --ds-spoke-stroke-width: 2px;
+
+    /* Dial selector hover/active states */
+    --ds-label-hover-color: var(--dial-color-ink);
+    --ds-label-hover-background: var(--terminal-button-bg);
+    --ds-label-hover-padding: 0rem 0.5rem;
+    --ds-label-hover-box-shadow: var(--terminal-inset-raised-sm);
+    --ds-label-active-background: var(--terminal-title-bg);
+    --ds-label-active-box-shadow: var(--terminal-inset-sunken-sm);
+    --ds-label-active-color: var(--dial-color-selection);
+
+    /* Dial selector knob styling */
+    --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+    --ds-knob-border-radius: 0;
+    --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
+  }
 }
 
 /* Loading bar reveal animation - contracting overlay */

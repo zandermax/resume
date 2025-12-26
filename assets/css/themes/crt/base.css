@@ -1,0 +1,149 @@
+/* ===========================
+CRT Theme - Base Styles
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='crt'] {
+  --display-terminal: block;
+  --font-family: 'Courier', 'Lucida Console', 'Consolas', monospace;
+  --background-image: none;
+  --section-bg: transparent;
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
+
+  /* Component overrides */
+  --main-border-width: 2px;
+  --main-border-style: solid;
+  --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
+  --main-padding: 2rem;
+  --header-border-width: 2px;
+  --header-border-style: double;
+  --header-padding: 1rem 0;
+  --header-margin-bottom: 2rem;
+  --header-name-border-width: 2px;
+  --header-name-border-style: solid;
+  --header-name-text-shadow: 0 0 10px currentColor;
+  --section-title-border-width: 2px;
+  --section-title-border-style: solid;
+  --section-title-border-position: block-end;
+  --section-title-padding: 0.5rem 0;
+  --section-title-margin-bottom: 1rem;
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 1rem 0;
+  --skills-group-border: 0;
+  --skills-group-background: transparent;
+  --skills-group-padding: 0.5rem 0;
+  --skills-group-margin-bottom: 1rem;
+  --skills-title-border-width: 1px;
+  --skills-title-border-style: solid;
+  --skills-title-border-block-end-color: currentColor;
+  --skills-title-padding-bottom: 0.25rem;
+  --skills-title-margin-bottom: 0.5rem;
+  --experience-item-border: 0;
+  --experience-item-background: transparent;
+  --experience-item-padding: 1rem 0 0.5rem;
+  --experience-item-margin-top: 1.5rem;
+  --tech-badge-border: 1px solid var(--border-color);
+  --tech-badge-background: transparent;
+  --tech-badge-padding: 0.25rem 0.5rem;
+  --tech-badge-text-shadow: 0 0 6px currentColor;
+  --tech-badge-before-content: '[';
+  --tech-badge-before-display: inline;
+  --tech-badge-before-margin-inline-start: 2px;
+  --tech-badge-after-content: ']';
+  --tech-badge-after-display: inline;
+  --tech-badge-after-margin-inline-start: 2px;
+  --education-item-border: 0;
+  --education-item-background: transparent;
+  --education-item-padding: 0.5rem 0;
+  --list-border: 0;
+  --list-background: transparent;
+  --list-padding: 0;
+  --list-item-border-width: 1px;
+  --list-item-border-style: dotted;
+  --list-item-padding: 0.75rem 0;
+  --community-item-border: 0;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-border: 0;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+  --bullet-before-content: '>';
+  --bullet-font-size: 0.8rem;
+  --bullet-margin-inline-start: 0.5rem;
+  --header-name-padding-block-end: 0.5rem;
+  --header-name-margin-block-end: 1rem;
+  --section-title-border: 0;
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.1em;
+  --section-title-border-block-end: var(--section-title-border-width) var(--section-title-border-style) currentColor;
+  --printlink-transition: all 0.1s ease;
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-padding: 0.5rem 1rem;
+  --printlink-padding-inline-responsive-500: 0.5rem;
+  --printlink-font-weight: bold;
+  --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --printlink-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --printlink-hover-border-width: 3px;
+  --link-text-decoration: underline;
+  --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --heading-text-shadow: 0 0 2px currentColor;
+
+  --printlink-before-content: '>';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-end: 0.35em;
+  --printlink-after-content: '<';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 0.35em;
+
+  /* Body pseudo-element: scanline overlay */
+  --body-before-content: '';
+  --body-before-display: block;
+  --body-before-position: fixed;
+  --body-before-inset: 0;
+  --body-before-background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    var(--color-black / 0.08) 2px,
+    var(--color-black / 0.08) 4px
+  );
+  --body-before-pointer-events: none;
+  --body-before-z-index: 9999;
+
+  /* Typography adjustments */
+  --text-shadow: 0 0 2px currentColor;
+  --heading-letter-spacing: 0.05em;
+  --body-text-letter-spacing: 0.02em;
+
+  /* Link hover behavior */
+  --link-hover-text-decoration: none;
+  --link-hover-border-block-end: 2px solid currentColor;
+
+  /* Light Mode */
+  &[data-mode='light'] {
+    --background-color: oklch(78% 0.22 50); /* Bright amber/orange background */
+    --text-color: oklch(20% 0.08 60); /* Dark text */
+    --heading-color: oklch(20% 0.08 60);
+    --border-color: oklch(20% 0.08 60);
+    --link-color: oklch(20% 0.08 60);
+    --link-visited-color: oklch(20% 0.08 60);
+    --accent-color: oklch(20% 0.08 60);
+    --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
+  }
+
+  /* Dark Mode */
+  &[data-mode='dark'] {
+    --background-color: var(--color-black);
+    --text-color: var(--color-green);
+    --heading-color: var(--color-green);
+    --border-color: var(--color-green);
+    --link-color: var(--color-green);
+    --link-visited-color: var(--color-green);
+    --accent-color: var(--color-green);
+    --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
+  }
+}

@@ -1,0 +1,30 @@
+/* ===========================
+CRT Theme - Responsive Adjustments
+=========================== */
+
+/* Responsive adjustments for :root variables */
+@media (max-width: 768px) {
+  :root[data-theme='crt'] {
+    --main-padding-responsive-768: var(--spacing-lg);
+    --header-name-font-size: 2rem;
+    --ds-label-padding: 0.35rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='crt'] {
+    --main-padding-responsive-500: var(--spacing-md);
+    --header-name-font-size: 1.7rem;
+    --printlink-font-size: 0.8rem;
+    --printlink-padding: 0.45rem 0.85rem;
+    --printlink-margin-block-end: 0;
+    --ds-label-padding: 0.3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root[data-theme='crt'] {
+    --main-padding: var(--spacing-sm);
+  }
+}
+
