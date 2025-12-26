@@ -19,6 +19,9 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* Border radius for main container and header */
   --header-border-radius: 8px;
+  --header-margin: var(--spacing-xl);
+  --header-padding-inline-start: var(--spacing-xl);
+  --header-padding-inline-end: var(--spacing-xl);
   --main-border-radius: 8px;
 
   /* Experience item custom properties */
