@@ -106,20 +106,6 @@ dial-selector {
   --ds-label-span-transform: none;
   --ds-label-span-filter: none;
 
-  /* Label span hover states */
-  --ds-label-span-hover-padding: inherit;
-  --ds-label-span-hover-padding-block: inherit;
-  --ds-label-span-hover-padding-inline: inherit;
-  --ds-label-span-hover-border-radius: inherit;
-  --ds-label-span-hover-background: transparent;
-  --ds-label-span-hover-border-color: transparent;
-  --ds-label-span-hover-color: inherit;
-  --ds-label-span-hover-text-shadow: none;
-  --ds-label-span-hover-box-shadow: none;
-  --ds-label-span-hover-transform: none;
-  --ds-label-span-hover-filter: none;
-  --ds-label-span-hover-font-weight: inherit;
-
   /* Label span active states */
   --ds-label-span-active-border: none;
   --ds-label-span-active-font-weight: inherit;
