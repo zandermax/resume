@@ -1,0 +1,78 @@
+/* ===========================
+METRO Theme - Animations
+=========================== */
+
+/* Keyframe animation for chat widget status indicator */
+@keyframes pulse-indicator {
+  0%,
+  20%,
+  100% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(0.5);
+  }
+  10% {
+    transform: scale(1.4);
+  }
+}
+
+/* Animation for indicator color cycling between yellow and red */
+@keyframes indicator-color-transition {
+  0%,
+  40% {
+    background: var(--metro-yellow);
+  }
+  50%,
+  90% {
+    background: var(--metro-red);
+  }
+  100% {
+    background: var(--metro-yellow);
+  }
+}
+
+/* Cycle "Connecting..." pseudo-element visibility */
+@keyframes text-fade-out {
+  0%,
+  40% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50%,
+  90% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Cycle the actual status text visibility */
+@keyframes text-fade-in {
+  0%,
+  40% {
+    color: transparent;
+  }
+  50%,
+  90% {
+    color: var(--fade-in-bg);
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+/* Slide-in animation for chat messages */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

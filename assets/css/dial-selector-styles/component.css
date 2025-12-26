@@ -30,3 +30,15 @@ dial-selector.no-transitions .knob {
 dial-selector.no-transitions .spoke-line {
   transition: none;
 }
+
+dial-selector.no-transitions .dial-label {
+  transition: none !important;
+}
+
+/* Pause animations during layout calculations to get accurate positions */
+dial-selector.calculating-layout,
+dial-selector.calculating-layout *,
+dial-selector.calculating-layout *::before,
+dial-selector.calculating-layout *::after {
+  animation-play-state: paused !important;
+}

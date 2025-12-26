@@ -1,0 +1,458 @@
+/* ===========================
+METRO 2012 Theme - Base Styles
+Inspired by Windows 8 Metro, Windows Phone, and early Material Design
+Flat Design / Material Zero
+=========================== */
+
+/* ==================== COLOR SCHEMES ==================== */
+
+/* Light Mode */
+:root[data-theme='metro'][data-mode='light'] {
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-blue-metro);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-blue-metro);
+  --dial-color-indicator: var(--color-blue-metro);
+  --ds-knob-background: oklch(96% 0 0); /* Light gray */
+  --link-color: var(--color-blue-metro);
+  --link-visited-color: oklch(52% 0.24 340);
+  --section-bg: oklch(96% 0 0);
+  --accent-color: var(--color-blue-metro);
+  --metro-blue: var(--color-blue-metro);
+  --metro-green: oklch(64% 0.19 145);
+  --metro-orange: var(--color-orange);
+  --metro-yellow: var(--color-yellow);
+  --metro-magenta: oklch(52% 0.24 340);
+  --metro-red: oklch(60% 0.24 25);
+  --metro-purple: var(--color-purple);
+  --fade-in-bg: var(--color-black);
+}
+
+/* Dark Mode */
+:root[data-theme='metro'][data-mode='dark'] {
+  --background-color: oklch(24% 0 0); /* Dark gray */
+  --text-color: var(--color-white);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-cyan-bright);
+  --dial-color-ink: var(--color-white);
+  --dial-color-selection: var(--color-cyan-bright);
+  --dial-color-indicator: var(--color-cyan-bright);
+  --ds-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
+  --link-color: var(--color-cyan-bright);
+  --link-visited-color: oklch(52% 0.24 340);
+  --section-bg: oklch(28% 0 0);
+  --accent-color: var(--color-cyan-bright);
+  --metro-blue: var(--color-cyan-bright);
+  --metro-green: var(--color-green-bright);
+  --metro-orange: oklch(78% 0.14 70);
+  --metro-yellow: oklch(85% 0.15 95);
+  --metro-magenta: var(--color-magenta-bright);
+  --metro-red: oklch(68% 0.22 25);
+  --metro-purple: oklch(60% 0.2 315);
+  --fade-in-bg: var(--color-white);
+
+  /* Dial label hover properties (dark mode) */
+  --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
+}
+
+/* ==================== CORE VARIABLES ==================== */
+
+:root[data-theme='metro'] {
+  --font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+  --background-image: none;
+  --header-background: transparent;
+  --section-title-color: var(--color-white);
+
+  /* ==================== HEADER ==================== */
+
+  /* Header name custom properties */
+  --header-name-border: 0;
+  --header-name-padding: 0;
+  --header-name-margin-block-end: 1rem;
+  --header-name-font-weight: 300;
+  --header-name-font-size: 3.5rem;
+  --header-name-line-height: 1;
+  --header-name-text-transform: none;
+  --header-name-letter-spacing: -0.02em;
+
+  /* Header role custom properties */
+  --header-role-font-weight: 400;
+  --header-role-font-size: 1.2rem;
+  --header-role-text-transform: none;
+  --header-role-letter-spacing: 0;
+  --header-role-margin-block-start: 0.5rem;
+
+  /* ==================== SECTIONS ==================== */
+
+  /* Section title custom properties */
+  --section-title-border: 0;
+  --section-title-border-radius: 0;
+  --section-title-padding: 1em;
+  --section-title-margin: 0 0 1.5rem 0;
+  --section-title-background: var(--metro-blue);
+  --section-title-text-transform: uppercase;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 1.4rem;
+  --section-title-letter-spacing: 0.05em;
+  --section-title-line-height: 1;
+  --section-title-box-shadow: none;
+  --section-title-border-width: 0px;
+
+  /* Section content custom properties */
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.025), 1em);
+
+  /* ==================== EXPERIENCE SECTION ==================== */
+
+  /* Experience item custom properties */
+  --experience-item-padding: 2rem;
+  --experience-item-background: var(--section-bg);
+  --experience-item-border: 0;
+  --experience-item-border-radius: 0;
+  --experience-item-margin-top: 1.5rem;
+  --experience-item-box-shadow: none;
+  --experience-item-transition: border-inline-start-width 0.15s ease;
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: 1.3rem;
+  --experience-role-font-weight: 600;
+  --experience-role-text-transform: uppercase;
+  --experience-role-margin-block-end: 0.5rem;
+  --experience-role-line-height: 1.2;
+  --experience-role-letter-spacing: 0.02em;
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 400;
+  --experience-company-font-size: 1rem;
+  --experience-company-text-transform: none;
+  --experience-company-letter-spacing: 0;
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '■';
+  --bullet-font-size: 0.8rem;
+  --bullet-font-weight: 400;
+  --bullet-color: var(--accent-color);
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 0;
+  --tech-badge-border-radius: 0;
+  --tech-badge-background: var(--metro-blue);
+  --tech-badge-color: #ffffff;
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.5rem 1rem;
+  --tech-badge-font-size: 0.7rem;
+  --tech-badge-box-shadow: none;
+  --tech-badge-letter-spacing: 0.08em;
+  --tech-badge-transition: background-color 0.15s ease;
+  --tech-badge-hover-background: var(--metro-orange);
+
+  /* ==================== SKILLS SECTION ==================== */
+
+  /* Skills grid custom properties */
+  --skills-grid-border: 0;
+  --skills-grid-background: transparent;
+  --skills-grid-padding: 0;
+  --skills-grid-gap: 0;
+  --skills-grid-border-radius: 0;
+  --skills-grid-box-shadow: none;
+
+  /* Skills grid group custom properties */
+  --skills-group-border: 0;
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: 1.5rem;
+  --skills-group-border-radius: 0;
+  --skills-group-margin: 0;
+  --skills-group-margin-bottom: 0;
+  --skills-group-box-shadow: none;
+  --skills-group-transition: background-color 0.15s ease;
+  --skills-group-hover-background: var(--metro-blue);
+
+  /* Skills grid title custom properties */
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 3px;
+  --skills-title-border: 0;
+  --skills-title-border-block-end-color: var(--accent-color);
+  --skills-title-letter-spacing: 0.05em;
+  --skills-title-padding-bottom: 0.75rem;
+  --skills-title-margin-bottom: 1rem;
+  --skills-title-font-weight: 600;
+  --skills-title-font-size: 1rem;
+
+  /* ==================== EDUCATION SECTION ==================== */
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.3rem;
+  --education-institution-font-weight: 600;
+  --education-institution-text-transform: uppercase;
+  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-line-height: 1.2;
+  --education-institution-letter-spacing: 0.02em;
+
+  /* ==================== COMMUNITY & PRINCIPLES ==================== */
+
+  /* Community/Principles list item custom properties */
+  --community-item-border: 0;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --community-item-padding: 1rem 0 1rem 1.5rem;
+  --community-item-margin-bottom: 1rem;
+  --community-item-background: var(--section-bg);
+  --community-item-font-weight: 400;
+  --community-item-line-height: 1.6;
+  --community-item-transition: all 0.15s ease;
+  --principles-item-border: 0;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+  --principles-item-padding: 1rem 0 1rem 1.5rem;
+  --principles-item-margin-bottom: 1rem;
+  --principles-item-background: var(--section-bg);
+  --principles-item-font-weight: 400;
+  --principles-item-line-height: 1.6;
+  --principles-item-transition: all 0.15s ease;
+
+  /* ==================== PRINT LINK ==================== */
+
+  /* Print link custom properties */
+  --printlink-border: 0;
+  --printlink-border-radius: 0;
+  --printlink-background: var(--metro-green);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: 600;
+  --printlink-padding: 1rem 2rem;
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: 0.9rem;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-box-shadow: none;
+  --printlink-transition: background-color 0.15s ease;
+  --printlink-hover-background: var(--metro-blue);
+  --printlink-active-opacity: 0.8;
+}
+
+/* ==================== TYPOGRAPHY & LAYOUT ==================== */
+
+/* Typography-first, flat colors, zero skeuomorphism */
+:root[data-theme='metro'] {
+  /* Body typography */
+  --body-font-weight: 400;
+  --body-letter-spacing: 0;
+
+  /* Clean main container - no shadows, sharp edges */
+  --main-border-width: 0;
+  --main-border-radius: 0;
+  --main-box-shadow: none;
+  --main-padding: 0;
+  --main-position: relative;
+
+  /* Section spacing - uniform padding across all sections */
+  --section-padding-block-start: var(--spacing-xl);
+  --section-padding-block-end: var(--spacing-xl);
+  --section-padding-inline-start: var(--spacing-xl);
+  --section-padding-inline-end: var(--spacing-xl);
+  --section-margin: 0;
+
+  /* Experience item spacing */
+  --experience-item-margin-top: 0;
+
+  /* Education item styling */
+  --education-item-border: 0;
+  --education-item-background: var(--section-bg);
+  --education-item-padding: var(--spacing-xl);
+  --education-item-border-radius: 0;
+  --education-item-box-shadow: none;
+  --education-item-position: relative;
+
+  /* List containers - minimal styling */
+  --list-border: 0;
+  --list-background: transparent;
+  --list-padding: var(--spacing-lg) 0;
+  --list-box-shadow: none;
+
+  /* Header styling */
+  --header-border: 0;
+  --header-padding: var(--spacing-xl);
+  --header-background: transparent;
+  --header-box-shadow: none;
+
+  /* Header name greeting/small */
+  --header-name-greeting-font-size: var(--spacing-lg);
+  --header-name-small-font-size: var(--spacing-lg);
+
+  /* Dial selector housing */
+  --dial-selector-housing-padding-block: var(--spacing-lg);
+  --dial-selector-housing-padding-inline: var(--spacing-lg);
+  --dial-selector-housing-background: var(--section-bg);
+  --dial-selector-housing-border: 0;
+  --dial-selector-housing-box-shadow: none;
+  --dial-selector-housing-position: relative;
+
+  /* Dial selector housing h3 */
+  --dial-selector-housing-h3-margin-block-end: var(--spacing-md);
+  --dial-selector-housing-h3-font-size: var(--spacing-md);
+
+  /* Typography overrides - clean, modern */
+  --h2-h3-font-weight: 600;
+  --h2-h3-letter-spacing: 0;
+  --p-li-font-weight: 400;
+  --p-li-line-height: 1.6;
+}
+
+body[data-theme='metro'] {
+  /* ==================== SECTIONS ==================== */
+
+  .resume-section {
+    &:not(:first-of-type) {
+      border-block-start: var(--border-width-thick) solid var(--border-color);
+    }
+  }
+
+  /* Rotate through Metro colors for different sections */
+  .resume-section:nth-of-type(1) h2.resume-section__title {
+    background: var(--metro-blue);
+  }
+  .resume-section:nth-of-type(2) h2.resume-section__title {
+    background: var(--metro-green);
+  }
+  .resume-section:nth-of-type(3) h2.resume-section__title {
+    background: var(--metro-orange);
+  }
+  .resume-section:nth-of-type(4) h2.resume-section__title {
+    background: var(--metro-magenta);
+  }
+  .resume-section:nth-of-type(5) h2.resume-section__title {
+    background: var(--metro-purple);
+  }
+  .resume-section:nth-of-type(6) h2.resume-section__title {
+    background: var(--metro-red);
+  }
+  .resume-section:nth-of-type(7) h2.resume-section__title {
+    background: var(--metro-blue);
+  }
+  .resume-section:nth-of-type(8) h2.resume-section__title {
+    background: var(--metro-green);
+  }
+
+  /* ==================== EXPERIENCE SECTION ==================== */
+
+  /* Experience items - clean tiles with accent bar */
+  .experience-item {
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
+    margin-block-end: var(--spacing-lg);
+
+    &:hover {
+      border-inline-start-width: 12px;
+    }
+
+    /* Alternate colors for experience items */
+    &:nth-of-type(2n) {
+      border-inline-start-color: var(--metro-green);
+    }
+    &:nth-of-type(3n) {
+      border-inline-start-color: var(--metro-orange);
+    }
+    &:nth-of-type(4n) {
+      border-inline-start-color: var(--metro-magenta);
+    }
+    &:nth-of-type(5n) {
+      border-inline-start-color: var(--metro-purple);
+    }
+  }
+
+  /* ==================== SKILLS SECTION ==================== */
+
+  /* Skills grid - tile blocks */
+  .skills-grid__group {
+    &:hover {
+      * {
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* ==================== EDUCATION SECTION ==================== */
+
+  /* Education - tile style with Metro-colored accent bar */
+  .education-item {
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-purple);
+  }
+
+  /* ==================== COMMUNITY & PRINCIPLES ==================== */
+
+  /* List items - Metro-colored accent bars */
+  .community-list__item,
+  .principles-list__item {
+    border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
+
+    &:hover {
+      border-inline-start-width: 8px;
+      padding-inline-start: var(--spacing-md);
+    }
+
+    /* Alternate colors for list items */
+    &:nth-child(2n) {
+      border-inline-start-color: var(--metro-green);
+    }
+    &:nth-child(3n) {
+      border-inline-start-color: var(--metro-orange);
+    }
+    &:nth-child(4n) {
+      border-inline-start-color: var(--metro-magenta);
+    }
+  }
+
+  /* ==================== HEADER ==================== */
+
+  /* Header - Metro blue accent bar at bottom */
+  .resume-header {
+    border-block-end: var(--border-width-extra-thick) solid var(--metro-blue);
+  }
+
+  /* Align buttons to the start */
+  .resume-header__buttons {
+    justify-content: flex-start;
+  }
+
+  /* Header greeting/small text - Metro blue, lighter weight */
+  .resume-header__name-greeting,
+  .resume-header__name-small {
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--metro-blue);
+  }
+
+  /* ==================== LINKS ==================== */
+
+  /* Flat links */
+  a:not(#resume-header__printlink) {
+    text-decoration: none;
+    font-weight: 600;
+    border-block-end: 2px solid var(--link-color);
+    transition: all 0.15s ease;
+    position: relative;
+
+    &:hover {
+      background: var(--link-color);
+      color: #ffffff;
+      border-block-end-color: var(--link-color);
+    }
+
+    &:visited {
+      border-block-end-color: var(--link-visited-color);
+
+      &:hover {
+        background: var(--link-visited-color);
+        color: #ffffff;
+      }
+    }
+  }
+
+  /* ==================== DIAL SELECTOR ==================== */
+
+  /* Dial selector housing h3 - uppercase with tight letter-spacing */
+  .resume-header__dial-selector h3 {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}

@@ -1,0 +1,230 @@
+/* ===========================
+METRO Theme - Responsive Adjustments
+=========================== */
+
+/* ==================== TABLET & SMALLER (768px and below) ==================== */
+
+@media (max-width: 768px) {
+  /* Root variable overrides */
+  :root[data-theme='metro'] {
+    --header-name-font-size: 2.5rem;
+    --section-title-font-size: 1.2rem;
+    --section-title-padding: 1rem 1.5rem;
+    --printlink-font-size: 0.75rem;
+    --printlink-padding: 0.75rem 1.5rem;
+    --education-institution-font-size: 1.1rem;
+    --experience-role-font-size: 1.1rem;
+    --ds-label-font-size: var(--spacing-sm);
+    --ds-label-padding: var(--spacing-xs) 0.8rem;
+  }
+
+  /* Layout adjustments */
+  body[data-theme='metro'] {
+    .resume-header,
+    .resume-section {
+      padding-inline-start: var(--spacing-lg);
+      padding-inline-end: var(--spacing-lg);
+    }
+
+    /* Dial selector responsive padding */
+    .resume-header__dial-selector {
+      padding: var(--spacing-md);
+    }
+
+    /* Chat widget responsive adjustments */
+    .metro-chat-widget {
+      width: 200px;
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .metro-chat-widget__header,
+    .metro-chat-widget__status {
+      padding: 0.75rem 0.875rem;
+    }
+
+    .metro-chat-widget__title {
+      font-size: 0.75rem;
+    }
+
+    .metro-chat-widget__status-text {
+      font-size: 0.7rem;
+    }
+
+    .metro-chat-widget__icon {
+      font-size: 1.3rem;
+    }
+
+    .metro-chat-widget__indicator {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* Chat dialog responsive adjustments */
+    .metro-chat-dialog {
+      max-width: 95vw;
+    }
+
+    .metro-chat-dialog__container {
+      height: var(--screen-width-mobile);
+    }
+
+    .metro-chat-dialog__messages {
+      padding: 1rem;
+    }
+
+    .metro-chat-dialog__message-bubble {
+      max-width: 85%;
+      padding: 0.875rem 1rem;
+    }
+  }
+}
+
+/* ==================== MOBILE (500px and below) ==================== */
+
+@media (max-width: 500px) {
+  /* Root variable overrides */
+  :root[data-theme='metro'] {
+    --header-name-font-size: 2rem;
+    --section-title-font-size: 1rem;
+    --section-title-padding: 0.75rem 1rem;
+    --printlink-font-size: 0.75rem;
+    --printlink-padding: 0.75rem 1.5rem;
+    --ds-label-font-size: var(--font-size-xs);
+    --ds-label-padding: 0.4rem var(--font-size-xs);
+  }
+
+  /* Layout adjustments */
+  body[data-theme='metro'] {
+    .resume-header,
+    .resume-section {
+      padding-inline-start: var(--spacing-md);
+      padding-inline-end: var(--spacing-md);
+    }
+
+    .experience-item,
+    .education-item,
+    .community-list__item,
+    .principles-list__item {
+      padding: var(--spacing-md);
+    }
+
+    /* Dial selector responsive padding */
+    .resume-header__dial-selector {
+      padding: var(--spacing-sm);
+    }
+
+    .dial-selector .dial-label {
+      padding: 0.3rem 0.25rem;
+    }
+
+    /* Chat widget responsive adjustments */
+    .metro-chat-widget {
+      width: 8rem;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .metro-chat-widget__header,
+    .metro-chat-widget__status {
+      padding: 0.65rem 0.75rem;
+    }
+
+    .metro-chat-widget__icon {
+      font-size: 1.1rem;
+    }
+
+    .metro-chat-widget__title {
+      font-size: 0.7rem;
+    }
+
+    .metro-chat-widget__status-text {
+      font-size: 0.65rem;
+    }
+
+    .metro-chat-widget__indicator {
+      width: 8px;
+      height: 8px;
+    }
+
+    /* Swap to short text on smallest mobile screens */
+    .metro-chat-widget__status-text--full {
+      display: none;
+    }
+
+    .metro-chat-widget__status-text--short {
+      display: inline;
+    }
+
+    /* Chat dialog responsive adjustments */
+    #metro-chat-dialog {
+      width: 100vw;
+      min-width: var(--min-screen-width);
+      max-width: 100vw;
+      margin-inline: 0;
+    }
+
+    .metro-chat-dialog__container {
+      height: 450px;
+    }
+
+    .metro-chat-dialog__header {
+      padding: 0.875rem 1rem;
+    }
+
+    .metro-chat-dialog__title {
+      font-size: 0.85rem;
+    }
+
+    .metro-chat-dialog__icon {
+      font-size: 1.25rem;
+    }
+
+    .metro-chat-dialog__messages {
+      padding: 0.875rem;
+      gap: 0.75rem;
+    }
+
+    .metro-chat-dialog__message-bubble {
+      max-width: 90%;
+      padding: 0.75rem 0.875rem;
+    }
+
+    .metro-chat-dialog__message-text {
+      font-size: 0.85rem;
+    }
+
+    .metro-chat-dialog__input {
+      padding: 0.875rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .metro-chat-dialog__send-btn {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* ==================== EXTRA SMALL MOBILE (480px and below) ==================== */
+
+@media (max-width: 480px) {
+  body[data-theme='metro'] {
+    /* Dial selector responsive padding */
+    .resume-header__dial-selector {
+      padding: var(--spacing-xs);
+    }
+  }
+}
+
+/* ==================== VERY SMALL MOBILE (380px and below) ==================== */
+
+@media (max-width: 380px) {
+  body[data-theme='metro'] {
+    /* Dial selector responsive padding */
+    .resume-header__dial-selector {
+      padding: var(--spacing-xs);
+    }
+  }
+}
+
