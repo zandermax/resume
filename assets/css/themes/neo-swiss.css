@@ -656,12 +656,6 @@ body[data-theme='neoswiss'] {
   }
 
   .neoswiss-ai-modal__close {
-    /* The X in the close button */
-    span {
-      position: relative;
-      bottom: 10%;
-    }
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
