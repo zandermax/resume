@@ -11,7 +11,7 @@ SKEUOMORPH Theme - Responsive Adjustments
   }
 
   @media (max-width: 500px) {
-    --section-content-padding-inline-responsive-500: 0;
+    --section-content-padding-inline-responsive-500: 0.5rem;
     --experience-bullets-li-padding-inline-start: var(--spacing-xs);
     --header-padding: var(--spacing-sm);
     --dial-selector-housing-padding: 0;
