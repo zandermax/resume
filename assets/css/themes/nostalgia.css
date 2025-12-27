@@ -276,14 +276,16 @@ Nostalgia Theme (Geocities 90s)
    =========================== */
 
 /* Animated cycling cursor - switches between star, heart, and smiley */
-:root[data-theme='nostalgia'] * {
+/* Apply cursor cycle animation to elements that don't have their own animations */
+:root[data-theme='nostalgia']
+  *:not(.marquee):not(.blink):not(.retro-gif):not(.retro-badge):not(.visitor-counter__digit) {
   animation: cursor-cycle 5s steps(1) infinite;
   will-change: cursor;
 }
 
-:root[data-theme='nostalgia'] a,
-:root[data-theme='nostalgia'] button,
-:root[data-theme='nostalgia'] [role='button'],
+:root[data-theme='nostalgia'] a:not(.marquee):not(.blink),
+:root[data-theme='nostalgia'] button:not(.blink),
+:root[data-theme='nostalgia'] [role='button']:not(.blink),
 :root[data-theme='nostalgia'] .dial-selector__label {
   animation: cursor-cycle-hover 5s steps(1) infinite;
   will-change: cursor;
@@ -418,20 +420,31 @@ Nostalgia Theme (Geocities 90s)
   }
 
   /* Disable cursor cycling animation, use static star cursor */
-  :root[data-theme='nostalgia'] * {
+  :root[data-theme='nostalgia']
+    *:not(.marquee):not(.blink):not(.retro-gif):not(.retro-badge):not(.visitor-counter__digit) {
     animation: none;
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFD700' stroke='%23000' stroke-width='1' d='M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z'/%3E%3C/svg%3E")
         12 12,
       auto;
   }
 
-  :root[data-theme='nostalgia'] a,
-  :root[data-theme='nostalgia'] button,
-  :root[data-theme='nostalgia'] [role='button'],
+  :root[data-theme='nostalgia'] a:not(.marquee):not(.blink),
+  :root[data-theme='nostalgia'] button:not(.blink),
+  :root[data-theme='nostalgia'] [role='button']:not(.blink),
   :root[data-theme='nostalgia'] .dial-selector__label {
     animation: none;
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath fill='%23FF00FF' stroke='%23FFD700' stroke-width='1.5' d='M14 4l3 9h9l-7.5 6 3 9-7.5-6-7.5 6 3-9-7.5-6h9z'/%3E%3C/svg%3E")
         14 14,
       pointer;
+  }
+
+  /* Disable animations for elements that normally animate */
+  .blink,
+  .retro-gif.spinning,
+  .retro-gif.flame,
+  .retro-gif.bouncing,
+  .marquee,
+  .retro-badge {
+    animation: none !important;
   }
 }

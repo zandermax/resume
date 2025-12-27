@@ -31,11 +31,20 @@ window.addEventListener('DOMContentLoaded', () => {
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieBannerAccept = document.getElementById('cookie-banner-accept');
 
+  // Store timeout ID so we can cancel it if theme changes
+  let cookieBannerTimeoutId = null;
+
   // Function to check and show cookie banner if needed
   function checkAndShowCookieBanner() {
     const showDelay = 5000;
     const existingCookie = getCookie('resume_cookie_consent');
     const isBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
+
+    // Clear any existing timeout
+    if (cookieBannerTimeoutId) {
+      clearTimeout(cookieBannerTimeoutId);
+      cookieBannerTimeoutId = null;
+    }
 
     if (!cookieBanner || !isBrutalTheme) return;
 
@@ -43,15 +52,25 @@ window.addEventListener('DOMContentLoaded', () => {
     if (cookieBanner.open) return;
 
     if (!existingCookie) {
-      // Show banner after 1 second delay for initial theme or theme changes
-      setTimeout(() => {
-        cookieBanner.showModal();
+      // Show banner after delay for initial theme or theme changes
+      cookieBannerTimeoutId = setTimeout(() => {
+        // Double-check we're still on brutal theme before showing
+        const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
+        if (stillBrutalTheme) {
+          cookieBanner.showModal();
+        }
+        cookieBannerTimeoutId = null;
       }, showDelay);
     } else {
       // Show returning visitor version
       cookieBanner.classList.add('cookie-banner--returning');
-      setTimeout(() => {
-        cookieBanner.showModal();
+      cookieBannerTimeoutId = setTimeout(() => {
+        // Double-check we're still on brutal theme before showing
+        const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
+        if (stillBrutalTheme) {
+          cookieBanner.showModal();
+        }
+        cookieBannerTimeoutId = null;
       }, showDelay);
       console.log('🍪 Cookie found:', existingCookie);
     }

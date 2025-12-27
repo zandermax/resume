@@ -43,6 +43,7 @@
   /* === EDUCATION ITEM HOVER === */
   --education-item-hover-transform: none;
   --education-item-hover-box-shadow: none;
+  --education-item-hover-padding-inline-start: inherit;
 
   /* === EDUCATION INSTITUTION (H3) === */
   --education-institution-font-size: 1.05rem;
