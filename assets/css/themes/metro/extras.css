@@ -233,11 +233,11 @@ body[data-theme='metro'] {
   }
 
   .metro-chat-dialog__message:nth-child(2) {
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
   }
 
   .metro-chat-dialog__message:nth-child(3) {
-    animation-delay: 4s;
+    animation-delay: 3s;
   }
 
   .metro-chat-dialog__message-bubble {
