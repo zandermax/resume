@@ -30,27 +30,36 @@ function setupClickableCard(card, onClick) {
 window.addEventListener('DOMContentLoaded', () => {
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieBannerAccept = document.getElementById('cookie-banner-accept');
-  const existingCookie = getCookie('resume_cookie_consent');
 
-  if (cookieBanner) {
-    // Show banner after delay if in Brutal theme and no cookie exists
+  // Function to check and show cookie banner if needed
+  function checkAndShowCookieBanner() {
+    const showDelay = 5000;
+    const existingCookie = getCookie('resume_cookie_consent');
     const isBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
 
-    if (isBrutalTheme && !existingCookie) {
-      // Show banner after 5 second delay (matching animation timing)
+    if (!cookieBanner || !isBrutalTheme) return;
+
+    // If banner is already showing, don't show it again
+    if (cookieBanner.open) return;
+
+    if (!existingCookie) {
+      // Show banner after 1 second delay for initial theme or theme changes
       setTimeout(() => {
         cookieBanner.showModal();
-      }, 5000);
-    } else if (existingCookie) {
+      }, showDelay);
+    } else {
       // Show returning visitor version
       cookieBanner.classList.add('cookie-banner--returning');
-      if (isBrutalTheme) {
-        setTimeout(() => {
-          cookieBanner.showModal();
-        }, 5000);
-      }
+      setTimeout(() => {
+        cookieBanner.showModal();
+      }, showDelay);
       console.log('🍪 Cookie found:', existingCookie);
     }
+  }
+
+  // Check on page load
+  if (cookieBanner) {
+    checkAndShowCookieBanner();
   }
 
   // Cookie Banner - Accept button sets cookie and closes
@@ -67,6 +76,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Backdrop click to close (optional - for better UX)
   closeOnBackdrop(cookieBanner);
+
+  // Listen for theme changes to show cookie banner when switching to brutal theme
+  const themeSelector = document.getElementById('theme-selector');
+  if (themeSelector) {
+    themeSelector.addEventListener('change', (event) => {
+      // Small delay to let theme change complete
+      setTimeout(checkAndShowCookieBanner, 100);
+    });
+  }
 });
 
 // XP Dialog
