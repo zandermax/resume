@@ -102,7 +102,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --section-title-display: flex;
   --section-title-align-items: center;
   --section-title-gap: 0.75rem;
-  --section-title-padding: var(--spacing-md) var(--spacing-xl);
+  --section-title-padding: var(--spacing-sm) var(--spacing-md);
   --section-title-margin: 0;
   --section-title-background: var(--panel-bg);
   --section-title-border-inline-start: 4px solid var(--accent-color);
@@ -229,15 +229,6 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --skills-items-font-size: var(--font-size-sm);
   --skills-items-line-height: 1.6;
 
-  /* ==================== EDUCATION SECTION ==================== */
-
-  /* Education Item */
-  --education-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  /* Education Item - Hover */
-  --education-item-hover-transform: translateX(4px);
-  --education-item-hover-box-shadow: var(--dashboard-shadow-md);
-
   /* ==================== PRINCIPLES & COMMUNITY SECTIONS ==================== */
 
   /* List Item - Base */
@@ -250,9 +241,10 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --principles-item-margin-top: var(--spacing-sm);
   --principles-item-box-shadow: var(--dashboard-shadow-sm);
   --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --principles-item-hover-padding-inline-start: var(--spacing-md);
 
   /* List Item - Hover */
-  --list-item-hover-transform: translateX(4px);
+  --list-item-hover-transform: translateX(8px);
   --list-item-hover-box-shadow: var(--dashboard-shadow-md);
 
   /* List Item - Pseudo-element (checkmark) */
@@ -267,6 +259,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* Community List Item - Positioning adjustments */
   --community-item-before-left: -0.25rem;
   --community-item-before-top: 0.5rem;
+  --community-item-hover-padding-inline-start: var(--spacing-md);
 
   /* ==================== PRINT LINK ==================== */
 
@@ -303,7 +296,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
     --header-margin: var(--spacing-xs);
     --header-padding-inline-start: var(--spacing-xs);
     --header-padding-inline-end: var(--spacing-xs);
-    --section-title-padding: var(--spacing-md) var(--spacing-lg);
+    --section-title-padding: var(--spacing-sm) var(--spacing-sm);
     --section-padding-inline-start: var(--spacing-md);
   }
 }
