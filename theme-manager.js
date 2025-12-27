@@ -98,6 +98,9 @@ function handleThemeChange(event) {
   // Map display name to internal theme name
   currentTheme = THEME_DISPLAY_TO_INTERNAL[displayName] || displayName;
 
+  // Reset sticky note checkboxes when switching themes
+  resetCheckboxes('sticky-note-trigger', 'sticky-note-disappear');
+
   // For glitch theme, enable animations after theme is applied
   if (currentTheme === 'glitch') {
     // Remove animation-ready flag if switching away and back
