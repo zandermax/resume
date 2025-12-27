@@ -214,4 +214,28 @@ export const AttributeHandlers = {
 
     console.warn(`dial-selector: default-option "${defaultOption}" not found. Using index 0.`);
   },
+
+  updateHapticFeedback() {
+    const hapticFeedback = this.getAttribute('haptic-feedback');
+    if (hapticFeedback === null) {
+      this.hapticFeedbackEnabled = true;
+      return;
+    }
+    const value = hapticFeedback.toLowerCase();
+    this.hapticFeedbackEnabled = value !== 'false' && value !== '0' && value !== 'no';
+  },
+
+  updateHapticDuration() {
+    const hapticDuration = this.getAttribute('haptic-duration');
+    if (hapticDuration) {
+      const duration = parseInt(hapticDuration, 10);
+      if (!isNaN(duration) && duration >= 0) {
+        this.hapticFeedbackDuration = duration;
+      } else {
+        this.hapticFeedbackDuration = 25;
+      }
+    } else {
+      this.hapticFeedbackDuration = 25;
+    }
+  },
 };

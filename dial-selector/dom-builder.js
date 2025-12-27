@@ -12,6 +12,23 @@ import {
 } from './constants.js';
 
 export const DOMBuilder = {
+  /**
+   * Triggers haptic feedback on mobile devices
+   * Uses the component's configured settings (hapticFeedbackEnabled and hapticFeedbackDuration)
+   */
+  triggerHapticFeedback() {
+    if (!this.hapticFeedbackEnabled) {
+      return;
+    }
+    if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+      try {
+        navigator.vibrate(this.hapticFeedbackDuration);
+      } catch (e) {
+        // Silently fail if vibration is not supported or blocked
+      }
+    }
+  },
+
   buildDOM() {
     this.innerHTML = `
 			<div class="selector">
@@ -80,6 +97,7 @@ export const DOMBuilder = {
       }
 
       label.addEventListener('click', () => {
+        this.triggerHapticFeedback();
         this.currentIndex = index;
         this.updateSelector();
       });
@@ -98,6 +116,7 @@ export const DOMBuilder = {
       hitArea.setAttribute('points', '');
 
       hitArea.addEventListener('click', () => {
+        this.triggerHapticFeedback();
         this.currentIndex = index;
         this.updateSelector();
       });
@@ -121,6 +140,7 @@ export const DOMBuilder = {
 
     if (advanceButton) {
       advanceButton.addEventListener('click', () => {
+        this.triggerHapticFeedback();
         this.currentIndex = (this.currentIndex + 1) % this.OPTIONS.length;
         this.updateSelector();
       });
@@ -133,28 +153,33 @@ export const DOMBuilder = {
           case 'ArrowRight':
           case 'ArrowDown':
             e.preventDefault();
+            this.triggerHapticFeedback();
             this.currentIndex = (this.currentIndex + 1) % this.OPTIONS.length;
             this.updateSelector();
             break;
           case 'ArrowLeft':
           case 'ArrowUp':
             e.preventDefault();
+            this.triggerHapticFeedback();
             this.currentIndex = (this.currentIndex - 1 + this.OPTIONS.length) % this.OPTIONS.length;
             this.updateSelector();
             break;
           case 'Home':
             e.preventDefault();
+            this.triggerHapticFeedback();
             this.currentIndex = 0;
             this.updateSelector();
             break;
           case 'End':
             e.preventDefault();
+            this.triggerHapticFeedback();
             this.currentIndex = this.OPTIONS.length - 1;
             this.updateSelector();
             break;
           case ' ':
           case 'Enter':
             e.preventDefault();
+            this.triggerHapticFeedback();
             // For space/enter, advance to next option
             this.currentIndex = (this.currentIndex + 1) % this.OPTIONS.length;
             this.updateSelector();

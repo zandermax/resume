@@ -54,6 +54,10 @@ export class DialSelector extends HTMLElement {
     this.widthOuterCirclePercentage = 100;
     this.widthInnerCirclePercentage = 100;
     this.lineThicknessPercentage = 100;
+
+    // Haptic feedback configuration
+    this.hapticFeedbackEnabled = true;
+    this.hapticFeedbackDuration = 25;
   }
 
   static get observedAttributes() {
@@ -80,6 +84,8 @@ export class DialSelector extends HTMLElement {
       'height',
       'default-option',
       'cursor',
+      'haptic-feedback',
+      'haptic-duration',
     ];
   }
 
@@ -102,6 +108,8 @@ export class DialSelector extends HTMLElement {
     this.updateCursor();
     this.updateWidth();
     this.updateHeight();
+    this.updateHapticFeedback();
+    this.updateHapticDuration();
     this.buildDOM();
     this.calculateAngles();
 
@@ -244,6 +252,14 @@ export class DialSelector extends HTMLElement {
 
       case 'cursor':
         this.updateCursor();
+        break;
+
+      case 'haptic-feedback':
+        this.updateHapticFeedback();
+        break;
+
+      case 'haptic-duration':
+        this.updateHapticDuration();
         break;
 
       default:
