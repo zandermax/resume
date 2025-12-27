@@ -893,7 +893,7 @@ body[data-theme='neoswiss'] {
 
     &:hover {
       opacity: 0.9;
-      color: vaa(--color-white);
+      color: var(--color-white);
       border: 0;
     }
 
