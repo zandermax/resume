@@ -245,7 +245,7 @@ Terminal Theme (1992 CLI-inspired)
 @keyframes terminal-message-swap {
   0%,
   99% {
-    content: 'Saving...';
+    content: 'Retrieving resume...';
   }
   100% {
     content: 'Save complete. Would you like to Print?';
@@ -271,6 +271,49 @@ Terminal Theme (1992 CLI-inspired)
   }
   100% {
     pointer-events: auto;
+  }
+}
+
+/* Terminal button retrieve animation - scanning effect */
+@keyframes terminal-retrieve-scan {
+  0%,
+  100% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 0 0 var(--text-color), inset 0 0 0 0 var(--text-color);
+  }
+  25% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 10px 2px var(--text-color), inset 0 0 10px 2px var(--text-color);
+  }
+  50% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 20px 4px var(--text-color), inset 0 0 15px 4px var(--text-color);
+  }
+  75% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 10px 2px var(--text-color), inset 0 0 10px 2px var(--text-color);
+  }
+}
+
+/* Terminal button bracket blink animation */
+@keyframes terminal-bracket-blink {
+  0%,
+  49%,
+  100% {
+    opacity: 1;
+  }
+  50%,
+  99% {
+    opacity: 0;
+  }
+}
+
+/* Terminal button text pulse */
+@keyframes terminal-text-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.4);
+    transform: scale(1.02);
   }
 }
 
@@ -365,7 +408,7 @@ body[data-theme='terminal'] {
 
   /* Message text that changes after loading */
   .terminal-dialog__message::before {
-    content: 'Saving...';
+    content: 'Retrieving resume...';
   }
 
   /* Button text that changes after loading */
@@ -406,6 +449,46 @@ body[data-theme='terminal'] {
   @media (prefers-reduced-motion: reduce) {
     .terminal-dialog__loading-bar {
       animation: none;
+    }
+  }
+
+  /* Terminal Retrieve Resume button styling and animation */
+  #terminal-save-btn {
+    position: relative;
+    animation: terminal-retrieve-scan 2s ease-in-out infinite;
+    transition: all 0.2s ease;
+
+    &::before {
+      content: '>> ';
+      animation: terminal-bracket-blink 1.5s step-end infinite;
+      font-weight: bold;
+      margin-inline-end: 0.25em;
+    }
+
+    &::after {
+      content: ' <<';
+      animation: terminal-bracket-blink 1.5s step-end infinite;
+      animation-delay: 0.75s;
+      font-weight: bold;
+      margin-inline-start: 0.25em;
+    }
+
+    &:hover {
+      animation: terminal-retrieve-scan 1s ease-in-out infinite;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      animation-play-state: paused;
+    }
+  }
+
+  /* Disable animations for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    #terminal-save-btn,
+    #terminal-save-btn::before,
+    #terminal-save-btn::after {
+      animation: none !important;
     }
   }
 
