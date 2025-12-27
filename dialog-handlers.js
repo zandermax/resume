@@ -157,7 +157,9 @@ xpDesktopIcon?.addEventListener('click', (e) => {
 // Terminal Dialog
 const terminalDialog = document.getElementById('terminal-dialog');
 document.getElementById('terminal-save-btn')?.addEventListener('click', () => terminalDialog?.showModal());
+// Handle both desktop and mobile cancel buttons
 document.getElementById('terminal-dialog-cancel')?.addEventListener('click', () => terminalDialog?.close());
+document.getElementById('terminal-dialog-cancel-mobile')?.addEventListener('click', () => terminalDialog?.close());
 closeOnBackdrop(terminalDialog);
 
 // CRT Terminal Log Dialog

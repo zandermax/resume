@@ -817,7 +817,8 @@
 	<!-- Terminal Dialog Modal (visible only when triggered) -->
 	<dialog class="terminal-dialog" id="terminal-dialog">
 		<div class="terminal-dialog__container">
-			<pre class="terminal-dialog__frame">╔════════════════════════════════════════════════════╗
+			<!-- Desktop ASCII version -->
+			<pre class="terminal-dialog__frame terminal-dialog__frame--desktop">╔════════════════════════════════════════════════════╗
 ║   ╔═══════════════ SAVE RESUME ═══════════════╗    ║
 ║   ║                                           ║    ║
 ║   ║   <span class="terminal-dialog__message"></span>                                        ║    ║
@@ -830,8 +831,23 @@
 ║               │<span class="terminal-dialog__button-text"></span>│                ║
 ║               └───────────────────┘                ║
 ╚════════════════════════════════════════════════════╝</pre>
-			<button class="terminal-dialog__button" id="terminal-dialog-cancel" aria-label="Cancel"></button>
-			<a href="/print.html?print=true" target="_blank" rel="noreferrer" id="terminal-dialog__print-overlay" aria-label="Print Resume"></a>
+
+			<!-- Mobile CSS border version -->
+			<div class="terminal-dialog__content-mobile">
+				<div class="terminal-dialog__title-bar">SAVE RESUME</div>
+				<div class="terminal-dialog__body">
+					<div class="terminal-dialog__message-mobile">Retrieving resume...</div>
+					<div class="terminal-dialog__loading-bar-mobile"></div>
+				</div>
+				<div class="terminal-dialog__button-area">
+					<button class="terminal-dialog__button-mobile" id="terminal-dialog-cancel-mobile" aria-label="Cancel">CANCEL</button>
+					<a href="/print.html?print=true" target="_blank" rel="noreferrer" class="terminal-dialog__button-mobile terminal-dialog__button-mobile--print" id="terminal-dialog__print-overlay-mobile" aria-label="Print Resume">PRINT</a>
+				</div>
+			</div>
+
+			<!-- Desktop absolute positioned buttons -->
+			<button class="terminal-dialog__button terminal-dialog__button--desktop" id="terminal-dialog-cancel" aria-label="Cancel"></button>
+			<a href="/print.html?print=true" target="_blank" rel="noreferrer" id="terminal-dialog__print-overlay" class="terminal-dialog__print-overlay--desktop" aria-label="Print Resume"></a>
 		</div>
 	</dialog>
 

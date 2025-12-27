@@ -317,6 +317,28 @@ Terminal Theme (1992 CLI-inspired)
   }
 }
 
+/* Mobile message text swap animation */
+@keyframes terminal-message-text-swap {
+  0%,
+  99% {
+    content: 'Retrieving resume...';
+  }
+  100% {
+    content: 'Save complete. Would you like to Print?';
+  }
+}
+
+/* Mobile button show animation */
+@keyframes terminal-button-mobile-show {
+  0%,
+  99% {
+    display: none;
+  }
+  100% {
+    display: inline-block;
+  }
+}
+
 /* Apply terminal font and rendering */
 body[data-theme='terminal'] {
   /* Terminal Dialog - 1992 CLI-style modal with ASCII box-drawing */
@@ -335,7 +357,7 @@ body[data-theme='terminal'] {
       16px 20px 0 var(--terminal-black-40), 20px 20px 0 var(--terminal-black-40);
     color: var(--text-color);
     font-family: var(--font-family);
-    min-width: min(400px, 90vw);
+    width: 54ch;
     max-width: none;
     overflow: hidden;
     /* Prevent mobile browser text size adjustment */
@@ -552,54 +574,199 @@ body[data-theme='terminal'] {
     }
   }
 
-  /* Responsive Adjustments - theme-specific elements only */
-  @media (max-width: 768px) {
-    .terminal-dialog {
-      min-width: 300px;
+  /* Mobile CSS Border Version - hidden by default */
+  .terminal-dialog__content-mobile {
+    display: none;
+    flex-direction: column;
+    background: var(--terminal-window-bg);
+    border: 3px double var(--text-color);
+    border-radius: 0;
+    min-width: 280px;
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+
+  .terminal-dialog__title-bar {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 3px double var(--text-color);
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    background: var(--terminal-window-bg);
+  }
+
+  .terminal-dialog__body {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 3px double var(--text-color);
+  }
+
+  .terminal-dialog__message-mobile {
+    text-align: center;
+    font-size: 0.95rem;
+    min-height: 1.5em;
+    position: relative;
+
+    &::before {
+      content: 'Retrieving resume...';
     }
   }
 
-  @media (max-width: 500px) {
-    .terminal-dialog {
-      box-shadow: 6px 6px 0 var(--terminal-black-80), 12px 12px 0 var(--terminal-black-40);
-    }
+  .terminal-dialog__loading-bar-mobile {
+    width: 100%;
+    max-width: 300px;
+    height: 1.5rem;
+    position: relative;
+    background-image: repeating-linear-gradient(90deg, var(--color-blue-navy) 0 20px, transparent 0 26px);
+    background-size: auto 100%;
+    background-repeat: repeat;
+    background-position: 0 0;
 
-    .terminal-dialog__button {
-      bottom: 1.65rem;
-      padding: 0.6rem 4.5rem;
-    }
-
-    #terminal-dialog__print-overlay {
-      bottom: 1.65rem;
-      padding: 0.6rem 4.5rem;
-    }
-
-    .terminal-dialog__loading-bar {
-      --block-size: 1.25ch;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--terminal-window-bg);
+      will-change: width;
     }
   }
 
+  .terminal-dialog__button-area {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .terminal-dialog__button-mobile {
+    padding: 0.75rem 1.5rem;
+    background: var(--terminal-button-bg);
+    border: 2px solid var(--text-color);
+    box-shadow: var(--terminal-inset-raised-sm);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.1s;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      box-shadow: var(--terminal-inset-sunken-sm);
+      transform: translate(1px, 1px);
+    }
+  }
+
+  .terminal-dialog__button-mobile--print {
+    display: none;
+    background: var(--terminal-title-bg);
+    color: var(--dial-color-selection);
+    border-color: var(--dial-color-selection);
+  }
+
+  /* Dark mode adjustments for mobile loading bar */
+  &[data-mode='dark'] {
+    .terminal-dialog__loading-bar-mobile {
+      background-image: repeating-linear-gradient(90deg, var(--color-blue-bright) 0 20px, transparent 0 26px);
+
+      &::after {
+        background: var(--terminal-window-bg);
+      }
+    }
+  }
+
+  /* Mobile dialog animations - when open */
+  .terminal-dialog[open] .terminal-dialog__loading-bar-mobile::after {
+    animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
+  }
+
+  .terminal-dialog[open] .terminal-dialog__message-mobile::before {
+    animation: terminal-message-text-swap 5s steps(1) 1 forwards;
+  }
+
+  .terminal-dialog[open] .terminal-dialog__button-mobile--print {
+    animation: terminal-button-mobile-show 5s steps(1) 1 forwards;
+  }
+
+  /* Responsive Adjustments - Toggle between desktop ASCII and mobile CSS borders */
+
+  /* Desktop: Show ASCII art and absolute buttons, hide mobile version */
+  @media (min-width: 601px) {
+    .terminal-dialog__frame--desktop {
+      display: block;
+    }
+
+    .terminal-dialog__content-mobile {
+      display: none;
+    }
+
+    .terminal-dialog__button--desktop,
+    .terminal-dialog__print-overlay--desktop {
+      display: block;
+    }
+  }
+
+  /* Mobile: Hide ASCII art and absolute buttons, show mobile version */
   @media (max-width: 600px) {
-    .terminal-dialog__frame {
-      font-size: 0.85rem;
+    .terminal-dialog {
+      width: auto;
+      min-width: 280px;
+      max-width: 95vw;
     }
 
-    .terminal-dialog__button {
-      padding: 0.6rem 3.5rem;
+    .terminal-dialog__frame--desktop {
+      display: none;
     }
 
-    #terminal-dialog__print-overlay {
-      padding: 0.6rem 3.5rem;
+    .terminal-dialog__content-mobile {
+      display: flex;
     }
 
-    .terminal-dialog__loading-bar {
-      --block-size: 1ch;
+    .terminal-dialog__button--desktop,
+    .terminal-dialog__print-overlay--desktop {
+      display: none;
     }
   }
 
-  @media (max-width: 480px) {
-    .terminal-dialog__frame {
-      font-size: 0.75rem;
+  /* Extra small screens - slightly smaller mobile dialog */
+  @media (max-width: 400px) {
+    .terminal-dialog__content-mobile {
+      min-width: 260px;
+    }
+
+    .terminal-dialog__title-bar {
+      font-size: 0.9rem;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .terminal-dialog__body {
+      padding: 1.5rem 1rem;
+      gap: 1.25rem;
+    }
+
+    .terminal-dialog__button-area {
+      padding: 0.75rem 1rem;
+      flex-direction: column;
+    }
+
+    .terminal-dialog__button-mobile {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      font-size: 0.85rem;
     }
   }
 }
