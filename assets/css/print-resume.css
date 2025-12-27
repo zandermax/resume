@@ -2,35 +2,35 @@
 
 html,
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body.resume-print {
-	font-family: "Public Sans", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #111;
-	background: #ffffff;
-	-webkit-font-smoothing: antialiased;
-	font-size: 11pt;
+  font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-size: 11pt;
 }
 
 /* A4-friendly container */
 
 .resume-print__main {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 1.5rem 1.25rem;
-	box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  box-sizing: border-box;
 }
 
 /* ===========================
 ATS-Specific (not shown on screen)
 =========================== */
 .resume-print__ats-contact {
-	font-size: 0;
-	height: 0;
-	line-height: 0;
-	visibility: hidden;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
 }
 
 /* Headings & text */
@@ -39,203 +39,238 @@ h1,
 h2,
 h3,
 p {
-	margin: 0;
+  margin: 0;
 }
 
 .resume-print__name {
-	font-size: 1.8rem;
-	font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .resume-print__role {
-	font-size: 0.95rem;
-	text-transform: uppercase;
-	letter-spacing: 0.12em;
-	margin-block-start: 0.2rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-block-start: 0.2rem;
 }
 
 .resume-print__section-title {
-	font-size: 0.95rem;
-	text-transform: uppercase;
-	letter-spacing: 0.16em;
-	border-block-end: 1px solid #555;
-	padding-block-end: 0.2rem;
-	margin-block-end: 0.6rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border-block-end: 1px solid #555;
+  padding-block-end: 0.2rem;
+  margin-block-end: 0.6rem;
 }
 
 .resume-print__text {
-	font-size: 0.9rem;
-	line-height: 1.5;
-	margin-block-end: 0.45rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-block-end: 0.45rem;
 }
 
 /* Header layout */
 
 .resume-print__header {
-	margin-block-end: 1.2rem;
-	border-block-end: 1px solid #aaa;
-	padding-block-end: 0.6rem;
+  margin-block-end: 1.2rem;
+  border-block-end: 1px solid #aaa;
+  padding-block-end: 0.6rem;
 }
 
 .resume-print__header-main {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .resume-print__contact {
-	text-align: right;
-	font-size: 0.85rem;
+  text-align: right;
+  font-size: 0.85rem;
 }
 
 .resume-print__contact p + p {
-	margin-block-start: 0.15rem;
+  margin-block-start: 0.15rem;
 }
 
 .resume-print__contact a {
-	color: #111;
-	text-decoration: none;
+  color: #111;
+  text-decoration: none;
 }
 
 /* Sections */
 
 .resume-print__section {
-	margin-block-end: 1rem;
+  margin-block-end: 1rem;
 }
 
 /* Skills */
 
 .resume-print__skills-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 0.6rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1.5rem;
 }
 
 .resume-print__skills-group h3 {
-	font-size: 0.85rem;
-	font-weight: 600;
-	margin-block-end: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-block-end: 0.15rem;
 }
 
 .resume-print__skills-group p {
-	font-size: 0.85rem;
-	line-height: 1.4;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 /* Experience */
 
 .resume-print__experience-item {
-	margin-block-end: 0.65rem;
+  margin-block-end: 0.65rem;
 }
 
 .resume-print__experience-header {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
 }
 
 .resume-print__experience-role {
-	font-size: 0.9rem;
-	font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .resume-print__experience-company {
-	font-size: 0.85rem;
-	color: #333;
+  font-size: 0.85rem;
+  color: #333;
 }
 
 .resume-print__experience-meta {
-	font-size: 0.8rem;
-	text-align: right;
+  font-size: 0.8rem;
+  text-align: right;
 }
 
 .resume-print__experience-tech {
-	font-size: 0.8rem;
-	margin: 0.25rem 0 0.25rem;
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.25rem;
 }
 
 .resume-print__bullets {
-	margin: 0;
-	padding-inline-start: 1.1rem;
-	font-size: 0.86rem;
+  margin: 0;
+  padding-inline-start: 1.1rem;
+  font-size: 0.86rem;
 }
 
 .resume-print__bullets li {
-	line-height: 1.4;
-	margin-block-end: 0.18rem;
+  line-height: 1.4;
+  margin-block-end: 0.18rem;
 }
 
 /* Lists */
 
 .resume-print__list {
-	margin: 0;
-	padding-inline-start: 1.1rem;
-	font-size: 0.86rem;
+  margin: 0;
+  padding-inline-start: 1.1rem;
+  font-size: 0.86rem;
 }
 
 .resume-print__list li {
-	line-height: 1.4;
-	margin-block-end: 0.2rem;
+  line-height: 1.4;
+  margin-block-end: 0.2rem;
 }
 
 /* Education */
 
 .resume-print__education-item {
-	font-size: 0.86rem;
+  font-size: 0.86rem;
 }
 
 .resume-print__education-institution {
-	font-size: 0.9rem;
-	font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .resume-print__education-degree {
-	margin-block-start: 0.1rem;
+  margin-block-start: 0.1rem;
 }
 
 .resume-print__education-details {
-	margin-block-start: 0.1rem;
+  margin-block-start: 0.1rem;
 }
 
 /* Small-screen (if someone views print version on mobile) */
 
 @media screen and (max-width: 700px) {
-	.resume-print__header-main {
-		flex-direction: column;
-		align-items: flex-start;
-	}
+  .resume-print__header-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-	.resume-print__contact {
-		text-align: left;
-	}
+  .resume-print__contact {
+    text-align: left;
+  }
 
-	.resume-print__skills-grid {
-		grid-template-columns: 1fr;
-	}
+  .resume-print__skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Print-specific rules */
 
 @media print {
-	@page {
-		size: A4;
-		margin: 1.5cm 1.8cm;
-	}
+  @page {
+    size: A4;
+    margin: 1.5cm 1.8cm;
+  }
 
-	body.resume-print {
-		font-size: 10.5pt;
-	}
+  body.resume-print {
+    font-size: 10.5pt;
+  }
 
-	.resume-print__main {
-		max-width: none;
-		padding: 0;
-		margin: 0;
-	}
+  .resume-print__main {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
 
-	a {
-		color: #000;
-		text-decoration: none;
-	}
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  /* Prevent orphans and widows */
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Prevent awkward splits within sections and items */
+  .resume-print__section {
+    page-break-inside: avoid;
+  }
+
+  .resume-print__experience-item {
+    page-break-inside: auto;
+  }
+
+  /* Keep bullets together as much as possible */
+  .resume-print__bullets li {
+    page-break-inside: avoid;
+  }
+
+  /* Force page break before AWS role to fit better */
+  .resume-print__experience-item:nth-of-type(2) {
+    page-break-before: always;
+  }
+
+  /* Slightly tighten spacing to fit content */
+  .resume-print__section {
+    margin-block-end: 0.85rem;
+  }
+
+  .resume-print__experience-item {
+    margin-block-end: 0.55rem;
+  }
 }
