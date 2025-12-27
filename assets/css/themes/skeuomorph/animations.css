@@ -1,0 +1,88 @@
+/* ===========================
+SKEUOMORPH Theme - Animations
+=========================== */
+
+/* ==================== PRINT BUTTON SHIMMER ==================== */
+
+/* Shimmer animation for print button hover */
+@keyframes button-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ==================== STICKY NOTE ANIMATIONS ==================== */
+
+/* Sticky note path animation - red curve (downward arc to the left) */
+@keyframes sticky-note-path-red {
+  from {
+    offset-path: path('M 0 0 C -30 60, -80 80, -120 40');
+    offset-distance: 0%;
+  }
+  to {
+    offset-path: path('M 0 0 C -30 60, -80 80, -120 40');
+    offset-distance: 100%;
+  }
+}
+
+/* Sticky note path animation - blue curve (downward) */
+@keyframes sticky-note-path-blue {
+  from {
+    offset-path: path('M -120 40 C -100 70, -60 90, -20 100');
+    offset-distance: 0%;
+  }
+  to {
+    offset-path: path('M -120 40 C -100 70, -60 90, -20 100');
+    offset-distance: 100%;
+  }
+}
+
+/* Sticky note path animation - green curve (final descent with fade) */
+@keyframes sticky-note-path-green {
+  from {
+    offset-path: path('M -20 100 C -30 160, -50 220, -80 280');
+    offset-distance: 0%;
+  }
+  to {
+    offset-path: path('M -20 100 C -30 160, -50 220, -80 280');
+    offset-distance: 100%;
+  }
+}
+
+/* Sticky note door opening animation (rotation + arc movement) */
+@keyframes sticky-note-transform {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(-35deg);
+  }
+}
+
+/* Sticky note fade animation */
+@keyframes sticky-note-fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Sticky note continuous rotation */
+@keyframes sticky-note-rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+

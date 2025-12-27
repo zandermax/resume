@@ -1,6 +1,8 @@
 /* ===========================
-Skeuomorphic Theme Effects
+SKEUOMORPH Theme - Base Styles & Variables
 =========================== */
+
+/* ==================== VARIABLES & GRADIENTS ==================== */
 
 :root[data-theme='skeuomorph'] {
   --font-family: 'Georgia', 'Times New Roman', serif;
@@ -56,6 +58,9 @@ Skeuomorphic Theme Effects
   /* Header name wrapper custom properties */
   --header-name-wrapper-margin-block-start: 2.25rem;
 
+  /* Header custom properties */
+  --header-padding: var(--spacing-lg);
+
   /* Experience item custom properties */
   --experience-item-background: var(--paper-color);
   --experience-item-padding: var(--spacing-md) var(--spacing-md);
@@ -66,6 +71,7 @@ Skeuomorphic Theme Effects
   /* Skills grid group custom properties */
   --skills-group-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
     0 1px 3px var(--skeu-black-08);
+  --skills-group-padding: var(--spacing-sm) var(--spacing-sm);
 
   /* Tech badge custom properties */
   --tech-badge-font-weight: 600;
@@ -105,6 +111,9 @@ Skeuomorphic Theme Effects
   --tech-badge-after-pointer-events: none;
   --tech-badge-after-z-index: 2;
 
+  --principles-item-padding: var(--spacing-sm) var(--spacing-xs);
+  --education-item-padding: var(--spacing-sm) var(--spacing-sm);
+
   /* Experience bullets custom properties */
   --bullet-color: var(--leather-color);
   --bullet-text-shadow: 0 1px 0 var(--skeu-white-20);
@@ -112,13 +121,43 @@ Skeuomorphic Theme Effects
   /* Section title custom properties */
   --section-title-background: var(--paper-color);
   --section-title-color: var(--text-color);
-  --section-title-padding: 0.6rem var(--spacing-md);
+  --section-title-padding: var(--spacing-sm) var(--spacing-sm);
   --section-title-margin: 0 0 var(--spacing-md) -var(--spacing-xs);
   --section-title-box-shadow: 0 2px 4px var(--skeu-black-20), inset 0 1px 2px var(--skeu-white-10);
   --section-title-border-inline-start: 4px solid var(--leather-color);
   --section-title-border-inline-end: 4px solid var(--leather-color);
   --section-title-text-shadow: 0 1px 0 var(--skeu-white-50), 0 2px 2px var(--skeu-black-10);
   --section-title-font-weight: 700;
+  --section-content-padding-inline: var(--spacing-md);
+
+  /* Section container custom properties */
+  --section-position: relative;
+  --section-padding: var(--spacing-md) var(--spacing-lg);
+  --section-background: var(--paper-color);
+  --section-background-image: var(--paper-texture);
+
+  /* Section paper curl effect - ::before pseudo-element */
+  --section-before-content: '';
+  --section-before-position: absolute;
+  --section-before-inset: 0 0 auto auto;
+  --section-before-width: 0;
+  --section-before-height: 0;
+  --section-before-border-style: solid;
+  --section-before-border-width: 0 0 24px 24px;
+  --section-before-border-color: transparent transparent var(--skeu-black-08);
+  --section-before-pointer-events: none;
+
+  /* Section paper curl effect - ::after pseudo-element */
+  --section-after-content: '';
+  --section-after-position: absolute;
+  --section-after-inset: 0 0 auto auto;
+  --section-after-width: 0;
+  --section-after-height: 0;
+  --section-after-border-style: solid;
+  --section-after-border-width: 0 24px 24px 0;
+  --section-after-border-color: transparent var(--background-color) transparent;
+  --section-after-box-shadow: -2px 2px 3px var(--skeu-black-10);
+  --section-after-pointer-events: none;
 
   /* Print link custom properties */
   --printlink-background: var(--metal-gradient);
@@ -154,6 +193,11 @@ Skeuomorphic Theme Effects
   --ds-label-hover-transform: none;
   --ds-label-hover-padding: 0;
 
+  /* Dial selector housing custom properties */
+  --dial-selector-housing-padding: var(--spacing-lg);
+  --dial-selector-housing-margin: var(--spacing-xs);
+
+  /* ==================== LIGHT MODE ==================== */
   &[data-mode='light'] {
     --background-color: oklch(0.36 0.05 45);
     --text-color: var(--color-brown);
@@ -183,6 +227,7 @@ Skeuomorphic Theme Effects
     --link-color: oklch(0.38 0.04 40);
     --link-visited-color: oklch(0.27 0.03 40);
     --section-bg: var(--color-cream);
+    --section-content-background: var(--paper-color);
     --header-background: var(--color-tan);
     --accent-color: oklch(0.42 0.11 50);
     --leather-color: var(--color-tan);
@@ -220,6 +265,7 @@ Skeuomorphic Theme Effects
     --oak-shade: oklch(0% 0 0 / 0.18);
   }
 
+  /* ==================== DARK MODE ==================== */
   &[data-mode='dark'] {
     --background-color: oklch(0.32 0.03 45);
     --text-color: oklch(0.86 0.03 60);
@@ -250,6 +296,7 @@ Skeuomorphic Theme Effects
     --link-color: oklch(0.77 0.13 85);
     --link-visited-color: oklch(0.65 0.11 75);
     --section-bg: oklch(0.38 0.04 50);
+    --section-content-background: var(--paper-color);
     --header-background: oklch(0.33 0.03 45);
     --accent-color: oklch(0.77 0.13 85);
     --leather-color: oklch(0.33 0.03 45);
@@ -282,11 +329,13 @@ Skeuomorphic Theme Effects
   }
 }
 
+/* ==================== BODY STYLES ==================== */
+
 /* Paper curl effect on sections */
 body[data-theme='skeuomorph'] {
   --display-sticky-note: block;
 
-  /* Stitched leather border effect for main resume container */
+  /* ==================== MAIN CONTAINER - STITCHED LEATHER BORDER ==================== */
   .resume__main {
     /* Leather border backing */
     &::before {
@@ -320,39 +369,7 @@ body[data-theme='skeuomorph'] {
     }
   }
 
-  .resume-section {
-    position: relative;
-    background: var(--paper-color);
-    background-image: var(--paper-texture);
-    padding: 0;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto auto;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 24px 24px;
-      border-color: transparent transparent var(--skeu-black-08);
-      pointer-events: none;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto auto;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 24px 24px 0;
-      border-color: transparent var(--background-color) transparent;
-      box-shadow: -2px 2px 3px var(--skeu-black-10);
-      pointer-events: none;
-    }
-  }
-
-  /* Enhanced borders and boxes */
+  /* ==================== ENHANCED BOXES - STITCHED EFFECT ==================== */
   .skills-grid,
   .community-list,
   .principles-list,
@@ -373,19 +390,15 @@ body[data-theme='skeuomorph'] {
     }
   }
 
-  /* Header leather backing */
+  /* ==================== HEADER - LEATHER BACKING ==================== */
   .resume-header {
     position: relative;
-    padding: var(--spacing-lg);
+    padding: var(--header-padding);
     margin: -var(--spacing-md) -var(--spacing-md) var(--spacing-lg);
     background: var(--paper-color);
     background-image: var(--paper-texture);
     box-shadow: 0 4px 8px var(--skeu-black-30), inset 0 1px 2px var(--skeu-white-50);
     border: 4px solid var(--leather-color);
-
-    @media (max-width: 500px) {
-      padding: var(--spacing-sm);
-    }
 
     *:not(#resume-header__printlink) {
       color: var(--text-color);
@@ -402,33 +415,14 @@ body[data-theme='skeuomorph'] {
     }
   }
 
-  /* Dial selector labels */
-  dial-selector .dial-label {
-    color: var(--text-color);
-    font-weight: 600;
-
-    &.active > span {
-      color: var(--dial-color-selection);
-      font-weight: 700;
-    }
-
-    /* Remove hover effect from active label for realism */
-    &.active:hover > span {
-      background: transparent;
-      color: var(--dial-color-selection);
-      transform: none;
-      box-shadow: none;
-    }
-  }
-
-  /* Experience items get paper card treatment */
+  /* ==================== EXPERIENCE ITEMS - PAPER CARD ==================== */
   .experience-item {
     background-image: var(--paper-texture);
     margin: var(--spacing-lg) -var(--spacing-xs);
     border-inline: var(--border-width-extra-thick) solid var(--leather-color);
   }
 
-  /* Leather tag effect for tech stack */
+  /* ==================== TECH BADGES - LEATHER TAG EFFECT ==================== */
   .experience-item__tech {
     /* Ensure all text has consistent light color */
     &,
@@ -440,71 +434,7 @@ body[data-theme='skeuomorph'] {
     }
   }
 
-  /* Leather texture on bullets */
-  /* Dial selector enhancements */
-  dial-selector {
-    --ds-knob-background: #11161c; /* Fallback solid color */
-    --ds-knob-background-image: var(--metal-gradient); /* Use gradient as background-image */
-    --ds-knob-box-shadow: var(--knob-shadow);
-    --ds-knob-border: 3px solid var(--ds-color-outer-circle);
-
-    --ds-indicator-gradient: var(--ds-color-indicator);
-    --ds-indicator-box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),
-      inset 0 1px 2px var(--skeu-white-30);
-    --ds-indicator-border: 1px solid var(--skeu-black-30);
-
-    /* Add ridges for grip via ::after pseudo-element */
-    --ds-knob-after-content: '';
-    --ds-knob-after-display: block;
-    --ds-knob-after-position: absolute;
-    --ds-knob-after-inset: 12px;
-    --ds-knob-after-border-radius: 50%;
-    --ds-knob-after-background: repeating-conic-gradient(
-      from 0deg,
-      var(--skeu-black-15) 0deg 4deg,
-      transparent 4deg 8deg
-    );
-    --ds-knob-after-pointer-events: none;
-  }
-
-  /* Leather pad under dial selectors */
-  .resume-header__dial-selector {
-    position: relative;
-    padding: var(--spacing-lg);
-    margin: var(--spacing-xs);
-    background: var(--skeu-black-20);
-    border-radius: 8px;
-    box-shadow: inset 0 2px 4px var(--skeu-black-30), inset 0 -1px 2px var(--skeu-white-05);
-  }
-
-  .resume-header__dial-selector::before {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border: 2px dashed var(--stitch-color);
-    border-radius: 4px;
-    opacity: 0.4;
-    pointer-events: none;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .resume-header__dial-selector {
-      padding: var(--spacing-md);
-      margin: 0.25rem;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .resume-header__dial-selector {
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  /* Print button gets embossed metal look */
-
-  /* Add texture to section headings */
+  /* ==================== SECTION HEADINGS - TEXTURED PAPER ==================== */
   .resume-section__title {
     background-image: var(--paper-texture);
 
@@ -516,262 +446,5 @@ body[data-theme='skeuomorph'] {
       opacity: 0.4;
       pointer-events: none;
     }
-  }
-
-  /* Add depth to skills grid items */
-  /* Sticky note - all styling consolidated here */
-  #sticky-note {
-    position: absolute;
-    top: 45em; /* Right at the level of my name on mobile, next to mode selector on desktop */
-    left: clamp(40px, calc(100% - 260px), 1000px);
-    width: 220px;
-    min-height: 160px;
-    padding: 20px;
-    background: var(--sticky-note-color);
-    background-image: repeating-linear-gradient(
-      transparent,
-      transparent 24px,
-      oklch(0% 0 0 / 0.05) 24px,
-      oklch(0% 0 0 / 0.05) 25px
-    );
-    box-shadow: var(--sticky-note-shadow);
-    transform: rotate(var(--sticky-note-rotation));
-    font-family: 'Indie Flower', 'Comic Sans MS', cursive;
-    font-size: 15px;
-    line-height: 24px;
-    color: #333;
-    z-index: 1000;
-
-    /* Offset path properties */
-    offset-rotate: 0deg;
-    offset-anchor: 0 0;
-    offset-path: path('M 0 0');
-    offset-distance: 0%;
-
-    /* Sticky note "tape" at top */
-    &::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 20px;
-      background: oklch(100% 0 0 / 0.3);
-      border: 1px solid oklch(0% 0 0 / 0.05);
-      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.1);
-      z-index: 1;
-    }
-
-    &:hover {
-      transform: rotate(0deg) scale(1.02);
-    }
-
-    /* Hide the disappear checkbox */
-    #sticky-note-disappear {
-      display: none;
-    }
-
-    /* Label for sticky-note-trigger - invisible overlay covering entire sticky note */
-    label[for='sticky-note-trigger'] {
-      position: absolute;
-      inset: 0;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    /* Label for sticky-note-disappear - initially hidden */
-    label[for='sticky-note-disappear'] {
-      position: absolute;
-      inset: 0;
-      cursor: pointer;
-      z-index: 10;
-      display: none;
-    }
-
-    /* When trigger is checked, hide first label and show second label */
-    &:has(#sticky-note-trigger:checked) label[for='sticky-note-trigger'] {
-      display: none;
-    }
-
-    &:has(#sticky-note-trigger:checked) label[for='sticky-note-disappear'] {
-      display: block;
-    }
-
-    /* When disappear checkbox is checked, trigger animation */
-    &:has(#sticky-note-disappear:checked) {
-      animation: sticky-note-path-red 0.5s 0s forwards ease-out, sticky-note-path-blue 0.5s 0.55s forwards ease-in-out,
-        sticky-note-path-green 0.8s 1.1s forwards ease-in, sticky-note-fade 0.7s 1.2s forwards ease-in,
-        sticky-note-rotate 20s 0s linear infinite;
-    }
-
-    input[type='checkbox'] {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      cursor: default;
-      accent-color: #333;
-      margin-block-start: 4px;
-    }
-
-    /* Style for checked checkboxes: strikethrough and reduced opacity on adjacent text */
-    input[type='checkbox']:checked + span {
-      text-decoration: line-through;
-      opacity: 0.6;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      right: 20px;
-      left: auto;
-      width: 180px;
-      min-height: 140px;
-      padding: 15px;
-      font-size: 13px;
-      line-height: 22px;
-
-      input[type='checkbox'] {
-        width: 16px;
-        height: 16px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      top: 29rem;
-      right: 10px;
-      left: auto;
-      width: 160px;
-      min-height: 120px;
-      padding: 12px;
-      font-size: 12px;
-      line-height: 20px;
-
-      input[type='checkbox'] {
-        width: 14px;
-        height: 14px;
-      }
-    }
-  }
-
-  #sticky-note-title {
-    margin: 0 0 12px 0;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: underline;
-    position: relative;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  #sticky-note-item-1,
-  #sticky-note-item-2 {
-    margin: 0 0 10px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    position: relative;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  #sticky-note-item-3 {
-    margin: 0;
-    display: none;
-    align-items: flex-start;
-    gap: 8px;
-    position: relative;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  /* Show third item when trigger checkbox is checked */
-  #sticky-note:has(#sticky-note-trigger:checked) #sticky-note-item-3 {
-    display: flex;
-  }
-
-  #sticky-note-again {
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-}
-
-/* Shimmer animation for print button hover */
-@keyframes button-shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
-}
-
-/* Sticky note path animation - red curve (downward arc to the left) */
-@keyframes sticky-note-path-red {
-  from {
-    offset-path: path('M 0 0 C -30 60, -80 80, -120 40');
-    offset-distance: 0%;
-  }
-  to {
-    offset-path: path('M 0 0 C -30 60, -80 80, -120 40');
-    offset-distance: 100%;
-  }
-}
-
-/* Sticky note path animation - blue curve (downward) */
-@keyframes sticky-note-path-blue {
-  from {
-    offset-path: path('M -120 40 C -100 70, -60 90, -20 100');
-    offset-distance: 0%;
-  }
-  to {
-    offset-path: path('M -120 40 C -100 70, -60 90, -20 100');
-    offset-distance: 100%;
-  }
-}
-
-/* Sticky note path animation - green curve (final descent with fade) */
-@keyframes sticky-note-path-green {
-  from {
-    offset-path: path('M -20 100 C -30 160, -50 220, -80 280');
-    offset-distance: 0%;
-  }
-  to {
-    offset-path: path('M -20 100 C -30 160, -50 220, -80 280');
-    offset-distance: 100%;
-  }
-}
-
-/* Sticky note door opening animation (rotation + arc movement) */
-@keyframes sticky-note-transform {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateY(-35deg);
-  }
-}
-
-/* Sticky note fade animation */
-@keyframes sticky-note-fade {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* Sticky note continuous rotation */
-@keyframes sticky-note-rotate {
-  0% {
-    rotate: 0deg;
-  }
-
-  100% {
-    rotate: 360deg;
   }
 }

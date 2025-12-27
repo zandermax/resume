@@ -58,6 +58,7 @@
 
 .resume-section__content {
   padding-inline: var(--section-content-padding-inline, 0);
+  background: var(--section-content-background, transparent);
 }
 
 /* === SECTION ACCENT COLOR ROTATION === */

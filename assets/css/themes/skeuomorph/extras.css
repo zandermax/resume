@@ -1,0 +1,151 @@
+/* ===========================
+SKEUOMORPH Theme - Sticky Note Feature
+=========================== */
+
+/* ==================== STICKY NOTE - ALL STYLING ==================== */
+
+body[data-theme='skeuomorph'] {
+  #sticky-note {
+    position: absolute;
+    top: 45em; /* Right at the level of my name on mobile, next to mode selector on desktop */
+    left: clamp(40px, calc(100% - 260px), 1000px);
+    width: 220px;
+    min-height: 160px;
+    padding: 20px;
+    background: var(--sticky-note-color);
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 24px,
+      oklch(0% 0 0 / 0.05) 24px,
+      oklch(0% 0 0 / 0.05) 25px
+    );
+    box-shadow: var(--sticky-note-shadow);
+    transform: rotate(var(--sticky-note-rotation));
+    font-family: 'Indie Flower', 'Comic Sans MS', cursive;
+    font-size: 15px;
+    line-height: 24px;
+    color: #333;
+    z-index: 1000;
+
+    /* Offset path properties */
+    offset-rotate: 0deg;
+    offset-anchor: 0 0;
+    offset-path: path('M 0 0');
+    offset-distance: 0%;
+
+    /* Sticky note "tape" at top */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: oklch(100% 0 0 / 0.3);
+      border: 1px solid oklch(0% 0 0 / 0.05);
+      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.1);
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    /* Hide the disappear checkbox */
+    #sticky-note-disappear {
+      display: none;
+    }
+
+    /* Label for sticky-note-trigger - invisible overlay covering entire sticky note */
+    label[for='sticky-note-trigger'] {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Label for sticky-note-disappear - initially hidden */
+    label[for='sticky-note-disappear'] {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10;
+      display: none;
+    }
+
+    /* When trigger is checked, hide first label and show second label */
+    &:has(#sticky-note-trigger:checked) label[for='sticky-note-trigger'] {
+      display: none;
+    }
+
+    &:has(#sticky-note-trigger:checked) label[for='sticky-note-disappear'] {
+      display: block;
+    }
+
+    /* When disappear checkbox is checked, trigger animation */
+    &:has(#sticky-note-disappear:checked) {
+      animation: sticky-note-path-red 0.5s 0s forwards ease-out, sticky-note-path-blue 0.5s 0.55s forwards ease-in-out,
+        sticky-note-path-green 0.8s 1.1s forwards ease-in, sticky-note-fade 0.7s 1.2s forwards ease-in,
+        sticky-note-rotate 20s 0s linear infinite;
+    }
+
+    input[type='checkbox'] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      cursor: default;
+      accent-color: #333;
+      margin-block-start: 4px;
+    }
+
+    /* Style for checked checkboxes: strikethrough and reduced opacity on adjacent text */
+    input[type='checkbox']:checked + span {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  }
+
+  #sticky-note-title {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  #sticky-note-item-1,
+  #sticky-note-item-2 {
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  #sticky-note-item-3 {
+    margin: 0;
+    display: none;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Show third item when trigger checkbox is checked */
+  #sticky-note:has(#sticky-note-trigger:checked) #sticky-note-item-3 {
+    display: flex;
+  }
+
+  #sticky-note-again {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
