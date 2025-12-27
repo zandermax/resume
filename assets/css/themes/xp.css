@@ -454,6 +454,12 @@ body[data-theme='xp'] {
     }
   }
 
+  .resume-header__top-row {
+    @media (max-width: 500px) {
+      margin-block-start: 2rem;
+    }
+  }
+
   .resume-header__dial-selector {
     padding: 1rem;
     background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(90% 0 0) 100%);
