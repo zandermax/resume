@@ -796,6 +796,10 @@ body[data-theme='terminal'] {
     --printlink-padding-inline-responsive-500: var(--spacing-xs);
     --printlink-before-margin-inline-start: 0;
     --printlink-before-margin-inline-end: 0;
+
+    .resume-header {
+      padding-block-start: 2rem;
+    }
   }
 }
 
