@@ -1,15 +1,19 @@
 /* ===========================
-DEFAULT Theme - Clean, Professional
+DEFAULT Theme - Base Styles & Variables
 =========================== */
 
-/* Common properties for all modes */
+/* ==================== COLOR SCHEMES ==================== */
+
 :root[data-theme='default'] {
+  /* ==================== TYPOGRAPHY ==================== */
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* ==================== BACKGROUNDS ==================== */
   --background-image: none;
   --section-bg: transparent;
   --header-background: transparent;
 
-  /* Print link common properties */
+  /* ==================== PRINT LINK - COMMON PROPERTIES ==================== */
   --printlink-border-radius: 4px;
   --printlink-padding: var(--spacing-sm) var(--spacing-lg);
   --printlink-font-size: 0.9rem;
@@ -19,6 +23,7 @@ DEFAULT Theme - Clean, Professional
   --printlink-hover-color: var(--color-white);
   --printlink-hover-transform: translateY(-1px);
 
+  /* ==================== LIGHT MODE ==================== */
   [data-mode='light'] {
     --background-color: var(--color-white);
     --text-color: var(--color-black);
@@ -41,7 +46,7 @@ DEFAULT Theme - Clean, Professional
     --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
   }
 
-  /* Dark Mode */
+  /* ==================== DARK MODE ==================== */
   [data-mode='dark'] {
     --background-color: var(--color-dark-bg);
     --text-color: var(--color-gray-pure-light);
@@ -63,11 +68,5 @@ DEFAULT Theme - Clean, Professional
     --printlink-hover-border-color: var(--color-red-bright);
     --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.4), 0 3px 6px oklch(0% 0 0 / 0.25);
   }
-
-  dial-selector {
-    --ds-label-hover-color: var(--dial-color-ink);
-    --ds-label-hover-opacity: 0.7;
-    --ds-label-hover-transform: translateY(-1px);
-    --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
-  }
 }
+
