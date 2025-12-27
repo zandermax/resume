@@ -872,7 +872,7 @@ body[data-theme='neoswiss'] {
     animation-delay: 6.2s;
   }
 
-  .neoswiss-ai-modal__recommendation {
+  #neoswiss-ai-modal__recommendation {
     display: block;
     text-transform: uppercase;
     background: var(--accent-color);
@@ -893,12 +893,17 @@ body[data-theme='neoswiss'] {
 
     &:hover {
       opacity: 0.9;
-      color: #ffffff !important;
+      color: vaa(--color-white);
       border: 0;
     }
 
     &:visited {
-      color: #ffffff !important;
+      color: var(--color-white);
+
+      &:hover {
+        background: var(--text-color);
+        color: var(--background-color);
+      }
     }
   }
 
