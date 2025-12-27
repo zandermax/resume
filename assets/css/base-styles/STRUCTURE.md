@@ -4,36 +4,36 @@ Quick reference guide for AI agents and developers working with the modular base
 
 ## Overview
 
-This directory contains the base CSS styles split into small, focused modules. Each file is under ~150 lines for easy parsing and editing. All files include metadata headers describing their purpose, HTML mappings, and dependencies.
+This directory contains the base CSS styles split into small, focused modules. Most files are under 200 lines for maintainability. All files include metadata headers describing their purpose, HTML mappings, and dependencies.
 
 ## File Organization
 
 ### CSS Variables (7 files)
 
-- `variables-base.css` (~50 lines) - Core design tokens
-- `variables-layout.css` (~120 lines) - Main container, header, section variables
-- `variables-skills.css` (~80 lines) - Skills grid variables
-- `variables-experience.css` (~140 lines) - Experience items, tech badges, bullets
-- `variables-lists.css` (~70 lines) - Community and principles lists
-- `variables-education.css` (~35 lines) - Education section
-- `variables-buttons.css` (~110 lines) - Print/save buttons, dial selector
+- `variables-base.css` (~70 lines) - Core design tokens
+- `variables-layout.css` (~308 lines) - Main container, header, section variables
+- `variables-skills.css` (~97 lines) - Skills grid variables
+- `variables-experience.css` (~197 lines) - Experience items, tech badges, bullets
+- `variables-lists.css` (~85 lines) - Community and principles lists
+- `variables-education.css` (~60 lines) - Education section
+- `variables-buttons.css` (~179 lines) - Print/save buttons, dial selector
 
 ### Style Rules (10 files)
 
-- `reset.css` (~40 lines) - HTML/body resets
-- `typography.css` (~200 lines) - All text styling
-- `layout.css` (~50 lines) - Main resume container
-- `header.css` (~120 lines) - Resume header structure
-- `sections.css` (~30 lines) - Section containers
-- `skills.css` (~85 lines) - Skills grid component
-- `experience.css` (~185 lines) - Experience items
-- `lists.css` (~125 lines) - Community/principles lists
-- `education.css` (~25 lines) - Education component
-- `buttons.css` (~130 lines) - Print/save buttons
+- `reset.css` (~82 lines) - HTML/body resets
+- `typography.css` (~248 lines) - All text styling
+- `layout.css` (~58 lines) - Main resume container
+- `header.css` (~157 lines) - Resume header structure
+- `sections.css` (~94 lines) - Section containers
+- `skills.css` (~115 lines) - Skills grid component
+- `experience.css` (~253 lines) - Experience items
+- `lists.css` (~163 lines) - Community/principles lists
+- `education.css` (~52 lines) - Education component
+- `buttons.css` (~162 lines) - Print/save buttons
 
 ### Entry Point
 
-- `index.css` (~30 lines) - Imports all files in correct order
+- `index.css` (~74 lines) - Imports all files in correct order
 
 ## Quick Reference: HTML → CSS Files
 

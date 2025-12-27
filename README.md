@@ -35,6 +35,31 @@ Each theme is primarily implemented in CSS with light JavaScript for dynamic con
 - **Web Components**: Custom `<dial-selector>` element for the theme picker
 - **Responsive**: Works across different screen sizes and devices
 
+## Project Structure
+
+### Core Files
+
+- `index.html` - Main interactive resume page with theme switcher
+- `print.html` - Print-optimized resume page (minimal styling)
+- `feed.xml.html` - RSS feed viewer (displayed with XML syntax highlighting)
+- `theme-manager.js` - Handles theme switching and glitch effect setup
+- `dialog-handlers.js` - Cookie banner and dialog management
+
+### JavaScript Modules
+
+- `dial-selector/` - Custom web component for theme/mode selection
+  - Modular vanilla JavaScript with no build step
+  - See `dial-selector/README.md` for architecture details
+
+### Styles
+
+- `assets/css/base-styles/` - Modular base CSS split into focused files
+  - See `base-styles/STRUCTURE.md` for complete reference
+- `assets/css/dial-selector-styles/` - Styles for the dial selector component
+- `assets/css/themes/` - Theme-specific CSS overrides
+  - Each theme in its own directory with modular structure
+  - Standalone CSS files for simpler themes (glitch.css, nostalgia.css, etc.)
+
 ## Made by Me
 
 I designed and built all of this myself (with, of course, the help of modern developer tooling, AI assistants, and the collective wisdom of the web). The goal was to create something that demonstrates both technical skill and design sensibility.
