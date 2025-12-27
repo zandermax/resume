@@ -196,10 +196,10 @@ export const DOMBuilder = {
       indicator.addEventListener('transitionend', (e) => {
         // Only trigger for transform transitions (the rotation)
         if (e.propertyName === 'transform' && this.isInitialized && this.hapticFeedbackEnabled) {
-          // Lighter vibration for completion (15ms)
+          // Lighter vibration for completion (35ms)
           if (navigator.vibrate && typeof navigator.vibrate === 'function') {
             try {
-              navigator.vibrate(15);
+              navigator.vibrate(35);
             } catch (err) {
               // Silently fail
             }
