@@ -98,6 +98,17 @@ p {
   text-decoration: none;
 }
 
+.resume-print__full-resume-link {
+  margin-block-start: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.resume-print__full-resume-link a {
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: underline;
+}
+
 /* Sections */
 
 .resume-print__section {
