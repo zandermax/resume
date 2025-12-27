@@ -175,6 +175,9 @@ const neoSwissButton = document.getElementById('neoswiss-ai-button');
 const neoSwissDialog = document.getElementById('neoswiss-ai-modal');
 const neoSwissClose = neoSwissDialog?.querySelector('.neoswiss-ai-modal__close');
 
+// Store animation listeners for cleanup
+let neoSwissAnimationListeners = [];
+
 neoSwissButton?.addEventListener('click', () => {
   neoSwissDialog?.showModal();
 
@@ -192,10 +195,44 @@ neoSwissButton?.addEventListener('click', () => {
       }, scrollDelay);
     });
   }
+
+  // Add haptic feedback for progressive animations
+  const animatedElements = neoSwissDialog.querySelectorAll(`
+    .neoswiss-ai-modal__section-title,
+    .neoswiss-ai-modal__text,
+    .neoswiss-ai-modal__list li,
+    .neoswiss-ai-modal__score-bar,
+    .neoswiss-ai-modal__score-fill,
+    .neoswiss-ai-modal__score-label,
+    #neoswiss-ai-modal__recommendation
+  `);
+
+  animatedElements.forEach((element) => {
+    const handler = (e) => {
+      // Only trigger for relevant animations
+      if (['contentFadeIn', 'scoreFill', 'recommendationAppear'].includes(e.animationName)) {
+        if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+          try {
+            navigator.vibrate(12); // Very subtle for progressive output
+          } catch (err) {
+            // Silently fail
+          }
+        }
+      }
+    };
+    element.addEventListener('animationstart', handler);
+    neoSwissAnimationListeners.push({ element, handler });
+  });
 });
 
 neoSwissClose?.addEventListener('click', () => {
   neoSwissDialog?.close();
+
+  // Cleanup animation listeners
+  neoSwissAnimationListeners.forEach(({ element, handler }) => {
+    element.removeEventListener('animationstart', handler);
+  });
+  neoSwissAnimationListeners = [];
 });
 
 // Backdrop click to close
@@ -266,3 +303,17 @@ addKeyboardClickHandler(metroChatWidget, () => metroChatDialog?.showModal());
 // Close chat dialog
 metroChatDialogClose?.addEventListener('click', () => metroChatDialog?.close());
 closeOnBackdrop(metroChatDialog);
+
+// Sticky Note Haptic Feedback
+const stickyNoteCheckboxes = document.querySelectorAll('#sticky-note input[type="checkbox"]');
+stickyNoteCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+      try {
+        navigator.vibrate(25);
+      } catch (e) {
+        // Silently fail
+      }
+    }
+  });
+});

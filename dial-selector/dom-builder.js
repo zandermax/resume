@@ -189,6 +189,24 @@ export const DOMBuilder = {
         }
       });
     }
+
+    // Add haptic feedback for rotation completion
+    const indicator = this.querySelector('.indicator');
+    if (indicator) {
+      indicator.addEventListener('transitionend', (e) => {
+        // Only trigger for transform transitions (the rotation)
+        if (e.propertyName === 'transform' && this.isInitialized && this.hapticFeedbackEnabled) {
+          // Lighter vibration for completion (15ms)
+          if (navigator.vibrate && typeof navigator.vibrate === 'function') {
+            try {
+              navigator.vibrate(15);
+            } catch (err) {
+              // Silently fail
+            }
+          }
+        }
+      });
+    }
   },
 
   updateLines() {
