@@ -272,22 +272,23 @@ Nostalgia Theme (Geocities 90s)
 }
 
 /* ===========================
-   Custom Cursor & Trail Effect
+   Custom Cursor Animation
    =========================== */
 
 /* Animated cycling cursor - switches between star, heart, and smiley */
 /* Apply cursor cycle animation to elements that don't have their own animations */
 :root[data-theme='nostalgia']
   *:not(.marquee):not(.blink):not(.retro-gif):not(.retro-badge):not(.visitor-counter__digit) {
-  animation: cursor-cycle 5s steps(1) infinite;
+  animation: cursor-cycle 3s steps(1) infinite;
   will-change: cursor;
 }
 
+/* These elements have their own animations, so we need to animate the cursor on hover */
 :root[data-theme='nostalgia'] a:not(.marquee):not(.blink),
 :root[data-theme='nostalgia'] button:not(.blink),
 :root[data-theme='nostalgia'] [role='button']:not(.blink),
 :root[data-theme='nostalgia'] .dial-selector__label {
-  animation: cursor-cycle-hover 5s steps(1) infinite;
+  animation: cursor-cycle-hover 3s steps(1) infinite;
   will-change: cursor;
 }
 
@@ -335,43 +336,6 @@ Nostalgia Theme (Geocities 90s)
   }
 }
 
-/* Cursor trail sparkles */
-:root[data-theme='nostalgia'] body::before,
-:root[data-theme='nostalgia'] body::after {
-  content: '✨';
-  position: fixed;
-  pointer-events: none;
-  font-size: 1.5rem;
-  z-index: 9999;
-  animation: sparkle-trail 1.5s ease-out infinite;
-  opacity: 0;
-  mix-blend-mode: screen;
-  will-change: opacity, transform;
-}
-
-:root[data-theme='nostalgia'] body::before {
-  animation-delay: 0.3s;
-}
-
-:root[data-theme='nostalgia'] body::after {
-  animation-delay: 0.6s;
-}
-
-@keyframes sparkle-trail {
-  0% {
-    opacity: 0;
-    transform: scale(0) rotate(0deg);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1) rotate(45deg);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.3) rotate(180deg) translateY(20px);
-  }
-}
-
 /* Optional cursor variants (can be activated with data attribute) */
 
 /* Blinking star cursor */
@@ -413,12 +377,6 @@ Nostalgia Theme (Geocities 90s)
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  :root[data-theme='nostalgia'] body::before,
-  :root[data-theme='nostalgia'] body::after {
-    animation: none;
-    display: none;
-  }
-
   /* Disable cursor cycling animation, use static star cursor */
   :root[data-theme='nostalgia']
     *:not(.marquee):not(.blink):not(.retro-gif):not(.retro-badge):not(.visitor-counter__digit) {
