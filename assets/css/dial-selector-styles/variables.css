@@ -51,6 +51,17 @@ dial-selector {
   --ds-knob-before-opacity: 0.6;
   --ds-knob-before-filter: none;
 
+  /* Knob ::after pseudo-element (for custom decorative effects) */
+  --ds-knob-after-content: none;
+  --ds-knob-after-display: none;
+  --ds-knob-after-position: static;
+  --ds-knob-after-inset: auto;
+  --ds-knob-after-border-radius: 0;
+  --ds-knob-after-background: none;
+  --ds-knob-after-pointer-events: auto;
+  --ds-knob-after-opacity: 1;
+  --ds-knob-after-filter: none;
+
   /* ===========================
      Indicator Styling Variables
      ===========================

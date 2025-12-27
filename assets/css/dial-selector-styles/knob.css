@@ -36,13 +36,15 @@ dial-selector .knob::before {
 }
 
 dial-selector .knob::after {
-  content: none;
-  display: none;
-  position: static;
-  inset: auto;
-  border-radius: 0;
-  background: none;
-  pointer-events: auto;
+  content: var(--ds-knob-after-content, none);
+  display: var(--ds-knob-after-display, none);
+  position: var(--ds-knob-after-position, static);
+  inset: var(--ds-knob-after-inset, auto);
+  border-radius: var(--ds-knob-after-border-radius, 0);
+  background: var(--ds-knob-after-background, none);
+  pointer-events: var(--ds-knob-after-pointer-events, auto);
+  opacity: var(--ds-knob-after-opacity, 1);
+  filter: var(--ds-knob-after-filter, none);
 }
 
 dial-selector .indicator {

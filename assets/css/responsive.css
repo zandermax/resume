@@ -7,6 +7,10 @@ Responsive Layout
   .resume__main {
     margin: 1rem;
   }
+
+  .resume-section__content {
+    padding-inline: var(--section-content-padding-inline-responsive-960, var(--section-content-padding-inline));
+  }
 }
 
 @media (max-width: 768px) {
@@ -17,11 +21,18 @@ Responsive Layout
 
   .resume-header {
     border-block-end-width: 2px;
+    padding-inline-start: var(--header-padding-inline-start-responsive-768);
+    padding-inline-end: var(--header-padding-inline-end-responsive-768);
   }
 
   .resume-header__buttons {
     flex-direction: var(--header-buttons-flex-direction-responsive-768, row);
     gap: var(--header-buttons-gap-responsive-768, 1rem);
+  }
+
+  .resume-section {
+    padding-inline-start: var(--section-padding-inline-start-responsive-768);
+    padding-inline-end: var(--section-padding-inline-end-responsive-768);
   }
 
   .experience-item__header {
@@ -31,6 +42,15 @@ Responsive Layout
 
   .experience-item__meta {
     text-align: left;
+  }
+
+  /* Dial selector housing responsive padding */
+  .resume-header__dial-selector {
+    padding: var(--dial-selector-housing-padding-responsive-768);
+  }
+
+  .resume-section__content {
+    padding-inline: var(--section-content-padding-inline-responsive-768, var(--section-content-padding-inline));
   }
 }
 
@@ -85,6 +105,10 @@ Mobile layout
     margin-inline-start: 0;
     margin-block-start: 0.65rem;
   }
+
+  .resume-section__content {
+    padding-inline: var(--section-content-padding-inline-responsive-600, var(--section-content-padding-inline));
+  }
 }
 
 @media (max-width: 500px) {
@@ -94,6 +118,7 @@ Mobile layout
 
   .resume-header {
     padding: var(--header-padding-responsive-500, 0);
+    padding-inline: var(--header-padding-inline-responsive-500);
   }
 
   .resume-header__buttons {
@@ -106,5 +131,49 @@ Mobile layout
     font-size: var(--printlink-font-size-responsive-500, var(--printlink-font-size));
     padding-block: var(--printlink-padding-block-responsive-500, 0.5rem);
     padding-inline: var(--printlink-padding-inline-responsive-500, 1rem);
+  }
+
+  .resume-section {
+    padding-inline: var(--section-padding-inline-responsive-500);
+  }
+
+  /* Responsive item padding */
+  .experience-item {
+    padding: var(--experience-item-padding-responsive-500, var(--experience-item-padding));
+  }
+
+  .education-item {
+    padding: var(--education-item-padding-responsive-500, var(--education-item-padding));
+  }
+
+  .community-list__item {
+    padding: var(--community-item-padding-responsive-500, var(--community-item-padding));
+  }
+
+  .principles-list__item {
+    padding: var(--principles-item-padding-responsive-500, var(--principles-item-padding));
+  }
+
+  /* Dial selector housing responsive padding */
+  .resume-header__dial-selector {
+    padding: var(--dial-selector-housing-padding-responsive-500);
+  }
+
+  .resume-section__content {
+    padding-inline: var(--section-content-padding-inline-responsive-500, var(--section-content-padding-inline));
+  }
+}
+
+@media (max-width: 480px) {
+  /* Dial selector housing responsive padding */
+  .resume-header__dial-selector {
+    padding: var(--dial-selector-housing-padding-responsive-480);
+  }
+}
+
+@media (max-width: 380px) {
+  /* Dial selector housing responsive padding */
+  .resume-header__dial-selector {
+    padding: var(--dial-selector-housing-padding-responsive-380);
   }
 }

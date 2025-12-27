@@ -10,10 +10,6 @@ Chat Widget and Dialog
   display: none;
 }
 
-body[data-theme='metro'] .metro-chat-widget {
-  display: block;
-}
-
 /* ==================== DARK MODE ENHANCEMENTS ==================== */
 
 body[data-theme='metro'][data-mode='dark'] {
@@ -25,16 +21,24 @@ body[data-theme='metro'][data-mode='dark'] {
   .metro-chat-widget__status-text {
     background: oklch(32% 0 0);
   }
+
+  .metro-chat-dialog__message-text {
+    color: var(--color-white);
+  }
 }
 
 /* ==================== METRO CHAT WIDGET ==================== */
 
 body[data-theme='metro'] {
   .metro-chat-widget {
+    display: block;
+  }
+
+  .metro-chat-widget {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 280px;
+    bottom: var(--metro-chat-widget-bottom, 2rem);
+    right: var(--metro-chat-widget-right, 2rem);
+    width: var(--metro-chat-widget-width, 280px);
     background: var(--metro-blue);
     color: var(--color-white);
     padding: 0;

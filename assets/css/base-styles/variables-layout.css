@@ -188,6 +188,10 @@
 
   /* === SECTION CONTENT === */
   --section-content-padding-inline: 0;
+  --section-content-padding-inline-responsive-960: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-768: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-600: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-500: var(--section-content-padding-inline);
   --section-content-margin-block-start: 0;
 
   /* === RESUME HEADER ROLE === */

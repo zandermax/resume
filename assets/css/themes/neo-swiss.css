@@ -261,6 +261,11 @@ Ultra-modern minimalism with mathematical precision
   --ds-knob-background: var(--color-white);
   --link-color: var(--color-white);
   --link-visited-color: var(--color-white);
+
+  dial-selector {
+    /* Increase line width for better visibility in dark mode */
+    --ds-line-width: 2px;
+  }
 }
 
 /* AI Modal Animations - Defined at root level */
@@ -684,6 +689,7 @@ body[data-theme='neoswiss'] {
 
   .neoswiss-ai-modal__content {
     padding: var(--spacing-6);
+    padding-block-end: calc(var(--spacing-6) * 2);
   }
 
   .neoswiss-ai-modal__section {
@@ -981,6 +987,7 @@ body[data-theme='neoswiss'] {
 
     .neoswiss-ai-modal__content {
       padding: var(--spacing-4);
+      padding-block-end: calc(var(--spacing-4) * 2);
     }
 
     .neoswiss-ai-modal__section {
@@ -1058,6 +1065,7 @@ body[data-theme='neoswiss'] {
 
     .neoswiss-ai-modal__content {
       padding: var(--spacing-3);
+      padding-block-end: calc(var(--spacing-3) * 2);
     }
 
     .neoswiss-ai-modal__section {
@@ -1080,14 +1088,25 @@ body[data-theme='neoswiss'] {
   }
 }
 
-/* Neo-Swiss AI Modal - Show/hide with checkbox (outside body scope) */
-body[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) .neoswiss-ai-modal {
+/* Neo-Swiss AI Modal - Dialog element */
+body[data-theme='neoswiss'] .neoswiss-ai-modal[open] {
   display: flex;
+  border: none;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+  background: transparent;
 }
 
-/* Prevent scroll when modal is open - must target html element */
-html[data-theme='neoswiss']:has(#neoswiss-ai-toggle:checked) {
-  overflow: hidden;
+/* Dialog backdrop */
+body[data-theme='neoswiss'] .neoswiss-ai-modal::backdrop {
+  background: linear-gradient(135deg, oklch(15% 0.05 250 / 0.95), oklch(10% 0.08 240 / 0.98));
+  backdrop-filter: blur(20px);
+}
+
+/* Remove overlay element - no longer needed */
+.neoswiss-ai-modal__overlay {
+  display: none;
 }
 
 /* Responsive :root adjustments - at top level */

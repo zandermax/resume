@@ -148,6 +148,10 @@
   /* === DIAL SELECTOR HOUSING CONTAINER === */
   --dial-selector-housing-padding-block: 0;
   --dial-selector-housing-padding-inline: 0;
+  --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-500: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-480: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-380: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
   --dial-selector-housing-background: transparent;
   --dial-selector-housing-border: none;
   --dial-selector-housing-box-shadow: none;

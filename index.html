@@ -297,23 +297,20 @@
 		</div>
 
 		<!-- Neo-Swiss AI Sparkles Button (neoswiss theme only) -->
-		<!-- Hidden checkbox controls modal visibility -->
-		<input type="checkbox" id="neoswiss-ai-toggle" class="neoswiss-ai-toggle">
-		<label for="neoswiss-ai-toggle" class="neoswiss-ai-button" aria-label="AI Summary">
+		<button type="button" id="neoswiss-ai-button" class="neoswiss-ai-button" aria-label="View AI-powered candidate analysis">
 			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--1"></div>
 			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--2"></div>
 			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--3"></div>
 			<div class="neoswiss-ai-button__spark neoswiss-ai-button__spark--4"></div>
 			<div class="neoswiss-ai-button__label">AI</div>
-		</label>
+		</button>
 
 		<!-- Neo-Swiss AI Summary Modal (neoswiss theme only) -->
-		<div class="neoswiss-ai-modal" id="neoswiss-ai-modal">
-			<label for="neoswiss-ai-toggle" class="neoswiss-ai-modal__overlay"></label>
+		<dialog class="neoswiss-ai-modal" id="neoswiss-ai-modal" aria-labelledby="neoswiss-ai-title">
 			<div class="neoswiss-ai-modal__container">
 				<div class="neoswiss-ai-modal__header">
-					<h2 class="neoswiss-ai-modal__title">CANDIDATE ANALYSIS</h2>
-					<label for="neoswiss-ai-toggle" class="neoswiss-ai-modal__close" aria-label="Close"><span>×</span></label>
+					<h2 id="neoswiss-ai-title" class="neoswiss-ai-modal__title">CANDIDATE ANALYSIS</h2>
+					<button type="button" class="neoswiss-ai-modal__close" aria-label="Close dialog"><span>×</span></button>
 				</div>
 				<div class="neoswiss-ai-modal__content">
 					<div class="neoswiss-ai-modal__section">
@@ -364,7 +361,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</dialog>
 
 		<!-- SUMMARY -->
 		<section class="resume-section resume-section--summary">
@@ -745,60 +742,55 @@
 	</main>
 
 	<!-- Cookie Banner (Brutal/2017 theme only) -->
-	<div class="cookie-banner-overlay" id="cookie-banner-overlay">
-		<!-- Hidden checkbox controls cookie banner visibility -->
-		<input type="checkbox" id="cookie-banner-dismiss" class="cookie-banner-dismiss">
-
-		<div class="cookie-banner" id="cookie-banner">
-			<div class="cookie-banner__header">
-				<h2 class="cookie-banner__title">🍪 Cookie Notice 🍪</h2>
-			</div>
-
-			<!-- Initial cookie acceptance message -->
-			<div class="cookie-banner__content cookie-banner__content--initial">
-				<p class="cookie-banner__warning">
-					⚠️ <strong>IMPORTANT:</strong> Our legal team says we need to tell you about cookies now.
-					Something about new EU regulations? We're not entirely sure what they mean, but apparently
-					this is mandatory.
-				</p>
-				<p class="cookie-banner__text">
-					We use cookies and similar technologies to track... things. Our lawyers gave us a list:
-					analytics, advertising, "legitimate business interests," and approximately 247 other purposes.
-					We share this with our partners (we have 1,432 of them, apparently).
-					If you want to know more, there's a Privacy Policy somewhere. It's very long.
-				</p>
-				<p class="cookie-banner__legal">
-					By clicking accept, you agree to our Terms of Service and Privacy Policy.
-					Our lawyers spent 6 months writing them. No one has ever read them in full, including us.
-					But they assure us this banner makes everything legally compliant.
-				</p>
-			</div>
-
-			<!-- Returning visitor message (when cookie already set) -->
-			<div class="cookie-banner__content cookie-banner__content--returning">
-				<p class="cookie-banner__returning-message">
-					You must accept cookies<br>
-					<strong>EVERY TIME</strong><br>
-					you visit
-				</p>
-				<p class="cookie-banner__returning-subtext">
-					(Because apparently that's how this works now. Our lawyers insist.)
-				</p>
-			</div>
-
-			<div class="cookie-banner__buttons">
-				<label for="cookie-banner-dismiss" class="cookie-banner__accept" id="cookie-banner-accept">
-					✓ I ACCEPT
-				</label>
-			</div>
-			<div class="cookie-banner__footer">
-				<p class="cookie-banner__fine-print">
-					Note: Our developers said something about "GDPR isn't active until 2018" but our lawyers
-					said "better safe than sorry." So here we are.
-				</p>
-			</div>
+	<dialog class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-banner-title">
+		<div class="cookie-banner__header">
+			<h2 id="cookie-banner-title" class="cookie-banner__title">🍪 Cookie Notice 🍪</h2>
 		</div>
-	</div>
+
+		<!-- Initial cookie acceptance message -->
+		<div class="cookie-banner__content cookie-banner__content--initial">
+			<p class="cookie-banner__warning">
+				⚠️ <strong>IMPORTANT:</strong> Our legal team says we need to tell you about cookies now.
+				Something about new EU regulations? We're not entirely sure what they mean, but apparently
+				this is mandatory.
+			</p>
+			<p class="cookie-banner__text">
+				We use cookies and similar technologies to track... things. Our lawyers gave us a list:
+				analytics, advertising, "legitimate business interests," and approximately 247 other purposes.
+				We share this with our partners (we have 1,432 of them, apparently).
+				If you want to know more, there's a Privacy Policy somewhere. It's very long.
+			</p>
+			<p class="cookie-banner__legal">
+				By clicking accept, you agree to our Terms of Service and Privacy Policy.
+				Our lawyers spent 6 months writing them. No one has ever read them in full, including us.
+				But they assure us this banner makes everything legally compliant.
+			</p>
+		</div>
+
+		<!-- Returning visitor message (when cookie already set) -->
+		<div class="cookie-banner__content cookie-banner__content--returning">
+			<p class="cookie-banner__returning-message">
+				You must accept cookies<br>
+				<strong>EVERY TIME</strong><br>
+				you visit
+			</p>
+			<p class="cookie-banner__returning-subtext">
+				(Because apparently that's how this works now. Our lawyers insist.)
+			</p>
+		</div>
+
+		<div class="cookie-banner__buttons">
+			<button type="button" class="cookie-banner__accept" id="cookie-banner-accept">
+				✓ I ACCEPT
+			</button>
+		</div>
+		<div class="cookie-banner__footer">
+			<p class="cookie-banner__fine-print">
+				Note: Our developers said something about "GDPR isn't active until 2018" but our lawyers
+				said "better safe than sorry." So here we are.
+			</p>
+		</div>
+	</dialog>
 
 	<!-- XP Dialog Modal (visible only when triggered) -->
 	<dialog class="xp-dialog" id="xp-dialog">

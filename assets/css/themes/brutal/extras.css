@@ -17,39 +17,22 @@ Cookie Banner - 2017 Parody of aggressive cookie consent patterns
 /* ==================== COOKIE BANNER ==================== */
 
 body[data-theme='brutal'] {
-  /* Cookie Banner Overlay */
-  .cookie-banner-overlay {
-    /* Banner visibility controlled by CSS - show only in brutal theme when not dismissed */
-    position: fixed;
-    inset: 0;
-    background: oklch(0% 0 0 / 0.85);
-    z-index: 9999;
-    pointer-events: none;
-    display: block !important;
-    opacity: 0;
-    visibility: visible;
-
-    @media (max-width: 500px) {
-      padding-inline: var(--spacing-md);
-    }
-  }
-
-  /* Cookie Banner Container */
+  /* Cookie Banner Container - Dialog Element */
   .cookie-banner {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    padding: 1rem 1rem 0.75rem;
+    max-width: 90%;
     width: 50%;
-    margin-inline: auto;
+    margin: 0;
     overflow-y: auto;
     background: var(--background-color);
     border-block-start: 6px solid var(--accent-color);
     border-inline: 4px solid var(--border-color);
     box-shadow: 0 -10px 20px oklch(0% 0 0 / 0.5), inset 0 4px 0 var(--accent-color);
-    padding: 1rem 1rem 0.75rem;
-    transform: translateY(100%);
-    pointer-events: auto;
 
     @media (max-width: 768px) {
       width: calc(100% - 8px - var(--spacing-xl)); /* Account for 4px border each side + 1rem padding each side */
@@ -256,38 +239,31 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* ==================== COOKIE BANNER - DISMISS LOGIC ==================== */
-
-  /* Hide the dismiss checkbox visually but keep it functional */
-  #cookie-banner-dismiss {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    pointer-events: auto; /* Override parent's pointer-events: none */
+  /* Dialog backdrop */
+  .cookie-banner::backdrop {
+    background: oklch(0% 0 0 / 0.85);
+    animation: fadeInBackdrop 0.5s ease forwards;
   }
 
-  /* Cookie Banner - Entrance Animations */
-  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) {
-    animation: fadeInOverlay 0.5s ease 5s forwards;
+  @keyframes fadeInBackdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
-  .cookie-banner-overlay:not(:has(#cookie-banner-dismiss:checked)) .cookie-banner {
-    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 5s forwards;
+  /* Cookie Banner - Entrance Animation */
+  .cookie-banner[open] {
+    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   }
 
-  /* Cookie Banner - Exit Animations (when dismissed) */
-  .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) {
-    animation: fadeOut 0.5s ease forwards;
-    pointer-events: none;
-    /* Hide from accessibility tree after animation completes */
-    visibility: hidden;
-    transition: visibility 0s 0.5s;
-  }
-
-  /* Banner slide down animation */
-  .cookie-banner-overlay:has(#cookie-banner-dismiss:checked) .cookie-banner {
-    animation: slideDown 0.5s ease forwards;
+  @keyframes slideUp {
+    from {
+      transform: translateX(-50%) translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
   }
 
   /* ==================== COOKIE BANNER - FOOTER ==================== */

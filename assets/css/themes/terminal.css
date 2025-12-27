@@ -167,6 +167,7 @@ Terminal Theme (1992 CLI-inspired)
     --link-visited-color: var(--color-cyan);
     --section-bg: var(--color-silver);
     --header-background: var(--color-gray-light);
+    --resume-main-background: var(--color-silver);
     --terminal-border-light: var(--color-white);
     --terminal-border-dark: var(--color-black);
     --terminal-window-bg: var(--color-silver);
@@ -187,6 +188,7 @@ Terminal Theme (1992 CLI-inspired)
     --link-visited-color: var(--color-yellow);
     --section-bg: var(--color-blue-navy);
     --header-background: var(--color-blue-navy);
+    --resume-main-background: var(--color-blue-navy);
     --accent-color: var(--color-cyan);
     --terminal-border-light: oklch(45% 0.22 264);
     --terminal-border-dark: oklch(8% 0.08 264);

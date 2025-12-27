@@ -16,26 +16,24 @@ METRO Theme - Responsive Adjustments
     --experience-role-font-size: 1.1rem;
     --ds-label-font-size: var(--spacing-sm);
     --ds-label-padding: var(--spacing-xs) 0.8rem;
+
+    /* Responsive padding overrides */
+    --header-padding-inline-start-responsive-768: var(--spacing-lg);
+    --header-padding-inline-end-responsive-768: var(--spacing-lg);
+    --section-padding-inline-start-responsive-768: var(--spacing-lg);
+    --section-padding-inline-end-responsive-768: var(--spacing-lg);
+
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-768: var(--spacing-md);
   }
 
   /* Layout adjustments */
   body[data-theme='metro'] {
-    .resume-header,
-    .resume-section {
-      padding-inline-start: var(--spacing-lg);
-      padding-inline-end: var(--spacing-lg);
-    }
-
-    /* Dial selector responsive padding */
-    .resume-header__dial-selector {
-      padding: var(--spacing-md);
-    }
-
     /* Chat widget responsive adjustments */
     .metro-chat-widget {
-      width: 200px;
-      bottom: 1.5rem;
-      right: 1.5rem;
+      width: var(--metro-chat-widget-width--tablet, 200px);
+      bottom: var(--metro-chat-widget-bottom--tablet, 1.5rem);
+      right: var(--metro-chat-widget-right--tablet, 1.5rem);
     }
 
     .metro-chat-widget__header,
@@ -92,36 +90,28 @@ METRO Theme - Responsive Adjustments
     --printlink-padding: 0.75rem 1.5rem;
     --ds-label-font-size: var(--font-size-xs);
     --ds-label-padding: 0.4rem var(--font-size-xs);
+
+    /* Responsive item padding overrides */
+    --experience-item-padding-responsive-500: var(--spacing-md);
+    --education-item-padding-responsive-500: var(--spacing-md);
+    --community-item-padding-responsive-500: var(--spacing-md);
+    --principles-item-padding-responsive-500: var(--spacing-md);
+
+    /* Responsive padding overrides */
+    --header-padding-inline-responsive-500: 0;
+    --section-padding-inline-responsive-500: 0;
+
+    /* Dial selector housing responsive padding overrides */
+    --dial-selector-housing-padding-responsive-500: var(--spacing-sm);
   }
 
   /* Layout adjustments */
   body[data-theme='metro'] {
-    .resume-header,
-    .resume-section {
-      padding-inline: 0;
-    }
-
-    .experience-item,
-    .education-item,
-    .community-list__item,
-    .principles-list__item {
-      padding: var(--spacing-md);
-    }
-
-    /* Dial selector responsive padding */
-    .resume-header__dial-selector {
-      padding: var(--spacing-sm);
-    }
-
-    .dial-selector .dial-label {
-      padding: 0.3rem 0.25rem;
-    }
-
     /* Chat widget responsive adjustments */
     .metro-chat-widget {
-      width: 8rem;
-      bottom: 1rem;
-      right: 1rem;
+      width: var(--metro-chat-widget-width--mobile, 8rem);
+      bottom: var(--metro-chat-widget-bottom--mobile, 1rem);
+      right: var(--metro-chat-widget-right--mobile, 1rem);
     }
 
     .metro-chat-widget__header,
@@ -208,21 +198,17 @@ METRO Theme - Responsive Adjustments
 /* ==================== EXTRA SMALL MOBILE (480px and below) ==================== */
 
 @media (max-width: 480px) {
-  body[data-theme='metro'] {
-    /* Dial selector responsive padding */
-    .resume-header__dial-selector {
-      padding: var(--spacing-xs);
-    }
+  :root[data-theme='metro'] {
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-480: var(--spacing-xs);
   }
 }
 
 /* ==================== VERY SMALL MOBILE (380px and below) ==================== */
 
 @media (max-width: 380px) {
-  body[data-theme='metro'] {
-    /* Dial selector responsive padding */
-    .resume-header__dial-selector {
-      padding: var(--spacing-xs);
-    }
+  :root[data-theme='metro'] {
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-380: var(--spacing-xs);
   }
 }

@@ -32,6 +32,7 @@
   --community-item-border-width: 1px;
   --community-item-border-inline-start: none;
   --community-item-padding: 0.6rem 0.75rem;
+  --community-item-padding-responsive-500: var(--community-item-padding);
   --community-item-font-size: 0.9rem;
   --community-item-font-weight: normal;
   --community-item-line-height: 1.5;
@@ -48,6 +49,7 @@
   --principles-item-border-width: 1px;
   --principles-item-border-inline-start: none;
   --principles-item-padding: 0.25rem 0;
+  --principles-item-padding-responsive-500: var(--principles-item-padding);
   --principles-item-font-size: 0.9rem;
   --principles-item-font-weight: normal;
   --principles-item-line-height: 1.4;
@@ -81,4 +83,3 @@
   --principles-item-hover-border-inline-start-width: inherit;
   --principles-item-hover-padding-inline-start: inherit;
 }
-

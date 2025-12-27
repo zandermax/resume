@@ -26,41 +26,47 @@ function setupClickableCard(card, onClick) {
   addKeyboardClickHandler(card, onClick);
 }
 
-// Reset all dialog/modal states on page load
+// Cookie Banner - Convert to accessible dialog
 window.addEventListener('DOMContentLoaded', () => {
-  // Reset Neo-Swiss AI modal
-  const neoswissAiToggle = document.getElementById('neoswiss-ai-toggle');
-  if (neoswissAiToggle) {
-    neoswissAiToggle.checked = false;
-  }
-
-  // Check if cookie is already set and update banner message
   const cookieBanner = document.getElementById('cookie-banner');
-  const cookieBannerDismiss = document.getElementById('cookie-banner-dismiss');
+  const cookieBannerAccept = document.getElementById('cookie-banner-accept');
   const existingCookie = getCookie('resume_cookie_consent');
 
-  if (cookieBanner && cookieBannerDismiss) {
-    if (existingCookie) {
+  if (cookieBanner) {
+    // Show banner after delay if in Brutal theme and no cookie exists
+    const isBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
+
+    if (isBrutalTheme && !existingCookie) {
+      // Show banner after 5 second delay (matching animation timing)
+      setTimeout(() => {
+        cookieBanner.showModal();
+      }, 5000);
+    } else if (existingCookie) {
+      // Show returning visitor version
       cookieBanner.classList.add('cookie-banner--returning');
-      cookieBannerDismiss.checked = false;
+      if (isBrutalTheme) {
+        setTimeout(() => {
+          cookieBanner.showModal();
+        }, 5000);
+      }
       console.log('🍪 Cookie found:', existingCookie);
-    } else {
-      cookieBannerDismiss.checked = false;
     }
   }
 
-  // Cookie Banner - Set a real cookie when accepted
-  const cookieBannerAccept = document.getElementById('cookie-banner-accept');
-  if (cookieBannerAccept && !existingCookie) {
-    cookieBannerAccept.addEventListener('click', () => {
-      const now = new Date();
-      now.setTime(now.getTime() + 60 * 60 * 1000);
-      const expires = 'expires=' + now.toUTCString();
-      const cookieValue = "Wow I can't believe you actually checked if a cookie was set. Well, indeed it is.";
-      document.cookie = `resume_cookie_consent=${encodeURIComponent(cookieValue)};${expires};path=/;SameSite=Lax`;
-      console.log('🍪 Cookie set!');
-    });
-  }
+  // Cookie Banner - Accept button sets cookie and closes
+  cookieBannerAccept?.addEventListener('click', () => {
+    const now = new Date();
+    now.setTime(now.getTime() + 60 * 60 * 1000);
+    const expires = 'expires=' + now.toUTCString();
+    const cookieValue = "Wow I can't believe you actually checked if a cookie was set. Well, indeed it is.";
+    document.cookie = `resume_cookie_consent=${encodeURIComponent(cookieValue)};${expires};path=/;SameSite=Lax`;
+    console.log('🍪 Cookie set!');
+
+    cookieBanner?.close();
+  });
+
+  // Backdrop click to close (optional - for better UX)
+  closeOnBackdrop(cookieBanner);
 });
 
 // XP Dialog
@@ -89,27 +95,39 @@ addKeyboardClickHandler(terminalLog, () => crtTerminalDialog?.showModal());
 document.getElementById('crt-terminal-dialog-close')?.addEventListener('click', () => crtTerminalDialog?.close());
 closeOnBackdrop(crtTerminalDialog);
 
-// Neo-Swiss AI Modal - Auto-scroll
-const neoswissToggle = document.getElementById('neoswiss-ai-toggle');
-if (neoswissToggle) {
-  neoswissToggle.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      const container = document.querySelector('.neoswiss-ai-modal__container');
-      const sections = document.querySelectorAll('.neoswiss-ai-modal__section');
-      if (container && sections.length > 0) {
-        container.scrollTop = 0;
-        sections.forEach((section) => {
-          const computedStyle = window.getComputedStyle(section);
-          const animationDelay = parseFloat(computedStyle.animationDelay) || 0;
-          const scrollDelay = animationDelay * 1000 + 400;
-          setTimeout(() => {
-            section.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-          }, scrollDelay);
-        });
-      }
-    }
-  });
-}
+// Neo-Swiss AI Modal - Convert to accessible dialog
+const neoSwissButton = document.getElementById('neoswiss-ai-button');
+const neoSwissDialog = document.getElementById('neoswiss-ai-modal');
+const neoSwissClose = neoSwissDialog?.querySelector('.neoswiss-ai-modal__close');
+
+neoSwissButton?.addEventListener('click', () => {
+  neoSwissDialog?.showModal();
+
+  // Preserve existing auto-scroll functionality
+  const container = neoSwissDialog.querySelector('.neoswiss-ai-modal__container');
+  const sections = neoSwissDialog.querySelectorAll('.neoswiss-ai-modal__section');
+  if (container && sections.length > 0) {
+    container.scrollTop = 0;
+    sections.forEach((section) => {
+      const computedStyle = window.getComputedStyle(section);
+      const animationDelay = parseFloat(computedStyle.animationDelay) || 0;
+      const scrollDelay = animationDelay * 1000 + 400;
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+      }, scrollDelay);
+    });
+  }
+});
+
+neoSwissClose?.addEventListener('click', () => {
+  neoSwissDialog?.close();
+});
+
+// Backdrop click to close
+closeOnBackdrop(neoSwissDialog);
+
+// Keyboard support for button
+addKeyboardClickHandler(neoSwissButton, () => neoSwissDialog?.showModal());
 
 // Dashboard Metrics Dialog
 const dashboardMetricsDialog = document.getElementById('dashboard-metrics-dialog');

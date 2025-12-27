@@ -13,7 +13,7 @@ CRT Theme - Responsive Adjustments
 
 @media (max-width: 500px) {
   :root[data-theme='crt'] {
-    --main-padding-responsive-500: var(--spacing-md);
+    --main-padding-responsive-500: var(--spacing-xs);
     --header-name-font-size: 1.7rem;
     --printlink-font-size: 0.8rem;
     --printlink-padding: 0.45rem 0.85rem;
@@ -27,4 +27,3 @@ CRT Theme - Responsive Adjustments
     --main-padding: var(--spacing-sm);
   }
 }
-

@@ -23,6 +23,7 @@ Bold borders, aggressive shadows, skewed transforms
 /* Dark Mode - Inverted Brutalism */
 :root[data-theme='brutal'][data-mode='dark'] {
   --background-color: var(--color-dark-bg);
+  --text-color: var(--color-white);
   --section-text-color: oklch(92% 0 0);
   --experience-item-background: var(--color-white);
   --education-item-background: var(--color-white);
@@ -39,6 +40,10 @@ Bold borders, aggressive shadows, skewed transforms
   /* Main container dark mode overrides */
   --main-border-width: 12px;
   --main-box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
+
+  .resume-section--experience {
+    color: var(--color-black);
+  }
 }
 
 /* ==================== CORE VARIABLES ==================== */

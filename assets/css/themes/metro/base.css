@@ -138,7 +138,11 @@ Flat Design / Material Zero
   --section-title-border-width: 0px;
 
   /* Section content custom properties */
-  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.025), 1em);
+  --section-content-padding-inline: 1em;
+  --section-content-padding-inline-responsive-960: 0.8em;
+  --section-content-padding-inline-responsive-768: 0.5em;
+  --section-content-padding-inline-responsive-600: 0.25em;
+  --section-content-padding-inline-responsive-500: 0;
 
   /* Section spacing - uniform padding across all sections */
   --section-padding-block-start: var(--spacing-xl);
@@ -341,6 +345,19 @@ Flat Design / Material Zero
   --dial-selector-housing-h3-color: var(--text-color);
   --dial-selector-housing-h3-text-transform: uppercase;
   --dial-selector-housing-h3-letter-spacing: 0.08em;
+
+  /* ==================== METRO CHAT WIDGET ==================== */
+
+  /* Chat widget positioning and sizing */
+  --metro-chat-widget-width: 280px;
+  --metro-chat-widget-bottom: 2rem;
+  --metro-chat-widget-right: 2rem;
+  --metro-chat-widget-width--tablet: 200px;
+  --metro-chat-widget-bottom--tablet: 1.5rem;
+  --metro-chat-widget-right--tablet: 1.5rem;
+  --metro-chat-widget-width--mobile: 8rem;
+  --metro-chat-widget-bottom--mobile: 1rem;
+  --metro-chat-widget-right--mobile: 1rem;
 
   /* ==================== 4. THEME ACCENT COLOR PALETTE ==================== */
 

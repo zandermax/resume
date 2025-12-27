@@ -42,6 +42,7 @@ Nostalgia Theme (Geocities 90s)
   --link-color: var(--color-blue-link);
   --link-visited-color: var(--color-purple-link);
   --section-bg: var(--color-yellow);
+  --resume-main-background: var(--color-yellow);
   --header-background: oklch(92% 0.22 330); /* Hot pink - 90s style! */
   --accent-color: var(--color-green);
 
@@ -65,6 +66,8 @@ Nostalgia Theme (Geocities 90s)
   --link-color: var(--color-cyan);
   --link-visited-color: var(--color-magenta);
   --section-bg: oklch(20% 0.09 264);
+  --resume-main-background: var(--color-blue-navy);
+  --background-color: oklch(20% 0.09 264);
   --header-background: oklch(26% 0.11 264);
   --accent-color: var(--color-yellow);
 
