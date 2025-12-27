@@ -516,7 +516,7 @@ body[data-theme='terminal'] {
   }
 
   /* Print overlay - positioned over button, only clickable after animation */
-  .terminal-dialog__print-overlay {
+  #terminal-dialog__print-overlay {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
@@ -534,13 +534,13 @@ body[data-theme='terminal'] {
   }
 
   /* Enable print overlay when dialog is open and animation completes */
-  .terminal-dialog[open] .terminal-dialog__print-overlay {
+  .terminal-dialog[open] #terminal-dialog__print-overlay {
     animation: terminal-print-overlay-enable 5s steps(1) 1 forwards;
   }
 
   /* Suppress focus outlines for both button and overlay */
   .terminal-dialog__button,
-  .terminal-dialog__print-overlay {
+  #terminal-dialog__print-overlay {
     outline: none;
 
     &:focus,
@@ -566,7 +566,7 @@ body[data-theme='terminal'] {
       padding: 0.6rem 4.5rem;
     }
 
-    .terminal-dialog__print-overlay {
+    #terminal-dialog__print-overlay {
       bottom: 1.65rem;
       padding: 0.6rem 4.5rem;
     }
@@ -585,7 +585,7 @@ body[data-theme='terminal'] {
       padding: 0.6rem 3.5rem;
     }
 
-    .terminal-dialog__print-overlay {
+    #terminal-dialog__print-overlay {
       padding: 0.6rem 3.5rem;
     }
 
