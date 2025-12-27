@@ -563,6 +563,48 @@ body[data-theme='xp'] {
     }
   }
 
+  /* XP Desktop Icon */
+  .xp-desktop-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.15s;
+    z-index: 10000;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      background: var(--xp-white-20);
+      outline: 1px dotted var(--xp-white-80);
+    }
+
+    &:active {
+      background: var(--xp-white-30);
+    }
+  }
+
+  .xp-desktop-icon__image {
+    font-size: 48px;
+    line-height: 1;
+    margin-block-end: 4px;
+    filter: drop-shadow(1px 1px 2px var(--xp-black-50));
+  }
+
+  .xp-desktop-icon__label {
+    font-size: 11px;
+    color: var(--color-white);
+    text-shadow: 1px 1px 2px var(--xp-black-50);
+    font-weight: normal;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
   /* Light mode overrides */
   &[data-mode='light'] {
     .community-list,

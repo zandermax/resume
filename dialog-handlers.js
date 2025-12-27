@@ -109,12 +109,48 @@ window.addEventListener('DOMContentLoaded', () => {
 // XP Dialog
 const xpCloseBtn = document.getElementById('xp-close-btn');
 const xpDialog = document.getElementById('xp-dialog');
+const xpDesktopIcon = document.getElementById('xp-desktop-icon');
+
 xpCloseBtn?.addEventListener('click', () => xpDialog?.showModal());
+
 xpDialog?.addEventListener('click', (e) => {
   if (e.target.id === 'xp-dialog-ok') {
-    window.close();
+    const resumeMain = document.querySelector('.resume__main');
+    if (resumeMain) {
+      resumeMain.style.display = 'none';
+    }
+    // Show desktop icon
+    if (xpDesktopIcon) {
+      xpDesktopIcon.style.display = 'block';
+    }
+    xpDialog.close();
   } else if (e.target.id === 'xp-dialog-cancel' || e.target.id === 'xp-dialog-close') {
     xpDialog.close();
+  }
+});
+
+// XP Desktop Icon - restore window on double-click/double-tap
+let xpIconClickCount = 0;
+let xpIconClickTimer = null;
+
+xpDesktopIcon?.addEventListener('click', (e) => {
+  xpIconClickCount++;
+
+  if (xpIconClickCount === 1) {
+    xpIconClickTimer = setTimeout(() => {
+      xpIconClickCount = 0;
+    }, 300);
+  } else if (xpIconClickCount === 2) {
+    clearTimeout(xpIconClickTimer);
+    xpIconClickCount = 0;
+
+    const resumeMain = document.querySelector('.resume__main');
+    if (resumeMain) {
+      resumeMain.style.display = 'block';
+    }
+    if (xpDesktopIcon) {
+      xpDesktopIcon.style.display = 'none';
+    }
   }
 });
 
