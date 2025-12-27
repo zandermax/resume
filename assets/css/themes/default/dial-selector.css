@@ -11,5 +11,12 @@ DEFAULT Theme - Dial Selector Overrides
     --ds-label-hover-transform: translateY(-1px);
     --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
   }
-}
 
+  &[data-mode='dark'] {
+    --ds-knob-background: var(--color-dark-bg-alt);
+  }
+
+  &[data-mode='light'] {
+    --ds-knob-background: var(--color-dark-knob);
+  }
+}

@@ -32,7 +32,6 @@ DEFAULT Theme - Base Styles & Variables
     --dial-color-ink: var(--color-black);
     --dial-color-selection: var(--color-red-crimson);
     --dial-color-indicator: var(--color-red-crimson);
-    --ds-knob-background: var(--color-dark-knob);
     --link-color: var(--color-black);
     --link-visited-color: var(--color-purple-link);
     --accent-color: var(--color-red-crimson);
@@ -55,7 +54,6 @@ DEFAULT Theme - Base Styles & Variables
     --dial-color-ink: var(--color-gray-pure-light);
     --dial-color-selection: var(--color-red-bright);
     --dial-color-indicator: var(--color-red-bright);
-    --ds-knob-background: var(--color-dark-bg-alt);
     --link-color: var(--color-gray-pure-light);
     --link-visited-color: var(--color-gray-light);
     --accent-color: var(--color-red-bright);
@@ -69,4 +67,3 @@ DEFAULT Theme - Base Styles & Variables
     --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.4), 0 3px 6px oklch(0% 0 0 / 0.25);
   }
 }
-
