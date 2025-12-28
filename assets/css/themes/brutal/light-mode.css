@@ -1,0 +1,32 @@
+/* ===========================
+BRUTAL Theme - Light Mode
+High Contrast Brutalism
+=========================== */
+
+:root[data-theme='brutal'][data-mode='light'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-black);
+
+  /* Link colors */
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-purple-link);
+
+  /* Accent color */
+  --accent-color: var(--color-red-crimson);
+
+  /* ==================== SHADOWS & EFFECTS ==================== */
+
+  /* Shadow opacity levels */
+  --brutal-shadow-dark: oklch(0% 0 0 / 0.9);
+  --brutal-shadow-medium: oklch(0% 0 0 / 0.5);
+  --brutal-shadow-light: oklch(0% 0 0 / 0.3);
+
+  /* Texture overlay */
+  --brutal-texture: oklch(0% 0 0 / 0.03);
+}
+

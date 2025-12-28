@@ -16,7 +16,7 @@ SKEUOMORPH Theme - Animations
 
 /* ==================== STICKY NOTE ANIMATIONS ==================== */
 
-/* Sticky note path animation - red curve (downward arc to the left) */
+/* Sticky note path animation, part one: downward arc to the left */
 @keyframes sticky-note-path-red {
   from {
     offset-path: path('M 0 0 C -30 60, -80 80, -120 40');
@@ -28,7 +28,7 @@ SKEUOMORPH Theme - Animations
   }
 }
 
-/* Sticky note path animation - blue curve (downward) */
+/* Sticky note path animation, part two: downward arc to the right */
 @keyframes sticky-note-path-blue {
   from {
     offset-path: path('M -120 40 C -100 70, -60 90, -20 100');
@@ -40,7 +40,7 @@ SKEUOMORPH Theme - Animations
   }
 }
 
-/* Sticky note path animation - green curve (final descent with fade) */
+/* Sticky note path animation, part three: final descent with fade */
 @keyframes sticky-note-path-green {
   from {
     offset-path: path('M -20 100 C -30 160, -50 220, -80 280');
@@ -52,7 +52,7 @@ SKEUOMORPH Theme - Animations
   }
 }
 
-/* Sticky note door opening animation (rotation + arc movement) */
+/* Sticky note door opening animation: rotation + arc movement */
 @keyframes sticky-note-transform {
   0% {
     transform: rotateY(0deg);
@@ -85,4 +85,3 @@ SKEUOMORPH Theme - Animations
     rotate: 360deg;
   }
 }
-

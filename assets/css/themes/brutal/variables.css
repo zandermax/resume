@@ -1,60 +1,18 @@
 /* ===========================
-BRUTAL Theme - Maximum Brutalism
-Bold borders, aggressive shadows, skewed transforms
+BRUTAL Theme - Base Variables
+Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
 =========================== */
-
-/* ==================== COLOR SCHEMES ==================== */
-
-/* Light Mode - High Contrast */
-:root[data-theme='brutal'][data-mode='light'] {
-  --background-color: var(--color-white);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-white);
-  --border-color: var(--color-black);
-  --link-color: var(--color-black);
-  --link-visited-color: var(--color-purple-link);
-  --accent-color: var(--color-red-crimson);
-  --brutal-shadow-dark: oklch(0% 0 0 / 0.9);
-  --brutal-shadow-medium: oklch(0% 0 0 / 0.5);
-  --brutal-shadow-light: oklch(0% 0 0 / 0.3);
-  --brutal-texture: oklch(0% 0 0 / 0.03);
-}
-
-/* Dark Mode - Inverted Brutalism */
-:root[data-theme='brutal'][data-mode='dark'] {
-  --background-color: var(--color-dark-bg);
-  --text-color: var(--color-white);
-  --section-text-color: oklch(92% 0 0);
-  --experience-item-background: var(--color-white);
-  --education-item-background: var(--color-white);
-  --heading-color: var(--color-dark-bg);
-  --border-color: var(--color-gray-dark);
-  --link-color: oklch(92% 0 0);
-  --link-visited-color: var(--color-gray-light);
-  --accent-color: var(--color-red-bright);
-  --brutal-shadow-dark: oklch(100% 0 0 / 0.1);
-  --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
-  --brutal-shadow-light: oklch(100% 0 0 / 0.1);
-  --brutal-texture: oklch(100% 0 0 / 0.03);
-
-  /* Main container dark mode overrides */
-  --main-border-width: 12px;
-  --main-box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
-
-  .resume-section--experience {
-    color: var(--color-black);
-  }
-}
 
 /* ==================== CORE VARIABLES ==================== */
 
 :root[data-theme='brutal'] {
-  /* Typography */
+  /* ==================== TYPOGRAPHY ==================== */
+
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --body-font-weight: 900;
   --body-letter-spacing: -0.02em;
 
-  /* Typography Overrides */
+  /* Typography overrides */
   --h2-h3-font-weight: 900;
   --h2-h3-text-transform: uppercase;
   --h2-h3-letter-spacing: -0.02em;
@@ -68,7 +26,7 @@ Bold borders, aggressive shadows, skewed transforms
   --main-padding: clamp(0.75rem, calc(0.75rem + (100vw - var(--min-screen-width)) * 0.025), 2.5rem);
   --main-transform: rotate(-0.3deg);
 
-  /* Main Container - Pseudo-element (texture grid) */
+  /* Main container - Pseudo-element (texture grid) */
   --resume-main-before-content: '';
   --resume-main-before-display: block;
   --resume-main-before-position: absolute;
@@ -86,7 +44,7 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== HEADER ==================== */
 
-  /* Header Container */
+  /* Header container */
   --header-border-width: 12px;
   --header-padding: var(--spacing-2xl) var(--spacing-xl);
   --header-padding-inline-start: var(--spacing-xl);
@@ -121,14 +79,14 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== SECTIONS ==================== */
 
-  /* Section Container */
+  /* Section container */
   --section-padding-inline-start: var(--spacing-xl);
   --section-padding-inline-end: var(--spacing-xl);
   --section-padding-block-start: var(--spacing-xl);
   --section-padding-block-end: var(--spacing-xl);
   --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
 
-  /* Section Title */
+  /* Section title */
   --section-title-border: 0;
   --section-title-border-radius: 0;
   --section-title-border-inline-start: 16px solid var(--accent-color);
@@ -144,7 +102,7 @@ Bold borders, aggressive shadows, skewed transforms
   --section-title-line-height: 0.9;
   --section-title-transform: skewY(-1deg);
 
-  /* Section Title - Pseudo-element (striped underline) */
+  /* Section title - Pseudo-element (striped underline) */
   --section-title-after-content: '';
   --section-title-after-display: block;
   --section-title-after-position: absolute;
@@ -162,7 +120,7 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== EXPERIENCE SECTION ==================== */
 
-  /* Experience Item - Base */
+  /* Experience item - Base */
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);
   --experience-item-border: 6px solid var(--border-color);
@@ -170,7 +128,7 @@ Bold borders, aggressive shadows, skewed transforms
   --experience-item-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
   --experience-item-transform: rotate(-0.2deg);
 
-  /* Experience Item - Pseudo-element (striped top decoration) */
+  /* Experience item - Pseudo-element (striped top decoration) */
   --experience-item-before-content: '';
   --experience-item-before-display: block;
   --experience-item-before-position: absolute;
@@ -186,24 +144,25 @@ Bold borders, aggressive shadows, skewed transforms
     transparent 24px
   );
 
-  /* Experience Item - Role */
+  /* Experience item - Role */
   --experience-role-font-size: 1.8rem;
   --experience-role-border-inline-start: 8px solid var(--accent-color);
   --experience-role-padding-inline-start: 1rem;
   --experience-role-margin-block-end: 0.5rem;
   --experience-role-line-height: 1;
 
-  /* Experience Item - Company */
+  /* Experience item - Company */
   --experience-company-font-weight: 900;
   --experience-company-font-size: 1.1rem;
   --experience-company-text-transform: uppercase;
 
-  /* Experience Bullets */
+  /* Experience bullets */
   --bullet-before-content: '■';
   --bullet-font-size: 1rem;
   --bullet-font-weight: 900;
 
-  /* Tech Badges */
+  /* ==================== TECH BADGES ==================== */
+
   --tech-badge-border: 3px solid var(--border-color);
   --tech-badge-background: var(--text-color);
   --tech-badge-color: var(--background-color);
@@ -215,19 +174,19 @@ Bold borders, aggressive shadows, skewed transforms
   --tech-badge-transform: skewX(-3deg);
   --tech-badge-transition: transform 0.1s ease, box-shadow 0.1s ease;
 
-  /* Tech Badges - Hover */
+  /* Tech badges - Hover */
   --tech-badge-hover-transform: skewX(-3deg) translate(-2px, -2px);
   --tech-badge-hover-box-shadow: 6px 6px 0 var(--accent-color);
 
   /* ==================== SKILLS SECTION ==================== */
 
-  /* Skills Grid - Container */
+  /* Skills grid - Container */
   --skills-grid-border: 6px solid var(--border-color);
   --skills-grid-background: var(--section-bg);
   --skills-grid-padding: 2rem;
   --skills-grid-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
 
-  /* Skills Grid - Pseudo-element (accent border overlay) */
+  /* Skills grid - Pseudo-element (accent border overlay) */
   --skills-grid-before-content: '';
   --skills-grid-before-display: block;
   --skills-grid-before-position: absolute;
@@ -235,14 +194,14 @@ Bold borders, aggressive shadows, skewed transforms
   --skills-grid-before-border: 3px solid var(--accent-color);
   --skills-grid-before-pointer-events: none;
 
-  /* Skills Grid - Group */
+  /* Skills grid - Group */
   --skills-group-border: 4px solid var(--border-color);
   --skills-group-background: var(--background-color);
   --skills-group-padding: 1rem;
   --skills-group-margin-bottom: 1rem;
   --skills-group-transform: skewX(-0.5deg);
 
-  /* Skills Grid - Title */
+  /* Skills grid - Title */
   --skills-title-border-width: 3px;
   --skills-title-border-style: solid;
   --skills-title-padding-bottom: 0.5rem;
@@ -254,21 +213,21 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== EDUCATION SECTION ==================== */
 
-  /* Education Item - Base */
+  /* Education item - Base */
   --education-item-border: var(--border-width-extra-thick) solid var(--border-color);
   --education-item-background: var(--section-bg);
   --education-item-padding: var(--spacing-xl);
   --education-item-box-shadow: 10px 10px 0 var(--brutal-shadow-light);
   --education-item-position: relative;
 
-  /* Education Item - Pseudo-element (left accent bar) */
+  /* Education item - Pseudo-element (left accent bar) */
   --education-item-before-content: '';
   --education-item-before-position: absolute;
   --education-item-before-inset: 0 auto 0 0;
   --education-item-before-width: 8px;
   --education-item-before-background: var(--accent-color);
 
-  /* Education Item - Institution */
+  /* Education item - Institution */
   --education-institution-font-size: 1.8rem;
   --education-institution-border-inline-start: 8px solid var(--accent-color);
   --education-institution-padding-inline-start: 1rem;
@@ -277,13 +236,13 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== PRINCIPLES & COMMUNITY SECTIONS ==================== */
 
-  /* List Container */
+  /* List container */
   --list-border: var(--border-width-extra-thick) solid var(--border-color);
   --list-background: var(--section-bg);
   --list-padding: var(--spacing-xl);
   --list-box-shadow: 8px 8px 0 var(--brutal-shadow-light);
 
-  /* Community Items */
+  /* Community items */
   --community-item-padding: 1rem 1.5rem;
   --community-item-margin-bottom: 1rem;
   --community-item-background: var(--background-color);
@@ -292,7 +251,7 @@ Bold borders, aggressive shadows, skewed transforms
   --community-item-border-style: solid;
   --community-item-border-inline-start: var(--border-width-extra-thick) solid var(--accent-color);
 
-  /* Principles Items */
+  /* Principles items */
   --principles-item-padding: 1rem 1.5rem;
   --principles-item-margin-bottom: 1rem;
   --principles-item-background: var(--background-color);
@@ -303,7 +262,7 @@ Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== PRINT LINK ==================== */
 
-  /* Print Link - Base */
+  /* Print link - Base */
   --printlink-border: 6px solid var(--background-color);
   --printlink-background: var(--accent-color);
   --printlink-color: var(--color-white);
@@ -316,18 +275,18 @@ Bold borders, aggressive shadows, skewed transforms
   --printlink-transition: all 0.05s ease;
   --printlink-transform: skewX(-5deg);
 
-  /* Print Link - Hover */
+  /* Print link - Hover */
   --printlink-hover-transform: skewX(-5deg) translate(-4px, -4px);
   --printlink-hover-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
   --printlink-hover-color: var(--color-white);
 
-  /* Print Link - Active */
+  /* Print link - Active */
   --printlink-active-transform: skewX(-5deg) translate(0, 0);
   --printlink-active-box-shadow: 4px 4px 0 var(--brutal-shadow-light);
 
   /* ==================== DIAL SELECTOR HOUSING ==================== */
 
-  /* Dial Selector Housing */
+  /* Dial selector housing */
   --dial-selector-housing-padding-block: var(--spacing-xl);
   --dial-selector-housing-padding-inline: clamp(
     0rem,
@@ -343,8 +302,7 @@ Bold borders, aggressive shadows, skewed transforms
   --dial-selector-housing-h3-text-transform: uppercase;
   --dial-selector-housing-h3-letter-spacing: -0.02em;
 
-  /* Dial Selector Housing - Pseudo-element (striped top decoration) */
-
+  /* Dial selector housing - Pseudo-element (striped top decoration) */
   --dial-selector-housing-before-content: '';
   --dial-selector-housing-before-position: absolute;
   --dial-selector-housing-before-inset: 0;
@@ -376,3 +334,4 @@ Bold borders, aggressive shadows, skewed transforms
   --link-hover-transform: translate(-2px, -2px);
   --link-hover-box-shadow: 4px 4px 0 var(--border-color);
 }
+

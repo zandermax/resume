@@ -1,0 +1,48 @@
+/* ===========================
+BRUTAL Theme - Dark Mode
+Inverted Brutalism
+=========================== */
+
+:root[data-theme='brutal'][data-mode='dark'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: var(--color-dark-bg);
+  --text-color: var(--color-white);
+  --heading-color: var(--color-dark-bg);
+  --border-color: var(--color-gray-dark);
+
+  /* Section-specific colors */
+  --section-text-color: oklch(92% 0 0);
+  --experience-item-background: var(--color-white);
+  --education-item-background: var(--color-white);
+
+  /* Link colors */
+  --link-color: oklch(92% 0 0);
+  --link-visited-color: var(--color-gray-light);
+
+  /* Accent color */
+  --accent-color: var(--color-red-bright);
+
+  /* ==================== SHADOWS & EFFECTS ==================== */
+
+  /* Shadow opacity levels */
+  --brutal-shadow-dark: oklch(100% 0 0 / 0.1);
+  --brutal-shadow-medium: oklch(100% 0 0 / 0.05);
+  --brutal-shadow-light: oklch(100% 0 0 / 0.1);
+
+  /* Texture overlay */
+  --brutal-texture: oklch(100% 0 0 / 0.03);
+
+  /* ==================== DARK MODE OVERRIDES ==================== */
+
+  /* Main container adjustments for dark mode */
+  --main-border-width: 12px;
+  --main-box-shadow: 20px 20px 0 var(--brutal-shadow-dark), 40px 40px 0 var(--brutal-shadow-medium);
+}
+
+/* Dark mode specific selector overrides */
+:root[data-theme='brutal'][data-mode='dark'] .resume-section--experience {
+  color: var(--color-black);
+}
+
