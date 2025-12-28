@@ -23,6 +23,7 @@ dial-selector .knob {
   animation: var(--ds-knob-animation);
   animation-play-state: var(--ds-knob-animation-play-state);
   will-change: var(--ds-knob-will-change);
+  -webkit-tap-highlight-color: transparent;
 }
 
 dial-selector .knob::before {
@@ -61,4 +62,5 @@ dial-selector .indicator {
   transform: rotate(90deg);
   opacity: var(--ds-indicator-opacity);
   filter: var(--ds-indicator-filter);
+  -webkit-tap-highlight-color: transparent;
 }

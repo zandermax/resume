@@ -26,6 +26,7 @@ dial-selector .dial-label {
   opacity: var(--ds-label-opacity);
   filter: var(--ds-label-filter);
   text-shadow: var(--ds-label-text-shadow);
+  -webkit-tap-highlight-color: transparent;
 }
 
 dial-selector .dial-label > span {

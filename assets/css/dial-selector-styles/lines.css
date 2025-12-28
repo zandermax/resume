@@ -17,6 +17,7 @@ dial-selector .spoke-line {
 
 dial-selector .spoke-line-hit-area {
   cursor: var(--ds-cursor);
+  -webkit-tap-highlight-color: transparent;
 }
 
 dial-selector .advance {
@@ -25,4 +26,5 @@ dial-selector .advance {
   cursor: var(--ds-cursor);
   pointer-events: auto;
   background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
