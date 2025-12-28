@@ -212,4 +212,6 @@ SKEUOMORPH Theme - Base Variables
   --dial-selector-housing-padding: var(--spacing-lg);
   --dial-selector-housing-margin: var(--spacing-xs);
   --dial-selector-h3-margin-block-start: 0;
+
+  --section-margin-block-end: var(--spacing-sm);
 }
