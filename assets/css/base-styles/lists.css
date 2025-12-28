@@ -23,7 +23,23 @@
   border: var(--list-border, 3px solid var(--border-color));
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
+  background-image: var(--list-background-image);
   box-shadow: var(--list-box-shadow, none);
+  position: var(--list-position, relative);
+
+  /* === PSEUDO-ELEMENT === */
+  /* Used by themes for decorative borders/effects */
+
+  &::before {
+    content: var(--list-before-content);
+    display: var(--list-before-display);
+    position: var(--list-before-position);
+    inset: var(--list-before-inset);
+    border: var(--list-before-border);
+    background: var(--list-before-background);
+    pointer-events: var(--list-before-pointer-events);
+    opacity: var(--list-before-opacity);
+  }
 }
 
 .community-list__item {
@@ -97,7 +113,23 @@
   padding: var(--list-padding, 0.7rem 0.8rem);
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
+  background-image: var(--list-background-image);
   box-shadow: var(--list-box-shadow, none);
+  position: var(--list-position, relative);
+
+  /* === PSEUDO-ELEMENT === */
+  /* Used by themes for decorative borders/effects */
+
+  &::before {
+    content: var(--list-before-content);
+    display: var(--list-before-display);
+    position: var(--list-before-position);
+    inset: var(--list-before-inset);
+    border: var(--list-before-border);
+    background: var(--list-before-background);
+    pointer-events: var(--list-before-pointer-events);
+    opacity: var(--list-before-opacity);
+  }
 }
 
 .principles-list__item {

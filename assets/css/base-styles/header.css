@@ -37,14 +37,21 @@
   margin-block-end: var(--header-margin-bottom, 1.5rem);
   border-radius: var(--header-border-radius);
   background: var(--header-background, transparent);
+  background-image: var(--header-background-image);
   color: var(--header-color, inherit);
   position: var(--header-position, static);
   box-shadow: var(--header-box-shadow, none);
   transform: var(--header-transform, none);
 
+  /* Child element styling (excluding print link) */
+  *:not(#resume-header__printlink) {
+    color: var(--header-child-color, inherit);
+    border-color: var(--header-child-border-color, inherit);
+  }
+
   /* Links in header */
   a:not(#resume-header__printlink) {
-    color: var(--header-link-color, inherit);
+    color: var(--header-link-color, var(--header-child-color, inherit));
 
     &:hover {
       color: var(--header-link-hover-color, inherit);
@@ -57,11 +64,15 @@
   &::before {
     content: var(--resume-header-before-content);
     position: var(--resume-header-before-position);
+    inset: var(--resume-header-before-inset);
     top: var(--resume-header-before-top);
     left: var(--resume-header-before-left);
     width: var(--resume-header-before-width);
     height: var(--resume-header-before-height);
+    border: var(--resume-header-before-border);
     background: var(--resume-header-before-background);
+    opacity: var(--resume-header-before-opacity);
+    pointer-events: var(--resume-header-before-pointer-events);
   }
 
   &::after {

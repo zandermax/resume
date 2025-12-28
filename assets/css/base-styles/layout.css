@@ -51,6 +51,8 @@
     position: var(--resume-main-after-position);
     inset: var(--resume-main-after-inset);
     background: var(--resume-main-after-background);
+    border: var(--resume-main-after-border);
+    border-radius: var(--resume-main-after-border-radius);
     pointer-events: var(--resume-main-after-pointer-events);
     z-index: var(--resume-main-after-z-index);
     opacity: var(--resume-main-after-opacity);

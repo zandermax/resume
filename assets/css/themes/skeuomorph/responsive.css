@@ -16,6 +16,7 @@ SKEUOMORPH Theme - Responsive Adjustments
     --header-padding: var(--spacing-sm);
     --dial-selector-housing-padding: 0;
     --dial-selector-housing-margin: 0;
+    --dial-selector-h3-margin-block-start: 1rem;
   }
 }
 
@@ -55,6 +56,10 @@ body[data-theme='skeuomorph'] {
         width: 14px;
         height: 14px;
       }
+    }
+
+    .resume-header__dial-selector h3 {
+      margin-block-start: var(--dial-selector-h3-margin-block-start);
     }
   }
 }

@@ -34,13 +34,16 @@
 
   border: var(--experience-item-border, 0);
   border-block-start: 2px solid var(--border-color);
+  border-inline: var(--experience-item-border-inline, none);
   border-inline-start: var(--experience-item-border-inline-start, none);
   border-inline-start-color: var(--experience-item-border-inline-start-color, var(--item-accent-color));
   padding: var(--experience-item-padding, 0);
   padding-block-start: 0.9rem;
+  margin: var(--experience-item-margin, 0);
   margin-block-start: var(--experience-item-margin-top, 0.9rem);
   margin-block-end: var(--experience-item-margin-block-end, 0);
   background: var(--experience-item-background, transparent);
+  background-image: var(--experience-item-background-image);
   box-shadow: var(--experience-item-box-shadow, none);
   border-radius: var(--experience-item-border-radius, 0);
   position: var(--experience-item-position, relative);

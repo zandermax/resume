@@ -23,6 +23,7 @@
   padding: var(--skills-grid-padding, 0.75rem);
   box-sizing: border-box;
   background: var(--skills-grid-background, transparent);
+  background-image: var(--skills-grid-background-image);
   box-shadow: var(--skills-grid-box-shadow, none);
   border-radius: var(--skills-grid-border-radius, 0);
   position: var(--skills-grid-position, relative);

@@ -1,0 +1,124 @@
+/* ===========================
+SKEUOMORPH Theme - Component Styles
+=========================== */
+
+/* ==================== BODY-LEVEL COMPONENT VARIABLES ==================== */
+
+body[data-theme='skeuomorph'] {
+  /* Display sticky note in this theme */
+  --display-sticky-note: block;
+
+  /* ==================== MAIN CONTAINER - STITCHED LEATHER BORDER ==================== */
+
+  /* Leather border backing */
+  --resume-main-before-content: '';
+  --resume-main-before-display: block;
+  --resume-main-before-position: absolute;
+  --resume-main-before-inset: -12px;
+  --resume-main-before-background: var(--leather-color);
+  --resume-main-before-background-image: var(--leather-texture);
+  --resume-main-before-border-radius: 4px;
+  --resume-main-before-z-index: -1;
+  --resume-main-before-box-shadow: 0 8px 16px var(--skeu-black-30), 0 16px 32px var(--skeu-black-20),
+    inset 0 2px 4px var(--skeu-white-10);
+  --resume-main-before-opacity: 1;
+
+  /* Stitching effect */
+  --resume-main-after-content: '';
+  --resume-main-after-position: absolute;
+  --resume-main-after-inset: -8px;
+  --resume-main-after-border: 2px dashed var(--stitch-color);
+  --resume-main-after-border-radius: 2px;
+  --resume-main-after-z-index: -1;
+  --resume-main-after-opacity: 1;
+
+  /* ==================== HEADER - LEATHER BACKING ==================== */
+
+  --header-position: relative;
+  --header-margin: -var(--spacing-md) -var(--spacing-md) var(--spacing-lg);
+  --header-background: var(--paper-color);
+  --header-background-image: var(--paper-texture);
+  --header-box-shadow: 0 4px 8px var(--skeu-black-30), inset 0 1px 2px var(--skeu-white-50);
+  --header-border: 4px solid var(--leather-color);
+  --header-child-color: var(--text-color);
+  --header-child-border-color: var(--stitch-color);
+
+  /* Header stitching effect */
+  --resume-header-before-content: '';
+  --resume-header-before-position: absolute;
+  --resume-header-before-inset: 8px;
+  --resume-header-before-border: 2px dashed var(--stitch-color);
+  --resume-header-before-opacity: 0.5;
+  --resume-header-before-pointer-events: none;
+
+  /* ==================== SECTION HEADINGS - TEXTURED PAPER ==================== */
+
+  --section-title-background-image: var(--paper-texture);
+
+  /* Section title stitching effect */
+  --section-title-before-content: '';
+  --section-title-before-display: block;
+  --section-title-before-position: absolute;
+  --section-title-before-inset: 4px;
+  --section-title-before-border: 1px dashed var(--stitch-color);
+  --section-title-before-opacity: 0.4;
+  --section-title-before-pointer-events: none;
+
+  /* ==================== EXPERIENCE ITEMS - PAPER CARD ==================== */
+
+  --experience-item-background-image: var(--paper-texture);
+  --experience-item-margin: var(--spacing-lg) -var(--spacing-xs);
+  --experience-item-border-inline: var(--border-width-extra-thick) solid var(--leather-color);
+
+  /* ==================== SKILLS GRID - STITCHED EFFECT ==================== */
+
+  --skills-grid-position: relative;
+  --skills-grid-background: var(--paper-color);
+  --skills-grid-background-image: var(--paper-texture);
+  --skills-grid-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
+    0 2px 4px var(--skeu-black-10);
+
+  /* Skills grid stitching effect */
+  --skills-grid-before-content: '';
+  --skills-grid-before-display: block;
+  --skills-grid-before-position: absolute;
+  --skills-grid-before-inset: -6px;
+  --skills-grid-before-border: 2px dashed var(--stitch-color);
+  --skills-grid-before-pointer-events: none;
+  --skills-grid-before-opacity: 0.6;
+
+  /* ==================== LISTS - STITCHED EFFECT ==================== */
+  /* Applied to community list and principles list */
+
+  --list-position: relative;
+  --list-background: var(--paper-color);
+  --list-background-image: var(--paper-texture);
+  --list-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
+    0 2px 4px var(--skeu-black-10);
+
+  /* List stitching effect */
+  --list-before-content: '';
+  --list-before-display: block;
+  --list-before-position: absolute;
+  --list-before-inset: -6px;
+  --list-before-border: 2px dashed var(--stitch-color);
+  --list-before-pointer-events: none;
+  --list-before-opacity: 0.6;
+
+  /* ==================== EDUCATION ITEM - STITCHED EFFECT ==================== */
+
+  --education-item-position: relative;
+  --education-item-background: var(--paper-color);
+  --education-item-background-image: var(--paper-texture);
+  --education-item-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
+    0 2px 4px var(--skeu-black-10);
+
+  /* Education item stitching effect */
+  --education-item-before-content: '';
+  --education-item-before-display: block;
+  --education-item-before-position: absolute;
+  --education-item-before-inset: -6px;
+  --education-item-before-border: 2px dashed var(--stitch-color);
+  --education-item-before-pointer-events: none;
+  --education-item-before-opacity: 0.6;
+}

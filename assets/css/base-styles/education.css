@@ -21,6 +21,7 @@
   padding: var(--education-item-padding, 0.75rem 0.85rem);
   font-size: var(--education-item-font-size, 0.9rem);
   background-color: var(--education-item-background, var(--section-bg, transparent));
+  background-image: var(--education-item-background-image);
   box-shadow: var(--education-item-box-shadow, none);
   transition: var(--education-item-transition, none);
   position: var(--education-item-position, static);
@@ -30,10 +31,14 @@
 
   &::before {
     content: var(--education-item-before-content);
+    display: var(--education-item-before-display);
     position: var(--education-item-before-position);
     inset: var(--education-item-before-inset);
     width: var(--education-item-before-width);
+    border: var(--education-item-before-border);
     background: var(--education-item-before-background);
+    pointer-events: var(--education-item-before-pointer-events);
+    opacity: var(--education-item-before-opacity);
   }
 
   /* === HOVER STATE === */

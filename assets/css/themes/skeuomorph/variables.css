@@ -1,0 +1,215 @@
+/* ===========================
+SKEUOMORPH Theme - Base Variables
+=========================== */
+
+/* ==================== SHARED VARIABLES & GRADIENTS ==================== */
+
+:root[data-theme='skeuomorph'] {
+  /* Typography */
+  --font-family: 'Georgia', 'Times New Roman', serif;
+
+  /* Dial selector dimensions */
+  --width-outer-circle: 3px;
+  --width-inner-circle: 1px;
+
+  /* Sticky note rotation */
+  --sticky-note-rotation: -3deg;
+
+  /* Metal gradient for buttons and knobs */
+  --metal-gradient: linear-gradient(
+    135deg,
+    oklch(0.9 0.06 95) 0%,
+    oklch(0.77 0.13 85) 20%,
+    oklch(0.88 0.18 100) 40%,
+    oklch(0.77 0.13 85) 60%,
+    oklch(0.65 0.11 75) 80%,
+    oklch(0.77 0.13 85) 100%
+  );
+
+  /* ==================== OKLCH TRANSPARENCY VALUES ==================== */
+
+  /* Black transparencies */
+  --skeu-black-015: oklch(0% 0 0 / 0.015);
+  --skeu-black-03: oklch(0% 0 0 / 0.03);
+  --skeu-black-05: oklch(0% 0 0 / 0.05);
+  --skeu-black-06: oklch(0% 0 0 / 0.06);
+  --skeu-black-08: oklch(0% 0 0 / 0.08);
+  --skeu-black-10: oklch(0% 0 0 / 0.1);
+  --skeu-black-15: oklch(0% 0 0 / 0.15);
+  --skeu-black-20: oklch(0% 0 0 / 0.2);
+  --skeu-black-25: oklch(0% 0 0 / 0.25);
+  --skeu-black-30: oklch(0% 0 0 / 0.3);
+  --skeu-black-35: oklch(0% 0 0 / 0.35);
+  --skeu-black-40: oklch(0% 0 0 / 0.4);
+  --skeu-black-50: oklch(0% 0 0 / 0.5);
+  --skeu-black-60: oklch(0% 0 0 / 0.6);
+  --skeu-black-70: oklch(0% 0 0 / 0.7);
+  --skeu-black-80: oklch(0% 0 0 / 0.8);
+
+  /* White transparencies */
+  --skeu-white-03: oklch(100% 0 0 / 0.03);
+  --skeu-white-05: oklch(100% 0 0 / 0.05);
+  --skeu-white-06: oklch(100% 0 0 / 0.06);
+  --skeu-white-08: oklch(100% 0 0 / 0.08);
+  --skeu-white-10: oklch(100% 0 0 / 0.1);
+  --skeu-white-12: oklch(100% 0 0 / 0.12);
+  --skeu-white-20: oklch(100% 0 0 / 0.2);
+  --skeu-white-30: oklch(100% 0 0 / 0.3);
+  --skeu-white-40: oklch(100% 0 0 / 0.4);
+  --skeu-white-50: oklch(100% 0 0 / 0.5);
+
+  /* ==================== SHADOW PATTERNS ==================== */
+
+  --skeu-shadow-sm: 0 2px 4px var(--skeu-black-10);
+  --skeu-shadow-md: 0 4px 8px var(--skeu-black-30);
+  --skeu-inset-highlight: inset 0 1px 0 var(--skeu-white-50);
+  --skeu-inset-shadow: inset 0 -1px 0 var(--skeu-black-10);
+
+  /* ==================== SPACING & LAYOUT ==================== */
+
+  --main-padding-responsive-500: 0.5rem;
+  --header-name-wrapper-margin-block-start: 2.25rem;
+  --header-padding: var(--spacing-lg);
+
+  /* ==================== HEADER VARIABLES ==================== */
+
+  --section-title-background: var(--paper-color);
+  --section-title-color: var(--text-color);
+  --section-title-padding: var(--spacing-sm) var(--spacing-sm);
+  --section-title-margin: 0 0 var(--spacing-md) -var(--spacing-xs);
+  --section-title-box-shadow: 0 2px 4px var(--skeu-black-20), inset 0 1px 2px var(--skeu-white-10);
+  --section-title-border-inline-start: 4px solid var(--leather-color);
+  --section-title-border-inline-end: 4px solid var(--leather-color);
+  --section-title-text-shadow: 0 1px 0 var(--skeu-white-50), 0 2px 2px var(--skeu-black-10);
+  --section-title-font-weight: 700;
+  --section-content-padding-inline: var(--spacing-md);
+
+  /* ==================== SECTION CONTAINER VARIABLES ==================== */
+
+  --section-position: relative;
+  --section-padding: var(--spacing-md) var(--spacing-lg);
+  --section-background: var(--paper-color);
+  --section-background-image: var(--paper-texture);
+
+  /* Section paper curl effect - ::before pseudo-element */
+  --section-before-content: '';
+  --section-before-position: absolute;
+  --section-before-inset: 0 0 auto auto;
+  --section-before-width: 0;
+  --section-before-height: 0;
+  --section-before-border-style: solid;
+  --section-before-border-width: 0 0 24px 24px;
+  --section-before-border-color: transparent transparent var(--skeu-black-08);
+  --section-before-pointer-events: none;
+
+  /* Section paper curl effect - ::after pseudo-element */
+  --section-after-content: '';
+  --section-after-position: absolute;
+  --section-after-inset: 0 0 auto auto;
+  --section-after-width: 0;
+  --section-after-height: 0;
+  --section-after-border-style: solid;
+  --section-after-border-width: 0 24px 24px 0;
+  --section-after-border-color: transparent var(--background-color) transparent;
+  --section-after-box-shadow: -2px 2px 3px var(--skeu-black-10);
+  --section-after-pointer-events: none;
+
+  /* ==================== EXPERIENCE ITEM VARIABLES ==================== */
+
+  --experience-item-background: var(--paper-color);
+  --experience-item-padding: var(--spacing-md) var(--spacing-md);
+  --experience-item-margin-top: var(--spacing-lg);
+  --experience-item-box-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-05),
+    inset 0 1px 0 var(--skeu-white-50);
+  --bullet-color: var(--leather-color);
+  --bullet-text-shadow: 0 1px 0 var(--skeu-white-20);
+
+  /* ==================== SKILLS & EDUCATION VARIABLES ==================== */
+
+  --skills-group-box-shadow: inset 0 1px 0 var(--skeu-white-50), inset 0 -1px 0 var(--skeu-black-10),
+    0 1px 3px var(--skeu-black-08);
+  --skills-group-padding: var(--spacing-sm) var(--spacing-sm);
+  --principles-item-padding: var(--spacing-sm) var(--spacing-xs);
+  --education-item-padding: var(--spacing-sm) var(--spacing-sm);
+
+  /* ==================== TECH BADGE VARIABLES ==================== */
+
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.7em 2.2em;
+  --tech-badge-border-radius: 5px;
+  --tech-badge-display: inline-flex;
+  --tech-badge-background: linear-gradient(135deg, oklch(0.28 0.03 45) 0%, oklch(0.22 0.02 45) 100%);
+  --tech-badge-box-shadow: 0 3px 6px var(--skeu-black-35), 0 6px 12px var(--skeu-black-25),
+    inset 0 1px 0 var(--skeu-white-05);
+  --tech-badge-align-items: center;
+
+  /* Tech badge ::before pseudo-element */
+  --tech-badge-before-content: '';
+  --tech-badge-before-display: block;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-inset: 5px;
+  --tech-badge-before-background: radial-gradient(ellipse at 25% 35%, var(--skeu-white-06) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 65%, var(--skeu-black-08) 0%, transparent 50%),
+    linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
+  --tech-badge-before-border-radius: 3px;
+  --tech-badge-before-box-shadow: 0 2px 4px var(--skeu-black-35), inset 0 1px 0 var(--skeu-white-12),
+    inset 0 -1px 0 var(--skeu-black-25);
+  --tech-badge-before-pointer-events: none;
+  --tech-badge-before-z-index: 0;
+
+  /* Tech badge ::after pseudo-element */
+  --tech-badge-after-content: '';
+  --tech-badge-after-display: block;
+  --tech-badge-after-position: absolute;
+  --tech-badge-after-inset: 0;
+  --tech-badge-after-background: radial-gradient(
+        circle at center,
+        oklch(0.88 0 0) 0%,
+        oklch(0.72 0 0) 45%,
+        oklch(0.6 0 0) 70%,
+        transparent 72%
+      )
+      left 10px center / 7px 7px no-repeat,
+    radial-gradient(circle at center, oklch(0.88 0 0) 0%, oklch(0.72 0 0) 45%, oklch(0.6 0 0) 70%, transparent 72%)
+      right 10px center / 7px 7px no-repeat;
+  --tech-badge-after-pointer-events: none;
+  --tech-badge-after-z-index: 2;
+
+  /* ==================== PRINT BUTTON VARIABLES ==================== */
+
+  --printlink-background: var(--metal-gradient);
+  --printlink-color: var(--print-button-text-color, var(--ink-color));
+  --printlink-border: 3px solid var(--stitch-color);
+  --printlink-box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
+    inset 0 -2px 4px var(--skeu-black-30);
+  --printlink-text-shadow: 0 1px 0 var(--skeu-white-30);
+  --printlink-font-weight: 700;
+  --printlink-transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Print button hover state */
+  --printlink-hover-background: linear-gradient(
+    135deg,
+    oklch(0.65 0.11 75) 0%,
+    oklch(0.77 0.13 85) 20%,
+    oklch(0.88 0.18 100) 40%,
+    oklch(0.95 0.12 105) 50%,
+    oklch(0.88 0.18 100) 60%,
+    oklch(0.77 0.13 85) 80%,
+    oklch(0.65 0.11 75) 100%
+  );
+  --printlink-hover-background-size: 300% 300%;
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-hover-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
+    inset 0 -2px 4px var(--skeu-black-20);
+  --printlink-hover-animation: button-shimmer 2s linear infinite;
+
+  /* Print button active state */
+  --printlink-active-transform: translateY(0);
+  --printlink-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
+
+  /* ==================== DIAL SELECTOR HOUSING VARIABLES ==================== */
+
+  --dial-selector-housing-padding: var(--spacing-lg);
+  --dial-selector-housing-margin: var(--spacing-xs);
+  --dial-selector-h3-margin-block-start: 0;
+}

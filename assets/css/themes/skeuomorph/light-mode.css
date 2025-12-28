@@ -1,0 +1,90 @@
+/* ===========================
+SKEUOMORPH Theme - Light Mode Variables
+=========================== */
+
+:root[data-theme='skeuomorph'][data-mode='light'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: oklch(0.36 0.05 45);
+  --text-color: var(--color-brown);
+  --heading-color: var(--color-brown);
+  --border-color: oklch(0.54 0.04 50);
+
+  /* Component colors */
+  --tech-badge-color: oklch(0.92 0.02 60);
+  --accent-color: oklch(0.42 0.11 50);
+
+  /* Material colors */
+  --leather-color: var(--color-tan);
+  --paper-color: var(--color-cream);
+  --ink-color: var(--color-brown);
+  --stitch-color: oklch(0.76 0.08 70);
+
+  /* Link colors */
+  --link-color: oklch(0.38 0.04 40);
+  --link-visited-color: oklch(0.27 0.03 40);
+
+  /* Section colors */
+  --section-bg: var(--color-cream);
+  --section-content-background: var(--paper-color);
+  --header-background: var(--color-tan);
+
+  /* ==================== DIAL SELECTOR COLORS ==================== */
+
+  --dial-color-ink: var(--color-brown);
+  --dial-color-selection: oklch(0.63 0.13 20);
+  --dial-color-indicator: oklch(0.63 0.13 20);
+
+  /* ==================== OAK DESK COLORS ==================== */
+  /* Honey oak for light mode */
+
+  --oak-lite: oklch(82% 0.035 76);
+  --oak-base: oklch(74% 0.045 75);
+  --oak-mid: oklch(66% 0.055 74);
+  --oak-dark: oklch(52% 0.06 73);
+  --oak-sheen: oklch(100% 0 0 / 0.2);
+  --oak-shade: oklch(0% 0 0 / 0.18);
+
+  /* ==================== TEXTURES & PATTERNS ==================== */
+
+  /* Background pattern */
+  --background-image: repeating-linear-gradient(
+    90deg,
+    oklch(0.37 0.06 45) 0px,
+    oklch(0.37 0.06 45) 2px,
+    oklch(0.31 0.05 45) 2px,
+    oklch(0.31 0.05 45) 4px
+  );
+
+  /* Paper texture */
+  --paper-texture: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      var(--skeu-black-015) 1px,
+      var(--skeu-black-015) 2px
+    ),
+    repeating-linear-gradient(90deg, transparent, transparent 1px, var(--skeu-black-015) 1px, var(--skeu-black-015) 2px);
+
+  /* Leather texture */
+  --leather-texture: radial-gradient(ellipse at 20% 30%, var(--skeu-white-08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, var(--skeu-black-05) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, var(--skeu-white-03) 0%, transparent 50%);
+
+  /* ==================== SHADOWS & EFFECTS ==================== */
+
+  /* Paper shadows */
+  --paper-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-08), 0 8px 16px var(--skeu-black-05);
+
+  /* Desk shadow */
+  --desk-shadow: inset 0 2px 4px var(--skeu-black-20);
+
+  /* Knob shadow */
+  --knob-shadow: 0 8px 16px var(--skeu-black-60), 0 16px 32px var(--skeu-black-40), 0 4px 8px var(--skeu-black-50),
+    inset 0 3px 6px var(--skeu-white-30), inset 0 -4px 8px var(--skeu-black-50);
+
+  /* Sticky note */
+  --sticky-note-color: oklch(0.98 0.1 105);
+  --sticky-note-shadow: 0 4px 6px var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
+}

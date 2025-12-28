@@ -140,6 +140,7 @@ h2.resume-section__title {
   margin-block-end: var(--section-title-margin-bottom, 0.75rem);
   margin-top: var(--section-title-margin-top, 0);
   background: var(--section-title-background, transparent);
+  background-image: var(--section-title-background-image);
   box-shadow: var(--section-title-box-shadow, none);
   text-shadow: var(--section-title-text-shadow, none);
   position: var(--section-title-position, static);
@@ -158,8 +159,13 @@ h2.resume-section__title {
   &::before {
     content: var(--section-title-before-content);
     display: var(--section-title-before-display);
+    position: var(--section-title-before-position);
+    inset: var(--section-title-before-inset);
+    border: var(--section-title-before-border);
     color: var(--section-title-before-color);
     font-size: var(--section-title-before-font-size);
+    opacity: var(--section-title-before-opacity);
+    pointer-events: var(--section-title-before-pointer-events);
     animation: var(--section-title-before-animation);
     will-change: var(--section-title-before-will-change);
   }
