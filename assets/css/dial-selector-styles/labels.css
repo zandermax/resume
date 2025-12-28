@@ -49,6 +49,7 @@ dial-selector .dial-label:not(.active):hover > span {
   animation: var(--ds-label-hover-animation, none);
   text-shadow: var(--ds-label-hover-text-shadow, none);
   box-shadow: var(--ds-label-hover-box-shadow, none);
+  border: var(--ds-label-hover-border, var(--ds-label-span-border, none));
   border-color: var(--ds-label-hover-border-color, transparent);
   padding: var(--ds-label-hover-padding, inherit);
   will-change: var(--ds-label-hover-will-change, auto);

@@ -20,7 +20,8 @@
 
 .resume-section {
   margin: var(--section-margin, 0 0 1.75rem 0);
-  padding: 1rem 0 0;
+  margin-block-end: var(--section-margin-block-end, 1.75rem);
+  padding: var(--section-padding, 1rem 0 0);
   padding-inline-start: var(--section-padding-inline-start, 0);
   padding-inline-end: var(--section-padding-inline-end, 0);
   padding-block-start: var(--section-padding-block-start, 0);
@@ -28,6 +29,8 @@
   border-block-start: var(--section-border-block-start-width, 1px) var(--section-border-block-start-style, solid)
     var(--section-border-block-start-color, var(--border-color));
   background: var(--resume-section-background);
+  position: var(--resume-section-position, static);
+  z-index: var(--resume-section-z-index, auto);
 
   &:not(:first-of-type) {
     border-block-start: var(--section-not-first-border-block-start-width, 0)

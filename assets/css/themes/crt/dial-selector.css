@@ -53,6 +53,7 @@ CRT Theme - Dial Selector Styles
     /* Labels - Hover */
     --ds-label-hover-text-shadow: 0 0 10px currentColor;
     --ds-label-hover-border-color: currentColor;
+    --ds-label-hover-border: 1px solid currentColor;
     --ds-label-hover-color: var(--dial-color-ink);
     --ds-label-hover-padding: 0rem 0.5rem;
 

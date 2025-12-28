@@ -1,0 +1,90 @@
+/* ===========================
+WEB 2.0 GLOSS Theme - Dark Mode
+=========================== */
+
+/* Dark Mode */
+:root[data-theme='web2gloss'][data-mode='dark'] {
+  --background-color: oklch(18% 0.04 250);
+  --text-color: oklch(96% 0.02 230);
+  --heading-color: var(--color-white);
+  --web2-blue-dark: oklch(50% 0.18 240);
+  --border-color: var(--web2-blue-dark);
+  --dial-color-ink: oklch(82% 0.13 210);
+  --dial-color-selection: oklch(82% 0.13 210);
+  --dial-color-indicator: oklch(82% 0.13 210);
+
+  /* Header text colors - all white for glossy header banner */
+  --header-color: var(--color-white);
+  --header-name-color: var(--color-white);
+  --header-role-color: var(--color-white);
+  --header-meta-color: var(--color-white);
+  --header-name-greeting-color: var(--color-white);
+
+  /* Show web2 badges in web2gloss theme */
+  --display-web2-badges: block;
+  --ds-knob-background: radial-gradient(
+    circle at 30% 30%,
+    var(--web2-blue-dark) 0%,
+    oklch(30% 0.06 250) 40%,
+    oklch(18% 0.04 250) 80%,
+    oklch(10% 0.03 250) 100%
+  );
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --background-image: radial-gradient(ellipse at center, oklch(30% 0.06 250) 0%, oklch(18% 0.04 250) 100%);
+  --link-color: oklch(82% 0.13 210);
+  --link-visited-color: oklch(65% 0.12 300);
+  --section-bg: oklch(30% 0.06 250);
+  --header-background: linear-gradient(180deg, var(--web2-blue-dark) 0%, oklch(30% 0.06 250) 100%);
+  --accent-color: oklch(75% 0.15 60);
+  --section-title-color: var(--color-white);
+  --web2-primary: oklch(82% 0.13 210);
+  --web2-accent: oklch(75% 0.15 60);
+  --web2-success: oklch(92% 0.2 130);
+  --web2-surface: oklch(30% 0.06 250);
+  --web2-glow: oklch(82% 0.13 210 / 0.4);
+  --web2-shadow: oklch(0% 0 0 / 0.5);
+  --web2-gloss-overlay: linear-gradient(180deg, oklch(100% 0 0 / 0.3) 0%, oklch(100% 0 0 / 0.15) 50%, transparent 100%);
+  --web2-gloss-overlay-strong: linear-gradient(
+    180deg,
+    oklch(100% 0 0 / 0.3) 0%,
+    oklch(100% 0 0 / 0.15) 50%,
+    transparent 100%
+  );
+  --web2-gloss-overlay-tech: linear-gradient(180deg, oklch(100% 0 0 / 0.35) 0%, transparent 100%);
+  --web2-section-title-gradient: linear-gradient(90deg, var(--web2-primary) 0%, oklch(77% 0.15 215) 100%);
+
+  /* Skills grid group custom properties - dark mode overrides */
+  --skills-group-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
+  --skills-group-border: 1px solid oklch(82% 0.13 210 / 0.2);
+
+  /* Tech badge custom properties - dark mode overrides */
+  --tech-badge-color: var(--color-black);
+
+  /* Community/Principles list item custom properties - dark mode overrides */
+  --community-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
+  --community-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
+  --principles-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
+  --principles-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
+
+  /* Experience and Education items - dark mode overrides */
+  --experience-item-background: linear-gradient(180deg, oklch(30% 0.06 250 / 0.6) 0%, oklch(18% 0.04 250 / 0.4) 100%);
+  --education-item-background: linear-gradient(180deg, oklch(30% 0.06 250 / 0.6) 0%, oklch(18% 0.04 250 / 0.4) 100%);
+
+  /* Consolidated box shadows */
+  --web2-shadow-sm: 0 2px 4px var(--web2-shadow);
+  --web2-shadow-md: 0 2px 4px var(--web2-shadow), 0 4px 8px var(--web2-shadow);
+  --web2-shadow-lg: 0 2px 4px var(--web2-shadow), 0 4px 12px var(--web2-shadow);
+  --web2-shadow-xl: 0 2px 4px var(--web2-shadow), 0 4px 12px var(--web2-shadow), 0 8px 24px var(--web2-shadow);
+  --web2-shadow-inset-light: inset 0 1px 0 oklch(100% 0 0 / 0.3);
+  --web2-shadow-inset-strong: inset 0 1px 0 oklch(100% 0 0 / 0.4);
+
+  /* Common transitions */
+  --web2-transition-fast: all 0.2s ease;
+  --web2-transition-normal: all 0.3s ease;
+
+  /* Common text shadows */
+  --web2-text-shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.2);
+  --web2-text-shadow-md: 0 1px 2px oklch(0% 0 0 / 0.3);
+  --web2-text-shadow-lg: 0 1px 3px oklch(0% 0 0 / 0.3);
+}
+

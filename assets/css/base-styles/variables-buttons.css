@@ -1,25 +1,24 @@
 /**
- * CSS variables for print/save buttons and dial selector controls
+ * CSS variables for print/save buttons and dial selector housing
  *
  * HTML ELEMENTS AFFECTED:
  *   - .resume-header__savelink (save button, terminal theme only)
  *   - #resume-header__printlink (print button, visible in all themes)
- *   - dial-selector (theme/mode selector custom element)
- *   - Dial selector knob, indicator, labels, and spoke lines
+ *   - .dial-selector-housing (housing container for dial selector)
  *
  * DEPENDENCIES:
  *   - variables-base.css (uses --text-color, --background-color, --accent-color)
  *
  * RELATED FILES:
  *   - buttons.css (applies these button variables)
- *   - header.css (buttons appear in header, dial selector styling)
- *   - dial-selector.js (custom element that uses these CSS variables)
+ *   - header.css (buttons appear in header)
+ *   - dial-selector-styles/variables.css (dial selector component variables)
  *
- * VARIABLES DEFINED: ~110 variables controlling:
+ * VARIABLES DEFINED: ~60 variables controlling:
  *   - Button base styles (border, padding, font, colors)
  *   - Button hover/active states
  *   - Button pseudo-elements
- *   - Dial selector knob, indicator, labels, and animations
+ *   - Dial selector color theming and housing container
  */
 
 :root {
@@ -101,58 +100,17 @@
   --dial-color-indicator: var(--color-red-crimson);
   --ds-knob-background: var(--color-dark-knob);
 
-  /* === DIAL SELECTOR KNOB === */
-  --ds-knob-border: 0;
-  /* === DIAL SELECTOR LABELS === */
-  --ds-label-border-width: 0;
-  --ds-label-border-style: solid;
-  --ds-label-padding: 0.4rem 0.8rem;
-  --ds-label-font-size: clamp(16px, 1.5vw, 22px);
-  --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
-  --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
-  --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
-  --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
-  --ds-label-active-span-padding-block: 0;
-  --ds-label-active-span-padding-inline: 0;
-  --ds-label-active-span-padding-block--tablet: 0;
-  --ds-label-active-span-padding-inline--tablet: 0;
-  --ds-label-active-span-padding-block--phone: 0;
-  --ds-label-active-span-padding-inline--phone: 0;
-  --ds-label-border-radius: 0;
-  --ds-label-transition: none;
-  --ds-label-background: transparent;
-  --ds-label-font-weight: normal;
-
-  /* === DIAL SELECTOR SPOKE LINES === */
-  --ds-line-width: 1px;
-  --ds-line-opacity: 1;
-
-  /* === DIAL SELECTOR HOVER/ACTIVE STATES === */
-  --ds-label-hover-text-shadow: none;
-  --ds-label-hover-border-color: transparent;
-  --ds-label-hover-background: transparent;
-  --ds-label-hover-box-shadow: none;
-  --ds-label-hover-color: inherit;
-  --ds-label-hover-opacity: 1;
-  --ds-label-hover-transform: none;
-  --ds-label-hover-filter: none;
-  --ds-label-hover-animation: none;
-  --ds-label-hover-padding: inherit;
-  --ds-label-hover-will-change: auto;
-  --ds-label-active-text-shadow: none;
-  --ds-label-active-font-weight: normal;
-  --ds-label-active-border: none;
-  --ds-label-active-box-shadow: none;
-  --ds-label-active-background: transparent;
-  --ds-label-active-color: inherit;
-
   /* === DIAL SELECTOR HOUSING CONTAINER === */
   --dial-selector-housing-padding-block: 0;
   --dial-selector-housing-padding-inline: 0;
-  --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-500: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-480: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-380: var(--dial-selector-housing-padding-block) var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block)
+    var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-500: var(--dial-selector-housing-padding-block)
+    var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-480: var(--dial-selector-housing-padding-block)
+    var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-380: var(--dial-selector-housing-padding-block)
+    var(--dial-selector-housing-padding-inline);
   --dial-selector-housing-background: transparent;
   --dial-selector-housing-border: none;
   --dial-selector-housing-box-shadow: none;

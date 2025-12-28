@@ -1,0 +1,155 @@
+/* ===========================
+WEB 2.0 GLOSS Theme - Extras (Badges & Special Components)
+=========================== */
+
+body[data-theme='web2gloss'] {
+  /* Web 2.0 badges container */
+  .web2-badges {
+    background: linear-gradient(180deg, oklch(91% 0 0) 0%, oklch(82% 0 0) 100%) !important;
+    border: 1px solid oklch(69% 0 0);
+    box-shadow: var(--web2-shadow-md), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+
+    &::before {
+      inset: 0 0 50% 0;
+      background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
+      border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+    }
+  }
+
+  /* Web 2.0 Glossy Badges */
+  .web2-badge {
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--web2-radius-md);
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
+    position: relative;
+    overflow: hidden;
+    text-shadow: var(--web2-text-shadow-md);
+    min-width: 100px;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
+      border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      color: inherit;
+    }
+  }
+
+  /* Badge color variants */
+  .web2-badge--orange {
+    background: linear-gradient(180deg, oklch(70% 0.2 50) 0%, oklch(61% 0.2 50) 100%);
+  }
+
+  .web2-badge--blue {
+    background: linear-gradient(180deg, oklch(70% 0.15 235) 0%, oklch(60% 0.15 235) 100%);
+  }
+
+  .web2-badge--orange-alt {
+    background: linear-gradient(180deg, oklch(75% 0.18 60) 0%, oklch(70% 0.2 50) 100%);
+  }
+
+  .web2-badge--green {
+    background: linear-gradient(180deg, oklch(82% 0.18 130) 0%, oklch(68% 0.18 130) 100%);
+  }
+
+  .web2-badge--purple {
+    background: linear-gradient(180deg, oklch(67% 0.2 285) 0%, oklch(57% 0.2 285) 100%);
+  }
+
+  /* RSS icon for badges */
+  #rss-icon {
+    position: relative;
+  }
+
+  #rss-icon::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-inline-end: 0.4rem;
+    vertical-align: middle;
+    margin-block-end: 2px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 455.731 455.731" xmlns="http://www.w3.org/2000/svg"><path style="fill:%23FFFFFF;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348C391.986,303.103,357.971,220.923,296.208,159.16z"/><path style="fill:%23FFFFFF;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348C282.429,270.196,184.507,172.273,64.143,172.273z"/><circle style="fill:%23FFFFFF;" cx="109.833" cy="346.26" r="46.088"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* RSS Feed Badge with attention-grabbing animation */
+  .web2-badge--orange-alt:has(#rss-icon) {
+    color: var(--color-white);
+    animation: web2-rss-wobble 4s ease-in-out infinite;
+    cursor: pointer;
+    transition: var(--web2-transition-fast);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 12px var(--web2-glow),
+        var(--web2-shadow-inset-strong);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: var(--web2-shadow-sm), inset 0 2px 4px oklch(0% 0 0 / 0.2);
+    }
+
+    /* First ghost pulse ring using after on badge */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border: 4px solid oklch(75% 0.18 60);
+      border-radius: var(--web2-radius-md);
+      pointer-events: none;
+      animation: web2-lift 2s ease-out infinite;
+      box-shadow: 0 0 20px oklch(75% 0.18 60 / 0.6);
+      z-index: 10;
+    }
+
+    /* Second ghost pulse ring using after on span */
+    .rss-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 500%;
+      height: 500%;
+      border: 4px solid oklch(75% 0.18 60);
+      border-radius: var(--web2-radius-md);
+      pointer-events: none;
+      animation: web2-lift 2s ease-out 0.3s infinite;
+      box-shadow: 0 0 20px oklch(75% 0.18 60 / 0.6);
+      z-index: -1;
+    }
+  }
+
+  /* Dark mode overrides */
+  &[data-mode='dark'] {
+    .web2-badges {
+      background: linear-gradient(180deg, oklch(16% 0 0) 0%, oklch(10% 0 0) 100%) !important;
+      border-color: oklch(25% 0 0);
+      box-shadow: 0 2px 4px oklch(0% 0 0 / 0.4), 0 4px 8px oklch(0% 0 0 / 0.3), inset 0 1px 0 oklch(100% 0 0 / 0.1);
+    }
+  }
+}
+

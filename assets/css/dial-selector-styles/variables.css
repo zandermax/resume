@@ -96,6 +96,18 @@ dial-selector {
   --ds-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
   --ds-label-text-transform: none;
   --ds-label-transform: none;
+  --ds-label-border-width: 0;
+  --ds-label-border-style: solid;
+  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-font-size: clamp(16px, 1.5vw, 22px);
+  --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
+  --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
+  --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
+  --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
+  --ds-label-border-radius: 0;
+  --ds-label-transition: none;
+  --ds-label-background: transparent;
+  --ds-label-font-weight: normal;
 
   /* Label span styling */
   --ds-label-span-padding: 0;
@@ -120,6 +132,33 @@ dial-selector {
   /* Label span active states */
   --ds-label-span-active-border: none;
   --ds-label-span-active-font-weight: inherit;
+  --ds-label-active-span-padding-block: 0;
+  --ds-label-active-span-padding-inline: 0;
+  --ds-label-active-span-padding-block--tablet: 0;
+  --ds-label-active-span-padding-inline--tablet: 0;
+  --ds-label-active-span-padding-block--phone: 0;
+  --ds-label-active-span-padding-inline--phone: 0;
+
+  /* Label hover states */
+  --ds-label-hover-text-shadow: none;
+  --ds-label-hover-border-color: transparent;
+  --ds-label-hover-background: transparent;
+  --ds-label-hover-box-shadow: none;
+  --ds-label-hover-color: inherit;
+  --ds-label-hover-opacity: 1;
+  --ds-label-hover-transform: none;
+  --ds-label-hover-filter: none;
+  --ds-label-hover-animation: none;
+  --ds-label-hover-padding: inherit;
+  --ds-label-hover-will-change: auto;
+
+  /* Label active states */
+  --ds-label-active-text-shadow: none;
+  --ds-label-active-font-weight: normal;
+  --ds-label-active-border: none;
+  --ds-label-active-box-shadow: none;
+  --ds-label-active-background: transparent;
+  --ds-label-active-color: inherit;
 
   /* Spoke line styling (legacy - kept for backwards compatibility) */
   --ds-line-stroke: var(--ds-color-line);

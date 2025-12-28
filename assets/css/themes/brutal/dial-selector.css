@@ -53,7 +53,7 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-span-font-size: 0.9rem;
     --ds-label-span-font-weight: 900;
     --ds-label-span-border: none;
-    --ds-label-span-active-border: 3px solid transparent;
+    --ds-label-span-active-border: 3px solid var(--border-color);
     --ds-label-span-transition: all 0.05s ease;
     --ds-label-span-text-transform: uppercase;
     --ds-label-span-letter-spacing: 0.05em;
@@ -70,6 +70,7 @@ BRUTAL Theme - Dial Selector Custom Properties
 
     /* Labels - Hover State */
     --ds-label-hover-border-color: var(--border-color);
+    --ds-label-hover-border: 3px solid var(--border-color);
     --ds-label-hover-background: var(--accent-color);
     --ds-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
     --ds-label-hover-box-shadow: 4px 4px 0 var(--border-color);

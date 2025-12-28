@@ -1,0 +1,226 @@
+/* ===========================
+WEB 2.0 GLOSS Theme - Variables
+=========================== */
+
+/* Common properties for all web2gloss themes */
+:root[data-theme='web2gloss'] {
+  --web2-top-border-radius: var(--web2-radius-xl) var(--web2-radius-xl) 0 0;
+  --main-border-radius: var(--web2-top-border-radius);
+  --header-border-radius: var(--web2-top-border-radius);
+
+  /* Consolidated border radius values */
+  --web2-radius-xl: 16px;
+  --web2-radius-lg: 12px;
+  --web2-radius-md: 8px;
+  --web2-radius-sm: 6px;
+
+  /* Experience item custom properties */
+  --experience-item-border-radius: var(--web2-radius-lg);
+  --experience-item-background: linear-gradient(180deg, var(--section-bg) 0%, oklch(100% 0 0 / 0.9) 100%);
+  --experience-item-padding: var(--spacing-xl);
+  --experience-item-border: var(--border-width-thin) solid var(--border-color);
+  --experience-item-box-shadow: var(--web2-shadow-lg);
+  --experience-item-transition: var(--web2-transition-normal);
+  --experience-item-margin-top: var(--spacing-lg);
+
+  /* Skills grid group custom properties */
+  --skills-group-border-radius: var(--web2-radius-md);
+  --skills-group-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.5) 100%);
+  --skills-group-padding: var(--spacing-md);
+  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.1);
+  --skills-group-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+  --skills-group-transition: var(--web2-transition-fast);
+  --skills-group-overflow: hidden;
+  --skills-group-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08),
+    0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
+  --skills-group-hover-transform: translateY(-2px);
+
+  /* Skills grid title custom properties */
+  --skills-title-font-weight: 700;
+  --skills-title-font-size: 1.1rem;
+  --skills-title-color: var(--web2-primary);
+  --skills-title-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.8);
+  --skills-title-border-style: solid;
+  --skills-title-border-width: var(--border-width-normal);
+  --skills-title-border: none;
+  --skills-title-border-block-end-color: var(--web2-primary);
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 600;
+  --experience-company-font-size: 1.1rem;
+
+  /* Tech badge custom properties */
+  --tech-badge-border-radius: var(--web2-radius-md);
+  --tech-badge-background: linear-gradient(135deg, var(--web2-success) 0%, oklch(67% 0.16 125) 100%);
+  --tech-badge-color: var(--color-white);
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: var(--spacing-xs) var(--spacing-md);
+  --tech-badge-font-size: var(--font-size-sm);
+  --tech-badge-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.3);
+  --tech-badge-text-shadow: var(--web2-text-shadow-sm);
+  --tech-badge-overflow: hidden;
+  --tech-badge-border: none;
+  --tech-badge-before-content: '';
+  --tech-badge-before-display: block;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-inset: 0 0 50% 0;
+  --tech-badge-before-background: var(--web2-gloss-overlay-tech);
+  --tech-badge-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+  --tech-badge-before-pointer-events: none;
+
+  /* Header role custom properties */
+  --header-role-font-weight: 500;
+  --header-role-font-size: 1.2rem;
+  --header-role-text-shadow: var(--web2-text-shadow-md);
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.5rem;
+  --education-institution-font-weight: 700;
+  --education-institution-color: var(--web2-primary);
+  --education-institution-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.5);
+  --education-institution-margin-block-end: 0.5rem;
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '●';
+  --bullet-color: var(--web2-primary);
+  --bullet-font-size: 0.8rem;
+  --bullet-text-shadow: var(--web2-text-shadow-sm);
+
+  /* Community/Principles list item custom properties */
+  --community-item-border-radius: var(--web2-radius-sm);
+  --community-item-padding: var(--spacing-md);
+  --community-item-margin-bottom: var(--spacing-sm);
+  --community-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
+  --community-item-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.05);
+  --community-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --community-item-transition: var(--web2-transition-fast);
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-border-radius: var(--web2-radius-sm);
+  --principles-item-padding: 1rem;
+  --principles-item-margin-bottom: 0.75rem;
+  --principles-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
+  --principles-item-border: 1px solid oklch(0% 0 0 / 0.05);
+  --principles-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --principles-item-transition: var(--web2-transition-fast);
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Header name custom properties */
+  --header-name-font-size: 3rem;
+  --header-name-font-weight: 700;
+  --header-name-letter-spacing: -0.02em;
+  --header-name-text-shadow: 0 1px 2px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
+  --header-name-border: none;
+  --header-name-padding: 0;
+  --header-name-margin-block-end: 0.5rem;
+
+  /* Section title custom properties */
+  --section-title-background: var(--web2-section-title-gradient);
+  --section-title-text-shadow: var(--web2-text-shadow-lg);
+  --section-title-border: none;
+  --section-title-border-radius: var(--web2-radius-lg);
+  --section-title-padding: 1rem 1.5rem;
+  --section-title-margin: 0 0 1.5rem 0;
+  --section-title-font-weight: 600;
+  --section-title-font-size: 1.3rem;
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.08em;
+  --section-title-overflow: hidden;
+  --section-title-box-shadow: var(--web2-shadow-md), var(--web2-shadow-inset-light);
+
+  /* Section content custom properties */
+  --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.0375), 1.5rem);
+
+  /* Print link custom properties */
+  --printlink-border: none;
+  --printlink-border-radius: var(--web2-radius-md);
+  --printlink-background: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: 700;
+  --printlink-padding: 1rem 2rem;
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: 1rem;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15),
+    inset 0 1px 0 oklch(100% 0 0 / 0.3);
+  --printlink-text-shadow: 1px 1px 2px oklch(0% 0 0 / 0.3);
+  --printlink-transition: var(--web2-transition-normal);
+  --printlink-hover-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2),
+    0 0 20px oklch(100% 0.25 45 / 0.4), inset 0 1px 0 oklch(100% 0 0 / 0.4);
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-hover-text-shadow: 0 0 8px oklch(100% 0 0 / 0.5);
+  --printlink-active-transform: translateY(0);
+  --printlink-active-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.2), inset 0 1px 3px oklch(0% 0 0 / 0.3);
+  --printlink-before-content: '';
+  --printlink-before-display: block;
+  --printlink-before-position: absolute;
+  --printlink-before-inset: 0 0 50% 0;
+  --printlink-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
+  --printlink-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+  --printlink-before-pointer-events: none;
+
+  /* Dial label hover properties */
+  --ds-label-hover-background: linear-gradient(180deg, oklch(100% 0 0 / 0.9) 0%, oklch(100% 0 0 / 0.7) 100%);
+  --ds-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08), 0 0 12px var(--web2-glow),
+    inset 0 1px 0 oklch(100% 0 0 / 0.6);
+  --ds-label-hover-transform: translateY(-2px);
+  --ds-label-hover-color: var(--web2-primary);
+
+  /* Resume main container custom properties */
+  --resume-main-background: var(--section-bg);
+  --main-box-shadow: var(--web2-shadow-xl);
+  --main-padding: 0;
+  --main-border-width: 1px;
+  --main-border-style: solid;
+
+  /* Resume main ::before pseudo-element */
+  --resume-main-before-content: '';
+  --resume-main-before-display: block;
+  --resume-main-before-position: absolute;
+  --resume-main-before-inset: 0 0 50% 0;
+  --resume-main-before-background: var(--web2-gloss-overlay);
+  --resume-main-before-border-radius: var(--web2-top-border-radius);
+  --resume-main-before-z-index: 1;
+  --resume-main-before-pointer-events: none;
+
+  /* Resume section custom properties */
+  --section-padding: 2rem;
+  --resume-section-position: relative;
+  --resume-section-z-index: 2;
+  --section-margin-block-end: 1.5rem;
+
+  /* Section title custom properties (pseudo-element & hover) */
+  --section-title-before-content: '';
+  --section-title-before-display: block;
+  --section-title-before-position: absolute;
+  --section-title-before-inset: 0 0 50% 0;
+  --section-title-before-background: var(--web2-gloss-overlay-strong);
+  --section-title-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+  --section-title-before-pointer-events: none;
+  --section-title-hover-box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-strong);
+
+  /* Experience item custom properties */
+  --experience-item-margin: 1.5rem 0;
+  --experience-item-before-content: '';
+  --experience-item-before-display: block;
+  --experience-item-before-position: absolute;
+  --experience-item-before-pointer-events: none;
+  --experience-item-before-inset: 0 0 50% 0;
+  --experience-item-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
+  --experience-item-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+  --experience-item-hover-box-shadow: 0 4px 8px var(--web2-shadow), 0 8px 16px var(--web2-shadow), 0 0 20px var(--web2-glow);
+  --experience-item-hover-transform: translateY(-3px);
+
+  /* Experience role hover */
+  --experience-role-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 0 10px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+  --experience-role-hover-transform: translateX(4px);
+
+  /* List item hover custom properties */
+  --list-item-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 0 10px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+  --list-item-hover-transform: translateX(4px);
+}
+

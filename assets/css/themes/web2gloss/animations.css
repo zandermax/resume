@@ -1,0 +1,48 @@
+/* ===========================
+WEB 2.0 GLOSS Theme - Animations
+=========================== */
+
+/* RSS Feed Badge Attention Animation */
+@keyframes web2-rss-wobble {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translateY(-3px) rotate(-3deg) scale(1.08);
+  }
+  20% {
+    transform: translateY(-3px) rotate(3deg) scale(1.08);
+  }
+  30% {
+    transform: translateY(-3px) rotate(-3deg) scale(1.08);
+  }
+  40% {
+    transform: translateY(-3px) rotate(3deg) scale(1.08);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg) scale(1.02);
+  }
+  60% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+/* Hover Lift Animation - lifts the element like it's hovered */
+@keyframes web2-lift {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}

@@ -4,11 +4,14 @@ DASHBOARD Theme - Dial Selector Styles
 
 /* Common dial-selector properties */
 :root[data-theme='dashboard'] {
-  /* Dial label hover properties */
-  --ds-label-hover-border-color: var(--accent-color);
-  --ds-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
-  --ds-label-hover-color: var(--accent-color);
-  --ds-label-hover-transform: translateY(-2px);
+  dial-selector {
+    /* Dial label hover properties */
+    --ds-label-hover-border-color: var(--accent-color);
+    --ds-label-hover-border: 1px solid var(--accent-color);
+    --ds-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
+    --ds-label-hover-color: var(--accent-color);
+    --ds-label-hover-transform: translateY(-2px);
+  }
 
   &[data-mode='light'] {
     --dial-color-ink: oklch(20% 0 0);

@@ -15,7 +15,7 @@ SKEUOMORPH Theme - Responsive Adjustments
     --experience-bullets-li-padding-inline-start: var(--spacing-xs);
     --header-padding: var(--spacing-sm);
     --dial-selector-housing-padding: 0;
-    --dial-selector-housing-margin: 0;
+    --dial-selector-housing-margin: 0.5rem;
     --dial-selector-h3-margin-block-start: 1rem;
   }
 }

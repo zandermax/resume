@@ -147,8 +147,15 @@
   /* === SECTION TITLE PSEUDO-ELEMENTS === */
   --section-title-before-content: none;
   --section-title-before-display: none;
+  --section-title-before-position: static;
+  --section-title-before-inset: auto;
   --section-title-before-color: inherit;
   --section-title-before-font-size: inherit;
+  --section-title-before-background: transparent;
+  --section-title-before-border: none;
+  --section-title-before-border-radius: 0;
+  --section-title-before-opacity: 1;
+  --section-title-before-pointer-events: auto;
   --section-title-before-animation: none;
   --section-title-before-will-change: auto;
   --section-title-after-content: none;
@@ -173,10 +180,16 @@
 
   /* === SECTION CONTAINER === */
   --section-margin: 0 0 1.75rem 0;
+  --section-margin-block-end: 1.75rem;
+  --section-padding: 1rem 0 0;
   --section-padding-inline-start: 0;
   --section-padding-inline-end: 0;
   --section-padding-block-start: 0;
   --section-padding-block-end: 0;
+  --resume-section-background: transparent;
+  --resume-section-position: static;
+  --resume-section-z-index: auto;
+  --section-title-hover-box-shadow: none;
   --section-border-block-start-width: 1px;
   --section-border-block-start-style: solid;
   --section-border-block-start-color: var(--border-color);

@@ -36,8 +36,8 @@
   margin: var(--header-margin, 0 0 1.5rem 0);
   margin-block-end: var(--header-margin-bottom, 1.5rem);
   border-radius: var(--header-border-radius);
-  background: var(--header-background, transparent);
   background-image: var(--header-background-image);
+  background: var(--header-background, transparent);
   color: var(--header-color, inherit);
   position: var(--header-position, static);
   box-shadow: var(--header-box-shadow, none);

@@ -140,8 +140,8 @@ h2.resume-section__title {
   margin: var(--section-title-margin, 0);
   margin-block-end: var(--section-title-margin-bottom, 0.75rem);
   margin-top: var(--section-title-margin-top, 0);
-  background: var(--section-title-background, transparent);
   background-image: var(--section-title-background-image);
+  background: var(--section-title-background, transparent);
   box-shadow: var(--section-title-box-shadow, none);
   text-shadow: var(--section-title-text-shadow, none);
   position: var(--section-title-position, static);
@@ -163,12 +163,18 @@ h2.resume-section__title {
     position: var(--section-title-before-position);
     inset: var(--section-title-before-inset);
     border: var(--section-title-before-border);
+    background: var(--section-title-before-background);
+    border-radius: var(--section-title-before-border-radius);
     color: var(--section-title-before-color);
     font-size: var(--section-title-before-font-size);
     opacity: var(--section-title-before-opacity);
     pointer-events: var(--section-title-before-pointer-events);
     animation: var(--section-title-before-animation);
     will-change: var(--section-title-before-will-change);
+  }
+
+  &:hover {
+    box-shadow: var(--section-title-hover-box-shadow);
   }
 
   &::after {
@@ -202,6 +208,11 @@ h3.experience-item__role {
   border-inline-start: var(--experience-role-border-inline-start, none);
   padding-inline-start: var(--experience-role-padding-inline-start, 0);
   position: relative;
+
+  &:hover {
+    transform: var(--experience-role-hover-transform);
+    box-shadow: var(--experience-role-hover-box-shadow);
+  }
 }
 
 /* === EDUCATION INSTITUTION (H3) === */
@@ -238,7 +249,10 @@ a {
     &:hover {
       background: var(--link-visited-hover-background, var(--link-hover-background));
       color: var(--link-visited-hover-color, var(--link-hover-color));
-      border-block-end-color: var(--link-visited-hover-border-block-end-color, var(--link-visited-border-block-end-color, var(--link-hover-border-block-end-color)));
+      border-block-end-color: var(
+        --link-visited-hover-border-block-end-color,
+        var(--link-visited-border-block-end-color, var(--link-hover-border-block-end-color))
+      );
     }
   }
 
