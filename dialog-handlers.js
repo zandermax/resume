@@ -90,11 +90,21 @@ window.addEventListener('DOMContentLoaded', () => {
     document.cookie = `resume_cookie_consent=${encodeURIComponent(cookieValue)};${expires};path=/;SameSite=Lax`;
     console.log('🍪 Cookie set!');
 
-    cookieBanner?.close();
+    // Trigger exit animation before closing
+    cookieBanner?.classList.add('cookie-banner--closing');
+
+    // Wait for animation to complete, then close
+    cookieBanner?.addEventListener('animationend', function closeDialog(e) {
+      if (e.animationName === 'slideDown') {
+        cookieBanner.removeEventListener('animationend', closeDialog);
+        cookieBanner.close();
+        cookieBanner.classList.remove('cookie-banner--closing');
+      }
+    });
   });
 
-  // Backdrop click to close (optional - for better UX)
-  closeOnBackdrop(cookieBanner);
+  // NO backdrop click to close - 2017-style forced acceptance! 😈
+  // Users MUST click the accept button
 
   // Listen for theme changes to show cookie banner when switching to brutal theme
   const themeSelector = document.getElementById('theme-selector');

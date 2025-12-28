@@ -259,6 +259,11 @@ body[data-theme='brutal'] {
     animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   }
 
+  /* Cookie Banner - Exit Animation */
+  .cookie-banner.cookie-banner--closing {
+    animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
   @keyframes slideUp {
     from {
       transform: translateY(100%);
@@ -267,6 +272,17 @@ body[data-theme='brutal'] {
     to {
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
     }
   }
 
