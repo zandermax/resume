@@ -1,0 +1,37 @@
+/* ===========================
+DASHBOARD Theme - Dark Mode
+Modern Dark Dashboard
+=========================== */
+
+:root[data-theme='dashboard'][data-mode='dark'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: var(--color-dark-surface);
+  --text-color: oklch(93% 0.005 245);
+  --heading-color: oklch(93% 0.005 245);
+  --border-color: var(--color-dark-border);
+
+  /* Link colors */
+  --link-color: var(--color-blue-bright);
+  --link-visited-color: oklch(72% 0.1 240);
+
+  /* Accent color */
+  --accent-color: var(--color-blue-bright);
+
+  /* Panel colors */
+  --panel-bg: oklch(17% 0.01 240);
+  --panel-border: var(--color-dark-border);
+
+  /* Status colors */
+  --status-green: oklch(67% 0.17 150);
+  --status-yellow: oklch(74% 0.14 75);
+  --status-red: oklch(68% 0.21 25);
+
+  /* Metric highlight */
+  --metric-highlight: var(--color-blue-bright);
+
+  /* Panel shadow */
+  --panel-shadow: oklch(0% 0 0 / 0.3);
+}
+

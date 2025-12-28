@@ -1,0 +1,37 @@
+/* ===========================
+DASHBOARD Theme - Light Mode
+Clean & Professional Dashboard
+=========================== */
+
+:root[data-theme='dashboard'][data-mode='light'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: oklch(97% 0.005 245);
+  --text-color: oklch(20% 0 0);
+  --heading-color: oklch(20% 0 0);
+  --border-color: oklch(92% 0.005 245);
+
+  /* Link colors */
+  --link-color: var(--color-blue-dashboard);
+  --link-visited-color: oklch(37% 0.25 260);
+
+  /* Accent color */
+  --accent-color: var(--color-blue-dashboard);
+
+  /* Panel colors */
+  --panel-bg: var(--color-white);
+  --panel-border: oklch(92% 0.005 245);
+
+  /* Status colors */
+  --status-green: var(--color-green-success);
+  --status-yellow: var(--color-yellow-bright);
+  --status-red: var(--color-red-dark);
+
+  /* Metric highlight */
+  --metric-highlight: var(--color-blue-dashboard);
+
+  /* Panel shadow */
+  --panel-shadow: oklch(0% 0 0 / 0.08);
+}
+

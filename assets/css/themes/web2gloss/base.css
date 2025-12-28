@@ -73,7 +73,6 @@ body[data-theme='web2gloss'] {
   /* Experience items & Education - Floating glossy cards */
   .education-item {
     border-radius: var(--web2-radius-lg);
-    background: linear-gradient(90deg, var(--section-bg) 0%, oklch(15% 0 0 / 0.9) 100%);
     padding: 2rem;
     border: 1px solid var(--border-color);
     box-shadow: var(--web2-shadow-lg);

@@ -1,45 +1,7 @@
 /* ===========================
-DASHBOARD Theme - Base Styles
+DASHBOARD Theme - Base Variables
 Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 =========================== */
-
-/* ==================== COLOR SCHEMES ==================== */
-
-/* Light Mode */
-:root[data-theme='dashboard'][data-mode='light'] {
-  --background-color: oklch(97% 0.005 245);
-  --text-color: oklch(20% 0 0);
-  --heading-color: oklch(20% 0 0);
-  --border-color: oklch(92% 0.005 245);
-  --link-color: var(--color-blue-dashboard);
-  --link-visited-color: oklch(37% 0.25 260);
-  --accent-color: var(--color-blue-dashboard);
-  --panel-bg: var(--color-white);
-  --panel-border: oklch(92% 0.005 245);
-  --status-green: var(--color-green-success);
-  --status-yellow: var(--color-yellow-bright);
-  --status-red: var(--color-red-dark);
-  --metric-highlight: var(--color-blue-dashboard);
-  --panel-shadow: oklch(0% 0 0 / 0.08);
-}
-
-/* Dark Mode */
-:root[data-theme='dashboard'][data-mode='dark'] {
-  --background-color: var(--color-dark-surface);
-  --text-color: oklch(93% 0.005 245);
-  --heading-color: oklch(93% 0.005 245);
-  --border-color: var(--color-dark-border);
-  --link-color: var(--color-blue-bright);
-  --link-visited-color: oklch(72% 0.1 240);
-  --accent-color: var(--color-blue-bright);
-  --panel-bg: oklch(17% 0.01 240);
-  --panel-border: var(--color-dark-border);
-  --status-green: oklch(67% 0.17 150);
-  --status-yellow: oklch(74% 0.14 75);
-  --status-red: oklch(68% 0.21 25);
-  --metric-highlight: var(--color-blue-bright);
-  --panel-shadow: oklch(0% 0 0 / 0.3);
-}
 
 /* ==================== CORE VARIABLES ==================== */
 
@@ -88,6 +50,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* Sections */
   --section-margin: 0;
+  --section-margin-block-end: 0;
   --section-padding-inline-start: var(--spacing-xl);
   --section-padding-inline-end: var(--spacing-xl);
   --section-padding-block-start: var(--spacing-xl);
@@ -241,11 +204,6 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --principles-item-margin-top: var(--spacing-sm);
   --principles-item-box-shadow: var(--dashboard-shadow-sm);
   --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
-  --principles-item-hover-padding-inline-start: var(--spacing-md);
-
-  /* List Item - Hover */
-  --list-item-hover-transform: translateX(8px);
-  --list-item-hover-box-shadow: var(--dashboard-shadow-md);
 
   /* List Item - Pseudo-element (checkmark) */
   --list-item-before-content: '✓';
@@ -259,7 +217,6 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* Community List Item - Positioning adjustments */
   --community-item-before-left: -0.25rem;
   --community-item-before-top: 0.5rem;
-  --community-item-hover-padding-inline-start: var(--spacing-md);
 
   /* ==================== PRINT LINK ==================== */
 

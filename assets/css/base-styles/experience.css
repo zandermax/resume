@@ -37,6 +37,7 @@
   border-inline: var(--experience-item-border-inline, none);
   border-inline-start: var(--experience-item-border-inline-start, none);
   border-inline-start-color: var(--experience-item-border-inline-start-color, var(--item-accent-color));
+  --experience-item-hover-border-color: var(--item-accent-color);
   padding: var(--experience-item-padding, 0);
   padding-block-start: 0.9rem;
   margin: var(--experience-item-margin, 0);

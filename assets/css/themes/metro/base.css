@@ -260,6 +260,7 @@ Flat Design / Material Zero
   --education-item-border-inline-start-width: var(--border-width-extra-thick);
   --education-item-border-inline-start-style: solid;
   --education-item-border-inline-start-color: var(--metro-purple);
+  --education-item-hover-padding-inline-start: var(--spacing-xl);
 
   /* ==================== COMMUNITY & PRINCIPLES ==================== */
 
