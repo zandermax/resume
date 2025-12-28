@@ -20,7 +20,7 @@ body[data-theme='brutal'] {
   /* Cookie Banner Container - Dialog Element */
   .cookie-banner {
     position: fixed;
-
+    inset: auto 0 0 0; /* Position at bottom, centered horizontally */
     top: auto;
     border: none;
     padding: 1rem 1rem 0.75rem;
@@ -261,11 +261,11 @@ body[data-theme='brutal'] {
 
   @keyframes slideUp {
     from {
-      transform: translateX(-50%) translateY(100%);
+      transform: translateY(100%);
       opacity: 0;
     }
     to {
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }
