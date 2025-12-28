@@ -35,7 +35,8 @@
   --printlink-font-weight: normal;
   --printlink-letter-spacing: 0.14em;
   --printlink-text-transform: uppercase;
-  --printlink-color: inherit;
+  --printlink-color: var(--text-color);
+  --printlink-border-color: var(--border-color);
   --printlink-background: transparent;
   --printlink-box-shadow: none;
   --printlink-text-shadow: none;

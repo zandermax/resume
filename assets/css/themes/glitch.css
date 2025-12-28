@@ -1035,7 +1035,7 @@ body[data-theme='glitch'] {
   LINKS
   =========================== */
 
-  a:not(#resume-header__printlink) {
+  .resume-header a {
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-color: var(--text-color);

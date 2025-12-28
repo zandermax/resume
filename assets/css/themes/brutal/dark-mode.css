@@ -24,6 +24,12 @@ Inverted Brutalism
   /* Accent color */
   --accent-color: var(--color-red-bright);
 
+  /* ==================== INVERTED ELEMENTS ==================== */
+  /* Elements that should have black text on dark mode */
+  --header-name-wrapper-color: var(--color-black);
+  --education-item-color: var(--color-black);
+  --header-meta-color: var(--color-black);
+
   /* ==================== SHADOWS & EFFECTS ==================== */
 
   /* Shadow opacity levels */
@@ -45,4 +51,3 @@ Inverted Brutalism
 :root[data-theme='brutal'][data-mode='dark'] .resume-section--experience {
   color: var(--color-black);
 }
-

@@ -19,6 +19,12 @@ High Contrast Brutalism
   /* Accent color */
   --accent-color: var(--color-red-crimson);
 
+  /* ==================== INVERTED ELEMENTS ==================== */
+  /* Elements that should have white text on light mode */
+  --header-name-wrapper-color: var(--color-white);
+  --education-item-color: var(--color-black);
+  --header-meta-color: var(--color-white);
+
   /* ==================== SHADOWS & EFFECTS ==================== */
 
   /* Shadow opacity levels */
@@ -29,4 +35,3 @@ High Contrast Brutalism
   /* Texture overlay */
   --brutal-texture: oklch(0% 0 0 / 0.03);
 }
-

@@ -56,6 +56,7 @@ li {
   gap: 0.4rem;
   margin-block-start: var(--header-name-wrapper-margin-block-start, 2rem);
   padding-inline: 0.5rem;
+  color: var(--header-name-wrapper-color, inherit);
 
   > * {
     flex: 0 0 50%;
@@ -221,7 +222,7 @@ h3.education-item__institution {
 
 /* === LINKS === */
 
-a:not(#resume-header__printlink) {
+a {
   color: var(--link-color, inherit);
   text-decoration: var(--link-text-decoration, underline);
   font-weight: var(--link-font-weight, normal);

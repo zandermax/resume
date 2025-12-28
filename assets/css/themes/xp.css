@@ -475,7 +475,7 @@ body[data-theme='xp'] {
   }
 
   /* Links */
-  a:not(#resume-header__printlink) {
+  .resume-header a {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: color 0.15s ease;

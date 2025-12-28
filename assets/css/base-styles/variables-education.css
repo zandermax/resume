@@ -30,6 +30,7 @@
   --education-item-padding: 0;
   --education-item-padding-responsive-500: var(--education-item-padding);
   --education-item-font-size: 0.9rem;
+  --education-item-color: inherit;
   --education-item-position: static;
   --education-item-transition: none;
 

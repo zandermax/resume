@@ -72,6 +72,7 @@
   --header-buttons-gap-responsive-600: var(--header-buttons-gap);
 
   /* === HEADER NAME === */
+  --header-name-wrapper-color: inherit;
   --header-name-order: 1;
   --header-name-font-size: 2.6rem;
   --header-name-font-weight: normal;

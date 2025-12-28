@@ -226,6 +226,13 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --dial-color-selection: oklch(62% 0.17 240);
   --dial-color-indicator: oklch(62% 0.17 240);
 
+  /* Header text colors - all white for glossy header banner */
+  --header-color: var(--color-white);
+  --header-name-color: var(--color-white);
+  --header-role-color: var(--color-white);
+  --header-meta-color: var(--color-white);
+  --header-name-greeting-color: var(--color-white);
+
   /* Show web2 badges in web2gloss theme */
   --display-web2-badges: block;
   --ds-knob-background: radial-gradient(
@@ -286,6 +293,13 @@ WEB 2.0 GLOSS Theme - Peak Mid-2000s
   --dial-color-ink: oklch(82% 0.13 210);
   --dial-color-selection: oklch(82% 0.13 210);
   --dial-color-indicator: oklch(82% 0.13 210);
+
+  /* Header text colors - all white for glossy header banner */
+  --header-color: var(--color-white);
+  --header-name-color: var(--color-white);
+  --header-role-color: var(--color-white);
+  --header-meta-color: var(--color-white);
+  --header-name-greeting-color: var(--color-white);
 
   /* Show web2 badges in web2gloss theme */
   --display-web2-badges: block;
@@ -412,8 +426,8 @@ body[data-theme='web2gloss'] {
       z-index: 1;
     }
 
-    * {
-      color: var(--color-white);
+    /* Ensure header content is above the glossy overlay */
+    > * {
       z-index: 2;
     }
   }
@@ -499,7 +513,7 @@ body[data-theme='web2gloss'] {
   }
 
   /* Links - Glossy with glow on hover */
-  a:not(#resume-header__printlink):not(.web2-badge) {
+  .resume-header a:not(.web2-badge) {
     text-decoration: none;
     border-block-end: 1px solid var(--link-color);
     transition: var(--web2-transition-fast);

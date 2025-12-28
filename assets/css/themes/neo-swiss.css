@@ -480,7 +480,7 @@ body[data-theme='neoswiss'] {
   }
 
   /* Links - Invisible until hover */
-  a:not(#resume-header__printlink) {
+  .resume-header a {
     text-decoration: none;
     border-block-end: 0;
     transition: border-block-end 50ms linear;

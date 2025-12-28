@@ -103,6 +103,8 @@
   animation: var(--printlink-animation, none);
   box-sizing: border-box;
   cursor: var(--printlink-cursor, pointer);
+  color: var(--printlink-color, var(--text-color));
+  border-color: var(--printlink-border-color, var(--border-color));
 
   /* === HOVER STATE === */
 

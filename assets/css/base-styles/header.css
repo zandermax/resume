@@ -43,21 +43,6 @@
   box-shadow: var(--header-box-shadow, none);
   transform: var(--header-transform, none);
 
-  /* Child element styling (excluding print link) */
-  *:not(#resume-header__printlink) {
-    color: var(--header-child-color, inherit);
-    border-color: var(--header-child-border-color, inherit);
-  }
-
-  /* Links in header */
-  a:not(#resume-header__printlink) {
-    color: var(--header-link-color, var(--header-child-color, inherit));
-
-    &:hover {
-      color: var(--header-link-hover-color, inherit);
-    }
-  }
-
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for decorative elements */
 
