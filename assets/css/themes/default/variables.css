@@ -1,0 +1,25 @@
+/* ===========================
+DEFAULT Theme - Variables
+=========================== */
+
+/* Common properties for all default themes */
+:root[data-theme='default'] {
+  /* ==================== TYPOGRAPHY ==================== */
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* ==================== BACKGROUNDS ==================== */
+  --background-image: none;
+  --section-bg: transparent;
+  --header-background: transparent;
+
+  /* ==================== PRINT LINK - COMMON PROPERTIES ==================== */
+  --printlink-border-radius: 4px;
+  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+  --printlink-font-size: 0.9rem;
+  --printlink-font-weight: 600;
+  --printlink-letter-spacing: 0.05em;
+  --printlink-transition: all 0.2s ease;
+  --printlink-hover-color: var(--color-white);
+  --printlink-hover-transform: translateY(-1px);
+}
+

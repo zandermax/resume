@@ -1,0 +1,26 @@
+/* ===========================
+DEFAULT Theme - Light Mode
+=========================== */
+
+/* Light Mode */
+:root[data-theme='default'][data-mode='light'] {
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-red-crimson);
+  --dial-color-indicator: var(--color-red-crimson);
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-purple-link);
+  --accent-color: var(--color-red-crimson);
+  --ds-knob-background: var(--color-dark-knob);
+  --printlink-background: var(--color-black);
+  --printlink-color: var(--color-white);
+  --printlink-border: var(--border-width-normal) solid var(--color-black);
+  --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
+  --printlink-hover-background: var(--color-red-crimson);
+  --printlink-hover-border-color: var(--color-red-crimson);
+  --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
+}
+

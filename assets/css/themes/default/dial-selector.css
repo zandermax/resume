@@ -1,22 +1,13 @@
 /* ===========================
-DEFAULT Theme - Dial Selector Overrides
+DEFAULT Theme - Dial Selector
 =========================== */
 
-/* ==================== DIAL SELECTOR HOVER EFFECTS ==================== */
-
+/* Dial Selector Hover Effects */
 :root[data-theme='default'] {
   dial-selector {
     --ds-label-hover-color: var(--dial-color-ink);
     --ds-label-hover-opacity: 0.7;
     --ds-label-hover-transform: translateY(-1px);
     --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
-  }
-
-  &[data-mode='dark'] {
-    --ds-knob-background: var(--color-dark-bg-alt);
-  }
-
-  &[data-mode='light'] {
-    --ds-knob-background: var(--color-dark-knob);
   }
 }
