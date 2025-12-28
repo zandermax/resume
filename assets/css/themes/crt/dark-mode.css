@@ -1,0 +1,25 @@
+/* ===========================
+CRT Theme - Dark Mode
+Green CRT Display
+=========================== */
+
+:root[data-theme='crt'][data-mode='dark'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: var(--color-black);
+  --text-color: var(--color-green);
+  --heading-color: var(--color-green);
+  --border-color: var(--color-green);
+
+  /* Link colors */
+  --link-color: var(--color-green);
+  --link-visited-color: var(--color-green);
+
+  /* Accent color */
+  --accent-color: var(--color-green);
+
+  /* CRT glow effect */
+  --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
+}
+

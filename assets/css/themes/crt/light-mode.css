@@ -1,0 +1,25 @@
+/* ===========================
+CRT Theme - Light Mode
+Amber CRT Display
+=========================== */
+
+:root[data-theme='crt'][data-mode='light'] {
+  /* ==================== COLOR PALETTE ==================== */
+
+  /* Base colors */
+  --background-color: oklch(78% 0.22 50); /* Bright amber/orange background */
+  --text-color: oklch(20% 0.08 60); /* Dark text */
+  --heading-color: oklch(20% 0.08 60);
+  --border-color: oklch(20% 0.08 60);
+
+  /* Link colors */
+  --link-color: oklch(20% 0.08 60);
+  --link-visited-color: oklch(20% 0.08 60);
+
+  /* Accent color */
+  --accent-color: oklch(20% 0.08 60);
+
+  /* CRT glow effect */
+  --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
+}
+

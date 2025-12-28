@@ -1,33 +1,7 @@
 /* ===========================
-CRT Theme - Base Styles
+CRT Theme - Base Variables
 Classic cathode ray tube monitor aesthetic
 =========================== */
-
-/* ==================== COLOR SCHEMES ==================== */
-
-/* Light Mode - Amber CRT */
-:root[data-theme='crt'][data-mode='light'] {
-  --background-color: oklch(78% 0.22 50); /* Bright amber/orange background */
-  --text-color: oklch(20% 0.08 60); /* Dark text */
-  --heading-color: oklch(20% 0.08 60);
-  --border-color: oklch(20% 0.08 60);
-  --link-color: oklch(20% 0.08 60);
-  --link-visited-color: oklch(20% 0.08 60);
-  --accent-color: oklch(20% 0.08 60);
-  --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
-}
-
-/* Dark Mode - Green CRT */
-:root[data-theme='crt'][data-mode='dark'] {
-  --background-color: var(--color-black);
-  --text-color: var(--color-green);
-  --heading-color: var(--color-green);
-  --border-color: var(--color-green);
-  --link-color: var(--color-green);
-  --link-visited-color: var(--color-green);
-  --accent-color: var(--color-green);
-  --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
-}
 
 /* ==================== CORE VARIABLES ==================== */
 
@@ -156,6 +130,7 @@ Classic cathode ray tube monitor aesthetic
   --list-item-border-width: 1px;
   --list-item-border-style: dotted;
   --list-item-padding: 0.75rem 0;
+  --community-item-hover-padding-inline-start: 0.75rem;
 
   /* Community Items */
   --community-item-border: 0;
