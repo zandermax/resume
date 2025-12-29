@@ -21,13 +21,6 @@ WEB 2.0 GLOSS Theme - Light Mode
 
   /* Show web2 badges in web2gloss theme */
   --display-web2-badges: block;
-  --ds-knob-background: radial-gradient(
-    circle at 30% 30%,
-    var(--color-white) 0%,
-    oklch(96% 0.02 230) 30%,
-    oklch(90% 0.05 230) 70%,
-    oklch(82% 0.1 230) 100%
-  );
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --background-image: radial-gradient(ellipse at center, oklch(96% 0.02 230) 0%, oklch(90% 0.05 230) 100%);
   --link-color: oklch(40% 0.17 240);
@@ -68,4 +61,3 @@ WEB 2.0 GLOSS Theme - Light Mode
   --web2-text-shadow-md: 0 1px 2px oklch(0% 0 0 / 0.3);
   --web2-text-shadow-lg: 0 1px 3px oklch(0% 0 0 / 0.3);
 }
-

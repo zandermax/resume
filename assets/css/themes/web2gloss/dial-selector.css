@@ -3,8 +3,14 @@ WEB 2.0 GLOSS Theme - Dial Selector
 =========================== */
 
 body[data-theme='web2gloss'] {
-  /* Dial selector - Glass orb knob */
+  /* === DIAL SELECTOR COMPONENT === */
   dial-selector {
+    /* Knob - Glass orb effect */
+    --ds-knob-border: 2px solid oklch(100% 0 0);
+    --ds-knob-box-shadow: 0 4px 12px var(--web2-shadow), 0 8px 24px var(--web2-shadow),
+      inset 0 2px 4px oklch(100% 0 0 / 0.3), inset 0 -2px 4px oklch(0% 0 0 / 0.2);
+
+    /* Indicator - Glossy dot */
     --ds-indicator-vertical-offset: 41.75%;
     --ds-indicator-width-override: 12px;
     --ds-indicator-height-override: 12px;
@@ -12,96 +18,101 @@ body[data-theme='web2gloss'] {
     --ds-indicator-gradient: radial-gradient(circle at 30% 30%, oklch(100% 0 0 / 0.8), var(--dial-color-indicator));
     --ds-indicator-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.3), 0 0 12px var(--web2-glow);
 
-    .knob {
-      border-radius: 50%;
-      border: 2px solid oklch(100% 0 0 / 0.5);
-      box-shadow: 0 4px 12px var(--web2-shadow), 0 8px 24px var(--web2-shadow), inset 0 2px 4px oklch(100% 0 0 / 0.3),
-        inset 0 -2px 4px oklch(0% 0 0 / 0.2);
-      background: var(--ds-knob-background);
-    }
+    /* Spoke lines */
+    --ds-line-opacity: 0.6;
+    --ds-line-stroke: oklch(100% 0 0 / 0.8);
 
-    .spoke-line {
-      stroke-width: 2px;
-      opacity: 0.6;
-      stroke: oklch(100% 0 0 / 0.8);
-    }
+    /* Label span - Base state */
+    --ds-label-span-display: block;
+    --ds-label-span-border-radius: var(--web2-radius-sm);
+    --ds-label-span-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
+    --ds-label-span-border: 1px solid var(--border-color);
+    --ds-label-span-padding: 0.35rem 0.75rem;
+    --ds-label-span-font-weight: 600;
+    --ds-label-span-font-size: 0.9rem;
+    --ds-label-span-color: var(--text-color);
+    --ds-label-span-transition: var(--web2-transition-fast);
+    --ds-label-span-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 1px 0 oklch(100% 0 0 / 0.5);
+    --ds-label-span-overflow: hidden;
 
-    .dial-label {
-      span {
-        display: block;
-        border-radius: var(--web2-radius-sm);
-        background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
-        border: 1px solid var(--border-color);
-        padding: 0.35rem 0.75rem;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: var(--text-color);
-        transition: var(--web2-transition-fast);
-        box-shadow: 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 1px 0 oklch(100% 0 0 / 0.5);
-        overflow: hidden;
-      }
+    /* Label span - Hover state */
+    --ds-label-hover-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
+    --ds-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.15), 0 0 12px var(--web2-glow),
+      inset 0 1px 0 oklch(100% 0 0 / 0.6);
 
-      &:hover > span {
-        background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.3) 0%, oklch(57% 0.18 245 / 0.2) 100%);
-        box-shadow: 0 2px 4px oklch(0% 0 0 / 0.15), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
-      }
+    /* Label span - Active state */
+    --ds-label-active-span-background: var(--web2-section-title-gradient);
+    --ds-label-span-active-border: 1px solid var(--web2-primary);
+    --ds-label-active-span-box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
+    --ds-label-active-text-shadow: var(--web2-text-shadow-lg);
+    --ds-label-span-active-font-weight: 700;
+  }
 
-      &.active > span {
-        background: var(--web2-section-title-gradient);
-        border: 1px solid var(--web2-primary);
-        box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
-        color: var(--color-white);
-        text-shadow: var(--web2-text-shadow-md);
-        font-weight: 700;
-      }
+  /* === DIAL SELECTOR HOUSING === */
+  --dial-selector-housing-padding: 1.5rem;
+  --dial-selector-housing-background: oklch(100% 0 0 / 0.2);
+  --dial-selector-housing-border: 1px solid oklch(100% 0 0 / 0.3);
+  --dial-selector-housing-border-radius: var(--web2-radius-lg);
+  --dial-selector-housing-box-shadow: inset 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 -1px 0 oklch(100% 0 0 / 0.3);
+
+  /* Housing heading */
+  --dial-selector-housing-h3-color: var(--color-white);
+  --dial-selector-housing-h3-margin-block-end: 1rem;
+  --dial-selector-housing-h3-font-weight: 600;
+  --dial-selector-housing-h3-font-size: 1.1rem;
+  --dial-selector-housing-h3-text-transform: uppercase;
+  --dial-selector-housing-h3-letter-spacing: 0.08em;
+  --dial-selector-housing-h3-text-shadow: var(--web2-text-shadow-md);
+
+  /* === LIGHT MODE === */
+  &[data-mode='light'] {
+    --ds-label-active-span-color: var(--color-white);
+
+    dial-selector {
+      --ds-knob-background: radial-gradient(
+        circle at 30% 30%,
+        var(--color-white) 0%,
+        oklch(96% 0.02 230) 30%,
+        oklch(90% 0.05 230) 70%,
+        oklch(82% 0.1 230) 100%
+      );
     }
   }
 
-  .resume-header__dial-selector {
-    padding: 1.5rem;
-    background: oklch(100% 0 0 / 0.2);
-    border-radius: var(--web2-radius-lg);
-    box-shadow: inset 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 -1px 0 oklch(100% 0 0 / 0.3);
-    border: 1px solid oklch(100% 0 0 / 0.3);
-
-    h3 {
-      color: var(--color-white);
-      margin-block-end: 1rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-shadow: var(--web2-text-shadow-md);
-    }
-  }
-
-  /* Dark mode overrides */
+  /* === DARK MODE === */
   &[data-mode='dark'] {
     dial-selector {
-      .dial-label {
-        span {
-          background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.4) 0%, oklch(57% 0.18 245 / 0.3) 100%);
-          border-color: oklch(82% 0.13 210 / 0.3);
-          box-shadow: 0 1px 3px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.15);
-        }
+      --ds-label-active-span-color: var(--color-black);
+      /* Knob background */
+      --ds-knob-background: radial-gradient(
+        circle at 30% 30%,
+        var(--web2-blue-dark) 0%,
+        oklch(30% 0.06 250) 40%,
+        oklch(18% 0.04 250) 80%,
+        oklch(10% 0.03 250) 100%
+      );
 
-        &:hover > span {
-          background: linear-gradient(180deg, oklch(82% 0.13 210 / 0.3) 0%, oklch(77% 0.15 215 / 0.2) 100%);
-          box-shadow: 0 2px 4px oklch(0% 0 0 / 0.3), 0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.2);
-        }
+      /* Spoke lines */
+      --ds-line-opacity: 0.5;
+      --ds-line-stroke: oklch(100% 0 0 / 0.6);
 
-        &.active > span {
-          background: var(--web2-section-title-gradient);
-          border-color: var(--web2-primary);
-          color: var(--color-white);
-        }
-      }
+      /* Label span - Base state */
+      --ds-label-span-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.4) 0%, oklch(57% 0.18 245 / 0.3) 100%);
+      --ds-label-span-border-color: oklch(82% 0.13 210 / 0.3);
+      --ds-label-span-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.2), inset 0 1px 0 oklch(100% 0 0 / 0.15);
 
-      .spoke-line {
-        opacity: 0.5;
-        stroke: oklch(100% 0 0 / 0.6);
-      }
+      /* Label span - Hover state */
+      --ds-label-hover-background: linear-gradient(
+        180deg,
+        oklch(82% 0.13 210 / 0.3) 0%,
+        oklch(77% 0.15 215 / 0.2) 100%
+      );
+      --ds-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.3), 0 0 12px var(--web2-glow),
+        inset 0 1px 0 oklch(100% 0 0 / 0.2);
+
+      /* Label span - Active state */
+      --ds-label-active-span-background: var(--web2-section-title-gradient);
+      --ds-label-active-span-border-color: var(--web2-primary);
     }
   }
 }
-

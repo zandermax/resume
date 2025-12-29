@@ -30,14 +30,21 @@ dial-selector .dial-label {
 }
 
 dial-selector .dial-label > span {
-  font-size: var(--ds-label-span-font-size, inherit);
-  font-weight: var(--ds-label-span-font-weight, inherit);
+  display: var(--ds-label-span-display, inline-block);
+  border-radius: var(--ds-label-span-border-radius, 0);
+  background: var(--ds-label-span-background, transparent);
   border: var(--ds-label-span-border, none);
+  border-color: var(--ds-label-span-border-color, transparent);
+  padding: var(--ds-label-span-padding, 0);
+  font-weight: var(--ds-label-span-font-weight, inherit);
+  font-size: var(--ds-label-span-font-size, inherit);
+  color: var(--ds-label-span-color, inherit);
   transition: var(--ds-label-span-transition, inherit);
+  box-shadow: var(--ds-label-span-box-shadow, none);
+  overflow: var(--ds-label-span-overflow, visible);
   text-transform: var(--ds-label-span-text-transform, inherit);
   letter-spacing: var(--ds-label-span-letter-spacing, inherit);
   transform: var(--ds-label-span-transform, none);
-  color: var(--ds-label-span-color, inherit);
 }
 
 dial-selector .dial-label:not(.active):hover > span {
@@ -57,15 +64,16 @@ dial-selector .dial-label:not(.active):hover > span {
 
 /* Active option */
 dial-selector .dial-label.active > span {
-  color: var(--ds-label-active-span-color, var(--ds-label-active-color, var(--ds-color-selection)));
   background: var(--ds-label-active-span-background, var(--ds-label-active-background, transparent));
+  border: var(--ds-label-span-active-border, var(--ds-label-span-border, none));
   border-color: var(--ds-label-active-span-border-color, transparent);
-  border: var(--ds-label-span-active-border);
   box-shadow: var(--ds-label-active-span-box-shadow, var(--ds-label-active-box-shadow, none));
+  color: var(--ds-label-active-span-color, var(--ds-label-active-color, var(--ds-color-selection)));
   text-shadow: var(--ds-label-active-text-shadow, none);
-  transform: var(--ds-label-active-span-transform, none);
-  padding: var(--ds-label-active-span-padding, inherit);
-  padding-block: var(--ds-label-active-span-padding-block);
-  padding-inline: var(--ds-label-active-span-padding-inline);
   font-weight: var(--ds-label-span-active-font-weight, var(--ds-label-span-font-weight));
+  transform: var(--ds-label-active-span-transform, none);
+  padding: var(--ds-label-active-span-padding, var(--ds-label-span-padding));
+  padding-block: var(--ds-label-active-span-padding-block, var(--ds-label-span-padding-block));
+  padding-inline: var(--ds-label-active-span-padding-inline, var(--ds-label-span-padding-inline));
+  padding: var(--ds-label-span-padding);
 }

@@ -10,6 +10,7 @@ dial-selector #lineContainer {
 }
 
 dial-selector .spoke-line {
+  stroke: var(--ds-line-stroke);
   stroke-width: var(--ds-line-width, 2px);
   opacity: var(--ds-line-opacity, 1);
   transition: var(--ds-internal-line-transition, opacity 0.3s ease, stroke 0.3s ease);

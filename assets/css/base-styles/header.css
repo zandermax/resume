@@ -84,10 +84,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: var(--dial-selector-housing-padding);
   padding-block: var(--dial-selector-housing-padding-block, 0);
   padding-inline: var(--dial-selector-housing-padding-inline, 0);
   background: var(--dial-selector-housing-background, transparent);
   border: var(--dial-selector-housing-border, none);
+  border-radius: var(--dial-selector-housing-border-radius, 0);
   box-shadow: var(--dial-selector-housing-box-shadow, none);
   position: var(--dial-selector-housing-position, relative);
 
@@ -111,10 +113,12 @@
   h3 {
     margin-block-start: var(--dial-selector-housing-h3-margin-block-start, 0);
     margin-block-end: var(--dial-selector-housing-h3-margin-block-end, 0);
+    font-weight: var(--dial-selector-housing-h3-font-weight, inherit);
     font-size: var(--dial-selector-housing-h3-font-size, inherit);
     color: var(--dial-selector-housing-h3-color, inherit);
     text-transform: var(--dial-selector-housing-h3-text-transform, none);
     letter-spacing: var(--dial-selector-housing-h3-letter-spacing, normal);
+    text-shadow: var(--dial-selector-housing-h3-text-shadow, none);
   }
 }
 

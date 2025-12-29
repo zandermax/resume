@@ -4,6 +4,8 @@ WEB 2.0 GLOSS Theme - Responsive
 
 /* Responsive adjustments for body */
 body[data-theme='web2gloss'] {
+  --main-padding-responsive-500: 0.5rem;
+
   @media (max-width: 768px) {
     h1.resume-header__name {
       --header-name-font-size: 2rem;
@@ -21,7 +23,7 @@ body[data-theme='web2gloss'] {
     }
 
     .resume-header__dial-selector {
-      padding: 1.25rem;
+      --dial-selector-housing-padding: 1.25rem;
     }
 
     dial-selector .dial-label span {
@@ -47,7 +49,7 @@ body[data-theme='web2gloss'] {
     }
 
     .resume-header__dial-selector {
-      padding: 0.75rem;
+      --dial-selector-housing-padding: 0.75rem;
     }
 
     dial-selector .dial-label span {
@@ -72,7 +74,7 @@ body[data-theme='web2gloss'] {
     }
 
     .resume-header__dial-selector {
-      padding: 0.5rem;
+      --dial-selector-housing-padding: 0.5rem;
     }
 
     /* Make labels much smaller on very small screens */
@@ -124,4 +126,3 @@ body[data-theme='web2gloss'] {
     --web2-radius-sm: 4px;
   }
 }
-

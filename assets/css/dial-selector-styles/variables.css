@@ -110,34 +110,40 @@ dial-selector {
   --ds-label-font-weight: normal;
 
   /* Label span styling */
-  --ds-label-span-padding: 0;
-  --ds-label-span-padding-block: 0;
-  --ds-label-span-padding-inline: 0;
+  --ds-label-span-display: inline-block;
   --ds-label-span-border-radius: 0;
   --ds-label-span-background: transparent;
   --ds-label-span-border: none;
   --ds-label-span-border-width: 0;
   --ds-label-span-border-style: solid;
   --ds-label-span-border-color: transparent;
+  --ds-label-span-padding: 0;
+  --ds-label-span-padding-block: 0;
+  --ds-label-span-padding-inline: 0;
+  --ds-label-span-font-weight: inherit;
+  --ds-label-span-font-size: inherit;
   --ds-label-span-color: inherit;
   --ds-label-span-transition: all 0.2s ease;
-  --ds-label-span-display: inline-block;
-  --ds-label-span-font-size: inherit;
-  --ds-label-span-font-weight: inherit;
-  --ds-label-span-text-shadow: none;
   --ds-label-span-box-shadow: none;
+  --ds-label-span-overflow: visible;
+  --ds-label-span-text-shadow: none;
   --ds-label-span-transform: none;
   --ds-label-span-filter: none;
 
   /* Label span active states */
+  --ds-label-active-span-background: transparent;
   --ds-label-span-active-border: none;
+  --ds-label-active-span-border-color: transparent;
+  --ds-label-active-span-box-shadow: none;
+  --ds-label-active-span-color: inherit;
   --ds-label-span-active-font-weight: inherit;
-  --ds-label-active-span-padding-block: 0;
-  --ds-label-active-span-padding-inline: 0;
-  --ds-label-active-span-padding-block--tablet: 0;
-  --ds-label-active-span-padding-inline--tablet: 0;
-  --ds-label-active-span-padding-block--phone: 0;
-  --ds-label-active-span-padding-inline--phone: 0;
+  --ds-label-active-span-padding-block: unset;
+  --ds-label-active-span-padding-inline: unset;
+  --ds-label-active-span-padding-block--tablet: unset;
+  --ds-label-active-span-padding-inline--tablet: unset;
+  --ds-label-active-span-padding-block--phone: unset;
+  --ds-label-active-span-padding-inline--phone: unset;
+  --ds-label-active-span-padding: unset;
 
   /* Label hover states */
   --ds-label-hover-text-shadow: none;

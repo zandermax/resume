@@ -8,8 +8,8 @@ dial-selector .knob {
   height: calc(var(--ds-radius-outer) * 2);
   border: var(--ds-knob-border);
   border-radius: var(--ds-knob-border-radius, 50%);
-  background: var(--ds-knob-background, #11161c);
   background-image: var(--ds-knob-background-image, none);
+  background: var(--ds-knob-background, #11161c);
   background-size: var(--ds-knob-background-size);
   background-position: var(--ds-knob-background-position);
   background-repeat: var(--ds-knob-background-repeat);
