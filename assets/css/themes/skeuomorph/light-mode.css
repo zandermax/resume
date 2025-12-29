@@ -33,6 +33,7 @@ SKEUOMORPH Theme - Light Mode Variables
   /* ==================== DIAL SELECTOR COLORS ==================== */
 
   --dial-color-ink: var(--color-brown);
+  --dial-color-line: oklch(0.62 0.04 40); /* Lighter brown for subtle carved grooves */
   --dial-color-selection: oklch(0.63 0.13 20);
   --dial-color-indicator: oklch(0.63 0.13 20);
 

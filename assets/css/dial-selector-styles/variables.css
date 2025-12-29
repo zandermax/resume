@@ -2,40 +2,101 @@
    Dial Selector - CSS Variables
    =========================== */
 
+/* ===========================
+   DEFAULT COLOR DEFINITIONS
+   Root-level defaults that can be overridden by themes
+   =========================== */
+:root {
+  /* Default dial selector colors */
+  --dial-color-ink-default: oklch(96% 0 0);
+  --dial-color-highlight-default: oklch(58% 0.22 25);
+  --dial-color-line-default: oklch(80% 0.02 75);
+}
+
+/* ===========================
+   DIAL SELECTOR COMPONENT VARIABLES
+   =========================== */
 dial-selector {
-  /* Color variables */
-  --ds-color-ink: var(--dial-color-ink, #f4f4f4);
-  --ds-color-selection: var(--dial-color-selection, #f13b3b);
-  --ds-color-line: var(--dial-color-ink, #c7c2b5);
-  --ds-color-indicator: var(--dial-color-indicator, #f13b3b);
-  --ds-cursor: pointer;
+  /* ===========================
+     COLORS
+     Core color system with fallbacks
+     =========================== */
+  --ds-color-ink: var(--dial-color-ink, var(--dial-color-ink-default));
+  --ds-color-selection: var(--dial-color-selection, var(--dial-color-highlight-default));
+  --ds-color-line: var(--dial-color-line, var(--dial-color-line-default));
+  --ds-color-indicator: var(--dial-color-indicator, var(--dial-color-highlight-default));
 
-  /* Internal line styling variables (not part of public API) */
-  --ds-internal-line-stroke-width: 2;
-  --ds-internal-line-opacity-inactive: 0.4;
-  --ds-internal-line-opacity-active: 0.8;
-  --ds-internal-line-transition: opacity 0.3s ease, stroke 0.3s ease;
+  /* Circle colors */
+  --ds-color-outer-circle: var(--ds-color-ink);
+  --ds-color-inner-circle: var(--ds-color-ink);
 
-  /* Public spoke line styling variables */
-  --ds-line-width: var(--ds-internal-line-stroke-width);
-  --ds-line-opacity: var(--ds-internal-line-opacity-inactive);
-  --ds-line-opacity-active: var(--ds-internal-line-opacity-active);
-
-  /* Typography variables */
+  /* ===========================
+     TYPOGRAPHY
+     =========================== */
   --ds-font-family: 'IBM Plex Mono', 'Courier New', monospace;
 
-  /* Dial selector component-level properties */
-  --ds-knob-box-shadow: unset; /* Is set inline to none */
+  /* ===========================
+     SIZING SYSTEM
+     Master size variable with derived calculations
+     =========================== */
 
-  /* Grid layout */
+  /* Master knob size - media queries override this */
+  --ds-knob-size: 200px;
+
+  /* Derived knob dimensions */
+  --ds-knob-wrap-size: var(--ds-knob-size);
+  --ds-knob-center: calc(var(--ds-knob-size) / 2);
+
+  /* Circle radii (proportional to knob size) */
+  --ds-radius-outer: calc(var(--ds-knob-size) * 0.28125); /* 90/320 */
+  --ds-radius-inner: calc(var(--ds-knob-size) * 0.225); /* 72/320 */
+
+  /* Circle widths */
+  --ds-width-outer-circle: calc(var(--ds-knob-size) * 0.0125); /* 4/320 */
+  --ds-width-inner-circle: calc(var(--ds-knob-size) * 0.00625); /* 2/320 */
+
+  /* Indicator dimensions */
+  --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 */
+  --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 */
+  --ds-indicator-vertical-offset: 46.75%;
+  --ds-center-indicator: 0px;
+
+  /* Line dimensions */
+  --ds-horizontal-line-length: calc(var(--ds-knob-size) * 0.5);
+  --ds-max-line-length: calc(var(--ds-knob-size) * 0.4);
+  --ds-horizontal-line-end-offset: calc(var(--ds-knob-size) * 0.05);
+  --ds-hit-area-stroke-width: calc(var(--ds-knob-size) * 0.0625); /* 20/320 */
+
+  /* Label dimensions */
+  --ds-label-column-height: var(--ds-knob-size);
+  --ds-label-vertical-offset-scale: calc(var(--ds-knob-size) * 0.4375); /* 140/320 */
+
+  /* ===========================
+     LAYOUT & SPACING
+     =========================== */
+
+  /* Grid gaps (responsive) */
   --ds-selector-gap: clamp(12px, 4vw, 40px);
   --ds-selector-gap-tablet: clamp(8px, 2vw, 20px);
   --ds-selector-gap-phone: clamp(8px, 2.5vw, 16px);
   --ds-selector-gap-xs: clamp(4px, 1.5vw, 10px);
 
-  /* Knob styling */
+  /* Component dimensions */
+  --ds-component-width: 100%;
+  --ds-component-height: auto;
+  --ds-component-min-width: 200px;
+  --ds-component-min-height: 200px;
+
+  /* Cursor */
+  --ds-cursor: pointer;
+
+  /* ===========================
+     KNOB STYLING
+     Base knob appearance
+     =========================== */
   --ds-knob-border: var(--ds-width-outer-circle) solid var(--ds-color-outer-circle);
   --ds-knob-border-radius: 50%;
+  --ds-knob-box-shadow: unset;
   --ds-knob-background-image: unset;
   --ds-knob-background-size: cover;
   --ds-knob-background-position: center;
@@ -47,11 +108,11 @@ dial-selector {
   --ds-knob-animation-play-state: running;
   --ds-knob-will-change: auto;
 
-  /* Knob inner circle */
+  /* Knob inner circle (::before) */
   --ds-knob-before-opacity: 0.6;
   --ds-knob-before-filter: none;
 
-  /* Knob ::after pseudo-element (for custom decorative effects) */
+  /* Knob decorative element (::after) */
   --ds-knob-after-content: none;
   --ds-knob-after-display: none;
   --ds-knob-after-position: static;
@@ -63,21 +124,10 @@ dial-selector {
   --ds-knob-after-filter: none;
 
   /* ===========================
-     Indicator Styling Variables
-     ===========================
-
-     Override these variables in themes to customize the indicator:
-
-     --ds-indicator-width-override: Width in px (default: calc based on knob size)
-     --ds-indicator-height-override: Height/length in px (default: calc based on knob size)
-     --ds-indicator-gradient: Color or gradient (default: --ds-color-indicator)
-     --ds-indicator-border: Border style (default: none)
-     --ds-indicator-border-radius: Border radius (default: half of width)
-     --ds-indicator-box-shadow: Shadow effects (default: none)
-     --ds-indicator-opacity: Opacity 0-1 (default: 1)
-     --ds-indicator-filter: CSS filters (default: none)
-     --ds-indicator-vertical-offset: Top position percentage (default: 46.75%)
-     ===========================  */
+     INDICATOR STYLING
+     The pointer/indicator on the knob
+     =========================== */
+  --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
   --ds-indicator-width-override: var(--ds-indicator-width);
   --ds-indicator-height-override: var(--ds-indicator-length);
   --ds-indicator-gradient: var(--ds-color-indicator);
@@ -87,53 +137,105 @@ dial-selector {
   --ds-indicator-opacity: 1;
   --ds-indicator-filter: none;
 
-  /* Label styling */
+  /* ===========================
+     SPOKE LINES
+     Radial lines connecting to labels
+     =========================== */
+
+  /* Base line properties (defaults) */
+  --ds-line-width: 2px;
+  --ds-line-opacity: 0.4;
+  --ds-line-opacity-active: 0.8;
+  --ds-line-stroke: var(--ds-color-line);
+  --ds-line-active-stroke: var(--ds-color-selection);
+  --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
+
+  /* Internal line variables (for JS to override) */
+  --ds-internal-line-stroke-width: 2px;
+  --ds-internal-line-opacity-inactive: 0.4;
+  --ds-internal-line-opacity-active: 0.8;
+  --ds-internal-line-transition: opacity 0.3s ease, stroke 0.3s ease;
+
+  /* ===========================
+     LABEL STYLING
+     Base label appearance
+     =========================== */
+  --ds-label-font-family: var(--ds-font-family);
+  --ds-label-font-weight: normal;
   --ds-label-color: inherit;
   --ds-label-opacity: 1;
   --ds-label-filter: none;
   --ds-label-text-shadow: none;
-  --ds-label-font-family: var(--ds-font-family);
   --ds-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
   --ds-label-text-transform: none;
   --ds-label-transform: none;
-  --ds-label-border-width: 0;
-  --ds-label-border-style: solid;
-  --ds-label-border-color: transparent;
-  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-transition: none;
+
+  /* Label sizing (responsive) */
   --ds-label-font-size: clamp(16px, 1.5vw, 22px);
   --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
   --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
   --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
   --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
-  --ds-label-border-radius: 0;
-  --ds-label-transition: none;
-  --ds-label-background: transparent;
-  --ds-label-font-weight: normal;
 
-  /* Label span styling */
+  /* Label box model */
+  --ds-label-padding: 0.4rem 0.8rem;
+  --ds-label-border-width: 0;
+  --ds-label-border-style: solid;
+  --ds-label-border-color: transparent;
+  --ds-label-border-radius: 0;
+  --ds-label-background: transparent;
+
+  /* ===========================
+     LABEL SPAN STYLING
+     Inner text element styling
+     =========================== */
   --ds-label-span-display: inline-block;
-  --ds-label-span-border-radius: 0;
-  --ds-label-span-background: transparent;
-  --ds-label-span-border-width: 0;
-  --ds-label-span-border-style: solid;
-  --ds-label-span-border-color: transparent;
-  --ds-label-span-padding-block: 0;
-  --ds-label-span-padding-inline: 0;
   --ds-label-span-font-weight: inherit;
   --ds-label-span-font-size: inherit;
   --ds-label-span-color: inherit;
-  --ds-label-span-transition: all 0.2s ease;
+  --ds-label-span-padding-block: 0;
+  --ds-label-span-padding-inline: 0;
+  --ds-label-span-border-width: 0;
+  --ds-label-span-border-style: solid;
+  --ds-label-span-border-color: transparent;
+  --ds-label-span-border-radius: 0;
+  --ds-label-span-background: transparent;
   --ds-label-span-box-shadow: none;
-  --ds-label-span-overflow: visible;
   --ds-label-span-text-shadow: none;
   --ds-label-span-transform: none;
   --ds-label-span-filter: none;
+  --ds-label-span-overflow: visible;
+  --ds-label-span-transition: all 0.2s ease;
 
-  /* Label span active states */
-  --ds-label-active-span-border-width: unset;
-  --ds-label-active-span-border-style: unset;
-  --ds-label-active-span-border-color: transparent;
-  --ds-label-active-span-box-shadow: none;
+  /* ===========================
+     LABEL STATES - HOVER
+     =========================== */
+  --ds-label-hover-color: inherit;
+  --ds-label-hover-opacity: 1;
+  --ds-label-hover-font-weight: inherit;
+  --ds-label-hover-text-shadow: none;
+  --ds-label-hover-padding: inherit;
+  --ds-label-hover-border-width: unset;
+  --ds-label-hover-border-style: unset;
+  --ds-label-hover-border-color: transparent;
+  --ds-label-hover-background: transparent;
+  --ds-label-hover-box-shadow: none;
+  --ds-label-hover-transform: none;
+  --ds-label-hover-filter: none;
+  --ds-label-hover-animation: none;
+  --ds-label-hover-will-change: auto;
+
+  /* ===========================
+     LABEL STATES - ACTIVE
+     =========================== */
+  --ds-label-active-color: unset;
+  --ds-label-active-font-weight: normal;
+  --ds-label-active-text-shadow: none;
+  --ds-label-active-background: transparent;
+  --ds-label-active-box-shadow: none;
+
+  /* Active span states */
   --ds-label-span-active-font-weight: inherit;
   --ds-label-active-span-padding-block: unset;
   --ds-label-active-span-padding-inline: unset;
@@ -141,68 +243,13 @@ dial-selector {
   --ds-label-active-span-padding-inline--tablet: unset;
   --ds-label-active-span-padding-block--phone: unset;
   --ds-label-active-span-padding-inline--phone: unset;
+  --ds-label-active-span-border-width: unset;
+  --ds-label-active-span-border-style: unset;
+  --ds-label-active-span-border-color: transparent;
+  --ds-label-active-span-box-shadow: none;
 
-  /* Label hover states */
-  --ds-label-hover-text-shadow: none;
-  --ds-label-hover-border-width: unset;
-  --ds-label-hover-border-style: unset;
-  --ds-label-hover-border-color: transparent;
-  --ds-label-hover-background: transparent;
-  --ds-label-hover-box-shadow: none;
-  --ds-label-hover-color: inherit;
-  --ds-label-hover-opacity: 1;
-  --ds-label-hover-transform: none;
-  --ds-label-hover-filter: none;
-  --ds-label-hover-animation: none;
-  --ds-label-hover-padding: inherit;
-  --ds-label-hover-will-change: auto;
-
-  /* Label active states */
-  --ds-label-active-text-shadow: none;
-  --ds-label-active-font-weight: normal;
-  --ds-label-active-box-shadow: none;
-  --ds-label-active-background: transparent;
-  --ds-label-active-color: unset;
-
-  /* Spoke line styling (legacy - kept for backwards compatibility) */
-  --ds-line-stroke: var(--ds-color-line);
-  --ds-line-transition: var(--ds-internal-line-transition);
-  --ds-line-active-stroke: var(--ds-color-selection);
-
-  /* KNOB SIZING - Single source of truth */
-  --ds-knob-size: 200px; /* Master variable - media queries will override this */
-
-  /* Derived knob variables (calculated from --ds-knob-size) */
-  --ds-knob-wrap-size: var(--ds-knob-size);
-  --ds-knob-center: calc(var(--ds-knob-size) / 2);
-  --ds-radius-outer: calc(var(--ds-knob-size) * 0.28125); /* 90/320 = 0.28125 */
-  --ds-radius-inner: calc(var(--ds-knob-size) * 0.225); /* 72/320 = 0.225 */
-  --ds-width-outer-circle: calc(var(--ds-knob-size) * 0.0125); /* 4/320 = 0.0125 */
-  --ds-width-inner-circle: calc(var(--ds-knob-size) * 0.00625); /* 2/320 = 0.00625 */
-  --ds-color-outer-circle: var(--ds-color-ink);
-  --ds-color-inner-circle: var(--ds-color-ink);
-
-  /* Indicator sizing variables */
-  --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 = 0.1875 */
-  --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 = 0.03125 */
-  --ds-indicator-vertical-offset: 46.75%;
-  --ds-center-indicator: 0px;
+  /* ===========================
+     TIMING & DELAYS
+     =========================== */
   --ds-time-selection-delay: 0s;
-
-  /* Other sizing variables for labels/lines */
-  --ds-label-column-height: var(--ds-knob-size);
-  --ds-label-vertical-offset-scale: calc(var(--ds-knob-size) * 0.4375); /* 140/320 */
-  --ds-horizontal-line-length: calc(var(--ds-knob-size) * 0.5);
-  --ds-max-line-length: calc(var(--ds-knob-size) * 0.4);
-  --ds-horizontal-line-end-offset: calc(var(--ds-knob-size) * 0.05);
-  --ds-hit-area-stroke-width: calc(var(--ds-knob-size) * 0.0625); /* 20/320 */
-
-  /* Component dimensions */
-  --ds-component-width: 100%;
-  --ds-component-height: auto;
-  --ds-component-min-width: 200px;
-  --ds-component-min-height: 200px;
-
-  /* Indicator angle (dynamic) */
-  --ds-indicator-angle: 0deg;
 }

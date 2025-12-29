@@ -33,6 +33,7 @@ SKEUOMORPH Theme - Dark Mode Variables
   /* ==================== DIAL SELECTOR COLORS ==================== */
 
   --dial-color-ink: oklch(0.86 0.03 60);
+  --dial-color-line: oklch(0.25 0.02 50); /* Dark groove for stamped effect */
   --dial-color-selection: oklch(0.63 0.13 20);
   --dial-color-indicator: oklch(0.63 0.13 20);
 

@@ -332,10 +332,10 @@ Terminal Theme (1992 CLI-inspired)
 @keyframes terminal-button-mobile-show {
   0%,
   99% {
-    display: none;
+    visibility: hidden;
   }
   100% {
-    display: inline-block;
+    visibility: visible;
   }
 }
 
@@ -672,7 +672,7 @@ body[data-theme='terminal'] {
   }
 
   .terminal-dialog__button-mobile--print {
-    display: none;
+    visibility: hidden;
     background: var(--terminal-title-bg);
     color: var(--dial-color-selection);
     border-color: var(--dial-color-selection);

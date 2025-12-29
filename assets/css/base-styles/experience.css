@@ -50,6 +50,7 @@
   position: var(--experience-item-position, relative);
   transform: var(--experience-item-transform, none);
   transition: var(--experience-item-transition, none);
+  overflow: var(--experience-item-overflow, visible);
 
   &:first-of-type {
     border-block-start: var(--experience-item-border-block-start-first, 3px solid var(--border-color));

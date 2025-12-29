@@ -124,10 +124,6 @@ export const DOMBuilder = {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
       line.setAttribute('class', 'spoke-line');
       line.setAttribute('fill', 'none');
-      line.setAttribute('stroke', 'var(--ds-color-ink)');
-      // Note: Using internal --ds-internal-* variables which feed into public --ds-line-* variables in CSS
-      line.setAttribute('stroke-width', `var(--ds-internal-line-stroke-width, ${DEFAULT_LINE_STROKE_WIDTH})`);
-      line.setAttribute('opacity', `var(--ds-internal-line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
       line.setAttribute('stroke-linejoin', 'miter');
       line.setAttribute('pointer-events', 'none');
       line.dataset.index = index;
@@ -327,14 +323,9 @@ export const DOMBuilder = {
       if (index === this.currentIndex) {
         label.classList.add('active');
         line.classList.add('active');
-        // Note: Using internal --ds-internal-line-opacity-* variables (feed into public --ds-line-opacity-* in CSS)
-        line.setAttribute('opacity', `var(--ds-internal-line-opacity-active, ${LINE_OPACITY_ACTIVE})`);
-        line.setAttribute('stroke', 'var(--ds-color-selection)');
       } else {
         label.classList.remove('active');
         line.classList.remove('active');
-        line.setAttribute('opacity', `var(--ds-internal-line-opacity-inactive, ${LINE_OPACITY_INACTIVE})`);
-        line.setAttribute('stroke', 'var(--ds-color-ink)');
       }
     });
 

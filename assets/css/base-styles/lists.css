@@ -27,6 +27,7 @@
   background-image: var(--list-background-image);
   box-shadow: var(--list-box-shadow, none);
   position: var(--list-position, relative);
+  overflow: var(--list-overflow, visible);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for decorative borders/effects */
@@ -119,6 +120,7 @@
   background-image: var(--list-background-image);
   box-shadow: var(--list-box-shadow, none);
   position: var(--list-position, relative);
+  overflow: var(--list-overflow, visible);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for decorative borders/effects */

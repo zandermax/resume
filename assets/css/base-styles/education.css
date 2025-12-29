@@ -27,6 +27,7 @@
   box-shadow: var(--education-item-box-shadow, none);
   transition: var(--education-item-transition, none);
   position: var(--education-item-position, static);
+  overflow: var(--education-item-overflow, visible);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for decorative left bars, backgrounds, etc. */

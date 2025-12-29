@@ -13,7 +13,7 @@ High Contrast Brutalism
   --border-color: var(--color-black);
 
   /* Link colors */
-  --link-color: var(--color-black);
+  --link-color: var(--color-white);
   --link-visited-color: var(--color-purple-link);
 
   /* Accent color */
@@ -24,6 +24,7 @@ High Contrast Brutalism
   --header-name-wrapper-color: var(--color-white);
   --education-item-color: var(--color-black);
   --header-meta-color: var(--color-white);
+  --header-link-color: var(--color-white);
 
   /* ==================== SHADOWS & EFFECTS ==================== */
 

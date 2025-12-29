@@ -6,23 +6,16 @@ WEB 2.0 GLOSS Theme - Base Styling
 body[data-theme='web2gloss'] {
   letter-spacing: 0.02em;
 
-  /* Common glossy overlay mixin pattern */
-  .skills-grid,
-  .community-list,
-  .principles-list,
-  .education-item,
+  /* Set overflow to hidden for glossy overlay effects */
+  --skills-grid-overflow: hidden;
+  --list-overflow: hidden;
+  --education-item-overflow: hidden;
+  --education-item-position: relative;
+  --experience-item-overflow: hidden;
+
+  /* web2-badges needs explicit styling as it has no base styles */
   .web2-badges {
     position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      pointer-events: none;
-    }
-  }
-
-  .experience-item {
     overflow: hidden;
 
     &::before {

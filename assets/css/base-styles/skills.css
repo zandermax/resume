@@ -28,6 +28,7 @@
   border-radius: var(--skills-grid-border-radius, 0);
   position: var(--skills-grid-position, relative);
   transform: var(--skills-grid-transform, none);
+  overflow: var(--skills-grid-overflow, visible);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for decorative borders/effects */

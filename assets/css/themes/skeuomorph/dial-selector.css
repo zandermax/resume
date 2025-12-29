@@ -17,6 +17,10 @@ SKEUOMORPH Theme - Dial Selector Overrides
       );
       --ds-color-outer-circle: oklch(0.6 0.13 80);
       --ds-color-inner-circle: oklch(0.36 0.05 45);
+
+      /* More subtle line opacity for light leather */
+      --ds-line-opacity: 0.6;
+      --ds-line-opacity-active: 0.85;
     }
 
     /* ==================== DARK MODE ==================== */
@@ -80,6 +84,11 @@ body[data-theme='skeuomorph'] {
     );
     --ds-knob-after-pointer-events: none;
 
+    /* Spoke lines - Deep stamped/tooled into leather effect */
+    --ds-line-width: 2.5px;
+    --ds-line-opacity: 0.7;
+    --ds-line-opacity-active: 0.9;
+
     /* Dial label hover properties - no hover effect for realism (skeuomorphic dials don't respond to hover) */
     --ds-label-hover-box-shadow: none;
     --ds-label-hover-background: transparent;
@@ -88,6 +97,41 @@ body[data-theme='skeuomorph'] {
     --ds-label-hover-padding: 0;
   }
 
+  /* Deep inset groove effect - Like leather tooling */
+  dial-selector .spoke-line {
+    /* Default (dark mode): Inset look with inner shadows */
+    filter: brightness(0.45) drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.65)) /* Dark shadow on top edge */
+      drop-shadow(0 2px 2px rgba(255, 255, 255, 0.35)) /* Light highlight on bottom edge */
+      drop-shadow(0 0 3px rgba(0, 0, 0, 0.5)); /* Depth shadow */
+  }
+
+  dial-selector .spoke-line.active {
+    /* Default (dark mode): Deeper inset groove when active */
+    filter: brightness(0.35) drop-shadow(0 -3px 2.5px rgba(0, 0, 0, 0.75)) /* Stronger dark shadow on top */
+      drop-shadow(0 3px 2.5px rgba(255, 255, 255, 0.45)) /* Stronger highlight on bottom */
+      drop-shadow(0 0 4px rgba(0, 0, 0, 0.6)); /* Deeper ambient shadow */
+  }
+}
+
+/* ==================== LIGHT MODE - INSET/CARVED LINES ==================== */
+body[data-theme='skeuomorph'][data-mode='light'] {
+  /* Light mode - Inset carved effect with inner shadows */
+  dial-selector .spoke-line {
+    /* Create inset look: dark shadow on top, light highlight on bottom */
+    filter: brightness(0.85) drop-shadow(0 -2px 1.5px rgba(0, 0, 0, 0.45)) /* Dark shadow on top edge */
+      drop-shadow(0 2px 1.5px rgba(255, 255, 255, 0.75)) /* Light highlight on bottom edge */
+      drop-shadow(0 0 2px rgba(0, 0, 0, 0.25)); /* Soft depth shadow */
+  }
+
+  dial-selector .spoke-line.active {
+    /* More pronounced inset groove when active */
+    filter: brightness(0.75) drop-shadow(0 -3px 2px rgba(0, 0, 0, 0.55)) /* Stronger dark shadow on top */
+      drop-shadow(0 3px 2px rgba(255, 255, 255, 0.85)) /* Stronger highlight on bottom */
+      drop-shadow(0 0 3px rgba(0, 0, 0, 0.3)); /* Deeper ambient shadow */
+  }
+}
+
+body[data-theme='skeuomorph'] {
   /* ==================== DIAL SELECTOR HOUSING - LEATHER PAD ==================== */
   .resume-header__dial-selector {
     position: relative;

@@ -147,7 +147,7 @@
 }
 
 .resume-header__link {
-  color: var(--text-color);
+  color: var(--header-link-color, var(--text-color));
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
