@@ -26,6 +26,8 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-knob-background-color: var(--color-dark-bg-alt);
     --ds-indicator-box-shadow: 0 0 20px var(--accent-color);
     --ds-color-ink: var(--color-white);
+    --ds-color-line: oklch(95% 0 0);
+    --ds-line-opacity: 1;
   }
 }
 
