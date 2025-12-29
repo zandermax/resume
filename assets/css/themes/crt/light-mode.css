@@ -19,6 +19,9 @@ Amber CRT Display
   /* Accent color */
   --accent-color: oklch(20% 0.08 60);
 
+  /* Dial selector line color */
+  --dial-color-line: oklch(20% 0.08 60);
+
   /* CRT glow effect */
   --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
 }

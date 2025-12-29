@@ -29,7 +29,7 @@ body[data-theme='web2gloss'] {
     --ds-label-span-border-width: 1px;
     --ds-label-span-border-style: solid;
     --ds-label-span-border-color: var(--border-color);
-    --ds-label-span-padding-block: 0.35rem;
+    --ds-label-span-padding-block: 0.25rem;
     --ds-label-span-padding-inline: 0.75rem;
     --ds-label-span-font-weight: 600;
     --ds-label-span-font-size: 0.9rem;
@@ -81,12 +81,20 @@ body[data-theme='web2gloss'] {
         oklch(90% 0.05 230) 70%,
         oklch(82% 0.1 230) 100%
       );
+
+      /* Label span - Hover state (light mode) */
+      --ds-label-hover-background: linear-gradient(180deg, oklch(100% 0 0 / 0.9) 0%, oklch(100% 0 0 / 0.7) 100%);
+      --ds-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08),
+        0 0 12px var(--web2-glow), inset 0 1px 0 oklch(100% 0 0 / 0.6);
+      --ds-label-hover-transform: translateY(-2px);
+      --ds-label-hover-color: var(--web2-primary);
     }
   }
 
   /* === DARK MODE === */
   &[data-mode='dark'] {
     dial-selector {
+      --ds-label-active-color: oklch(22% 0.23 240);
       --ds-label-span-color: var(--color-black);
       /* Knob background */
       --ds-knob-background-image: radial-gradient(

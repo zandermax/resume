@@ -160,6 +160,7 @@ Terminal Theme (1992 CLI-inspired)
     --text-color: var(--color-black);
     --heading-color: var(--color-black);
     --dial-color-ink: var(--color-black);
+    --dial-color-line: var(--color-black);
     --dial-color-selection: var(--color-yellow);
     --dial-color-indicator: var(--color-yellow);
     --ds-knob-background-color: var(--color-silver);

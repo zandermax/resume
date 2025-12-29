@@ -40,6 +40,7 @@
   background: var(--header-background, transparent);
   color: var(--header-color, inherit);
   position: var(--header-position, static);
+  overflow: var(--header-overflow, visible);
   box-shadow: var(--header-box-shadow, none);
   transform: var(--header-transform, none);
 
@@ -125,7 +126,7 @@
 /* === HEADER META === */
 
 .resume-header__meta {
-  padding-inline: 0.5rem;
+  padding-inline: var(--header-meta-padding-inline, 0.5rem);
   font-size: var(--header-meta-font-size, 0.85rem);
   font-family: var(--header-meta-font-family, inherit);
   text-transform: var(--header-meta-text-transform, uppercase);

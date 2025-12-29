@@ -29,7 +29,7 @@ WEB 2.0 GLOSS Theme - Dark Mode
   --section-bg: oklch(30% 0.06 250);
   --header-background: linear-gradient(180deg, var(--web2-blue-dark) 0%, oklch(30% 0.06 250) 100%);
   --accent-color: oklch(75% 0.15 60);
-  --section-title-color: var(--color-white);
+  --section-title-color: oklch(22% 0.23 240);
   --web2-primary: oklch(82% 0.13 210);
   --web2-accent: oklch(75% 0.15 60);
   --web2-success: oklch(92% 0.2 130);

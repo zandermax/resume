@@ -6,95 +6,53 @@ WEB 2.0 GLOSS Theme - Responsive
 body[data-theme='web2gloss'] {
   --main-padding-responsive-500: 0.5rem;
 
+  @media (min-width: 768px) {
+    --header-name-wrapper-padding-inline: var(--spacing-md);
+    --header-meta-padding-inline: var(--spacing-md);
+  }
+
   @media (max-width: 768px) {
-    h1.resume-header__name {
-      --header-name-font-size: 2rem;
-      --section-title-font-size: 1.1rem;
-      --section-title-padding: 0.75rem 1rem;
-    }
-
-    .resume-section {
-      padding: 1.5rem;
-    }
-
-    /* Reduce header padding to fit dial-selector */
-    .resume-header {
-      padding: 2rem 1.5rem;
-    }
-
-    .resume-header__dial-selector {
-      --dial-selector-housing-padding: 1.25rem;
-    }
-
-    dial-selector .dial-label span {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.65rem;
-    }
+    --header-name-font-size: 2rem;
+    --section-title-font-size: 1.1rem;
+    --section-title-padding: 0.75rem 1rem;
+    --section-padding: 1.5rem;
+    --header-padding: 2rem 1.5rem;
+    --dial-selector-housing-padding: 1.25rem;
+    --ds-label-span-font-size: 0.8rem;
+    --ds-label-span-padding-block: 0.3rem;
+    --ds-label-span-padding-inline: 0.65rem;
   }
 
   @media (max-width: 500px) {
-    .resume-section {
-      padding: 1rem;
-    }
-
-    .experience-item,
-    .education-item {
-      padding: 1.5rem;
-      border-radius: var(--web2-radius-md);
-    }
-
-    /* Further reduce header padding for smaller screens */
-    .resume-header {
-      padding: 1.5rem 1rem;
-    }
-
-    .resume-header__dial-selector {
-      --dial-selector-housing-padding: 0.75rem;
-    }
-
-    dial-selector .dial-label span {
-      font-size: 0.7rem;
-      padding: 0.25rem 0.5rem;
-      border-width: 0.5px;
-      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
-    }
-
-    /* Increase grid gap for better spacing */
-    dial-selector .selector {
-      gap: clamp(8px, 3vw, 20px);
-    }
+    --section-padding: 1rem;
+    --experience-item-padding: 1.5rem;
+    --education-item-padding: 1.5rem;
+    --experience-item-border-radius: var(--web2-radius-md);
+    --education-item-border-radius: var(--web2-radius-md);
+    --header-padding: 1.5rem 1rem;
+    --dial-selector-housing-padding: 0.75rem;
+    --ds-label-span-font-size: 0.7rem;
+    --ds-label-span-padding-block: 0.25rem;
+    --ds-label-span-padding-inline: 0.5rem;
+    --ds-label-span-border-width: 0.5px;
+    --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+    --ds-selector-gap: clamp(8px, 3vw, 20px);
   }
 
   /* Extra small screens - more aggressive scaling */
   @media (max-width: 400px) {
-    /* Minimal padding for very small screens */
-    .resume-header {
-      padding: 1.25rem 0.5rem;
-      padding-inline: 0.75rem;
-    }
-
-    .resume-header__dial-selector {
-      --dial-selector-housing-padding: 0.5rem;
-    }
-
-    /* Make labels much smaller on very small screens */
-    dial-selector .dial-label span {
-      font-size: 0.65rem;
-      padding: 0.25rem 0.45rem;
-      font-weight: 500;
-      border-width: 0.5px;
-      box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
-    }
-
-    /* Reduce knob size even more */
-    dial-selector {
-      --ds-knob-size: 120px;
-    }
-
-    /* Tighter grid gap */
-    dial-selector .selector {
-      gap: clamp(2px, 1vw, 8px);
-    }
+    --header-padding: 1.25rem 0.5rem;
+    --header-padding-inline-start: 0.75rem;
+    --header-padding-inline-end: 0.75rem;
+    --dial-selector-housing-padding: 0.5rem;
+    --ds-label-span-font-size: 0.65rem;
+    --ds-label-span-padding-block: 0.25rem;
+    --ds-label-span-padding-inline: 0.45rem;
+    --ds-label-span-font-weight: 500;
+    --ds-label-span-border-width: 0.5px;
+    --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+    --ds-knob-size: 120px;
+    --ds-selector-gap: clamp(2px, 1vw, 8px);
   }
 }
 

@@ -4,7 +4,7 @@ WEB 2.0 GLOSS Theme - Base Styling
 
 /* Base theme styling */
 body[data-theme='web2gloss'] {
-  letter-spacing: 0.02em;
+  --body-letter-spacing: 0.02em;
 
   /* Set overflow to hidden for glossy overlay effects */
   --skills-grid-overflow: hidden;
@@ -13,38 +13,18 @@ body[data-theme='web2gloss'] {
   --education-item-position: relative;
   --experience-item-overflow: hidden;
 
-  /* web2-badges needs explicit styling as it has no base styles */
-  .web2-badges {
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      pointer-events: none;
-    }
-  }
-
   /* Header - Big glossy banner */
-  .resume-header {
-    border: none;
-    padding: 2.5rem 2rem;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--web2-shadow-inset-light);
-
-    &::before {
-      inset: 0 0 50% 0;
-      background: var(--web2-gloss-overlay-strong);
-      z-index: 1;
-    }
-
-    /* Ensure header content is above the glossy overlay */
-    > * {
-      z-index: 2;
-    }
-  }
+  --header-border: none;
+  --header-padding: 2.5rem 2rem;
+  --header-margin: 0;
+  --header-position: relative;
+  --header-overflow: hidden;
+  --header-box-shadow: var(--web2-shadow-inset-light);
+  --resume-header-before-content: '';
+  --resume-header-before-position: absolute;
+  --resume-header-before-inset: 0 0 50% 0;
+  --resume-header-before-background: var(--web2-gloss-overlay-strong);
+  --resume-header-before-pointer-events: none;
 
   /* === SKILLS GRID - Glossy card === */
   --skills-grid-border-radius: var(--web2-radius-lg);
@@ -88,33 +68,4 @@ body[data-theme='web2gloss'] {
   --education-item-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
   --education-item-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
   --education-item-before-pointer-events: none;
-
-  /* Links - Glossy with glow on hover */
-  .resume-header a:not(.web2-badge) {
-    text-decoration: none;
-    border-block-end: 1px solid var(--link-color);
-    transition: var(--web2-transition-fast);
-
-    &:hover {
-      color: var(--web2-primary);
-      border-block-end-color: transparent;
-      text-shadow: 0 0 8px var(--web2-glow);
-      transform: translateY(-1px);
-    }
-
-    &:visited {
-      border-block-end-color: var(--link-visited-color);
-    }
-  }
-
-  /* Ensure web2-badge links maintain badge styling */
-  a.web2-badge {
-    border: none;
-
-    &:hover,
-    &:visited {
-      color: var(--color-white);
-      text-decoration: none;
-    }
-  }
 }

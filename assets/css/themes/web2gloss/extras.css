@@ -5,11 +5,16 @@ WEB 2.0 GLOSS Theme - Extras (Badges & Special Components)
 body[data-theme='web2gloss'] {
   /* Web 2.0 badges container */
   .web2-badges {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(180deg, oklch(91% 0 0) 0%, oklch(82% 0 0) 100%) !important;
     border: 1px solid oklch(69% 0 0);
     box-shadow: var(--web2-shadow-md), inset 0 1px 0 oklch(100% 0 0 / 0.5);
 
     &::before {
+      content: '';
+      position: absolute;
+      pointer-events: none;
       inset: 0 0 50% 0;
       background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
       border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
@@ -49,6 +54,17 @@ body[data-theme='web2gloss'] {
       position: relative;
       z-index: 1;
       color: inherit;
+    }
+  }
+
+  /* Ensure web2-badge links maintain badge styling */
+  a.web2-badge {
+    border: none;
+
+    &:hover,
+    &:visited {
+      color: var(--color-white);
+      text-decoration: none;
     }
   }
 
@@ -152,4 +168,3 @@ body[data-theme='web2gloss'] {
     }
   }
 }
-

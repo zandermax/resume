@@ -163,12 +163,15 @@ WEB 2.0 GLOSS Theme - Variables
   --printlink-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
   --printlink-before-pointer-events: none;
 
-  /* Dial label hover properties */
-  --ds-label-hover-background: linear-gradient(180deg, oklch(100% 0 0 / 0.9) 0%, oklch(100% 0 0 / 0.7) 100%);
-  --ds-label-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 4px 8px oklch(0% 0 0 / 0.08), 0 0 12px var(--web2-glow),
-    inset 0 1px 0 oklch(100% 0 0 / 0.6);
-  --ds-label-hover-transform: translateY(-2px);
-  --ds-label-hover-color: var(--web2-primary);
+  /* Header link custom properties */
+  --link-text-decoration: none;
+  --link-border-block-end: 1px solid var(--link-color);
+  --link-transition: var(--web2-transition-fast);
+  --link-hover-color: var(--web2-primary);
+  --link-hover-border-block-end-color: transparent;
+  --link-hover-text-shadow: 0 0 8px var(--web2-glow);
+  --link-hover-transform: translateY(-1px);
+  --link-visited-border-block-end-color: var(--link-visited-color);
 
   /* Resume main container custom properties */
   --resume-main-background: var(--section-bg);
