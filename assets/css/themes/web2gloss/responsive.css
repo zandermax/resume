@@ -5,6 +5,7 @@ WEB 2.0 GLOSS Theme - Responsive
 /* Responsive adjustments for body */
 body[data-theme='web2gloss'] {
   --main-padding-responsive-500: 0.5rem;
+  --header-padding-responsive-500: 1rem;
 
   @media (min-width: 768px) {
     --header-name-wrapper-padding-inline: var(--spacing-md);
@@ -17,10 +18,6 @@ body[data-theme='web2gloss'] {
     --section-title-padding: 0.75rem 1rem;
     --section-padding: 1.5rem;
     --header-padding: 2rem 1.5rem;
-    --dial-selector-housing-padding: 1.25rem;
-    --ds-label-span-font-size: 0.8rem;
-    --ds-label-span-padding-block: 0.3rem;
-    --ds-label-span-padding-inline: 0.65rem;
   }
 
   @media (max-width: 500px) {
@@ -30,13 +27,6 @@ body[data-theme='web2gloss'] {
     --experience-item-border-radius: var(--web2-radius-md);
     --education-item-border-radius: var(--web2-radius-md);
     --header-padding: 1.5rem 1rem;
-    --dial-selector-housing-padding: 0.75rem;
-    --ds-label-span-font-size: 0.7rem;
-    --ds-label-span-padding-block: 0.25rem;
-    --ds-label-span-padding-inline: 0.5rem;
-    --ds-label-span-border-width: 0.5px;
-    --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
-    --ds-selector-gap: clamp(8px, 3vw, 20px);
   }
 
   /* Extra small screens - more aggressive scaling */
@@ -44,15 +34,6 @@ body[data-theme='web2gloss'] {
     --header-padding: 1.25rem 0.5rem;
     --header-padding-inline-start: 0.75rem;
     --header-padding-inline-end: 0.75rem;
-    --dial-selector-housing-padding: 0.5rem;
-    --ds-label-span-font-size: 0.65rem;
-    --ds-label-span-padding-block: 0.25rem;
-    --ds-label-span-padding-inline: 0.45rem;
-    --ds-label-span-font-weight: 500;
-    --ds-label-span-border-width: 0.5px;
-    --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
-    --ds-knob-size: 120px;
-    --ds-selector-gap: clamp(2px, 1vw, 8px);
   }
 }
 

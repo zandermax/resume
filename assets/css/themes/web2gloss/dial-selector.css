@@ -128,4 +128,43 @@ body[data-theme='web2gloss'] {
       --ds-label-active-span-border-color: var(--web2-primary);
     }
   }
+
+  /* === RESPONSIVE ADJUSTMENTS === */
+  @media (max-width: 768px) {
+    --dial-selector-housing-padding: 1.25rem;
+
+    dial-selector {
+      --ds-label-span-font-size: 0.8rem;
+      --ds-label-span-padding-block: 0.3rem;
+      --ds-label-span-padding-inline: 0.65rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    --dial-selector-housing-padding: 0.75rem;
+
+    dial-selector {
+      --ds-label-span-font-size: 0.7rem;
+      --ds-label-span-padding-block: 0.25rem;
+      --ds-label-span-padding-inline: 0.5rem;
+      --ds-label-span-border-width: 0.5px;
+      --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+      --ds-selector-gap: clamp(8px, 3vw, 20px);
+    }
+  }
+
+  @media (max-width: 400px) {
+    --dial-selector-housing-padding: 0.5rem;
+
+    dial-selector {
+      --ds-label-span-font-size: 0.65rem;
+      --ds-label-span-padding-block: 0.25rem;
+      --ds-label-span-padding-inline: 0.45rem;
+      --ds-label-span-font-weight: 500;
+      --ds-label-span-border-width: 0.5px;
+      --ds-label-span-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.08);
+      --ds-knob-size: 120px;
+      --ds-selector-gap: clamp(2px, 1vw, 8px);
+    }
+  }
 }

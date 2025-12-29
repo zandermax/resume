@@ -12,9 +12,6 @@ SKEUOMORPH Theme - Base Variables
   --width-outer-circle: 3px;
   --width-inner-circle: 1px;
 
-  /* Sticky note rotation */
-  --sticky-note-rotation: -3deg;
-
   /* Metal gradient for buttons and knobs */
   --metal-gradient: linear-gradient(
     135deg,
@@ -211,7 +208,10 @@ SKEUOMORPH Theme - Base Variables
 
   --dial-selector-housing-padding: var(--spacing-lg);
   --dial-selector-housing-margin: var(--spacing-xs);
+  --dial-selector-housing-margin-inline: 1rem;
+  --dial-selector-housing-margin-block: 1rem;
   --dial-selector-h3-margin-block-start: 0;
+  --dial-selector-housing-h3-margin-block-start: 1rem;
 
   --section-margin-block-end: var(--spacing-sm);
 }

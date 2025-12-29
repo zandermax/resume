@@ -25,7 +25,7 @@ body[data-theme='skeuomorph'] {
     font-size: 15px;
     line-height: 24px;
     box-shadow: var(--sticky-note-shadow);
-    transform: rotate(var(--sticky-note-rotation));
+    transform: rotate(-3deg);
     z-index: 1000;
     offset-rotate: 0deg;
     offset-anchor: 0 0;
@@ -140,5 +140,41 @@ body[data-theme='skeuomorph'] {
     font-style: italic;
     font-weight: bold;
     text-decoration: underline;
+  }
+
+  /* ========== STICKY NOTE RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    #sticky-note {
+      right: 20px;
+      left: auto;
+      width: 180px;
+      min-height: 140px;
+      padding: 15px;
+      font-size: 13px;
+      line-height: 22px;
+
+      input[type='checkbox'] {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    #sticky-note {
+      top: 29rem;
+      right: 10px;
+      left: auto;
+      width: 160px;
+      min-height: 120px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 20px;
+
+      input[type='checkbox'] {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
 }

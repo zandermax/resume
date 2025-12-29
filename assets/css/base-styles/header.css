@@ -88,6 +88,8 @@
   padding: var(--dial-selector-housing-padding);
   padding-block: var(--dial-selector-housing-padding-block, 0);
   padding-inline: var(--dial-selector-housing-padding-inline, 0);
+  margin-inline: var(--dial-selector-housing-margin-inline, 0);
+  margin-block: var(--dial-selector-housing-margin-block, 0);
   background: var(--dial-selector-housing-background, transparent);
   border: var(--dial-selector-housing-border, none);
   border-radius: var(--dial-selector-housing-border-radius, 0);
@@ -106,7 +108,10 @@
     right: var(--dial-selector-housing-before-right);
     height: var(--dial-selector-housing-before-height);
     background: var(--dial-selector-housing-before-background);
+    border: var(--dial-selector-housing-before-border);
+    border-radius: var(--dial-selector-housing-before-border-radius);
     opacity: var(--dial-selector-housing-before-opacity);
+    pointer-events: var(--dial-selector-housing-before-pointer-events);
     animation: var(--dial-selector-housing-before-animation);
     will-change: var(--dial-selector-housing-before-will-change);
   }

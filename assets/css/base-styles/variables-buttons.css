@@ -134,10 +134,13 @@
   --dial-selector-housing-before-inset: auto;
   --dial-selector-housing-before-height: auto;
   --dial-selector-housing-before-background: transparent;
+  --dial-selector-housing-before-border: none;
+  --dial-selector-housing-before-border-radius: 0;
   --dial-selector-housing-before-top: auto;
   --dial-selector-housing-before-left: auto;
   --dial-selector-housing-before-right: auto;
   --dial-selector-housing-before-opacity: 1;
+  --dial-selector-housing-before-pointer-events: auto;
   --dial-selector-housing-before-animation: none;
   --dial-selector-housing-before-will-change: auto;
 }
