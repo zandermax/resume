@@ -21,6 +21,7 @@
   padding: var(--list-padding, 0);
   margin: 0;
   border: var(--list-border, 3px solid var(--border-color));
+  border-radius: var(--list-border-radius, 0);
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
   background-image: var(--list-background-image);
@@ -36,6 +37,7 @@
     position: var(--list-before-position);
     inset: var(--list-before-inset);
     border: var(--list-before-border);
+    border-radius: var(--list-before-border-radius, 0);
     background: var(--list-before-background);
     pointer-events: var(--list-before-pointer-events);
     opacity: var(--list-before-opacity);
@@ -110,6 +112,7 @@
   padding-inline-start: 0;
   margin: 0;
   border: var(--list-border, 3px solid var(--border-color));
+  border-radius: var(--list-border-radius, 0);
   padding: var(--list-padding, 0.7rem 0.8rem);
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
@@ -126,6 +129,7 @@
     position: var(--list-before-position);
     inset: var(--list-before-inset);
     border: var(--list-before-border);
+    border-radius: var(--list-before-border-radius, 0);
     background: var(--list-before-background);
     pointer-events: var(--list-before-pointer-events);
     opacity: var(--list-before-opacity);

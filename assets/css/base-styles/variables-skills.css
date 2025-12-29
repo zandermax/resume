@@ -40,6 +40,7 @@
   --skills-grid-before-position: static;
   --skills-grid-before-inset: auto;
   --skills-grid-before-border: none;
+  --skills-grid-before-border-radius: 0;
   --skills-grid-before-pointer-events: auto;
   --skills-grid-before-background: transparent;
   --skills-grid-before-opacity: 1;

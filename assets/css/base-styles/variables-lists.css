@@ -23,9 +23,22 @@
 :root {
   /* === LIST CONTAINERS === */
   --list-border: 0;
+  --list-border-radius: 0;
   --list-background: transparent;
   --list-box-shadow: none;
   --list-padding: 0;
+  --list-position: relative;
+
+  /* === LIST CONTAINER PSEUDO-ELEMENTS === */
+  --list-before-content: none;
+  --list-before-display: none;
+  --list-before-position: static;
+  --list-before-inset: auto;
+  --list-before-border: none;
+  --list-before-border-radius: 0;
+  --list-before-background: transparent;
+  --list-before-pointer-events: auto;
+  --list-before-opacity: 1;
 
   /* === LIST ITEM SHARED === */
   --list-item-border-color: var(--border-color);

@@ -38,6 +38,7 @@
     position: var(--skills-grid-before-position);
     inset: var(--skills-grid-before-inset);
     border: var(--skills-grid-before-border);
+    border-radius: var(--skills-grid-before-border-radius, 0);
     background: var(--skills-grid-before-background);
     pointer-events: var(--skills-grid-before-pointer-events);
     opacity: var(--skills-grid-before-opacity);

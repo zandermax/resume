@@ -22,6 +22,7 @@
 :root {
   /* === EDUCATION ITEM CONTAINER === */
   --education-item-border: 0;
+  --education-item-border-radius: 0;
   --education-item-border-inline-start-width: 0;
   --education-item-border-inline-start-style: none;
   --education-item-border-inline-start-color: transparent;
@@ -36,10 +37,14 @@
 
   /* === EDUCATION ITEM PSEUDO-ELEMENTS === */
   --education-item-before-content: none;
+  --education-item-before-display: none;
   --education-item-before-position: static;
   --education-item-before-inset: auto;
   --education-item-before-width: auto;
+  --education-item-before-border-radius: 0;
   --education-item-before-background: transparent;
+  --education-item-before-pointer-events: auto;
+  --education-item-before-opacity: 1;
 
   /* === EDUCATION ITEM HOVER === */
   --education-item-hover-transform: none;

@@ -53,37 +53,48 @@ body[data-theme='web2gloss'] {
     }
   }
 
-  /* Common container styling - glossy cards */
-  .skills-grid,
-  .community-list,
-  .principles-list {
-    border-radius: var(--web2-radius-lg);
-    background: var(--section-bg);
-    padding: 1.5rem;
-    box-shadow: var(--web2-shadow-md);
-    border: 1px solid var(--border-color);
+  /* === SKILLS GRID - Glossy card === */
+  --skills-grid-border-radius: var(--web2-radius-lg);
+  --skills-grid-background: var(--section-bg);
+  --skills-grid-padding: 1.5rem;
+  --skills-grid-box-shadow: var(--web2-shadow-md);
+  --skills-grid-border: 1px solid var(--border-color);
+  --skills-grid-before-content: '';
+  --skills-grid-before-display: block;
+  --skills-grid-before-position: absolute;
+  --skills-grid-before-inset: 0 0 50% 0;
+  --skills-grid-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.3) 0%, transparent 100%);
+  --skills-grid-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+  --skills-grid-before-pointer-events: none;
 
-    &::before {
-      inset: 0 0 50% 0;
-      background: linear-gradient(180deg, oklch(100% 0 0 / 0.3) 0%, transparent 100%);
-      border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
-    }
-  }
+  /* === LISTS - Glossy cards === */
+  --list-border-radius: var(--web2-radius-lg);
+  --list-background: var(--section-bg);
+  --list-padding: 1.5rem;
+  --list-box-shadow: var(--web2-shadow-md);
+  --list-border: 1px solid var(--border-color);
+  --list-before-content: '';
+  --list-before-display: block;
+  --list-before-position: absolute;
+  --list-before-inset: 0 0 50% 0;
+  --list-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.3) 0%, transparent 100%);
+  --list-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+  --list-before-pointer-events: none;
 
-  /* Experience items & Education - Floating glossy cards */
-  .education-item {
-    border-radius: var(--web2-radius-lg);
-    padding: 2rem;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--web2-shadow-lg);
-    transition: var(--web2-transition-normal);
-
-    &::before {
-      inset: 0 0 50% 0;
-      background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
-      border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
-    }
-  }
+  /* === EDUCATION ITEM - Floating glossy card === */
+  --education-item-border-radius: var(--web2-radius-lg);
+  --education-item-padding: 2rem;
+  --education-item-border: 1px solid var(--border-color);
+  --education-item-box-shadow: var(--web2-shadow-lg);
+  --education-item-transition: var(--web2-transition-normal);
+  --education-item-position: relative;
+  --education-item-before-content: '';
+  --education-item-before-display: block;
+  --education-item-before-position: absolute;
+  --education-item-before-inset: 0 0 50% 0;
+  --education-item-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
+  --education-item-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
+  --education-item-before-pointer-events: none;
 
   /* Links - Glossy with glow on hover */
   .resume-header a:not(.web2-badge) {

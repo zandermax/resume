@@ -16,6 +16,7 @@
 
 .education-item {
   border: var(--education-item-border, 2px solid var(--border-color));
+  border-radius: var(--education-item-border-radius, 0);
   border-inline-start: var(--education-item-border-inline-start-width, 0)
     var(--education-item-border-inline-start-style, none) var(--education-item-border-inline-start-color, transparent);
   padding: var(--education-item-padding, 0.75rem 0.85rem);
@@ -37,6 +38,7 @@
     inset: var(--education-item-before-inset);
     width: var(--education-item-before-width);
     border: var(--education-item-before-border);
+    border-radius: var(--education-item-before-border-radius, 0);
     background: var(--education-item-before-background);
     pointer-events: var(--education-item-before-pointer-events);
     opacity: var(--education-item-before-opacity);
