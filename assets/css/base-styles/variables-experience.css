@@ -30,6 +30,8 @@
 
   /* === EXPERIENCE ITEM CONTAINER === */
   --experience-item-border: 0;
+  --experience-item-border-block-start: 2px solid var(--border-color);
+  --experience-item-border-block-start-first: 3px solid var(--border-color);
   --experience-item-border-inline-start: none;
   --experience-item-background: transparent;
   --experience-item-box-shadow: none;

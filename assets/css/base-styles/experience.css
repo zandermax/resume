@@ -33,7 +33,7 @@
   --item-accent-color: var(--theme-accent-1, var(--border-color));
 
   border: var(--experience-item-border, 0);
-  border-block-start: 2px solid var(--border-color);
+  border-block-start: var(--experience-item-border-block-start, 2px solid var(--border-color));
   border-inline: var(--experience-item-border-inline, none);
   border-inline-start: var(--experience-item-border-inline-start, none);
   border-inline-start-color: var(--experience-item-border-inline-start-color, var(--item-accent-color));
@@ -52,7 +52,7 @@
   transition: var(--experience-item-transition, none);
 
   &:first-of-type {
-    border-block-start: 3px solid var(--border-color);
+    border-block-start: var(--experience-item-border-block-start-first, 3px solid var(--border-color));
   }
 
   /* === ACCENT COLOR ROTATION === */

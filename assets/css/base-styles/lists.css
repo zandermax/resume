@@ -51,7 +51,7 @@
   line-height: var(--community-item-line-height, 1.5);
   padding: var(--community-item-padding, 0.6rem 0.75rem);
   border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
-    var(--border-color);
+    var(--list-item-border-color, var(--border-color));
   border-inline-start: var(--community-item-border-inline-start, none);
   border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
   margin-block-end: var(--community-item-margin-bottom, 0);
@@ -141,7 +141,7 @@
   line-height: var(--principles-item-line-height, 1.4);
   padding: var(--principles-item-padding, 0.25rem 0);
   border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
-    var(--border-color);
+    var(--list-item-border-color, var(--border-color));
   border-inline-start: var(--principles-item-border-inline-start, none);
   border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
   margin-block-end: var(--principles-item-margin-bottom, 0);

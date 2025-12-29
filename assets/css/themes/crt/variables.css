@@ -59,6 +59,10 @@ Classic cathode ray tube monitor aesthetic
   /* Header - Name Wrapper */
   --header-name-wrapper-margin-block-start: 1.5rem;
 
+  /* Dial Selector Housing */
+  --dial-selector-housing-padding-block: 1rem;
+  --dial-selector-housing-border: 1px solid currentColor;
+
   /* Sections */
   --section-title-border: 0;
   --section-title-border-width: 2px;
@@ -74,6 +78,8 @@ Classic cathode ray tube monitor aesthetic
 
   /* Experience Item */
   --experience-item-border: 0;
+  --experience-item-border-block-start: 1px solid currentColor;
+  --experience-item-border-block-start-first: 0;
   --experience-item-background: transparent;
   --experience-item-padding: 1rem 0 0.5rem;
   --experience-item-margin-top: 1.5rem;
@@ -129,12 +135,14 @@ Classic cathode ray tube monitor aesthetic
   /* List Items */
   --list-item-border-width: 1px;
   --list-item-border-style: dotted;
+  --list-item-border-color: currentColor;
   --list-item-padding: 0.75rem 0;
 
   /* Community Items */
   --community-item-border: 0;
   --community-item-border-width: 0;
   --community-item-border-style: solid;
+  --community-item-hover-padding-inline-start: 0.75rem;
 
   /* Principles Items */
   --principles-item-border: 0;
@@ -149,8 +157,10 @@ Classic cathode ray tube monitor aesthetic
   /* ==================== PRINT LINK ==================== */
 
   /* Print Link - Base */
-  --printlink-border-width: 2px;
+  --printlink-border-width: 3px;
   --printlink-border-style: solid;
+  --printlink-box-shadow: 0 0 20px currentColor, inset 0 0 10px var(--crt-glow);
+  --printlink-text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
   --printlink-padding: 0.5rem 1rem;
   --printlink-padding-inline-responsive-500: 0.5rem;
   --printlink-font-weight: bold;

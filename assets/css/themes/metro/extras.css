@@ -1,40 +1,19 @@
 /* ===========================
-METRO Theme - Extra Components
-Chat Widget and Dialog
-=========================== */
+   METRO Theme - Extra Components
+   Chat Widget and Dialog
+   =========================== */
 
-/* ==================== VISIBILITY CONTROLS ==================== */
-
-/* Hide Metro chat widget by default - only show in Metro theme */
+/* ==================== DEFAULT VISIBILITY ==================== */
+/* Hide chat widget by default - only visible in Metro theme */
 .metro-chat-widget {
   display: none;
 }
 
-/* ==================== DARK MODE ENHANCEMENTS ==================== */
-
-body[data-theme='metro'][data-mode='dark'] {
-  .metro-chat-widget__status {
-    background: oklch(32% 0 0);
-    color: var(--color-white);
-  }
-
-  .metro-chat-widget__status-text {
-    background: oklch(32% 0 0);
-  }
-
-  .metro-chat-dialog__message-text {
-    color: var(--color-white);
-  }
-}
-
-/* ==================== METRO CHAT WIDGET ==================== */
-
+/* ==================== METRO THEME STYLES ==================== */
 body[data-theme='metro'] {
+  /* ========== CHAT WIDGET ========== */
   .metro-chat-widget {
     display: block;
-  }
-
-  .metro-chat-widget {
     position: fixed;
     bottom: var(--metro-chat-widget-bottom, 2rem);
     right: var(--metro-chat-widget-right, 2rem);
@@ -46,8 +25,8 @@ body[data-theme='metro'] {
     border-radius: 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
@@ -60,6 +39,7 @@ body[data-theme='metro'] {
     }
   }
 
+  /* Widget Header */
   .metro-chat-widget__header {
     display: flex;
     align-items: center;
@@ -82,6 +62,7 @@ body[data-theme='metro'] {
     line-height: 1;
   }
 
+  /* Widget Status */
   .metro-chat-widget__status {
     display: flex;
     align-items: center;
@@ -103,16 +84,14 @@ body[data-theme='metro'] {
   }
 
   .metro-chat-widget__status-text {
+    position: relative;
     font-size: 0.85rem;
     font-weight: 400;
     line-height: 1.4;
-    position: relative;
-
-    /* Initially hide the actual text content, cycle visibility */
     color: transparent;
     animation: text-fade-in 10s steps(1) infinite;
 
-    /* Show "Connecting..." initially via pseudo-element, cycle visibility */
+    /* "Connecting..." pseudo-element */
     &::before {
       content: 'Connecting...';
       position: absolute;
@@ -123,7 +102,6 @@ body[data-theme='metro'] {
     }
   }
 
-  /* Hide short text by default, show full text */
   .metro-chat-widget__status-text--short {
     display: none;
   }
@@ -132,12 +110,11 @@ body[data-theme='metro'] {
     display: inline;
   }
 
-  /* ==================== METRO CHAT DIALOG ==================== */
-
+  /* ========== CHAT DIALOG ========== */
   .metro-chat-dialog {
+    padding: 0;
     border: 0;
     border-radius: 0;
-    padding: 0;
     max-width: var(--screen-width-mobile-small);
     width: 90vw;
     max-height: var(--screen-width-mobile-large);
@@ -188,19 +165,20 @@ body[data-theme='metro'] {
   }
 
   .metro-chat-dialog__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    padding-block-end: 0.25rem;
     background: transparent;
     border: 0;
     color: var(--color-white);
     font-size: 2rem;
     line-height: 1;
-    padding: 0;
-    width: 2rem;
-    height: 2rem;
     cursor: pointer;
     transition: background 0.15s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     &:hover {
       background: rgba(255, 255, 255, 0.1);
@@ -214,30 +192,28 @@ body[data-theme='metro'] {
 
   /* Dialog Messages */
   .metro-chat-dialog__messages {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    gap: 1rem;
     padding: 1.5rem;
     overflow-y: auto;
     background: var(--section-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
   }
 
   .metro-chat-dialog__message {
     display: flex;
     animation: slide-in 0.6s ease both;
-  }
 
-  .metro-chat-dialog__message:nth-child(1) {
-    animation-delay: 0.5;
-  }
-
-  .metro-chat-dialog__message:nth-child(2) {
-    animation-delay: 1.5s;
-  }
-
-  .metro-chat-dialog__message:nth-child(3) {
-    animation-delay: 3s;
+    &:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 3s;
+    }
   }
 
   .metro-chat-dialog__message-bubble {
@@ -310,9 +286,9 @@ body[data-theme='metro'] {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    font-family: var(--font-family);
     cursor: pointer;
     transition: background 0.15s ease;
-    font-family: var(--font-family);
 
     &:hover:not(:disabled) {
       background: var(--metro-blue);
@@ -327,5 +303,21 @@ body[data-theme='metro'] {
       opacity: 0.6;
       cursor: not-allowed;
     }
+  }
+}
+
+/* ==================== DARK MODE OVERRIDES ==================== */
+body[data-theme='metro'][data-mode='dark'] {
+  .metro-chat-widget__status {
+    background: oklch(32% 0 0);
+    color: var(--color-white);
+  }
+
+  .metro-chat-widget__status-text {
+    background: oklch(32% 0 0);
+  }
+
+  .metro-chat-dialog__message-text {
+    color: var(--color-white);
   }
 }

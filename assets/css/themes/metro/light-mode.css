@@ -1,0 +1,29 @@
+/* ===========================
+METRO Theme - Light Mode
+=========================== */
+
+/* Light Mode */
+:root[data-theme='metro'][data-mode='light'] {
+  --background-color: var(--color-white);
+  --header-background: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-blue-metro);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-blue-metro);
+  --dial-color-indicator: var(--color-blue-metro);
+  --ds-knob-background: oklch(96% 0 0); /* Light gray */
+  --link-color: var(--color-blue-metro);
+  --link-visited-color: oklch(52% 0.24 340);
+  --section-bg: oklch(96% 0 0);
+  --accent-color: var(--color-blue-metro);
+  --metro-blue: var(--color-blue-metro);
+  --metro-green: oklch(64% 0.19 145);
+  --metro-orange: var(--color-orange);
+  --metro-yellow: var(--color-yellow);
+  --metro-magenta: oklch(52% 0.24 340);
+  --metro-red: oklch(60% 0.24 25);
+  --metro-purple: var(--color-purple);
+  --fade-in-bg: var(--color-black);
+}
+

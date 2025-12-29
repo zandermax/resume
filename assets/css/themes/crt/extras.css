@@ -1,20 +1,21 @@
 /* ===========================
-CRT Theme - Extra Features
-CRT-specific interactive components
-=========================== */
+   CRT Theme - Extra Features
+   CRT-specific interactive components
+   =========================== */
 
 body[data-theme='crt'] {
-  /* ==================== MAIN CONTAINER ==================== */
-
+  /* ========== MAIN CONTAINER ========== */
   .resume__main {
     background: var(--background-color);
   }
 
-  /* ==================== TERMINAL LOG ==================== */
-  /* Animated command log display */
+  /* ========== TERMINAL LOG ========== */
   .terminal-log {
+    position: relative;
     margin-block-start: 1.5rem;
     padding: 1rem;
+    height: 8.4em;
+    overflow: hidden;
     border: 2px solid currentColor;
     border-radius: 8px;
     background: var(--text-color);
@@ -24,14 +25,9 @@ body[data-theme='crt'] {
     line-height: 1.4;
     text-shadow: 0 0 8px var(--background-color);
     box-shadow: 0 0 20px var(--text-color), inset 0 0 40px oklch(0% 0 0 / 0.3);
-    height: 8.4em;
-    overflow: hidden;
-    position: relative;
     filter: blur(0.3px);
     cursor: pointer;
     transition: all 0.2s ease;
-
-    /* Performance optimizations */
     contain: strict;
 
     &:hover {
@@ -57,60 +53,26 @@ body[data-theme='crt'] {
 
   .terminal-log__cursor {
     display: inline-block;
-    background: var(--background-color);
     width: 0.5em;
     height: 1em;
     margin-inline-start: 0.25rem;
-    animation: terminal-blink 1s infinite;
+    background: var(--background-color);
     vertical-align: text-bottom;
     box-shadow: 0 0 8px var(--background-color);
+    animation: terminal-blink 1s infinite;
     will-change: opacity;
   }
 
-  /* ==================== DIAL SELECTOR ==================== */
-
-  .resume-header__dial-selector {
-    padding-block: 1rem;
-    border: 1px solid currentColor;
-  }
-
-  /* ==================== EXPERIENCE ITEMS ==================== */
-  .experience-item {
-    border-block-start: 1px solid currentColor;
-
-    &:first-of-type {
-      border-block-start: 0;
-    }
-  }
-
-  /* ==================== COMMUNITY & PRINCIPLES LISTS ==================== */
-  .community-list__item,
-  .principles-list__item {
-    border-block-start: var(--list-item-border-width) var(--list-item-border-style) currentColor;
-
-    &:first-child {
-      border-block-start: 0;
-    }
-  }
-
-  /* ==================== PRINT BUTTON ==================== */
-  #resume-header__printlink {
-    border-width: 3px;
-    box-shadow: 0 0 20px currentColor, inset 0 0 10px var(--crt-glow);
-    text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
-  }
-
-  /* ==================== CRT TERMINAL DIALOG ==================== */
-  /* Full-screen terminal log viewer */
+  /* ========== CRT TERMINAL DIALOG ========== */
   .crt-terminal-dialog {
+    width: 800px;
     max-width: 90vw;
     max-height: 90vh;
-    width: 800px;
+    padding: 0;
     border: 3px solid var(--text-color);
     border-radius: 12px;
     background: var(--background-color);
     color: var(--text-color);
-    padding: 0;
     box-shadow: 0 0 40px var(--text-color), 0 0 60px var(--text-color), inset 0 0 60px var(--crt-glow);
     filter: blur(0.3px);
 
@@ -130,18 +92,19 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Dialog Container */
   .crt-terminal-dialog__container {
     display: flex;
     flex-direction: column;
-    height: 100%;
     position: relative;
+    height: 100%;
 
-    /* Add scanlines to the dialog */
+    /* Scanline effect */
     &::before {
       content: '';
       position: absolute;
       inset: 0;
+      z-index: 10;
+      border-radius: 12px;
       background: repeating-linear-gradient(
         0deg,
         transparent 0px,
@@ -150,8 +113,6 @@ body[data-theme='crt'] {
         var(--color-black / 0.08) 4px
       );
       pointer-events: none;
-      z-index: 10;
-      border-radius: 12px;
     }
   }
 
@@ -162,9 +123,9 @@ body[data-theme='crt'] {
     align-items: center;
     padding: 1rem 1.5rem;
     border-bottom: 2px solid currentColor;
+    border-radius: 9px 9px 0 0;
     background: var(--text-color);
     color: var(--background-color);
-    border-radius: 9px 9px 0 0;
 
     @media (max-width: 768px) {
       padding: 0.75rem 1rem;
@@ -175,7 +136,6 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Dialog Title */
   .crt-terminal-dialog__title {
     font-family: var(--font-family);
     font-size: 1rem;
@@ -192,22 +152,21 @@ body[data-theme='crt'] {
     }
   }
 
-  /* Dialog Close Button */
   .crt-terminal-dialog__close {
-    background: transparent;
+    padding: 0.25rem 0.5rem;
     border: 2px solid var(--background-color);
+    background: transparent;
     color: var(--background-color);
     font-size: 1.5rem;
-    line-height: 1;
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
     font-family: var(--font-family);
-    transition: all 0.2s ease;
+    line-height: 1;
     text-shadow: 0 0 8px var(--background-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
 
     @media (max-width: 500px) {
-      font-size: 1.25rem;
       padding: 0.2rem 0.4rem;
+      font-size: 1.25rem;
     }
 
     &:hover {
@@ -223,27 +182,26 @@ body[data-theme='crt'] {
   /* Dialog Content */
   .crt-terminal-dialog__content {
     padding: 1.5rem;
+    max-height: 70vh;
     overflow-y: auto;
     font-family: var(--font-family);
     font-size: 0.9rem;
     line-height: 1.6;
-    max-height: 70vh;
     text-shadow: 0 0 4px currentColor;
 
     @media (max-width: 768px) {
       padding: 1rem;
-      font-size: 0.8rem;
       max-height: 65vh;
+      font-size: 0.8rem;
     }
 
     @media (max-width: 500px) {
       padding: 0.75rem;
-      font-size: 0.75rem;
       max-height: 60vh;
+      font-size: 0.75rem;
     }
   }
 
-  /* Dialog Line (text) */
   .crt-terminal-dialog__line {
     margin-block-end: 0.5rem;
     white-space: pre-wrap;
@@ -251,15 +209,14 @@ body[data-theme='crt'] {
     animation: crt-line-fade-in 0.3s ease-out;
   }
 
-  /* Dialog Cursor */
   .crt-terminal-dialog__cursor {
     display: inline-block;
-    background: currentColor;
     width: 0.6em;
     height: 1em;
     margin-inline-start: 0.25rem;
-    animation: terminal-blink 1s infinite;
+    background: currentColor;
     vertical-align: text-bottom;
     box-shadow: 0 0 10px currentColor;
+    animation: terminal-blink 1s infinite;
   }
 }

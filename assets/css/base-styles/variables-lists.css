@@ -27,6 +27,9 @@
   --list-box-shadow: none;
   --list-padding: 0;
 
+  /* === LIST ITEM SHARED === */
+  --list-item-border-color: var(--border-color);
+
   /* === COMMUNITY LIST ITEMS === */
   --community-item-border-style: solid;
   --community-item-border-width: 1px;

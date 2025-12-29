@@ -1,10 +1,9 @@
 /* ===========================
-BRUTAL Theme - Extra Features
-Cookie Banner - 2017 Parody of aggressive cookie consent patterns
-=========================== */
+   BRUTAL Theme - Extra Features
+   Cookie Banner - 2017 Parody of aggressive cookie consent patterns
+   =========================== */
 
-/* ==================== COOKIE BANNER COLORS ==================== */
-
+/* ==================== COLOR VARIABLES ==================== */
 :root[data-theme='brutal'] {
   [data-mode='light'] {
     --cookie-banner-color: var(--color-black);
@@ -14,42 +13,55 @@ Cookie Banner - 2017 Parody of aggressive cookie consent patterns
   }
 }
 
-/* ==================== COOKIE BANNER ==================== */
-
+/* ==================== BRUTAL THEME STYLES ==================== */
 body[data-theme='brutal'] {
-  /* Cookie Banner Container - Dialog Element */
+  /* ========== COOKIE BANNER CONTAINER ========== */
   .cookie-banner {
     position: fixed;
-    inset: auto 0 0 0; /* Position at bottom, centered horizontally */
+    inset: auto 0 0 0;
     top: auto;
-    border: none;
-    padding: 1rem 1rem 0.75rem;
-    max-width: 90%;
     width: 50%;
+    max-width: 90%;
     margin: 0;
     margin-inline: auto;
+    padding: 1rem 1rem 0.75rem;
     overflow-y: auto;
-    background: var(--background-color);
+    border: none;
     border-block-start: 6px solid var(--accent-color);
     border-inline: 4px solid var(--border-color);
+    background: var(--background-color);
     box-shadow: 0 -10px 20px oklch(0% 0 0 / 0.5), inset 0 4px 0 var(--accent-color);
 
     @media (max-width: 768px) {
-      width: calc(100% - 8px - var(--spacing-xl)); /* Account for 4px border each side + 1rem padding each side */
+      width: calc(100% - 8px - var(--spacing-xl));
     }
 
     @media (max-width: 500px) {
-      width: calc(100% - 2rem); /* Account for 1rem padding each side, no inline borders at this breakpoint */
+      width: calc(100% - 2rem);
       max-width: 100%;
       border-inline: 0;
     }
+
+    &[open] {
+      animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+
+    &.cookie-banner--closing {
+      animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+
+    &::backdrop {
+      background: oklch(0% 0 0 / 0.85);
+      animation: fadeInBackdrop 0.5s ease forwards;
+    }
   }
 
-  /* Cookie Banner Header */
+  /* Banner Header */
   .cookie-banner__header {
-    border-block-end: 3px solid var(--border-color);
+    padding: 0.5rem;
     padding-block-end: 0.5rem;
     margin-block-end: 0.75rem;
+    border-block-end: 3px solid var(--border-color);
     background: repeating-linear-gradient(
       -45deg,
       transparent,
@@ -57,23 +69,21 @@ body[data-theme='brutal'] {
       var(--accent-color) 5px,
       var(--accent-color) 6px
     );
-    padding: 0.5rem;
   }
 
-  /* Cookie Banner Title */
   .cookie-banner__title {
+    margin: 0;
+    padding: 0.5rem;
+    border: 3px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--cookie-banner-color);
     font-size: 1.875rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: 1;
     text-align: center;
-    color: var(--cookie-banner-color);
-    background: var(--background-color);
-    padding: 0.5rem;
-    border: 3px solid var(--border-color);
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
-    margin: 0;
     animation: pulse 2s ease-in-out infinite;
     will-change: transform;
 
@@ -86,12 +96,11 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* Cookie Banner Content */
+  /* Banner Content */
   .cookie-banner__content {
     margin-block-end: 1rem;
   }
 
-  /* Cookie Banner - Content Visibility Logic */
   .cookie-banner__content--initial {
     display: block;
   }
@@ -108,26 +117,26 @@ body[data-theme='brutal'] {
     display: block;
   }
 
-  /* Cookie Banner - Returning User Message */
+  /* Returning User Messages */
   .cookie-banner__returning-message {
-    font-size: clamp(1.75rem, 4vw, 3rem);
-    font-weight: 900;
-    text-align: center;
-    line-height: 1.3;
     margin: 2rem 0 1rem 0;
     color: var(--cookie-banner-color);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.3;
 
     @media (max-width: 500px) {
       font-size: 1.5rem;
     }
 
     strong {
-      color: var(--accent-color);
-      font-size: 1.3em;
       display: block;
       margin: 0.5rem 0;
+      color: var(--accent-color);
+      font-size: 1.3em;
 
       @media (max-width: 500px) {
         font-size: 1.2em;
@@ -135,26 +144,25 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* Cookie Banner - Returning User Subtext */
   .cookie-banner__returning-subtext {
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--cookie-banner-color);
-    opacity: 0.8;
     margin: 0;
+    color: var(--cookie-banner-color);
+    font-size: 0.875rem;
+    text-align: center;
+    opacity: 0.8;
 
     @media (max-width: 500px) {
       font-size: 0.75rem;
     }
   }
 
-  /* Cookie Banner - Warning Box */
+  /* Content Boxes */
   .cookie-banner__warning {
-    background: var(--accent-color);
-    color: var(--color-white);
+    margin-block-end: 0.75rem;
     padding: 0.75rem;
     border: 3px solid var(--border-color);
-    margin-block-end: 0.75rem;
+    background: var(--accent-color);
+    color: var(--color-white);
     font-size: 0.825rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -171,16 +179,15 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* Cookie Banner - Text & Legal Boxes */
   .cookie-banner__text,
   .cookie-banner__legal {
-    background: var(--color-white);
-    border: 2px solid var(--border-color);
-    padding: 0.75rem;
     margin-block-end: 0.5rem;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    background: var(--color-white);
+    font-size: 0.75rem;
     font-weight: 600;
     line-height: 1.4;
-    font-size: 0.75rem;
     box-shadow: 3px 3px 0 var(--brutal-shadow-light);
 
     @media (max-width: 768px) {
@@ -192,30 +199,29 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* Cookie Banner - Buttons Container */
+  /* Action Buttons */
   .cookie-banner__buttons {
     display: flex;
     justify-content: center;
     margin-block-end: 0.75rem;
   }
 
-  /* Cookie Banner - Accept Button */
   .cookie-banner__accept {
     display: inline-block;
+    padding: 1rem 2rem;
+    border: 4px solid var(--border-color);
     background: var(--accent-color);
     color: var(--color-white);
-    border: 4px solid var(--border-color);
-    padding: 1rem 2rem;
     font-size: 1.125rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+    font-family: var(--font-family);
     cursor: pointer;
+    transform: skewX(-5deg);
     box-shadow: 6px 6px 0 var(--brutal-shadow-dark);
     transition: all 0.1s ease;
-    transform: skewX(-5deg);
     animation: bounce 1s ease-in-out infinite;
-    font-family: var(--font-family);
     will-change: transform;
 
     @media (max-width: 768px) {
@@ -239,12 +245,30 @@ body[data-theme='brutal'] {
     }
   }
 
-  /* Dialog backdrop */
-  .cookie-banner::backdrop {
-    background: oklch(0% 0 0 / 0.85);
-    animation: fadeInBackdrop 0.5s ease forwards;
+  /* Banner Footer */
+  .cookie-banner__footer {
+    padding-block-start: 0.5rem;
+    border-block-start: 2px solid var(--border-color);
   }
 
+  .cookie-banner__fine-print {
+    color: var(--cookie-banner-color);
+    font-size: 0.675rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.8;
+
+    @media (max-width: 768px) {
+      font-size: 0.6rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 0.525rem;
+    }
+  }
+
+  /* ========== ANIMATIONS ========== */
   @keyframes fadeInBackdrop {
     from {
       opacity: 0;
@@ -252,16 +276,6 @@ body[data-theme='brutal'] {
     to {
       opacity: 1;
     }
-  }
-
-  /* Cookie Banner - Entrance Animation */
-  .cookie-banner[open] {
-    animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  }
-
-  /* Cookie Banner - Exit Animation */
-  .cookie-banner.cookie-banner--closing {
-    animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   }
 
   @keyframes slideUp {
@@ -283,31 +297,6 @@ body[data-theme='brutal'] {
     to {
       transform: translateY(100%);
       opacity: 0;
-    }
-  }
-
-  /* ==================== COOKIE BANNER - FOOTER ==================== */
-
-  .cookie-banner__footer {
-    border-block-start: 2px solid var(--border-color);
-    padding-block-start: 0.5rem;
-  }
-
-  /* Cookie Banner - Fine Print */
-  .cookie-banner__fine-print {
-    color: var(--cookie-banner-color);
-    font-size: 0.675rem;
-    font-weight: 700;
-    text-align: center;
-    font-style: italic;
-    opacity: 0.8;
-
-    @media (max-width: 768px) {
-      font-size: 0.6rem;
-    }
-
-    @media (max-width: 500px) {
-      font-size: 0.525rem;
     }
   }
 }

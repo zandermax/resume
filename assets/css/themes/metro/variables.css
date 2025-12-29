@@ -1,65 +1,8 @@
 /* ===========================
-METRO 2012 Theme - Base Styles
+METRO 2012 Theme - Variables
 Inspired by Windows 8 Metro, Windows Phone, and early Material Design
 Flat Design / Material Zero
 =========================== */
-
-/* ==================== 1. LIGHT MODE ==================== */
-
-:root[data-theme='metro'][data-mode='light'] {
-  --background-color: var(--color-white);
-  --header-background: var(--color-white);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-white);
-  --border-color: var(--color-blue-metro);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-blue-metro);
-  --dial-color-indicator: var(--color-blue-metro);
-  --ds-knob-background: oklch(96% 0 0); /* Light gray */
-  --link-color: var(--color-blue-metro);
-  --link-visited-color: oklch(52% 0.24 340);
-  --section-bg: oklch(96% 0 0);
-  --accent-color: var(--color-blue-metro);
-  --metro-blue: var(--color-blue-metro);
-  --metro-green: oklch(64% 0.19 145);
-  --metro-orange: var(--color-orange);
-  --metro-yellow: var(--color-yellow);
-  --metro-magenta: oklch(52% 0.24 340);
-  --metro-red: oklch(60% 0.24 25);
-  --metro-purple: var(--color-purple);
-  --fade-in-bg: var(--color-black);
-}
-
-/* ==================== 2. DARK MODE ==================== */
-
-:root[data-theme='metro'][data-mode='dark'] {
-  --background-color: oklch(24% 0 0); /* Dark gray */
-  --header-background: oklch(24% 0 0); /* Dark gray */
-  --text-color: var(--color-white);
-  --heading-color: var(--color-white);
-  --border-color: var(--color-cyan-bright);
-  --dial-color-ink: var(--color-white);
-  --dial-color-selection: var(--color-cyan-bright);
-  --dial-color-indicator: var(--color-cyan-bright);
-  --ds-knob-background: oklch(28% 0 0); /* Slightly lighter dark gray */
-  --link-color: var(--color-cyan-bright);
-  --link-visited-color: oklch(52% 0.24 340);
-  --section-bg: oklch(28% 0 0);
-  --accent-color: var(--color-cyan-bright);
-  --metro-blue: var(--color-cyan-bright);
-  --metro-green: var(--color-green-bright);
-  --metro-orange: oklch(78% 0.14 70);
-  --metro-yellow: oklch(85% 0.15 95);
-  --metro-magenta: var(--color-magenta-bright);
-  --metro-red: oklch(68% 0.22 25);
-  --metro-purple: oklch(60% 0.2 315);
-  --fade-in-bg: var(--color-white);
-
-  /* Dial label hover properties (dark mode) */
-  --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
-}
-
-/* ==================== 3. ALL CUSTOM PROPERTIES ==================== */
 
 :root[data-theme='metro'] {
   /* ==================== GENERAL ==================== */
@@ -360,7 +303,7 @@ Flat Design / Material Zero
   --metro-chat-widget-bottom--mobile: 1rem;
   --metro-chat-widget-right--mobile: 1rem;
 
-  /* ==================== 4. THEME ACCENT COLOR PALETTE ==================== */
+  /* ==================== THEME ACCENT COLOR PALETTE ==================== */
 
   /* Define the Metro color palette that the base styles will use for rotation */
   --theme-accent-1: var(--metro-blue);
@@ -370,3 +313,4 @@ Flat Design / Material Zero
   --theme-accent-5: var(--metro-purple);
   --theme-accent-6: var(--metro-red);
 }
+
