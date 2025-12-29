@@ -54,8 +54,10 @@ BRUTAL Theme - Dial Selector Custom Properties
     /* Labels - Base */
     --ds-label-span-font-size: 0.9rem;
     --ds-label-span-font-weight: 900;
-    --ds-label-span-border: none;
-    --ds-label-span-active-border: 3px solid var(--border-color);
+    --ds-label-span-border-width: 0;
+    --ds-label-active-span-border-width: 3px;
+    --ds-label-active-span-border-style: solid;
+    --ds-label-active-span-border-color: var(--border-color);
     --ds-label-span-transition: all 0.05s ease;
     --ds-label-span-text-transform: uppercase;
     --ds-label-span-letter-spacing: 0.05em;
@@ -68,11 +70,13 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-active-span-transform: skewX(-3deg) translate(-2px, -2px);
     --ds-label-active-span-box-shadow: 4px 4px 0 var(--border-color);
     --ds-label-active-color: var(--background-color);
-    --ds-label-active-span-padding: var(--spacing-xs) var(--spacing-md);
+    --ds-label-active-span-padding-block: var(--spacing-xs);
+    --ds-label-active-span-padding-inline: var(--spacing-md);
 
     /* Labels - Hover State */
+    --ds-label-hover-border-width: 3px;
+    --ds-label-hover-border-style: solid;
     --ds-label-hover-border-color: var(--border-color);
-    --ds-label-hover-border: 3px solid var(--border-color);
     --ds-label-hover-background: var(--accent-color);
     --ds-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
     --ds-label-hover-box-shadow: 4px 4px 0 var(--border-color);

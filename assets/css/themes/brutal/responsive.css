@@ -15,7 +15,8 @@ BRUTAL Theme - Responsive Adjustments
 
     /* Dial selector label responsive overrides */
     --ds-label-span-font-size: var(--spacing-sm);
-    --ds-label-span-padding: 0.6rem var(--spacing-md);
+    --ds-label-span-padding-block: 0.6rem;
+    --ds-label-span-padding-inline: var(--spacing-md);
 
     /* Main container responsive overrides */
     --main-border-width: 6px;
@@ -47,7 +48,9 @@ BRUTAL Theme - Responsive Adjustments
 
     /* Dial selector label responsive overrides */
     --ds-label-span-font-size: var(--font-size-xs);
-    --ds-label-span-padding: 0.35rem 0.6rem;
-    --ds-label-active-span-padding: 0.35rem var(--spacing-sm);
+    --ds-label-span-padding-block: 0.35rem;
+    --ds-label-span-padding-inline: 0.6rem;
+    --ds-label-active-span-padding-block: 0.35rem;
+    --ds-label-active-span-padding-inline: var(--spacing-sm);
   }
 }

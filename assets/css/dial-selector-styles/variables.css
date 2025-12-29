@@ -98,6 +98,7 @@ dial-selector {
   --ds-label-transform: none;
   --ds-label-border-width: 0;
   --ds-label-border-style: solid;
+  --ds-label-border-color: transparent;
   --ds-label-padding: 0.4rem 0.8rem;
   --ds-label-font-size: clamp(16px, 1.5vw, 22px);
   --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
@@ -113,11 +114,9 @@ dial-selector {
   --ds-label-span-display: inline-block;
   --ds-label-span-border-radius: 0;
   --ds-label-span-background: transparent;
-  --ds-label-span-border: none;
   --ds-label-span-border-width: 0;
   --ds-label-span-border-style: solid;
   --ds-label-span-border-color: transparent;
-  --ds-label-span-padding: 0;
   --ds-label-span-padding-block: 0;
   --ds-label-span-padding-inline: 0;
   --ds-label-span-font-weight: inherit;
@@ -131,7 +130,8 @@ dial-selector {
   --ds-label-span-filter: none;
 
   /* Label span active states */
-  --ds-label-span-active-border: none;
+  --ds-label-active-span-border-width: unset;
+  --ds-label-active-span-border-style: unset;
   --ds-label-active-span-border-color: transparent;
   --ds-label-active-span-box-shadow: none;
   --ds-label-span-active-font-weight: inherit;
@@ -141,10 +141,11 @@ dial-selector {
   --ds-label-active-span-padding-inline--tablet: unset;
   --ds-label-active-span-padding-block--phone: unset;
   --ds-label-active-span-padding-inline--phone: unset;
-  --ds-label-active-span-padding: unset;
 
   /* Label hover states */
   --ds-label-hover-text-shadow: none;
+  --ds-label-hover-border-width: unset;
+  --ds-label-hover-border-style: unset;
   --ds-label-hover-border-color: transparent;
   --ds-label-hover-background: transparent;
   --ds-label-hover-box-shadow: none;
@@ -159,7 +160,6 @@ dial-selector {
   /* Label active states */
   --ds-label-active-text-shadow: none;
   --ds-label-active-font-weight: normal;
-  --ds-label-active-border: none;
   --ds-label-active-box-shadow: none;
   --ds-label-active-background: transparent;
   --ds-label-active-color: unset;

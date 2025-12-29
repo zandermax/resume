@@ -6,8 +6,9 @@ DASHBOARD Theme - Dial Selector Styles
 :root[data-theme='dashboard'] {
   dial-selector {
     /* Dial label hover properties */
+    --ds-label-hover-border-width: 1px;
+    --ds-label-hover-border-style: solid;
     --ds-label-hover-border-color: var(--accent-color);
-    --ds-label-hover-border: 1px solid var(--accent-color);
     --ds-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
     --ds-label-hover-color: var(--accent-color);
     --ds-label-hover-transform: translateY(-2px);

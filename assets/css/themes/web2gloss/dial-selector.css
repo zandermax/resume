@@ -26,8 +26,11 @@ body[data-theme='web2gloss'] {
     --ds-label-span-display: block;
     --ds-label-span-border-radius: var(--web2-radius-sm);
     --ds-label-span-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.6) 100%);
-    --ds-label-span-border: 1px solid var(--border-color);
-    --ds-label-span-padding: 0.35rem 0.75rem;
+    --ds-label-span-border-width: 1px;
+    --ds-label-span-border-style: solid;
+    --ds-label-span-border-color: var(--border-color);
+    --ds-label-span-padding-block: 0.35rem;
+    --ds-label-span-padding-inline: 0.75rem;
     --ds-label-span-font-weight: 600;
     --ds-label-span-font-size: 0.9rem;
     --ds-label-span-color: var(--text-color);
@@ -42,7 +45,9 @@ body[data-theme='web2gloss'] {
 
     /* Label span - Active state */
     --ds-label-active-background: var(--web2-section-title-gradient);
-    --ds-label-span-active-border: 1px solid var(--web2-primary);
+    --ds-label-active-span-border-width: 1px;
+    --ds-label-active-span-border-style: solid;
+    --ds-label-active-span-border-color: var(--web2-primary);
     --ds-label-active-span-box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
     --ds-label-active-text-shadow: var(--web2-text-shadow-lg);
     --ds-label-span-active-font-weight: 700;

@@ -22,7 +22,9 @@ dial-selector .dial-label {
   transition: var(--ds-label-transition, background-color 0.2s ease, color 0.2s ease);
   background: var(--ds-label-background, transparent);
   border-radius: var(--ds-label-border-radius, 0);
-  border: var(--ds-label-border-width, 0) var(--ds-label-border-style, solid) transparent;
+  border-width: var(--ds-label-border-width, 0);
+  border-style: var(--ds-label-border-style, solid);
+  border-color: var(--ds-label-border-color, transparent);
   opacity: var(--ds-label-opacity);
   filter: var(--ds-label-filter);
   text-shadow: var(--ds-label-text-shadow);
@@ -33,9 +35,11 @@ dial-selector .dial-label > span {
   display: var(--ds-label-span-display, inline-block);
   border-radius: var(--ds-label-span-border-radius, 0);
   background: var(--ds-label-span-background, transparent);
-  border: var(--ds-label-span-border, none);
+  border-width: var(--ds-label-span-border-width, 0);
+  border-style: var(--ds-label-span-border-style, solid);
   border-color: var(--ds-label-span-border-color, transparent);
-  padding: var(--ds-label-span-padding, 0);
+  padding-block: var(--ds-label-span-padding-block, 0);
+  padding-inline: var(--ds-label-span-padding-inline, 0);
   font-weight: var(--ds-label-span-font-weight, inherit);
   font-size: var(--ds-label-span-font-size, inherit);
   color: var(--ds-label-span-color, inherit);
@@ -56,8 +60,9 @@ dial-selector .dial-label:not(.active):hover > span {
   animation: var(--ds-label-hover-animation, none);
   text-shadow: var(--ds-label-hover-text-shadow, none);
   box-shadow: var(--ds-label-hover-box-shadow, none);
-  border: var(--ds-label-hover-border, var(--ds-label-span-border, none));
-  border-color: var(--ds-label-hover-border-color, transparent);
+  border-width: var(--ds-label-hover-border-width, var(--ds-label-span-border-width, 0));
+  border-style: var(--ds-label-hover-border-style, var(--ds-label-span-border-style, solid));
+  border-color: var(--ds-label-hover-border-color, var(--ds-label-span-border-color, transparent));
   padding: var(--ds-label-hover-padding, inherit);
   will-change: var(--ds-label-hover-will-change, auto);
 }
@@ -65,14 +70,14 @@ dial-selector .dial-label:not(.active):hover > span {
 /* Active option */
 dial-selector .dial-label.active > span {
   background: var(--ds-label-active-background, transparent);
-  border: var(--ds-label-span-active-border, var(--ds-label-span-border, none));
-  border-color: var(--ds-label-active-span-border-color, transparent);
+  border-width: var(--ds-label-active-span-border-width, var(--ds-label-span-border-width, 0));
+  border-style: var(--ds-label-active-span-border-style, var(--ds-label-span-border-style, solid));
+  border-color: var(--ds-label-active-span-border-color, var(--ds-label-span-border-color, transparent));
   box-shadow: var(--ds-label-active-span-box-shadow, var(--ds-label-active-box-shadow, none));
   color: var(--ds-label-active-color, var(--ds-color-selection));
   text-shadow: var(--ds-label-active-text-shadow, none);
   font-weight: var(--ds-label-span-active-font-weight, var(--ds-label-span-font-weight));
   transform: var(--ds-label-active-span-transform, none);
-  padding: var(--ds-label-active-span-padding, var(--ds-label-span-padding));
   padding-block: var(--ds-label-active-span-padding-block, var(--ds-label-span-padding-block));
   padding-inline: var(--ds-label-active-span-padding-inline, var(--ds-label-span-padding-inline));
 }
