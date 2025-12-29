@@ -98,7 +98,7 @@
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-red-crimson);
   --dial-color-indicator: var(--color-red-crimson);
-  --ds-knob-background: var(--color-dark-knob);
+  --ds-knob-background-color: var(--color-dark-knob);
 
   /* === DIAL SELECTOR HOUSING CONTAINER === */
   --dial-selector-housing-padding: unset;

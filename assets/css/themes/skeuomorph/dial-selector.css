@@ -8,7 +8,7 @@ SKEUOMORPH Theme - Dial Selector Overrides
   dial-selector {
     /* ==================== LIGHT MODE ==================== */
     &[data-mode='light'] {
-      --ds-knob-background: radial-gradient(
+      --ds-knob-background-image: radial-gradient(
         circle at 35% 35%,
         oklch(0.93 0 0) 0%,
         var(--color-silver) 30%,
@@ -21,7 +21,7 @@ SKEUOMORPH Theme - Dial Selector Overrides
 
     /* ==================== DARK MODE ==================== */
     &[data-mode='dark'] {
-      --ds-knob-background: radial-gradient(
+      --ds-knob-background-image: radial-gradient(
         circle at 30% 30%,
         oklch(0.45 0 0) 0%,
         oklch(0.33 0 0) 40%,
@@ -58,7 +58,6 @@ body[data-theme='skeuomorph'] {
 
   /* ==================== DIAL SELECTOR ENHANCEMENTS ==================== */
   dial-selector {
-    --ds-knob-background: #11161c; /* Fallback solid color */
     --ds-knob-background-image: var(--metal-gradient); /* Use gradient as background-image */
     --ds-knob-box-shadow: var(--knob-shadow);
     --ds-knob-border: 3px solid var(--ds-color-outer-circle);

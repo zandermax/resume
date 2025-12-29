@@ -12,7 +12,7 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-hover-color: var(--color-white);
     --dial-color-selection: var(--color-red-crimson);
     --dial-color-indicator: var(--color-red-crimson);
-    --ds-knob-background: oklch(19% 0.02 240);
+    --ds-knob-background-color: oklch(19% 0.02 240);
   }
 }
 
@@ -23,7 +23,7 @@ BRUTAL Theme - Dial Selector Custom Properties
     --ds-label-span-color: oklch(92% 0 0);
     --dial-color-selection: var(--color-red-bright);
     --dial-color-indicator: var(--color-red-bright);
-    --ds-knob-background: var(--color-dark-bg-alt);
+    --ds-knob-background-color: var(--color-dark-bg-alt);
     --ds-indicator-box-shadow: 0 0 20px var(--accent-color);
     --ds-color-ink: var(--color-white);
   }
@@ -62,10 +62,10 @@ BRUTAL Theme - Dial Selector Custom Properties
 
     /* Labels - Active State */
     --ds-label-active-span-border-color: var(--border-color);
-    --ds-label-active-span-background: var(--accent-color);
+    --ds-label-active-background: var(--accent-color);
     --ds-label-active-span-transform: skewX(-3deg) translate(-2px, -2px);
     --ds-label-active-span-box-shadow: 4px 4px 0 var(--border-color);
-    --ds-label-active-span-color: var(--background-color);
+    --ds-label-active-color: var(--background-color);
     --ds-label-active-span-padding: var(--spacing-xs) var(--spacing-md);
 
     /* Labels - Hover State */

@@ -41,7 +41,7 @@ body[data-theme='web2gloss'] {
       inset 0 1px 0 oklch(100% 0 0 / 0.6);
 
     /* Label span - Active state */
-    --ds-label-active-span-background: var(--web2-section-title-gradient);
+    --ds-label-active-background: var(--web2-section-title-gradient);
     --ds-label-span-active-border: 1px solid var(--web2-primary);
     --ds-label-active-span-box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
     --ds-label-active-text-shadow: var(--web2-text-shadow-lg);
@@ -66,10 +66,10 @@ body[data-theme='web2gloss'] {
 
   /* === LIGHT MODE === */
   &[data-mode='light'] {
-    --ds-label-active-span-color: var(--color-white);
+    --ds-label-active-color: var(--color-white);
 
     dial-selector {
-      --ds-knob-background: radial-gradient(
+      --ds-knob-background-image: radial-gradient(
         circle at 30% 30%,
         var(--color-white) 0%,
         oklch(96% 0.02 230) 30%,
@@ -82,9 +82,9 @@ body[data-theme='web2gloss'] {
   /* === DARK MODE === */
   &[data-mode='dark'] {
     dial-selector {
-      --ds-label-active-span-color: var(--color-black);
+      --ds-label-span-color: var(--color-black);
       /* Knob background */
-      --ds-knob-background: radial-gradient(
+      --ds-knob-background-image: radial-gradient(
         circle at 30% 30%,
         var(--web2-blue-dark) 0%,
         oklch(30% 0.06 250) 40%,
@@ -111,7 +111,7 @@ body[data-theme='web2gloss'] {
         inset 0 1px 0 oklch(100% 0 0 / 0.2);
 
       /* Label span - Active state */
-      --ds-label-active-span-background: var(--web2-section-title-gradient);
+      --ds-label-active-background: var(--web2-section-title-gradient);
       --ds-label-active-span-border-color: var(--web2-primary);
     }
   }

@@ -14,7 +14,7 @@ DEFAULT Theme - Dark Mode
   --link-color: var(--color-gray-pure-light);
   --link-visited-color: var(--color-gray-light);
   --accent-color: var(--color-red-bright);
-  --ds-knob-background: var(--color-dark-bg-alt);
+  --ds-knob-background-color: var(--color-dark-bg-alt);
   --printlink-background: var(--color-gray-pure-light);
   --printlink-color: var(--color-dark-bg);
   --printlink-border: var(--border-width-normal) solid var(--color-gray-pure-light);

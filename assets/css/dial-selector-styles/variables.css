@@ -36,7 +36,7 @@ dial-selector {
   /* Knob styling */
   --ds-knob-border: var(--ds-width-outer-circle) solid var(--ds-color-outer-circle);
   --ds-knob-border-radius: 50%;
-  --ds-knob-background-image: none;
+  --ds-knob-background-image: unset;
   --ds-knob-background-size: cover;
   --ds-knob-background-position: center;
   --ds-knob-background-repeat: no-repeat;
@@ -131,11 +131,9 @@ dial-selector {
   --ds-label-span-filter: none;
 
   /* Label span active states */
-  --ds-label-active-span-background: transparent;
   --ds-label-span-active-border: none;
   --ds-label-active-span-border-color: transparent;
   --ds-label-active-span-box-shadow: none;
-  --ds-label-active-span-color: inherit;
   --ds-label-span-active-font-weight: inherit;
   --ds-label-active-span-padding-block: unset;
   --ds-label-active-span-padding-inline: unset;
@@ -164,7 +162,7 @@ dial-selector {
   --ds-label-active-border: none;
   --ds-label-active-box-shadow: none;
   --ds-label-active-background: transparent;
-  --ds-label-active-color: inherit;
+  --ds-label-active-color: unset;
 
   /* Spoke line styling (legacy - kept for backwards compatibility) */
   --ds-line-stroke: var(--ds-color-line);

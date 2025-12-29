@@ -14,7 +14,7 @@ DEFAULT Theme - Light Mode
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
-  --ds-knob-background: var(--color-dark-knob);
+  --ds-knob-background-color: var(--color-dark-knob);
   --printlink-background: var(--color-black);
   --printlink-color: var(--color-white);
   --printlink-border: var(--border-width-normal) solid var(--color-black);

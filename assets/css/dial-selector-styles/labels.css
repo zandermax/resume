@@ -64,16 +64,15 @@ dial-selector .dial-label:not(.active):hover > span {
 
 /* Active option */
 dial-selector .dial-label.active > span {
-  background: var(--ds-label-active-span-background, var(--ds-label-active-background, transparent));
+  background: var(--ds-label-active-background, transparent);
   border: var(--ds-label-span-active-border, var(--ds-label-span-border, none));
   border-color: var(--ds-label-active-span-border-color, transparent);
   box-shadow: var(--ds-label-active-span-box-shadow, var(--ds-label-active-box-shadow, none));
-  color: var(--ds-label-active-span-color, var(--ds-label-active-color, var(--ds-color-selection)));
+  color: var(--ds-label-active-color, var(--ds-color-selection));
   text-shadow: var(--ds-label-active-text-shadow, none);
   font-weight: var(--ds-label-span-active-font-weight, var(--ds-label-span-font-weight));
   transform: var(--ds-label-active-span-transform, none);
   padding: var(--ds-label-active-span-padding, var(--ds-label-span-padding));
   padding-block: var(--ds-label-active-span-padding-block, var(--ds-label-span-padding-block));
   padding-inline: var(--ds-label-active-span-padding-inline, var(--ds-label-span-padding-inline));
-  padding: var(--ds-label-span-padding);
 }
