@@ -1,0 +1,62 @@
+/* ===========================
+Nostalgia Theme - Extras
+=========================== */
+
+:root[data-theme='nostalgia'] {
+  --display-nostalgia-elements: block;
+  --display-section-title-normal: none;
+}
+
+/* Visitor counter styling (Nostalgia theme) */
+.visitor-counter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--section-bg, transparent);
+  border: var(--border-width-thick) ridge var(--accent-color, #000);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: clamp(var(--spacing-md), 2vw + var(--spacing-xs), var(--spacing-lg));
+  margin: var(--spacing-md) 0;
+  max-width: fit-content;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitor-counter > span:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.visitor-counter__digit {
+  display: inline-block;
+  min-width: 1.5rem;
+  text-align: center;
+  background: var(--nostalgia-black);
+  color: var(--nostalgia-red);
+  border: var(--border-width-normal) inset var(--nostalgia-gray);
+  padding: 0.25rem;
+  font-size: clamp(1.2rem, 2.5vw + var(--spacing-xs), 1.8rem);
+}
+
+/* Retro badge */
+.retro-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: var(--border-width-thick) solid;
+  border-color: var(--nostalgia-magenta) var(--nostalgia-cyan) var(--nostalgia-cyan) var(--nostalgia-magenta);
+  background: linear-gradient(
+    45deg,
+    var(--nostalgia-red),
+    var(--nostalgia-yellow),
+    var(--nostalgia-green),
+    var(--nostalgia-cyan),
+    var(--nostalgia-blue),
+    var(--nostalgia-magenta)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+  box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
+}

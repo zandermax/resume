@@ -1,0 +1,48 @@
+/* ===========================
+Nostalgia Theme Variables
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='nostalgia'] {
+  /* OKLCH Color Palette - 90s Web Nostalgia */
+  --nostalgia-white: oklch(100% 0 0);
+  --nostalgia-black: oklch(0% 0 0);
+  --nostalgia-yellow: oklch(97% 0.21 102); /* #ffff00 */
+  --nostalgia-magenta: oklch(60% 0.32 328); /* #ff00ff */
+  --nostalgia-cyan: oklch(91% 0.15 195); /* #00ffff */
+  --nostalgia-red: oklch(55% 0.28 29); /* #ff0000 */
+  --nostalgia-blue: oklch(45% 0.31 264); /* #0000ff */
+  --nostalgia-green: oklch(88% 0.29 142); /* #00ff00 */
+  --nostalgia-navy: oklch(20% 0.09 264); /* #000080 navy blue */
+  --nostalgia-gold: oklch(81% 0.17 85); /* #FFD700 */
+  --nostalgia-deep-pink: oklch(62% 0.26 345); /* #FF1493 */
+  --nostalgia-hot-pink: oklch(72% 0.24 345); /* #ff0099 */
+  --nostalgia-orange: oklch(71% 0.22 55); /* #ff6600 */
+  --nostalgia-dark-pink: oklch(45% 0.2 345); /* #cc0066 */
+  --nostalgia-gray: oklch(47% 0 0); /* #666 */
+  --nostalgia-dark-teal: oklch(40% 0.08 195); /* #006666 */
+
+  --font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  --border-color: var(--nostalgia-magenta);
+
+  /* Header custom properties */
+  --header-name-wrapper-margin-block-start: 1.5rem;
+  --header-padding: 1rem;
+  --header-border: 5px dotted;
+  --main-padding-responsive-500: var(--spacing-sm);
+
+  /* Dial label hover properties */
+  --ds-label-hover-background: var(--accent-color);
+  --ds-label-hover-color: var(--background-color);
+  --ds-label-hover-padding: 0rem 0.5rem;
+
+  /* Print link common properties */
+  --printlink-border-radius: 8px;
+  --printlink-padding: var(--font-size-sm) var(--spacing-lg);
+  --printlink-font-size: var(--spacing-md);
+  --printlink-font-weight: bold;
+  --printlink-letter-spacing: 0.08em;
+  --printlink-transition: all 0.15s ease;
+  --printlink-transform: translateY(0);
+  --printlink-hover-transform: translateY(2px);
+}

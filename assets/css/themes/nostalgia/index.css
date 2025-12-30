@@ -1,0 +1,12 @@
+/* ===========================
+NOSTALGIA Theme - Main Entry Point
+(Geocities 90s)
+=========================== */
+
+/* Import order: variables → theme modes → extras → animations */
+
+@import url('./variables.css');
+@import url('./light-mode.css');
+@import url('./dark-mode.css');
+@import url('./extras.css');
+@import url('./animations.css');
