@@ -6,17 +6,18 @@
 /* ==================== COLOR VARIABLES ==================== */
 :root[data-theme='brutal'] {
   [data-mode='light'] {
-    --cookie-banner-color: var(--color-black);
+    --keks-banner-color: var(--color-black);
   }
   [data-mode='dark'] {
-    --cookie-banner-color: var(--color-white);
+    --keks-banner-color: var(--color-white);
   }
 }
 
 /* ==================== BRUTAL THEME STYLES ==================== */
 body[data-theme='brutal'] {
-  /* ========== COOKIE BANNER CONTAINER ========== */
-  .cookie-banner {
+  /* ========== KEKS BANNER CONTAINER ========== */
+  /* "Keks" is German for "cookie" - renamed to avoid Brave's blocklist */
+  .keks-banner {
     position: fixed;
     inset: auto 0 0 0;
     top: auto;
@@ -46,7 +47,7 @@ body[data-theme='brutal'] {
       animation: slideUp 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
     }
 
-    &.cookie-banner--closing {
+    &.keks-banner--closing {
       animation: slideDown 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
     }
 
@@ -57,7 +58,7 @@ body[data-theme='brutal'] {
   }
 
   /* Banner Header */
-  .cookie-banner__header {
+  .keks-banner__header {
     padding: 0.5rem;
     padding-block-end: 0.5rem;
     margin-block-end: 0.75rem;
@@ -71,12 +72,12 @@ body[data-theme='brutal'] {
     );
   }
 
-  .cookie-banner__title {
+  .keks-banner__title {
     margin: 0;
     padding: 0.5rem;
     border: 3px solid var(--border-color);
     background: var(--background-color);
-    color: var(--cookie-banner-color);
+    color: var(--keks-banner-color);
     font-size: 1.875rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -97,30 +98,30 @@ body[data-theme='brutal'] {
   }
 
   /* Banner Content */
-  .cookie-banner__content {
+  .keks-banner__content {
     margin-block-end: 1rem;
   }
 
-  .cookie-banner__content--initial {
+  .keks-banner__content--initial {
     display: block;
   }
 
-  .cookie-banner__content--returning {
+  .keks-banner__content--returning {
     display: none;
   }
 
-  .cookie-banner.cookie-banner--returning .cookie-banner__content--initial {
+  .keks-banner.keks-banner--returning .keks-banner__content--initial {
     display: none;
   }
 
-  .cookie-banner.cookie-banner--returning .cookie-banner__content--returning {
+  .keks-banner.keks-banner--returning .keks-banner__content--returning {
     display: block;
   }
 
   /* Returning User Messages */
-  .cookie-banner__returning-message {
+  .keks-banner__returning-message {
     margin: 2rem 0 1rem 0;
-    color: var(--cookie-banner-color);
+    color: var(--keks-banner-color);
     font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 900;
     text-transform: uppercase;
@@ -144,9 +145,9 @@ body[data-theme='brutal'] {
     }
   }
 
-  .cookie-banner__returning-subtext {
+  .keks-banner__returning-subtext {
     margin: 0;
-    color: var(--cookie-banner-color);
+    color: var(--keks-banner-color);
     font-size: 0.875rem;
     text-align: center;
     opacity: 0.8;
@@ -157,7 +158,7 @@ body[data-theme='brutal'] {
   }
 
   /* Content Boxes */
-  .cookie-banner__warning {
+  .keks-banner__warning {
     margin-block-end: 0.75rem;
     padding: 0.75rem;
     border: 3px solid var(--border-color);
@@ -179,8 +180,8 @@ body[data-theme='brutal'] {
     }
   }
 
-  .cookie-banner__text,
-  .cookie-banner__legal {
+  .keks-banner__text,
+  .keks-banner__legal {
     margin-block-end: 0.5rem;
     padding: 0.75rem;
     border: 2px solid var(--border-color);
@@ -200,13 +201,13 @@ body[data-theme='brutal'] {
   }
 
   /* Action Buttons */
-  .cookie-banner__buttons {
+  .keks-banner__buttons {
     display: flex;
     justify-content: center;
     margin-block-end: 0.75rem;
   }
 
-  .cookie-banner__accept {
+  .keks-banner__accept {
     display: inline-block;
     padding: 1rem 2rem;
     border: 4px solid var(--border-color);
@@ -246,13 +247,13 @@ body[data-theme='brutal'] {
   }
 
   /* Banner Footer */
-  .cookie-banner__footer {
+  .keks-banner__footer {
     padding-block-start: 0.5rem;
     border-block-start: 2px solid var(--border-color);
   }
 
-  .cookie-banner__fine-print {
-    color: var(--cookie-banner-color);
+  .keks-banner__fine-print {
+    color: var(--keks-banner-color);
     font-size: 0.675rem;
     font-weight: 700;
     font-style: italic;

@@ -12,7 +12,7 @@ Theme-Specific Custom Components
    - neo-swiss.css: neoswiss-ai-button, neoswiss-ai-modal
    - metro.css: metro-chat-widget
    - skeuomorph.css: sticky-note
-   - brutal/extras.css: cookie-banner
+   - brutal/extras.css: keks-banner
 */
 
 /* Theme-specific element visibility controls */
@@ -55,14 +55,14 @@ Theme-Specific Custom Components
 }
 
 /* Cookie banner - hidden by default, shown only in brutal theme */
-.cookie-banner-dismiss {
+.keks-banner-dismiss {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.cookie-banner-overlay {
+.keks-banner-overlay {
   display: none;
 }
 

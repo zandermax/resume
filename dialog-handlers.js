@@ -26,63 +26,63 @@ function setupClickableCard(card, onClick) {
   addKeyboardClickHandler(card, onClick);
 }
 
-// Cookie Banner - Convert to accessible dialog
+// Keks Banner - Convert to accessible dialog
 window.addEventListener('DOMContentLoaded', () => {
-  const cookieBanner = document.getElementById('cookie-banner');
-  const cookieBannerAccept = document.getElementById('cookie-banner-accept');
+  const keksBanner = document.getElementById('keks-banner');
+  const keksBannerAccept = document.getElementById('keks-banner-accept');
 
   // Store timeout ID so we can cancel it if theme changes
-  let cookieBannerTimeoutId = null;
+  let keksBannerTimeoutId = null;
 
-  // Function to check and show cookie banner if needed
-  function checkAndShowCookieBanner() {
+  // Function to check and show keks banner if needed
+  function checkAndShowKeksBanner() {
     const showDelay = 5000;
     const existingCookie = getCookie('resume_cookie_consent');
     const isBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
 
     // Clear any existing timeout
-    if (cookieBannerTimeoutId) {
-      clearTimeout(cookieBannerTimeoutId);
-      cookieBannerTimeoutId = null;
+    if (keksBannerTimeoutId) {
+      clearTimeout(keksBannerTimeoutId);
+      keksBannerTimeoutId = null;
     }
 
-    if (!cookieBanner || !isBrutalTheme) return;
+    if (!keksBanner || !isBrutalTheme) return;
 
     // If banner is already showing, don't show it again
-    if (cookieBanner.open) return;
+    if (keksBanner.open) return;
 
     if (!existingCookie) {
       // Show banner after delay for initial theme or theme changes
-      cookieBannerTimeoutId = setTimeout(() => {
+      keksBannerTimeoutId = setTimeout(() => {
         // Double-check we're still on brutal theme before showing
         const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
         if (stillBrutalTheme) {
-          cookieBanner.showModal();
+          keksBanner.showModal();
         }
-        cookieBannerTimeoutId = null;
+        keksBannerTimeoutId = null;
       }, showDelay);
     } else {
       // Show returning visitor version
-      cookieBanner.classList.add('cookie-banner--returning');
-      cookieBannerTimeoutId = setTimeout(() => {
+      keksBanner.classList.add('keks-banner--returning');
+      keksBannerTimeoutId = setTimeout(() => {
         // Double-check we're still on brutal theme before showing
         const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
         if (stillBrutalTheme) {
-          cookieBanner.showModal();
+          keksBanner.showModal();
         }
-        cookieBannerTimeoutId = null;
+        keksBannerTimeoutId = null;
       }, showDelay);
       console.log('🍪 Cookie found:', existingCookie);
     }
   }
 
   // Check on page load
-  if (cookieBanner) {
-    checkAndShowCookieBanner();
+  if (keksBanner) {
+    checkAndShowKeksBanner();
   }
 
-  // Cookie Banner - Accept button sets cookie and closes
-  cookieBannerAccept?.addEventListener('click', () => {
+  // Keks Banner - Accept button sets cookie and closes
+  keksBannerAccept?.addEventListener('click', () => {
     const now = new Date();
     now.setTime(now.getTime() + 60 * 60 * 1000);
     const expires = 'expires=' + now.toUTCString();
@@ -91,14 +91,14 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log('🍪 Cookie set!');
 
     // Trigger exit animation before closing
-    cookieBanner?.classList.add('cookie-banner--closing');
+    keksBanner?.classList.add('keks-banner--closing');
 
     // Wait for animation to complete, then close
-    cookieBanner?.addEventListener('animationend', function closeDialog(e) {
+    keksBanner?.addEventListener('animationend', function closeDialog(e) {
       if (e.animationName === 'slideDown') {
-        cookieBanner.removeEventListener('animationend', closeDialog);
-        cookieBanner.close();
-        cookieBanner.classList.remove('cookie-banner--closing');
+        keksBanner.removeEventListener('animationend', closeDialog);
+        keksBanner.close();
+        keksBanner.classList.remove('keks-banner--closing');
       }
     });
   });
@@ -106,12 +106,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // NO backdrop click to close - 2017-style forced acceptance! 😈
   // Users MUST click the accept button
 
-  // Listen for theme changes to show cookie banner when switching to brutal theme
+  // Listen for theme changes to show keks banner when switching to brutal theme
   const themeSelector = document.getElementById('theme-selector');
   if (themeSelector) {
     themeSelector.addEventListener('change', (event) => {
       // Small delay to let theme change complete
-      setTimeout(checkAndShowCookieBanner, 100);
+      setTimeout(checkAndShowKeksBanner, 100);
     });
   }
 });
