@@ -6,7 +6,6 @@ TERMINAL Theme - Responsive Adjustments
 @media (max-width: 768px) {
   :root[data-theme='terminal'] {
     --header-role-font-size: 0.9rem;
-    --ds-label-padding: var(--spacing-xs) var(--spacing-sm);
     --main-padding-responsive-768: var(--spacing-lg);
     --header-name-font-size: 2.1rem;
     --header-name-greeting-font-size: 0.95rem;
@@ -16,7 +15,6 @@ TERMINAL Theme - Responsive Adjustments
 
 @media (max-width: 500px) {
   :root[data-theme='terminal'] {
-    --ds-label-padding: var(--spacing-xs) var(--spacing-xs);
     --main-padding-responsive-500: var(--spacing-xs);
     --header-padding-responsive-500: 0;
     --header-padding-block-start: 2rem;

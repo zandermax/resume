@@ -58,3 +58,17 @@ TERMINAL Theme - Dial Selector Styles
     --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
   }
 }
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+@media (max-width: 768px) {
+  :root[data-theme='terminal'] {
+    --ds-label-padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='terminal'] {
+    --ds-label-padding: var(--spacing-xs) var(--spacing-xs);
+  }
+}
