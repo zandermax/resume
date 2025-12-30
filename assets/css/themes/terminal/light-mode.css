@@ -1,0 +1,22 @@
+/* ===========================
+TERMINAL Theme - Light Mode
+=========================== */
+
+:root[data-theme='terminal'] {
+  &[data-mode='light'] {
+    --background-color: var(--color-blue-sky);
+    --text-color: var(--color-black);
+    --heading-color: var(--color-black);
+    --link-color: var(--color-yellow);
+    --link-visited-color: var(--color-cyan);
+    --section-bg: var(--color-silver);
+    --header-background: var(--color-gray-light);
+    --resume-main-background: var(--color-silver);
+    --terminal-border-light: var(--color-white);
+    --terminal-border-dark: var(--color-black);
+    --terminal-window-bg: var(--color-silver);
+    --terminal-title-bg: var(--color-blue-navy);
+    --terminal-button-bg: var(--color-silver);
+    --terminal-shadow: 2px 2px 0 var(--color-black / 0.3);
+  }
+}

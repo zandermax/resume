@@ -1,0 +1,112 @@
+/* ===========================
+TERMINAL Theme - Animations
+=========================== */
+
+/* Loading bar reveal animation - contracting overlay */
+@keyframes terminal-loadbar-reveal {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Message text swap animation */
+@keyframes terminal-message-swap {
+  0%,
+  99% {
+    content: 'Retrieving resume...';
+  }
+  100% {
+    content: 'Save complete. Would you like to Print?';
+  }
+}
+
+/* Button text swap animation */
+@keyframes terminal-button-text-swap {
+  0%,
+  99% {
+    content: '       CANCEL      ';
+  }
+  100% {
+    content: '       PRINT       ';
+  }
+}
+
+/* Print overlay enable animation */
+@keyframes terminal-print-overlay-enable {
+  0%,
+  99% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: auto;
+  }
+}
+
+/* Terminal button retrieve animation - scanning effect */
+@keyframes terminal-retrieve-scan {
+  0%,
+  100% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 0 0 var(--text-color), inset 0 0 0 0 var(--text-color);
+  }
+  25% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 10px 2px var(--text-color), inset 0 0 10px 2px var(--text-color);
+  }
+  50% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 20px 4px var(--text-color), inset 0 0 15px 4px var(--text-color);
+  }
+  75% {
+    box-shadow: var(--terminal-inset-raised-lg), 0 0 10px 2px var(--text-color), inset 0 0 10px 2px var(--text-color);
+  }
+}
+
+/* Terminal button bracket blink animation */
+@keyframes terminal-bracket-blink {
+  0%,
+  49%,
+  100% {
+    opacity: 1;
+  }
+  50%,
+  99% {
+    opacity: 0;
+  }
+}
+
+/* Terminal button text pulse */
+@keyframes terminal-text-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.4);
+    transform: scale(1.02);
+  }
+}
+
+/* Mobile message text swap animation */
+@keyframes terminal-message-text-swap {
+  0%,
+  99% {
+    content: 'Retrieving resume...';
+  }
+  100% {
+    content: 'Save complete. Would you like to Print?';
+  }
+}
+
+/* Mobile button show animation */
+@keyframes terminal-button-mobile-show {
+  0%,
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+

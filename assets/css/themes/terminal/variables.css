@@ -1,0 +1,158 @@
+/* ===========================
+TERMINAL Theme - Common Variables
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='terminal'] {
+  --terminal-black-40: oklch(0% 0 0 / 0.4);
+  --terminal-black-60: oklch(0% 0 0 / 0.6);
+  --terminal-black-80: oklch(0% 0 0 / 0.8);
+  --font-family: 'Courier New', 'Lucida Console', monospace;
+  --background-image: none;
+  --border-color: var(--color-gray-medium);
+
+  /* Header name wrapper custom properties */
+  --header-name-wrapper-margin-block-start: 1rem;
+
+  /* Component overrides */
+  --main-border-width: 0;
+  --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
+  --main-padding: 2rem;
+  --section-title-border-width: 0;
+  --section-title-box-shadow: var(--terminal-inset-sunken-sm);
+  --section-title-padding: 0.5rem 0.75rem;
+  --section-title-background: var(--terminal-button-bg);
+  --section-title-margin-bottom: 1rem;
+  --section-title-font-size: 1.1rem;
+  --section-title-text-transform: uppercase;
+  --skills-grid-border: 0;
+  --skills-grid-background: var(--terminal-window-bg);
+  --skills-grid-box-shadow: var(--terminal-inset-sunken-lg);
+  --skills-grid-padding: 1rem;
+  --skills-group-border: 0;
+  --skills-group-box-shadow: var(--terminal-inset-raised-sm);
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: 0.75rem;
+  --skills-title-font-size: 0.9rem;
+  --section-text-line-height: 1.6;
+  --section-text-letter-spacing: 0;
+  --section-text-font-size: 0.95rem;
+  --experience-role-line-height: 1.6;
+  --experience-role-letter-spacing: 0;
+  --experience-role-font-size: 0.95rem;
+  --experience-company-font-size: 0.9rem;
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: normal;
+  --tech-badge-font-size: 0.85rem;
+  --skills-items-font-size: 0.9rem;
+  --skills-items-line-height: 1.5;
+  --community-item-font-size: 0.95rem;
+  --community-item-line-height: 1.6;
+  --principles-item-font-size: 0.95rem;
+  --principles-item-line-height: 1.6;
+  --list-border: 0;
+  --list-background: var(--terminal-window-bg);
+  --list-box-shadow: var(--terminal-inset-sunken-lg);
+  --list-padding: 1rem;
+  --experience-item-border: 0;
+  --experience-item-box-shadow: var(--terminal-inset-raised-lg);
+  --experience-item-background: var(--section-bg);
+  --experience-item-padding: 1.25rem;
+  --experience-item-margin-top: 1.25rem;
+  --tech-badge-border: 0;
+  --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
+  --tech-badge-background: var(--terminal-button-bg);
+  --tech-badge-padding: 0.35rem 0.5rem;
+  --education-item-border: 0;
+  --education-item-box-shadow: var(--terminal-inset-raised-sm);
+  --education-item-background: var(--section-bg);
+  --education-item-padding: 1rem;
+  --header-border-width: 0;
+  --header-box-shadow: var(--terminal-inset-raised-lg);
+  --header-padding: 0.5rem;
+  --bullet-before-content: '▪';
+  --bullet-font-size: 0.7rem;
+  --header-meta-font-size: 0.9rem;
+  --header-name-font-size: 2.5rem;
+  --header-name-line-height: 1.3;
+  --header-name-border-color: var(--terminal-border-dark);
+  --printlink-border: 2px solid var(--text-color);
+  --printlink-background: var(--terminal-button-bg);
+  --printlink-position: relative;
+  --printlink-transition: all 0.15s ease;
+  --printlink-color: var(--text-color);
+  --printlink-hover-background: var(--terminal-button-bg);
+  --printlink-hover-color: var(--text-color);
+  --printlink-hover-transform: translateY(-2px);
+  --printlink-active-transform: translateY(0);
+  --printlink-before-content: '[';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-start: 4px;
+  --printlink-after-content: ']';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 4px;
+  --link-text-decoration: underline;
+
+  /* Header role custom properties */
+  --header-role-font-size: 1rem;
+  --header-role-line-height: 1.5;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.05rem;
+
+  /* Experience bullets custom properties */
+  --experience-bullets-li-font-size: 0.95rem;
+  --experience-bullets-li-line-height: 1.6;
+  --experience-bullets-li-margin-block-end: 0.5rem;
+
+  /* Typography adjustments */
+  --heading-letter-spacing: 0.05em;
+  --body-text-letter-spacing: 0;
+
+  /* Print/Save button hover/active states */
+  --printlink-hover-filter: brightness(1.15);
+  --printlink-active-box-shadow-override: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
+  --printlink-active-transform-override: translate(1px, 1px);
+
+  /* Education and experience styling */
+  --experience-item-position: relative;
+
+  /* Header styling */
+  --header-position: relative;
+
+  /* Print/save button styling */
+  --savelink-display: inline-flex;
+  --printlink-padding: var(--spacing-sm) var(--spacing-md);
+  --printlink-font-size: 0.9rem;
+  --printlink-cursor: pointer;
+  --printlink-transition: none;
+  --printlink-border-radius: 0;
+  --printlink-background: var(--terminal-title-bg);
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: bold;
+  --printlink-box-shadow: var(--terminal-inset-raised-lg);
+  --printlink-text-transform: uppercase;
+  --printlink-letter-spacing: 0.1em;
+  --printlink-border: 2px solid var(--terminal-border-dark);
+
+  /* Consolidated inset border patterns for 3D effects */
+  --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),
+    inset -2px -2px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-lg: inset 2px 2px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -2px -2px 0 var(--terminal-border-light, var(--color-white));
+  --terminal-inset-raised-sm: inset 1px 1px 0 var(--terminal-border-light, var(--color-white)),
+    inset -1px -1px 0 var(--terminal-border-dark, var(--color-black));
+  --terminal-inset-sunken-sm: inset 1px 1px 0 var(--terminal-border-dark, var(--color-black)),
+    inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
+
+  /* Typography styling */
+  --h1-h2-h3-text-shadow: none;
+  --header-name-greeting-font-size: 0.95rem;
+  --header-name-greeting-line-height: 1.6;
+  --header-name-small-font-size: 0.95rem;
+  --header-name-small-line-height: 1.6;
+  --p-li-font-size: 0.95rem;
+  --p-li-line-height: 1.6;
+}
+

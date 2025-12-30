@@ -1,0 +1,15 @@
+/* ===========================
+TERMINAL Theme - Main Entry Point
+(1992 CLI-inspired)
+=========================== */
+
+/* Import order: variables → theme modes → dial selector → extras → responsive → animations */
+
+@import url('./variables.css');
+@import url('./light-mode.css');
+@import url('./dark-mode.css');
+@import url('./dial-selector.css');
+@import url('./extras.css');
+@import url('./responsive.css');
+@import url('./animations.css');
+

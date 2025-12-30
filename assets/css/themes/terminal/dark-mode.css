@@ -1,0 +1,23 @@
+/* ===========================
+TERMINAL Theme - Dark Mode
+=========================== */
+
+:root[data-theme='terminal'] {
+  &[data-mode='dark'] {
+    --background-color: var(--color-blue-navy);
+    --text-color: var(--color-white);
+    --heading-color: var(--color-white);
+    --link-color: var(--color-cyan);
+    --link-visited-color: var(--color-yellow);
+    --section-bg: var(--color-blue-navy);
+    --header-background: var(--color-blue-navy);
+    --resume-main-background: var(--color-blue-navy);
+    --accent-color: var(--color-cyan);
+    --terminal-border-light: oklch(45% 0.22 264);
+    --terminal-border-dark: oklch(8% 0.08 264);
+    --terminal-window-bg: var(--color-blue-navy);
+    --terminal-title-bg: var(--color-blue-navy);
+    --terminal-button-bg: oklch(28% 0.16 264);
+    --terminal-shadow: 2px 2px 0 var(--color-black / 0.5);
+  }
+}

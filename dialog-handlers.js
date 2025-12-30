@@ -40,11 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const existingCookie = getCookie('resume_cookie_consent');
     const isBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
 
-    console.log('🍪 [DEBUG] checkAndShowCookieBanner called');
-    console.log('🍪 [DEBUG] isBrutalTheme:', isBrutalTheme);
-    console.log('🍪 [DEBUG] existingCookie:', existingCookie);
-    console.log('🍪 [DEBUG] cookieBanner element exists:', !!cookieBanner);
-
     // Clear any existing timeout
     if (cookieBannerTimeoutId) {
       clearTimeout(cookieBannerTimeoutId);
@@ -56,97 +51,24 @@ window.addEventListener('DOMContentLoaded', () => {
     // If banner is already showing, don't show it again
     if (cookieBanner.open) return;
 
-    // Helper to log banner state
-    function logBannerState(label) {
-      console.group(`🍪 [DEBUG] ${label}`);
-      console.log('banner.open:', cookieBanner.open);
-
-      const styles = window.getComputedStyle(cookieBanner);
-      console.log('display:', styles.display);
-      console.log('visibility:', styles.visibility);
-      console.log('opacity:', styles.opacity);
-      console.log('position:', styles.position);
-      console.log('z-index:', styles.zIndex);
-
-      const rect = cookieBanner.getBoundingClientRect();
-      console.log('dimensions:', {
-        width: rect.width,
-        height: rect.height,
-        top: rect.top,
-        bottom: rect.bottom,
-        left: rect.left,
-        right: rect.right,
-      });
-
-      console.log('offsetParent:', cookieBanner.offsetParent);
-      console.log('classList:', Array.from(cookieBanner.classList));
-
-      // Check if body scroll is locked
-      console.log('body overflow:', window.getComputedStyle(document.body).overflow);
-
-      console.groupEnd();
-    }
-
     if (!existingCookie) {
-      console.log('🍪 [DEBUG] Scheduling banner show in', showDelay, 'ms');
-
       // Show banner after delay for initial theme or theme changes
       cookieBannerTimeoutId = setTimeout(() => {
-        console.log('🍪 [DEBUG] Timeout triggered, attempting to show banner');
-
         // Double-check we're still on brutal theme before showing
         const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
         if (stillBrutalTheme) {
-          console.log('🍪 [DEBUG] Calling showModal()...');
           cookieBanner.showModal();
-          console.log('🍪 [DEBUG] showModal() completed');
-
-          // Log state immediately after showing
-          logBannerState('Immediately after showModal()');
-
-          // Log state after 100ms
-          setTimeout(() => logBannerState('100ms after showModal()'), 100);
-
-          // Log state after 300ms
-          setTimeout(() => logBannerState('300ms after showModal()'), 300);
-
-          // Log state after 600ms
-          setTimeout(() => logBannerState('600ms after showModal()'), 600);
-
-          // Log state after 1000ms
-          setTimeout(() => logBannerState('1000ms after showModal()'), 1000);
         }
         cookieBannerTimeoutId = null;
       }, showDelay);
     } else {
-      console.log('🍪 [DEBUG] Cookie exists, scheduling returning visitor banner in', showDelay, 'ms');
-
       // Show returning visitor version
       cookieBanner.classList.add('cookie-banner--returning');
       cookieBannerTimeoutId = setTimeout(() => {
-        console.log('🍪 [DEBUG] Timeout triggered (returning visitor), attempting to show banner');
-
         // Double-check we're still on brutal theme before showing
         const stillBrutalTheme = document.documentElement.getAttribute('data-theme') === 'brutal';
         if (stillBrutalTheme) {
-          console.log('🍪 [DEBUG] Calling showModal()...');
           cookieBanner.showModal();
-          console.log('🍪 [DEBUG] showModal() completed');
-
-          // Log state immediately after showing
-          logBannerState('Immediately after showModal()');
-
-          // Log state after 100ms
-          setTimeout(() => logBannerState('100ms after showModal()'), 100);
-
-          // Log state after 300ms
-          setTimeout(() => logBannerState('300ms after showModal()'), 300);
-
-          // Log state after 600ms
-          setTimeout(() => logBannerState('600ms after showModal()'), 600);
-
-          // Log state after 1000ms
-          setTimeout(() => logBannerState('1000ms after showModal()'), 1000);
         }
         cookieBannerTimeoutId = null;
       }, showDelay);

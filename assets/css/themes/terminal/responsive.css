@@ -1,0 +1,42 @@
+/* ===========================
+TERMINAL Theme - Responsive Adjustments
+=========================== */
+
+/* Responsive :root adjustments - at top level */
+@media (max-width: 768px) {
+  :root[data-theme='terminal'] {
+    --header-role-font-size: 0.9rem;
+    --ds-label-padding: var(--spacing-xs) var(--spacing-sm);
+    --main-padding-responsive-768: var(--spacing-lg);
+    --header-name-font-size: 2.1rem;
+    --header-name-greeting-font-size: 0.95rem;
+    --header-name-small-font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='terminal'] {
+    --ds-label-padding: var(--spacing-xs) var(--spacing-xs);
+    --main-padding-responsive-500: var(--spacing-xs);
+    --header-padding-responsive-500: 0;
+    --header-padding-block-start: 2rem;
+    --header-name-font-size: 1.7rem;
+    --header-buttons-flex-direction-responsive-500: column;
+    --header-buttons-gap-responsive-500: 0.5rem;
+    --printlink-font-size-responsive-500: 0.85rem;
+    --printlink-padding-block-responsive-500: 0.65rem;
+    --printlink-padding-inline-responsive-500: var(--spacing-xs);
+    --printlink-before-margin-inline-start: 0;
+    --printlink-before-margin-inline-end: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  :root[data-theme='terminal'] {
+    --header-buttons-flex-direction-responsive-600: column;
+    --header-buttons-gap-responsive-600: 0.5rem;
+    --printlink-font-size-responsive-600: 0.85rem;
+    --printlink-padding-block-responsive-600: 0.65rem;
+    --printlink-padding-inline-responsive-600: var(--spacing-xs);
+  }
+}

@@ -30,6 +30,7 @@
     var(--header-border-block-end-color, var(--border-color));
   border: var(--header-border, none);
   padding: var(--header-padding, unset);
+  padding-block-start: var(--header-padding-block-start, 0);
   padding-block-end: 1rem;
   padding-inline-start: var(--header-padding-inline-start, 0);
   padding-inline-end: var(--header-padding-inline-end, 0);

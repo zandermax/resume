@@ -1,0 +1,60 @@
+/* ===========================
+TERMINAL Theme - Dial Selector Styles
+=========================== */
+
+/* ==================== COLOR SCHEMES ==================== */
+
+/* Light Mode */
+:root[data-theme='terminal'][data-mode='light'] {
+  dial-selector {
+    --dial-color-ink: var(--color-black);
+    --dial-color-line: var(--color-black);
+    --dial-color-selection: var(--color-yellow);
+    --dial-color-indicator: var(--color-yellow);
+    --ds-knob-background-color: var(--color-silver);
+  }
+}
+
+/* Dark Mode */
+:root[data-theme='terminal'][data-mode='dark'] {
+  dial-selector {
+    --dial-color-ink: var(--color-gray-light);
+    --dial-color-selection: var(--color-cyan);
+    --dial-color-indicator: var(--color-cyan);
+    --ds-knob-background-color: oklch(38% 0 0);
+  }
+}
+
+:root[data-theme='terminal'] {
+  dial-selector {
+    --ds-knob-border: 0;
+    --ds-indicator-box-shadow: none;
+    --ds-indicator-width-override: 10px;
+    --ds-label-padding: 0.4rem 0.8rem;
+    --ds-label-active-span-padding-block: 0.25rem;
+    --ds-label-active-span-padding-inline: 0.3rem;
+    --ds-label-active-span-padding-block--tablet: 0.2rem;
+    --ds-label-active-span-padding-inline--tablet: 0.6rem;
+    --ds-label-active-span-padding-block--phone: 0.2rem;
+    --ds-label-active-span-padding-inline--phone: 0.55rem;
+    --ds-label-font-size--tablet: 0.75rem;
+    --ds-label-font-size--phone: 0.7rem;
+    --ds-label-font-size--phone-sm: 0.7rem;
+    --ds-label-font-size--xs: 0.65rem;
+    --ds-line-width: 2px;
+
+    /* Dial selector hover/active states */
+    --ds-label-hover-color: var(--dial-color-ink);
+    --ds-label-hover-background: var(--terminal-button-bg);
+    --ds-label-hover-padding: 0rem 0.5rem;
+    --ds-label-hover-box-shadow: var(--terminal-inset-raised-sm);
+    --ds-label-active-background: var(--terminal-title-bg);
+    --ds-label-active-box-shadow: var(--terminal-inset-sunken-sm);
+    --ds-label-active-color: var(--dial-color-selection);
+
+    /* Dial selector knob styling */
+    --ds-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+    --ds-knob-border-radius: 0;
+    --ds-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
+  }
+}
