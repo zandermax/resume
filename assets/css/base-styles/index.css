@@ -72,3 +72,5 @@
 /* Print/save buttons */
 @import './buttons.css';
 
+/* Scrollbar styling */
+@import './scrollbar.css';

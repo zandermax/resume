@@ -36,8 +36,9 @@
     display: var(--resume-main-before-display);
     position: var(--resume-main-before-position);
     inset: var(--resume-main-before-inset);
+    bottom: var(--resume-main-before-bottom);
     height: var(--resume-main-before-height);
-    background: var(--resume-main-before-background);
+    background-color: var(--resume-main-before-background-color);
     background-image: var(--resume-main-before-background-image);
     border-radius: var(--resume-main-before-border-radius);
     box-shadow: var(--resume-main-before-box-shadow);

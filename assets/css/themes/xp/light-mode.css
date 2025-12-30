@@ -1,0 +1,35 @@
+/* ===========================
+XP Theme - Light Mode
+=========================== */
+
+/* Light Mode */
+:root[data-theme='xp'][data-mode='light'] {
+  --background-color: var(--color-blue-steel);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-white);
+  --dial-color-ink: var(--color-blue-dark);
+  --dial-color-line: var(--color-blue-dark);
+  --background-image: linear-gradient(
+    180deg,
+    var(--color-blue-steel) 0%,
+    oklch(59% 0.15 250) 50%,
+    oklch(51% 0.17 250) 100%
+  );
+  --link-color: var(--color-blue-dark);
+  --link-visited-color: oklch(48% 0.15 310);
+  --section-bg: var(--color-beige);
+  --xp-button-face: var(--color-beige);
+  --xp-button-highlight: var(--color-white);
+  --xp-button-shadow: oklch(70% 0.01 85);
+  --xp-button-dark-shadow: oklch(51% 0.01 85);
+  --xp-text-shadow: none;
+  --dial-selector-label-color: var(--color-blue-dark);
+  --xp-panel-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px var(--xp-black-10);
+  --experience-item-background: white;
+  --skills-group-background: white;
+  --list-background: white;
+  --education-item-background: white;
+  --education-institution-color: var(--xp-window-border-block-start);
+  --experience-role-color: var(--xp-window-border-block-start);
+}
+

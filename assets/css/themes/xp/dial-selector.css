@@ -1,0 +1,83 @@
+/* ===========================
+XP Theme - Dial Selector
+=========================== */
+
+:root[data-theme='xp'] {
+  dial-selector {
+    /* Dial selector knob (XP specific 3D effect) */
+    --ds-knob-border-radius: 50%;
+    --ds-knob-border: 3px solid var(--xp-button-shadow);
+    --dial-knob-box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
+      inset 0 0 20px var(--xp-white-20);
+
+    /* Dial selector indicator (XP specific 3D effect) */
+    --ds-indicator-border-radius: 3px;
+    --ds-indicator-gradient: linear-gradient(
+      180deg,
+      oklch(82% 0.14 130) 0%,
+      var(--xp-start-green) 50%,
+      oklch(61% 0.12 130) 100%
+    );
+    --ds-indicator-box-shadow: 0 2px 4px var(--xp-black-40), inset 0 1px 0 var(--xp-white-50);
+    --ds-indicator-border: 1px solid var(--xp-black-20);
+
+    /* Dial spoke line */
+    --ds-line-width: 2px;
+
+    /* Dial label XP styling */
+    --ds-label-font-size: 0.85rem;
+    --ds-label-padding: 0.45rem 0.8rem;
+    --ds-label-border-radius: 3px;
+    --ds-label-transition: all 0.15s ease;
+    --ds-label-background: transparent;
+    --ds-label-font-weight: 700;
+    --ds-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
+    --ds-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
+    --ds-label-hover-padding: 0.45rem 0.25rem;
+    --ds-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
+    --ds-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
+      0 2px 4px var(--xp-black-20);
+    --ds-label-active-color: var(--color-white);
+    --ds-label-active-span-padding-inline: 0.25rem;
+    --ds-label-active-span-padding-block: 0.25rem;
+    --ds-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
+  }
+}
+
+/* Light Mode */
+:root[data-theme='xp'][data-mode='light'] {
+  dial-selector {
+    --ds-knob-background-image: linear-gradient(
+      180deg,
+      oklch(97% 0.02 245) 0%,
+      oklch(92% 0.04 245) 50%,
+      oklch(77% 0.13 245) 100%
+    );
+  }
+}
+
+/* Dark Mode */
+:root[data-theme='xp'][data-mode='dark'] {
+  dial-selector {
+    --ds-knob-background-image: linear-gradient(
+      180deg,
+      oklch(47% 0.08 250) 0%,
+      oklch(34% 0.08 250) 50%,
+      oklch(30% 0.06 250) 100%
+    );
+  }
+}
+
+/* Responsive adjustments */
+:root[data-theme='xp'] {
+  @media (max-width: 768px) {
+    --ds-label-font-size: 0.75rem;
+    --ds-label-padding: 0.4rem 0.7rem;
+  }
+
+  @media (max-width: 500px) {
+    --ds-label-font-size: 0.7rem;
+    --ds-label-padding: 0.35rem 0.3rem;
+    --dial-selector-housing-padding: 0.5rem;
+  }
+}

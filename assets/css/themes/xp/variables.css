@@ -1,0 +1,251 @@
+/* ===========================
+XP Theme - Common Variables
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='xp'] {
+  --xp-black-10: oklch(0% 0 0 / 0.1);
+  --xp-black-15: oklch(0% 0 0 / 0.15);
+  --xp-black-20: oklch(0% 0 0 / 0.2);
+  --xp-black-30: oklch(0% 0 0 / 0.3);
+  --xp-black-40: oklch(0% 0 0 / 0.4);
+  --xp-black-50: oklch(0% 0 0 / 0.5);
+  --xp-white-20: oklch(100% 0 0 / 0.2);
+  --xp-white-30: oklch(100% 0 0 / 0.3);
+  --xp-white-40: oklch(100% 0 0 / 0.4);
+  --xp-white-50: oklch(100% 0 0 / 0.5);
+  --xp-white-60: oklch(100% 0 0 / 0.6);
+  --xp-white-80: oklch(100% 0 0 / 0.8);
+
+  /* Header top row custom properties */
+  --resume-main-before-opacity: 1;
+  --resume-main-before-background-image: none;
+
+  /* Resume main ::before - XP title bar */
+  --resume-main-before-content: '';
+  --resume-main-before-display: block;
+  --resume-main-before-position: absolute;
+  --resume-main-before-inset: 0;
+  --resume-main-before-bottom: auto;
+  --resume-main-before-height: 32px;
+  --resume-main-before-background-color: transparent;
+  --resume-main-before-background-image: linear-gradient(
+    180deg,
+    var(--xp-window-title-start) 0%,
+    var(--xp-window-title-end) 100%
+  );
+  --resume-main-before-border-radius: var(--xp-radius-md) var(--xp-radius-md) 0 0;
+  --resume-main-before-box-shadow: var(--xp-title-shadow);
+  --resume-main-before-z-index: 10;
+  --resume-main-before-pointer-events: none;
+
+  /* Link hover extended for XP theme */
+  --link-hover-color: var(--xp-start-green);
+  --link-hover-border-block-end-color: var(--xp-start-green);
+
+  /* Scrollbar styling (XP theme) */
+  --scrollbar-width: 16px;
+  --scrollbar-height: 16px;
+  --scrollbar-track-background: oklch(94% 0.01 85);
+  --scrollbar-track-border: 1px solid oklch(70% 0.01 85);
+  --scrollbar-thumb-background: linear-gradient(
+    90deg,
+    oklch(94% 0.01 85) 0%,
+    oklch(86% 0.01 85) 50%,
+    oklch(70% 0.01 85) 100%
+  );
+  --scrollbar-thumb-border: 1px solid oklch(51% 0.01 85);
+  --scrollbar-thumb-hover-background: linear-gradient(
+    90deg,
+    oklch(95% 0 0) 0%,
+    oklch(87% 0.01 85) 50%,
+    oklch(71% 0.01 85) 100%
+  );
+  --scrollbar-button-background: oklch(94% 0.01 85);
+  --scrollbar-button-border: 1px solid oklch(51% 0.01 85);
+  --scrollbar-button-height: 16px;
+  --scrollbar-button-width: 16px;
+
+  /* Experience item custom properties */
+  --experience-item-border: 0;
+  --experience-item-background: var(--section-bg);
+  --experience-item-border-radius: var(--xp-radius-md);
+  --experience-item-box-shadow: var(--xp-panel-shadow), 0 2px 4px var(--xp-black-10);
+  --experience-item-padding: var(--spacing-md);
+  --experience-item-margin-top: var(--spacing-md);
+
+  /* Skills grid group custom properties */
+  --skills-group-border: 0;
+  --skills-group-background: var(--section-bg);
+  --skills-group-border-radius: var(--xp-radius-sm);
+  --skills-group-box-shadow: var(--xp-panel-shadow);
+  --skills-group-padding: var(--spacing-sm);
+
+  /* Skills grid title custom properties */
+  --skills-title-border-style: solid;
+  --skills-title-border-width: var(--border-width-normal);
+  --skills-title-border-block-end-color: var(--xp-window-border-block-start);
+  --skills-title-color: var(--text-color);
+  --skills-title-padding-bottom: 0.4rem;
+  --skills-title-margin-bottom: var(--spacing-xs);
+  --skills-title-font-weight: bold;
+
+  /* Section text custom properties */
+  --section-text-line-height: 1.6;
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: 1.05rem;
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 0;
+  --tech-badge-background: linear-gradient(
+    180deg,
+    var(--xp-button-highlight) 0%,
+    var(--xp-button-face) 50%,
+    var(--xp-button-shadow) 100%
+  );
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: bold;
+  --tech-badge-padding: 0.4rem 0.6rem;
+  --tech-badge-border-radius: 3px;
+  --tech-badge-box-shadow: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    0 1px 2px var(--xp-black-20);
+
+  /* Skills grid custom properties */
+  --skills-grid-border: 0;
+  --skills-grid-background: var(--xp-button-face);
+  --skills-grid-padding: var(--spacing-md);
+  --skills-grid-border-radius: var(--xp-radius-md);
+  --skills-grid-box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    inset -1px -1px 0 var(--xp-button-dark-shadow);
+
+  /* List container custom properties */
+  --list-border: 0;
+  --list-background: var(--section-bg);
+  --list-border-radius: var(--xp-radius-sm);
+  --list-box-shadow: var(--xp-panel-shadow);
+  --list-padding: 1rem;
+
+  /* Community/Principles list item custom properties */
+  --community-item-padding: 0.75rem 0.5rem;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+
+  /* Header container custom properties */
+  --header-margin: 3rem 2rem 1.5rem 2rem;
+  --header-padding-block-start: 3rem;
+  --header-padding-block-end: 1rem;
+  --header-border-block-end-color: transparent;
+  --header-border-width: 0;
+  --header-background: transparent;
+
+  /* Header name custom properties */
+  --header-name-border-color: var(--xp-window-border-block-start);
+  --header-name-border-width: var(--border-width-thick);
+  --header-name-text-shadow: 2px 2px 4px var(--xp-black-10);
+
+  /* Section container custom properties */
+  --section-margin: 0 2rem 2rem 2rem;
+  --section-padding: 1rem 0 0.5rem 0;
+  --section-border-block-start-width: 1px;
+  --section-border-block-start-style: solid;
+  --section-border-block-start-color: var(--xp-button-shadow);
+
+  /* Section title custom properties */
+  --section-title-border: 0;
+  --section-title-border-radius: var(--xp-radius-sm);
+  --section-title-background: linear-gradient(180deg, oklch(47% 0.27 264) 0%, oklch(60% 0.2 245) 100%);
+  --section-title-padding: 0.6rem var(--spacing-md);
+  --section-title-margin: 0 -var(--spacing-xs) var(--spacing-md);
+  --section-title-box-shadow: 0 2px 4px var(--xp-black-20), inset 0 1px 0 var(--xp-white-30);
+  --section-title-text-shadow: var(--xp-text-shadow, 1px 1px 2px var(--xp-black-30));
+  --section-title-font-weight: bold;
+  --section-title-font-size: 1.1rem;
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.05em;
+
+  /* Print link custom properties */
+  --printlink-border: 0;
+  --printlink-background: linear-gradient(
+    180deg,
+    oklch(82% 0.14 130) 0%,
+    var(--xp-start-green) 50%,
+    oklch(61% 0.12 130) 100%
+  );
+  --printlink-color: var(--color-white);
+  --printlink-font-weight: bold;
+  --printlink-border-radius: 20px;
+  --printlink-padding: 0.6rem var(--spacing-lg);
+  --printlink-box-shadow: var(--xp-button-shadow-hover);
+  --printlink-text-shadow: 1px 1px 2px var(--xp-black-30);
+  --printlink-transition: all 0.15s ease;
+  --printlink-hover-background: linear-gradient(
+    180deg,
+    oklch(88% 0.15 130) 0%,
+    oklch(82% 0.14 130) 50%,
+    oklch(68% 0.13 130) 100%
+  );
+  --printlink-hover-transform: translateY(-1px);
+  --printlink-hover-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-60),
+    0 4px 8px var(--xp-black-30);
+  --printlink-active-transform: translateY(0);
+  --printlink-active-box-shadow: var(--xp-button-shadow-pressed);
+  --printlink-before-content: '▶';
+  --printlink-before-display: inline-block;
+  --printlink-before-margin-inline-start: 8px;
+  --printlink-before-font-size: 0.7em;
+  --printlink-before-transform: rotate(90deg);
+
+  /* Education item custom properties */
+  --education-item-border: 0;
+  --education-item-background: var(--section-bg);
+  --education-item-border-radius: var(--xp-radius-sm);
+  --education-item-box-shadow: var(--xp-panel-shadow);
+  --education-item-padding: 1rem;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: 1.05rem;
+
+  /* Experience bullets custom properties */
+  --experience-bullets-li-line-height: 1.6;
+  --bullet-before-content: '■';
+  --bullet-color: var(--xp-start-green);
+  --bullet-font-size: 0.6rem;
+
+  --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  --border-color: var(--color-blue-dark);
+  --dial-color-selection: var(--color-green-xp);
+  --dial-color-indicator: var(--color-green-xp);
+  --accent-color: var(--color-green-xp);
+  --section-title-color: var(--color-white);
+  --xp-window-border-block-start: var(--color-blue-dark);
+  --xp-window-title-start: var(--color-blue-dark);
+  --xp-window-title-end: oklch(60% 0.2 245);
+  --xp-start-green: var(--color-green-xp);
+  --xp-radius-sm: 4px;
+  --xp-radius-md: 6px;
+  --xp-radius-lg: 8px;
+
+  /* Consolidated XP shadows and borders */
+  --xp-button-shadow-raised: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+    inset -1px -1px 0 var(--xp-button-shadow);
+  --xp-button-shadow-hover: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
+    0 3px 6px var(--xp-black-30);
+  --xp-button-shadow-pressed: 0 0 0 1px var(--xp-black-30), inset 1px 1px 3px var(--xp-black-30),
+    0 2px 4px var(--xp-black-20);
+  --xp-title-shadow: inset 0 1px 0 var(--xp-white-30);
+
+  /* Main container custom properties */
+  --main-border-width: 0;
+  --main-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
+  --main-box-shadow: 0 0 0 3px var(--xp-window-border-block-start), 0 4px 8px var(--xp-black-30),
+    0 8px 16px var(--xp-black-20);
+  --resume-main-background: var(--xp-button-face);
+  --main-padding: 2.5rem 2.25rem;
+  --main-position: relative;
+
+  /* Header border radius matches main container */
+  --header-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
+}

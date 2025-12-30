@@ -5,7 +5,7 @@ Responsive Layout
 /* Always have room to breathe */
 @media (max-width: 960px) {
   .resume__main {
-    margin: 1rem;
+    margin: var(--main-margin-responsive-960, 1rem);
   }
 
   .resume-section__content {

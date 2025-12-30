@@ -1,0 +1,50 @@
+/* ===========================
+Base Styles - Scrollbar
+=========================== */
+
+/**
+ * Scrollbar styling for webkit browsers (Chrome, Safari, Edge)
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - ::-webkit-scrollbar (scrollbar track container)
+ *   - ::-webkit-scrollbar-track (scrollbar track)
+ *   - ::-webkit-scrollbar-thumb (scrollbar thumb/handle)
+ *   - ::-webkit-scrollbar-button (scrollbar arrow buttons)
+ *
+ * DEPENDENCIES:
+ *   - variables-layout.css (defines --scrollbar-* custom properties)
+ *
+ * USAGE:
+ *   Themes can override scrollbar appearance by setting custom properties:
+ *   --scrollbar-width, --scrollbar-height
+ *   --scrollbar-track-background, --scrollbar-track-border
+ *   --scrollbar-thumb-background, --scrollbar-thumb-border, --scrollbar-thumb-hover-background
+ *   --scrollbar-button-background, --scrollbar-button-border, --scrollbar-button-height, --scrollbar-button-width
+ */
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-height);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-background);
+  border: var(--scrollbar-track-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-background);
+  border: var(--scrollbar-thumb-border);
+
+  &:hover {
+    background: var(--scrollbar-thumb-hover-background);
+  }
+}
+
+::-webkit-scrollbar-button {
+  background: var(--scrollbar-button-background);
+  border: var(--scrollbar-button-border);
+  height: var(--scrollbar-button-height);
+  width: var(--scrollbar-button-width);
+}
+

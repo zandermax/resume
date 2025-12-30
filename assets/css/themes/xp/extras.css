@@ -1,0 +1,383 @@
+/* ===========================
+XP Theme - Extras
+=========================== */
+
+/* Main XP theme styles */
+body[data-theme='xp'] {
+  background-image: var(--background-image);
+
+  /* Skills grid */
+
+  /* List containers */
+  .community-list__item,
+  .principles-list__item {
+    border-block-start: 1px solid oklch(90% 0 0);
+
+    &:first-child {
+      border-block-start: 0;
+    }
+  }
+
+  /* Experience items */
+  .experience-item {
+    &:first-of-type {
+      border-block-start: 0;
+    }
+  }
+
+  /* Dial selector - 3D XP styling controlled by custom properties */
+  dial-selector {
+    .knob {
+      border: var(--dial-knob-border);
+      box-shadow: var(--dial-knob-box-shadow);
+      background: var(--ds-knob-background);
+    }
+
+    .spoke-line {
+      stroke-width: var(--ds-line-width);
+    }
+  }
+
+  .resume-header__top-row {
+    @media (max-width: 500px) {
+      margin-block-start: 2rem;
+    }
+  }
+
+  .resume-header__dial-selector {
+    padding: 1rem;
+    background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(90% 0 0) 100%);
+    border-radius: var(--xp-radius-md);
+    box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
+      inset -1px -1px 2px var(--xp-black-15);
+
+    h3 {
+      color: var(--dial-selector-label-color, var(--text-color));
+      margin-block-end: 0.75rem;
+      font-weight: bold;
+    }
+  }
+
+  /* Links */
+  .resume-header a {
+    text-decoration: none;
+    border-block-end: 1px solid var(--link-color);
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--link-hover-color);
+      border-block-end-color: var(--link-hover-border-block-end-color);
+    }
+
+    &:visited {
+      border-block-end-color: var(--link-visited-color);
+    }
+  }
+
+  /* Header and text styling */
+
+  /* XP Desktop Icon */
+  .xp-desktop-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.15s;
+    z-index: 10000;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      background: var(--xp-white-20);
+      outline: 1px dotted var(--xp-white-80);
+    }
+
+    &:active {
+      background: var(--xp-white-30);
+    }
+  }
+
+  .xp-desktop-icon__image {
+    font-size: 48px;
+    line-height: 1;
+    margin-block-end: 4px;
+    filter: drop-shadow(1px 1px 2px var(--xp-black-50));
+  }
+
+  .xp-desktop-icon__label {
+    font-size: 11px;
+    color: var(--color-white);
+    text-shadow: 1px 1px 2px var(--xp-black-50);
+    font-weight: normal;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  /* Light mode overrides */
+  &[data-mode='light'] {
+    .skills-grid__title,
+    h1.resume-header__name,
+    .resume-header__name-greeting,
+    .resume-header__name-small {
+      color: var(--xp-window-border-block-start);
+    }
+  }
+
+  /* Dark mode overrides */
+  &[data-mode='dark'] {
+    dial-selector {
+      .dial-label,
+      .dial-label:hover {
+        color: var(--color-black);
+      }
+
+      .spoke-line {
+        stroke: var(--color-black);
+      }
+    }
+
+    /* XP Dialog dark mode overrides */
+    .xp-dialog {
+      background: oklch(42% 0.08 250);
+    }
+
+    .xp-dialog__message {
+      color: var(--color-white);
+    }
+
+    .xp-dialog__button {
+      background: linear-gradient(180deg, oklch(55% 0.1 245) 0%, oklch(42% 0.08 250) 100%);
+      border-color: oklch(30% 0.06 250) oklch(30% 0.06 250) oklch(17% 0.08 250) oklch(17% 0.08 250);
+      color: var(--color-white);
+
+      &:hover {
+        background: linear-gradient(180deg, oklch(60% 0.12 245) 0%, oklch(47% 0.1 250) 100%);
+      }
+
+      &:active {
+        background: linear-gradient(180deg, oklch(42% 0.08 250) 0%, oklch(55% 0.1 245) 100%);
+      }
+    }
+  }
+
+  /* XP Close Button */
+  .xp-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(180deg, oklch(65% 0.22 29) 0%, oklch(59% 0.2 29) 50%, oklch(54% 0.18 29) 100%);
+    border-radius: 3px;
+    border: 1px solid var(--xp-white-30);
+    box-shadow: 0 1px 2px var(--xp-black-30), inset 0 1px 0 var(--xp-white-40);
+    color: var(--color-white);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+    font-family: 'Tahoma', sans-serif;
+    cursor: pointer;
+    z-index: 999;
+    padding: 0;
+    transition: background 0.1s;
+    animation: xp-close-attention 4s ease-in-out 0.5s infinite;
+
+    &:hover {
+      background: linear-gradient(180deg, oklch(68% 0.24 29) 0%, oklch(62% 0.22 29) 50%, oklch(57% 0.2 29) 100%);
+    }
+
+    &:active {
+      background: linear-gradient(180deg, oklch(54% 0.18 29) 0%, oklch(59% 0.2 29) 50%, oklch(65% 0.22 29) 100%);
+      box-shadow: 0 0 2px var(--xp-black-30), inset 0 1px 2px var(--xp-black-40);
+    }
+
+    /* Ghost pulse rings */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border: 4px solid oklch(65% 0.22 29);
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    &::before {
+      animation: xp-ghost-pulse 3s ease-out 0.5s infinite;
+    }
+
+    &::after {
+      animation: xp-ghost-pulse 3s ease-out 0.8s infinite;
+    }
+
+    @media (max-width: 500px) {
+      top: 3px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+}
+
+/* XP Dialog Toggle Checkbox - hidden but functional */
+.xp-dialog-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* XP Dialog Overlay - hidden by default */
+.xp-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--xp-black-30);
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Show overlay when checkbox is checked */
+.xp-dialog-toggle:checked ~ .xp-dialog-overlay {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* XP Dialog - styled as a window */
+.xp-dialog {
+  background: var(--xp-button-face, oklch(93% 0.01 85));
+  border: 3px solid;
+  border-color: var(--xp-white-60) oklch(51% 0.01 85 / 0.6) oklch(51% 0.01 85 / 0.6) var(--xp-white-60);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--xp-black-40);
+  width: 400px;
+  max-width: 90vw;
+  overflow: hidden;
+  padding: 0;
+  font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+
+/* Animate dialog when visible */
+.xp-dialog-toggle:checked ~ .xp-dialog-overlay .xp-dialog {
+  transform: scale(1);
+}
+
+.xp-dialog__title {
+  background: linear-gradient(180deg, var(--xp-window-title-start) 0%, var(--xp-window-title-end) 100%);
+  color: var(--color-white);
+  padding: 4px 8px;
+  font-weight: bold;
+  box-shadow: var(--xp-title-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xp-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(180deg, oklch(65% 0.22 29) 0%, oklch(59% 0.2 29) 50%, oklch(54% 0.18 29) 100%);
+  border-radius: 2px;
+  border: 1px solid var(--xp-white-30);
+  box-shadow: 0 1px 1px var(--xp-black-30), inset 0 1px 0 var(--xp-white-40);
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 14px;
+  text-align: center;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.1s;
+
+  &:hover {
+    background: linear-gradient(180deg, oklch(68% 0.24 29) 0%, oklch(62% 0.22 29) 50%, oklch(57% 0.2 29) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, oklch(54% 0.18 29) 0%, oklch(59% 0.2 29) 50%, oklch(65% 0.22 29) 100%);
+    box-shadow: 0 0 1px var(--xp-black-30), inset 0 1px 1px var(--xp-black-40);
+  }
+}
+
+.xp-dialog__content {
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.xp-dialog__icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.xp-dialog__message {
+  margin: 0;
+  color: var(--color-black);
+  padding-block-start: 4px;
+}
+
+.xp-dialog__buttons {
+  padding: 0 16px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.xp-dialog__button {
+  display: inline-block;
+  padding: 4px 16px;
+  font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
+  background: linear-gradient(180deg, oklch(100% 0 0) 0%, oklch(93% 0.01 85) 100%);
+  border: 1px solid;
+  border-color: oklch(51% 0.01 85) oklch(51% 0.01 85) oklch(0% 0 0) oklch(0% 0 0);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 var(--xp-white-60);
+  cursor: pointer;
+  min-width: 75px;
+  transition: background 0.1s;
+  text-align: center;
+
+  &:hover {
+    background: linear-gradient(180deg, oklch(100% 0 0) 0%, oklch(95% 0.01 85) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(180deg, oklch(93% 0.01 85) 0%, oklch(100% 0 0) 100%);
+    box-shadow: inset 0 1px 2px var(--xp-black-20);
+  }
+}
+
+.xp-dialog__button--yes {
+  border: 2px solid oklch(0% 0 0);
+  padding: 3px 15px;
+}
