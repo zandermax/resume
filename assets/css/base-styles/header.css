@@ -78,6 +78,7 @@
 /* === HEADER TOP ROW === */
 
 .resume-header__top-row {
+  margin-block-start: var(--header-top-row-margin-block-start, 0);
   margin-block-end: var(--header-top-row-margin-block-end);
 }
 

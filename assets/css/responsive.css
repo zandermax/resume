@@ -16,7 +16,7 @@ Responsive Layout
 @media (max-width: 768px) {
   .resume__main {
     padding: var(--main-padding-responsive-768, 1.5rem 1.25rem);
-    border-width: 3px;
+    border-width: var(--main-border-width-responsive-768, 3px);
   }
 
   .resume-header {

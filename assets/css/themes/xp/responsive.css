@@ -5,6 +5,7 @@ XP Theme - Responsive
 /* Responsive adjustments */
 body[data-theme='xp'] {
   --main-padding-responsive-500: 0;
+  --main-border-width-responsive-768: 0;
 
   @media (max-width: 768px) {
     --header-margin-inline: 1.25rem;
@@ -22,6 +23,7 @@ body[data-theme='xp'] {
     --header-margin-inline: 1rem;
     --section-margin-inline: 1rem;
     --header-name-font-size: 1.7rem;
+    --header-top-row-margin-block-start: 2rem;
     --printlink-font-size: 0.75rem;
     --printlink-padding: 0.5rem 1.2rem;
   }

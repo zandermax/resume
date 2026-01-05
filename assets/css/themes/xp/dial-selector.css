@@ -7,7 +7,7 @@ XP Theme - Dial Selector
     /* Dial selector knob (XP specific 3D effect) */
     --ds-knob-border-radius: 50%;
     --ds-knob-border: 3px solid var(--xp-button-shadow);
-    --dial-knob-box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
+    --ds-knob-box-shadow: 0 4px 8px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-50),
       inset 0 0 20px var(--xp-white-20);
 
     /* Dial selector indicator (XP specific 3D effect) */

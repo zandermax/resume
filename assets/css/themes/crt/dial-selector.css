@@ -28,8 +28,7 @@ CRT Theme - Dial Selector Styles
   dial-selector {
     /* Knob */
     --ds-knob-border: 2px;
-    --ds-knob-box-shadow: var(--dial-knob-box-shadow);
-    --dial-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+    --ds-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
 
     /* Indicator */
     --ds-indicator-box-shadow: 0 0 10px currentColor;

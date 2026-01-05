@@ -31,4 +31,6 @@ XP Theme - Light Mode
   --education-item-background: white;
   --education-institution-color: var(--xp-window-border-block-start);
   --experience-role-color: var(--xp-window-border-block-start);
+  --skills-title-color: var(--xp-window-border-block-start);
+  --header-name-color: var(--xp-window-border-block-start);
 }

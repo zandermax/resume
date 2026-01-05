@@ -119,6 +119,16 @@ XP Theme - Common Variables
   --skills-grid-box-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-button-highlight),
     inset -1px -1px 0 var(--xp-button-dark-shadow);
 
+  /* Dial selector housing custom properties */
+  --dial-selector-housing-padding: 1rem;
+  --dial-selector-housing-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(90% 0 0) 100%);
+  --dial-selector-housing-border-radius: var(--xp-radius-md);
+  --dial-selector-housing-box-shadow: inset 0 0 0 1px var(--xp-button-shadow),
+    inset 1px 1px 0 var(--xp-button-highlight), inset -1px -1px 2px var(--xp-black-15);
+  --dial-selector-housing-h3-color: var(--dial-selector-label-color, var(--text-color));
+  --dial-selector-housing-h3-margin-block-end: 0.75rem;
+  --dial-selector-housing-h3-font-weight: bold;
+
   /* List container custom properties */
   --list-border: 0;
   --list-background: var(--section-bg);
@@ -227,6 +237,13 @@ XP Theme - Common Variables
   --xp-radius-sm: 4px;
   --xp-radius-md: 6px;
   --xp-radius-lg: 8px;
+
+  /* Link styles */
+  --link-text-decoration: none;
+  --link-border-block-end: 1px solid;
+  --link-border-block-end-color: var(--link-color);
+  --link-transition: color 0.15s ease;
+  --link-visited-border-block-end-color: var(--link-visited-color);
 
   /* Consolidated XP shadows and borders */
   --xp-button-shadow-raised: 0 0 0 1px var(--xp-button-dark-shadow), inset 1px 1px 0 var(--xp-button-highlight),
