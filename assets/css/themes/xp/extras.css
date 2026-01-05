@@ -4,8 +4,6 @@ XP Theme - Extras
 
 /* Main XP theme styles */
 body[data-theme='xp'] {
-  background-image: var(--background-image);
-
   /* Skills grid */
 
   /* List containers */
