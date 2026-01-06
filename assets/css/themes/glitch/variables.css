@@ -1,0 +1,420 @@
+/* ===========================
+2039 GLITCH Theme - CSS Variables
+Common properties for all modes
+=========================== */
+
+:root[data-theme='glitch'] {
+  --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --background-image: none;
+
+  /* Glitch colors - converted to oklch */
+  --glitch-primary: oklch(62.8% 0.258 29.2); /* #ff0000 red */
+  --glitch-secondary: oklch(91.1% 0.139 195.7); /* #00ffff cyan */
+  --glitch-tertiary: oklch(45.2% 0.313 264.1); /* #0000ff blue */
+  --dial-color-indicator: var(--glitch-primary);
+
+  /* Glitch effect CSS variables */
+  --glitch-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-sm: 2px 2px 0 0 var(--glitch-tertiary), -1px -1px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-md: 3px 3px 0 0 var(--glitch-secondary), -2px -2px 0 0 var(--glitch-primary);
+  --glitch-box-shadow-list: 2px 2px 0 0 var(--glitch-primary), -1px -1px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-header: 3px 0 0 0 var(--glitch-secondary), -2px 0 0 0 var(--glitch-tertiary);
+  --glitch-box-shadow-dial: 2px 2px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+  --glitch-box-shadow-section: 4px 0 0 0 var(--glitch-primary), -4px 0 0 0 var(--glitch-secondary);
+  --glitch-text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
+  --glitch-text-shadow-sm: 1px 0 var(--glitch-primary), -1px 0 var(--glitch-secondary);
+  --glitch-text-shadow-alt: 1px 0 var(--glitch-secondary), -1px 0 var(--glitch-primary);
+
+  /* Spacing variables */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border widths */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 3px;
+  --border-width-xl: 4px;
+  --border-width-xxl: 5px;
+  --border-width-accent: 6px;
+
+  /* Font sizes */
+  --font-size-xs: 0.85rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.4rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-hero: 3rem;
+
+  /* Filter effects */
+  --filter-contrast-base: contrast(1.1);
+  --filter-contrast-mid: contrast(1.15);
+  --filter-contrast-high: contrast(1.2);
+
+  /* Opacity levels */
+  --opacity-low: 0.3;
+  --opacity-mid: 0.4;
+
+  /* Transform values */
+  --skew-subtle: -0.3deg;
+  --skew-light: 0.2deg;
+  --skew-medium: -0.5deg;
+
+  /* Animation durations */
+  --duration-fast: 3s;
+  --duration-medium: 14s;
+  --duration-slow: 16s;
+  --duration-slower: 18s;
+  --duration-slowest: 20s;
+
+  /* Main container custom properties */
+  --main-border-width: var(--border-width-lg);
+  --main-border-style: solid;
+  --resume-main-background: var(--section-bg);
+  --main-padding: var(--spacing-xl);
+  --main-position: relative;
+  --main-overflow: visible;
+  --main-transform: skewX(var(--skew-subtle));
+  --main-filter: var(--filter-contrast-mid) saturate(1.2);
+  --resume-main-animation: main-tilt-glitch var(--duration-fast) infinite;
+
+  /* Section custom properties */
+  --section-padding: var(--spacing-xl);
+  --section-margin-block-end: var(--spacing-lg);
+  --resume-section-position: relative;
+  --resume-section-z-index: 2;
+
+  /* Experience item custom properties */
+  --experience-item-border: var(--border-width-md) solid var(--border-color);
+  --experience-item-background: var(--section-bg);
+  --experience-item-padding: var(--spacing-xl);
+  --experience-item-margin-top: var(--spacing-lg);
+  --experience-item-transform: skewX(var(--skew-light)) rotate(0.1deg);
+  --experience-item-nth-2n-transform: skewX(-0.25deg) rotate(-0.15deg) translateY(1px);
+  --experience-item-box-shadow: var(--glitch-box-shadow);
+  --experience-item-filter: var(--filter-contrast-base);
+  --experience-item-hover-filter: var(--filter-contrast-high);
+
+  /* Experience item ::before - horizontal artifact line */
+  --experience-item-before-content: '';
+  --experience-item-before-position: absolute;
+  --experience-item-before-left: 0;
+  --experience-item-before-right: 0;
+  --experience-item-before-top: 10%;
+  --experience-item-before-height: var(--border-width-md);
+  --experience-item-before-background: var(--glitch-tertiary);
+  --experience-item-before-opacity: var(--opacity-low);
+
+  /* Education item custom properties */
+  --education-item-border: var(--border-width-md) solid var(--border-color);
+  --education-item-background: var(--section-bg);
+  --education-item-position: relative;
+  --education-item-padding: var(--spacing-xl);
+
+  /* Skills grid group custom properties */
+  --skills-group-border: var(--border-width-md) solid var(--border-color);
+  --skills-group-background: var(--section-bg);
+  --skills-group-padding: var(--spacing-md);
+  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
+  --skills-group-animation: pixel-drift var(--duration-slow) infinite steps(1, jump-end);
+  --skills-group-contain: layout;
+  --skills-group-will-change: transform;
+
+  /* Skills grid title custom properties */
+  --skills-title-font-weight: 700;
+  --skills-title-font-size: var(--font-size-md);
+  --skills-title-color: var(--text-color);
+  --skills-title-text-shadow: var(--glitch-text-shadow-sm);
+  --skills-title-border-style: solid;
+  --skills-title-border-width: var(--border-width-md);
+  --skills-title-padding-bottom: var(--spacing-xs);
+  --skills-title-margin-bottom: var(--spacing-sm);
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: var(--font-size-xxl);
+  --experience-role-font-weight: 700;
+  --experience-role-margin-block-end: var(--spacing-xs);
+  --experience-role-text-shadow: var(--glitch-text-shadow);
+
+  /* Experience item company custom properties */
+  --experience-company-font-weight: 600;
+  --experience-company-font-size: var(--font-size-md);
+
+  /* Tech badge custom properties */
+  --tech-badge-border: var(--border-width-md) solid var(--border-color);
+  --tech-badge-background: var(--background-color);
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: 600;
+  --tech-badge-padding: 0.4rem 0.9rem;
+  --tech-badge-font-size: var(--font-size-xs);
+  --tech-badge-box-shadow: var(--glitch-box-shadow-sm);
+  --tech-badge-text-shadow: var(--glitch-text-shadow-sm);
+  --tech-badge-filter: var(--filter-contrast-base);
+  --tech-badge-hover-filter: invert(1);
+  --tech-badge-contain: layout;
+
+  /* Header meta custom properties */
+  --header-meta-text-shadow: var(--glitch-text-shadow-sm);
+  --header-meta-filter: var(--filter-contrast-base);
+
+  /* Header custom properties */
+  --header-border: var(--border-width-md) solid var(--border-color);
+  --header-border-block-end-width: var(--border-width-xxl);
+  --header-background: var(--header-background);
+  --header-padding: var(--spacing-xl);
+  --header-margin-block-end: var(--spacing-xl);
+  --header-position: relative;
+  --header-transform: skewX(var(--skew-light));
+  --header-box-shadow: var(--glitch-box-shadow-header);
+
+  /* Header link custom properties */
+  --header-a-text-decoration: underline;
+  --header-a-text-decoration-style: solid;
+  --header-a-text-decoration-color: var(--text-color);
+  --header-a-transition: all 0.2s ease;
+  --header-a-position: relative;
+  --header-a-text-shadow: var(--glitch-text-shadow-sm);
+  --header-a-hover-text-decoration: none;
+  --header-a-hover-filter: invert(1);
+  --header-a-hover-padding: 2px 4px;
+  --header-a-visited-opacity: 0.7;
+
+  /* Header name custom properties */
+  --header-name-font-size: var(--font-size-hero);
+  --header-name-font-weight: 700;
+  --header-name-margin-block-end: var(--spacing-xs);
+  --header-name-text-shadow: var(--glitch-text-shadow);
+  --header-name-animation: text-glitch var(--duration-slowest) infinite;
+  --header-name-will-change: transform, text-shadow;
+
+  /* Print link custom properties */
+  --printlink-border: var(--border-width-lg) solid var(--border-color);
+  --printlink-background: var(--background-color);
+  --printlink-color: var(--text-color);
+  --printlink-font-weight: 700;
+  --printlink-padding: var(--spacing-md) var(--spacing-xl);
+  --printlink-text-transform: uppercase;
+  --printlink-font-size: var(--font-size-base);
+  --printlink-letter-spacing: 0.1em;
+  --printlink-text-decoration: none;
+  --printlink-transform: skewX(-3deg);
+  --printlink-box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
+  --printlink-filter: var(--filter-contrast-base);
+  --printlink-text-shadow: var(--glitch-text-shadow);
+  --printlink-hover-filter: invert(1);
+  --printlink-hover-transform: skewX(3deg);
+  --printlink-before-content: '⚠';
+  --printlink-before-display: inline;
+  --printlink-before-margin-inline-end: 1em;
+  --printlink-after-content: '⚠';
+  --printlink-after-display: inline;
+  --printlink-after-margin-inline-start: 1em;
+
+  /* Skills grid custom properties */
+  --skills-grid-border: var(--border-width-md) solid var(--border-color);
+  --skills-grid-background: var(--section-bg);
+  --skills-grid-padding: var(--spacing-lg);
+  --skills-grid-transform: skewX(-0.15deg);
+  --skills-grid-box-shadow: -3px 3px 0 0 var(--glitch-primary), 3px -3px 0 0 var(--glitch-secondary);
+
+  /* List container custom properties (used by community-list and principles-list) */
+  --list-border: var(--border-width-md) solid var(--border-color);
+  --list-background: var(--section-bg);
+  --list-padding: var(--spacing-lg);
+  --list-position: relative;
+
+  /* Resume header dial-selector custom properties */
+  --dial-selector-housing-border: var(--border-width-md) solid var(--border-color);
+  --dial-selector-housing-background: var(--section-bg);
+  --dial-selector-housing-padding: var(--spacing-lg);
+  --dial-selector-housing-position: relative;
+  --dial-selector-housing-box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
+  --dial-selector-housing-h3-color: var(--text-color);
+  --dial-selector-housing-h3-margin-block-end: var(--spacing-md);
+  --dial-selector-housing-h3-font-weight: 700;
+  --dial-selector-housing-h3-font-size: var(--font-size-md);
+  --dial-selector-housing-h3-text-transform: uppercase;
+  --dial-selector-housing-h3-letter-spacing: 0.1em;
+
+  /* Section title custom properties */
+  --section-title-background: var(--section-bg);
+  --section-title-color: var(--text-color);
+  --section-title-border: var(--border-width-md) solid var(--border-color);
+  --section-title-padding: var(--spacing-sm) var(--spacing-lg);
+  --section-title-margin: var(--spacing-lg) 0;
+  --section-title-font-weight: 700;
+  --section-title-font-size: var(--font-size-xl);
+  --section-title-text-transform: uppercase;
+  --section-title-letter-spacing: 0.15em;
+  --section-title-transform: skewX(var(--skew-medium));
+  --section-title-border-inline-start: var(--border-width-accent) solid var(--glitch-primary);
+  --section-title-box-shadow: 5px 0 0 -2px var(--glitch-secondary), -3px 0 0 -1px var(--glitch-tertiary);
+  --section-title-animation: text-glitch var(--duration-slow) infinite;
+  --section-title-contain: layout;
+  --section-title-will-change: transform, text-shadow;
+
+  /* Header role custom properties */
+  --header-role-font-size: var(--font-size-lg);
+  --header-role-text-shadow: var(--glitch-text-shadow);
+
+  /* Education institution custom properties */
+  --education-institution-font-size: var(--font-size-xxl);
+  --education-institution-font-weight: 700;
+  --education-institution-color: var(--text-color);
+  --education-institution-margin-block-end: var(--spacing-xs);
+  --education-institution-text-shadow: var(--glitch-text-shadow);
+
+  /* Experience bullets custom properties */
+  --bullet-before-content: '◆';
+  --bullet-color: var(--text-color);
+  --bullet-font-size: var(--font-size-sm);
+  --bullet-text-shadow: var(--glitch-text-shadow-sm);
+
+  /* Community/Principles list item custom properties */
+  --community-item-padding: var(--spacing-md);
+  --community-item-margin-bottom: var(--spacing-sm);
+  --community-item-background: var(--section-bg);
+  --community-item-border: var(--border-width-sm) solid var(--border-color);
+  --community-item-border-width: var(--border-width-sm);
+  --community-item-border-style: solid;
+  --community-item-position: relative;
+  --community-item-box-shadow: var(--glitch-box-shadow-list);
+  --principles-item-padding: var(--spacing-md);
+  --principles-item-margin-bottom: var(--spacing-sm);
+  --principles-item-background: var(--section-bg);
+  --principles-item-border: var(--border-width-sm) solid var(--border-color);
+  --principles-item-border-width: var(--border-width-sm);
+  --principles-item-border-style: solid;
+  --principles-item-position: relative;
+  --principles-item-box-shadow: var(--glitch-box-shadow-list);
+
+  /* Body letter-spacing */
+  --body-letter-spacing: 0.03em;
+
+  /* Body ::before - global scan line overlay */
+  --body-before-content: '';
+  --body-before-display: block;
+  --body-before-position: fixed;
+  --body-before-inset: 0;
+  --body-before-background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    oklch(0% 0 0 / 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  --body-before-pointer-events: none;
+  --body-before-z-index: 9999;
+
+  /* Resume main ::after - compression artifact overlay */
+  --resume-main-after-content: '';
+  --resume-main-after-position: absolute;
+  --resume-main-after-inset: 0;
+  --resume-main-after-background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      var(--glitch-primary) 8px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(0deg, transparent 0px, var(--glitch-secondary) 8px, transparent 16px);
+  --resume-main-after-pointer-events: none;
+  --resume-main-after-z-index: 1;
+  --resume-main-after-opacity: 0.03;
+
+  /* Resume header ::before - corrupted border effect */
+  --resume-header-before-content: '';
+  --resume-header-before-position: absolute;
+  --resume-header-before-top: calc(-1 * var(--border-width-md));
+  --resume-header-before-left: 10%;
+  --resume-header-before-width: 30%;
+  --resume-header-before-height: var(--border-width-xl);
+  --resume-header-before-background: var(--glitch-tertiary);
+
+  /* Resume header ::after - corrupted border effect */
+  --resume-header-after-content: '';
+  --resume-header-after-position: absolute;
+  --resume-header-after-bottom: calc(-1 * var(--border-width-xxl));
+  --resume-header-after-right: 20%;
+  --resume-header-after-width: 40%;
+  --resume-header-after-height: var(--border-width-lg);
+  --resume-header-after-background: var(--glitch-secondary);
+
+  /* Section title ::after - glitch artifact */
+  --section-title-after-content: '';
+  --section-title-after-display: block;
+  --section-title-after-position: absolute;
+  --section-title-after-right: -5px;
+  --section-title-after-top: 50%;
+  --section-title-after-width: 20px;
+  --section-title-after-height: var(--border-width-lg);
+  --section-title-after-background: var(--glitch-secondary);
+  --section-title-after-animation: pixel-drift 6s infinite steps(1, jump-end);
+  --section-title-after-will-change: transform;
+
+  /* Experience item ::after - horizontal artifact */
+  --experience-item-after-content: '';
+  --experience-item-after-position: absolute;
+  --experience-item-after-bottom: 20%;
+  --experience-item-after-left: 0;
+  --experience-item-after-right: 0;
+  --experience-item-after-height: var(--border-width-sm);
+  --experience-item-after-background: var(--glitch-secondary);
+  --experience-item-after-opacity: var(--opacity-mid);
+  --experience-item-after-animation: h-displace var(--duration-slow) infinite reverse;
+  --experience-item-after-will-change: transform, opacity;
+
+  /* Dial selector housing ::before - artifact line */
+  --dial-selector-housing-before-content: '';
+  --dial-selector-housing-before-position: absolute;
+  --dial-selector-housing-before-height: var(--border-width-md);
+  --dial-selector-housing-before-background: var(--glitch-tertiary);
+  --dial-selector-housing-before-top: 50%;
+  --dial-selector-housing-before-left: 0;
+  --dial-selector-housing-before-right: 0;
+  --dial-selector-housing-before-opacity: var(--opacity-low);
+  --dial-selector-housing-before-animation: h-displace 10s infinite;
+  --dial-selector-housing-before-will-change: transform, opacity;
+
+  /* Skills grid ::before - vertical artifact pattern */
+  --skills-grid-before-content: '';
+  --skills-grid-before-display: block;
+  --skills-grid-before-position: absolute;
+  --skills-grid-before-inset: 0 60% 0 30%;
+  --skills-grid-before-background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    var(--glitch-primary) 1px,
+    transparent 2px,
+    transparent 3px,
+    var(--glitch-secondary) 4px,
+    transparent 5px
+  );
+  --skills-grid-before-pointer-events: none;
+  --skills-grid-before-opacity: 0.05;
+
+  /* List item hover filter */
+  --list-item-hover-filter: invert(1);
+
+  /* ===========================
+     COMPONENT OVERRIDES
+     =========================== */
+
+  /* Lists */
+  --list-box-shadow: var(--glitch-box-shadow-section);
+  --community-item-border-inline-start: var(--border-width-xl) solid var(--border-color);
+  --principles-item-border-inline-start: var(--border-width-xl) solid var(--border-color);
+
+  /* Education items */
+  --education-item-transform: skewX(-0.25deg) rotate(-0.2deg);
+  --education-item-box-shadow: var(--glitch-box-shadow-md);
+  --education-item-nth-even-transform: skewX(0.3deg) rotate(0.15deg) translateX(1px);
+
+  /* Bullet points */
+  --bullet-before-content-alternate: '◇';
+  --bullet-text-shadow-alternate: var(--glitch-text-shadow-alt);
+}

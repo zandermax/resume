@@ -178,8 +178,10 @@
 
   /* === BULLET POINTS === */
   --bullet-before-content: '•';
+  --bullet-before-content-alternate: inherit; /* For nth-child(even) bullets - inherits from --bullet-before-content by default */
   --bullet-font-size: 1em;
   --bullet-text-shadow: none;
+  --bullet-text-shadow-alternate: inherit; /* For nth-child(even) bullets - inherits from --bullet-text-shadow by default */
   --bullet-color: inherit;
   --bullet-font-weight: normal;
   --bullet-margin-inline-start: 0;

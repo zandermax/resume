@@ -34,6 +34,8 @@
   --education-item-color: inherit;
   --education-item-position: static;
   --education-item-transition: none;
+  --education-item-transform: none;
+  --education-item-nth-even-transform: inherit; /* For nth-child(even) styling - inherits from --education-item-transform by default */
 
   /* === EDUCATION ITEM PSEUDO-ELEMENTS === */
   --education-item-before-content: none;

@@ -21,4 +21,4 @@ Resume Styles - Modular Import
 @import url('./themes/metro/index.css');
 @import url('./themes/dashboard/index.css');
 @import url('./themes/neo-swiss.css');
-@import url('./themes/glitch.css');
+@import url('./themes/glitch/index.css');

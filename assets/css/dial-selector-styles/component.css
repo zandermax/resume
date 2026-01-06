@@ -4,6 +4,7 @@
 
 dial-selector {
   display: block;
+  position: relative;
   font-family: var(--ds-font-family);
   min-width: var(--ds-component-min-width);
   max-width: var(--ds-component-width);
@@ -16,6 +17,7 @@ dial-selector {
   padding: 0;
   max-width: var(--screen-width-mobile-large); /* Prevent component from getting too wide */
   margin-inline: auto; /* Center when narrower than container */
+  filter: var(--ds-filter, none);
 }
 
 dial-selector * {

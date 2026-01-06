@@ -1,0 +1,93 @@
+/* ===========================
+2039 GLITCH Theme - Dial Selector Styling
+=========================== */
+
+body[data-theme='glitch'] {
+  /* ===========================
+  DIAL SELECTOR
+  =========================== */
+
+  dial-selector {
+    /* Filter effect */
+    --ds-filter: var(--filter-contrast-base);
+
+    /* Indicator */
+    --ds-indicator-border-radius: 0;
+    --ds-indicator-width-override: 14px;
+    --ds-indicator-height-override: 14px;
+    --ds-indicator-gradient: var(--dial-color-indicator);
+    --ds-indicator-border: var(--border-width-normal) solid var(--border-color);
+    --ds-indicator-box-shadow: 0 0 5px var(--glitch-primary), 0 0 10px var(--glitch-secondary);
+    --ds-indicator-animation: pixel-drift 5s infinite steps(1, jump-end);
+    --ds-indicator-will-change: transform;
+
+    /* Knob */
+    --ds-knob-border: var(--border-width-thick) solid var(--border-color);
+    --ds-knob-box-shadow: 0 0 0 var(--border-width-normal) var(--glitch-primary),
+      0 0 0 var(--border-width-extra-thick) var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
+
+    /* Label base styles */
+    --ds-label-background: var(--section-bg);
+    --ds-label-border-width: var(--border-width-normal);
+    --ds-label-border-style: solid;
+    --ds-label-border-color: var(--border-color);
+    --ds-label-padding: 0.4rem var(--spacing-md);
+    --ds-label-font-weight: 600;
+    --ds-label-font-size: var(--font-size-sm);
+    --ds-label-color: var(--text-color);
+    --ds-label-box-shadow: var(--glitch-box-shadow-dial);
+    --ds-label-text-shadow: var(--glitch-text-shadow-sm);
+    --ds-label-animation: pixel-drift var(--duration-fast) infinite steps(1, jump-end);
+    --ds-label-contain: layout;
+    --ds-label-will-change: transform;
+
+    /* Spoke lines */
+    --ds-line-width: var(--border-width-normal);
+    --ds-line-opacity: var(--opacity-low);
+    --ds-line-opacity-alternate: 0.2;
+    --ds-line-stroke: var(--border-color);
+
+    /* Label hover state */
+    --ds-label-hover-filter: none;
+    --ds-label-hover-animation: none;
+    --ds-label-hover-text-shadow: none;
+    --ds-label-hover-transform: none;
+    --ds-label-hover-will-change: auto;
+
+    /* Label active state */
+    --ds-label-active-filter: invert(1);
+    --ds-label-active-span-border-color: var(--border-color);
+    --ds-label-active-span-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
+    --ds-label-active-animation: text-glitch 8s infinite;
+    --ds-label-span-active-font-weight: 700;
+    --ds-label-active-will-change: transform, text-shadow;
+
+    /* Selectors required for nth-child pseudo-classes only */
+    .dial-label {
+      /* Broken misaligned transforms for each label */
+      &:nth-child(1) {
+        transform: skewX(-2deg) rotate(-0.3deg) translateY(-1px);
+      }
+
+      &:nth-child(2) {
+        transform: skewX(1.5deg) rotate(0.5deg) translateY(1px);
+        animation-delay: 1s;
+      }
+
+      &:nth-child(3) {
+        transform: skewX(-0.8deg) rotate(-0.2deg) translateX(1px);
+        animation-delay: 2.5s;
+      }
+
+      &:nth-child(4) {
+        transform: skewX(2deg) rotate(0.4deg) translateY(-1px);
+        animation-delay: 3s;
+      }
+
+      &:nth-child(5) {
+        transform: skewX(-1.2deg) rotate(-0.6deg) translateX(-1px);
+        animation-delay: 1.5s;
+      }
+    }
+  }
+}

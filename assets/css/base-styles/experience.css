@@ -61,6 +61,7 @@
 
   &:nth-of-type(2n) {
     --item-accent-color: var(--theme-accent-2, var(--border-color));
+    transform: var(--experience-item-nth-2n-transform, var(--experience-item-transform, none));
   }
   &:nth-of-type(3n) {
     --item-accent-color: var(--theme-accent-3, var(--border-color));
@@ -82,6 +83,7 @@
     inset: var(--experience-item-before-inset);
     top: var(--experience-item-before-top);
     left: var(--experience-item-before-left);
+    right: var(--experience-item-before-right);
     width: var(--experience-item-before-width);
     height: var(--experience-item-before-height);
     background: var(--experience-item-before-background);
@@ -253,6 +255,11 @@
       color: var(--bullet-color, inherit);
       text-shadow: var(--bullet-text-shadow, none);
       margin-inline-start: var(--bullet-margin-inline-start, 0);
+    }
+
+    &:nth-child(even)::before {
+      content: var(--bullet-before-content-alternate, var(--bullet-before-content, '■'));
+      text-shadow: var(--bullet-text-shadow-alternate, var(--bullet-text-shadow, none));
     }
   }
 }

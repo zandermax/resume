@@ -1,0 +1,539 @@
+/* ===========================
+2039 GLITCH Theme - Keyframe Animations
+=========================== */
+
+/* Screen tear effect - horizontal displacement */
+@keyframes screen-tear {
+  0%,
+  20%,
+  80%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+  5% {
+    clip-path: inset(20% 0 70% 0);
+    transform: translateX(-8px);
+  }
+  10% {
+    clip-path: inset(40% 0 50% 0);
+    transform: translateX(5px);
+  }
+  15% {
+    clip-path: inset(60% 0 30% 0);
+    transform: translateX(-3px);
+  }
+  85% {
+    clip-path: inset(15% 0 75% 0);
+    transform: translateX(6px);
+  }
+  90% {
+    clip-path: inset(50% 0 40% 0);
+    transform: translateX(-4px);
+  }
+}
+
+/* Text glitch effect */
+@keyframes text-glitch {
+  0%,
+  90%,
+  100% {
+    text-shadow: none;
+    transform: translateX(0);
+  }
+  20% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+    transform: translateX(-2px);
+  }
+  40% {
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+    transform: translateX(2px);
+  }
+  60% {
+    text-shadow: -1px 0 #0000ff, 1px 0 #ff0000;
+    transform: translateX(1px);
+  }
+  80% {
+    text-shadow: 1px 0 #00ffff, -1px 0 #0000ff;
+    transform: translateX(-1px);
+  }
+}
+
+/* Color shift filter effect */
+@keyframes color-shift {
+  0%,
+  100% {
+    filter: contrast(1.1);
+  }
+  25% {
+    filter: contrast(1.2);
+  }
+  50% {
+    filter: contrast(1.1);
+  }
+  75% {
+    filter: contrast(1.15);
+  }
+}
+
+/* Pixel drift - random jarring shifts */
+@keyframes pixel-drift {
+  0%,
+  8%,
+  16%,
+  30%,
+  48%,
+  70%,
+  85%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  9% {
+    transform: translateX(2px) translateY(-1px);
+  }
+  17% {
+    transform: translateX(-2px) translateY(1px);
+  }
+  31%,
+  32% {
+    transform: translateX(1px) translateY(0);
+  }
+  49%,
+  50% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  71% {
+    transform: translateX(2px) translateY(1px);
+  }
+  86%,
+  87% {
+    transform: translateX(-2px) translateY(0);
+  }
+}
+
+/* Artifact pulse - compression glitch */
+@keyframes artifact-pulse {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Horizontal displacement glitch - jarring, stepped */
+@keyframes h-displace {
+  0%,
+  78%,
+  79%,
+  85%,
+  100% {
+    transform: translateX(0) scaleX(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-15px) scaleX(0.95);
+    opacity: 0.8;
+  }
+  81% {
+    transform: translateX(12px) scaleX(1.05);
+    opacity: 0.9;
+  }
+  82% {
+    transform: translateX(-8px) scaleX(0.98);
+  }
+  83% {
+    transform: translateX(10px) scaleX(1.02);
+    opacity: 0.7;
+  }
+  84% {
+    transform: translateX(-4px) scaleX(1);
+  }
+}
+
+/* Main content tilt and glitch animation */
+@keyframes main-tilt-glitch {
+  0%,
+  80% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  85% {
+    transform: rotate(0.7deg) skewX(-0.3deg);
+  }
+  95% {
+    transform: rotate(0.7deg) skewX(-0.3deg);
+  }
+  95.1%,
+  100% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+}
+
+/* Main content tilt and glitch animation - mobile variant with reduced rotation */
+@keyframes main-tilt-glitch-mobile {
+  0%,
+  70% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+  75% {
+    transform: rotate(0.3deg) skewX(-0.3deg);
+  }
+  85% {
+    transform: rotate(0.3deg) skewX(-0.3deg);
+  }
+  85.1%,
+  100% {
+    transform: rotate(0deg) skewX(-0.3deg);
+  }
+}
+
+/* Header tilt and glitch animation - different timing and angles */
+@keyframes header-tilt-glitch {
+  0% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  8% {
+    transform: skewX(0.2deg) rotate(-0.6deg);
+  }
+  22% {
+    transform: skewX(0.2deg) rotate(-0.6deg);
+  }
+  22.1% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+  100% {
+    transform: skewX(0.2deg) rotate(0deg);
+  }
+}
+
+/* Skills grid tilt and glitch animation */
+@keyframes skills-tilt-glitch {
+  0% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  5% {
+    transform: skewX(-0.15deg) rotate(0.8deg);
+  }
+  20% {
+    transform: skewX(-0.15deg) rotate(0.8deg);
+  }
+  20.1% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+  100% {
+    transform: skewX(-0.15deg) rotate(0deg);
+  }
+}
+
+/* List containers tilt and glitch animation */
+@keyframes list-tilt-glitch {
+  0% {
+    transform: rotate(0deg);
+  }
+  7% {
+    transform: rotate(-0.7deg);
+  }
+  24% {
+    transform: rotate(-0.7deg);
+  }
+  24.1% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Dial selector container tilt and glitch animation */
+@keyframes dial-selector-tilt-glitch {
+  0% {
+    transform: rotate(0deg);
+  }
+  4% {
+    transform: rotate(0.5deg);
+  }
+  16% {
+    transform: rotate(0.5deg);
+  }
+  16.1% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Alternative jarring glitch - variant 1 */
+@keyframes glitch-shake-1 {
+  0%,
+  82%,
+  100% {
+    transform: translate(0, 0) skewX(0);
+    filter: contrast(1.1);
+  }
+  83% {
+    transform: translate(-8px, 2px) skewX(-2deg);
+    filter: contrast(1.3);
+  }
+  84% {
+    transform: translate(10px, -2px) skewX(2deg);
+    filter: contrast(1.2);
+  }
+  85% {
+    transform: translate(-5px, 1px) skewX(-1deg);
+    filter: contrast(1.15);
+  }
+  86% {
+    transform: translate(0, 0) skewX(0);
+    filter: contrast(1.1);
+  }
+}
+
+/* Alternative jarring glitch - variant 2 */
+@keyframes glitch-shake-2 {
+  0%,
+  75%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    clip-path: inset(0 0 0 0);
+  }
+  76% {
+    transform: translate(5px, -3px) rotate(-1deg);
+    clip-path: inset(10% 0 0 0);
+  }
+  77% {
+    transform: translate(-12px, 2px) rotate(1deg);
+    clip-path: inset(0 0 30% 0);
+  }
+  78% {
+    transform: translate(8px, 0) rotate(-0.5deg);
+    clip-path: inset(50% 0 0 0);
+  }
+  79% {
+    transform: translate(0, 0) rotate(0deg);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Corrupted border flicker */
+@keyframes border-corrupt {
+  0%,
+  90%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  92% {
+    box-shadow: -5px 0 0 0 var(--glitch-primary), 5px 0 0 0 var(--glitch-secondary);
+  }
+  94% {
+    box-shadow: 3px 0 0 0 var(--glitch-tertiary), -3px 0 0 0 var(--glitch-primary);
+  }
+  96% {
+    box-shadow: -2px 0 0 0 var(--glitch-secondary), 2px 0 0 0 var(--glitch-tertiary);
+  }
+}
+
+/* Character glitch animation */
+@keyframes glitch-char {
+  0%,
+  100% {
+    transform: translate(0, 0) skew(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-1px, 1px) skew(1deg);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(1px, -1px) skew(-1deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(-1px, -1px) skew(2deg);
+    opacity: 0.85;
+  }
+  80% {
+    transform: translate(1px, 1px) skew(-2deg);
+    opacity: 0.95;
+  }
+}
+
+/* ===========================
+ANIMATION APPLICATIONS
+Apply animations to elements
+=========================== */
+
+body[data-theme='glitch'] {
+  contain: layout style;
+  /* ===========================
+  HEADER
+  =========================== */
+
+  .resume-header {
+    animation: header-tilt-glitch 15s infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
+  }
+
+  /* ===========================
+  MAIN CONTAINER
+  =========================== */
+
+  .resume__main {
+    animation: var(--resume-main-animation);
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform, filter;
+  }
+
+  /* ===========================
+  EXPERIENCE & EDUCATION ITEMS
+  =========================== */
+
+  .experience-item,
+  .education-item {
+    animation: border-corrupt var(--duration-slow) infinite;
+
+    /* Performance optimizations */
+    contain: layout;
+  }
+
+  .education-item {
+    animation-duration: var(--duration-slower);
+  }
+
+  .experience-item {
+    &:hover {
+      animation: pixel-drift 2s infinite steps(1, jump-end);
+    }
+
+    &::before {
+      animation: h-displace var(--duration-medium) infinite;
+    }
+  }
+
+  /* ===========================
+  TECH BADGES
+  =========================== */
+
+  .experience-item__tech {
+    &:hover {
+      animation: pixel-drift 1s infinite steps(1, jump-end);
+    }
+  }
+
+  /* ===========================
+  SKILLS GRID
+  =========================== */
+
+  .skills-grid {
+    animation: skills-tilt-glitch var(--duration-medium) infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
+  }
+
+  .skills-grid__group {
+    &:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 3s;
+    }
+
+    &:nth-child(n + 5) {
+      animation-delay: 4s;
+    }
+  }
+
+  /* ===========================
+  LISTS
+  =========================== */
+
+  .community-list,
+  .principles-list {
+    animation: list-tilt-glitch var(--duration-slow) infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
+  }
+
+  .community-list__item,
+  .principles-list__item {
+    animation: pixel-drift var(--duration-slower) infinite steps(1, jump-end);
+
+    &:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 3s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 4.5s;
+    }
+
+    &:nth-child(n + 5) {
+      animation-delay: 6s;
+    }
+  }
+
+  /* ===========================
+  DIAL SELECTOR CONTAINER
+  =========================== */
+
+  .resume-header__dial-selector {
+    animation: dial-selector-tilt-glitch var(--duration-slower) infinite;
+
+    /* Performance optimizations */
+    contain: layout paint;
+    will-change: transform;
+  }
+
+  /* ===========================
+  GLITCHABLE TEXT EFFECTS
+  =========================== */
+
+  .glitchable {
+    animation: glitch-char 0.3s infinite;
+
+    &:nth-child(2n) {
+      animation-delay: 0.1s;
+    }
+
+    &:nth-child(3n) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(5n) {
+      animation-delay: 0.15s;
+      animation-duration: 0.4s;
+    }
+  }
+
+  /* ===========================
+  ACCESSIBILITY - REDUCED MOTION
+  =========================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

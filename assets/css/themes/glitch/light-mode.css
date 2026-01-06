@@ -1,0 +1,27 @@
+/* ===========================
+2039 GLITCH Theme - Light Mode
+=========================== */
+
+:root[data-theme='glitch'][data-mode='light'] {
+  /* Base colors */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray-light: oklch(97% 0 0); /* #f5f5f5 */
+  --color-gray-lighter: oklch(98.4% 0 0); /* #fafafa */
+  --color-gray-medium: oklch(95.6% 0 0); /* #f0f0f0 */
+  --color-gray-dark: oklch(23.6% 0 0); /* #333333 */
+
+  /* Theme mappings */
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-black);
+  --ds-knob-background-color: var(--color-gray-light);
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-gray-dark);
+  --section-bg: var(--color-gray-lighter);
+  --header-background: var(--color-gray-medium);
+  --accent-color: var(--color-black);
+}

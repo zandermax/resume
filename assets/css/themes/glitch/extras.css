@@ -1,0 +1,120 @@
+/* ===========================
+2039 GLITCH Theme - Main Styling
+Base theme and component styles
+=========================== */
+
+body[data-theme='glitch'] {
+  /* Structural requirement for absolute positioning of theme effects */
+  position: relative;
+
+  /* Common list items */
+  .community-list__item,
+  .principles-list__item {
+    /* Broken misaligned transforms for list items - theme-specific glitch effect */
+    &:nth-child(1) {
+      transform: skewX(-0.3deg) rotate(-0.1deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(0.4deg) rotate(0.2deg) translateY(1px);
+    }
+
+    &:nth-child(3) {
+      transform: skewX(-0.2deg) rotate(-0.15deg) translateX(1px);
+    }
+
+    &:nth-child(4) {
+      transform: skewX(0.35deg) rotate(0.1deg) translateY(-1px);
+    }
+
+    &:nth-child(n + 5) {
+      transform: skewX(-0.25deg) rotate(-0.2deg);
+    }
+
+    &:hover {
+      transform: translateX(3px);
+    }
+  }
+
+  /* ===========================
+  TECH BADGES
+  =========================== */
+
+  .experience-item__tech {
+    /* Broken misaligned transforms for tech badges */
+    &:nth-child(1) {
+      transform: skewX(-2.5deg) rotate(-0.4deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(2deg) rotate(0.3deg) translateY(1px);
+    }
+
+    &:nth-child(3) {
+      transform: skewX(-1.5deg) rotate(-0.2deg) translateY(-1px);
+    }
+
+    &:nth-child(4) {
+      transform: skewX(1.8deg) rotate(0.5deg);
+    }
+
+    &:nth-child(5) {
+      transform: skewX(-2.2deg) rotate(-0.3deg) translateX(1px);
+    }
+
+    &:nth-child(6) {
+      transform: skewX(1.3deg) rotate(0.4deg) translateY(1px);
+    }
+
+    &:nth-child(7) {
+      transform: skewX(-1.8deg) rotate(-0.5deg);
+    }
+
+    &:nth-child(8) {
+      transform: skewX(2.3deg) rotate(0.2deg) translateX(-1px);
+    }
+
+    &:nth-child(n + 9) {
+      transform: skewX(-1.6deg) rotate(-0.4deg) translateY(1px);
+    }
+  }
+
+  /* ===========================
+  SKILLS GRID
+  =========================== */
+
+  .skills-grid__group {
+    /* Broken misaligned transforms for each group */
+    &:nth-child(1) {
+      transform: skewX(0.5deg) translateX(-2px) rotate(-0.2deg);
+    }
+
+    &:nth-child(2) {
+      transform: skewX(-0.4deg) translateX(1px) rotate(0.3deg);
+    }
+
+    &:nth-child(3) {
+      transform: skewX(0.3deg) translateY(1px) rotate(-0.1deg);
+    }
+
+    &:nth-child(4) {
+      transform: skewX(-0.6deg) translateX(-1px) rotate(0.2deg);
+    }
+
+    &:nth-child(n + 5) {
+      transform: skewX(0.4deg) translateX(2px) rotate(-0.3deg);
+    }
+  }
+
+  /* ===========================
+  GLITCHABLE TEXT EFFECTS
+  =========================== */
+
+  .glitchable {
+    display: inline-block;
+    position: relative;
+    color: var(--text-color);
+    transform-origin: center;
+    text-shadow: var(--glitch-text-shadow);
+  }
+}

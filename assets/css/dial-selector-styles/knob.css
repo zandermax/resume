@@ -62,5 +62,7 @@ dial-selector .indicator {
   transform: rotate(90deg);
   opacity: var(--ds-indicator-opacity);
   filter: var(--ds-indicator-filter);
+  animation: var(--ds-indicator-animation, none);
+  will-change: var(--ds-indicator-will-change, auto);
   -webkit-tap-highlight-color: transparent;
 }

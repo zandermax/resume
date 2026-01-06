@@ -1,0 +1,45 @@
+/* ===========================
+2039 GLITCH Theme - Responsive Adjustments
+Media queries for variable overrides
+=========================== */
+
+@media (max-width: 768px) {
+  :root[data-theme='glitch'] {
+    --header-name-font-size: 2rem;
+    --section-title-font-size: var(--font-size-md);
+    --section-title-padding: 0.6rem var(--spacing-md);
+    --printlink-font-size: var(--font-size-xs);
+    --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+
+    /* Layout padding adjustments */
+    --resume-main-animation: main-tilt-glitch-mobile var(--duration-fast) infinite;
+    --main-padding: var(--spacing-lg);
+    --section-padding: var(--spacing-lg);
+    --experience-item-padding: var(--spacing-lg);
+    --education-item-padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='glitch'] {
+    --header-name-font-size: 1.75rem;
+    --section-title-font-size: var(--font-size-base);
+    --section-title-padding: var(--spacing-xs) 0.8rem;
+    --printlink-font-size: var(--font-size-xs);
+    --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+
+    /* Layout padding adjustments */
+    --main-padding: var(--spacing-md);
+    --section-padding: var(--spacing-md);
+    --experience-item-padding: var(--spacing-md);
+    --education-item-padding: var(--spacing-md);
+
+    /* Header and dial selector padding adjustments */
+    --header-padding: 0;
+    --dial-selector-housing-padding: 0;
+
+    /* Dial label adjustments */
+    --ds-label-font-size: var(--font-size-sm);
+    --ds-label-padding: 0.3rem var(--font-size-xs);
+  }
+}

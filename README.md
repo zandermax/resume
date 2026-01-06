@@ -58,7 +58,7 @@ Each theme is primarily implemented in CSS with light JavaScript for dynamic con
 - `assets/css/dial-selector-styles/` - Styles for the dial selector component
 - `assets/css/themes/` - Theme-specific CSS overrides
   - Each theme in its own directory with modular structure
-  - Standalone CSS files for simpler themes (glitch.css, nostalgia.css, etc.)
+  - Standalone CSS files for simpler themes (e.g., neo-swiss.css)
 
 ## Made by Me
 

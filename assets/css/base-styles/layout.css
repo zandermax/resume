@@ -27,6 +27,8 @@
   box-shadow: var(--main-box-shadow, var(--paper-shadow, none));
   position: var(--main-position, relative);
   transform: var(--main-transform, none);
+  overflow: var(--main-overflow, visible);
+  filter: var(--main-filter, none);
 
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for title bars, texture grids, overlays, etc. */

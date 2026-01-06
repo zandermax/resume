@@ -1,0 +1,36 @@
+/* ===========================
+2039 GLITCH Theme - Dark Mode
+=========================== */
+
+:root[data-theme='glitch'][data-mode='dark'] {
+  /* Base colors */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray-darkest: oklch(4.7% 0 0); /* #0a0a0a */
+  --color-gray-darker: oklch(8.3% 0 0); /* #111111 */
+  --color-gray-dark: oklch(13% 0 0); /* #1a1a1a */
+  --color-gray-medium: oklch(83% 0 0); /* #cccccc */
+
+  /* Theme mappings */
+  --background-color: var(--color-black);
+  --text-color: var(--color-white);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-white);
+  --dial-color-ink: var(--color-white);
+  --dial-color-selection: var(--color-white);
+  --ds-knob-background-color: var(--color-gray-dark);
+  --link-color: var(--color-white);
+  --link-visited-color: var(--color-gray-medium);
+  --section-bg: var(--color-gray-darkest);
+  --header-background: var(--color-gray-darker);
+  --accent-color: var(--color-white);
+
+  /* Dark mode scan lines (different from light mode) */
+  --body-before-background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    oklch(100% 0 0 / 0.02) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}

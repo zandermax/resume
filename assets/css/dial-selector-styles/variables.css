@@ -36,6 +36,11 @@ dial-selector {
   --ds-font-family: 'IBM Plex Mono', 'Courier New', monospace;
 
   /* ===========================
+     FILTERS & EFFECTS
+     =========================== */
+  --ds-filter: none;
+
+  /* ===========================
      SIZING SYSTEM
      Master size variable with derived calculations
      =========================== */
@@ -132,10 +137,11 @@ dial-selector {
   --ds-indicator-height-override: var(--ds-indicator-length);
   --ds-indicator-gradient: var(--ds-color-indicator);
   --ds-indicator-border: none;
-  --ds-indicator-border-radius: unset; /* Falls back to calc based on width */
   --ds-indicator-box-shadow: none;
   --ds-indicator-opacity: 1;
   --ds-indicator-filter: none;
+  --ds-indicator-animation: none;
+  --ds-indicator-will-change: auto;
 
   /* ===========================
      SPOKE LINES
@@ -146,6 +152,7 @@ dial-selector {
   --ds-line-width: 2px;
   --ds-line-opacity: 0.4;
   --ds-line-opacity-active: 0.8;
+  --ds-line-opacity-alternate: inherit; /* For nth-of-type(even) styling - inherits from --ds-line-opacity by default */
   --ds-line-stroke: var(--ds-color-line);
   --ds-line-active-stroke: var(--ds-color-selection);
   --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
@@ -166,10 +173,14 @@ dial-selector {
   --ds-label-opacity: 1;
   --ds-label-filter: none;
   --ds-label-text-shadow: none;
+  --ds-label-box-shadow: none;
   --ds-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
   --ds-label-text-transform: none;
   --ds-label-transform: none;
   --ds-label-transition: none;
+  --ds-label-animation: none;
+  --ds-label-contain: none;
+  --ds-label-will-change: auto;
 
   /* Label sizing (responsive) */
   --ds-label-font-size: clamp(16px, 1.5vw, 22px);
@@ -234,6 +245,9 @@ dial-selector {
   --ds-label-active-text-shadow: none;
   --ds-label-active-background: transparent;
   --ds-label-active-box-shadow: none;
+  --ds-label-active-filter: none;
+  --ds-label-active-animation: none;
+  --ds-label-active-will-change: auto;
 
   /* Active span states */
   --ds-label-span-active-font-weight: inherit;
@@ -247,6 +261,7 @@ dial-selector {
   --ds-label-active-span-border-style: unset;
   --ds-label-active-span-border-color: transparent;
   --ds-label-active-span-box-shadow: none;
+  --ds-label-active-span-transform: none;
 
   /* ===========================
      TIMING & DELAYS

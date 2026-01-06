@@ -28,6 +28,7 @@
   transition: var(--education-item-transition, none);
   position: var(--education-item-position, static);
   overflow: var(--education-item-overflow, visible);
+  transform: var(--education-item-transform, none);
 
   /* === PSEUDO-ELEMENT === */
   /* Used by themes for decorative left bars, backgrounds, etc. */
@@ -43,6 +44,12 @@
     background: var(--education-item-before-background);
     pointer-events: var(--education-item-before-pointer-events);
     opacity: var(--education-item-before-opacity);
+  }
+
+  /* === NTH-CHILD STYLING === */
+
+  &:nth-child(even) {
+    transform: var(--education-item-nth-even-transform, var(--education-item-transform, none));
   }
 
   /* === HOVER STATE === */

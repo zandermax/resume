@@ -17,6 +17,10 @@ dial-selector .spoke-line {
   filter: var(--ds-line-filter, none);
 }
 
+dial-selector .spoke-line:nth-of-type(even) {
+  opacity: var(--ds-line-opacity-alternate, var(--ds-line-opacity, 1));
+}
+
 dial-selector .spoke-line.active {
   stroke: var(--ds-line-active-stroke);
   opacity: var(--ds-line-opacity-active, 1);

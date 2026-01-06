@@ -28,6 +28,10 @@ dial-selector .dial-label {
   opacity: var(--ds-label-opacity);
   filter: var(--ds-label-filter);
   text-shadow: var(--ds-label-text-shadow);
+  box-shadow: var(--ds-label-box-shadow, none);
+  animation: var(--ds-label-animation, none);
+  contain: var(--ds-label-contain, none);
+  will-change: var(--ds-label-will-change, auto);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -78,6 +82,9 @@ dial-selector .dial-label.active > span {
   text-shadow: var(--ds-label-active-text-shadow, none);
   font-weight: var(--ds-label-span-active-font-weight, var(--ds-label-span-font-weight));
   transform: var(--ds-label-active-span-transform, none);
+  filter: var(--ds-label-active-filter, none);
+  animation: var(--ds-label-active-animation, none);
+  will-change: var(--ds-label-active-will-change, auto);
   padding-block: var(--ds-label-active-span-padding-block, var(--ds-label-span-padding-block));
   padding-inline: var(--ds-label-active-span-padding-inline, var(--ds-label-span-padding-inline));
 }
