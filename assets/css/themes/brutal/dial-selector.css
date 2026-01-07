@@ -6,23 +6,24 @@ BRUTAL Theme - Dial Selector Custom Properties
 
 /* Light Mode - High Contrast */
 :root[data-theme='brutal'][data-mode='light'] {
+  --dial-color-selection: var(--color-red-crimson);
+  --dial-color-indicator: var(--color-red-crimson);
+
   dial-selector {
     --ds-label-span-color: var(--color-black);
-    --ds-label-span-color: var(--color-black);
     --ds-label-hover-color: var(--color-white);
-    --dial-color-selection: var(--color-red-crimson);
-    --dial-color-indicator: var(--color-red-crimson);
     --ds-knob-background-color: oklch(19% 0.02 240);
   }
 }
 
 /* Dark Mode - Inverted Brutalism */
 :root[data-theme='brutal'][data-mode='dark'] {
+  --dial-color-selection: var(--color-red-bright);
+  --dial-color-indicator: var(--color-red-bright);
+
   dial-selector {
     --ds-label-hover-color: var(--color-white);
     --ds-label-span-color: oklch(92% 0 0);
-    --dial-color-selection: var(--color-red-bright);
-    --dial-color-indicator: var(--color-red-bright);
     --ds-knob-background-color: var(--color-dark-bg-alt);
     --ds-indicator-box-shadow: 0 0 20px var(--accent-color);
     --ds-color-ink: var(--color-white);

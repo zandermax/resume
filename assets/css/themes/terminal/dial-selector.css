@@ -6,23 +6,19 @@ TERMINAL Theme - Dial Selector Styles
 
 /* Light Mode */
 :root[data-theme='terminal'][data-mode='light'] {
-  dial-selector {
-    --dial-color-ink: var(--color-black);
-    --dial-color-line: var(--color-black);
-    --dial-color-selection: var(--color-yellow);
-    --dial-color-indicator: var(--color-yellow);
-    --ds-knob-background-color: var(--color-silver);
-  }
+  --dial-color-ink: var(--color-black);
+  --dial-color-line: var(--color-black);
+  --dial-color-selection: var(--color-yellow);
+  --dial-color-indicator: var(--color-yellow);
+  --ds-knob-background-color: var(--color-silver);
 }
 
 /* Dark Mode */
 :root[data-theme='terminal'][data-mode='dark'] {
-  dial-selector {
-    --dial-color-ink: var(--color-gray-light);
-    --dial-color-selection: var(--color-cyan);
-    --dial-color-indicator: var(--color-cyan);
-    --ds-knob-background-color: oklch(38% 0 0);
-  }
+  --dial-color-ink: var(--color-gray-light);
+  --dial-color-selection: var(--color-cyan);
+  --dial-color-indicator: var(--color-cyan);
+  --ds-knob-background-color: oklch(38% 0 0);
 }
 
 :root[data-theme='terminal'] {
