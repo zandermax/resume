@@ -1,0 +1,20 @@
+/* ===========================
+Neo-Swiss Theme - Dark Mode
+=========================== */
+
+:root[data-theme='neoswiss'][data-mode='dark'] {
+  --background-color: var(--color-black);
+  --text-color: var(--color-white);
+  --heading-color: var(--color-white);
+  --border-color: var(--color-white);
+  --dial-color-ink: var(--color-white);
+  --ds-knob-background-color: var(--color-white);
+  --link-color: var(--color-white);
+  --link-visited-color: var(--color-white);
+
+  dial-selector {
+    /* Increase line width for better visibility in dark mode */
+    --ds-line-width: 2px;
+  }
+}
+

@@ -64,5 +64,14 @@
 /* === EDUCATION DEGREE === */
 
 .education-item__degree {
-  margin-block-end: 0.1rem;
+  margin-block-end: var(--education-degree-margin-block-end, 0.1rem);
+}
+
+/* === EDUCATION DATES === */
+
+.education-item__dates {
+  font-weight: var(--education-item-dates-font-weight, normal);
+  color: var(--education-item-dates-color, inherit);
+  opacity: var(--education-item-dates-opacity, 1);
+  letter-spacing: var(--education-item-dates-letter-spacing, normal);
 }

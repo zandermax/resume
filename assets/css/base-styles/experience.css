@@ -138,6 +138,8 @@
   letter-spacing: var(--experience-company-letter-spacing, 0.12em);
   font-weight: var(--experience-company-font-weight, normal);
   color: var(--experience-company-color, inherit);
+  opacity: var(--experience-company-opacity, 1);
+  margin-block-end: var(--experience-company-margin-block-end, 0);
 }
 
 /* === META INFO (DATES/LOCATION) === */
@@ -151,6 +153,11 @@
 
 .experience-item__dates,
 .experience-item__duration {
+  font-size: var(--experience-item-dates-font-size, 0.8rem);
+  font-weight: var(--experience-item-dates-font-weight, normal);
+  color: var(--experience-item-dates-color, inherit);
+  opacity: var(--experience-item-dates-opacity, 1);
+  letter-spacing: var(--experience-item-dates-letter-spacing, normal);
   white-space: nowrap;
 
   &::before {
@@ -201,6 +208,7 @@
     position: var(--tech-badge-before-position, static);
     inset: var(--tech-badge-before-inset, auto);
     left: var(--tech-badge-before-left, auto);
+    top: var(--tech-badge-before-top, auto);
     margin-inline-start: var(--tech-badge-before-margin-inline-start, 0);
     margin-inline-end: var(--tech-badge-before-margin-inline-end, 0);
     color: var(--tech-badge-before-color, inherit);
@@ -253,6 +261,7 @@
       font-size: var(--bullet-font-size, 0.6rem);
       font-weight: var(--bullet-font-weight, normal);
       color: var(--bullet-color, inherit);
+      opacity: var(--bullet-before-opacity, 1);
       text-shadow: var(--bullet-text-shadow, none);
       margin-inline-start: var(--bullet-margin-inline-start, 0);
     }

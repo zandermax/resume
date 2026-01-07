@@ -1,0 +1,332 @@
+/* ===========================
+Neo-Swiss Theme - Variables
+Ultra-modern minimalism with mathematical precision
+=========================== */
+
+/* Common properties for all modes */
+:root[data-theme='neoswiss'] {
+  --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --background-image: none;
+  --section-bg: transparent;
+  --header-background: transparent;
+  --dial-color-selection: var(--color-red);
+  --dial-color-indicator: var(--color-red);
+  --accent-color: var(--color-red);
+  --swiss-grid: 8px;
+
+  /* Body typography */
+  --body-font-weight: var(--font-weight-light);
+  --body-letter-spacing: -0.01em;
+  --body-line-height: var(--line-height-relaxed);
+
+  /* Shared typography values */
+  --font-size-small: clamp(0.75rem, 1.5vw, 0.875rem);
+  --font-size-body: clamp(0.875rem, 1.5vw, 1rem);
+  --font-size-medium: clamp(1rem, 2vw, 1.25rem);
+  --font-size-large: clamp(1.25rem, 2vw, 1.75rem);
+  --font-size-xlarge: clamp(1.5rem, 3vw, 2.5rem);
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.1;
+  --line-height-base: 1.2;
+  --line-height-relaxed: 1.8;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0.02em;
+  --letter-spacing-wide: 0.15em;
+
+  /* Shared spacing values */
+  --spacing-1: calc(var(--swiss-grid) * 1);
+  --spacing-2: calc(var(--swiss-grid) * 2);
+  --spacing-3: calc(var(--swiss-grid) * 3);
+  --spacing-4: calc(var(--swiss-grid) * 4);
+  --spacing-6: calc(var(--swiss-grid) * 6);
+  --spacing-8: calc(var(--swiss-grid) * 8);
+
+  /* Main container custom properties */
+  --main-padding: 0;
+  --main-border-width: 0;
+  --main-border-radius: 0;
+  --main-box-shadow: none;
+  --resume-main-background: var(--background-color);
+
+  /* Experience item custom properties */
+  --experience-item-padding: 0;
+  --experience-item-margin: 0 0 var(--spacing-8) 0;
+  --experience-item-margin-top: var(--spacing-8);
+  --experience-item-transition: none;
+  --experience-item-border: 0;
+  --experience-item-border-radius: 0;
+  --experience-item-box-shadow: none;
+
+  /* Skills grid group custom properties */
+  --skills-group-padding: 0 0 var(--spacing-4) 0;
+  --skills-group-margin-bottom: var(--spacing-4);
+  --skills-group-transition: none;
+
+  /* Skills grid group custom properties */
+  --skills-group-margin: 0 0 var(--spacing-4) 0;
+  --skills-group-border: 0;
+  --skills-group-border-radius: 0;
+  --skills-group-box-shadow: none;
+  --skills-group-background: transparent;
+
+  /* Skills grid title custom properties */
+  --skills-title-padding-bottom: 0;
+  --skills-title-margin-bottom: var(--spacing-2);
+  --skills-title-margin: 0 0 var(--spacing-2) 0;
+  --skills-title-font-weight: var(--font-weight-bold);
+  --skills-title-color: var(--accent-color);
+  --skills-title-letter-spacing: var(--letter-spacing-wide);
+  --skills-title-line-height: var(--line-height-base);
+  --skills-title-text-transform: uppercase;
+
+  /* Skills group ul custom properties */
+  --skills-group-ul-list-style: none;
+  --skills-group-ul-padding: 0;
+  --skills-group-ul-margin: 0;
+  --skills-group-ul-display: flex;
+  --skills-group-ul-flex-wrap: wrap;
+  --skills-group-ul-gap: var(--spacing-2);
+
+  /* Skills list items custom properties */
+  --skills-group-li-font-size: var(--font-size-body);
+  --skills-group-li-font-weight: var(--font-weight-light);
+  --skills-group-li-line-height: var(--line-height-relaxed);
+  --skills-group-li-after-content: ',';
+  --skills-group-li-after-margin-inline-start: calc(var(--swiss-grid) * 0.5);
+
+  /* Experience item role custom properties */
+  --experience-role-font-size: var(--font-size-xlarge);
+  --experience-role-font-weight: var(--font-weight-bold);
+  --experience-role-text-transform: none;
+  --experience-role-margin: 0 0 var(--spacing-1) 0;
+  --experience-role-line-height: var(--line-height-tight);
+  --experience-role-letter-spacing: var(--letter-spacing-tight);
+
+  /* Experience item company custom properties */
+  --experience-company-font-size: var(--font-size-small);
+  --experience-company-font-weight: var(--font-weight-medium);
+  --experience-company-letter-spacing: 0.12em;
+  --experience-company-text-transform: uppercase;
+  --experience-company-opacity: 0.7;
+  --experience-company-margin-block-end: var(--spacing-2);
+
+  /* Experience item dates custom properties */
+  --experience-item-dates-font-size: var(--font-size-small);
+  --experience-item-dates-font-weight: var(--font-weight-light);
+  --experience-item-dates-color: var(--text-color);
+  --experience-item-dates-opacity: 0.6;
+  --experience-item-dates-letter-spacing: 0.05em;
+
+  /* Tech badge custom properties */
+  --tech-badge-border: 0;
+  --tech-badge-border-radius: 0;
+  --tech-badge-background: transparent;
+  --tech-badge-color: var(--text-color);
+  --tech-badge-font-weight: 400;
+  --tech-badge-padding: 0 0 0 var(--spacing-2);
+  --tech-badge-font-size: var(--font-size-small);
+  --tech-badge-text-transform: none;
+  --tech-badge-letter-spacing: var(--letter-spacing-normal);
+  --tech-badge-before-content: '•';
+  --tech-badge-before-display: inline;
+  --tech-badge-before-position: absolute;
+  --tech-badge-before-left: 0;
+  --tech-badge-before-top: -0.25rem;
+  --tech-badge-before-color: var(--accent-color);
+  --tech-badge-before-font-weight: var(--font-weight-bold);
+
+  /* Skills grid custom properties */
+  --skills-grid-padding: 0;
+  --skills-grid-gap: var(--spacing-4);
+  --skills-grid-border: 0;
+  --skills-grid-border-radius: 0;
+  --skills-grid-box-shadow: none;
+
+  /* Resume header custom properties */
+  --header-padding: var(--spacing-8) var(--spacing-6);
+  --header-padding-inline: var(--spacing-6);
+  --header-padding-responsive-500: 1rem;
+  --header-margin: 0 0 var(--spacing-8) 0;
+  --header-position: relative;
+  --header-border-width: 1px;
+  --header-border-style: solid;
+  --header-border: none;
+  --header-border-radius: 0;
+  --header-box-shadow: none;
+
+  /* Header link custom properties */
+  --header-link-text-decoration: none;
+  --header-link-border-block-end: 0;
+  --header-link-transition: border-block-end 50ms linear;
+  --header-link-position: relative;
+  --header-link-hover-border-block-end: 1px solid var(--accent-color);
+  --header-link-visited-border-block-end: 0;
+  --header-link-visited-hover-border-block-end: 1px solid var(--accent-color);
+
+  /* Header name custom properties */
+  --header-name-padding: 0;
+  --header-name-margin: 0 0 var(--spacing-2) 0;
+  --header-name-font-weight: 100;
+  --header-name-font-size: clamp(3rem, 8vw, 7rem);
+  --header-name-line-height: 0.95;
+  --header-name-text-transform: none;
+  --header-name-letter-spacing: -0.04em;
+  --header-name-border: 0;
+
+  /* Header name greeting/small custom properties */
+  --header-name-greeting-font-size: clamp(1.5rem, 4vw, 3.5rem);
+  --header-name-greeting-font-weight: 100;
+  --header-name-greeting-letter-spacing: var(--letter-spacing-tight);
+  --header-name-greeting-text-transform: none;
+  --header-name-greeting-color: var(--text-color);
+
+  /* Section title custom properties */
+  --section-title-padding: 0 0 var(--spacing-2) 0;
+  --section-title-margin: 0 0 var(--spacing-6) 0;
+  --section-title-color: var(--text-color);
+  --section-title-font-weight: var(--font-weight-medium);
+  --section-title-font-size: var(--font-size-large);
+  --section-title-letter-spacing: var(--letter-spacing-wide);
+  --section-title-line-height: var(--line-height-base);
+  --section-title-text-transform: uppercase;
+  --section-title-width: 60%;
+  --section-title-max-width: none;
+  --section-title-border: none;
+  --section-title-border-block-end: 1px solid var(--accent-color);
+  --section-title-border-radius: 0;
+  --section-title-box-shadow: none;
+
+  /* Print link custom properties */
+  --printlink-font-size: var(--font-size-small);
+  --printlink-text-transform: uppercase;
+  --printlink-background: var(--accent-color);
+  --printlink-color: #ffffff;
+  --printlink-font-weight: var(--font-weight-medium);
+  --printlink-padding: var(--spacing-2) var(--spacing-4);
+  --printlink-letter-spacing: var(--letter-spacing-wide);
+  --printlink-transition: none;
+  --printlink-text-decoration: none;
+  --printlink-border: 0;
+  --printlink-border-radius: 0;
+  --printlink-box-shadow: none;
+  --printlink-hover-opacity: 0.9;
+  --printlink-active-opacity: 0.8;
+
+  /* Dial selector housing custom properties */
+  --dial-selector-housing-padding: var(--spacing-4);
+  --dial-selector-housing-border: 1px solid var(--border-color);
+  --dial-selector-housing-border-radius: 0;
+  --dial-selector-housing-box-shadow: none;
+  --dial-selector-housing-position: relative;
+  --dial-selector-housing-h3-color: var(--text-color);
+  --dial-selector-housing-h3-font-weight: var(--font-weight-medium);
+  --dial-selector-housing-h3-letter-spacing: var(--letter-spacing-wide);
+  --dial-selector-housing-h3-font-size: var(--font-size-small);
+  --dial-selector-housing-h3-text-transform: uppercase;
+
+  /* Community/Principles list custom properties */
+  --list-padding: 0;
+  --list-border: 0;
+  --list-border-radius: 0;
+  --list-box-shadow: none;
+
+  /* Community/Principles list item custom properties */
+  --list-item-border-inline-start-color: var(--text-color);
+  --community-item-font-size: var(--font-size-body);
+  --community-item-font-weight: var(--font-weight-light);
+  --community-item-line-height: var(--line-height-relaxed);
+  --community-item-background: transparent;
+  --community-item-padding: var(--spacing-2) 0 var(--spacing-2) var(--spacing-3);
+  --community-item-margin-bottom: var(--spacing-3);
+  --community-item-transition: border-inline-start-color 50ms linear;
+  --community-item-border-width: 0;
+  --community-item-border-style: solid;
+  --community-item-border-inline-start: 2px solid var(--text-color);
+  --community-item-hover-border-inline-start-color: var(--accent-color);
+  --community-item-hover-border-inline-start-width: 2px;
+  --community-item-hover-padding-inline-start: var(--spacing-4);
+  --principles-item-font-size: var(--font-size-body);
+  --principles-item-font-weight: var(--font-weight-light);
+  --principles-item-line-height: var(--line-height-relaxed);
+  --principles-item-background: transparent;
+  --principles-item-padding: var(--spacing-2) 0 var(--spacing-2) var(--spacing-3);
+  --principles-item-margin-bottom: var(--spacing-3);
+  --principles-item-transition: border-inline-start-color 50ms linear;
+  --principles-item-border-width: 0;
+  --principles-item-border-style: solid;
+  --principles-item-border-inline-start: 2px solid var(--text-color);
+  --principles-item-hover-border-inline-start-color: var(--accent-color);
+  --principles-item-hover-border-inline-start-width: 2px;
+  --principles-item-hover-padding-inline-start: var(--spacing-4);
+
+  /* Header role custom properties */
+  --header-role-font-weight: var(--font-weight-medium);
+  --header-role-font-size: var(--font-size-medium);
+  --header-role-text-transform: none;
+  --header-role-letter-spacing: var(--letter-spacing-normal);
+  --header-role-margin-block-start: var(--spacing-2);
+  --header-role-padding-inline-start: var(--spacing-4);
+  --header-role-border-inline-start: var(--spacing-1) solid var(--accent-color);
+
+  /* Education item custom properties */
+  --education-item-border: 0;
+  --education-item-border-radius: 0;
+  --education-item-box-shadow: none;
+  --education-item-padding: 0;
+  --education-item-margin-block-end: var(--spacing-6);
+
+  /* Education item dates custom properties */
+  --education-item-dates-font-weight: var(--font-weight-light);
+  --education-item-dates-color: var(--text-color);
+  --education-item-dates-opacity: 0.6;
+  --education-item-dates-letter-spacing: 0.05em;
+
+  /* Education institution custom properties */
+  --education-institution-font-size: var(--font-size-xlarge);
+  --education-institution-font-weight: var(--font-weight-bold);
+  --education-institution-text-transform: none;
+  --education-institution-margin: 0 0 var(--spacing-1) 0;
+  --education-institution-line-height: var(--line-height-tight);
+  --education-institution-letter-spacing: var(--letter-spacing-tight);
+
+  /* Experience bullets custom properties */
+  --experience-bullets-margin-block-start: var(--spacing-2);
+  --experience-bullets-li-font-size: var(--font-size-body);
+  --experience-bullets-li-font-weight: var(--font-weight-light);
+  --experience-bullets-li-line-height: var(--line-height-relaxed);
+  --experience-bullets-li-margin-block-end: var(--spacing-2);
+  --experience-bullets-li-padding-inline-start: var(--spacing-3);
+  --bullet-before-content: '—';
+  --bullet-color: var(--text-color);
+  --bullet-font-weight: var(--font-weight-light);
+  --bullet-before-opacity: 0.4;
+
+  /* Section text (paragraph) custom properties */
+  --section-text-font-size: var(--font-size-body);
+  --section-text-line-height: var(--line-height-relaxed);
+  --section-text-font-weight: var(--font-weight-light);
+
+  /* Section container custom properties */
+  --section-padding-inline: var(--spacing-6);
+  --section-padding-block-start: 0;
+  --section-padding-block-end: var(--spacing-8);
+  --section-border: 0;
+  --section-margin-block-end: 0;
+
+  /* Typography overrides */
+  --h2-h3-font-weight: var(--font-weight-bold);
+  --h2-h3-letter-spacing: var(--letter-spacing-tight);
+  --p-margin-block-end: var(--spacing-2);
+  --strong-font-weight: var(--font-weight-bold);
+  --em-font-style: italic;
+
+  /* Summary section specific */
+  --section-summary-p-font-size: var(--font-size-medium);
+  --section-summary-p-margin-block-end: var(--spacing-3);
+
+  /* Ashby section specific */
+  --section-ashby-border-block-start: 1px solid var(--accent-color);
+  --section-ashby-padding-block-start: var(--spacing-8);
+}

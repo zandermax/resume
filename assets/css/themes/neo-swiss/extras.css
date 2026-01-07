@@ -1,0 +1,397 @@
+/* ===========================
+Neo-Swiss Theme - Main Styles
+=========================== */
+
+/* Base theme - Pure minimalism */
+body[data-theme='neoswiss'] {
+  /* Neo-Swiss AI Toggle - Hidden checkbox */
+  .neoswiss-ai-toggle {
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* Neo-Swiss AI Button - Floating minimal sparkle */
+  .neoswiss-ai-button {
+    display: flex;
+    position: fixed;
+    bottom: var(--spacing-6);
+    right: var(--spacing-6);
+    width: var(--spacing-8);
+    height: var(--spacing-8);
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    transition: opacity 150ms linear;
+    z-index: 1000;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .neoswiss-ai-button__label {
+    position: relative;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  /* Geometric sparkles - minimal squares at cardinal points */
+  .neoswiss-ai-button__spark {
+    position: absolute;
+    width: var(--spacing-1);
+    height: var(--spacing-1);
+    background: var(--accent-color);
+    z-index: 1;
+  }
+
+  .neoswiss-ai-button__spark--1 {
+    top: calc(var(--swiss-grid) * -1.5);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .neoswiss-ai-button__spark--2 {
+    right: calc(var(--swiss-grid) * -1.5);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .neoswiss-ai-button__spark--3 {
+    bottom: calc(var(--swiss-grid) * -1.5);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .neoswiss-ai-button__spark--4 {
+    left: calc(var(--swiss-grid) * -1.5);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Neo-Swiss AI Modal - Minimal analytical summary */
+  .neoswiss-ai-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+
+    &[open] {
+      display: flex;
+      border: none;
+      padding: 0;
+      max-width: none;
+      max-height: none;
+      background: transparent;
+    }
+
+    &::backdrop {
+      background: linear-gradient(135deg, oklch(15% 0.05 250 / 0.95), oklch(10% 0.08 240 / 0.98));
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  .neoswiss-ai-modal__container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--background-color);
+    border: 2px solid var(--accent-color);
+    z-index: 2001;
+  }
+
+  .neoswiss-ai-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4);
+    border-block-end: 1px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    background: var(--background-color);
+    z-index: 1;
+
+    &::after {
+      content: 'ANALYZING CANDIDATE...';
+      position: absolute;
+      top: var(--spacing-1);
+      left: var(--spacing-3);
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: var(--letter-spacing-wide);
+      color: var(--accent-color);
+      opacity: 1;
+      animation: statusMessage 8s ease-in-out forwards;
+    }
+  }
+
+  .neoswiss-ai-modal__title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .neoswiss-ai-modal__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+    cursor: pointer;
+    transition: background 100ms linear, color 100ms linear;
+    user-select: none;
+
+    &:hover {
+      background: var(--accent-color);
+      color: var(--color-white);
+      border-color: var(--accent-color);
+    }
+  }
+
+  .neoswiss-ai-modal__content {
+    padding: var(--spacing-6);
+    padding-block-end: calc(var(--spacing-6) * 2);
+  }
+
+  .neoswiss-ai-modal__section {
+    margin-block-end: var(--spacing-6);
+    padding-block-end: var(--spacing-6);
+    border-block-end: 1px solid var(--text-color);
+    opacity: 0;
+    animation: sectionAppear 0.6s ease-out forwards;
+
+    &:last-child {
+      border-block-end: 0;
+      margin-block-end: 0;
+    }
+
+    /* Stagger each section with increasing delays */
+    &:nth-child(1) {
+      animation-delay: 0.8s;
+
+      .neoswiss-ai-modal__section-title {
+        animation-delay: 1s;
+      }
+
+      .neoswiss-ai-modal__text {
+        animation-delay: 1.3s;
+      }
+    }
+
+    &:nth-child(2) {
+      animation-delay: 2s;
+
+      .neoswiss-ai-modal__section-title {
+        animation-delay: 2.2s;
+      }
+
+      .neoswiss-ai-modal__text {
+        animation-delay: 2.5s;
+      }
+    }
+
+    &:nth-child(3) {
+      animation-delay: 3.5s;
+
+      .neoswiss-ai-modal__section-title {
+        animation-delay: 3.7s;
+      }
+
+      .neoswiss-ai-modal__text {
+        animation-delay: 4s;
+      }
+    }
+
+    &:nth-child(4) {
+      animation-delay: 5s;
+
+      .neoswiss-ai-modal__section-title {
+        animation-delay: 5.2s;
+      }
+
+      .neoswiss-ai-modal__text {
+        animation-delay: 5.8s;
+      }
+    }
+
+    &:nth-child(5) {
+      animation-delay: 6.5s;
+
+      .neoswiss-ai-modal__section-title {
+        animation-delay: 6.7s;
+      }
+    }
+  }
+
+  .neoswiss-ai-modal__section--final {
+    border-block-end: 0;
+    padding-block-end: 0;
+  }
+
+  .neoswiss-ai-modal__section-title {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    margin: 0 0 var(--spacing-3) 0;
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+  }
+
+  .neoswiss-ai-modal__text {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0;
+    animation: contentFadeIn 0.5s ease-out forwards;
+  }
+
+  .neoswiss-ai-modal__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-light);
+      line-height: 2;
+      color: var(--text-color);
+      padding-inline-start: var(--spacing-3);
+      position: relative;
+      opacity: 0;
+      animation: contentFadeIn 0.4s ease-out forwards;
+
+      &::before {
+        content: '—';
+        position: absolute;
+        left: 0;
+        color: var(--text-color);
+        opacity: 0.4;
+      }
+
+      /* Stagger each list item */
+      &:nth-child(1) {
+        animation-delay: 2.5s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 2.7s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 2.9s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: 3.1s;
+      }
+    }
+  }
+
+  .neoswiss-ai-modal__metric {
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.1em;
+    color: var(--text-color);
+    min-width: 150px;
+  }
+
+  .neoswiss-ai-modal__score {
+    margin-block-end: var(--spacing-3);
+  }
+
+  .neoswiss-ai-modal__score-bar {
+    width: 100%;
+    height: var(--spacing-2);
+    background: transparent;
+    border: 1px solid var(--text-color);
+    position: relative;
+    margin-block-end: var(--spacing-2);
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+    animation-delay: 5.5s;
+  }
+
+  .neoswiss-ai-modal__score-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--accent-color);
+    animation: scoreFill 1.2s ease-out forwards;
+    animation-delay: 5.7s;
+  }
+
+  .neoswiss-ai-modal__score-label {
+    font-size: var(--font-size-xlarge);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--text-color);
+    opacity: 0;
+    animation: contentFadeIn 0.4s ease-out forwards;
+    animation-delay: 6.2s;
+  }
+
+  #neoswiss-ai-modal__recommendation {
+    display: block;
+    text-transform: uppercase;
+    background: var(--accent-color);
+    color: var(--color-white) !important;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.2em;
+    text-align: center;
+    padding: var(--spacing-4);
+    text-decoration: none;
+    border: 0;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: recommendationAppear 0.6s ease-out forwards;
+    animation-delay: 7s;
+    transition: opacity 150ms linear;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+      color: var(--color-white);
+      border: 0;
+    }
+
+    &:visited {
+      color: var(--color-white);
+
+      &:hover {
+        background: var(--text-color);
+        color: var(--background-color);
+      }
+    }
+  }
+}

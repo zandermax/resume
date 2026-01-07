@@ -45,6 +45,7 @@ body.resume {
   text-shadow: var(--text-shadow);
   font-weight: var(--body-font-weight);
   letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
 
   /* === BODY PSEUDO-ELEMENT === */
   &::before {

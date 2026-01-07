@@ -30,6 +30,7 @@
     var(--header-border-block-end-color, var(--border-color));
   border: var(--header-border, none);
   padding: var(--header-padding, unset);
+  padding-inline: var(--header-padding-inline, 0);
   padding-block-start: var(--header-padding-block-start, 0);
   padding-block-end: var(--header-padding-block-end, 1rem);
   padding-inline-start: var(--header-padding-inline-start, 0);
@@ -164,5 +165,28 @@
 
   &:hover {
     text-decoration-style: wavy;
+  }
+}
+
+/* === HEADER LINK ELEMENTS (all a tags in header) === */
+
+.resume-header a {
+  text-decoration: var(--header-link-text-decoration, underline);
+  border-block-end: var(--header-link-border-block-end, none);
+  transition: var(--header-link-transition, none);
+  position: var(--header-link-position, static);
+
+  &:hover {
+    border-block-end: var(--header-link-hover-border-block-end, none);
+    border-block-end-color: var(--header-link-hover-border-block-end-color, transparent);
+  }
+
+  &:visited {
+    border-block-end: var(--header-link-visited-border-block-end, none);
+
+    &:hover {
+      border-block-end: var(--header-link-visited-hover-border-block-end, none);
+      border-block-end-color: var(--header-link-visited-hover-border-block-end-color, transparent);
+    }
   }
 }

@@ -1,0 +1,20 @@
+/* ===========================
+Neo-Swiss Theme - Print Styles
+=========================== */
+
+@media print {
+  /* Header role border color for print */
+  :root[data-theme='neoswiss'] .resume-header__role {
+    border-inline-start-color: var(--color-black);
+  }
+
+  /* Section and skills styling for print */
+  :root[data-theme='neoswiss'] {
+    --section-title-border-block-end: 1px solid var(--color-black);
+  }
+
+  :root[data-theme='neo-swiss'] {
+    --skills-title-color: var(--color-black);
+    --tech-badge-before-color: var(--color-black);
+  }
+}

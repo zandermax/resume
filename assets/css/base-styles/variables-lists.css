@@ -42,6 +42,7 @@
 
   /* === LIST ITEM SHARED === */
   --list-item-border-color: var(--border-color);
+  --list-item-border-inline-start-color: var(--border-color);
 
   /* === COMMUNITY LIST ITEMS === */
   --community-item-border-style: solid;
@@ -95,7 +96,9 @@
   --list-item-hover-box-shadow: none;
   --list-item-hover-filter: none;
   --community-item-hover-border-inline-start-width: inherit;
+  --community-item-hover-border-inline-start-color: inherit;
   --community-item-hover-padding-inline-start: inherit;
   --principles-item-hover-border-inline-start-width: inherit;
+  --principles-item-hover-border-inline-start-color: inherit;
   --principles-item-hover-padding-inline-start: inherit;
 }

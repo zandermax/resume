@@ -1,0 +1,48 @@
+/* ===========================
+Neo-Swiss Theme - Dial Selector Styling
+=========================== */
+
+body[data-theme='neoswiss'] {
+  dial-selector {
+    /* Dial label active span padding */
+    --ds-label-active-span-padding-block: 0.05rem;
+    --ds-label-active-span-padding-inline: 0.6rem;
+    --ds-label-active-span-padding-block--tablet: 0.025rem;
+    --ds-label-active-span-padding-inline--tablet: 0.55rem;
+    --ds-label-active-span-padding-block--phone: 0.025rem;
+    --ds-label-active-span-padding-inline--phone: 0.5rem;
+
+    /* Dial label hover properties */
+    --ds-label-hover-background: transparent;
+    --ds-label-hover-color: var(--accent-color);
+
+    /* Dial selector knob styling */
+    --ds-knob-border: 2px solid var(--dial-color-ink);
+    --ds-knob-border-radius: 50%;
+    --ds-knob-box-shadow: none; /* Reset knob box-shadow */
+
+    /* Dial selector indicator styling */
+    --ds-indicator-width-override: 2px;
+    --ds-indicator-height-override: 24px;
+
+    /* Dial selector label styling */
+    --ds-label-font-size: var(--font-size-small);
+    --ds-label-padding: var(--spacing-1) var(--spacing-2);
+    --ds-label-transition: color 50ms linear, background 50ms linear;
+    --ds-label-font-weight: var(--font-weight-medium);
+    --ds-label-text-transform: uppercase;
+    --ds-label-letter-spacing: 0.1em;
+    --ds-label-color: var(--dial-color-ink);
+
+    /* Dial selector label active state */
+    --ds-label-active-background: var(--accent-color);
+    --ds-label-active-color: #ffffff;
+    --ds-label-span-active-font-weight: 600;
+
+    /* Dial selector spoke lines */
+    --ds-line-width: 1px;
+    --ds-line-opacity: 0.2;
+    --ds-line-stroke: var(--dial-color-ink);
+  }
+}
+

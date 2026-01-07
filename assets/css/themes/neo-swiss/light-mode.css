@@ -1,0 +1,15 @@
+/* ===========================
+Neo-Swiss Theme - Light Mode
+=========================== */
+
+:root[data-theme='neoswiss'][data-mode='light'] {
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-black);
+  --border-color: var(--color-black);
+  --dial-color-ink: var(--color-black);
+  --ds-knob-background-color: var(--color-black);
+  --link-color: var(--color-black);
+  --link-visited-color: var(--color-black);
+}
+

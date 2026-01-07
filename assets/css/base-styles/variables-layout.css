@@ -45,6 +45,7 @@
   --header-border-block-end: none;
   --header-border-block-end-color: var(--border-color);
   --header-padding: unset; /* 0 default */
+  --header-padding-inline: 0;
   --header-padding-inline-start: 0;
   --header-padding-inline-end: 0;
   --header-padding-block-start: 0;
@@ -62,7 +63,16 @@
   --header-transform: none;
   --header-padding-responsive-500: var(--header-padding);
   --header-link-color: inherit;
+  --header-link-text-decoration: underline;
+  --header-link-border-block-end: none;
+  --header-link-transition: none;
+  --header-link-position: static;
+  --header-link-hover-border-block-end: none;
+  --header-link-hover-border-block-end-color: transparent;
   --header-link-hover-color: inherit;
+  --header-link-visited-border-block-end: none;
+  --header-link-visited-hover-border-block-end: none;
+  --header-link-visited-hover-border-block-end-color: transparent;
   --header-buttons-justify-content: center;
   --header-name-greeting-font-weight: normal;
   --header-name-greeting-letter-spacing: 0.12em;
@@ -185,16 +195,27 @@
   --section-text-letter-spacing: normal;
   --section-text-margin-block-end: 0.9rem;
 
+  /* === SUMMARY SECTION PARAGRAPHS === */
+  --section-summary-p-font-size: inherit;
+  --section-summary-p-margin-block-end: inherit;
+
+  /* === ASHBY SECTION === */
+  --section-ashby-border-block-start: none;
+  --section-ashby-padding-block-start: 0;
+
   /* === SECTION CONTAINER === */
   --section-margin: 0 0 1.75rem 0;
   --section-margin-block-end: 1.75rem;
   --section-margin-inline: 0;
   --section-margin-block-start: 0;
   --section-padding: 1rem 0 0;
+  --section-padding-inline: 0;
   --section-padding-inline-start: 0;
   --section-padding-inline-end: 0;
+  --section-padding-block: 0;
   --section-padding-block-start: 0;
   --section-padding-block-end: 0;
+  --section-border: none;
   --resume-section-background: transparent;
   --resume-section-position: static;
   --resume-section-z-index: auto;
@@ -254,14 +275,18 @@
   /* === BODY TYPOGRAPHY === */
   --body-font-weight: normal;
   --body-letter-spacing: normal;
+  --body-line-height: normal;
 
   /* === TYPOGRAPHY OVERRIDES === */
   --h2-h3-font-weight: normal;
   --h2-h3-text-transform: none;
   --h2-h3-letter-spacing: normal;
+  --p-margin-block-end: 0;
   --p-li-font-weight: normal;
   --p-li-line-height: normal;
   --p-li-font-size: inherit;
+  --strong-font-weight: bold;
+  --em-font-style: italic;
   --h1-h2-h3-text-shadow: none;
 
   /* === HEADER NAME GREETING/SMALL === */

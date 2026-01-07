@@ -1,0 +1,159 @@
+/* ===========================
+Neo-Swiss Theme - Responsive Styles
+=========================== */
+
+/* ===========================
+TABLET - 768px and below
+=========================== */
+@media (max-width: 768px) {
+  /* Variable overrides */
+  :root[data-theme='neoswiss'] {
+    --header-name-font-size: clamp(2.5rem, 10vw, 4rem);
+    --section-title-font-size: clamp(1.125rem, 3vw, 1.5rem);
+    --section-title-width: 80%;
+    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --printlink-padding: calc(var(--swiss-grid) * 1.5) var(--spacing-3);
+    --education-institution-font-size: clamp(1.25rem, 4vw, 2rem);
+    --experience-role-font-size: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  /* Component styles */
+  body[data-theme='neoswiss'] {
+    /* Header and section padding adjustments */
+    --header-padding-inline: var(--spacing-4);
+    --header-padding-block: var(--spacing-6);
+    --section-padding-inline: var(--spacing-4);
+
+    /* Button container alignment */
+    --header-buttons-justify-content: flex-start;
+
+    /* AI Button */
+    .neoswiss-ai-button {
+      inline-size: calc(var(--swiss-grid) * 7);
+      block-size: calc(var(--swiss-grid) * 7);
+      inset-block-end: var(--spacing-4);
+      inset-inline-end: var(--spacing-4);
+    }
+
+    /* AI Modal */
+    .neoswiss-ai-modal__container {
+      inline-size: 95%;
+    }
+
+    .neoswiss-ai-modal__header {
+      padding: var(--spacing-3);
+      position: sticky;
+      inset-block-start: 0;
+      background: var(--background-color);
+      z-index: 1;
+    }
+
+    .neoswiss-ai-modal__content {
+      padding-block: var(--spacing-4) calc(var(--spacing-4) * 2);
+      padding-inline: var(--spacing-4);
+    }
+
+    .neoswiss-ai-modal__section {
+      margin-block-end: var(--spacing-4);
+      padding-block-end: var(--spacing-4);
+    }
+  }
+}
+
+/* ===========================
+MOBILE - 500px and below
+=========================== */
+@media (max-width: 500px) {
+  /* Variable overrides */
+  :root[data-theme='neoswiss'] {
+    --header-name-font-size: clamp(2rem, 12vw, 3rem);
+    --section-title-font-size: clamp(1rem, 4vw, 1.25rem);
+    --section-title-padding: 0 0 var(--spacing-1) 0;
+    --section-title-margin: 0 0 var(--spacing-4) 0;
+    --section-title-width: 100%;
+    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --printlink-padding: calc(var(--swiss-grid) * 1.5) var(--spacing-3);
+    --ds-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --ds-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
+  }
+
+  /* Component styles */
+  body[data-theme='neoswiss'] {
+    /* Header and section padding adjustments */
+    --header-padding-inline: var(--spacing-3);
+    --header-padding-block: var(--spacing-4);
+    --section-padding-inline: var(--spacing-3);
+
+    /* Button container alignment */
+    --header-buttons-justify-content: flex-start;
+
+    /* Dial selector housing */
+    --dial-selector-housing-padding: 0;
+
+    /* Experience item spacing */
+    --experience-item-margin-block-end: var(--spacing-6);
+
+    /* AI Button */
+    .neoswiss-ai-button {
+      inline-size: var(--spacing-6);
+      block-size: var(--spacing-6);
+      inset-block-end: var(--spacing-3);
+      inset-inline-end: var(--spacing-4);
+    }
+
+    .neoswiss-ai-button__label {
+      font-size: var(--font-size-small);
+    }
+
+    .neoswiss-ai-button__spark {
+      inline-size: calc(var(--swiss-grid) * 0.75);
+      block-size: calc(var(--swiss-grid) * 0.75);
+    }
+
+    .neoswiss-ai-button__spark--1,
+    .neoswiss-ai-button__spark--3 {
+      inset-block-start: calc(var(--swiss-grid) * -1);
+    }
+
+    .neoswiss-ai-button__spark--3 {
+      inset-block-end: calc(var(--swiss-grid) * -1);
+      inset-block-start: auto;
+    }
+
+    .neoswiss-ai-button__spark--2,
+    .neoswiss-ai-button__spark--4 {
+      inset-inline-end: calc(var(--swiss-grid) * -1);
+    }
+
+    .neoswiss-ai-button__spark--4 {
+      inset-inline-start: calc(var(--swiss-grid) * -1);
+      inset-inline-end: auto;
+    }
+
+    /* AI Modal */
+    .neoswiss-ai-modal__title {
+      font-size: var(--font-size-medium);
+    }
+
+    .neoswiss-ai-modal__close {
+      inline-size: calc(var(--swiss-grid) * 5);
+      block-size: calc(var(--swiss-grid) * 5);
+    }
+
+    .neoswiss-ai-modal__content {
+      padding-block: var(--spacing-3) calc(var(--spacing-3) * 2);
+      padding-inline: var(--spacing-3);
+    }
+
+    .neoswiss-ai-modal__section {
+      margin-block-end: var(--spacing-3);
+      padding-block-end: var(--spacing-3);
+    }
+
+    .neoswiss-ai-modal__metric {
+      display: block;
+      min-inline-size: auto;
+      margin-block-end: calc(var(--swiss-grid) * 0.5);
+    }
+  }
+}

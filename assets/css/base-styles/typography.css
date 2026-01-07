@@ -48,6 +48,18 @@ li {
   font-size: var(--p-li-font-size, inherit);
 }
 
+p {
+  margin-block-end: var(--p-margin-block-end, 0);
+}
+
+strong {
+  font-weight: var(--strong-font-weight, bold);
+}
+
+em {
+  font-style: var(--em-font-style, italic);
+}
+
 /* === HEADER NAME (H1) === */
 
 .resume-header__name-wrapper {

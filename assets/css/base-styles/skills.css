@@ -116,3 +116,27 @@
   line-height: var(--skills-items-line-height, 1.4);
   font-family: var(--skills-items-font-family, inherit);
 }
+
+/* === SKILLS GROUP UL === */
+
+.skills-grid__group ul {
+  list-style: var(--skills-group-ul-list-style, none);
+  padding: var(--skills-group-ul-padding, 0);
+  margin: var(--skills-group-ul-margin, 0);
+  display: var(--skills-group-ul-display, block);
+  flex-wrap: var(--skills-group-ul-flex-wrap, nowrap);
+  gap: var(--skills-group-ul-gap, 0);
+}
+
+/* === SKILLS LIST ITEMS === */
+
+.skills-grid__group li {
+  font-size: var(--skills-group-li-font-size, 0.85rem);
+  font-weight: var(--skills-group-li-font-weight, normal);
+  line-height: var(--skills-group-li-line-height, 1.4);
+
+  &:not(:last-child)::after {
+    content: var(--skills-group-li-after-content, none);
+    margin-inline-start: var(--skills-group-li-after-margin-inline-start, 0);
+  }
+}

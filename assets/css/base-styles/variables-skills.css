@@ -95,4 +95,21 @@
   --skills-items-font-size: 0.85rem;
   --skills-items-line-height: 1.4;
   --skills-items-font-family: inherit;
+
+  /* === SKILLS GROUP UL === */
+  --skills-group-ul-list-style: none;
+  --skills-group-ul-padding: 0;
+  --skills-group-ul-margin: 0;
+  --skills-group-ul-display: block;
+  --skills-group-ul-flex-wrap: nowrap;
+  --skills-group-ul-gap: 0;
+
+  /* === SKILLS LIST ITEMS === */
+  --skills-group-li-font-size: 0.85rem;
+  --skills-group-li-font-weight: normal;
+  --skills-group-li-line-height: 1.4;
+
+  /* === SKILLS LIST ITEM AFTER PSEUDO === */
+  --skills-group-li-after-content: none;
+  --skills-group-li-after-margin-inline-start: 0;
 }
