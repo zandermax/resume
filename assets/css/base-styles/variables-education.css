@@ -17,6 +17,10 @@
  *   - Education item container (borders, padding, backgrounds)
  *   - Institution name (font, text transform, spacing)
  *   - Hover states and pseudo-elements
+ *
+ * VARIABLE PATTERNS:
+ *   - Alternate nth-child styling: Use --education-item-nth-even-transform for even items
+ *     (inherits from --education-item-transform by default)
  */
 
 :root {
@@ -61,8 +65,10 @@
   --education-institution-letter-spacing: 0.08em;
   --education-institution-line-height: normal;
   --education-institution-text-shadow: none;
-  --education-institution-margin: 0;
+  --education-institution-margin-block-start: 0;
   --education-institution-margin-block-end: 0.15rem;
+  --education-institution-margin-inline-start: 0;
+  --education-institution-margin-inline-end: 0;
   --education-institution-border-inline-start: none;
   --education-institution-padding-inline-start: 0;
 

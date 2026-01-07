@@ -150,8 +150,6 @@ TERMINAL Theme - Common Variables
   --h1-h2-h3-text-shadow: none;
   --header-name-greeting-font-size: 0.95rem;
   --header-name-greeting-line-height: 1.6;
-  --header-name-small-font-size: 0.95rem;
-  --header-name-small-line-height: 1.6;
   --p-li-font-size: 0.95rem;
   --p-li-line-height: 1.6;
 }

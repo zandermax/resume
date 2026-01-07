@@ -19,20 +19,19 @@
 /* === SECTION CONTAINERS === */
 
 .resume-section {
-  margin: var(--section-margin, 0 0 1.75rem 0);
-  margin-inline: var(--section-margin-inline, 0);
   margin-block-start: var(--section-margin-block-start, 0);
   margin-block-end: var(--section-margin-block-end, 1.75rem);
-  padding: var(--section-padding, 1rem 0 0);
-  padding-inline: var(--section-padding-inline, 0);
+  margin-inline-start: var(--section-margin-inline-start, 0);
+  margin-inline-end: var(--section-margin-inline-end, 0);
+  padding-block-start: var(--section-padding-block-start, 1rem);
+  padding-block-end: var(--section-padding-block-end, 0);
   padding-inline-start: var(--section-padding-inline-start, 0);
   padding-inline-end: var(--section-padding-inline-end, 0);
-  padding-block: var(--section-padding-block, 0);
-  padding-block-start: var(--section-padding-block-start, 0);
-  padding-block-end: var(--section-padding-block-end, 0);
-  border: var(--section-border, none);
   border-block-start: var(--section-border-block-start-width, 1px) var(--section-border-block-start-style, solid)
     var(--section-border-block-start-color, var(--border-color));
+  border-block-end: var(--section-border-block-end, none);
+  border-inline-start: var(--section-border-inline-start, none);
+  border-inline-end: var(--section-border-inline-end, none);
   background: var(--resume-section-background);
   position: var(--resume-section-position, static);
   z-index: var(--resume-section-z-index, auto);

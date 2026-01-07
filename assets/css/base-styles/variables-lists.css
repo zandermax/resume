@@ -18,6 +18,10 @@
  *   - Community items (solid borders, padding, hover states)
  *   - Principles items (dashed borders, padding, hover states)
  *   - List item pseudo-elements for decorations
+ *
+ * VARIABLE PATTERNS:
+ *   - Shared border colors: --list-item-border-color and --list-item-border-inline-start-color
+ *     provide base colors that both community and principles items can reference
  */
 
 :root {

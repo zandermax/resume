@@ -9,7 +9,6 @@ TERMINAL Theme - Responsive Adjustments
     --main-padding-responsive-768: var(--spacing-lg);
     --header-name-font-size: 2.1rem;
     --header-name-greeting-font-size: 0.95rem;
-    --header-name-small-font-size: 0.95rem;
   }
 }
 

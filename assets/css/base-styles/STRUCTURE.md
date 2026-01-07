@@ -108,9 +108,94 @@ Every CSS file includes a structured header:
  */
 ```
 
+## CSS Variable Guidelines
+
+### Variable Naming Patterns
+
+**Pseudo-element variables:**
+- Use `--element-before-*` for `::before` pseudo-elements
+- Use `--element-after-*` for `::after` pseudo-elements
+- Example: `--section-title-before-content`, `--experience-item-after-background`
+
+**Responsive variables:**
+- Use `--variable-responsive-{breakpoint}` pattern
+- Example: `--header-padding-responsive-500`, `--section-padding-responsive-768`
+
+**State variables:**
+- Use `--element-hover-*` for hover states
+- Use `--element-active-*` for active states
+- Example: `--link-hover-color`, `--printlink-active-transform`
+
+**Alternate/nth-child variables:**
+- Use `--element-nth-{pattern}-*` for nth-child styling
+- Use `--property-alternate` for even/odd alternates
+- These inherit from base variables by default
+- Examples:
+  - `--experience-item-nth-2n-transform` (for even experience items)
+  - `--education-item-nth-even-transform` (for even education items)
+  - `--bullet-before-content-alternate` (for even bullet points)
+  - `--bullet-text-shadow-alternate` (for even bullet points)
+
+### Longhand-Only Policy for Box Model Properties
+
+**Always use longhand properties for `border`, `margin`, and `padding`** to avoid cascade conflicts:
+
+**Why:** CSS shorthand properties reset ALL sub-properties, which can override longhand properties regardless of order. This creates unpredictable behavior when themes try to override specific edges.
+
+**Example of the problem:**
+```css
+/* BAD - shorthand conflicts with longhand */
+border: var(--element-border, none);           /* Resets ALL border properties */
+border-block-end: var(--element-border-width, 3px) solid var(--border-color); /* Gets overridden! */
+
+/* GOOD - use only longhand */
+border-block-start: var(--element-border-block-start, none);
+border-block-end: var(--element-border-block-end, 3px solid var(--border-color));
+border-inline-start: var(--element-border-inline-start, none);
+border-inline-end: var(--element-border-inline-end, none);
+```
+
+**Apply this to:**
+- `border` → use `border-block-start`, `border-block-end`, `border-inline-start`, `border-inline-end`
+- `margin` → use `margin-block-start`, `margin-block-end`, `margin-inline-start`, `margin-inline-end`
+- `padding` → use `padding-block-start`, `padding-block-end`, `padding-inline-start`, `padding-inline-end`
+
+### Background Layering Pattern
+
+When using both `background-image` and `background` properties:
+- Set `background-image` BEFORE `background` shorthand
+- This allows themes to use textures/patterns via `--element-background-image`
+- The `background` shorthand sets color without overriding the image
+- Example in typography.css:
+  ```css
+  background-image: var(--section-title-background-image);
+  background: var(--section-title-background, transparent);
+  ```
+
+### Theme-Specific Intermediate Variables
+
+Themes can define their own prefixed variables for internal reuse:
+- `--brutal-shadow-*`, `--brutal-texture` (Brutal theme)
+- `--terminal-inset-*`, `--terminal-border-*` (Terminal theme)
+- `--glitch-primary`, `--glitch-text-shadow` (Glitch theme)
+- `--nostalgia-*` colors (Nostalgia theme)
+
+These intermediate variables help themes maintain consistency and avoid repetition.
+
+### Shared Variables
+
+Some elements intentionally share variables:
+- `.resume-header__name-greeting` and `.resume-header__name-small` both use `--header-name-greeting-*` variables for consistent styling
+
 ## Theme Overrides
 
 Theme files in `assets/css/themes/*.css` can override any CSS variable defined in the `variables-*.css` files. The base styles provide sensible defaults that themes customize.
+
+Themes should:
+1. Override base variables to customize appearance
+2. Define theme-specific intermediate variables (with theme prefix) for internal reuse
+3. Use colors from `colors.css` when possible, or define custom oklch() colors
+4. Document any custom spacing systems if not using base `--spacing-*` scale
 
 ## Adding New Components
 
@@ -118,3 +203,4 @@ Theme files in `assets/css/themes/*.css` can override any CSS variable defined i
 2. Create `{component}.css` with component styles
 3. Add both imports to `index.css` in appropriate sections
 4. Update this STRUCTURE.md file with the new component mappings
+5. Follow variable naming patterns documented above

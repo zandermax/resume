@@ -22,6 +22,11 @@
  *   - Tech badges (borders, colors, padding, hover states, pseudo-elements)
  *   - Bullet points (style, spacing, custom bullets)
  *   - Pseudo-elements for decorative effects
+ *
+ * VARIABLE PATTERNS:
+ *   - Alternate nth-child styling: Use --experience-item-nth-2n-transform for even items
+ *   - Bullet alternates: Use --bullet-before-content-alternate and --bullet-text-shadow-alternate
+ *     for even bullet points (these inherit from base bullet variables by default)
  */
 
 :root {
@@ -95,8 +100,10 @@
   --experience-role-letter-spacing: 0.08em;
   --experience-role-line-height: normal;
   --experience-role-text-shadow: none;
-  --experience-role-margin: 0;
+  --experience-role-margin-block-start: 0;
   --experience-role-margin-block-end: 0;
+  --experience-role-margin-inline-start: 0;
+  --experience-role-margin-inline-end: 0;
   --experience-role-border-inline-start: none;
   --experience-role-padding-inline-start: 0;
   --experience-role-hover-transform: none;

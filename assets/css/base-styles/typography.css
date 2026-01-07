@@ -20,6 +20,11 @@
  *
  * RELATED FILES:
  *   - All component files (inherit these text styles)
+ *
+ * VARIABLE PATTERNS:
+ *   - Background layering: background-image is set before background shorthand
+ *     to allow themes to use both (e.g., --section-title-background-image for textures)
+ *   - Visited link states: Use --link-visited-* variables with fallbacks to regular link styles
  */
 
 /* === BASE HEADING STYLES === */
@@ -83,15 +88,19 @@ h1.resume-header__name {
   letter-spacing: var(--header-name-letter-spacing, 0.08em);
   text-transform: var(--header-name-text-transform, uppercase);
   color: var(--header-name-color, inherit);
-  border: var(--header-name-border, none);
+  border-block-start: var(--header-name-border-block-start, none);
   border-block-end: var(--header-name-border-width, 4px) var(--header-name-border-style, solid)
     var(--header-name-border-color, var(--border-color));
   border-inline-start: var(--header-name-border-inline-start, none);
-  padding: var(--header-name-padding, 0);
+  border-inline-end: var(--header-name-border-inline-end, none);
+  padding-block-start: var(--header-name-padding-block-start, 0);
   padding-block-end: var(--header-name-padding-block-end, 0.35rem);
   padding-inline-start: var(--header-name-padding-inline-start, 0);
-  margin: var(--header-name-margin, 0);
+  padding-inline-end: var(--header-name-padding-inline-end, 0);
+  margin-block-start: var(--header-name-margin-block-start, 0);
   margin-block-end: var(--header-name-margin-block-end, 0.35rem);
+  margin-inline-start: var(--header-name-margin-inline-start, 0);
+  margin-inline-end: var(--header-name-margin-inline-end, 0);
   text-shadow: var(--header-name-text-shadow, none);
   position: var(--header-name-position, static);
   animation: var(--header-name-animation, none);
@@ -127,8 +136,10 @@ h1.resume-header__name {
   letter-spacing: var(--header-role-letter-spacing, 0.18em);
   line-height: var(--header-role-line-height, normal);
   text-shadow: var(--header-role-text-shadow, none);
-  margin: var(--header-role-margin, 0);
   margin-block-start: var(--header-role-margin-block-start, 0);
+  margin-block-end: var(--header-role-margin-block-end, 0);
+  margin-inline-start: var(--header-role-margin-inline-start, 0);
+  margin-inline-end: var(--header-role-margin-inline-end, 0);
   border-inline-start: var(--header-role-border-inline-start, none);
   padding-inline-start: var(--header-role-padding-inline-start, 0);
 }
@@ -142,14 +153,19 @@ h2.resume-section__title {
   letter-spacing: var(--section-title-letter-spacing, 0.18em);
   text-transform: var(--section-title-text-transform, uppercase);
   color: var(--section-title-color, var(--heading-color));
-  border: var(--section-title-border, none);
-  border-block: var(--section-title-border-width, 3px) var(--section-title-border-style, solid)
+  border-block-start: var(--section-title-border-width, 3px) var(--section-title-border-style, solid)
     var(--section-title-border-color, var(--border-color));
-  border-inline-start: var(--section-title-border-inline-start, none);
   border-block-end: var(--section-title-border-block-end, none);
+  border-inline-start: var(--section-title-border-inline-start, none);
+  border-inline-end: var(--section-title-border-inline-end, none);
   border-radius: var(--section-title-border-radius, 0);
-  padding: var(--section-title-padding, 0.45rem 0);
-  margin: var(--section-title-margin, 0);
+  padding-block-start: var(--section-title-padding-block-start, 0.45rem);
+  padding-block-end: var(--section-title-padding-block-end, 0.45rem);
+  padding-inline-start: var(--section-title-padding-inline-start, 0);
+  padding-inline-end: var(--section-title-padding-inline-end, 0);
+  margin-block-start: var(--section-title-margin-block-start, 0);
+  margin-inline-start: var(--section-title-margin-inline-start, 0);
+  margin-inline-end: var(--section-title-margin-inline-end, 0);
   margin-block-end: var(--section-title-margin-bottom, 0.75rem);
   margin-top: var(--section-title-margin-top, 0);
   background-image: var(--section-title-background-image);
@@ -215,8 +231,10 @@ h3.experience-item__role {
   letter-spacing: var(--experience-role-letter-spacing, 0.08em);
   line-height: var(--experience-role-line-height, normal);
   text-shadow: var(--experience-role-text-shadow, none);
-  margin: var(--experience-role-margin, 0);
+  margin-block-start: var(--experience-role-margin-block-start, 0);
   margin-block-end: var(--experience-role-margin-block-end, 0);
+  margin-inline-start: var(--experience-role-margin-inline-start, 0);
+  margin-inline-end: var(--experience-role-margin-inline-end, 0);
   border-inline-start: var(--experience-role-border-inline-start, none);
   padding-inline-start: var(--experience-role-padding-inline-start, 0);
   position: relative;
@@ -237,8 +255,10 @@ h3.education-item__institution {
   letter-spacing: var(--education-institution-letter-spacing, 0.08em);
   line-height: var(--education-institution-line-height, normal);
   text-shadow: var(--education-institution-text-shadow, none);
-  margin: var(--education-institution-margin, 0);
+  margin-block-start: var(--education-institution-margin-block-start, 0);
   margin-block-end: var(--education-institution-margin-block-end, 0.15rem);
+  margin-inline-start: var(--education-institution-margin-inline-start, 0);
+  margin-inline-end: var(--education-institution-margin-inline-end, 0);
   border-inline-start: var(--education-institution-border-inline-start, none);
   padding-inline-start: var(--education-institution-padding-inline-start, 0);
 }

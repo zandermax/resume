@@ -55,8 +55,10 @@
   background-color: var(--skills-group-background, var(--section-bg, transparent));
   box-shadow: var(--skills-group-box-shadow, none);
   border-radius: var(--skills-group-border-radius, 0);
-  margin: var(--skills-group-margin, 0);
+  margin-block-start: var(--skills-group-margin-block-start, 0);
   margin-block-end: var(--skills-group-margin-bottom, 0);
+  margin-inline-start: var(--skills-group-margin-inline-start, 0);
+  margin-inline-end: var(--skills-group-margin-inline-end, 0);
   position: var(--skills-group-position, relative);
   transform: var(--skills-group-transform, none);
   transition: var(--skills-group-transition, none);
@@ -87,12 +89,19 @@
   text-transform: var(--skills-title-text-transform, uppercase);
   letter-spacing: var(--skills-title-letter-spacing, 0.14em);
   line-height: var(--skills-title-line-height, normal);
-  border: var(--skills-title-border, none);
+  border-block-start: var(--skills-title-border-block-start, none);
   border-block-end: var(--skills-title-border-width, 2px) var(--skills-title-border-style, solid)
     var(--skills-title-border-block-end-color, var(--border-color));
+  border-inline-start: var(--skills-title-border-inline-start, none);
+  border-inline-end: var(--skills-title-border-inline-end, none);
+  padding-block-start: var(--skills-title-padding-block-start, 0);
   padding-block-end: var(--skills-title-padding-bottom, 0.25rem);
-  margin: var(--skills-title-margin, 0);
+  padding-inline-start: var(--skills-title-padding-inline-start, 0);
+  padding-inline-end: var(--skills-title-padding-inline-end, 0);
+  margin-block-start: var(--skills-title-margin-block-start, 0);
   margin-block-end: var(--skills-title-margin-bottom, 0.3rem);
+  margin-inline-start: var(--skills-title-margin-inline-start, 0);
+  margin-inline-end: var(--skills-title-margin-inline-end, 0);
   text-shadow: var(--skills-title-text-shadow, none);
   display: block;
   align-items: var(--skills-title-align-items, normal);

@@ -25,6 +25,13 @@
  *   - Section structure (titles, content, spacing)
  *   - Typography effects (shadows, letter-spacing)
  *   - Body pseudo-elements
+ *
+ * VARIABLE PATTERNS:
+ *   - Pseudo-element variables: Use pattern --element-before-* and --element-after-*
+ *   - Responsive variables: Use pattern --variable-responsive-{breakpoint}
+ *   - Hover states: Use pattern --element-hover-*
+ *   - Note: .resume-header__name-greeting and .resume-header__name-small share the same
+ *     --header-name-greeting-* variables for consistent styling
  */
 
 :root {
@@ -96,16 +103,20 @@
   --header-name-letter-spacing: 0.08em;
   --header-name-text-transform: uppercase;
   --header-name-color: inherit;
-  --header-name-border: none;
   --header-name-border-style: solid;
   --header-name-border-width: 4px;
   --header-name-border-color: var(--border-color);
+  --header-name-border-block-start: none;
   --header-name-border-inline-start: none;
-  --header-name-padding: 0;
+  --header-name-border-inline-end: none;
+  --header-name-padding-block-start: 0;
   --header-name-padding-block-end: 0.35rem;
   --header-name-padding-inline-start: 0;
-  --header-name-margin: 0;
+  --header-name-padding-inline-end: 0;
+  --header-name-margin-block-start: 0;
   --header-name-margin-block-end: 0.35rem;
+  --header-name-margin-inline-start: 0;
+  --header-name-margin-inline-end: 0;
   --header-name-text-shadow: none;
   --header-name-position: static;
   --header-name-animation: none;
@@ -113,6 +124,7 @@
 
   /* === HEADER NAME WRAPPER === */
   --header-name-wrapper-margin-block-start: 2rem;
+  --header-name-wrapper-padding-inline: 0.5rem;
 
   /* === HEADER TOP ROW === */
   --header-top-row-margin-block-start: 0;
@@ -134,18 +146,22 @@
   --section-title-letter-spacing: 0.18em;
   --section-title-text-transform: uppercase;
   --section-title-color: inherit;
-  --section-title-border: none;
   --section-title-border-style: solid;
   --section-title-border-width: 3px;
   --section-title-border-color: var(--border-color);
   --section-title-border-radius: 0;
-  --section-title-border-position: block; /* block, block-end, or none */
   --section-title-border-inline-start: none;
+  --section-title-border-inline-end: none;
   --section-title-border-block-end: none;
-  --section-title-padding: 0.45rem 0;
-  --section-title-margin: 0;
+  --section-title-padding-block-start: 0.45rem;
+  --section-title-padding-block-end: 0.45rem;
+  --section-title-padding-inline-start: 0;
+  --section-title-padding-inline-end: 0;
+  --section-title-margin-block-start: 0;
   --section-title-margin-bottom: 0.75rem;
   --section-title-margin-top: 0;
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-background: transparent;
   --section-title-box-shadow: none;
   --section-title-text-shadow: none;
@@ -247,8 +263,10 @@
   --header-role-letter-spacing: 0.18em;
   --header-role-line-height: normal;
   --header-role-text-shadow: none;
-  --header-role-margin: 0;
   --header-role-margin-block-start: 0;
+  --header-role-margin-block-end: 0;
+  --header-role-margin-inline-start: 0;
+  --header-role-margin-inline-end: 0;
   --header-role-border-inline-start: none;
   --header-role-padding-inline-start: 0;
 
@@ -292,8 +310,6 @@
   /* === HEADER NAME GREETING/SMALL === */
   --header-name-greeting-font-size: 1.2rem;
   --header-name-greeting-line-height: normal;
-  --header-name-small-font-size: 1.2rem;
-  --header-name-small-line-height: normal;
 
   /* === BODY PSEUDO-ELEMENT === */
   --body-before-content: none;
