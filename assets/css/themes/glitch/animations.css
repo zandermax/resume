@@ -42,19 +42,19 @@
     transform: translateX(0);
   }
   20% {
-    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+    text-shadow: -2px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)), 2px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
     transform: translateX(-2px);
   }
   40% {
-    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+    text-shadow: 2px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)), -2px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
     transform: translateX(2px);
   }
   60% {
-    text-shadow: -1px 0 #0000ff, 1px 0 #ff0000;
+    text-shadow: -1px 0 var(--glitch-tertiary, oklch(45.2% 0.313 264.1)), 1px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2));
     transform: translateX(1px);
   }
   80% {
-    text-shadow: 1px 0 #00ffff, -1px 0 #0000ff;
+    text-shadow: 1px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7)), -1px 0 var(--glitch-tertiary, oklch(45.2% 0.313 264.1));
     transform: translateX(-1px);
   }
 }

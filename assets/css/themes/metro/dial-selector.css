@@ -45,7 +45,7 @@ METRO Theme - Dial Selector Custom Properties
     /* Dial selector label active state - Bold Metro accent */
     --ds-label-active-background: var(--accent-color);
     --ds-label-active-box-shadow: none;
-    --ds-label-active-color: #ffffff;
+    --ds-label-active-color: var(--color-white);
     --ds-label-active-font-weight: 600;
 
     /* Dial selector spoke lines */

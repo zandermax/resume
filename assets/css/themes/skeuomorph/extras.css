@@ -20,7 +20,7 @@ body[data-theme='skeuomorph'] {
       oklch(0% 0 0 / 0.05) 24px,
       oklch(0% 0 0 / 0.05) 25px
     );
-    color: #333;
+    color: oklch(33% 0 0);
     font-family: 'Indie Flower', 'Comic Sans MS', cursive;
     font-size: 15px;
     line-height: 24px;
@@ -91,7 +91,7 @@ body[data-theme='skeuomorph'] {
     height: 18px;
     margin-block-start: 4px;
     flex-shrink: 0;
-    accent-color: #333;
+    accent-color: oklch(33% 0 0);
     cursor: default;
   }
 

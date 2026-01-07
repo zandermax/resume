@@ -14,7 +14,7 @@ Nostalgia Theme - Extras
   gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--section-bg, transparent);
-  border: var(--border-width-thick) ridge var(--accent-color, #000);
+  border: var(--border-width-thick) ridge var(--accent-color, var(--color-black, oklch(0% 0 0)));
   font-family: 'Courier New', monospace;
   font-weight: bold;
   font-size: clamp(var(--spacing-md), 2vw + var(--spacing-xs), var(--spacing-lg));

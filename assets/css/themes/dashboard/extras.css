@@ -225,7 +225,7 @@ body[data-theme='dashboard'] {
     padding: 1.25rem 1.5rem;
     border-radius: 6px 6px 0 0;
     background: var(--accent-color);
-    color: #ffffff;
+    color: var(--color-white);
   }
 
   .dashboard-metrics-dialog__title {
@@ -246,7 +246,7 @@ body[data-theme='dashboard'] {
     border: none;
     border-radius: 4px;
     background: transparent;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 1.75rem;
     line-height: 1;
     cursor: pointer;
@@ -367,7 +367,7 @@ body[data-theme='dashboard'] {
   }
 
   .dashboard-dialog-chart__bar-value {
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 0.7rem;
     font-weight: 700;
     font-family: var(--mono-font);

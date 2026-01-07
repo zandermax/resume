@@ -202,7 +202,7 @@ Ultra-modern minimalism with mathematical precision
   --printlink-font-size: var(--font-size-small);
   --printlink-text-transform: uppercase;
   --printlink-background: var(--accent-color);
-  --printlink-color: #ffffff;
+  --printlink-color: var(--color-white);
   --printlink-font-weight: var(--font-weight-medium);
   --printlink-padding: var(--spacing-2) var(--spacing-4);
   --printlink-letter-spacing: var(--letter-spacing-wide);

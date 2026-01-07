@@ -8,8 +8,8 @@ body {
 
 body.resume-print {
   font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #ffffff;
+  color: oklch(11% 0 0);
+  background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   font-size: 11pt;
 }
@@ -58,7 +58,7 @@ p {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  border-block-end: 1px solid #555;
+  border-block-end: 1px solid oklch(55% 0 0);
   padding-block-end: 0.2rem;
   margin-block-end: 0.6rem;
 }
@@ -73,7 +73,7 @@ p {
 
 .resume-print__header {
   margin-block-end: 1.2rem;
-  border-block-end: 1px solid #aaa;
+  border-block-end: 1px solid oklch(72% 0 0);
   padding-block-end: 0.6rem;
 }
 
@@ -94,7 +94,7 @@ p {
 }
 
 .resume-print__contact a {
-  color: #111;
+  color: oklch(11% 0 0);
   text-decoration: none;
 }
 
@@ -105,7 +105,7 @@ p {
 
 .resume-print__full-resume-link a {
   font-weight: 600;
-  color: #0066cc;
+  color: var(--color-blue-link, oklch(42% 0.3 264));
   text-decoration: underline;
 }
 
@@ -154,7 +154,7 @@ p {
 
 .resume-print__experience-company {
   font-size: 0.85rem;
-  color: #333;
+  color: oklch(33% 0 0);
 }
 
 .resume-print__experience-meta {
@@ -246,7 +246,7 @@ p {
   }
 
   a {
-    color: #000;
+    color: var(--color-black, oklch(0% 0 0));
     text-decoration: none;
   }
 

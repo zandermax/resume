@@ -57,7 +57,7 @@ dial-selector .dial-label > span {
 
 dial-selector .dial-label:not(.active):hover > span {
   background: var(--ds-label-hover-background, var(--ds-color-ink));
-  color: var(--ds-label-hover-color, var(--ds-knob-background, #11161c));
+  color: var(--ds-label-hover-color, var(--ds-knob-background, var(--color-dark-knob, oklch(19% 0.015 240))));
   opacity: var(--ds-label-hover-opacity, 1);
   transform: var(--ds-label-hover-transform, none);
   filter: var(--ds-label-hover-filter, none);

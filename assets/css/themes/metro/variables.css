@@ -141,7 +141,7 @@ Flat Design / Material Zero
   --tech-badge-border: 0;
   --tech-badge-border-radius: 0;
   --tech-badge-background: var(--metro-blue);
-  --tech-badge-color: #ffffff;
+  --tech-badge-color: var(--color-white);
   --tech-badge-font-weight: 600;
   --tech-badge-padding: 0.5rem 1rem;
   --tech-badge-font-size: 0.7rem;
@@ -170,7 +170,7 @@ Flat Design / Material Zero
   --skills-group-box-shadow: none;
   --skills-group-transition: background-color 0.15s ease;
   --skills-group-hover-background: var(--metro-blue);
-  --skills-group-hover-child-color: #ffffff;
+  --skills-group-hover-child-color: var(--color-white);
 
   /* Skills grid title custom properties */
   --skills-title-border-style: solid;
@@ -249,11 +249,11 @@ Flat Design / Material Zero
   --link-transition: all 0.15s ease;
   --link-position: relative;
   --link-hover-background: var(--link-color);
-  --link-hover-color: #ffffff;
+  --link-hover-color: var(--color-white);
   --link-hover-border-block-end-color: var(--link-color);
   --link-visited-border-block-end-color: var(--link-visited-color);
   --link-visited-hover-background: var(--link-visited-color);
-  --link-visited-hover-color: #ffffff;
+  --link-visited-hover-color: var(--color-white);
   --link-visited-hover-border-block-end-color: var(--link-visited-color);
 
   /* ==================== PRINT LINK ==================== */

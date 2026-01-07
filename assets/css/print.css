@@ -4,7 +4,7 @@ Print Styles
 
 @media print {
   body.resume {
-    background: #ffffff;
+    background: var(--color-white);
   }
 
   .resume__main {
@@ -23,7 +23,7 @@ Print Styles
   }
 
   a {
-    color: #000000;
+    color: var(--color-black, oklch(0% 0 0));
     text-decoration: none;
   }
 
