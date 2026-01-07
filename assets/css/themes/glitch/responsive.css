@@ -36,7 +36,8 @@ Media queries for variable overrides
 
     /* Header and dial selector padding adjustments */
     --header-padding: 0;
-    --dial-selector-housing-padding: 0;
+    --dial-selector-housing-padding-block: 0;
+    --dial-selector-housing-padding-inline: 0;
 
     /* Dial label adjustments */
     --ds-label-font-size: var(--font-size-sm);

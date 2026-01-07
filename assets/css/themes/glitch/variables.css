@@ -231,8 +231,8 @@ Common properties for all modes
   /* Resume header dial-selector custom properties */
   --dial-selector-housing-border: var(--border-width-md) solid var(--border-color);
   --dial-selector-housing-background: var(--section-bg);
-  --dial-selector-housing-padding: var(--spacing-lg);
-  --dial-selector-housing-position: relative;
+  --dial-selector-housing-padding-block: var(--spacing-lg);
+  --dial-selector-housing-padding-inline: var(--spacing-lg);
   --dial-selector-housing-box-shadow: 3px 0 0 0 var(--glitch-primary), -3px 0 0 0 var(--glitch-secondary);
   --dial-selector-housing-h3-color: var(--text-color);
   --dial-selector-housing-h3-margin-block-end: var(--spacing-md);

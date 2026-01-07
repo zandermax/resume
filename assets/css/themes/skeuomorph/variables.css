@@ -206,7 +206,8 @@ SKEUOMORPH Theme - Base Variables
 
   /* ==================== DIAL SELECTOR HOUSING VARIABLES ==================== */
 
-  --dial-selector-housing-padding: var(--spacing-lg);
+  --dial-selector-housing-padding-block: var(--spacing-lg);
+  --dial-selector-housing-padding-inline: var(--spacing-lg);
   --dial-selector-housing-margin: var(--spacing-xs);
   --dial-selector-housing-margin-inline: 1rem;
   --dial-selector-housing-margin-block: 1rem;

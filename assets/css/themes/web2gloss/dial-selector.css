@@ -54,7 +54,8 @@ body[data-theme='web2gloss'] {
   }
 
   /* === DIAL SELECTOR HOUSING === */
-  --dial-selector-housing-padding: 1.5rem;
+  --dial-selector-housing-padding-block: 1.5rem;
+  --dial-selector-housing-padding-inline: 1.5rem;
   --dial-selector-housing-background: oklch(100% 0 0 / 0.2);
   --dial-selector-housing-border: 1px solid oklch(100% 0 0 / 0.3);
   --dial-selector-housing-border-radius: var(--web2-radius-lg);
@@ -131,7 +132,8 @@ body[data-theme='web2gloss'] {
 
   /* === RESPONSIVE ADJUSTMENTS === */
   @media (max-width: 768px) {
-    --dial-selector-housing-padding: 1.25rem;
+    --dial-selector-housing-padding-block: 1.25rem;
+    --dial-selector-housing-padding-inline: 1.25rem;
 
     dial-selector {
       --ds-label-span-font-size: 0.8rem;
@@ -141,7 +143,8 @@ body[data-theme='web2gloss'] {
   }
 
   @media (max-width: 500px) {
-    --dial-selector-housing-padding: 0.75rem;
+    --dial-selector-housing-padding-block: 0.75rem;
+    --dial-selector-housing-padding-inline: 0.75rem;
 
     dial-selector {
       --ds-label-span-font-size: 0.7rem;
@@ -154,7 +157,8 @@ body[data-theme='web2gloss'] {
   }
 
   @media (max-width: 400px) {
-    --dial-selector-housing-padding: 0.5rem;
+    --dial-selector-housing-padding-block: 0.5rem;
+    --dial-selector-housing-padding-inline: 0.5rem;
 
     dial-selector {
       --ds-label-span-font-size: 0.65rem;

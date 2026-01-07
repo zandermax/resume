@@ -62,6 +62,13 @@
   --header-background: transparent;
   --accent-color: var(--color-red-crimson);
 
+  /* === DIAL SELECTOR THEME COLORS === */
+  --dial-color-ink: var(--color-black);
+  --dial-color-selection: var(--color-red-crimson);
+  --dial-color-indicator: var(--color-red-crimson);
+  --dial-color-line: var(--color-gray-400);
+  --ds-knob-background-color: var(--color-dark-knob);
+
   /* === PAPER/TEXTURE PROPERTIES === */
   --paper-shadow: none;
   --paper-texture: none;

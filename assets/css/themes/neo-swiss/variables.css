@@ -215,11 +215,9 @@ Ultra-modern minimalism with mathematical precision
   --printlink-active-opacity: 0.8;
 
   /* Dial selector housing custom properties */
-  --dial-selector-housing-padding: var(--spacing-4);
+  --dial-selector-housing-padding-block: var(--spacing-4);
+  --dial-selector-housing-padding-inline: var(--spacing-4);
   --dial-selector-housing-border: 1px solid var(--border-color);
-  --dial-selector-housing-border-radius: 0;
-  --dial-selector-housing-box-shadow: none;
-  --dial-selector-housing-position: relative;
   --dial-selector-housing-h3-color: var(--text-color);
   --dial-selector-housing-h3-font-weight: var(--font-weight-medium);
   --dial-selector-housing-h3-letter-spacing: var(--letter-spacing-wide);

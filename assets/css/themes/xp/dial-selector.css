@@ -78,6 +78,7 @@ XP Theme - Dial Selector
   @media (max-width: 500px) {
     --ds-label-font-size: 0.7rem;
     --ds-label-padding: 0.35rem 0.3rem;
-    --dial-selector-housing-padding: 0.5rem;
+    --dial-selector-housing-padding-block: 0.5rem;
+    --dial-selector-housing-padding-inline: 0.5rem;
   }
 }

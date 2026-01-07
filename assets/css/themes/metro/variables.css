@@ -279,9 +279,6 @@ Flat Design / Material Zero
   --dial-selector-housing-padding-block: var(--spacing-lg);
   --dial-selector-housing-padding-inline: var(--spacing-lg);
   --dial-selector-housing-background: var(--section-bg);
-  --dial-selector-housing-border: 0;
-  --dial-selector-housing-box-shadow: none;
-  --dial-selector-housing-position: relative;
 
   /* Dial selector housing h3 */
   --dial-selector-housing-h3-margin-block-end: var(--spacing-md);

@@ -88,7 +88,8 @@ MOBILE - 500px and below
     --header-buttons-justify-content: flex-start;
 
     /* Dial selector housing */
-    --dial-selector-housing-padding: 0;
+    --dial-selector-housing-padding-block: 0;
+    --dial-selector-housing-padding-inline: 0;
 
     /* Experience item spacing */
     --experience-item-margin-block-end: var(--spacing-6);

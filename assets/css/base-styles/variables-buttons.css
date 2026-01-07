@@ -14,17 +14,15 @@
  *   - header.css (buttons appear in header)
  *   - dial-selector-styles/variables.css (dial selector component variables)
  *
- * VARIABLES DEFINED: ~60 variables controlling:
+ * VARIABLES DEFINED: ~54 variables controlling:
  *   - Button base styles (border, padding, font, colors)
  *   - Button hover/active states
  *   - Button pseudo-elements
- *   - Dial selector color theming and housing container
+ *   - Dial selector housing container
  */
 
 :root {
   /* === PRINT/SAVE BUTTON BASE STYLES === */
-  --printlink-border-width: 2px;
-  --printlink-border-style: solid;
   --printlink-border: none;
   --printlink-border-radius: 0;
   --printlink-padding: 0.5rem 1rem;
@@ -35,7 +33,6 @@
   --printlink-letter-spacing: 0.14em;
   --printlink-text-transform: uppercase;
   --printlink-color: var(--text-color);
-  --printlink-border-color: var(--border-color);
   --printlink-background: transparent;
   --printlink-box-shadow: none;
   --printlink-text-shadow: none;
@@ -53,8 +50,8 @@
   --printlink-hover-background: var(--text-color);
   --printlink-hover-color: var(--background-color);
   --printlink-hover-text-shadow: none;
-  --printlink-hover-border-width: none;
-  --printlink-hover-border-color: none;
+  --printlink-hover-border-width: 0;
+  --printlink-hover-border-color: transparent;
   --printlink-hover-transform: none;
   --printlink-hover-filter: none;
   --printlink-hover-opacity: 1;
@@ -93,12 +90,6 @@
   --printlink-after-position: static;
   --printlink-after-margin-inline-start: 0;
   --printlink-after-margin-inline-end: 0;
-
-  /* === DIAL SELECTOR CUSTOM PROPERTIES === */
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-red-crimson);
-  --dial-color-indicator: var(--color-red-crimson);
-  --ds-knob-background-color: var(--color-dark-knob);
 
   /* === DIAL SELECTOR HOUSING CONTAINER === */
   --dial-selector-housing-padding: unset;
