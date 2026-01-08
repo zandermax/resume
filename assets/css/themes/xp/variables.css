@@ -166,16 +166,19 @@ XP Theme - Common Variables
   --section-padding-inline-start: 0;
   --section-padding-block-end: 0.5rem;
   --section-padding-inline-end: 0;
-  --section-border-block-start-width: 1px;
-  --section-border-block-start-style: solid;
-  --section-border-block-start-color: var(--xp-button-shadow);
+  --section-border-block-start: 1px solid var(--xp-button-shadow);
 
   /* Section title custom properties */
-  --section-title-border: 0;
   --section-title-border-radius: var(--xp-radius-sm);
   --section-title-background: linear-gradient(180deg, oklch(47% 0.27 264) 0%, oklch(60% 0.2 245) 100%);
-  --section-title-padding: 0.6rem var(--spacing-md);
-  --section-title-margin: 0 -var(--spacing-xs) var(--spacing-md);
+  --section-title-padding-block-start: 0.6rem;
+  --section-title-padding-block-end: 0.6rem;
+  --section-title-padding-inline-start: var(--spacing-md);
+  --section-title-padding-inline-end: var(--spacing-md);
+  --section-title-margin-block-start: 0;
+  --section-title-margin-block-end: var(--spacing-md);
+  --section-title-margin-inline-start: calc(-1 * var(--spacing-xs));
+  --section-title-margin-inline-end: calc(-1 * var(--spacing-xs));
   --section-title-box-shadow: 0 2px 4px var(--xp-black-20), inset 0 1px 0 var(--xp-white-30);
   --section-title-text-shadow: var(--xp-text-shadow, 1px 1px 2px var(--xp-black-30));
   --section-title-font-weight: bold;

@@ -15,7 +15,10 @@ body[data-theme='web2gloss'] {
   @media (max-width: 768px) {
     --header-name-font-size: 2rem;
     --section-title-font-size: 1.1rem;
-    --section-title-padding: 0.75rem 1rem;
+    --section-title-padding-block-start: 0.75rem;
+    --section-title-padding-block-end: 0.75rem;
+    --section-title-padding-inline-start: 1rem;
+    --section-title-padding-inline-end: 1rem;
     --section-padding-block-start: 1.5rem;
     --section-padding-inline-start: 1.5rem;
     --section-padding-block-end: 1.5rem;
@@ -56,7 +59,10 @@ body[data-theme='web2gloss'] {
     --header-border-radius: 14px;
     --main-border-radius: 14px;
     --section-title-font-size: 1rem;
-    --section-title-padding: 0.6rem 0.8rem;
+    --section-title-padding-block-start: 0.6rem;
+    --section-title-padding-block-end: 0.6rem;
+    --section-title-padding-inline-start: 0.8rem;
+    --section-title-padding-inline-end: 0.8rem;
     --section-title-border-radius: var(--web2-radius-md);
     --header-name-font-size: 1.75rem;
     --printlink-font-size: 0.85rem;

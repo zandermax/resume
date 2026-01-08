@@ -87,12 +87,17 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
 
   /* Section title */
-  --section-title-border: 0;
   --section-title-border-radius: 0;
   --section-title-border-inline-start: 16px solid var(--accent-color);
   --section-title-border-block-end: 4px solid var(--border-color);
-  --section-title-padding: 1.5rem 2rem;
-  --section-title-margin: 0 0 2rem 0;
+  --section-title-padding-block-start: 1.5rem;
+  --section-title-padding-block-end: 1.5rem;
+  --section-title-padding-inline-start: 2rem;
+  --section-title-padding-inline-end: 2rem;
+  --section-title-margin-block-start: 0;
+  --section-title-margin-block-end: 2rem;
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-background: var(--text-color);
   --section-title-color: var(--background-color);
   --section-title-text-transform: uppercase;

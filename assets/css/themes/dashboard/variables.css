@@ -59,14 +59,19 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --section-padding-block-end: var(--spacing-lg);
   --section-border-block-end: 1px solid var(--panel-border);
   --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
-  --section-content-margin-block-start: 1em;
 
   /* Section Titles */
   --section-title-display: flex;
   --section-title-align-items: center;
   --section-title-gap: 0.75rem;
-  --section-title-padding: var(--spacing-sm) var(--spacing-md);
-  --section-title-margin: 0;
+  --section-title-padding-block-start: var(--spacing-sm);
+  --section-title-padding-block-end: var(--spacing-sm);
+  --section-title-padding-inline-start: var(--spacing-md);
+  --section-title-padding-inline-end: var(--spacing-md);
+  --section-title-margin-block-start: 0;
+  --section-title-margin-block-end: 0;
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-background: var(--panel-bg);
   --section-title-border-inline-start: 4px solid var(--accent-color);
   --section-title-border-block-end: 1px solid var(--panel-border);
@@ -253,7 +258,10 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
     --header-margin: var(--spacing-xs);
     --header-padding-inline-start: var(--spacing-xs);
     --header-padding-inline-end: var(--spacing-xs);
-    --section-title-padding: var(--spacing-sm) var(--spacing-sm);
+    --section-title-padding-block-start: var(--spacing-sm);
+    --section-title-padding-block-end: var(--spacing-sm);
+    --section-title-padding-inline-start: var(--spacing-sm);
+    --section-title-padding-inline-end: var(--spacing-sm);
     --section-padding-inline-start: var(--spacing-md);
   }
 }

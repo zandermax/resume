@@ -183,8 +183,14 @@ Ultra-modern minimalism with mathematical precision
   --header-name-greeting-color: var(--text-color);
 
   /* Section title custom properties */
-  --section-title-padding: 0 0 var(--spacing-2) 0;
-  --section-title-margin: 0 0 var(--spacing-6) 0;
+  --section-title-padding-block-start: 0;
+  --section-title-padding-block-end: var(--spacing-2);
+  --section-title-padding-inline-start: 0;
+  --section-title-padding-inline-end: 0;
+  --section-title-margin-block-start: 0;
+  --section-title-margin-block-end: var(--spacing-6);
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-color: var(--text-color);
   --section-title-font-weight: var(--font-weight-medium);
   --section-title-font-size: var(--font-size-large);
@@ -193,7 +199,6 @@ Ultra-modern minimalism with mathematical precision
   --section-title-text-transform: uppercase;
   --section-title-width: 60%;
   --section-title-max-width: none;
-  --section-title-border: none;
   --section-title-border-block-end: 1px solid var(--accent-color);
   --section-title-border-radius: 0;
   --section-title-box-shadow: none;
@@ -310,7 +315,6 @@ Ultra-modern minimalism with mathematical precision
   --section-padding-inline: var(--spacing-6);
   --section-padding-block-start: 0;
   --section-padding-block-end: var(--spacing-8);
-  --section-border: 0;
   --section-margin-block-end: 0;
 
   /* Typography overrides */

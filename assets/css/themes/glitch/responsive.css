@@ -7,7 +7,10 @@ Media queries for variable overrides
   :root[data-theme='glitch'] {
     --header-name-font-size: 2rem;
     --section-title-font-size: var(--font-size-md);
-    --section-title-padding: 0.6rem var(--spacing-md);
+    --section-title-padding-block-start: 0.6rem;
+    --section-title-padding-block-end: 0.6rem;
+    --section-title-padding-inline-start: var(--spacing-md);
+    --section-title-padding-inline-end: var(--spacing-md);
     --printlink-font-size: var(--font-size-xs);
     --printlink-padding: var(--spacing-sm) var(--spacing-lg);
 
@@ -27,7 +30,10 @@ Media queries for variable overrides
   :root[data-theme='glitch'] {
     --header-name-font-size: 1.75rem;
     --section-title-font-size: var(--font-size-base);
-    --section-title-padding: var(--spacing-xs) 0.8rem;
+    --section-title-padding-block-start: var(--spacing-xs);
+    --section-title-padding-block-end: var(--spacing-xs);
+    --section-title-padding-inline-start: 0.8rem;
+    --section-title-padding-inline-end: 0.8rem;
     --printlink-font-size: var(--font-size-xs);
     --printlink-padding: var(--spacing-sm) var(--spacing-lg);
 

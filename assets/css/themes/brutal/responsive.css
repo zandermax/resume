@@ -7,7 +7,10 @@ BRUTAL Theme - Responsive Adjustments
   :root[data-theme='brutal'] {
     --header-name-font-size: 2.5rem;
     --section-title-font-size: 1.5rem;
-    --section-title-padding: 1rem 1.5rem;
+    --section-title-padding-block-start: 1rem;
+    --section-title-padding-block-end: 1rem;
+    --section-title-padding-inline-start: 1.5rem;
+    --section-title-padding-inline-end: 1.5rem;
     --printlink-font-size: 0.9rem;
     --printlink-padding: 1rem 2rem;
     --education-institution-font-size: 1.4rem;
@@ -30,7 +33,10 @@ BRUTAL Theme - Responsive Adjustments
     --header-name-padding-inline-start: 1rem;
     --header-name-border-inline-start: 8px solid var(--accent-color);
     --section-title-font-size: 1.2rem;
-    --section-title-padding: 0.75rem 1rem;
+    --section-title-padding-block-start: 0.75rem;
+    --section-title-padding-block-end: 0.75rem;
+    --section-title-padding-inline-start: 1rem;
+    --section-title-padding-inline-end: 1rem;
     --printlink-font-size: 0.9rem;
     --printlink-padding: 1rem 2rem;
     --section-title-border-inline-start: 10px solid var(--accent-color);

@@ -121,10 +121,15 @@ WEB 2.0 GLOSS Theme - Variables
   /* Section title custom properties */
   --section-title-background: var(--web2-section-title-gradient);
   --section-title-text-shadow: var(--web2-text-shadow-lg);
-  --section-title-border: none;
   --section-title-border-radius: var(--web2-radius-lg);
-  --section-title-padding: 1rem 1.5rem;
-  --section-title-margin: 0 0 1.5rem 0;
+  --section-title-padding-block-start: 1rem;
+  --section-title-padding-block-end: 1rem;
+  --section-title-padding-inline-start: 1.5rem;
+  --section-title-padding-inline-end: 1.5rem;
+  --section-title-margin-block-start: 0;
+  --section-title-margin-block-end: 1.5rem;
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-font-weight: 600;
   --section-title-font-size: 1.3rem;
   --section-title-text-transform: uppercase;

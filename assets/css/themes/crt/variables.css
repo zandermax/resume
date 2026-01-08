@@ -64,11 +64,13 @@ Classic cathode ray tube monitor aesthetic
   --dial-selector-housing-border: 1px solid currentColor;
 
   /* Sections */
-  --section-title-border: 0;
   --section-title-border-width: 2px;
   --section-title-border-style: solid;
   --section-title-border-block-end: var(--section-title-border-width) var(--section-title-border-style) currentColor;
-  --section-title-padding: 0.5rem 0;
+  --section-title-padding-block-start: 0.5rem;
+  --section-title-padding-block-end: 0.5rem;
+  --section-title-padding-inline-start: 0;
+  --section-title-padding-inline-end: 0;
   --section-title-margin-bottom: 1rem;
   --section-title-text-transform: uppercase;
   --section-title-letter-spacing: 0.1em;

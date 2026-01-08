@@ -9,6 +9,8 @@
  *   - .resume-header__meta (contact info)
  *   - .resume-section (section containers)
  *   - .resume-section__title (h2 section titles)
+ *   - .resume-section__text (section text paragraphs)
+ *   - .resume-section__content (section content wrapper)
  *   - .resume-section::before, .resume-section::after (decorative pseudo-elements)
  *
  * DEPENDENCIES:
@@ -18,23 +20,51 @@
  *   - layout.css (uses --main-* variables)
  *   - header.css (uses --header-* variables)
  *   - sections.css (uses --section-* and --resume-section-* variables)
+ *   - title.css (uses --section-title-* variables)
  *   - _base.css (uses typography-related variables)
  *
- * VARIABLES DEFINED: ~120 variables controlling:
+ * VARIABLES DEFINED: ~135 variables controlling:
  *   - Main container (border, padding, shadow, pseudo-elements)
  *   - Header layout (border, padding, name, role, meta styling)
- *   - Section structure (titles, content, spacing, pseudo-elements)
+ *   - Section structure (container, titles, content, text, pseudo-elements)
  *   - Typography effects (shadows, letter-spacing)
  *   - Body pseudo-elements
  *
+ * SECTION VARIABLES (complete defaults for sections.css):
+ *   Container borders (shorthand):
+ *     --section-border-block-start, --section-not-first-border-block-start
+ *     --section-border-block-end
+ *
+ *   Pseudo-element ::before (9 properties):
+ *     --section-before-content, --section-before-position,
+ *     --section-before-inset, --section-before-width, --section-before-height,
+ *     --section-before-border-style, --section-before-border-width,
+ *     --section-before-border-color, --section-before-pointer-events
+ *     (no display property - content:none hides automatically)
+ *
+ *   Pseudo-element ::after (10 properties):
+ *     --section-after-content, --section-after-position,
+ *     --section-after-inset, --section-after-width, --section-after-height,
+ *     --section-after-border-style, --section-after-border-width,
+ *     --section-after-border-color, --section-after-box-shadow, --section-after-pointer-events
+ *     (no display property - content:none hides automatically)
+ *
+ *   Content wrapper:
+ *     --section-content-padding-inline, --section-content-background
+ *
  * VARIABLE NAMING CONVENTIONS:
- *   - Spacing: Use LONGHAND logical properties only (not shorthands)
+ *   - Spacing: Use LONGHAND logical properties (not shorthands)
  *     ✓ Correct: --section-padding-block-start, --section-padding-inline-end
- *     ✗ Avoid:   --section-padding (shorthand removed for consistency)
+ *     ✗ Avoid:   --section-padding (ambiguous shorthand)
+ *
+ *   - Borders: Use SHORTHAND values
+ *     ✓ Correct: --section-border-block-start: 1px solid color
+ *     ✗ Avoid:   --section-border-block-start-width, -style, -color (overly verbose)
  *
  *   - Responsive variables: Use explicit property + breakpoint
  *     ✓ Correct: --section-padding-inline-start-responsive-768
  *     ✗ Avoid:   --section-padding-responsive-768 (ambiguous)
+ *     Note: Only define responsive overrides in themes that need them
  *
  *   - Section-level layout: Use --resume-section-* prefix
  *     Examples: --resume-section-background, --resume-section-position
@@ -43,16 +73,25 @@
  *     Examples: --section-padding-block-start, --section-border-block-end
  *
  *   - Pseudo-elements: Use pattern --element-before-* and --element-after-*
- *     Examples: --section-before-content, --section-after-display
+ *     Examples: --section-before-content, --section-after-position
  *
  *   - Hover states: Use pattern --element-hover-*
  *     Example: --section-title-hover-box-shadow
  *
  * NOTES:
+ *   - ALL properties have defined defaults - NO inline fallbacks in consuming CSS files
  *   - .resume-header__name-greeting and .resume-header__name-small share the same
  *     --header-name-greeting-* variables for consistent styling
  *   - Themes should override specific longhand properties, not shorthands
  *   - All section margin/padding uses logical properties for RTL support
+ *   - Section pseudo-elements default to none/static/auto/transparent for minimal footprint
+ *
+ * COMMON VIOLATIONS TO AVOID:
+ *   ✗ --section-padding: 1rem 2rem;            (use longhand: padding-block-start, etc.)
+ *   ✗ --section-margin: 0 0 1rem 0;            (use longhand: margin-block-start, etc.)
+ *   ✗ --section-margin-inline: 1rem;           (use longhand: margin-inline-start, -end)
+ *   ✗ --section-border-inline-start            (removed - not used by any theme)
+ *   ✗ --section-before-display                 (removed - content:none controls visibility)
  */
 
 :root {
@@ -248,31 +287,46 @@
   --section-margin-inline-end: 0;
   --section-padding-inline-start: 0;
   --section-padding-inline-end: 0;
-  --section-padding-block-start: 0;
+  --section-padding-block-start: 1rem;
   --section-padding-block-end: 0;
   --resume-section-background: transparent;
   --resume-section-position: static;
   --resume-section-z-index: auto;
   --section-title-hover-box-shadow: none;
-  --section-border-block-start-width: 1px;
-  --section-border-block-start-style: solid;
-  --section-border-block-start-color: var(--border-color);
-  --section-not-first-border-block-start-width: 0;
-  --section-not-first-border-block-start-style: none;
-  --section-not-first-border-block-start-color: transparent;
+  --section-border-block-start: 1px solid var(--border-color);
+  --section-not-first-border-block-start: none;
   --section-border-block-end: none;
   --section-padding-inline-start-responsive-768: unset;
   --section-padding-inline-end-responsive-768: unset;
   --section-padding-inline-start-responsive-500: unset;
   --section-padding-inline-end-responsive-500: unset;
 
+  /* === SECTION PSEUDO-ELEMENT ::BEFORE === */
+  --section-before-content: none;
+  --section-before-position: static;
+  --section-before-inset: auto;
+  --section-before-width: auto;
+  --section-before-height: auto;
+  --section-before-border-style: none;
+  --section-before-border-width: 0;
+  --section-before-border-color: transparent;
+  --section-before-pointer-events: auto;
+
+  /* === SECTION PSEUDO-ELEMENT ::AFTER === */
+  --section-after-content: none;
+  --section-after-position: static;
+  --section-after-inset: auto;
+  --section-after-width: auto;
+  --section-after-height: auto;
+  --section-after-border-style: none;
+  --section-after-border-width: 0;
+  --section-after-border-color: transparent;
+  --section-after-box-shadow: none;
+  --section-after-pointer-events: auto;
+
   /* === SECTION CONTENT === */
   --section-content-padding-inline: 0;
-  --section-content-padding-inline-responsive-960: var(--section-content-padding-inline);
-  --section-content-padding-inline-responsive-768: var(--section-content-padding-inline);
-  --section-content-padding-inline-responsive-600: var(--section-content-padding-inline);
-  --section-content-padding-inline-responsive-500: var(--section-content-padding-inline);
-  --section-content-margin-block-start: 0;
+  --section-content-background: transparent;
 
   /* === RESUME HEADER ROLE === */
   --header-role-order: 3;

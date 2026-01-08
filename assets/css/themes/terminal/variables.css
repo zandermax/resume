@@ -20,7 +20,10 @@ TERMINAL Theme - Common Variables
   --main-padding: 2rem;
   --section-title-border-width: 0;
   --section-title-box-shadow: var(--terminal-inset-sunken-sm);
-  --section-title-padding: 0.5rem 0.75rem;
+  --section-title-padding-block-start: 0.5rem;
+  --section-title-padding-block-end: 0.5rem;
+  --section-title-padding-inline-start: 0.75rem;
+  --section-title-padding-inline-end: 0.75rem;
   --section-title-background: var(--terminal-button-bg);
   --section-title-margin-bottom: 1rem;
   --section-title-font-size: 1.1rem;

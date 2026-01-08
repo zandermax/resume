@@ -3,143 +3,182 @@
  *
  * HTML ELEMENTS AFFECTED:
  *   - .resume-section (main section containers)
- *   - .resume-section--summary (summary section variant)
- *   - .resume-section--experience (experience section variant)
- *   - .resume-section--ashby (Ashby section variant)
+ *   - .resume-section:not(:first-of-type) (subsequent sections)
+ *   - .resume-section--summary (summary section modifier)
+ *   - .resume-section--experience (experience section modifier)
+ *   - .resume-section--ashby (Ashby section modifier)
  *   - .resume-section__text (text paragraphs within sections)
  *   - .resume-section__content (section content wrapper)
  *   - .resume-section::before (pseudo-element for decorative effects)
  *   - .resume-section::after (pseudo-element for decorative effects)
  *
  * DEPENDENCIES:
- *   - variables-layout.css (defines --section-*, --resume-section-* variables)
+ *   - variables-layout.css (defines ALL --section-* and --resume-section-* variables)
  *   - variables-base.css (defines --border-color, --spacing-* tokens)
  *
- * CUSTOM PROPERTIES USED (defined in variables-layout.css):
- *   Margins (all use longhand logical properties):
- *     --section-margin-block-start, --section-margin-block-end
- *     --section-margin-inline-start, --section-margin-inline-end
+ * CUSTOM PROPERTIES USED:
+ *   All properties are defined in variables-layout.css with sane defaults.
+ *   NO inline fallbacks are used in this file.
  *
- *   Padding (all use longhand logical properties):
- *     --section-padding-block-start, --section-padding-block-end
- *     --section-padding-inline-start, --section-padding-inline-end
+ *   Container margins & padding:
+ *     --section-margin-block-start (default: 0)
+ *     --section-margin-block-end (default: 1.75rem)
+ *     --section-margin-inline-start (default: 0)
+ *     --section-margin-inline-end (default: 0)
+ *     --section-padding-block-start (default: 1rem)
+ *     --section-padding-block-end (default: 0)
+ *     --section-padding-inline-start (default: 0)
+ *     --section-padding-inline-end (default: 0)
  *
- *   Borders:
- *     --section-border-block-start-width, --section-border-block-start-style,
- *     --section-border-block-start-color, --section-border-block-end
- *     --section-border-inline-start, --section-border-inline-end
- *     --section-not-first-border-block-start-* (for :not(:first-of-type))
+ *   Container borders (all use shorthand):
+ *     --section-border-block-start (default: 1px solid var(--border-color))
+ *     --section-border-block-end (default: none)
+ *     --section-not-first-border-block-start (default: none, for :not(:first-of-type))
  *
- *   Layout:
- *     --resume-section-background, --resume-section-position, --resume-section-z-index
+ *   Container layout:
+ *     --resume-section-background (default: transparent)
+ *     --resume-section-position (default: static)
+ *     --resume-section-z-index (default: auto)
  *
  *   Text content:
- *     --section-text-font-size, --section-text-line-height, --section-text-color,
- *     --section-text-letter-spacing, --section-text-margin-block-end
+ *     --section-text-font-size (default: 0.95rem)
+ *     --section-text-line-height (default: 1.6)
+ *     --section-text-color (default: inherit)
+ *     --section-text-letter-spacing (default: normal)
+ *     --section-text-margin-block-end (default: 0.9rem)
  *
- *   Section content wrapper:
- *     --section-content-padding-inline, --section-content-background
+ *   Content wrapper:
+ *     --section-content-padding-inline (default: 0)
+ *     --section-content-background (default: transparent)
  *
- *   Pseudo-elements (for theme decorative effects like skeuomorph paper curl):
- *     --section-before-content, --section-before-display, --section-before-position,
+ *   Pseudo-elements ::before:
+ *     --section-before-content, --section-before-position,
  *     --section-before-inset, --section-before-width, --section-before-height,
- *     --section-before-border-*, --section-before-pointer-events
- *     --section-after-content, --section-after-display, --section-after-position,
- *     --section-after-inset, --section-after-width, --section-after-height,
- *     --section-after-border-*, --section-after-box-shadow, --section-after-pointer-events
+ *     --section-before-border-style, --section-before-border-width,
+ *     --section-before-border-color, --section-before-pointer-events
+ *     (all default to none/static/auto/0/transparent as appropriate)
+ *     Note: No display property needed - content: none hides element automatically
  *
- *   Accent colors (auto-assigned per section for multi-color themes):
+ *   Pseudo-elements ::after:
+ *     --section-after-content, --section-after-position,
+ *     --section-after-inset, --section-after-width, --section-after-height,
+ *     --section-after-border-style, --section-after-border-width,
+ *     --section-after-border-color, --section-after-box-shadow, --section-after-pointer-events
+ *     (all default to none/static/auto/0/transparent as appropriate)
+ *     Note: No display property needed - content: none hides element automatically
+ *
+ *   Accent colors (auto-assigned per section for multi-color themes like metro):
  *     --section-accent-color (rotates through --theme-accent-1 to --theme-accent-6)
  *
+ *   Section modifiers:
+ *     --section-summary-p-font-size (default: inherit)
+ *     --section-summary-p-margin-block-end (default: inherit)
+ *     --experience-section-padding-block-start (defined in variables-experience.css)
+ *     --section-ashby-border-block-start (default: none)
+ *     --section-ashby-padding-block-start (default: 0)
+ *
  * NAMING CONVENTIONS:
- *   - Use longhand logical properties (e.g., padding-block-start) NOT shorthands
- *   - Responsive variables: --property-responsive-{breakpoint} (e.g., --section-padding-inline-start-responsive-768)
- *   - Section-level layout properties use --resume-section-* prefix
- *   - Section content properties use --section-* prefix
+ *   - Use longhand logical properties for margins/padding (e.g., padding-block-start)
+ *   - Use shorthand for borders (e.g., --section-border-block-start: 1px solid color)
+ *   - Responsive variables: --property-responsive-{breakpoint}
+ *   - Section-level layout: --resume-section-* prefix
+ *   - Section content: --section-* prefix
+ *
+ * IMPORTANT NOTES:
+ *   - NO INLINE FALLBACKS: All defaults defined in variables-layout.css
+ *   - SHORTHAND PROPERTIES NOT SUPPORTED in this file or title.css
+ *     ✗ Wrong: --section-title-padding, --section-title-margin, --section-title-border
+ *     ✓ Correct: --section-title-padding-block-start, --section-title-margin-inline-end, etc.
+ *   - --section-bg is NOT used in this file - it's for child elements
+ *     (experience items, skills groups, education items, lists) in other CSS files
+ *   - Accent color fallbacks (var(--theme-accent-N, var(--border-color))) are intentional
+ *     for themes that don't define multi-color palettes
  *
  * RELATED FILES:
+ *   - variables-layout.css (all section property defaults)
+ *   - title.css (section title styles, uses similar pattern)
  *   - skills.css, experience.css, lists.css, education.css (section children)
  */
 
-/* === SECTION CONTAINERS === */
-/* All section elements are nested here to reflect the DOM structure */
+/* === SECTION CONTAINER === */
 
 .resume-section {
-  margin-block-start: var(--section-margin-block-start, 0);
-  margin-block-end: var(--section-margin-block-end, 1.75rem);
-  margin-inline-start: var(--section-margin-inline-start, 0);
-  margin-inline-end: var(--section-margin-inline-end, 0);
-  padding-block-start: var(--section-padding-block-start, 1rem);
-  padding-block-end: var(--section-padding-block-end, 0);
-  padding-inline-start: var(--section-padding-inline-start, 0);
-  padding-inline-end: var(--section-padding-inline-end, 0);
-  border-block-start: var(--section-border-block-start-width, 1px) var(--section-border-block-start-style, solid)
-    var(--section-border-block-start-color, var(--border-color));
-  border-block-end: var(--section-border-block-end, none);
-  border-inline-start: var(--section-border-inline-start, none);
-  border-inline-end: var(--section-border-inline-end, none);
+  /* === BASE CONTAINER STYLES === */
+
+  /* Margins */
+  margin-block-start: var(--section-margin-block-start);
+  margin-block-end: var(--section-margin-block-end);
+  margin-inline-start: var(--section-margin-inline-start);
+  margin-inline-end: var(--section-margin-inline-end);
+
+  /* Padding */
+  padding-block-start: var(--section-padding-block-start);
+  padding-block-end: var(--section-padding-block-end);
+  padding-inline-start: var(--section-padding-inline-start);
+  padding-inline-end: var(--section-padding-inline-end);
+
+  /* Borders */
+  border-block-start: var(--section-border-block-start);
+  border-block-end: var(--section-border-block-end);
+
+  /* Layout */
   background: var(--resume-section-background);
-  position: var(--resume-section-position, static);
-  z-index: var(--resume-section-z-index, auto);
+  position: var(--resume-section-position);
+  z-index: var(--resume-section-z-index);
 
-  /* Not first section - different border */
+  /* === SECTION VARIATIONS === */
+
   &:not(:first-of-type) {
-    border-block-start: var(--section-not-first-border-block-start-width, 0)
-      var(--section-not-first-border-block-start-style, none)
-      var(--section-not-first-border-block-start-color, transparent);
+    border-block-start: var(--section-not-first-border-block-start);
   }
 
-  /* === SECTION PSEUDO-ELEMENTS === */
-
-  &::before {
-    content: var(--section-before-content, none);
-    display: var(--section-before-display, none);
-    position: var(--section-before-position, static);
-    inset: var(--section-before-inset, auto);
-    width: var(--section-before-width, auto);
-    height: var(--section-before-height, auto);
-    border-style: var(--section-before-border-style, none);
-    border-width: var(--section-before-border-width, 0);
-    border-color: var(--section-before-border-color, transparent);
-    pointer-events: var(--section-before-pointer-events, auto);
-  }
-
-  &::after {
-    content: var(--section-after-content, none);
-    display: var(--section-after-display, none);
-    position: var(--section-after-position, static);
-    inset: var(--section-after-inset, auto);
-    width: var(--section-after-width, auto);
-    height: var(--section-after-height, auto);
-    border-style: var(--section-after-border-style, none);
-    border-width: var(--section-after-border-width, 0);
-    border-color: var(--section-after-border-color, transparent);
-    box-shadow: var(--section-after-box-shadow, none);
-    pointer-events: var(--section-after-pointer-events, auto);
-  }
-
-  /* === SECTION TEXT === */
+  /* === NESTED ELEMENTS === */
 
   .resume-section__text {
-    font-size: var(--section-text-font-size, 0.95rem);
-    line-height: var(--section-text-line-height, 1.6);
-    color: var(--section-text-color, inherit);
-    letter-spacing: var(--section-text-letter-spacing, normal);
+    font-size: var(--section-text-font-size);
+    line-height: var(--section-text-line-height);
+    color: var(--section-text-color);
+    letter-spacing: var(--section-text-letter-spacing);
 
     &:not(:last-child) {
-      margin-block-end: var(--section-text-margin-block-end, 0.9rem);
+      margin-block-end: var(--section-text-margin-block-end);
     }
   }
 
-  /* === SECTION CONTENT === */
-
   .resume-section__content {
-    padding-inline: var(--section-content-padding-inline, 0);
-    background: var(--section-content-background, transparent);
+    padding-inline: var(--section-content-padding-inline);
+    background: var(--section-content-background);
   }
 
-  /* === SECTION ACCENT COLOR ROTATION === */
-  /* Assign accent colors to sections for themes to use */
+  /* === PSEUDO-ELEMENTS === */
+
+  &::before {
+    content: var(--section-before-content);
+    position: var(--section-before-position);
+    inset: var(--section-before-inset);
+    width: var(--section-before-width);
+    height: var(--section-before-height);
+    border-style: var(--section-before-border-style);
+    border-width: var(--section-before-border-width);
+    border-color: var(--section-before-border-color);
+    pointer-events: var(--section-before-pointer-events);
+  }
+
+  &::after {
+    content: var(--section-after-content);
+    position: var(--section-after-position);
+    inset: var(--section-after-inset);
+    width: var(--section-after-width);
+    height: var(--section-after-height);
+    border-style: var(--section-after-border-style);
+    border-width: var(--section-after-border-width);
+    border-color: var(--section-after-border-color);
+    box-shadow: var(--section-after-box-shadow);
+    pointer-events: var(--section-after-pointer-events);
+  }
+
+  /* === ACCENT COLOR ROTATION === */
+  /* Assign accent colors to sections for themes to use (e.g., metro theme) */
 
   &:nth-of-type(1) {
     --section-accent-color: var(--theme-accent-1, var(--border-color));
@@ -172,26 +211,26 @@
   &:nth-of-type(8) {
     --section-accent-color: var(--theme-accent-2, var(--border-color));
   }
-}
 
-/* === SECTION VARIANTS === */
+  /* === SECTION MODIFIERS === */
 
-.resume-section--summary {
-  border-block-start: 0;
-  padding-block-start: 0;
+  &.resume-section--summary {
+    border-block-start: 0;
+    padding-block-start: 0;
 
-  p {
-    font-size: var(--section-summary-p-font-size, inherit);
-    margin-block-end: var(--section-summary-p-margin-block-end, inherit);
+    p {
+      font-size: var(--section-summary-p-font-size);
+      margin-block-end: var(--section-summary-p-margin-block-end);
+    }
   }
-}
 
-.resume-section--experience {
-  border-block-start: 0;
-  padding-block-start: var(--experience-section-padding-block-start);
-}
+  &.resume-section--experience {
+    border-block-start: 0;
+    padding-block-start: var(--experience-section-padding-block-start);
+  }
 
-.resume-section--ashby {
-  border-block-start: var(--section-ashby-border-block-start, none);
-  padding-block-start: var(--section-ashby-padding-block-start, 0);
+  &.resume-section--ashby {
+    border-block-start: var(--section-ashby-border-block-start);
+    padding-block-start: var(--section-ashby-padding-block-start);
+  }
 }

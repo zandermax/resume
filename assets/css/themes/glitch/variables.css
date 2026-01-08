@@ -247,9 +247,14 @@ Common properties for all modes
   /* Section title custom properties */
   --section-title-background: var(--section-bg);
   --section-title-color: var(--text-color);
-  --section-title-border: var(--border-width-md) solid var(--border-color);
-  --section-title-padding: var(--spacing-sm) var(--spacing-lg);
-  --section-title-margin: var(--spacing-lg) 0;
+  --section-title-padding-block-start: var(--spacing-sm);
+  --section-title-padding-block-end: var(--spacing-sm);
+  --section-title-padding-inline-start: var(--spacing-lg);
+  --section-title-padding-inline-end: var(--spacing-lg);
+  --section-title-margin-block-start: var(--spacing-lg);
+  --section-title-margin-block-end: var(--spacing-lg);
+  --section-title-margin-inline-start: 0;
+  --section-title-margin-inline-end: 0;
   --section-title-font-weight: 700;
   --section-title-font-size: var(--font-size-xl);
   --section-title-text-transform: uppercase;
