@@ -1,296 +1,418 @@
 /**
  * Experience items with tech badges and bullet points
  *
- * HTML ELEMENTS AFFECTED:
- *   - .experience-item (experience card containers)
- *   - .experience-item__header (header row with company/dates)
- *   - .experience-item__role (role title)
- *   - .experience-item__main (role and company info column)
- *   - .experience-item__meta (dates and location column)
- *   - .experience-item__company (company name)
- *   - .experience-item__dates, .experience-item__duration (date info)
- *   - .experience-item__tech (tech stack badges)
- *   - .experience-item__bullets (achievement lists)
+ * DOM STRUCTURE:
+ *   <section class="resume-section resume-section--experience">
+ *     <article class="experience-item">
+ *       <header class="experience-item__header">
+ *         <div class="experience-item__main">
+ *           <h3 class="experience-item__role">...</h3>
+ *           <p class="experience-item__company">...</p>
+ *         </div>
+ *         <div class="experience-item__meta">
+ *           <p class="experience-item__location">...</p>
+ *           <p class="experience-item__dates">...</p>
+ *         </div>
+ *       </header>
+ *       <span class="experience-item__tech">...</span>
+ *       <ul class="experience-item__bullets">
+ *         <li>...</li>
+ *       </ul>
+ *     </article>
+ *   </section>
  *
  * DEPENDENCIES:
- *   - variables-experience.css (all experience-specific variables)
+ *   - variables-experience.css (all experience-specific variables with defaults)
  *   - variables-base.css (uses --border-color)
  *   - sections.css (experience section variant and container styles)
+ *   - Theme files can define --theme-accent-1 through --theme-accent-5
+ *
+ * VARIABLE USAGE:
+ *   - All var() calls use properties WITHOUT fallbacks
+ *   - All defaults are defined in variables-experience.css
+ *   - Themes override variables to customize appearance
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
  */
 
-/* === EXPERIENCE ITEM CONTAINER === */
+/* ============================================================================
+   EXPERIENCE ITEMS
+   ============================================================================ */
 
 .experience-item {
-  /* Set default accent color, overridden by nth-of-type below */
-  --item-accent-color: var(--theme-accent-1, var(--border-color));
+  /* Position */
+  position: var(--experience-item-position);
 
-  border-block-start: var(--experience-item-border-block-start, 2px solid var(--border-color));
-  border-block-end: var(--experience-item-border-block-end, none);
-  border-inline-start: var(--experience-item-border-inline-start, none);
-  border-inline-start-color: var(--experience-item-border-inline-start-color, var(--item-accent-color));
-  border-inline-end: var(--experience-item-border-inline-end, none);
-  --experience-item-hover-border-color: var(--item-accent-color);
-  padding-block-start: var(--experience-item-padding-block-start, 0.9rem);
-  padding-block-end: var(--experience-item-padding-block-end, 0);
-  padding-inline-start: var(--experience-item-padding-inline-start, 0);
-  padding-inline-end: var(--experience-item-padding-inline-end, 0);
-  margin-block-start: var(--experience-item-margin-top, 0.9rem);
-  margin-block-end: var(--experience-item-margin-block-end, 0);
-  margin-inline-start: var(--experience-item-margin-inline-start, 0);
-  margin-inline-end: var(--experience-item-margin-inline-end, 0);
-  background: var(--experience-item-background, transparent);
-  background-image: var(--experience-item-background-image);
-  box-shadow: var(--experience-item-box-shadow, none);
-  border-radius: var(--experience-item-border-radius, 0);
-  position: var(--experience-item-position, relative);
-  transform: var(--experience-item-transform, none);
-  transition: var(--experience-item-transition, none);
-  overflow: var(--experience-item-overflow, visible);
+  /* Box Model */
+  padding-block-start: var(--experience-item-padding-block-start);
+  padding-block-end: var(--experience-item-padding-block-end);
+  padding-inline-start: var(--experience-item-padding-inline-start);
+  padding-inline-end: var(--experience-item-padding-inline-end);
+  margin-block-start: var(--experience-item-margin-block-start);
+  margin-block-end: var(--experience-item-margin-block-end);
+  margin-inline-start: var(--experience-item-margin-inline-start);
+  margin-inline-end: var(--experience-item-margin-inline-end);
 
+  /* Borders */
+  border-block-start: var(--experience-item-border-block-start);
+  border-block-end: var(--experience-item-border-block-end);
+  border-inline-start: var(--experience-item-border-inline-start);
+  border-inline-start-color: var(--experience-item-border-inline-start-color);
+  border-inline-end: var(--experience-item-border-inline-end);
+  border-radius: var(--experience-item-border-radius);
+
+  /* Background */
+  background: var(--experience-item-background);
+
+  /* Visual Effects */
+  box-shadow: var(--experience-item-box-shadow);
+  transform: var(--experience-item-transform);
+
+  /* Transitions */
+  transition: var(--experience-item-transition);
+
+  /* Other */
+  overflow: var(--experience-item-overflow);
+
+  /* First Item Variant */
   &:first-of-type {
-    border-block-start: var(--experience-item-border-block-start-first, 3px solid var(--border-color));
+    border-block-start: var(--experience-item-border-block-start-first);
   }
 
-  /* === ACCENT COLOR ROTATION === */
-  /* Assign accent colors to items for themes to use */
-
+  /* Alternate Item Transform */
   &:nth-of-type(2n) {
-    --item-accent-color: var(--theme-accent-2, var(--border-color));
-    transform: var(--experience-item-nth-2n-transform, var(--experience-item-transform, none));
-  }
-  &:nth-of-type(3n) {
-    --item-accent-color: var(--theme-accent-3, var(--border-color));
-  }
-  &:nth-of-type(4n) {
-    --item-accent-color: var(--theme-accent-4, var(--border-color));
-  }
-  &:nth-of-type(5n) {
-    --item-accent-color: var(--theme-accent-5, var(--border-color));
+    transform: var(--experience-item-nth-2n-transform);
   }
 
-  /* === PSEUDO-ELEMENTS === */
-  /* Used by themes for decorative bars, backgrounds, etc. */
-
+  /* Decorative Pseudo-Elements */
   &::before {
     content: var(--experience-item-before-content);
-    display: var(--experience-item-before-display);
+
+    /* Position */
     position: var(--experience-item-before-position);
-    inset: var(--experience-item-before-inset);
     top: var(--experience-item-before-top);
-    left: var(--experience-item-before-left);
     right: var(--experience-item-before-right);
+    bottom: var(--experience-item-before-bottom);
+    left: var(--experience-item-before-left);
+
+    /* Display/Box Model */
+    display: var(--experience-item-before-display);
     width: var(--experience-item-before-width);
     height: var(--experience-item-before-height);
-    background: var(--experience-item-before-background);
-    background-image: var(--experience-item-before-background-image);
+
+    /* Borders */
     border-radius: var(--experience-item-before-border-radius);
+
+    /* Background */
+    background: var(--experience-item-before-background);
+
+    /* Visual Effects */
     opacity: var(--experience-item-before-opacity);
+
+    /* Transitions */
     transition: var(--experience-item-before-transition);
   }
 
   &::after {
     content: var(--experience-item-after-content);
+
+    /* Position */
     position: var(--experience-item-after-position);
+    top: var(--experience-item-after-top);
+    right: var(--experience-item-after-right);
     bottom: var(--experience-item-after-bottom);
     left: var(--experience-item-after-left);
-    right: var(--experience-item-after-right);
+
+    /* Box Model */
     height: var(--experience-item-after-height);
+
+    /* Background */
     background: var(--experience-item-after-background);
+
+    /* Visual Effects */
     opacity: var(--experience-item-after-opacity);
+
+    /* Animations */
     animation: var(--experience-item-after-animation);
+
+    /* Other */
     will-change: var(--experience-item-after-will-change);
   }
 
-  /* === HOVER STATE === */
-
+  /* Hover State */
   &:hover {
-    transform: var(--experience-item-hover-transform);
-    box-shadow: var(--experience-item-hover-box-shadow);
     border-color: var(--experience-item-hover-border-color);
-    border-inline-start-width: var(--experience-item-hover-border-inline-start-width, inherit);
+    border-inline-start-width: var(--experience-item-hover-border-inline-start-width);
+    box-shadow: var(--experience-item-hover-box-shadow);
+    transform: var(--experience-item-hover-transform);
 
     &::before {
       opacity: var(--experience-item-before-hover-opacity);
     }
   }
-}
 
-/* === EXPERIENCE HEADER === */
+  /* --- Header Container --- */
+  .experience-item__header {
+    /* Display/Box Model */
+    display: flex;
+    gap: 1rem;
+    margin-block-end: 0.3rem;
 
-.experience-item__header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: baseline;
-  margin-block-end: 0.3rem;
-}
-
-/* === EXPERIENCE ROLE === */
-
-h3.experience-item__role {
-  font-size: var(--experience-role-font-size);
-  font-weight: var(--experience-role-font-weight);
-  color: var(--experience-role-color);
-  text-transform: var(--experience-role-text-transform);
-  letter-spacing: var(--experience-role-letter-spacing);
-  line-height: var(--experience-role-line-height);
-  text-shadow: var(--experience-role-text-shadow);
-  margin-block-start: var(--experience-role-margin-block-start);
-  margin-block-end: var(--experience-role-margin-block-end);
-  margin-inline-start: var(--experience-role-margin-inline-start);
-  margin-inline-end: var(--experience-role-margin-inline-end);
-  border-inline-start: var(--experience-role-border-inline-start);
-  padding-inline-start: var(--experience-role-padding-inline-start);
-  position: relative;
-}
-
-h3.experience-item__role:hover {
-  transform: var(--experience-role-hover-transform);
-  box-shadow: var(--experience-role-hover-box-shadow);
-}
-
-/* === COMPANY NAME === */
-
-.experience-item__company {
-  font-size: var(--experience-company-font-size, 0.9rem);
-  text-transform: var(--experience-company-text-transform, uppercase);
-  letter-spacing: var(--experience-company-letter-spacing, 0.12em);
-  font-weight: var(--experience-company-font-weight, normal);
-  color: var(--experience-company-color, inherit);
-  opacity: var(--experience-company-opacity, 1);
-  margin-block-end: var(--experience-company-margin-block-end, 0);
-}
-
-/* === META INFO (DATES/LOCATION) === */
-
-.experience-item__meta {
-  text-align: right;
-  font-size: var(--experience-item-meta-font-size, 0.8rem);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.experience-item__dates,
-.experience-item__duration {
-  font-size: var(--experience-item-dates-font-size, 0.8rem);
-  font-weight: var(--experience-item-dates-font-weight, normal);
-  color: var(--experience-item-dates-color, inherit);
-  opacity: var(--experience-item-dates-opacity, 1);
-  letter-spacing: var(--experience-item-dates-letter-spacing, normal);
-  white-space: nowrap;
-
-  &::before {
-    content: var(--experience-duration-before-content);
-    opacity: var(--experience-duration-before-opacity);
-  }
-}
-
-/* === TECH BADGES === */
-
-.experience-item__tech {
-  font-size: var(--tech-badge-font-size, 0.8rem);
-  text-transform: var(--tech-badge-text-transform, uppercase);
-  letter-spacing: var(--tech-badge-letter-spacing, 0.08em);
-  border-block-start: var(--tech-badge-border-block-start, var(--tech-badge-border, 1px solid var(--border-color)));
-  border-block-end: var(--tech-badge-border-block-end, var(--tech-badge-border, 1px solid var(--border-color)));
-  border-inline-start: var(--tech-badge-border-inline-start, var(--tech-badge-border, 1px solid var(--border-color)));
-  border-inline-end: var(--tech-badge-border-inline-end, var(--tech-badge-border, 1px solid var(--border-color)));
-  padding: var(--tech-badge-padding, 0.25rem 0.4rem);
-  display: var(--tech-badge-display, inline-block);
-  margin: var(--tech-badge-margin, 0.35rem 0 0.4rem);
-  background: var(--tech-badge-background, transparent);
-  box-shadow: var(--tech-badge-box-shadow, none);
-  text-shadow: var(--tech-badge-text-shadow, none);
-  font-weight: var(--tech-badge-font-weight, normal);
-  color: var(--tech-badge-color, inherit);
-  border-radius: var(--tech-badge-border-radius, 0);
-  position: var(--tech-badge-position, relative);
-  transform: var(--tech-badge-transform, none);
-  transition: var(--tech-badge-transition, none);
-  overflow: var(--tech-badge-overflow, visible);
-  filter: var(--tech-badge-filter, none);
-  align-items: var(--tech-badge-align-items, baseline);
-  contain: var(--tech-badge-contain, none);
-
-  /* === HOVER STATE === */
-
-  &:hover {
-    transform: var(--tech-badge-hover-transform, none);
-    box-shadow: var(--tech-badge-hover-box-shadow, var(--tech-badge-before-box-shadow, none));
-    background: var(--tech-badge-hover-background, var(--tech-badge-background));
-    filter: var(--tech-badge-hover-filter, none);
+    /* Flex/Alignment */
+    justify-content: space-between;
+    align-items: baseline;
   }
 
-  /* === PSEUDO-ELEMENTS === */
-  /* Used by themes for decorative elements on badges */
+  /* --- Main Content Column --- */
+  .experience-item__main {
+    /* Role Title */
+    h3.experience-item__role {
+      /* Position */
+      position: relative;
 
-  &::before {
-    content: var(--tech-badge-before-content, none);
-    display: var(--tech-badge-before-display, none);
-    position: var(--tech-badge-before-position, static);
-    inset: var(--tech-badge-before-inset, auto);
-    left: var(--tech-badge-before-left, auto);
-    top: var(--tech-badge-before-top, auto);
-    margin-inline-start: var(--tech-badge-before-margin-inline-start, 0);
-    margin-inline-end: var(--tech-badge-before-margin-inline-end, 0);
-    color: var(--tech-badge-before-color, inherit);
-    font-weight: var(--tech-badge-before-font-weight, normal);
-    background: var(--tech-badge-before-background, transparent);
-    border-radius: var(--tech-badge-before-border-radius, 0);
-    box-shadow: var(--tech-badge-before-box-shadow, none);
-    pointer-events: var(--tech-badge-before-pointer-events, auto);
-    z-index: var(--tech-badge-before-z-index, auto);
-  }
+      /* Box Model */
+      padding-inline-start: var(--experience-role-padding-inline-start);
+      margin-block-start: var(--experience-role-margin-block-start);
+      margin-block-end: var(--experience-role-margin-block-end);
+      margin-inline-start: var(--experience-role-margin-inline-start);
+      margin-inline-end: var(--experience-role-margin-inline-end);
 
-  &::after {
-    content: var(--tech-badge-after-content, none);
-    display: var(--tech-badge-after-display, none);
-    position: var(--tech-badge-after-position, static);
-    inset: var(--tech-badge-after-inset, auto);
-    margin-inline-start: var(--tech-badge-after-margin-inline-start, 0);
-    background: var(--tech-badge-after-background, transparent);
-    border-radius: var(--tech-badge-after-border-radius, 0);
-    box-shadow: var(--tech-badge-after-box-shadow, none);
-    pointer-events: var(--tech-badge-after-pointer-events, auto);
-    z-index: var(--tech-badge-after-z-index, auto);
-  }
-}
+      /* Borders */
+      border-inline-start: var(--experience-role-border-inline-start);
 
-/* === EXPERIENCE BULLETS === */
+      /* Typography */
+      font-size: var(--experience-role-font-size);
+      font-weight: var(--experience-role-font-weight);
+      color: var(--experience-role-color);
+      text-transform: var(--experience-role-text-transform);
+      letter-spacing: var(--experience-role-letter-spacing);
+      line-height: var(--experience-role-line-height);
 
-.experience-item__bullets {
-  list-style: var(--experience-bullets-list-style, none);
-  padding-inline-start: var(--experience-bullets-padding-inline-start, 0);
-  margin: var(--experience-bullets-margin, 0);
-  margin-block-start: var(--experience-bullets-margin-block-start, 0);
+      /* Visual Effects */
+      text-shadow: var(--experience-role-text-shadow);
 
-  li {
-    position: var(--experience-bullets-li-position, relative);
-    padding-inline-start: var(--experience-bullets-li-padding-inline-start, 1.1rem);
-    font-size: var(--experience-bullets-li-font-size, 0.88rem);
-    font-weight: var(--experience-bullets-li-font-weight, normal);
-    line-height: var(--experience-bullets-li-line-height, 1.5);
-    margin-block-end: var(--experience-bullets-li-margin-block-end, 0.3rem);
-    color: var(--experience-bullets-li-color, inherit);
-
-    /* === BULLET POINT === */
-
-    &::before {
-      content: var(--bullet-before-content, '■');
-      position: absolute;
-      left: 0;
-      top: 0.1rem;
-      font-size: var(--bullet-font-size, 0.6rem);
-      font-weight: var(--bullet-font-weight, normal);
-      color: var(--bullet-color, inherit);
-      opacity: var(--bullet-before-opacity, 1);
-      text-shadow: var(--bullet-text-shadow, none);
-      margin-inline-start: var(--bullet-margin-inline-start, 0);
+      &:hover {
+        box-shadow: var(--experience-role-hover-box-shadow);
+        transform: var(--experience-role-hover-transform);
+      }
     }
 
-    &:nth-child(even)::before {
-      content: var(--bullet-before-content-alternate, var(--bullet-before-content, '■'));
-      text-shadow: var(--bullet-text-shadow-alternate, var(--bullet-text-shadow, none));
+    /* Company Name */
+    .experience-item__company {
+      /* Box Model */
+      margin-block-end: var(--experience-company-margin-block-end);
+
+      /* Typography */
+      font-size: var(--experience-company-font-size);
+      font-weight: var(--experience-company-font-weight);
+      color: var(--experience-company-color);
+      text-transform: var(--experience-company-text-transform);
+      letter-spacing: var(--experience-company-letter-spacing);
+
+      /* Visual Effects */
+      opacity: var(--experience-company-opacity);
+    }
+  }
+
+  /* --- Meta Info Column (Dates/Location) --- */
+  .experience-item__meta {
+    /* Typography */
+    font-size: var(--experience-item-meta-font-size);
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    .experience-item__dates,
+    .experience-item__duration {
+      /* Typography */
+      font-size: var(--experience-item-dates-font-size);
+      font-weight: var(--experience-item-dates-font-weight);
+      color: var(--experience-item-dates-color);
+      letter-spacing: var(--experience-item-dates-letter-spacing);
+      white-space: nowrap;
+
+      /* Visual Effects */
+      opacity: var(--experience-item-dates-opacity);
+
+      &::before {
+        content: var(--experience-duration-before-content);
+        opacity: var(--experience-duration-before-opacity);
+      }
+    }
+  }
+
+  /* --- Tech Badges --- */
+  .experience-item__tech {
+    /* Position */
+    position: var(--tech-badge-position);
+
+    /* Display/Box Model */
+    display: var(--tech-badge-display);
+    padding: var(--tech-badge-padding);
+    margin: var(--tech-badge-margin);
+
+    /* Flex/Alignment */
+    align-items: var(--tech-badge-align-items);
+
+    /* Borders */
+    border-block-start: var(--tech-badge-border-block-start);
+    border-block-end: var(--tech-badge-border-block-end);
+    border-inline-start: var(--tech-badge-border-inline-start);
+    border-inline-end: var(--tech-badge-border-inline-end);
+    border-radius: var(--tech-badge-border-radius);
+
+    /* Background */
+    background: var(--tech-badge-background);
+
+    /* Typography */
+    font-size: var(--tech-badge-font-size);
+    font-weight: var(--tech-badge-font-weight);
+    color: var(--tech-badge-color);
+    text-transform: var(--tech-badge-text-transform);
+    letter-spacing: var(--tech-badge-letter-spacing);
+
+    /* Visual Effects */
+    box-shadow: var(--tech-badge-box-shadow);
+    text-shadow: var(--tech-badge-text-shadow);
+    transform: var(--tech-badge-transform);
+    filter: var(--tech-badge-filter);
+
+    /* Transitions */
+    transition: var(--tech-badge-transition);
+
+    /* Other */
+    overflow: var(--tech-badge-overflow);
+    contain: var(--tech-badge-contain);
+
+    &:hover {
+      background: var(--tech-badge-hover-background);
+      box-shadow: var(--tech-badge-hover-box-shadow);
+      transform: var(--tech-badge-hover-transform);
+      filter: var(--tech-badge-hover-filter);
+    }
+
+    &::before {
+      content: var(--tech-badge-before-content);
+
+      /* Position */
+      position: var(--tech-badge-before-position);
+      top: var(--tech-badge-before-top);
+      right: var(--tech-badge-before-right);
+      bottom: var(--tech-badge-before-bottom);
+      left: var(--tech-badge-before-left);
+      z-index: var(--tech-badge-before-z-index);
+
+      /* Display/Box Model */
+      display: var(--tech-badge-before-display);
+      margin-inline-start: var(--tech-badge-before-margin-inline-start);
+      margin-inline-end: var(--tech-badge-before-margin-inline-end);
+
+      /* Borders */
+      border-radius: var(--tech-badge-before-border-radius);
+
+      /* Background */
+      background: var(--tech-badge-before-background);
+
+      /* Typography */
+      font-weight: var(--tech-badge-before-font-weight);
+      color: var(--tech-badge-before-color);
+
+      /* Visual Effects */
+      box-shadow: var(--tech-badge-before-box-shadow);
+
+      /* Other */
+      pointer-events: var(--tech-badge-before-pointer-events);
+    }
+
+    &::after {
+      content: var(--tech-badge-after-content);
+
+      /* Position */
+      position: var(--tech-badge-after-position);
+      top: var(--tech-badge-after-top);
+      right: var(--tech-badge-after-right);
+      bottom: var(--tech-badge-after-bottom);
+      left: var(--tech-badge-after-left);
+      z-index: var(--tech-badge-after-z-index);
+
+      /* Display/Box Model */
+      display: var(--tech-badge-after-display);
+      margin-inline-start: var(--tech-badge-after-margin-inline-start);
+
+      /* Borders */
+      border-radius: var(--tech-badge-after-border-radius);
+
+      /* Background */
+      background: var(--tech-badge-after-background);
+
+      /* Visual Effects */
+      box-shadow: var(--tech-badge-after-box-shadow);
+
+      /* Other */
+      pointer-events: var(--tech-badge-after-pointer-events);
+    }
+  }
+
+  /* --- Bullet Points --- */
+  .experience-item__bullets {
+    /* Box Model */
+    padding-inline-start: var(--experience-bullets-padding-inline-start);
+    margin-block-start: var(--experience-bullets-margin-block-start);
+    margin-block-end: var(--experience-bullets-margin-block-end);
+    margin-inline-start: var(--experience-bullets-margin-inline-start);
+    margin-inline-end: var(--experience-bullets-margin-inline-end);
+
+    /* Other */
+    list-style: var(--experience-bullets-list-style);
+
+    li {
+      /* Position */
+      position: var(--experience-bullets-li-position);
+
+      /* Box Model */
+      padding-inline-start: var(--experience-bullets-li-padding-inline-start);
+      margin-block-end: var(--experience-bullets-li-margin-block-end);
+
+      /* Typography */
+      font-size: var(--experience-bullets-li-font-size);
+      font-weight: var(--experience-bullets-li-font-weight);
+      color: var(--experience-bullets-li-color);
+      line-height: var(--experience-bullets-li-line-height);
+
+      &::before {
+        content: var(--bullet-before-content);
+
+        /* Position */
+        position: absolute;
+        top: 0.1rem;
+        left: 0;
+
+        /* Box Model */
+        margin-inline-start: var(--bullet-margin-inline-start);
+
+        /* Typography */
+        font-size: var(--bullet-font-size);
+        font-weight: var(--bullet-font-weight);
+        color: var(--bullet-color);
+
+        /* Visual Effects */
+        opacity: var(--bullet-before-opacity);
+        text-shadow: var(--bullet-text-shadow);
+      }
+
+      &:nth-child(even)::before {
+        content: var(--bullet-before-content-alternate);
+        text-shadow: var(--bullet-text-shadow-alternate);
+      }
     }
   }
 }

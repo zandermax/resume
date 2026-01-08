@@ -67,12 +67,11 @@ XP Theme - Common Variables
   --scrollbar-button-width: 16px;
 
   /* Experience item custom properties */
-  --experience-item-border: 0;
   --experience-item-background: var(--section-bg);
   --experience-item-border-radius: var(--xp-radius-md);
   --experience-item-box-shadow: var(--xp-panel-shadow), 0 2px 4px var(--xp-black-10);
   --experience-item-padding: var(--spacing-md);
-  --experience-item-margin-top: var(--spacing-md);
+  --experience-item-margin-block-start: var(--spacing-md);
 
   /* Skills grid group custom properties */
   --skills-group-border: 0;

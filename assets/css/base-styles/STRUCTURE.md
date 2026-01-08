@@ -178,10 +178,23 @@ border-inline-end: var(--element-border-inline-end, none);
 
 **Apply this to CSS custom properties (variable definitions):**
 
-- ✓ Define: `--section-padding-block-start`, `--section-padding-inline-end`
-- ✗ Avoid: `--section-padding` (shorthand creates override conflicts)
-- This policy applies to both base variable definitions AND theme overrides
-- Themes that need uniform padding on all sides should set all four longhand properties
+- ✓ Define longhand properties: `--section-padding-block-start`, `--section-padding-inline-end`
+- ✓ Can also define shorthand for convenience: `--section-padding` (see exception below)
+- ✗ Avoid using shorthand in actual CSS rules where longhand is also used
+- This policy applies to CSS rules in base style files
+
+**Exception for convenience shorthands:**
+
+Shorthand custom properties can coexist with longhand properties if:
+1. The shorthand is only used where needed (e.g., responsive.css, theme convenience)
+2. Base style files (like experience.css) use ONLY longhand properties in their CSS rules
+3. Both are defined in variables files for theme flexibility
+
+Example from experience:
+- `variables-experience.css` defines both `--experience-item-padding` (shorthand) and the four longhand properties
+- `experience.css` uses ONLY the longhand properties in its CSS rules
+- `responsive.css` uses the shorthand: `padding: var(--experience-item-padding)`
+- Themes can set either the shorthand (for uniform padding) or individual longhand properties (for custom edges)
 
 ### Background Layering Pattern
 
@@ -213,16 +226,38 @@ Some elements intentionally share variables:
 
 - `.resume-header__name-greeting` and `.resume-header__name-small` both use `--header-name-greeting-*` variables for consistent styling
 
+### All Properties Must Be Defined in Base Styles
+
+**Important principle:** Every CSS custom property that themes can override MUST be defined in base variable files first.
+
+**Why this matters:**
+- Ensures consistent defaults across all themes
+- Makes it easy to discover available customization points
+- Prevents themes from creating incompatible custom properties
+- Enables proper fallback behavior
+
+**Examples:**
+- ✓ Good: Theme sets `--experience-item-filter: blur(2px)` and base defines `--experience-item-filter: none`
+- ✗ Bad: Theme sets `--experience-item-filter: blur(2px)` but base doesn't define it at all
+
+**How to add theme-specific properties:**
+1. Add the property to the appropriate base `variables-*.css` file with a sensible default
+2. Document it in the file header
+3. Then themes can override it as needed
+
+Even if only one theme currently uses a property, it should be defined in base with a neutral default (like `none`, `visible`, `relative`, `transparent`).
+
 ## Theme Overrides
 
 Theme files in `assets/css/themes/*.css` can override any CSS variable defined in the `variables-*.css` files. The base styles provide sensible defaults that themes customize.
 
 Themes should:
 
-1. Override base variables to customize appearance
-2. Define theme-specific intermediate variables (with theme prefix) for internal reuse
+1. **Only override** base variables to customize appearance (never define new custom properties without base definitions)
+2. Define theme-specific intermediate variables (with theme prefix like `--brutal-*`, `--glitch-*`) for internal reuse
 3. Use colors from `colors.css` when possible, or define custom oklch() colors
 4. Document any custom spacing systems if not using base `--spacing-*` scale
+5. When overriding box model properties, prefer setting all four longhand directions for uniform effects
 
 ## Adding New Components
 

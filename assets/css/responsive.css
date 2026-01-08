@@ -140,7 +140,7 @@ Mobile layout
 
   /* Responsive item padding */
   .experience-item {
-    padding: var(--experience-item-padding-responsive-500, var(--experience-item-padding));
+    padding: var(--experience-item-padding);
   }
 
   .education-item {

@@ -66,7 +66,7 @@ body[data-theme='skeuomorph'] {
 
   /* ==================== EXPERIENCE ITEMS - PAPER CARD ==================== */
 
-  --experience-item-background-image: var(--paper-texture);
+  --experience-item-background: var(--paper-texture);
   --experience-item-margin: var(--spacing-lg) -var(--spacing-xs);
   --experience-item-border-inline: var(--border-width-extra-thick) solid var(--leather-color);
 

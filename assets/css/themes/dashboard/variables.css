@@ -96,10 +96,13 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* Experience Item - Base */
   --experience-item-background: var(--panel-bg);
-  --experience-item-border: var(--border-width-thin) solid var(--panel-border);
+  --experience-item-border-block-start: var(--border-width-thin) solid var(--panel-border);
+  --experience-item-border-block-end: var(--border-width-thin) solid var(--panel-border);
+  --experience-item-border-inline-start: var(--border-width-thin) solid var(--panel-border);
+  --experience-item-border-inline-end: var(--border-width-thin) solid var(--panel-border);
   --experience-item-border-radius: 6px;
   --experience-item-padding: var(--spacing-md);
-  --experience-item-margin-top: var(--spacing-md);
+  --experience-item-margin-block-start: var(--spacing-md);
   --experience-item-box-shadow: var(--dashboard-shadow-sm);
   --experience-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -107,12 +110,16 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --experience-item-hover-transform: translateX(4px);
   --experience-item-hover-box-shadow: var(--dashboard-shadow-md);
   --experience-item-hover-border-color: var(--accent-color);
+  --experience-item-border-inline-start-color: var(--accent-color);
 
   /* Experience Item - Pseudo-element (accent bar) */
   --experience-item-before-content: '';
   --experience-item-before-display: block;
   --experience-item-before-position: absolute;
-  --experience-item-before-inset: 0 auto 0 0;
+  --experience-item-before-top: 0;
+  --experience-item-before-right: auto;
+  --experience-item-before-bottom: 0;
+  --experience-item-before-left: 0;
   --experience-item-before-width: 3px;
   --experience-item-before-background: var(--accent-color);
   --experience-item-before-border-radius: 6px 0 0 6px;

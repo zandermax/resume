@@ -123,7 +123,7 @@ SKEUOMORPH Theme - Base Variables
 
   --experience-item-background: var(--paper-color);
   --experience-item-padding: var(--spacing-md) var(--spacing-md);
-  --experience-item-margin-top: var(--spacing-lg);
+  --experience-item-margin-block-start: var(--spacing-lg);
   --experience-item-box-shadow: 0 2px 4px var(--skeu-black-10), 0 4px 8px var(--skeu-black-05),
     inset 0 1px 0 var(--skeu-white-50);
   --bullet-color: var(--leather-color);
@@ -152,7 +152,10 @@ SKEUOMORPH Theme - Base Variables
   --tech-badge-before-content: '';
   --tech-badge-before-display: block;
   --tech-badge-before-position: absolute;
-  --tech-badge-before-inset: 5px;
+  --tech-badge-before-top: 5px;
+  --tech-badge-before-right: 5px;
+  --tech-badge-before-bottom: 5px;
+  --tech-badge-before-left: 5px;
   --tech-badge-before-background: radial-gradient(ellipse at 25% 35%, var(--skeu-white-06) 0%, transparent 50%),
     radial-gradient(ellipse at 75% 65%, var(--skeu-black-08) 0%, transparent 50%),
     linear-gradient(135deg, oklch(0.48 0.04 50) 0%, oklch(0.42 0.03 48) 100%);
@@ -166,7 +169,10 @@ SKEUOMORPH Theme - Base Variables
   --tech-badge-after-content: '';
   --tech-badge-after-display: block;
   --tech-badge-after-position: absolute;
-  --tech-badge-after-inset: 0;
+  --tech-badge-after-top: 0;
+  --tech-badge-after-right: 0;
+  --tech-badge-after-bottom: 0;
+  --tech-badge-after-left: 0;
   --tech-badge-after-background: radial-gradient(
         circle at center,
         oklch(0.88 0 0) 0%,

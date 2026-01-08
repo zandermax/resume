@@ -78,12 +78,11 @@ Classic cathode ray tube monitor aesthetic
   /* ==================== EXPERIENCE SECTION ==================== */
 
   /* Experience Item */
-  --experience-item-border: 0;
   --experience-item-border-block-start: 1px solid currentColor;
   --experience-item-border-block-start-first: 0;
   --experience-item-background: transparent;
   --experience-item-padding: 1rem 0 0.5rem;
-  --experience-item-margin-top: 1.5rem;
+  --experience-item-margin-block-start: 1.5rem;
 
   /* Tech Badges */
   --tech-badge-border: 1px solid var(--border-color);

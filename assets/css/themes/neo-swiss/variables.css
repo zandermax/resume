@@ -53,9 +53,8 @@ Ultra-modern minimalism with mathematical precision
   /* Experience item custom properties */
   --experience-item-padding: 0;
   --experience-item-margin: 0 0 var(--spacing-8) 0;
-  --experience-item-margin-top: var(--spacing-8);
+  --experience-item-margin-block-start: var(--spacing-8);
   --experience-item-transition: none;
-  --experience-item-border: 0;
   --experience-item-border-radius: 0;
   --experience-item-box-shadow: none;
 

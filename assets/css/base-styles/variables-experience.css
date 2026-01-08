@@ -10,88 +10,119 @@
  *   - .experience-item__bullets li (individual bullet points)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --spacing-*, etc.)
+ *   - variables-base.css (uses --border-color for borders)
+ *   - Theme files can override --theme-accent-1 through --theme-accent-5
  *
  * RELATED FILES:
- *   - experience.css (applies these variables, includes role h3 styling)
+ *   - experience.css (applies these variables without fallbacks)
  *
- * VARIABLES DEFINED: ~140 variables controlling:
+ * VARIABLES DEFINED: 148 variables controlling:
  *   - Experience item layout (borders, padding, shadows, hover states)
  *   - Role/company/meta text styling
  *   - Tech badges (borders, colors, padding, hover states, pseudo-elements)
  *   - Bullet points (style, spacing, custom bullets)
  *   - Pseudo-elements for decorative effects
  *
+ * ORGANIZATION:
+ *   Each component section is organized as:
+ *   1. Base/layout properties
+ *   2. Visual properties (colors, shadows, effects)
+ *   3. Transform & animation properties
+ *   4. Hover states
+ *   5. Pseudo-elements (::before, then ::after)
+ *
  * VARIABLE PATTERNS:
- *   - Alternate nth-child styling: Use --experience-item-nth-2n-transform for even items
- *   - Bullet alternates: Use --bullet-before-content-alternate and --bullet-text-shadow-alternate
- *     for even bullet points (these inherit from base bullet variables by default)
+ *   - All properties use longhand for border/padding/margin (no shorthand conflicts)
+ *   - Logical properties preferred (margin-block-start vs margin-top)
+ *   - Shorthand properties (--experience-item-padding, --experience-item-margin)
+ *     provided for theme convenience (used in responsive.css)
+ *   - Alternate nth-child: --experience-item-nth-2n-transform for even items
+ *   - Bullet alternates: --bullet-before-content-alternate and
+ *     --bullet-text-shadow-alternate inherit from base by default
+ *   - All properties have explicit defaults - no fallbacks needed in experience.css
  */
 
 :root {
-  /* === EXPERIENCE SECTION === */
-  --experience-section-padding-block-start: 0;
+  /* ============================================
+     EXPERIENCE ITEM CONTAINER
+     Card-style containers for each job
+     ============================================ */
 
-  /* === EXPERIENCE ITEM CONTAINER === */
-  --experience-item-border: 0;
+  /* --- Border Properties --- */
   --experience-item-border-block-start: 2px solid var(--border-color);
-  --experience-item-border-block-start-first: 3px solid var(--border-color);
+  --experience-item-border-block-start-first: 3px solid var(--border-color); /* First item gets thicker border */
+  --experience-item-border-block-end: none;
   --experience-item-border-inline-start: none;
+  --experience-item-border-inline-start-color: transparent;
+  --experience-item-border-inline-end: none;
+  --experience-item-border-radius: 0;
+
+  /* --- Spacing Properties --- */
+  --experience-item-padding: 0; /* Shorthand convenience for responsive.css */
+  --experience-item-padding-block-start: 0.9rem;
+  --experience-item-padding-block-end: 0;
+  --experience-item-padding-inline-start: 0;
+  --experience-item-padding-inline-end: 0;
+  --experience-item-margin: 0; /* Shorthand convenience */
+  --experience-item-margin-block-start: 0.9rem;
+  --experience-item-margin-block-end: 0;
+  --experience-item-margin-inline-start: 0;
+  --experience-item-margin-inline-end: 0;
+
+  /* --- Visual Properties --- */
   --experience-item-background: transparent;
   --experience-item-box-shadow: none;
-  --experience-item-padding: 0;
-  --experience-item-padding-responsive-500: var(--experience-item-padding);
-  --experience-item-margin: 0;
-  --experience-item-margin-top: 1rem;
-  --experience-item-margin-block-end: 0;
-  --experience-item-border-radius: 0;
   --experience-item-position: relative;
+  --experience-item-overflow: visible;
+  --experience-item-filter: none;
+
+  /* --- Transform & Animation --- */
   --experience-item-transform: none;
+  --experience-item-nth-2n-transform: none; /* Applied to even experience items */
   --experience-item-transition: none;
 
-  /* === EXPERIENCE ITEM HEADER === */
-  --experience-item-header-display: block;
-  --experience-item-header-justify-content: normal;
-  --experience-item-header-align-items: normal;
-  --experience-item-header-margin-block-end: 0;
-  --experience-item-header-gap: normal;
-  --experience-item-header-flex-direction-responsive-768: unset;
-  --experience-item-header-align-items-responsive-768: unset;
-
-  /* === EXPERIENCE ITEM HOVER STATES === */
+  /* --- Hover States --- */
   --experience-item-hover-transform: none;
   --experience-item-hover-box-shadow: none;
-  --experience-item-hover-border-color: inherit;
+  --experience-item-hover-border-color: transparent;
   --experience-item-hover-border-inline-start-width: inherit;
+  --experience-item-hover-filter: none;
 
-  /* === EXPERIENCE ITEM PSEUDO-ELEMENTS === */
+  /* --- Pseudo-Element: ::before --- */
   --experience-item-before-content: none;
   --experience-item-before-display: none;
   --experience-item-before-position: static;
-  --experience-item-before-inset: auto;
+  --experience-item-before-top: auto;
+  --experience-item-before-right: auto;
+  --experience-item-before-bottom: auto;
+  --experience-item-before-left: auto;
   --experience-item-before-width: auto;
+  --experience-item-before-height: auto;
   --experience-item-before-background: transparent;
   --experience-item-before-border-radius: 0;
   --experience-item-before-opacity: 1;
   --experience-item-before-transition: none;
   --experience-item-before-hover-opacity: 1;
-  --experience-item-before-top: auto;
-  --experience-item-before-left: auto;
-  --experience-item-before-width-calc: auto;
-  --experience-item-before-height: auto;
-  --experience-item-before-background-image: none;
+
+  /* --- Pseudo-Element: ::after --- */
   --experience-item-after-content: none;
   --experience-item-after-position: static;
+  --experience-item-after-top: auto;
+  --experience-item-after-right: auto;
   --experience-item-after-bottom: auto;
   --experience-item-after-left: auto;
-  --experience-item-after-right: auto;
   --experience-item-after-height: auto;
   --experience-item-after-background: transparent;
   --experience-item-after-opacity: 1;
   --experience-item-after-animation: none;
   --experience-item-after-will-change: auto;
 
-  /* === EXPERIENCE ROLE (H3) === */
+  /* ============================================
+     EXPERIENCE ROLE (H3)
+     Job title styling
+     ============================================ */
+
+  /* --- Typography --- */
   --experience-role-font-size: 1.05rem;
   --experience-role-font-weight: normal;
   --experience-role-color: inherit;
@@ -99,16 +130,21 @@
   --experience-role-letter-spacing: 0.08em;
   --experience-role-line-height: normal;
   --experience-role-text-shadow: none;
+
+  /* --- Spacing & Borders --- */
   --experience-role-margin-block-start: 0;
   --experience-role-margin-block-end: 0;
   --experience-role-margin-inline-start: 0;
   --experience-role-margin-inline-end: 0;
   --experience-role-border-inline-start: none;
   --experience-role-padding-inline-start: 0;
-  --experience-role-hover-transform: none;
-  --experience-role-hover-box-shadow: none;
 
-  /* === EXPERIENCE COMPANY === */
+  /* --- Hover States --- */
+
+  /* ============================================
+     COMPANY NAME
+     Employer identification
+     ============================================ */
   --experience-company-font-size: 0.9rem;
   --experience-company-font-weight: normal;
   --experience-company-color: inherit;
@@ -117,63 +153,77 @@
   --experience-company-opacity: 1;
   --experience-company-margin-block-end: 0;
 
-  /* === EXPERIENCE META === */
+  /* ============================================
+     META INFORMATION
+     Dates, duration, location
+     ============================================ */
+
+  /* --- Meta Container --- */
   --experience-item-meta-font-size: 0.8rem;
 
-  /* === EXPERIENCE DATES === */
+  /* --- Dates & Duration --- */
   --experience-item-dates-font-size: 0.8rem;
   --experience-item-dates-font-weight: normal;
   --experience-item-dates-color: inherit;
   --experience-item-dates-opacity: 1;
   --experience-item-dates-letter-spacing: normal;
 
-  /* === EXPERIENCE TITLE === */
-  --experience-title-font-size: 1rem;
-  --experience-title-font-weight: normal;
-  --experience-title-color: inherit;
-
-  /* === EXPERIENCE DURATION === */
-  --experience-duration-font-size: 0.8rem;
-  --experience-duration-font-family: inherit;
-  --experience-duration-color: inherit;
-  --experience-duration-opacity: 1;
-  --experience-duration-before-content: none;
+  /* --- Duration Decorative Prefix --- */
+  --experience-duration-before-content: none; /* e.g., "(" before duration */
   --experience-duration-before-opacity: 1;
 
-  /* === EXPERIENCE DESCRIPTION === */
-  --experience-description-line-height: 1.6;
-  --experience-description-color: inherit;
+  /* ============================================
+     TECH BADGES
+     Technology stack labels
+     ============================================ */
 
-  /* === TECH BADGES === */
-  --tech-badge-border: 0;
-  --tech-badge-background: transparent;
-  --tech-badge-box-shadow: none;
-  --tech-badge-padding: 0.25rem 0.5rem;
-  --tech-badge-text-shadow: none;
+  /* --- Border Properties --- */
+  --tech-badge-border-block-start: 1px solid var(--border-color);
+  --tech-badge-border-block-end: 1px solid var(--border-color);
+  --tech-badge-border-inline-start: 1px solid var(--border-color);
+  --tech-badge-border-inline-end: 1px solid var(--border-color);
+  --tech-badge-border-radius: 0;
+
+  /* --- Typography --- */
   --tech-badge-font-size: 0.8rem;
   --tech-badge-font-weight: normal;
   --tech-badge-color: inherit;
-  --tech-badge-border-radius: 0;
-  --tech-badge-position: relative;
-  --tech-badge-display: inline-block;
-  --tech-badge-margin: 0.35rem 0 0.4rem;
   --tech-badge-text-transform: uppercase;
   --tech-badge-letter-spacing: 0.08em;
+  --tech-badge-text-shadow: none;
+
+  /* --- Layout & Spacing --- */
+  --tech-badge-display: inline-block;
+  --tech-badge-position: relative;
+  --tech-badge-padding: 0.25rem 0.4rem;
+  --tech-badge-margin: 0.35rem 0 0.4rem;
+  --tech-badge-align-items: baseline;
+  --tech-badge-overflow: visible;
+  --tech-badge-contain: none; /* CSS containment for performance */
+
+  /* --- Visual Properties --- */
+  --tech-badge-background: transparent;
+  --tech-badge-box-shadow: none;
+  --tech-badge-filter: none;
+
+  /* --- Transform & Animation --- */
   --tech-badge-transform: none;
   --tech-badge-transition: none;
-  --tech-badge-overflow: visible;
-  --tech-badge-filter: none;
-  --tech-badge-align-items: baseline;
-  --tech-badge-hover-filter: none;
-  --tech-badge-contain: none;
 
-  /* === TECH BADGE PSEUDO-ELEMENTS === */
+  /* --- Hover States --- */
+  --tech-badge-hover-transform: none;
+  --tech-badge-hover-box-shadow: none;
+  --tech-badge-hover-background: transparent;
+  --tech-badge-hover-filter: none;
+
+  /* --- Pseudo-Element: ::before --- */
   --tech-badge-before-content: none;
   --tech-badge-before-display: none;
   --tech-badge-before-position: static;
-  --tech-badge-before-inset: auto;
-  --tech-badge-before-left: auto;
   --tech-badge-before-top: auto;
+  --tech-badge-before-right: auto;
+  --tech-badge-before-bottom: auto;
+  --tech-badge-before-left: auto;
   --tech-badge-before-margin-inline-start: 0;
   --tech-badge-before-margin-inline-end: 0;
   --tech-badge-before-color: inherit;
@@ -183,34 +233,54 @@
   --tech-badge-before-box-shadow: none;
   --tech-badge-before-pointer-events: auto;
   --tech-badge-before-z-index: auto;
+
+  /* --- Pseudo-Element: ::after --- */
   --tech-badge-after-content: none;
   --tech-badge-after-display: none;
   --tech-badge-after-position: static;
-  --tech-badge-after-inset: auto;
+  --tech-badge-after-top: auto;
+  --tech-badge-after-right: auto;
+  --tech-badge-after-bottom: auto;
+  --tech-badge-after-left: auto;
   --tech-badge-after-margin-inline-start: 0;
+  --tech-badge-after-background: transparent;
   --tech-badge-after-border-radius: 0;
   --tech-badge-after-box-shadow: none;
   --tech-badge-after-pointer-events: auto;
   --tech-badge-after-z-index: auto;
 
-  /* === BULLET POINTS === */
-  --bullet-before-content: '•';
-  --bullet-before-content-alternate: inherit; /* For nth-child(even) bullets - inherits from --bullet-before-content by default */
-  --bullet-font-size: 1em;
-  --bullet-text-shadow: none;
-  --bullet-text-shadow-alternate: inherit; /* For nth-child(even) bullets - inherits from --bullet-text-shadow by default */
-  --bullet-color: inherit;
-  --bullet-font-weight: normal;
-  --bullet-margin-inline-start: 0;
-  --bullet-before-opacity: 1;
+  /* ============================================
+     BULLET POINTS
+     Achievement list bullets and styling
+     ============================================ */
 
-  /* === EXPERIENCE BULLETS LIST === */
+  /* --- Bullet Character --- */
+  --bullet-before-content: '■'; /* Default bullet character */
+  --bullet-before-content-alternate: inherit; /* Even bullets inherit from base */
+  --bullet-font-size: 0.6rem;
+  --bullet-font-weight: normal;
+  --bullet-color: inherit;
+  --bullet-before-opacity: 1;
+  --bullet-margin-inline-start: 0;
+
+  /* --- Bullet Effects --- */
+  --bullet-text-shadow: none;
+  --bullet-text-shadow-alternate: inherit; /* Even bullets inherit from base */
+
+  /* ============================================
+     BULLETS LIST CONTAINER
+     ============================================ */
   --experience-bullets-list-style: none;
   --experience-bullets-padding-inline-start: 0;
-  --experience-bullets-margin: 0;
   --experience-bullets-margin-block-start: 0;
+  --experience-bullets-margin-block-end: 0;
+  --experience-bullets-margin-inline-start: 0;
+  --experience-bullets-margin-inline-end: 0;
 
-  /* === EXPERIENCE BULLETS LIST ITEMS === */
+  /* ============================================
+     BULLETS LIST ITEMS
+     Individual achievement entries
+     ============================================ */
   --experience-bullets-li-position: relative;
   --experience-bullets-li-padding-inline-start: 1.1rem;
   --experience-bullets-li-font-size: 0.88rem;

@@ -128,8 +128,11 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   /* Experience item - Base */
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);
-  --experience-item-border: 6px solid var(--border-color);
-  --experience-item-margin-top: 2rem;
+  --experience-item-border-block-start: 6px solid var(--border-color);
+  --experience-item-border-block-end: 6px solid var(--border-color);
+  --experience-item-border-inline-start: 6px solid var(--border-color);
+  --experience-item-border-inline-end: 6px solid var(--border-color);
+  --experience-item-margin-block-start: 2rem;
   --experience-item-box-shadow: 12px 12px 0 var(--brutal-shadow-light);
   --experience-item-transform: rotate(-0.2deg);
 
@@ -141,7 +144,7 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --experience-item-before-left: -3px;
   --experience-item-before-width: calc(100% + 6px);
   --experience-item-before-height: 12px;
-  --experience-item-before-background-image: repeating-linear-gradient(
+  --experience-item-before-background: repeating-linear-gradient(
     90deg,
     var(--accent-color) 0px,
     var(--accent-color) 12px,

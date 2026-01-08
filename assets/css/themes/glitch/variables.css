@@ -92,10 +92,13 @@ Common properties for all modes
   --resume-section-z-index: 2;
 
   /* Experience item custom properties */
-  --experience-item-border: var(--border-width-md) solid var(--border-color);
+  --experience-item-border-block-start: var(--border-width-md) solid var(--border-color);
+  --experience-item-border-block-end: var(--border-width-md) solid var(--border-color);
+  --experience-item-border-inline-start: var(--border-width-md) solid var(--border-color);
+  --experience-item-border-inline-end: var(--border-width-md) solid var(--border-color);
   --experience-item-background: var(--section-bg);
   --experience-item-padding: var(--spacing-xl);
-  --experience-item-margin-top: var(--spacing-lg);
+  --experience-item-margin-block-start: var(--spacing-lg);
   --experience-item-transform: skewX(var(--skew-light)) rotate(0.1deg);
   --experience-item-nth-2n-transform: skewX(-0.25deg) rotate(-0.15deg) translateY(1px);
   --experience-item-box-shadow: var(--glitch-box-shadow);

@@ -112,10 +112,9 @@ Flat Design / Material Zero
   /* Experience item custom properties */
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);
-  --experience-item-border: 0;
   --experience-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
   --experience-item-border-radius: 0;
-  --experience-item-margin-top: 0;
+  --experience-item-margin-block-start: 0;
   --experience-item-margin-block-end: var(--spacing-lg);
   --experience-item-box-shadow: none;
   --experience-item-transition: border-inline-start-width 0.15s ease;

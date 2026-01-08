@@ -57,11 +57,10 @@ TERMINAL Theme - Common Variables
   --list-background: var(--terminal-window-bg);
   --list-box-shadow: var(--terminal-inset-sunken-lg);
   --list-padding: 1rem;
-  --experience-item-border: 0;
   --experience-item-box-shadow: var(--terminal-inset-raised-lg);
   --experience-item-background: var(--section-bg);
   --experience-item-padding: 1.25rem;
-  --experience-item-margin-top: 1.25rem;
+  --experience-item-margin-block-start: 1.25rem;
   --tech-badge-border: 0;
   --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
   --tech-badge-background: var(--terminal-button-bg);
