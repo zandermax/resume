@@ -65,7 +65,10 @@ TERMINAL Theme - Common Variables
   --tech-badge-box-shadow: var(--terminal-inset-raised-sm);
   --tech-badge-background: var(--terminal-button-bg);
   --tech-badge-padding: 0.35rem 0.5rem;
-  --education-item-border: 0;
+  --education-item-border-block-start: 0;
+  --education-item-border-block-end: 0;
+  --education-item-border-inline-start: 0;
+  --education-item-border-inline-end: 0;
   --education-item-box-shadow: var(--terminal-inset-raised-sm);
   --education-item-background: var(--section-bg);
   --education-item-padding: 1rem;

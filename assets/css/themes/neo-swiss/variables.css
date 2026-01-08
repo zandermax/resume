@@ -273,7 +273,10 @@ Ultra-modern minimalism with mathematical precision
   --header-role-border-inline-start: var(--spacing-1) solid var(--accent-color);
 
   /* Education item custom properties */
-  --education-item-border: 0;
+  --education-item-border-block-start: 0;
+  --education-item-border-block-end: 0;
+  --education-item-border-inline-start: 0;
+  --education-item-border-inline-end: 0;
   --education-item-border-radius: 0;
   --education-item-box-shadow: none;
   --education-item-padding: 0;

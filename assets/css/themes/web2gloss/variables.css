@@ -87,7 +87,7 @@ WEB 2.0 GLOSS Theme - Variables
   --education-institution-font-weight: 700;
   --education-institution-color: var(--web2-primary);
   --education-institution-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.5);
-  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-margin: 0 0 0.5rem 0;
 
   /* Experience bullets custom properties */
   --bullet-before-content: '●';

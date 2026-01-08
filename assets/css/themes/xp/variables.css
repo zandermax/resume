@@ -218,7 +218,10 @@ XP Theme - Common Variables
   --printlink-before-transform: rotate(90deg);
 
   /* Education item custom properties */
-  --education-item-border: 0;
+  --education-item-border-block-start: 0;
+  --education-item-border-block-end: 0;
+  --education-item-border-inline-start: 0;
+  --education-item-border-inline-end: 0;
   --education-item-background: var(--section-bg);
   --education-item-border-radius: var(--xp-radius-sm);
   --education-item-box-shadow: var(--xp-panel-shadow);

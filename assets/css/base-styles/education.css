@@ -14,12 +14,28 @@
  *   - variables-education.css (all education-specific variables with defaults)
  *   - sections.css (education items are section children)
  *
+ * VARIABLE USAGE:
+ *   - All var() calls use properties WITHOUT fallbacks
+ *   - All defaults are defined in variables-education.css
+ *   - Themes override variables to customize appearance
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ *
  * STRUCTURE:
  *   - All properties use CSS variables without fallbacks
  *   - All defaults are defined in variables-education.css
- *   - Uses shorthand border with inline-start override for theme compatibility
- *   - Uses shorthand margin for institution to support theme overrides
- *   - Properties grouped by category (border, box model, typography, etc.)
+ *   - Uses longhand border properties (border-block-*, border-inline-*)
+ *   - Uses shorthand margin only (no longhand overrides)
+ *   - Properties ordered by consistent methodology (see PROPERTY ORDER)
  *   - Uses CSS nesting for child elements and states
  */
 
@@ -27,48 +43,64 @@
 /* All education elements are nested here to reflect the DOM structure */
 
 .education-item {
-  /* Border properties */
-  border: var(--education-item-border);
-  border-radius: var(--education-item-border-radius);
+  /* Position */
+  position: var(--education-item-position);
 
-  /* Border inline-start override (for left accent borders) */
-  border-inline-start-width: var(--education-item-border-inline-start-width);
-  border-inline-start-style: var(--education-item-border-inline-start-style);
-  border-inline-start-color: var(--education-item-border-inline-start-color);
-
-  /* Box model */
+  /* Box Model */
   padding: var(--education-item-padding);
   margin-block-end: var(--education-item-margin-block-end);
-  overflow: var(--education-item-overflow);
+
+  /* Borders */
+  border-block-start: var(--education-item-border-block-start);
+  border-block-end: var(--education-item-border-block-end);
+  border-inline-start: var(--education-item-border-inline-start);
+  border-inline-end: var(--education-item-border-inline-end);
+  border-radius: var(--education-item-border-radius);
+
+  /* Background */
+  background-color: var(--education-item-background);
+  background-image: var(--education-item-background-image);
 
   /* Typography */
   font-size: var(--education-item-font-size);
   color: var(--education-item-color);
 
-  /* Background and visual effects */
-  background-color: var(--education-item-background);
-  background-image: var(--education-item-background-image);
+  /* Visual Effects */
   box-shadow: var(--education-item-box-shadow);
-
-  /* Positioning and transforms */
-  position: var(--education-item-position);
   transform: var(--education-item-transform);
+
+  /* Transitions */
   transition: var(--education-item-transition);
+
+  /* Other */
+  overflow: var(--education-item-overflow);
 
   /* === EDUCATION ITEM PSEUDO-ELEMENT === */
   /* Used by themes for decorative left bars, backgrounds, etc. */
 
   &::before {
     content: var(--education-item-before-content);
-    display: var(--education-item-before-display);
+
+    /* Position */
     position: var(--education-item-before-position);
     inset: var(--education-item-before-inset);
+
+    /* Display/Box Model */
+    display: var(--education-item-before-display);
     width: var(--education-item-before-width);
+
+    /* Borders */
     border: var(--education-item-before-border);
     border-radius: var(--education-item-before-border-radius);
+
+    /* Background */
     background: var(--education-item-before-background);
-    pointer-events: var(--education-item-before-pointer-events);
+
+    /* Visual Effects */
     opacity: var(--education-item-before-opacity);
+
+    /* Other */
+    pointer-events: var(--education-item-before-pointer-events);
   }
 
   /* === NTH-CHILD STYLING === */
@@ -80,24 +112,31 @@
   /* === HOVER STATE === */
 
   &:hover {
-    transform: var(--education-item-hover-transform);
-    box-shadow: var(--education-item-hover-box-shadow);
     padding-inline-start: var(--education-item-hover-padding-inline-start);
+    box-shadow: var(--education-item-hover-box-shadow);
+    transform: var(--education-item-hover-transform);
   }
 
   /* === EDUCATION INSTITUTION === */
 
   h3.education-item__institution {
+    /* Box Model */
+    padding-inline-start: var(--education-institution-padding-inline-start);
+    margin: var(--education-institution-margin);
+
+    /* Borders */
+    border-inline-start: var(--education-institution-border-inline-start);
+
+    /* Typography */
     font-size: var(--education-institution-font-size);
     font-weight: var(--education-institution-font-weight);
     color: var(--education-institution-color);
     text-transform: var(--education-institution-text-transform);
     letter-spacing: var(--education-institution-letter-spacing);
     line-height: var(--education-institution-line-height);
+
+    /* Visual Effects */
     text-shadow: var(--education-institution-text-shadow);
-    margin: var(--education-institution-margin);
-    border-inline-start: var(--education-institution-border-inline-start);
-    padding-inline-start: var(--education-institution-padding-inline-start);
   }
 
   /* === EDUCATION DEGREE === */
@@ -109,9 +148,12 @@
   /* === EDUCATION DATES === */
 
   .education-item__dates {
+    /* Typography */
     font-weight: var(--education-item-dates-font-weight);
     color: var(--education-item-dates-color);
-    opacity: var(--education-item-dates-opacity);
     letter-spacing: var(--education-item-dates-letter-spacing);
+
+    /* Visual Effects */
+    opacity: var(--education-item-dates-opacity);
   }
 }

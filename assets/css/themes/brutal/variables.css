@@ -222,7 +222,10 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   /* ==================== EDUCATION SECTION ==================== */
 
   /* Education item - Base */
-  --education-item-border: var(--border-width-extra-thick) solid var(--border-color);
+  --education-item-border-block-start: var(--border-width-extra-thick) solid var(--border-color);
+  --education-item-border-block-end: var(--border-width-extra-thick) solid var(--border-color);
+  --education-item-border-inline-start: var(--border-width-extra-thick) solid var(--border-color);
+  --education-item-border-inline-end: var(--border-width-extra-thick) solid var(--border-color);
   --education-item-background: var(--section-bg);
   --education-item-padding: var(--spacing-xl);
   --education-item-box-shadow: 10px 10px 0 var(--brutal-shadow-light);
@@ -239,7 +242,7 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --education-institution-font-size: 1.8rem;
   --education-institution-border-inline-start: 8px solid var(--accent-color);
   --education-institution-padding-inline-start: 1rem;
-  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-margin: 0 0 0.5rem 0;
   --education-institution-line-height: 1;
 
   /* ==================== PRINCIPLES & COMMUNITY SECTIONS ==================== */

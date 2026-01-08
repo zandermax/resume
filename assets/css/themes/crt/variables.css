@@ -121,7 +121,10 @@ Classic cathode ray tube monitor aesthetic
   /* ==================== EDUCATION SECTION ==================== */
 
   /* Education Item */
-  --education-item-border: 0;
+  --education-item-border-block-start: 0;
+  --education-item-border-block-end: 0;
+  --education-item-border-inline-start: 0;
+  --education-item-border-inline-end: 0;
   --education-item-background: transparent;
   --education-item-padding: 0.5rem 0;
 

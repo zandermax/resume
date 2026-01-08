@@ -192,20 +192,20 @@ Flat Design / Material Zero
   --education-institution-font-size: 1.3rem;
   --education-institution-font-weight: 600;
   --education-institution-text-transform: uppercase;
-  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-margin: 0 0 0.5rem 0;
   --education-institution-line-height: 1.2;
   --education-institution-letter-spacing: 0.02em;
 
   /* Education item styling */
-  --education-item-border: 0;
+  --education-item-border-block-start: 0;
+  --education-item-border-block-end: 0;
+  --education-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-purple);
+  --education-item-border-inline-end: 0;
+  --education-item-border-radius: 0;
   --education-item-background: var(--section-bg);
   --education-item-padding: var(--spacing-xl);
-  --education-item-border-radius: 0;
   --education-item-box-shadow: none;
   --education-item-position: relative;
-  --education-item-border-inline-start-width: var(--border-width-extra-thick);
-  --education-item-border-inline-start-style: solid;
-  --education-item-border-inline-start-color: var(--metro-purple);
   --education-item-hover-padding-inline-start: var(--spacing-xl);
 
   /* ==================== COMMUNITY & PRINCIPLES ==================== */

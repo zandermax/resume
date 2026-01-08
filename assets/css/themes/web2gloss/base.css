@@ -57,7 +57,10 @@ body[data-theme='web2gloss'] {
   /* === EDUCATION ITEM - Floating glossy card === */
   --education-item-border-radius: var(--web2-radius-lg);
   --education-item-padding: 2rem;
-  --education-item-border: 1px solid var(--border-color);
+  --education-item-border-block-start: 1px solid var(--border-color);
+  --education-item-border-block-end: 1px solid var(--border-color);
+  --education-item-border-inline-start: 1px solid var(--border-color);
+  --education-item-border-inline-end: 1px solid var(--border-color);
   --education-item-box-shadow: var(--web2-shadow-lg);
   --education-item-transition: var(--web2-transition-normal);
   --education-item-position: relative;

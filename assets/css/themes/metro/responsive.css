@@ -99,7 +99,6 @@ METRO Theme - Responsive Adjustments
 
     /* Responsive item padding overrides */
     --experience-item-padding-responsive-500: var(--spacing-md);
-    --education-item-padding-responsive-500: var(--spacing-md);
     --community-item-padding-responsive-500: var(--spacing-md);
     --principles-item-padding-responsive-500: var(--spacing-md);
 
