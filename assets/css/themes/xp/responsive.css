@@ -29,6 +29,7 @@ body[data-theme='xp'] {
     --header-name-font-size: 1.7rem;
     --header-top-row-margin-block-start: 2rem;
     --printlink-font-size: 0.75rem;
-    --printlink-padding: 0.5rem 1.2rem;
+    --printlink-padding-block: 0.5rem;
+    --printlink-padding-inline: 1.2rem;
   }
 }

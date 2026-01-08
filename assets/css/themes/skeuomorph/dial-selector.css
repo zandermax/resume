@@ -84,7 +84,10 @@ body[data-theme='skeuomorph'] {
   /* Housing stitching effect (::before pseudo-element) */
   --dial-selector-housing-before-content: '';
   --dial-selector-housing-before-position: absolute;
-  --dial-selector-housing-before-inset: 6px;
+  --dial-selector-housing-before-top: 6px;
+  --dial-selector-housing-before-right: 6px;
+  --dial-selector-housing-before-bottom: 6px;
+  --dial-selector-housing-before-left: 6px;
   --dial-selector-housing-before-border: 2px dashed var(--stitch-color);
   --dial-selector-housing-before-border-radius: 4px;
   --dial-selector-housing-before-opacity: 0.4;

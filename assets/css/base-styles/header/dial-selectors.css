@@ -1,0 +1,92 @@
+/**
+ * Resume header dial selector positioning and styling
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-header__dial-selector (dial selector housing/positioning)
+ *   - .resume-header__dial-selector h3 (dial selector labels)
+ *
+ * DEPENDENCIES:
+ *   - ../variables-buttons.css (defines ALL --dial-selector-housing-* properties)
+ *
+ * RELATED FILES:
+ *   - ../../../dial-selector/index.js (custom element styled here)
+ *   - ../../dial-selector-styles/ (component-specific styles)
+ *
+ * NO INLINE FALLBACKS:
+ *   All custom properties are defined in variable files with proper defaults.
+ */
+
+.resume-header {
+  /* === DIAL SELECTOR === */
+
+  .resume-header__dial-selector {
+    /* Display & Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: var(--dial-selector-housing-position);
+
+    /* Spacing */
+    margin-block-start: var(--dial-selector-housing-margin-block-start);
+    margin-block-end: var(--dial-selector-housing-margin-block-end);
+    margin-inline-start: var(--dial-selector-housing-margin-inline-start);
+    margin-inline-end: var(--dial-selector-housing-margin-inline-end);
+    padding-block-start: var(--dial-selector-housing-padding-block-start);
+    padding-block-end: var(--dial-selector-housing-padding-block-end);
+    padding-inline-start: var(--dial-selector-housing-padding-inline-start);
+    padding-inline-end: var(--dial-selector-housing-padding-inline-end);
+
+    /* Borders */
+    border-radius: var(--dial-selector-housing-border-radius);
+
+    /* Background */
+    background: var(--dial-selector-housing-background);
+
+    /* Visual Effects */
+    box-shadow: var(--dial-selector-housing-box-shadow);
+
+    &::before {
+      /* Content */
+      content: var(--dial-selector-housing-before-content);
+
+      /* Positioning */
+      position: var(--dial-selector-housing-before-position);
+      top: var(--dial-selector-housing-before-top);
+      right: var(--dial-selector-housing-before-right);
+      bottom: var(--dial-selector-housing-before-bottom);
+      left: var(--dial-selector-housing-before-left);
+
+      /* Sizing */
+      height: var(--dial-selector-housing-before-height);
+
+      /* Borders */
+      border: var(--dial-selector-housing-before-border);
+      border-radius: var(--dial-selector-housing-before-border-radius);
+
+      /* Background */
+      background: var(--dial-selector-housing-before-background);
+
+      /* Visual Effects */
+      opacity: var(--dial-selector-housing-before-opacity);
+
+      /* Animation */
+      animation: var(--dial-selector-housing-before-animation);
+      will-change: var(--dial-selector-housing-before-will-change);
+
+      /* Interaction */
+      pointer-events: var(--dial-selector-housing-before-pointer-events);
+    }
+
+    h3 {
+      margin-block-start: var(--dial-selector-housing-h3-margin-block-start);
+      margin-block-end: var(--dial-selector-housing-h3-margin-block-end);
+      font-size: var(--dial-selector-housing-h3-font-size);
+      font-weight: var(--dial-selector-housing-h3-font-weight);
+      text-transform: var(--dial-selector-housing-h3-text-transform);
+      letter-spacing: var(--dial-selector-housing-h3-letter-spacing);
+      color: var(--dial-selector-housing-h3-color);
+      text-shadow: var(--dial-selector-housing-h3-text-shadow);
+    }
+  }
+}

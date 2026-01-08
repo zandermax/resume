@@ -38,7 +38,8 @@ Nostalgia Theme Variables
 
   /* Print link common properties */
   --printlink-border-radius: 8px;
-  --printlink-padding: var(--font-size-sm) var(--spacing-lg);
+  --printlink-padding-block: var(--font-size-sm);
+  --printlink-padding-inline: var(--spacing-lg);
   --printlink-font-size: var(--spacing-md);
   --printlink-font-weight: bold;
   --printlink-letter-spacing: 0.08em;

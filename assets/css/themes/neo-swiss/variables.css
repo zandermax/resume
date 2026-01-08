@@ -8,7 +8,7 @@ Ultra-modern minimalism with mathematical precision
   --font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --background-image: none;
   --section-bg: transparent;
-  --header-background: transparent;
+  --header-background-color: transparent;
   --dial-color-selection: var(--color-red);
   --dial-color-indicator: var(--color-red);
   --accent-color: var(--color-red);
@@ -205,10 +205,11 @@ Ultra-modern minimalism with mathematical precision
   /* Print link custom properties */
   --printlink-font-size: var(--font-size-small);
   --printlink-text-transform: uppercase;
-  --printlink-background: var(--accent-color);
+  --printlink-background-color: var(--accent-color);
   --printlink-color: var(--color-white);
   --printlink-font-weight: var(--font-weight-medium);
-  --printlink-padding: var(--spacing-2) var(--spacing-4);
+  --printlink-padding-block: var(--spacing-2);
+  --printlink-padding-inline: var(--spacing-4);
   --printlink-letter-spacing: var(--letter-spacing-wide);
   --printlink-transition: none;
   --printlink-text-decoration: none;

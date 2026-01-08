@@ -22,6 +22,6 @@
   --link-color: var(--color-black);
   --link-visited-color: var(--color-gray-dark);
   --section-bg: var(--color-gray-lighter);
-  --header-background: var(--color-gray-medium);
+  --header-background-color: var(--color-gray-medium);
   --accent-color: var(--color-black);
 }

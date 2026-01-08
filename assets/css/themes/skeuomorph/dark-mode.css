@@ -28,7 +28,7 @@ SKEUOMORPH Theme - Dark Mode Variables
   /* Section colors */
   --section-bg: oklch(0.38 0.04 50);
   --section-content-background: var(--paper-color);
-  --header-background: oklch(0.33 0.03 45);
+  --header-background-color: oklch(0.33 0.03 45);
 
   /* ==================== DIAL SELECTOR COLORS ==================== */
 

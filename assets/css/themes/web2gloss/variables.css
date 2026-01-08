@@ -149,10 +149,11 @@ WEB 2.0 GLOSS Theme - Variables
   /* Print link custom properties */
   --printlink-border: none;
   --printlink-border-radius: var(--web2-radius-md);
-  --printlink-background: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
+  --printlink-background-image: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
   --printlink-color: var(--color-white);
   --printlink-font-weight: 700;
-  --printlink-padding: 1rem 2rem;
+  --printlink-padding-block: 1rem;
+  --printlink-padding-inline: 2rem;
   --printlink-text-transform: uppercase;
   --printlink-font-size: 1rem;
   --printlink-letter-spacing: 0.05em;
@@ -169,7 +170,10 @@ WEB 2.0 GLOSS Theme - Variables
   --printlink-before-content: '';
   --printlink-before-display: block;
   --printlink-before-position: absolute;
-  --printlink-before-inset: 0 0 50% 0;
+  --printlink-before-top: 0;
+  --printlink-before-right: 0;
+  --printlink-before-bottom: 50%;
+  --printlink-before-left: 0;
   --printlink-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
   --printlink-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
   --printlink-before-pointer-events: none;

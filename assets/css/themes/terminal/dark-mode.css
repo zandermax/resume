@@ -10,7 +10,7 @@ TERMINAL Theme - Dark Mode
     --link-color: var(--color-cyan);
     --link-visited-color: var(--color-yellow);
     --section-bg: var(--color-blue-navy);
-    --header-background: var(--color-blue-navy);
+    --header-background-color: var(--color-blue-navy);
     --resume-main-background: var(--color-blue-navy);
     --accent-color: var(--color-cyan);
     --terminal-border-light: oklch(45% 0.22 264);

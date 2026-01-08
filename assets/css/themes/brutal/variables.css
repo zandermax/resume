@@ -49,7 +49,7 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --header-padding: var(--spacing-2xl) var(--spacing-xl);
   --header-padding-inline-start: var(--spacing-xl);
   --header-padding-inline-end: var(--spacing-xl);
-  --header-background: var(--text-color);
+  --header-background-color: var(--text-color);
   --header-color: var(--background-color);
   --header-margin: 0 0 var(--spacing-2xl) 0;
   --header-box-shadow: inset 0 -8px 0 var(--accent-color);
@@ -275,10 +275,11 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
 
   /* Print link - Base */
   --printlink-border: 6px solid var(--background-color);
-  --printlink-background: var(--accent-color);
+  --printlink-background-color: var(--accent-color);
   --printlink-color: var(--color-white);
   --printlink-font-weight: 900;
-  --printlink-padding: 1.5rem 3rem;
+  --printlink-padding-block: 1.5rem;
+  --printlink-padding-inline: 3rem;
   --printlink-text-transform: uppercase;
   --printlink-font-size: 1.2rem;
   --printlink-letter-spacing: 0.05em;
@@ -316,10 +317,10 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   /* Dial selector housing - Pseudo-element (striped top decoration) */
   --dial-selector-housing-before-content: '';
   --dial-selector-housing-before-position: absolute;
-  --dial-selector-housing-before-inset: 0;
   --dial-selector-housing-before-top: 0;
-  --dial-selector-housing-before-left: 0;
   --dial-selector-housing-before-right: 0;
+  --dial-selector-housing-before-bottom: 0;
+  --dial-selector-housing-before-left: 0;
   --dial-selector-housing-before-height: 8px;
   --dial-selector-housing-before-background: repeating-linear-gradient(
     90deg,

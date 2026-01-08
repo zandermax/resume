@@ -174,7 +174,7 @@ Common properties for all modes
   /* Header custom properties */
   --header-border: var(--border-width-md) solid var(--border-color);
   --header-border-block-end-width: var(--border-width-xxl);
-  --header-background: var(--header-background);
+  --header-background-color: var(--header-background-color);
   --header-padding: var(--spacing-xl);
   --header-margin-block-end: var(--spacing-xl);
   --header-position: relative;
@@ -203,10 +203,11 @@ Common properties for all modes
 
   /* Print link custom properties */
   --printlink-border: var(--border-width-lg) solid var(--border-color);
-  --printlink-background: var(--background-color);
+  --printlink-background-color: var(--background-color);
   --printlink-color: var(--text-color);
   --printlink-font-weight: 700;
-  --printlink-padding: var(--spacing-md) var(--spacing-xl);
+  --printlink-padding-block: var(--spacing-md);
+  --printlink-padding-inline: var(--spacing-xl);
   --printlink-text-transform: uppercase;
   --printlink-font-size: var(--font-size-base);
   --printlink-letter-spacing: 0.1em;

@@ -66,7 +66,8 @@ body[data-theme='web2gloss'] {
     --section-title-border-radius: var(--web2-radius-md);
     --header-name-font-size: 1.75rem;
     --printlink-font-size: 0.85rem;
-    --printlink-padding: 0.75rem 1.5rem;
+    --printlink-padding-block: 0.75rem;
+    --printlink-padding-inline: 1.5rem;
   }
 }
 

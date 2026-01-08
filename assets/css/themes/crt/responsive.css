@@ -16,7 +16,8 @@ CRT Theme - Responsive Adjustments
     --main-padding-responsive-500: var(--spacing-xs);
     --header-name-font-size: 1.7rem;
     --printlink-font-size: 0.8rem;
-    --printlink-padding: 0.45rem 0.85rem;
+    --printlink-padding-block: 0.45rem;
+    --printlink-padding-inline: 0.85rem;
     --printlink-margin-block-end: 0;
     --ds-label-padding: 0.3rem 0;
   }

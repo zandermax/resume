@@ -82,11 +82,11 @@ TERMINAL Theme - Common Variables
   --header-name-line-height: 1.3;
   --header-name-border-color: var(--terminal-border-dark);
   --printlink-border: 2px solid var(--text-color);
-  --printlink-background: var(--terminal-button-bg);
+  --printlink-background-color: var(--terminal-button-bg);
   --printlink-position: relative;
   --printlink-transition: all 0.15s ease;
   --printlink-color: var(--text-color);
-  --printlink-hover-background: var(--terminal-button-bg);
+  --printlink-hover-background-color: var(--terminal-button-bg);
   --printlink-hover-color: var(--text-color);
   --printlink-hover-transform: translateY(-2px);
   --printlink-active-transform: translateY(0);
@@ -128,12 +128,13 @@ TERMINAL Theme - Common Variables
 
   /* Print/save button styling */
   --savelink-display: inline-flex;
-  --printlink-padding: var(--spacing-sm) var(--spacing-md);
+  --printlink-padding-block: var(--spacing-sm);
+  --printlink-padding-inline: var(--spacing-md);
   --printlink-font-size: 0.9rem;
   --printlink-cursor: pointer;
   --printlink-transition: none;
   --printlink-border-radius: 0;
-  --printlink-background: var(--terminal-title-bg);
+  --printlink-background-color: var(--terminal-title-bg);
   --printlink-color: var(--color-white);
   --printlink-font-weight: bold;
   --printlink-box-shadow: var(--terminal-inset-raised-lg);

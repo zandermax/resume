@@ -29,7 +29,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --main-position: relative;
 
   /* Header */
-  --header-background: var(--panel-bg);
+  --header-background-color: var(--panel-bg);
   --header-border-radius: 8px;
   --header-border-block-end: 2px solid var(--panel-border);
   --header-box-shadow: var(--dashboard-shadow-sm);
@@ -233,11 +233,12 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* ==================== PRINT LINK ==================== */
 
   /* Print Link - Base */
-  --printlink-background: var(--accent-color);
+  --printlink-background-color: var(--accent-color);
   --printlink-border: var(--border-width-normal) solid var(--accent-color);
   --printlink-border-radius: 6px;
   --printlink-color: var(--color-white);
-  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+  --printlink-padding-block: var(--spacing-sm);
+  --printlink-padding-inline: var(--spacing-lg);
   --printlink-font-size: 0.9rem;
   --printlink-font-weight: 700;
   --printlink-letter-spacing: 0.08em;
@@ -246,8 +247,8 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --printlink-transition: all 0.2s ease;
 
   /* Print Link - Hover */
-  --printlink-hover-background: var(--accent-color);
-  --printlink-hover-border-color: var(--accent-color);
+  --printlink-hover-background-color: var(--accent-color);
+  --printlink-hover-outline-color: var(--accent-color);
   --printlink-hover-color: var(--color-white);
   --printlink-hover-opacity: 0.9;
   --printlink-hover-transform: translateY(-3px);

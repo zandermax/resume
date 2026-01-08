@@ -22,7 +22,7 @@
   --link-color: var(--color-white);
   --link-visited-color: var(--color-gray-medium);
   --section-bg: var(--color-gray-darkest);
-  --header-background: var(--color-gray-darker);
+  --header-background-color: var(--color-gray-darker);
   --accent-color: var(--color-white);
 
   /* Dark mode scan lines (different from light mode) */

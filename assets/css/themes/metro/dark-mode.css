@@ -5,7 +5,7 @@ METRO Theme - Dark Mode
 /* Dark Mode */
 :root[data-theme='metro'][data-mode='dark'] {
   --background-color: oklch(24% 0 0); /* Dark gray */
-  --header-background: oklch(24% 0 0); /* Dark gray */
+  --header-background-color: oklch(24% 0 0); /* Dark gray */
   --text-color: var(--color-white);
   --heading-color: var(--color-white);
   --border-color: var(--color-cyan-bright);

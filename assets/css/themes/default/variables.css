@@ -10,11 +10,12 @@ DEFAULT Theme - Variables
   /* ==================== BACKGROUNDS ==================== */
   --background-image: none;
   --section-bg: transparent;
-  --header-background: transparent;
+  --header-background-color: transparent;
 
   /* ==================== PRINT LINK - COMMON PROPERTIES ==================== */
   --printlink-border-radius: 4px;
-  --printlink-padding: var(--spacing-sm) var(--spacing-lg);
+  --printlink-padding-block: var(--spacing-sm);
+  --printlink-padding-inline: var(--spacing-lg);
   --printlink-font-size: 0.9rem;
   --printlink-font-weight: 600;
   --printlink-letter-spacing: 0.05em;
@@ -22,4 +23,3 @@ DEFAULT Theme - Variables
   --printlink-hover-color: var(--color-white);
   --printlink-hover-transform: translateY(-1px);
 }
-

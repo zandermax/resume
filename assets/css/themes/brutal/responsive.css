@@ -12,7 +12,8 @@ BRUTAL Theme - Responsive Adjustments
     --section-title-padding-inline-start: 1.5rem;
     --section-title-padding-inline-end: 1.5rem;
     --printlink-font-size: 0.9rem;
-    --printlink-padding: 1rem 2rem;
+    --printlink-padding-block: 1rem;
+    --printlink-padding-inline: 2rem;
     --education-institution-font-size: 1.4rem;
     --experience-role-font-size: 1.4rem;
 
@@ -38,7 +39,8 @@ BRUTAL Theme - Responsive Adjustments
     --section-title-padding-inline-start: 1rem;
     --section-title-padding-inline-end: 1rem;
     --printlink-font-size: 0.9rem;
-    --printlink-padding: 1rem 2rem;
+    --printlink-padding-block: 1rem;
+    --printlink-padding-inline: 2rem;
     --section-title-border-inline-start: 10px solid var(--accent-color);
 
     /* Header and section padding responsive overrides */

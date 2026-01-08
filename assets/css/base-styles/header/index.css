@@ -1,0 +1,286 @@
+/**
+ * Resume header module - main entry point
+ *
+ * This file imports all header-related styles in the correct order:
+ *   1. Core header structure (this file)
+ *   2. Dial selector positioning and styling
+ *   3. Print and save button styles
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-header (main header container)
+ *   - .resume-header__top-row (contains dial selectors and name)
+ *   - .resume-header__name-wrapper (name and greeting container)
+ *   - .resume-header__name, .resume-header__role (main name and role)
+ *   - .resume-header__meta (contact info section)
+ *   - .resume-header__links (social/professional links)
+ *
+ * DEPENDENCIES:
+ *   - ../variables-layout.css (defines ALL --header-* custom properties)
+ *   - ../variables-buttons.css (defines --dial-selector-housing-*, --printlink-* properties)
+ *   - ../_base.css (base heading and link styles)
+ *
+ * NO INLINE FALLBACKS:
+ *   All custom properties are defined in variable files with proper defaults.
+ *   No inline fallbacks (var(--property, fallback)) are used in this file.
+ *   This ensures consistent defaults and prevents duplication.
+ */
+
+/* === HEADER CONTAINER === */
+
+.resume-header {
+  /* Display & Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: var(--header-position);
+
+  /* Spacing */
+  margin-block-start: var(--header-margin-block-start);
+  margin-block-end: var(--header-margin-block-end);
+  margin-inline-start: var(--header-margin-inline-start);
+  margin-inline-end: var(--header-margin-inline-end);
+  padding-block-start: var(--header-padding-block-start);
+  padding-block-end: var(--header-padding-block-end);
+  padding-inline-start: var(--header-padding-inline-start);
+  padding-inline-end: var(--header-padding-inline-end);
+
+  /* Borders */
+  border-block-start: var(--header-border-block-start);
+  border-block-end: var(--header-border-width) var(--header-border-style) var(--header-border-block-end-color);
+  border-radius: var(--header-border-radius);
+
+  /* Background */
+  background-color: var(--header-background-color);
+  background-image: var(--header-background-image);
+
+  /* Typography */
+  color: var(--header-color);
+
+  /* Visual Effects */
+  box-shadow: var(--header-box-shadow);
+  transform: var(--header-transform);
+
+  /* Pseudo-elements for decorative effects */
+  &::before {
+    /* Content */
+    content: var(--resume-header-before-content);
+
+    /* Positioning */
+    position: var(--resume-header-before-position);
+    top: var(--resume-header-before-top);
+    right: var(--resume-header-before-right);
+    bottom: var(--resume-header-before-bottom);
+    left: var(--resume-header-before-left);
+
+    /* Sizing */
+    width: var(--resume-header-before-width);
+    height: var(--resume-header-before-height);
+
+    /* Borders */
+    border: var(--resume-header-before-border);
+
+    /* Background */
+    background: var(--resume-header-before-background);
+
+    /* Visual Effects */
+    opacity: var(--resume-header-before-opacity);
+
+    /* Interaction */
+    pointer-events: var(--resume-header-before-pointer-events);
+  }
+
+  &::after {
+    /* Content */
+    content: var(--resume-header-after-content);
+
+    /* Positioning */
+    position: var(--resume-header-after-position);
+    top: var(--resume-header-after-top);
+    right: var(--resume-header-after-right);
+    bottom: var(--resume-header-after-bottom);
+    left: var(--resume-header-after-left);
+
+    /* Sizing */
+    width: var(--resume-header-after-width);
+    height: var(--resume-header-after-height);
+
+    /* Background */
+    background: var(--resume-header-after-background);
+  }
+
+  /* === TOP ROW === */
+
+  .resume-header__top-row {
+    margin-block-start: var(--header-top-row-margin-block-start);
+    margin-block-end: var(--header-top-row-margin-block-end);
+  }
+
+  /* === NAME WRAPPER === */
+
+  .resume-header__name-wrapper {
+    /* Display & Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    /* Spacing */
+    margin-block-start: var(--header-name-wrapper-margin-block-start);
+    padding-inline: var(--header-name-wrapper-padding-inline);
+
+    /* Typography */
+    color: var(--header-name-wrapper-color);
+
+    > * {
+      flex: 0 0 50%;
+    }
+
+    .resume-header__name-greeting {
+      margin-block-end: -0.2rem;
+      font-size: var(--header-name-greeting-font-size);
+      font-weight: var(--header-name-greeting-font-weight);
+      line-height: var(--header-name-greeting-line-height);
+      text-transform: var(--header-name-greeting-text-transform);
+      letter-spacing: var(--header-name-greeting-letter-spacing);
+      color: var(--header-name-greeting-color);
+    }
+
+    h1.resume-header__name {
+      /* Layout */
+      position: var(--header-name-position);
+      order: var(--header-name-order);
+
+      /* Spacing */
+      margin-block-start: var(--header-name-margin-block-start);
+      margin-block-end: var(--header-name-margin-block-end);
+      margin-inline-start: var(--header-name-margin-inline-start);
+      margin-inline-end: var(--header-name-margin-inline-end);
+      padding-block-start: var(--header-name-padding-block-start);
+      padding-block-end: var(--header-name-padding-block-end);
+      padding-inline-start: var(--header-name-padding-inline-start);
+      padding-inline-end: var(--header-name-padding-inline-end);
+
+      /* Borders */
+      border-block-end: var(--header-name-border-width) var(--header-name-border-style) var(--header-name-border-color);
+      border-inline-start: var(--header-name-border-inline-start);
+
+      /* Typography */
+      font-size: var(--header-name-font-size);
+      font-weight: var(--header-name-font-weight);
+      line-height: var(--header-name-line-height);
+      text-transform: var(--header-name-text-transform);
+      letter-spacing: var(--header-name-letter-spacing);
+      color: var(--header-name-color);
+
+      /* Visual Effects */
+      text-shadow: var(--header-name-text-shadow);
+      animation: var(--header-name-animation);
+      will-change: var(--header-name-will-change);
+    }
+
+    .resume-header__name-small {
+      margin-block-start: -0.2rem;
+      font-size: var(--header-name-greeting-font-size);
+      font-weight: var(--header-name-greeting-font-weight);
+      line-height: var(--header-name-greeting-line-height);
+      text-transform: var(--header-name-greeting-text-transform);
+      letter-spacing: var(--header-name-greeting-letter-spacing);
+      color: var(--header-name-greeting-color);
+    }
+  }
+
+  /* === ROLE === */
+
+  .resume-header__role {
+    /* Layout */
+    order: var(--header-role-order);
+
+    /* Spacing */
+    margin-block-start: var(--header-role-margin-block-start);
+    margin-block-end: var(--header-role-margin-block-end);
+    margin-inline-start: var(--header-role-margin-inline-start);
+    margin-inline-end: var(--header-role-margin-inline-end);
+    padding-inline-start: var(--header-role-padding-inline-start);
+
+    /* Borders */
+    border-inline-start: var(--header-role-border-inline-start);
+
+    /* Typography */
+    font-size: var(--header-role-font-size);
+    font-weight: var(--header-role-font-weight);
+    line-height: var(--header-role-line-height);
+    text-transform: var(--header-role-text-transform);
+    letter-spacing: var(--header-role-letter-spacing);
+    color: var(--header-role-color);
+
+    /* Visual Effects */
+    text-shadow: var(--header-role-text-shadow);
+  }
+
+  /* === META (CONTACT INFO) === */
+
+  .resume-header__meta {
+    /* Spacing */
+    padding-inline: var(--header-meta-padding-inline);
+
+    /* Typography */
+    font-size: var(--header-meta-font-size);
+    font-family: var(--header-meta-font-family);
+    text-transform: var(--header-meta-text-transform);
+    letter-spacing: var(--header-meta-letter-spacing);
+    color: var(--header-meta-color);
+
+    /* Visual Effects */
+    opacity: var(--header-meta-opacity);
+    text-shadow: var(--header-meta-text-shadow);
+
+    .resume-header__location,
+    .resume-header__contact {
+      margin-block-start: 0.15rem;
+    }
+  }
+
+  /* === LINKS === */
+
+  .resume-header__links {
+    margin-block-start: 1rem;
+
+    .resume-header__link {
+      color: var(--header-link-color);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+
+      &:hover {
+        text-decoration-style: wavy;
+      }
+    }
+  }
+
+  /* All anchor tags within header */
+  a {
+    position: var(--header-link-position);
+    border-block-end: var(--header-link-border-block-end);
+    text-decoration: var(--header-link-text-decoration);
+    transition: var(--header-link-transition);
+
+    &:hover {
+      border-block-end: var(--header-link-hover-border-block-end);
+    }
+
+    &:visited {
+      border-block-end: var(--header-link-visited-border-block-end);
+
+      &:hover {
+        border-block-end: var(--header-link-visited-hover-border-block-end);
+      }
+    }
+  }
+}
+
+/* === IMPORT ADDITIONAL HEADER MODULES === */
+
+/* Dial selector housing and positioning */
+@import './dial-selectors.css';
+
+/* Print and save button styles */
+@import './buttons.css';

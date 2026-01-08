@@ -17,7 +17,7 @@ Nostalgia Theme - Light Mode
   --link-visited-color: var(--nostalgia-magenta);
   --section-bg: var(--nostalgia-yellow);
   --resume-main-background: var(--nostalgia-yellow);
-  --header-background: oklch(92% 0.22 330); /* Hot pink - 90s style! */
+  --header-background-color: oklch(92% 0.22 330); /* Hot pink - 90s style! */
   --accent-color: var(--nostalgia-green);
 
   /* Main sparkles background for resume content area */
@@ -27,7 +27,7 @@ Nostalgia Theme - Light Mode
   --ds-label-hover-color: var(--nostalgia-black);
 
   /* Print Link Button Styling - 90s Style! */
-  --printlink-background: linear-gradient(
+  --printlink-background-image: linear-gradient(
     135deg,
     var(--nostalgia-hot-pink) 0%,
     var(--nostalgia-orange) 50%,
@@ -38,7 +38,7 @@ Nostalgia Theme - Light Mode
   --printlink-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
   --printlink-box-shadow: 0 6px 0 var(--nostalgia-dark-pink), 0 8px 15px oklch(0% 0 0 / 0.3);
 
-  --printlink-hover-background: linear-gradient(
+  --printlink-hover-background-image: linear-gradient(
     135deg,
     var(--nostalgia-magenta) 0%,
     var(--nostalgia-orange) 50%,

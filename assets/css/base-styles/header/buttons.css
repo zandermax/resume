@@ -1,0 +1,207 @@
+/**
+ * Resume header button styles (print and save buttons)
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume-header__buttons (button container)
+ *   - .resume-header__savelink (save button, hidden by default, shown in terminal theme)
+ *   - #resume-header__printlink (print button, always visible)
+ *
+ * DEPENDENCIES:
+ *   - ../variables-buttons.css (defines ALL --printlink-*, --savelink-* properties)
+ *
+ * NO INLINE FALLBACKS:
+ *   All custom properties are defined in variable files with proper defaults.
+ */
+
+.resume-header {
+  /* === BUTTONS === */
+
+  .resume-header__buttons {
+    display: flex;
+    flex-direction: var(--header-buttons-flex-direction);
+    align-items: center;
+    justify-content: var(--header-buttons-justify-content);
+    gap: var(--header-buttons-gap);
+
+    .resume-header__savelink {
+      /* Display & Layout */
+      display: var(--savelink-display);
+      position: var(--printlink-position);
+      box-sizing: border-box;
+
+      /* Spacing */
+      margin-block-start: 1rem;
+      margin-block-end: var(--printlink-margin-block-end);
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-block: var(--printlink-padding-block);
+      padding-inline: var(--printlink-padding-inline);
+
+      /* Borders */
+      border-radius: var(--printlink-border-radius);
+
+      /* Background */
+      background-color: var(--printlink-background-color);
+      background-image: var(--printlink-background-image);
+
+      /* Typography */
+      font-size: var(--printlink-font-size);
+      font-family: var(--printlink-font-family);
+      font-weight: var(--printlink-font-weight);
+      text-transform: var(--printlink-text-transform);
+      text-decoration: var(--printlink-text-decoration);
+      letter-spacing: var(--printlink-letter-spacing);
+      white-space: nowrap;
+      color: var(--printlink-color);
+
+      /* Visual Effects */
+      box-shadow: var(--printlink-box-shadow);
+      text-shadow: var(--printlink-text-shadow);
+      opacity: var(--printlink-opacity);
+      filter: var(--printlink-filter);
+      transform: var(--printlink-transform);
+
+      /* Animation & Interaction */
+      transition: var(--printlink-transition);
+      cursor: var(--printlink-cursor);
+
+      &:hover {
+        /* Background */
+        background-color: var(--printlink-hover-background-color);
+        background-image: var(--printlink-hover-background-image);
+        background-size: var(--printlink-hover-background-size);
+
+        /* Typography */
+        color: var(--printlink-hover-color);
+
+        /* Borders */
+        border-color: var(--printlink-hover-border-color);
+        outline-width: var(--printlink-hover-outline-width);
+        outline-style: var(--printlink-hover-outline-style);
+        outline-color: var(--printlink-hover-outline-color);
+        outline-offset: var(--printlink-hover-outline-offset);
+
+        /* Visual Effects */
+        box-shadow: var(--printlink-hover-shadow);
+        text-shadow: var(--printlink-hover-text-shadow);
+        opacity: var(--printlink-hover-opacity);
+        filter: var(--printlink-hover-filter);
+        transform: var(--printlink-hover-transform);
+
+        /* Animation */
+        animation: var(--printlink-hover-animation);
+      }
+
+      &:active {
+        /* Visual Effects */
+        box-shadow: var(--printlink-active-box-shadow-override);
+        opacity: var(--printlink-active-opacity);
+        transform: var(--printlink-active-transform-override);
+      }
+    }
+
+    #resume-header__printlink {
+      /* Display & Layout */
+      display: inline-flex;
+      align-items: center;
+      position: var(--printlink-position);
+      box-sizing: border-box;
+
+      /* Typography */
+      color: var(--printlink-color);
+      text-decoration: none;
+
+      /* Borders */
+      border-color: var(--printlink-border-color);
+
+      /* Visual Effects */
+      opacity: var(--printlink-opacity);
+      filter: var(--printlink-filter);
+      transform: var(--printlink-transform);
+
+      /* Animation & Interaction */
+      transition: var(--printlink-transition);
+      animation: var(--printlink-animation);
+      cursor: var(--printlink-cursor);
+
+      &:hover {
+        /* Background */
+        background-color: var(--printlink-hover-background-color);
+        background-image: var(--printlink-hover-background-image);
+        background-size: var(--printlink-hover-background-size);
+
+        /* Typography */
+        color: var(--printlink-hover-color);
+
+        /* Borders */
+        border-color: var(--printlink-hover-border-color);
+        outline-width: var(--printlink-hover-outline-width);
+        outline-style: var(--printlink-hover-outline-style);
+        outline-color: var(--printlink-hover-outline-color);
+        outline-offset: var(--printlink-hover-outline-offset);
+
+        /* Visual Effects */
+        box-shadow: var(--printlink-hover-shadow);
+        text-shadow: var(--printlink-hover-text-shadow);
+        opacity: var(--printlink-hover-opacity);
+        filter: var(--printlink-hover-filter);
+        transform: var(--printlink-hover-transform);
+
+        /* Animation */
+        animation: var(--printlink-hover-animation);
+      }
+
+      &:active {
+        /* Visual Effects */
+        box-shadow: var(--printlink-active-box-shadow-override);
+        opacity: var(--printlink-active-opacity);
+        transform: var(--printlink-active-transform-override);
+      }
+
+      &::before {
+        /* Content */
+        content: var(--printlink-before-content);
+
+        /* Display & Layout */
+        display: var(--printlink-before-display);
+        position: var(--printlink-before-position);
+        top: var(--printlink-before-top);
+        right: var(--printlink-before-right);
+        bottom: var(--printlink-before-bottom);
+        left: var(--printlink-before-left);
+
+        /* Spacing */
+        margin-inline-start: var(--printlink-before-margin-inline-start);
+        margin-inline-end: var(--printlink-before-margin-inline-end);
+
+        /* Borders */
+        border-radius: var(--printlink-before-border-radius);
+
+        /* Background */
+        background: var(--printlink-before-background);
+
+        /* Typography */
+        font-size: var(--printlink-before-font-size);
+
+        /* Visual Effects */
+        transform: var(--printlink-before-transform);
+
+        /* Interaction */
+        pointer-events: var(--printlink-before-pointer-events);
+      }
+
+      &::after {
+        /* Content */
+        content: var(--printlink-after-content);
+
+        /* Display & Layout */
+        display: var(--printlink-after-display);
+        position: var(--printlink-after-position);
+
+        /* Spacing */
+        margin-inline-start: var(--printlink-after-margin-inline-start);
+        margin-inline-end: var(--printlink-after-margin-inline-end);
+      }
+    }
+  }
+}

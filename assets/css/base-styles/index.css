@@ -43,8 +43,8 @@
 /* Main container */
 @import './layout.css';
 
-/* Header structure */
-@import './header.css';
+/* Header structure (includes dial-selectors and buttons) */
+@import './header/index.css';
 
 /* Section containers */
 @import './sections.css';

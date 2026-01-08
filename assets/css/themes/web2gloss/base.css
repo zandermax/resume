@@ -22,7 +22,10 @@ body[data-theme='web2gloss'] {
   --header-box-shadow: var(--web2-shadow-inset-light);
   --resume-header-before-content: '';
   --resume-header-before-position: absolute;
-  --resume-header-before-inset: 0 0 50% 0;
+  --resume-header-before-top: 0;
+  --resume-header-before-right: 0;
+  --resume-header-before-bottom: 50%;
+  --resume-header-before-left: 0;
   --resume-header-before-background: var(--web2-gloss-overlay-strong);
   --resume-header-before-pointer-events: none;
 

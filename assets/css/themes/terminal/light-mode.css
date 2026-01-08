@@ -10,7 +10,7 @@ TERMINAL Theme - Light Mode
     --link-color: var(--color-yellow);
     --link-visited-color: var(--color-cyan);
     --section-bg: var(--color-silver);
-    --header-background: var(--color-gray-light);
+    --header-background-color: var(--color-gray-light);
     --resume-main-background: var(--color-silver);
     --terminal-border-light: var(--color-white);
     --terminal-border-dark: var(--color-black);

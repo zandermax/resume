@@ -264,16 +264,17 @@ Flat Design / Material Zero
   /* Print link custom properties */
   --printlink-border: 0;
   --printlink-border-radius: 0;
-  --printlink-background: var(--metro-green);
+  --printlink-background-color: var(--metro-green);
   --printlink-color: var(--color-white);
   --printlink-font-weight: 600;
-  --printlink-padding: 1rem 2rem;
+  --printlink-padding-block: 1rem;
+  --printlink-padding-inline: 2rem;
   --printlink-text-transform: uppercase;
   --printlink-font-size: 0.9rem;
   --printlink-letter-spacing: 0.08em;
   --printlink-box-shadow: none;
   --printlink-transition: background-color 0.15s ease;
-  --printlink-hover-background: var(--metro-blue);
+  --printlink-hover-background-color: var(--metro-blue);
   --printlink-active-opacity: 0.8;
 
   /* ==================== DIAL SELECTOR ==================== */

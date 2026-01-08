@@ -28,7 +28,7 @@ SKEUOMORPH Theme - Light Mode Variables
   /* Section colors */
   --section-bg: var(--color-cream);
   --section-content-background: var(--paper-color);
-  --header-background: var(--color-tan);
+  --header-background-color: var(--color-tan);
 
   /* ==================== DIAL SELECTOR COLORS ==================== */
 

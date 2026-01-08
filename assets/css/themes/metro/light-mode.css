@@ -5,7 +5,7 @@ METRO Theme - Light Mode
 /* Light Mode */
 :root[data-theme='metro'][data-mode='light'] {
   --background-color: var(--color-white);
-  --header-background: var(--color-white);
+  --header-background-color: var(--color-white);
   --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);

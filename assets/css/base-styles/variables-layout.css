@@ -118,12 +118,11 @@
   --header-padding-block-start: 0;
   --header-padding-block-end: 1rem;
   --header-margin: 0 0 1.5rem 0;
-  --header-margin-bottom: 1.5rem;
-  --header-margin-inline: 0;
   --header-margin-block-start: 0;
   --header-margin-block-end: 1.5rem;
   --header-border-radius: var(--main-border-radius);
-  --header-background: transparent;
+  --header-background-color: transparent;
+  --header-background-image: none;
   --header-color: inherit;
   --header-position: static;
   --header-box-shadow: none;
@@ -135,16 +134,32 @@
   --header-link-transition: none;
   --header-link-position: static;
   --header-link-hover-border-block-end: none;
-  --header-link-hover-border-block-end-color: transparent;
   --header-link-hover-color: inherit;
   --header-link-visited-border-block-end: none;
   --header-link-visited-hover-border-block-end: none;
-  --header-link-visited-hover-border-block-end-color: transparent;
   --header-buttons-justify-content: center;
   --header-name-greeting-font-weight: normal;
   --header-name-greeting-letter-spacing: 0.12em;
   --header-name-greeting-text-transform: uppercase;
   --header-name-greeting-color: inherit;
+
+  /* === HEADER MISSING DEFAULTS === */
+  --header-margin-inline-start: 0;
+  --header-margin-inline-end: 0;
+
+  /* === HEADER SHORTHAND CONVENIENCE PROPERTIES === */
+  /* For theme convenience - themes can override these shorthands or use longhand */
+  --header-border: none;
+  --header-name-border: none;
+  --header-name-padding: 0;
+  --header-name-margin: 0;
+
+  /* === HEADER LINK STYLING === */
+  --header-a-text-decoration: underline;
+  --header-a-hover-filter: none;
+
+  /* === HEADER BORDER WIDTH OVERRIDE === */
+  --header-border-block-end-width: var(--header-border-width);
 
   /* === HEADER BUTTONS === */
   --header-buttons-flex-direction: row;
@@ -166,9 +181,7 @@
   --header-name-border-style: solid;
   --header-name-border-width: 4px;
   --header-name-border-color: var(--border-color);
-  --header-name-border-block-start: none;
   --header-name-border-inline-start: none;
-  --header-name-border-inline-end: none;
   --header-name-padding-block-start: 0;
   --header-name-padding-block-end: 0.35rem;
   --header-name-padding-inline-start: 0;
@@ -191,6 +204,7 @@
   --header-top-row-margin-block-end: 0;
 
   /* === HEADER META === */
+  --header-meta-padding-inline: 0.5rem;
   --header-meta-font-size: 0.85rem;
   --header-meta-font-family: inherit;
   --header-meta-text-transform: uppercase;
@@ -423,14 +437,21 @@
   --resume-header-before-content: none;
   --resume-header-before-position: static;
   --resume-header-before-top: auto;
+  --resume-header-before-right: auto;
+  --resume-header-before-bottom: auto;
   --resume-header-before-left: auto;
   --resume-header-before-width: auto;
   --resume-header-before-height: auto;
+  --resume-header-before-border: none;
   --resume-header-before-background: transparent;
+  --resume-header-before-opacity: 1;
+  --resume-header-before-pointer-events: auto;
   --resume-header-after-content: none;
   --resume-header-after-position: static;
-  --resume-header-after-bottom: auto;
+  --resume-header-after-top: auto;
   --resume-header-after-right: auto;
+  --resume-header-after-bottom: auto;
+  --resume-header-after-left: auto;
   --resume-header-after-width: auto;
   --resume-header-after-height: auto;
   --resume-header-after-background: transparent;

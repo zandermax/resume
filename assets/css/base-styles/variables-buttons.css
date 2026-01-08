@@ -24,7 +24,8 @@
   /* === PRINT/SAVE BUTTON BASE STYLES === */
   --printlink-border: none;
   --printlink-border-radius: 0;
-  --printlink-padding: 0.5rem 1rem;
+  --printlink-padding-block: 0.5rem;
+  --printlink-padding-inline: 1rem;
   --printlink-margin-block-end: 1rem;
   --printlink-font-size: 0.8rem;
   --printlink-font-family: inherit;
@@ -32,7 +33,8 @@
   --printlink-letter-spacing: 0.14em;
   --printlink-text-transform: uppercase;
   --printlink-color: var(--text-color);
-  --printlink-background: transparent;
+  --printlink-background-color: transparent;
+  --printlink-background-image: none;
   --printlink-box-shadow: none;
   --printlink-text-shadow: none;
   --printlink-text-decoration: none;
@@ -44,12 +46,25 @@
   --printlink-animation: none;
   --printlink-cursor: pointer;
 
+  /* === PRINT/SAVE BUTTON BORDER PRIMITIVES === */
+  --printlink-border-width: 4px;
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--border-color);
+
+  /* === SAVELINK DISPLAY === */
+  --savelink-display: none;
+
   /* === PRINT/SAVE BUTTON HOVER STATES === */
   --printlink-hover-shadow: none;
-  --printlink-hover-background: var(--text-color);
+  --printlink-hover-background-color: var(--text-color);
+  --printlink-hover-background-image: none;
+  --printlink-hover-background-size: auto;
   --printlink-hover-color: var(--background-color);
   --printlink-hover-text-shadow: none;
-  --printlink-hover-border-width: 0;
+  --printlink-hover-outline-width: 0;
+  --printlink-hover-outline-style: solid;
+  --printlink-hover-outline-color: transparent;
+  --printlink-hover-outline-offset: 0;
   --printlink-hover-border-color: transparent;
   --printlink-hover-transform: none;
   --printlink-hover-filter: none;
@@ -76,7 +91,10 @@
   --printlink-before-content: none;
   --printlink-before-display: none;
   --printlink-before-position: static;
-  --printlink-before-inset: auto;
+  --printlink-before-top: auto;
+  --printlink-before-right: auto;
+  --printlink-before-bottom: auto;
+  --printlink-before-left: auto;
   --printlink-before-margin-inline-start: 0;
   --printlink-before-margin-inline-end: 0;
   --printlink-before-font-size: inherit;
@@ -91,7 +109,6 @@
   --printlink-after-margin-inline-end: 0;
 
   /* === DIAL SELECTOR HOUSING CONTAINER === */
-  --dial-selector-housing-padding: unset;
   --dial-selector-housing-padding-block: 0;
   --dial-selector-housing-padding-inline: 0;
   --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block)
@@ -107,6 +124,18 @@
   --dial-selector-housing-border-radius: 0;
   --dial-selector-housing-box-shadow: none;
   --dial-selector-housing-position: relative;
+  --dial-selector-housing-margin-inline: 0;
+  --dial-selector-housing-margin-block: 0;
+
+  /* === DIAL SELECTOR HOUSING LONGHAND PROPERTIES === */
+  --dial-selector-housing-padding-block-start: 0;
+  --dial-selector-housing-padding-block-end: 0;
+  --dial-selector-housing-padding-inline-start: 0;
+  --dial-selector-housing-padding-inline-end: 0;
+  --dial-selector-housing-margin-inline-start: 0;
+  --dial-selector-housing-margin-inline-end: 0;
+  --dial-selector-housing-margin-block-start: 0;
+  --dial-selector-housing-margin-block-end: 0;
 
   /* === DIAL SELECTOR HOUSING H3 === */
   --dial-selector-housing-h3-margin-block-start: 0;
@@ -121,14 +150,14 @@
   /* === DIAL SELECTOR HOUSING PSEUDO-ELEMENT === */
   --dial-selector-housing-before-content: unset;
   --dial-selector-housing-before-position: static;
-  --dial-selector-housing-before-inset: auto;
+  --dial-selector-housing-before-top: auto;
+  --dial-selector-housing-before-right: auto;
+  --dial-selector-housing-before-bottom: auto;
+  --dial-selector-housing-before-left: auto;
   --dial-selector-housing-before-height: auto;
   --dial-selector-housing-before-background: transparent;
   --dial-selector-housing-before-border: none;
   --dial-selector-housing-before-border-radius: 0;
-  --dial-selector-housing-before-top: auto;
-  --dial-selector-housing-before-left: auto;
-  --dial-selector-housing-before-right: auto;
   --dial-selector-housing-before-opacity: 1;
   --dial-selector-housing-before-pointer-events: auto;
   --dial-selector-housing-before-animation: none;
