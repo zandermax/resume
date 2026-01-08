@@ -3,10 +3,27 @@
    Dashboard-specific interactive components
    =========================== */
 
+/* Default: hide dashboard elements */
+.dashboard-status-banner {
+  display: none;
+}
+
+.dashboard-metrics-grid {
+  display: none;
+}
+
 /* ==================== DASHBOARD THEME STYLES ==================== */
 body[data-theme='dashboard'] {
   --display-dashboard-status: flex;
   --display-dashboard-metrics: grid;
+
+  .dashboard-status-banner {
+    display: var(--display-dashboard-status);
+  }
+
+  .dashboard-metrics-grid {
+    display: var(--display-dashboard-metrics);
+  }
 
   /* ========== STATUS BANNER ========== */
   .dashboard-status-banner {

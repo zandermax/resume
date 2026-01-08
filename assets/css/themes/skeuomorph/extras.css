@@ -3,8 +3,19 @@
    Sticky Note Feature
    =========================== */
 
+/* Default: hide sticky note */
+#sticky-note {
+  display: none;
+}
+
 /* ==================== SKEUOMORPH THEME STYLES ==================== */
 body[data-theme='skeuomorph'] {
+  --display-sticky-note: block;
+
+  #sticky-note {
+    display: var(--display-sticky-note);
+  }
+
   /* ========== STICKY NOTE CONTAINER ========== */
   #sticky-note {
     position: absolute;

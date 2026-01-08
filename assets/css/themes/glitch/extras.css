@@ -3,6 +3,11 @@
 Base theme and component styles
 =========================== */
 
+/* Default: inline glitchable elements */
+.glitchable {
+  display: inline;
+}
+
 body[data-theme='glitch'] {
   /* Structural requirement for absolute positioning of theme effects */
   position: relative;

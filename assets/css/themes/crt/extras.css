@@ -3,7 +3,18 @@
    CRT-specific interactive components
    =========================== */
 
+/* Default: hide terminal log */
+.terminal-log {
+  display: none;
+}
+
 body[data-theme='crt'] {
+  --display-terminal: block;
+
+  .terminal-log {
+    display: var(--display-terminal);
+  }
+
   /* ========== MAIN CONTAINER ========== */
   .resume__main {
     background: var(--background-color);

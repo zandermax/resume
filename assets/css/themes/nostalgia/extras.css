@@ -2,9 +2,28 @@
 Nostalgia Theme - Extras
 =========================== */
 
+/* Theme-specific element visibility controls - Default: hidden */
+.nostalgia-elements,
+.resume-section__title.nostalgia {
+  display: none;
+}
+
+.nostalgia-marquee {
+  display: none;
+}
+
 :root[data-theme='nostalgia'] {
   --display-nostalgia-elements: block;
   --display-section-title-normal: none;
+
+  .nostalgia-elements,
+  .resume-section__title.nostalgia {
+    display: var(--display-nostalgia-elements);
+  }
+
+  .resume-section__title--normal {
+    display: var(--display-section-title-normal);
+  }
 }
 
 /* Visitor counter styling (Nostalgia theme) */
@@ -42,7 +61,7 @@ Nostalgia Theme - Extras
 }
 
 /* Retro badge */
-.retro-badge {
+  .retro-badge {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-md);
   border: var(--border-width-thick) solid;
@@ -59,4 +78,35 @@ Nostalgia Theme - Extras
   background-size: 400% 400%;
   animation: gradientShift 3s ease infinite;
   box-shadow: 0 0 10px oklch(70% 0.32 328 / 0.8);
+}
+
+/* ===========================
+Nostalgia Theme - Section Title Decorations
+=========================== */
+
+:root[data-theme='nostalgia'] {
+  .resume-section__title[data-nostalgia-decoration='marquee'] {
+    overflow: hidden;
+    display: block;
+
+    & > span:first-child {
+      display: none;
+    }
+
+    .nostalgia-marquee {
+      display: block;
+    }
+  }
+
+  .resume-section__title[data-nostalgia-decoration='blink'] {
+    animation: blink 1s step-start infinite;
+
+    &::before,
+    &::after {
+      content: attr(data-nostalgia-icon);
+      display: inline-block;
+      animation: spin 2s linear infinite;
+      margin: 0 0.5em;
+    }
+  }
 }

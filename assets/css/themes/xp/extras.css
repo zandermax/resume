@@ -2,12 +2,23 @@
 XP Theme - Extras
 =========================== */
 
+/* Default: hide XP dialog elements */
+.xp-close-btn,
+.xp-dialog-toggle,
+.xp-dialog-overlay {
+  display: none;
+}
+
 /* ==================================================
    XP DESKTOP ICON
    Desktop icon that appears when resume is "closed"
    ================================================== */
 
 body[data-theme='xp'] {
+  .xp-close-btn {
+    display: flex;
+  }
+
   .xp-desktop-icon {
     position: fixed;
     top: 20px;
@@ -158,7 +169,8 @@ body[data-theme='xp'] {
    ================================================== */
 
 /* Hidden checkbox that controls dialog visibility */
-.xp-dialog-toggle {
+body[data-theme='xp'] .xp-dialog-toggle {
+  display: block;
   position: absolute;
   opacity: 0;
   width: 0;
@@ -179,12 +191,12 @@ body[data-theme='xp'] {
 }
 
 /* Dialog overlay backdrop */
-.xp-dialog-overlay {
+body[data-theme='xp'] .xp-dialog-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   background: var(--xp-black-30);
   z-index: 9998;
-  display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;

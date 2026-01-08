@@ -10,8 +10,7 @@
  *   - variables-base.css (uses --text-color, --background-color, --accent-color)
  *
  * RELATED FILES:
- *   - buttons.css (applies these button variables)
- *   - header.css (buttons appear in header)
+ *   - header.css (applies button variables and contains button styles)
  *   - dial-selector-styles/variables.css (dial selector component variables)
  *
  * VARIABLES DEFINED: ~54 variables controlling:

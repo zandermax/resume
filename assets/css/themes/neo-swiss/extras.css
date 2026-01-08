@@ -2,6 +2,23 @@
 Neo-Swiss Theme - Main Styles
 =========================== */
 
+/* Default: hide Neo-Swiss AI elements */
+.neoswiss-ai-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.neoswiss-ai-button {
+  display: none;
+}
+
+.neoswiss-ai-modal {
+  display: none;
+}
+
 /* Base theme - Pure minimalism */
 body[data-theme='neoswiss'] {
   /* Neo-Swiss AI Toggle - Hidden checkbox */
@@ -80,7 +97,7 @@ body[data-theme='neoswiss'] {
 
   /* Neo-Swiss AI Modal - Minimal analytical summary */
   .neoswiss-ai-modal {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;

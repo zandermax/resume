@@ -3,6 +3,18 @@
    Cookie Banner - 2017 Parody of aggressive cookie consent patterns
    =========================== */
 
+/* Default: hide cookie banner elements */
+.keks-banner-dismiss {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.keks-banner-overlay {
+  display: none;
+}
+
 /* ==================== COLOR VARIABLES ==================== */
 :root[data-theme='brutal'] {
   [data-mode='light'] {
