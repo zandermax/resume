@@ -10,7 +10,7 @@
  *   - h1, h2, h3 (base heading styles)
  *   - p, li (paragraph and list item base styles)
  *   - a (link styles and states)
- *   - strong, em (inline text styles)
+ *   - strong (inline text styles)
  *
  * DEPENDENCIES:
  *   - variables-base.css (uses --font-family, --text-color, --background-color, etc.)
@@ -18,6 +18,17 @@
  *
  * RELATED FILES:
  *   - All component files (inherit from these base styles)
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
  */
 
 /* ============================================
@@ -25,17 +36,23 @@
    ============================================ */
 
 body {
-  font-family: var(--font-family);
+  /* Display/Box Model */
   min-width: var(--min-screen-width);
+
+  /* Typography */
+  font-family: var(--font-family);
 }
 
 html,
 body {
+  /* Display/Box Model */
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   max-width: 100vw;
   min-height: 100vh;
+
+  /* Other */
+  overflow-x: hidden;
 
   &:has(dialog[open]) {
     overflow: hidden;
@@ -43,26 +60,41 @@ body {
 }
 
 body.resume {
-  font-family: var(--font-family);
-  color: var(--text-color);
+  /* Position */
+  position: relative;
+
+  /* Background */
   background-color: var(--background-color);
   background-image: var(--background-image);
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  text-shadow: var(--text-shadow);
+
+  /* Typography */
+  font-family: var(--font-family);
+  color: var(--text-color);
   font-weight: var(--body-font-weight);
   letter-spacing: var(--body-letter-spacing);
   line-height: var(--body-line-height);
+  -webkit-font-smoothing: antialiased;
+
+  /* Visual Effects */
+  text-shadow: var(--text-shadow);
 
   /* === BODY PSEUDO-ELEMENT === */
   &::before {
     content: var(--body-before-content);
-    display: var(--body-before-display);
+
+    /* Position */
     position: var(--body-before-position);
     inset: var(--body-before-inset);
-    background: var(--body-before-background);
-    pointer-events: var(--body-before-pointer-events);
     z-index: var(--body-before-z-index);
+
+    /* Display/Box Model */
+    display: var(--body-before-display);
+
+    /* Background */
+    background: var(--body-before-background);
+
+    /* Other */
+    pointer-events: var(--body-before-pointer-events);
   }
 }
 
@@ -85,7 +117,7 @@ h1,
 h2,
 h3 {
   letter-spacing: var(--heading-letter-spacing);
-  text-shadow: var(--h1-h2-h3-text-shadow);
+  text-shadow: var(--header-text-shadow);
 }
 
 h2,
@@ -113,44 +145,62 @@ strong {
   font-weight: var(--strong-font-weight);
 }
 
-em {
-  font-style: var(--em-font-style);
-}
-
 /* ============================================
    LINK STYLES
    ============================================ */
 
 a {
+  /* Position */
+  position: var(--link-position);
+
+  /* Borders */
+  border-block-end: var(--link-border-block-end);
+  border-block-end-color: var(--link-border-block-end-color);
+
+  /* Typography */
   color: var(--link-color);
   text-decoration: var(--link-text-decoration);
   font-weight: var(--link-font-weight);
-  border-block-end: var(--link-border-block-end);
-  border-block-end-color: var(--link-border-block-end-color);
+
+  /* Transitions */
   transition: var(--link-transition);
-  position: var(--link-position);
-}
 
-a:visited {
-  color: var(--link-visited-color);
-  border-block-end-color: var(--link-visited-border-block-end-color);
-}
+  &:visited {
+    /* Borders */
+    border-block-end-color: var(--link-visited-border-block-end-color);
 
-a:visited:hover {
-  background: var(--link-visited-hover-background);
-  color: var(--link-visited-hover-color);
-  border-block-end-color: var(--link-visited-hover-border-block-end-color);
-}
+    /* Typography */
+    color: var(--link-visited-color);
 
-a:hover {
-  text-decoration: var(--link-hover-text-decoration);
-  border-block-end: var(--link-hover-border-block-end);
-  border-block-end-color: var(--link-hover-border-block-end-color);
-  color: var(--link-hover-color);
-  text-shadow: var(--link-hover-text-shadow);
-  background: var(--link-hover-background);
-  transform: var(--link-hover-transform);
-  box-shadow: var(--link-hover-box-shadow);
+    &:hover {
+      /* Borders */
+      border-block-end-color: var(--link-visited-hover-border-block-end-color);
+
+      /* Background */
+      background: var(--link-visited-hover-background);
+
+      /* Typography */
+      color: var(--link-visited-hover-color);
+    }
+  }
+
+  &:hover {
+    /* Borders */
+    border-block-end: var(--link-hover-border-block-end);
+    border-block-end-color: var(--link-hover-border-block-end-color);
+
+    /* Background */
+    background: var(--link-hover-background);
+
+    /* Typography */
+    text-decoration: var(--link-hover-text-decoration);
+    color: var(--link-hover-color);
+
+    /* Visual Effects */
+    text-shadow: var(--link-hover-text-shadow);
+    transform: var(--link-hover-transform);
+    box-shadow: var(--link-hover-box-shadow);
+  }
 }
 
 /* ============================================

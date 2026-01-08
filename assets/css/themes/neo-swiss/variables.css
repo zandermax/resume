@@ -324,7 +324,6 @@ Ultra-modern minimalism with mathematical precision
   --h2-h3-letter-spacing: var(--letter-spacing-tight);
   --p-margin-block-end: var(--spacing-2);
   --strong-font-weight: var(--font-weight-bold);
-  --em-font-style: italic;
 
   /* Summary section specific */
   --section-summary-p-font-size: var(--font-size-medium);

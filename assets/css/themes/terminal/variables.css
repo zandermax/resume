@@ -152,10 +152,9 @@ TERMINAL Theme - Common Variables
     inset -1px -1px 0 var(--terminal-border-light, var(--color-white));
 
   /* Typography styling */
-  --h1-h2-h3-text-shadow: none;
+  --header-text-shadow: none;
   --header-name-greeting-font-size: 0.95rem;
   --header-name-greeting-line-height: 1.6;
   --p-li-font-size: 0.95rem;
   --p-li-line-height: 1.6;
 }
-

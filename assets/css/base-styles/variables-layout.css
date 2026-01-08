@@ -382,8 +382,7 @@
   --p-li-line-height: normal;
   --p-li-font-size: inherit;
   --strong-font-weight: bold;
-  --em-font-style: italic;
-  --h1-h2-h3-text-shadow: none;
+  --header-text-shadow: none;
 
   /* === HEADER NAME GREETING/SMALL === */
   --header-name-greeting-font-size: 1.2rem;
