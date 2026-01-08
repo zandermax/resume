@@ -3,14 +3,32 @@
  *
  * HTML ELEMENTS AFFECTED:
  *   - .education-item (education card container)
+ *   - .education-item__institution (institution name)
  *   - .education-item__degree (degree and major text)
  *
  * DEPENDENCIES:
  *   - variables-education.css (all education-specific variables)
  *   - variables-base.css (uses --border-color, --section-bg)
  *   - sections.css (education is a section child)
- *   - typography.css (institution name styling)
  */
+
+/* === EDUCATION INSTITUTION === */
+
+h3.education-item__institution {
+  font-size: var(--education-institution-font-size);
+  font-weight: var(--education-institution-font-weight);
+  color: var(--education-institution-color);
+  text-transform: var(--education-institution-text-transform);
+  letter-spacing: var(--education-institution-letter-spacing);
+  line-height: var(--education-institution-line-height);
+  text-shadow: var(--education-institution-text-shadow);
+  margin-block-start: var(--education-institution-margin-block-start);
+  margin-block-end: var(--education-institution-margin-block-end);
+  margin-inline-start: var(--education-institution-margin-inline-start);
+  margin-inline-end: var(--education-institution-margin-inline-end);
+  border-inline-start: var(--education-institution-border-inline-start);
+  padding-inline-start: var(--education-institution-padding-inline-start);
+}
 
 /* === EDUCATION ITEM CONTAINER === */
 

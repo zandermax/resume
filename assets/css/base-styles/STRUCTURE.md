@@ -6,6 +6,8 @@ Quick reference guide for AI agents and developers working with the modular base
 
 This directory contains the base CSS styles split into small, focused modules. Most files are under 200 lines for maintainability. All files include metadata headers describing their purpose, HTML mappings, and dependencies.
 
+The `_base.css` file (prefixed with underscore) should always be imported first as it contains fundamental resets and generic element styles that all other files depend on.
+
 ## File Organization
 
 ### CSS Variables (7 files)
@@ -20,68 +22,72 @@ This directory contains the base CSS styles split into small, focused modules. M
 
 ### Style Rules (10 files)
 
-- `reset.css` (~82 lines) - HTML/body resets
-- `typography.css` (~248 lines) - All text styling
+- `_base.css` (~175 lines) - Base resets and generic element styles (html, body, h1-h3, p, li, a, strong, em)
 - `layout.css` (~58 lines) - Main resume container
-- `header.css` (~157 lines) - Resume header structure
-- `sections.css` (~94 lines) - Section containers
+- `header.css` (~280 lines) - Resume header structure
+- `sections.css` (~185 lines) - Section containers
+- `title.css` (~95 lines) - Section title styling
 - `skills.css` (~115 lines) - Skills grid component
-- `experience.css` (~253 lines) - Experience items
+- `experience.css` (~283 lines) - Experience items
 - `lists.css` (~163 lines) - Community/principles lists
-- `education.css` (~52 lines) - Education component
+- `education.css` (~68 lines) - Education component
 - `buttons.css` (~162 lines) - Print/save buttons
 
 ### Entry Point
 
-- `index.css` (~74 lines) - Imports all files in correct order
+- `index.css` (~72 lines) - Imports all files in correct order
 
 ## Quick Reference: HTML → CSS Files
 
 | HTML Element                | Variable File            | Style File     |
 | --------------------------- | ------------------------ | -------------- |
-| `body.resume`               | variables-base.css       | reset.css      |
+| `body.resume`               | variables-base.css       | _base.css      |
+| `h1, h2, h3` (generic)      | variables-layout.css     | _base.css      |
+| `p, li` (generic)           | variables-layout.css     | _base.css      |
+| `a` (generic links)         | variables-layout.css     | _base.css      |
 | `.resume__main`             | variables-layout.css     | layout.css     |
 | `.resume-header`            | variables-layout.css     | header.css     |
-| `.resume-header__name`      | variables-layout.css     | typography.css |
-| `.resume-header__role`      | variables-layout.css     | typography.css |
+| `.resume-header__name`      | variables-layout.css     | header.css     |
+| `.resume-header__role`      | variables-layout.css     | header.css     |
 | `.resume-header__meta`      | variables-layout.css     | header.css     |
 | `.resume-header__savelink`  | variables-buttons.css    | buttons.css    |
 | `#resume-header__printlink` | variables-buttons.css    | buttons.css    |
 | `.resume-section`           | variables-layout.css     | sections.css   |
-| `.resume-section__title`    | variables-layout.css     | typography.css |
+| `.resume-section__title`    | variables-layout.css     | title.css      |
 | `.skills-grid`              | variables-skills.css     | skills.css     |
 | `.skills-grid__group`       | variables-skills.css     | skills.css     |
 | `.skills-grid__title`       | variables-skills.css     | skills.css     |
 | `.experience-item`          | variables-experience.css | experience.css |
-| `.experience-item__role`    | variables-experience.css | typography.css |
+| `.experience-item__role`    | variables-experience.css | experience.css |
 | `.experience-item__tech`    | variables-experience.css | experience.css |
 | `.experience-item__bullets` | variables-experience.css | experience.css |
 | `.community-list`           | variables-lists.css      | lists.css      |
 | `.principles-list`          | variables-lists.css      | lists.css      |
 | `.education-item`           | variables-education.css  | education.css  |
+| `.education-item__institution` | variables-education.css  | education.css  |
 | `dial-selector`             | variables-buttons.css    | header.css     |
 
 ## Import Order & Dependencies
 
 ```
 variables-base.css (no dependencies)
-  ├─ variables-layout.css
-  │   ├─ layout.css
-  │   ├─ header.css
-  │   └─ sections.css
-  ├─ variables-skills.css
-  │   └─ skills.css
-  ├─ variables-experience.css
-  │   └─ experience.css
-  ├─ variables-lists.css
-  │   └─ lists.css
-  ├─ variables-education.css
-  │   └─ education.css
-  └─ variables-buttons.css
-      └─ buttons.css
+variables-layout.css
+variables-skills.css
+variables-experience.css
+variables-lists.css
+variables-education.css
+variables-buttons.css
 
-reset.css (uses variables-base.css)
-typography.css (uses variables-base.css, variables-layout.css)
+_base.css (uses variables-base.css, variables-layout.css)
+  ├─ layout.css
+  ├─ header.css
+  ├─ sections.css
+  ├─ title.css
+  ├─ skills.css
+  ├─ experience.css
+  ├─ lists.css
+  ├─ education.css
+      └─ buttons.css
 ```
 
 ## File Header Format
@@ -177,7 +183,7 @@ When using both `background-image` and `background` properties:
 - Set `background-image` BEFORE `background` shorthand
 - This allows themes to use textures/patterns via `--element-background-image`
 - The `background` shorthand sets color without overriding the image
-- Example in typography.css:
+- Example in title.css:
   ```css
   background-image: var(--section-title-background-image);
   background: var(--section-title-background, transparent);

@@ -10,8 +10,7 @@
  *   - variables-base.css (uses --border-color, --section-bg, etc.)
  *
  * RELATED FILES:
- *   - education.css (applies these variables)
- *   - typography.css (uses --education-institution-* for h3 styling)
+ *   - education.css (applies these variables, includes institution h3 styling)
  *
  * VARIABLES DEFINED: ~15 variables controlling:
  *   - Education item container (borders, padding, backgrounds)

@@ -13,7 +13,6 @@
  * DEPENDENCIES:
  *   - variables-layout.css (defines --section-*, --resume-section-* variables)
  *   - variables-base.css (defines --border-color, --spacing-* tokens)
- *   - typography.css (section titles inherit typography settings)
  *
  * CUSTOM PROPERTIES USED (defined in variables-layout.css):
  *   Margins (all use longhand logical properties):
@@ -178,8 +177,4 @@
 }
 .resume-section:nth-of-type(8) {
   --section-accent-color: var(--theme-accent-2, var(--border-color));
-}
-
-.resume-section__title {
-  background: var(--section-title-background, var(--section-accent-color));
 }

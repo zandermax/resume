@@ -1,5 +1,5 @@
 /**
- * Resume header structure, metadata, and dial selector positioning
+ * Resume header structure, metadata, dial selector positioning, and buttons
  *
  * HTML ELEMENTS AFFECTED:
  *   - .resume-header (main header container)
@@ -9,18 +9,21 @@
  *   - .resume-header__location, .resume-header__contact (meta subsections)
  *   - .resume-header__links (social/professional links)
  *   - .resume-header__link (individual links)
+ *   - .resume-header__buttons (button container)
+ *   - .resume-header__savelink (save button, hidden by default, shown in terminal theme)
+ *   - #resume-header__printlink (print button, always visible)
  *
  * DEPENDENCIES:
  *   - variables-layout.css (uses --header-*, --dial-selector-housing-* variables)
- *   - variables-buttons.css (dial selector uses dial variables)
- *   - typography.css (name and role text inherit from there)
+ *   - variables-buttons.css (uses dial selector and button variables)
+ *   - _base.css (base heading and link styles)
  *
  * RELATED FILES:
- *   - buttons.css (buttons appear in header)
  *   - dial-selector.js (custom element styled here)
  */
 
 /* === HEADER CONTAINER === */
+/* All header elements are nested here to reflect the DOM structure */
 
 .resume-header {
   display: flex;
@@ -48,7 +51,7 @@
   box-shadow: var(--header-box-shadow, none);
   transform: var(--header-transform, none);
 
-  /* === PSEUDO-ELEMENTS === */
+  /* === HEADER PSEUDO-ELEMENTS === */
   /* Used by themes for decorative elements */
 
   &::before {
@@ -74,125 +77,362 @@
     height: var(--resume-header-after-height);
     background: var(--resume-header-after-background);
   }
-}
 
-/* === HEADER TOP ROW === */
+  /* === HEADER TOP ROW === */
 
-.resume-header__top-row {
-  margin-block-start: var(--header-top-row-margin-block-start, 0);
-  margin-block-end: var(--header-top-row-margin-block-end);
-}
-
-/* === DIAL SELECTOR POSITIONING === */
-
-.resume-header__dial-selector {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-block-start: var(--dial-selector-housing-padding-block-start, var(--dial-selector-housing-padding-block, 0));
-  padding-block-end: var(--dial-selector-housing-padding-block-end, var(--dial-selector-housing-padding-block, 0));
-  padding-inline-start: var(--dial-selector-housing-padding-inline-start, var(--dial-selector-housing-padding-inline, 0));
-  padding-inline-end: var(--dial-selector-housing-padding-inline-end, var(--dial-selector-housing-padding-inline, 0));
-  margin-inline-start: var(--dial-selector-housing-margin-inline-start, var(--dial-selector-housing-margin-inline, 0));
-  margin-inline-end: var(--dial-selector-housing-margin-inline-end, var(--dial-selector-housing-margin-inline, 0));
-  margin-block-start: var(--dial-selector-housing-margin-block-start, var(--dial-selector-housing-margin-block, 0));
-  margin-block-end: var(--dial-selector-housing-margin-block-end, var(--dial-selector-housing-margin-block, 0));
-  background: var(--dial-selector-housing-background, transparent);
-  border-block-start: var(--dial-selector-housing-border-block-start, var(--dial-selector-housing-border, none));
-  border-block-end: var(--dial-selector-housing-border-block-end, var(--dial-selector-housing-border, none));
-  border-inline-start: var(--dial-selector-housing-border-inline-start, var(--dial-selector-housing-border, none));
-  border-inline-end: var(--dial-selector-housing-border-inline-end, var(--dial-selector-housing-border, none));
-  border-radius: var(--dial-selector-housing-border-radius, 0);
-  box-shadow: var(--dial-selector-housing-box-shadow, none);
-  position: var(--dial-selector-housing-position, relative);
-
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for dial housing/background effects */
-
-  &::before {
-    content: var(--dial-selector-housing-before-content);
-    position: var(--dial-selector-housing-before-position);
-    inset: var(--dial-selector-housing-before-inset);
-    top: var(--dial-selector-housing-before-top);
-    left: var(--dial-selector-housing-before-left);
-    right: var(--dial-selector-housing-before-right);
-    height: var(--dial-selector-housing-before-height);
-    background: var(--dial-selector-housing-before-background);
-    border: var(--dial-selector-housing-before-border);
-    border-radius: var(--dial-selector-housing-before-border-radius);
-    opacity: var(--dial-selector-housing-before-opacity);
-    pointer-events: var(--dial-selector-housing-before-pointer-events);
-    animation: var(--dial-selector-housing-before-animation);
-    will-change: var(--dial-selector-housing-before-will-change);
+  .resume-header__top-row {
+    margin-block-start: var(--header-top-row-margin-block-start, 0);
+    margin-block-end: var(--header-top-row-margin-block-end);
   }
 
-  h3 {
-    margin-block-start: var(--dial-selector-housing-h3-margin-block-start, 0);
-    margin-block-end: var(--dial-selector-housing-h3-margin-block-end, 0);
-    font-weight: var(--dial-selector-housing-h3-font-weight, inherit);
-    font-size: var(--dial-selector-housing-h3-font-size, inherit);
-    color: var(--dial-selector-housing-h3-color, inherit);
-    text-transform: var(--dial-selector-housing-h3-text-transform, none);
-    letter-spacing: var(--dial-selector-housing-h3-letter-spacing, normal);
-    text-shadow: var(--dial-selector-housing-h3-text-shadow, none);
-  }
-}
+  /* === HEADER NAME AND ROLE === */
 
-/* === HEADER META === */
+  /* Name Wrapper */
+  .resume-header__name-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-block-start: var(--header-name-wrapper-margin-block-start);
+    padding-inline: var(--header-name-wrapper-padding-inline);
+    color: var(--header-name-wrapper-color);
 
-.resume-header__meta {
-  padding-inline: var(--header-meta-padding-inline, 0.5rem);
-  font-size: var(--header-meta-font-size, 0.85rem);
-  font-family: var(--header-meta-font-family, inherit);
-  text-transform: var(--header-meta-text-transform, uppercase);
-  letter-spacing: var(--header-meta-letter-spacing, 0.12em);
-  color: var(--header-meta-color, inherit);
-  opacity: var(--header-meta-opacity, 1);
-  text-shadow: var(--header-meta-text-shadow, none);
-}
-
-.resume-header__location,
-.resume-header__contact {
-  margin-block-start: 0.15rem;
-}
-
-/* === HEADER LINKS === */
-
-.resume-header__links {
-  margin-block-start: 1rem;
-}
-
-.resume-header__link {
-  color: var(--header-link-color, var(--text-color));
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-
-  &:hover {
-    text-decoration-style: wavy;
-  }
-}
-
-/* === HEADER LINK ELEMENTS (all a tags in header) === */
-
-.resume-header a {
-  text-decoration: var(--header-link-text-decoration, underline);
-  border-block-end: var(--header-link-border-block-end, none);
-  transition: var(--header-link-transition, none);
-  position: var(--header-link-position, static);
-
-  &:hover {
-    border-block-end: var(--header-link-hover-border-block-end, none);
-    border-block-end-color: var(--header-link-hover-border-block-end-color, transparent);
+    > * {
+      flex: 0 0 50%;
+    }
   }
 
-  &:visited {
-    border-block-end: var(--header-link-visited-border-block-end, none);
+  /* Main Name */
+  h1.resume-header__name {
+    order: var(--header-name-order);
+    font-size: var(--header-name-font-size);
+    font-weight: var(--header-name-font-weight);
+    line-height: var(--header-name-line-height);
+    letter-spacing: var(--header-name-letter-spacing);
+    text-transform: var(--header-name-text-transform);
+    color: var(--header-name-color);
+    border-block-start: var(--header-name-border-block-start);
+    border-block-end: var(--header-name-border-width) var(--header-name-border-style) var(--header-name-border-color);
+    border-inline-start: var(--header-name-border-inline-start);
+    border-inline-end: var(--header-name-border-inline-end);
+    padding-block-start: var(--header-name-padding-block-start);
+    padding-block-end: var(--header-name-padding-block-end);
+    padding-inline-start: var(--header-name-padding-inline-start);
+    padding-inline-end: var(--header-name-padding-inline-end);
+    margin-block-start: var(--header-name-margin-block-start);
+    margin-block-end: var(--header-name-margin-block-end);
+    margin-inline-start: var(--header-name-margin-inline-start);
+    margin-inline-end: var(--header-name-margin-inline-end);
+    text-shadow: var(--header-name-text-shadow);
+    position: var(--header-name-position);
+    animation: var(--header-name-animation);
+    will-change: var(--header-name-will-change);
+  }
+
+  /* Name Greeting and Small Text - Shared Styles */
+  .resume-header__name-greeting,
+  .resume-header__name-small {
+    font-size: var(--header-name-greeting-font-size);
+    line-height: var(--header-name-greeting-line-height);
+    font-weight: var(--header-name-greeting-font-weight);
+    letter-spacing: var(--header-name-greeting-letter-spacing);
+    text-transform: var(--header-name-greeting-text-transform);
+    color: var(--header-name-greeting-color);
+  }
+
+  /* Name Greeting */
+  .resume-header__name-greeting {
+    margin-block-end: -0.2rem;
+  }
+
+  /* Name Small */
+  .resume-header__name-small {
+    margin-block-start: -0.2rem;
+  }
+
+  /* Role */
+  .resume-header__role {
+    order: var(--header-role-order);
+    font-size: var(--header-role-font-size);
+    font-weight: var(--header-role-font-weight);
+    color: var(--header-role-color);
+    text-transform: var(--header-role-text-transform);
+    letter-spacing: var(--header-role-letter-spacing);
+    line-height: var(--header-role-line-height);
+    text-shadow: var(--header-role-text-shadow);
+    margin-block-start: var(--header-role-margin-block-start);
+    margin-block-end: var(--header-role-margin-block-end);
+    margin-inline-start: var(--header-role-margin-inline-start);
+    margin-inline-end: var(--header-role-margin-inline-end);
+    border-inline-start: var(--header-role-border-inline-start);
+    padding-inline-start: var(--header-role-padding-inline-start);
+  }
+
+  /* === DIAL SELECTOR POSITIONING === */
+
+  .resume-header__dial-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block-start: var(
+      --dial-selector-housing-padding-block-start,
+      var(--dial-selector-housing-padding-block, 0)
+    );
+    padding-block-end: var(--dial-selector-housing-padding-block-end, var(--dial-selector-housing-padding-block, 0));
+    padding-inline-start: var(
+      --dial-selector-housing-padding-inline-start,
+      var(--dial-selector-housing-padding-inline, 0)
+    );
+    padding-inline-end: var(--dial-selector-housing-padding-inline-end, var(--dial-selector-housing-padding-inline, 0));
+    margin-inline-start: var(
+      --dial-selector-housing-margin-inline-start,
+      var(--dial-selector-housing-margin-inline, 0)
+    );
+    margin-inline-end: var(--dial-selector-housing-margin-inline-end, var(--dial-selector-housing-margin-inline, 0));
+    margin-block-start: var(--dial-selector-housing-margin-block-start, var(--dial-selector-housing-margin-block, 0));
+    margin-block-end: var(--dial-selector-housing-margin-block-end, var(--dial-selector-housing-margin-block, 0));
+    background: var(--dial-selector-housing-background, transparent);
+    border-block-start: var(--dial-selector-housing-border-block-start, var(--dial-selector-housing-border, none));
+    border-block-end: var(--dial-selector-housing-border-block-end, var(--dial-selector-housing-border, none));
+    border-inline-start: var(--dial-selector-housing-border-inline-start, var(--dial-selector-housing-border, none));
+    border-inline-end: var(--dial-selector-housing-border-inline-end, var(--dial-selector-housing-border, none));
+    border-radius: var(--dial-selector-housing-border-radius, 0);
+    box-shadow: var(--dial-selector-housing-box-shadow, none);
+    position: var(--dial-selector-housing-position, relative);
+
+    /* Dial Selector Pseudo-Element */
+    &::before {
+      content: var(--dial-selector-housing-before-content);
+      position: var(--dial-selector-housing-before-position);
+      inset: var(--dial-selector-housing-before-inset);
+      top: var(--dial-selector-housing-before-top);
+      left: var(--dial-selector-housing-before-left);
+      right: var(--dial-selector-housing-before-right);
+      height: var(--dial-selector-housing-before-height);
+      background: var(--dial-selector-housing-before-background);
+      border: var(--dial-selector-housing-before-border);
+      border-radius: var(--dial-selector-housing-before-border-radius);
+      opacity: var(--dial-selector-housing-before-opacity);
+      pointer-events: var(--dial-selector-housing-before-pointer-events);
+      animation: var(--dial-selector-housing-before-animation);
+      will-change: var(--dial-selector-housing-before-will-change);
+    }
+
+    /* Dial Selector h3 Labels */
+    h3 {
+      margin-block-start: var(--dial-selector-housing-h3-margin-block-start, 0);
+      margin-block-end: var(--dial-selector-housing-h3-margin-block-end, 0);
+      font-weight: var(--dial-selector-housing-h3-font-weight, inherit);
+      font-size: var(--dial-selector-housing-h3-font-size, inherit);
+      color: var(--dial-selector-housing-h3-color, inherit);
+      text-transform: var(--dial-selector-housing-h3-text-transform, none);
+      letter-spacing: var(--dial-selector-housing-h3-letter-spacing, normal);
+      text-shadow: var(--dial-selector-housing-h3-text-shadow, none);
+    }
+  }
+
+  /* === HEADER META === */
+
+  .resume-header__meta {
+    padding-inline: var(--header-meta-padding-inline, 0.5rem);
+    font-size: var(--header-meta-font-size, 0.85rem);
+    font-family: var(--header-meta-font-family, inherit);
+    text-transform: var(--header-meta-text-transform, uppercase);
+    letter-spacing: var(--header-meta-letter-spacing, 0.12em);
+    color: var(--header-meta-color, inherit);
+    opacity: var(--header-meta-opacity, 1);
+    text-shadow: var(--header-meta-text-shadow, none);
+  }
+
+  .resume-header__location,
+  .resume-header__contact {
+    margin-block-start: 0.15rem;
+  }
+
+  /* === HEADER LINKS === */
+
+  .resume-header__links {
+    margin-block-start: 1rem;
+  }
+
+  .resume-header__link {
+    color: var(--header-link-color, var(--text-color));
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 
     &:hover {
-      border-block-end: var(--header-link-visited-hover-border-block-end, none);
-      border-block-end-color: var(--header-link-visited-hover-border-block-end-color, transparent);
+      text-decoration-style: wavy;
+    }
+  }
+
+  /* All anchor tags in header */
+  a {
+    text-decoration: var(--header-link-text-decoration, underline);
+    border-block-end: var(--header-link-border-block-end, none);
+    transition: var(--header-link-transition, none);
+    position: var(--header-link-position, static);
+
+    &:hover {
+      border-block-end: var(--header-link-hover-border-block-end, none);
+      border-block-end-color: var(--header-link-hover-border-block-end-color, transparent);
+    }
+
+    &:visited {
+      border-block-end: var(--header-link-visited-border-block-end, none);
+
+      &:hover {
+        border-block-end: var(--header-link-visited-hover-border-block-end, none);
+        border-block-end-color: var(--header-link-visited-hover-border-block-end-color, transparent);
+      }
+    }
+  }
+
+  /* === HEADER BUTTONS === */
+
+  .resume-header__buttons {
+    display: flex;
+    flex-direction: var(--header-buttons-flex-direction, row);
+    gap: var(--header-buttons-gap, 1rem);
+    align-items: center;
+    justify-content: var(--header-buttons-justify-content, center);
+  }
+
+  /* Save Link Button - Hidden by default, shown only in terminal theme */
+  .resume-header__savelink {
+    display: var(--savelink-display, none);
+    padding: var(--printlink-padding, 0.55rem 1.1rem);
+    font-size: var(--printlink-font-size, 0.8rem);
+    font-family: var(--printlink-font-family, inherit);
+    letter-spacing: var(--printlink-letter-spacing, 0.14em);
+    font-weight: var(--printlink-font-weight, normal);
+    text-transform: var(--printlink-text-transform, uppercase);
+    text-decoration: var(--printlink-text-decoration, none);
+    text-shadow: var(--printlink-text-shadow, none);
+    white-space: nowrap;
+    cursor: var(--printlink-cursor, pointer);
+    margin-block-start: 1rem;
+    margin-block-end: var(--printlink-margin-block-end, 1rem);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-block-start: var(
+      --printlink-border-block-start,
+      var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+    );
+    border-block-end: var(
+      --printlink-border-block-end,
+      var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+    );
+    border-inline-start: var(
+      --printlink-border-inline-start,
+      var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+    );
+    border-inline-end: var(
+      --printlink-border-inline-end,
+      var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+    );
+    border-radius: var(--printlink-border-radius, 0);
+    background: var(--printlink-background, var(--background-color));
+    color: var(--printlink-color, var(--text-color));
+    box-shadow: var(--printlink-box-shadow, none);
+    position: var(--printlink-position, relative);
+    transition: var(--printlink-transition, none);
+    transform: var(--printlink-transform, none);
+    opacity: var(--printlink-opacity, 1);
+    filter: var(--printlink-filter, none);
+    box-sizing: border-box;
+
+    &:hover {
+      background: var(--printlink-hover-background, var(--text-color));
+      background-size: var(--printlink-hover-background-size, auto);
+      color: var(--printlink-hover-color, var(--background-color));
+      box-shadow: var(--printlink-hover-shadow, none);
+      text-shadow: var(--printlink-hover-text-shadow, none);
+      border-color: var(--printlink-hover-border-color, inherit);
+      transform: var(--printlink-hover-transform, var(--printlink-transform, none));
+      filter: var(--printlink-hover-filter, var(--printlink-filter, none));
+      opacity: var(--printlink-hover-opacity, var(--printlink-opacity, 1));
+      animation: var(--printlink-hover-animation, none);
+      outline: var(--printlink-hover-border-width, 0) solid var(--printlink-hover-border-color, currentColor);
+      outline-offset: calc(-1 * var(--printlink-hover-border-width, 0px));
+    }
+
+    &:active {
+      transform: var(
+        --printlink-active-transform-override,
+        var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)))
+      );
+      box-shadow: var(
+        --printlink-active-box-shadow-override,
+        var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none))
+      );
+      opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
+    }
+  }
+
+  /* Print Button - Always visible */
+  #resume-header__printlink {
+    display: inline-flex;
+    align-items: center;
+    position: var(--printlink-position, relative);
+    transition: var(--printlink-transition, none);
+    transform: var(--printlink-transform, none);
+    opacity: var(--printlink-opacity, 1);
+    filter: var(--printlink-filter, none);
+    animation: var(--printlink-animation, none);
+    box-sizing: border-box;
+    cursor: var(--printlink-cursor, pointer);
+    color: var(--printlink-color, var(--text-color));
+    border-color: var(--printlink-border-color, var(--border-color));
+    text-decoration: none;
+
+    &:hover {
+      background: var(--printlink-hover-background, var(--text-color));
+      background-size: var(--printlink-hover-background-size, auto);
+      color: var(--printlink-hover-color, var(--background-color));
+      box-shadow: var(--printlink-hover-shadow, none);
+      text-shadow: var(--printlink-hover-text-shadow, none);
+      border-color: var(--printlink-hover-border-color, inherit);
+      transform: var(--printlink-hover-transform, var(--printlink-transform, none));
+      filter: var(--printlink-hover-filter, var(--printlink-filter, none));
+      opacity: var(--printlink-hover-opacity, var(--printlink-opacity, 1));
+      animation: var(--printlink-hover-animation, none);
+      outline: var(--printlink-hover-border-width, 0) solid var(--printlink-hover-border-color, currentColor);
+      outline-offset: calc(-1 * var(--printlink-hover-border-width, 0px));
+    }
+
+    &:active {
+      transform: var(
+        --printlink-active-transform-override,
+        var(--printlink-active-transform, var(--printlink-hover-transform, var(--printlink-transform, none)))
+      );
+      box-shadow: var(
+        --printlink-active-box-shadow-override,
+        var(--printlink-active-box-shadow, var(--printlink-hover-shadow, none))
+      );
+      opacity: var(--printlink-active-opacity, var(--printlink-hover-opacity, var(--printlink-opacity, 1)));
+    }
+
+    &::before {
+      content: var(--printlink-before-content, none);
+      display: var(--printlink-before-display, none);
+      position: var(--printlink-before-position, static);
+      inset: var(--printlink-before-inset, auto);
+      margin-inline-start: var(--printlink-before-margin-inline-start, 0);
+      margin-inline-end: var(--printlink-before-margin-inline-end, 0);
+      font-size: var(--printlink-before-font-size, inherit);
+      transform: var(--printlink-before-transform, none);
+      background: var(--printlink-before-background, transparent);
+      border-radius: var(--printlink-before-border-radius, 0);
+      pointer-events: var(--printlink-before-pointer-events, auto);
+    }
+
+    &::after {
+      content: var(--printlink-after-content, none);
+      display: var(--printlink-after-display, none);
+      position: var(--printlink-after-position, static);
+      margin-inline-start: var(--printlink-after-margin-inline-start, 0);
+      margin-inline-end: var(--printlink-after-margin-inline-end, 0);
     }
   }
 }

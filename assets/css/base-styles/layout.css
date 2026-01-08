@@ -7,7 +7,7 @@
  * DEPENDENCIES:
  *   - variables-base.css (uses --border-color, --background-color, --section-bg)
  *   - variables-layout.css (uses --main-*, --paper-*, --resume-main-* variables)
- *   - reset.css (builds on body reset styles)
+ *   - _base.css (builds on body reset styles)
  *
  * RELATED FILES:
  *   - All component files (children of .resume__main)

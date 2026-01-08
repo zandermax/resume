@@ -1,0 +1,91 @@
+/**
+ * Section title styles
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - h2.resume-section__title (main section titles)
+ *
+ * DEPENDENCIES:
+ *   - variables-layout.css (uses --section-title-* variables)
+ *
+ * RELATED FILES:
+ *   - sections.css (section container styles)
+ */
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+
+/* Section Titles */
+h2.resume-section__title {
+  font-size: var(--section-title-font-size);
+  font-weight: var(--section-title-font-weight);
+  line-height: var(--section-title-line-height);
+  letter-spacing: var(--section-title-letter-spacing);
+  text-transform: var(--section-title-text-transform);
+  color: var(--section-title-color);
+  border-block-start: var(--section-title-border-width) var(--section-title-border-style)
+    var(--section-title-border-color);
+  border-block-end: var(--section-title-border-block-end);
+  border-inline-start: var(--section-title-border-inline-start);
+  border-inline-end: var(--section-title-border-inline-end);
+  border-radius: var(--section-title-border-radius);
+  padding-block-start: var(--section-title-padding-block-start);
+  padding-block-end: var(--section-title-padding-block-end);
+  padding-inline-start: var(--section-title-padding-inline-start);
+  padding-inline-end: var(--section-title-padding-inline-end);
+  margin-block-start: var(--section-title-margin-block-start);
+  margin-inline-start: var(--section-title-margin-inline-start);
+  margin-inline-end: var(--section-title-margin-inline-end);
+  margin-block-end: var(--section-title-margin-bottom);
+  margin-top: var(--section-title-margin-top);
+  background-image: var(--section-title-background-image);
+  background: var(--section-title-background, var(--section-accent-color));
+  box-shadow: var(--section-title-box-shadow);
+  text-shadow: var(--section-title-text-shadow);
+  position: var(--section-title-position);
+  transform: var(--section-title-transform);
+  display: var(--section-title-display);
+  width: var(--section-title-width);
+  max-width: var(--section-title-max-width);
+  overflow: var(--section-title-overflow);
+  contain: var(--section-title-contain);
+  will-change: var(--section-title-will-change);
+  animation: var(--section-title-animation);
+  align-items: var(--section-title-align-items);
+  gap: var(--section-title-gap);
+}
+
+h2.resume-section__title::before {
+  content: var(--section-title-before-content);
+  display: var(--section-title-before-display);
+  position: var(--section-title-before-position);
+  inset: var(--section-title-before-inset);
+  border: var(--section-title-before-border);
+  background: var(--section-title-before-background);
+  border-radius: var(--section-title-before-border-radius);
+  color: var(--section-title-before-color);
+  font-size: var(--section-title-before-font-size);
+  opacity: var(--section-title-before-opacity);
+  pointer-events: var(--section-title-before-pointer-events);
+  animation: var(--section-title-before-animation);
+  will-change: var(--section-title-before-will-change);
+}
+
+h2.resume-section__title:hover {
+  box-shadow: var(--section-title-hover-box-shadow);
+}
+
+h2.resume-section__title::after {
+  content: var(--section-title-after-content);
+  display: var(--section-title-after-display);
+  position: var(--section-title-after-position);
+  bottom: var(--section-title-after-bottom);
+  left: var(--section-title-after-left);
+  right: var(--section-title-after-right);
+  top: var(--section-title-after-top);
+  width: var(--section-title-after-width);
+  height: var(--section-title-after-height);
+  background: var(--section-title-after-background);
+  animation: var(--section-title-after-animation);
+  will-change: var(--section-title-after-will-change);
+}

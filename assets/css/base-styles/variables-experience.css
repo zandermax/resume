@@ -13,8 +13,7 @@
  *   - variables-base.css (uses --border-color, --spacing-*, etc.)
  *
  * RELATED FILES:
- *   - experience.css (applies these variables)
- *   - typography.css (uses --experience-role-* for h3 styling)
+ *   - experience.css (applies these variables, includes role h3 styling)
  *
  * VARIABLES DEFINED: ~140 variables controlling:
  *   - Experience item layout (borders, padding, shadows, hover states)

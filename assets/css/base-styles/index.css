@@ -3,10 +3,9 @@
  *
  * LOAD ORDER:
  *   1. Variables (no dependencies on each other)
- *   2. Reset (uses base variables)
- *   3. Typography (uses layout variables)
- *   4. Layout structures (main, header, sections)
- *   5. Components (skills, experience, lists, education, buttons)
+ *   2. Base styles (resets, generic element styles)
+ *   3. Layout structures (main, header, sections, titles)
+ *   4. Components (skills, experience, lists, education, buttons)
  *
  * DEPENDENCIES: None (this file imports all others)
  * RELATED FILES: All files in /base-styles/ directory
@@ -34,11 +33,8 @@
    BASE STYLES
    =========================== */
 
-/* HTML/body resets */
-@import './reset.css';
-
-/* All text styling */
-@import './typography.css';
+/* HTML/body resets and base text elements */
+@import './_base.css';
 
 /* ===========================
    LAYOUT STRUCTURE
@@ -52,6 +48,9 @@
 
 /* Section containers */
 @import './sections.css';
+
+/* Section titles */
+@import './title.css';
 
 /* ===========================
    COMPONENTS
@@ -68,9 +67,6 @@
 
 /* Education */
 @import './education.css';
-
-/* Print/save buttons */
-@import './buttons.css';
 
 /* Scrollbar styling */
 @import './scrollbar.css';

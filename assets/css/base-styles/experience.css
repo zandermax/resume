@@ -5,6 +5,7 @@
  *   - .resume-section--experience (experience section)
  *   - .experience-item (experience card containers)
  *   - .experience-item__header (header row with company/dates)
+ *   - .experience-item__role (role title)
  *   - .experience-item__main (role and company info column)
  *   - .experience-item__meta (dates and location column)
  *   - .experience-item__company (company name)
@@ -16,7 +17,6 @@
  *   - variables-experience.css (all experience-specific variables)
  *   - variables-base.css (uses --border-color)
  *   - sections.css (experience is a section child)
- *   - typography.css (role title styling)
  */
 
 /* === EXPERIENCE SECTION === */
@@ -131,6 +131,30 @@
   gap: 1rem;
   align-items: baseline;
   margin-block-end: 0.3rem;
+}
+
+/* === EXPERIENCE ROLE === */
+
+h3.experience-item__role {
+  font-size: var(--experience-role-font-size);
+  font-weight: var(--experience-role-font-weight);
+  color: var(--experience-role-color);
+  text-transform: var(--experience-role-text-transform);
+  letter-spacing: var(--experience-role-letter-spacing);
+  line-height: var(--experience-role-line-height);
+  text-shadow: var(--experience-role-text-shadow);
+  margin-block-start: var(--experience-role-margin-block-start);
+  margin-block-end: var(--experience-role-margin-block-end);
+  margin-inline-start: var(--experience-role-margin-inline-start);
+  margin-inline-end: var(--experience-role-margin-inline-end);
+  border-inline-start: var(--experience-role-border-inline-start);
+  padding-inline-start: var(--experience-role-padding-inline-start);
+  position: relative;
+}
+
+h3.experience-item__role:hover {
+  transform: var(--experience-role-hover-transform);
+  box-shadow: var(--experience-role-hover-box-shadow);
 }
 
 /* === COMPANY NAME === */

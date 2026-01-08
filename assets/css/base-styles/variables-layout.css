@@ -18,7 +18,7 @@
  *   - layout.css (uses --main-* variables)
  *   - header.css (uses --header-* variables)
  *   - sections.css (uses --section-* and --resume-section-* variables)
- *   - typography.css (uses typography-related variables)
+ *   - _base.css (uses typography-related variables)
  *
  * VARIABLES DEFINED: ~120 variables controlling:
  *   - Main container (border, padding, shadow, pseudo-elements)
@@ -197,6 +197,7 @@
   --section-title-animation: none;
   --section-title-align-items: normal;
   --section-title-gap: normal;
+  --section-title-background-image: none;
 
   /* === SECTION TITLE PSEUDO-ELEMENTS === */
   --section-title-before-content: none;
@@ -308,6 +309,10 @@
   --link-hover-background: transparent;
   --link-hover-transform: none;
   --link-hover-box-shadow: none;
+  --link-visited-border-block-end-color: transparent;
+  --link-visited-hover-background: var(--link-hover-background);
+  --link-visited-hover-color: var(--link-hover-color);
+  --link-visited-hover-border-block-end-color: var(--link-hover-border-block-end-color);
 
   /* === BODY TYPOGRAPHY === */
   --body-font-weight: normal;
