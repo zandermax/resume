@@ -41,7 +41,7 @@
    =========================== */
 
 /* Main container */
-@import './layout.css';
+@import './main.css';
 
 /* Header structure (includes dial-selectors and buttons) */
 @import './header/index.css';

@@ -17,14 +17,14 @@
  *   - variables-base.css (uses --border-color, --spacing-*, etc.)
  *
  * RELATED FILES:
- *   - layout.css (uses --main-* variables)
+ *   - main.css (uses --main-* variables)
  *   - header.css (uses --header-* variables)
  *   - sections.css (uses --section-* and --resume-section-* variables)
  *   - title.css (uses --section-title-* variables)
  *   - _base.css (uses typography-related variables)
  *
- * VARIABLES DEFINED: ~135 variables controlling:
- *   - Main container (border, padding, shadow, pseudo-elements)
+ * VARIABLES DEFINED: ~140 variables controlling:
+ *   - Main container (border, padding, shadow, pseudo-elements, overflow, filter, background)
  *   - Header layout (border, padding, name, role, meta styling)
  *   - Section structure (container, titles, content, text, pseudo-elements)
  *   - Typography effects (shadows, letter-spacing)
@@ -105,6 +105,9 @@
   --main-position: relative;
   --main-transform: none;
   --main-margin-responsive-960: 1rem;
+  --main-overflow: visible;
+  --main-filter: none;
+  --resume-main-background: var(--background-color);
 
   /* === RESUME HEADER === */
   --header-border-style: solid;
@@ -432,6 +435,8 @@
   --resume-main-after-pointer-events: auto;
   --resume-main-after-z-index: auto;
   --resume-main-after-opacity: 1;
+  --resume-main-after-border: none;
+  --resume-main-after-border-radius: 0;
 
   /* === RESUME HEADER PSEUDO-ELEMENTS === */
   --resume-header-before-content: none;

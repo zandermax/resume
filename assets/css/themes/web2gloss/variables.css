@@ -193,14 +193,13 @@ WEB 2.0 GLOSS Theme - Variables
   --main-box-shadow: var(--web2-shadow-xl);
   --main-padding: 0;
   --main-border-width: 1px;
-  --main-border-style: solid;
 
   /* Resume main ::before pseudo-element */
   --resume-main-before-content: '';
   --resume-main-before-display: block;
   --resume-main-before-position: absolute;
   --resume-main-before-inset: 0 0 50% 0;
-  --resume-main-before-background: var(--web2-gloss-overlay);
+  --resume-main-before-background-image: var(--web2-gloss-overlay);
   --resume-main-before-border-radius: var(--web2-top-border-radius);
   --resume-main-before-z-index: 1;
   --resume-main-before-pointer-events: none;

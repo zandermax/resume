@@ -17,10 +17,6 @@ XP Theme - Common Variables
   --xp-white-60: oklch(100% 0 0 / 0.6);
   --xp-white-80: oklch(100% 0 0 / 0.8);
 
-  /* Header top row custom properties */
-  --resume-main-before-opacity: 1;
-  --resume-main-before-background-image: none;
-
   /* Resume main ::before - XP title bar */
   --resume-main-before-content: '';
   --resume-main-before-display: block;
@@ -28,7 +24,6 @@ XP Theme - Common Variables
   --resume-main-before-inset: 0;
   --resume-main-before-bottom: auto;
   --resume-main-before-height: 32px;
-  --resume-main-before-background-color: transparent;
   --resume-main-before-background-image: linear-gradient(
     180deg,
     var(--xp-window-title-start) 0%,
@@ -274,7 +269,6 @@ XP Theme - Common Variables
     0 8px 16px var(--xp-black-20);
   --resume-main-background: var(--xp-button-face);
   --main-padding: 2.5rem 2.25rem;
-  --main-position: relative;
 
   /* Header border radius matches main container */
   --header-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);

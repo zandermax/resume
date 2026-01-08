@@ -39,7 +39,6 @@ Classic cathode ray tube monitor aesthetic
 
   /* Main Container */
   --main-border-width: 2px;
-  --main-border-style: solid;
   --main-box-shadow: 0 0 20px currentColor, inset 0 0 30px var(--crt-glow);
   --main-padding: 2rem;
 

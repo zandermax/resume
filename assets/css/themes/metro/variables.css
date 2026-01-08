@@ -17,10 +17,8 @@ Flat Design / Material Zero
 
   /* Clean main container - no shadows, sharp edges */
   --main-border-width: 0;
-  --main-border-radius: 0;
   --main-box-shadow: none;
   --main-padding: 0;
-  --main-position: relative;
   --resume-main-background: var(--background-color);
 
   /* Typography overrides - clean, modern */

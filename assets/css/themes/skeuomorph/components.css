@@ -15,7 +15,7 @@ body[data-theme='skeuomorph'] {
   --resume-main-before-display: block;
   --resume-main-before-position: absolute;
   --resume-main-before-inset: -12px;
-  --resume-main-before-background: var(--leather-color);
+  --resume-main-before-background-color: var(--leather-color);
   --resume-main-before-background-image: var(--leather-texture);
   --resume-main-before-border-radius: 4px;
   --resume-main-before-z-index: -1;

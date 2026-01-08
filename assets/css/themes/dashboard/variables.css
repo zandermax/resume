@@ -26,7 +26,6 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --main-box-shadow: var(--dashboard-shadow-lg), 0 0 0 1px var(--panel-border);
   --main-padding: 0;
   --main-padding-responsive-500: var(--spacing-xs);
-  --main-position: relative;
 
   /* Header */
   --header-background-color: var(--panel-bg);

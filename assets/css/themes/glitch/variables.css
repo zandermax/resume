@@ -73,10 +73,8 @@ Common properties for all modes
 
   /* Main container custom properties */
   --main-border-width: var(--border-width-lg);
-  --main-border-style: solid;
   --resume-main-background: var(--section-bg);
   --main-padding: var(--spacing-xl);
-  --main-position: relative;
   --main-overflow: visible;
   --main-transform: skewX(var(--skew-subtle));
   --main-filter: var(--filter-contrast-mid) saturate(1.2);

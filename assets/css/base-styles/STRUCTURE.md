@@ -23,7 +23,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 ### Style Rules (9 files)
 
 - `_base.css` (~175 lines) - Base resets and generic element styles (html, body, h1-h3, p, li, a, strong, em)
-- `layout.css` (~58 lines) - Main resume container
+- `main.css` (~58 lines) - Main resume container
 - `header.css` (~445 lines) - Resume header structure, name/role, meta, links, and buttons
 - `sections.css` (~190 lines) - Section containers and variants
 - `title.css` (~95 lines) - Section title styling
@@ -44,7 +44,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 | `h1, h2, h3` (generic)         | variables-layout.css     | \_base.css               |
 | `p, li` (generic)              | variables-layout.css     | \_base.css               |
 | `a` (generic links)            | variables-layout.css     | \_base.css               |
-| `.resume__main`                | variables-layout.css     | layout.css               |
+| `.resume__main`                | variables-layout.css     | main.css                 |
 | `.resume-header`               | variables-layout.css     | header.css               |
 | `.resume-header__name`         | variables-layout.css     | header.css               |
 | `.resume-header__role`         | variables-layout.css     | header.css               |
@@ -78,7 +78,7 @@ variables-education.css
 variables-buttons.css
 
 _base.css (uses variables-base.css, variables-layout.css)
-  ├─ layout.css
+  ├─ main.css
   ├─ header.css (includes buttons)
   ├─ sections.css
   ├─ title.css
@@ -313,6 +313,60 @@ Themes should:
 3. Use colors from `colors.css` when possible, or define custom oklch() colors
 4. Document any custom spacing systems if not using base `--spacing-*` scale
 5. When overriding box model properties, prefer setting all four longhand directions for uniform effects
+
+## Main Container Property Guidelines
+
+### Base Definition Requirement
+
+All properties used in main.css must be defined in variables-layout.css with sensible defaults, even if only one theme overrides them.
+
+### Main Container Property Categories
+
+**Structural properties** (almost always overridden by themes):
+
+- --main-border-width (13/12 themes override)
+- --main-padding (12/12 themes override)
+- --main-box-shadow (11/12 themes override)
+
+**Visual properties** (frequently overridden):
+
+- --main-border-radius (8/12 themes override)
+- --main-background-image (2/12 themes: nostalgia only)
+- --main-transform (2/12 themes: brutal, glitch)
+
+**Utility properties** (rarely overridden, keep defaults):
+
+- --main-position (default: relative - do not override unless necessary)
+- --main-border-style (default: solid - do not override unless necessary)
+- --main-overflow (1/12 themes: glitch only)
+- --main-filter (1/12 themes: glitch only)
+
+### Pseudo-Element Decoration Patterns
+
+**Themes using ::before for visual effects**:
+
+- **xp**: Title bar with gradient (lines 25-40)
+- **brutal**: Texture grid overlay (lines 30-43)
+- **web2gloss**: Glossy reflection (lines 199-206)
+- **skeuomorph**: Leather material backing (lines 14-24)
+
+**Themes using ::after for visual effects**:
+
+- **glitch**: Scanline pattern (lines 330-342)
+- **skeuomorph**: Stitched border detail (lines 27-33)
+
+**Pattern**: Set `content: ''` to activate, then use `position: absolute`, `inset`, `pointer-events: none`, and z-index for layering.
+
+### Redundancies to Avoid
+
+Do not redefine in themes if exactly matching base default:
+
+- ✗ `--main-position: relative`
+- ✗ `--main-border-style: solid`
+- ✗ `--main-border-radius: 0`
+- ✗ `--main-overflow: visible`
+- ✗ `--main-filter: none`
+- ✗ Any `--resume-main-before-*` or `--resume-main-after-*` set to base default
 
 ## Adding New Components
 

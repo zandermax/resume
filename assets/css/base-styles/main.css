@@ -1,0 +1,122 @@
+/**
+ * Main resume container with pseudo-elements for theme decorations
+ *
+ * HTML ELEMENTS AFFECTED:
+ *   - .resume__main (main container for entire resume)
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (defines --border-color, --background-color, --paper-texture, --paper-shadow)
+ *   - variables-layout.css (defines --main-*, --resume-main-*, --resume-main-before-*, --resume-main-after-*)
+ *   - _base.css (builds on body reset styles)
+ *
+ * RELATED FILES:
+ *   - All component files (children of .resume__main)
+ *
+ * VARIABLES USED:
+ *   All CSS custom properties have defaults defined in their respective variable files.
+ *   NO inline fallbacks are needed or used in this file.
+ *
+ *   Main Container (~11 variables):
+ *     --main-padding, --main-border-width, --main-border-style, --main-border-radius
+ *     --main-background-image, --main-box-shadow, --main-position, --main-transform
+ *     --main-overflow, --main-filter, --resume-main-background
+ *     Base variables: --border-color, --paper-texture
+ *
+ *   Pseudo-element ::before (~11 variables):
+ *     --resume-main-before-content, --resume-main-before-display
+ *     --resume-main-before-position, --resume-main-before-inset
+ *     --resume-main-before-bottom, --resume-main-before-height
+ *     --resume-main-before-background-color, --resume-main-before-background-image
+ *     --resume-main-before-border-radius, --resume-main-before-box-shadow
+ *     --resume-main-before-z-index, --resume-main-before-pointer-events
+ *     --resume-main-before-opacity
+ *
+ *   Pseudo-element ::after (~8 variables):
+ *     --resume-main-after-content, --resume-main-after-position
+ *     --resume-main-after-inset, --resume-main-after-background
+ *     --resume-main-after-border, --resume-main-after-border-radius
+ *     --resume-main-after-pointer-events, --resume-main-after-z-index
+ *     --resume-main-after-opacity
+ */
+
+/* === MAIN CONTAINER === */
+
+.resume__main {
+  /* Sizing */
+  max-width: 960px;
+  box-sizing: border-box;
+
+  /* Spacing */
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding: var(--main-padding);
+
+  /* Borders */
+  border-block-start: var(--main-border-width) var(--main-border-style) var(--border-color);
+  border-block-end: var(--main-border-width) var(--main-border-style) var(--border-color);
+  border-inline-start: var(--main-border-width) var(--main-border-style) var(--border-color);
+  border-inline-end: var(--main-border-width) var(--main-border-style) var(--border-color);
+  border-radius: var(--main-border-radius);
+
+  /* Background */
+  background-color: var(--resume-main-background);
+  background-image: var(--main-background-image), var(--paper-texture); /* Composite: theme image + paper texture */
+
+  /* Visual Effects */
+  box-shadow: var(--main-box-shadow);
+  filter: var(--main-filter);
+
+  /* Positioning & Transform */
+  position: var(--main-position);
+  transform: var(--main-transform);
+  overflow: var(--main-overflow);
+
+  /* === PSEUDO-ELEMENTS === */
+  /* Used by themes for decorative elements: title bars, texture grids, overlays, borders, etc. */
+
+  &::before {
+    /* Content & Display */
+    content: var(--resume-main-before-content);
+    display: var(--resume-main-before-display);
+
+    /* Positioning & Sizing */
+    position: var(--resume-main-before-position);
+    inset: var(--resume-main-before-inset);
+    bottom: var(--resume-main-before-bottom);
+    height: var(--resume-main-before-height);
+
+    /* Background */
+    background-color: var(--resume-main-before-background-color);
+    background-image: var(--resume-main-before-background-image);
+
+    /* Borders & Effects */
+    border-radius: var(--resume-main-before-border-radius);
+    box-shadow: var(--resume-main-before-box-shadow);
+
+    /* Layering & Interaction */
+    z-index: var(--resume-main-before-z-index);
+    pointer-events: var(--resume-main-before-pointer-events);
+    opacity: var(--resume-main-before-opacity);
+  }
+
+  &::after {
+    /* Content & Display */
+    content: var(--resume-main-after-content);
+
+    /* Positioning */
+    position: var(--resume-main-after-position);
+    inset: var(--resume-main-after-inset);
+
+    /* Background & Borders */
+    background: var(--resume-main-after-background);
+    border: var(--resume-main-after-border);
+    border-radius: var(--resume-main-after-border-radius);
+
+    /* Layering & Interaction */
+    pointer-events: var(--resume-main-after-pointer-events);
+    z-index: var(--resume-main-after-z-index);
+    opacity: var(--resume-main-after-opacity);
+  }
+}
