@@ -83,7 +83,10 @@ Common properties for all modes
   --resume-main-animation: main-tilt-glitch var(--duration-fast) infinite;
 
   /* Section custom properties */
-  --section-padding: var(--spacing-xl);
+  --section-padding-block-start: var(--spacing-xl);
+  --section-padding-inline-start: var(--spacing-xl);
+  --section-padding-block-end: var(--spacing-xl);
+  --section-padding-inline-end: var(--spacing-xl);
   --section-margin-block-end: var(--spacing-lg);
   --resume-section-position: relative;
   --resume-section-z-index: 2;

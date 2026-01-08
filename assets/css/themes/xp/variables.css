@@ -158,8 +158,14 @@ XP Theme - Common Variables
   --header-name-text-shadow: 2px 2px 4px var(--xp-black-10);
 
   /* Section container custom properties */
-  --section-margin: 0 2rem 2rem 2rem;
-  --section-padding: 1rem 0 0.5rem 0;
+  --section-margin-block-start: 0;
+  --section-margin-inline-start: 2rem;
+  --section-margin-block-end: 2rem;
+  --section-margin-inline-end: 2rem;
+  --section-padding-block-start: 1rem;
+  --section-padding-inline-start: 0;
+  --section-padding-block-end: 0.5rem;
+  --section-padding-inline-end: 0;
   --section-border-block-start-width: 1px;
   --section-border-block-start-style: solid;
   --section-border-block-start-color: var(--xp-button-shadow);

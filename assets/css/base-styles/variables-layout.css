@@ -9,6 +9,7 @@
  *   - .resume-header__meta (contact info)
  *   - .resume-section (section containers)
  *   - .resume-section__title (h2 section titles)
+ *   - .resume-section::before, .resume-section::after (decorative pseudo-elements)
  *
  * DEPENDENCIES:
  *   - variables-base.css (uses --border-color, --spacing-*, etc.)
@@ -16,22 +17,42 @@
  * RELATED FILES:
  *   - layout.css (uses --main-* variables)
  *   - header.css (uses --header-* variables)
- *   - sections.css (uses --section-* variables)
+ *   - sections.css (uses --section-* and --resume-section-* variables)
  *   - typography.css (uses typography-related variables)
  *
  * VARIABLES DEFINED: ~120 variables controlling:
  *   - Main container (border, padding, shadow, pseudo-elements)
  *   - Header layout (border, padding, name, role, meta styling)
- *   - Section structure (titles, content, spacing)
+ *   - Section structure (titles, content, spacing, pseudo-elements)
  *   - Typography effects (shadows, letter-spacing)
  *   - Body pseudo-elements
  *
- * VARIABLE PATTERNS:
- *   - Pseudo-element variables: Use pattern --element-before-* and --element-after-*
- *   - Responsive variables: Use pattern --variable-responsive-{breakpoint}
+ * VARIABLE NAMING CONVENTIONS:
+ *   - Spacing: Use LONGHAND logical properties only (not shorthands)
+ *     ✓ Correct: --section-padding-block-start, --section-padding-inline-end
+ *     ✗ Avoid:   --section-padding (shorthand removed for consistency)
+ *
+ *   - Responsive variables: Use explicit property + breakpoint
+ *     ✓ Correct: --section-padding-inline-start-responsive-768
+ *     ✗ Avoid:   --section-padding-responsive-768 (ambiguous)
+ *
+ *   - Section-level layout: Use --resume-section-* prefix
+ *     Examples: --resume-section-background, --resume-section-position
+ *
+ *   - Section content: Use --section-* prefix
+ *     Examples: --section-padding-block-start, --section-border-block-end
+ *
+ *   - Pseudo-elements: Use pattern --element-before-* and --element-after-*
+ *     Examples: --section-before-content, --section-after-display
+ *
  *   - Hover states: Use pattern --element-hover-*
- *   - Note: .resume-header__name-greeting and .resume-header__name-small share the same
+ *     Example: --section-title-hover-box-shadow
+ *
+ * NOTES:
+ *   - .resume-header__name-greeting and .resume-header__name-small share the same
  *     --header-name-greeting-* variables for consistent styling
+ *   - Themes should override specific longhand properties, not shorthands
+ *   - All section margin/padding uses logical properties for RTL support
  */
 
 :root {
@@ -220,18 +241,14 @@
   --section-ashby-padding-block-start: 0;
 
   /* === SECTION CONTAINER === */
-  --section-margin: 0 0 1.75rem 0;
   --section-margin-block-end: 1.75rem;
-  --section-margin-inline: 0;
   --section-margin-block-start: 0;
-  --section-padding: 1rem 0 0;
-  --section-padding-inline: 0;
+  --section-margin-inline-start: 0;
+  --section-margin-inline-end: 0;
   --section-padding-inline-start: 0;
   --section-padding-inline-end: 0;
-  --section-padding-block: 0;
   --section-padding-block-start: 0;
   --section-padding-block-end: 0;
-  --section-border: none;
   --resume-section-background: transparent;
   --resume-section-position: static;
   --resume-section-z-index: auto;
@@ -243,8 +260,10 @@
   --section-not-first-border-block-start-style: none;
   --section-not-first-border-block-start-color: transparent;
   --section-border-block-end: none;
-  --section-padding-responsive-768: unset;
-  --section-padding-responsive-500: unset;
+  --section-padding-inline-start-responsive-768: unset;
+  --section-padding-inline-end-responsive-768: unset;
+  --section-padding-inline-start-responsive-500: unset;
+  --section-padding-inline-end-responsive-500: unset;
 
   /* === SECTION CONTENT === */
   --section-content-padding-inline: 0;

@@ -4,13 +4,58 @@
  * HTML ELEMENTS AFFECTED:
  *   - .resume-section (main section containers)
  *   - .resume-section--summary (summary section variant)
+ *   - .resume-section--ashby (Ashby section variant)
  *   - .resume-section__text (text paragraphs within sections)
  *   - .resume-section__content (section content wrapper)
+ *   - .resume-section::before (pseudo-element for decorative effects)
+ *   - .resume-section::after (pseudo-element for decorative effects)
  *
  * DEPENDENCIES:
- *   - variables-layout.css (uses --section-* variables)
- *   - variables-base.css (uses --border-color)
- *   - typography.css (section titles inherit from there)
+ *   - variables-layout.css (defines --section-*, --resume-section-* variables)
+ *   - variables-base.css (defines --border-color, --spacing-* tokens)
+ *   - typography.css (section titles inherit typography settings)
+ *
+ * CUSTOM PROPERTIES USED (defined in variables-layout.css):
+ *   Margins (all use longhand logical properties):
+ *     --section-margin-block-start, --section-margin-block-end
+ *     --section-margin-inline-start, --section-margin-inline-end
+ *
+ *   Padding (all use longhand logical properties):
+ *     --section-padding-block-start, --section-padding-block-end
+ *     --section-padding-inline-start, --section-padding-inline-end
+ *
+ *   Borders:
+ *     --section-border-block-start-width, --section-border-block-start-style,
+ *     --section-border-block-start-color, --section-border-block-end
+ *     --section-border-inline-start, --section-border-inline-end
+ *     --section-not-first-border-block-start-* (for :not(:first-of-type))
+ *
+ *   Layout:
+ *     --resume-section-background, --resume-section-position, --resume-section-z-index
+ *
+ *   Text content:
+ *     --section-text-font-size, --section-text-line-height, --section-text-color,
+ *     --section-text-letter-spacing, --section-text-margin-block-end
+ *
+ *   Section content wrapper:
+ *     --section-content-padding-inline, --section-content-background
+ *
+ *   Pseudo-elements (for theme decorative effects like skeuomorph paper curl):
+ *     --section-before-content, --section-before-display, --section-before-position,
+ *     --section-before-inset, --section-before-width, --section-before-height,
+ *     --section-before-border-*, --section-before-pointer-events
+ *     --section-after-content, --section-after-display, --section-after-position,
+ *     --section-after-inset, --section-after-width, --section-after-height,
+ *     --section-after-border-*, --section-after-box-shadow, --section-after-pointer-events
+ *
+ *   Accent colors (auto-assigned per section for multi-color themes):
+ *     --section-accent-color (rotates through --theme-accent-1 to --theme-accent-6)
+ *
+ * NAMING CONVENTIONS:
+ *   - Use longhand logical properties (e.g., padding-block-start) NOT shorthands
+ *   - Responsive variables: --property-responsive-{breakpoint} (e.g., --section-padding-inline-start-responsive-768)
+ *   - Section-level layout properties use --resume-section-* prefix
+ *   - Section content properties use --section-* prefix
  *
  * RELATED FILES:
  *   - skills.css, experience.css, lists.css, education.css (section children)
@@ -56,6 +101,35 @@
 .resume-section--ashby {
   border-block-start: var(--section-ashby-border-block-start, none);
   padding-block-start: var(--section-ashby-padding-block-start, 0);
+}
+
+/* === SECTION PSEUDO-ELEMENTS === */
+
+.resume-section::before {
+  content: var(--section-before-content, none);
+  display: var(--section-before-display, none);
+  position: var(--section-before-position, static);
+  inset: var(--section-before-inset, auto);
+  width: var(--section-before-width, auto);
+  height: var(--section-before-height, auto);
+  border-style: var(--section-before-border-style, none);
+  border-width: var(--section-before-border-width, 0);
+  border-color: var(--section-before-border-color, transparent);
+  pointer-events: var(--section-before-pointer-events, auto);
+}
+
+.resume-section::after {
+  content: var(--section-after-content, none);
+  display: var(--section-after-display, none);
+  position: var(--section-after-position, static);
+  inset: var(--section-after-inset, auto);
+  width: var(--section-after-width, auto);
+  height: var(--section-after-height, auto);
+  border-style: var(--section-after-border-style, none);
+  border-width: var(--section-after-border-width, 0);
+  border-color: var(--section-after-border-color, transparent);
+  box-shadow: var(--section-after-box-shadow, none);
+  pointer-events: var(--section-after-pointer-events, auto);
 }
 
 /* === SECTION TEXT === */

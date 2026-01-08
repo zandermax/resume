@@ -191,7 +191,10 @@ WEB 2.0 GLOSS Theme - Variables
   --resume-main-before-pointer-events: none;
 
   /* Resume section custom properties */
-  --section-padding: 2rem;
+  --section-padding-block-start: 2rem;
+  --section-padding-inline-start: 2rem;
+  --section-padding-block-end: 2rem;
+  --section-padding-inline-end: 2rem;
   --resume-section-position: relative;
   --resume-section-z-index: 2;
   --section-margin-block-end: 1.5rem;

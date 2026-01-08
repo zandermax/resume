@@ -42,9 +42,23 @@
   cursor: var(--printlink-cursor, pointer);
   margin-block-start: 1rem;
   margin-block-end: var(--printlink-margin-block-end, 1rem);
-  border: var(
-    --printlink-border,
-    var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color)
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border-block-start: var(
+    --printlink-border-block-start,
+    var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+  );
+  border-block-end: var(
+    --printlink-border-block-end,
+    var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+  );
+  border-inline-start: var(
+    --printlink-border-inline-start,
+    var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
+  );
+  border-inline-end: var(
+    --printlink-border-inline-end,
+    var(--printlink-border, var(--printlink-border-width, 4px) var(--printlink-border-style, solid) var(--text-color))
   );
   border-radius: var(--printlink-border-radius, 0);
   background: var(--printlink-background, var(--background-color));

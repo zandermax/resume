@@ -49,14 +49,14 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --header-meta-opacity: 0.85;
 
   /* Sections */
-  --section-margin: 0;
+  --section-margin-block-start: 0;
+  --section-margin-inline-start: 0;
   --section-margin-block-end: 0;
+  --section-margin-inline-end: 0;
   --section-padding-inline-start: var(--spacing-xl);
   --section-padding-inline-end: var(--spacing-xl);
   --section-padding-block-start: var(--spacing-xl);
   --section-padding-block-end: var(--spacing-lg);
-  --section-padding-responsive-768: 1.5rem 1.5rem 1rem;
-  --section-padding-responsive-500: 1.25rem 1.25rem 1rem;
   --section-border-block-end: 1px solid var(--panel-border);
   --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.05), 2rem);
   --section-content-margin-block-start: 1em;

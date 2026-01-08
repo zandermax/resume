@@ -83,10 +83,12 @@ SKEUOMORPH Theme - Base Variables
 
   /* ==================== SECTION CONTAINER VARIABLES ==================== */
 
-  --section-position: relative;
-  --section-padding: var(--spacing-md) var(--spacing-lg);
-  --section-background: var(--paper-color);
-  --section-background-image: var(--paper-texture);
+  --resume-section-position: relative;
+  --section-padding-block-start: var(--spacing-md);
+  --section-padding-inline-start: var(--spacing-lg);
+  --section-padding-block-end: var(--spacing-md);
+  --section-padding-inline-end: var(--spacing-lg);
+  --resume-section-background: var(--paper-color);
 
   /* Section paper curl effect - ::before pseudo-element */
   --section-before-content: '';

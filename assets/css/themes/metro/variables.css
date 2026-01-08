@@ -91,7 +91,10 @@ Flat Design / Material Zero
   --section-padding-block-end: var(--spacing-xl);
   --section-padding-inline-start: var(--spacing-xl);
   --section-padding-inline-end: var(--spacing-xl);
-  --section-margin: 0;
+  --section-margin-block-start: 0;
+  --section-margin-inline-start: 0;
+  --section-margin-block-end: 0;
+  --section-margin-inline-end: 0;
   --section-border-block-start-width: 0;
   --section-border-block-start-style: none;
   --section-not-first-border-block-start-width: var(--border-width-thick);

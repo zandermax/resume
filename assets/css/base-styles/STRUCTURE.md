@@ -118,8 +118,13 @@ Every CSS file includes a structured header:
 - Example: `--section-title-before-content`, `--experience-item-after-background`
 
 **Responsive variables:**
-- Use `--variable-responsive-{breakpoint}` pattern
-- Example: `--header-padding-responsive-500`, `--section-padding-responsive-768`
+- Use `--property-name-responsive-{breakpoint}` pattern with explicit property names
+- For spacing properties, use longhand logical properties (not shorthands)
+- Breakpoints: 960, 768, 600, 500, 480, 400, 380
+- Examples:
+  - ✓ Correct: `--section-padding-inline-start-responsive-768`
+  - ✓ Correct: `--header-padding-responsive-500` (if header uses shorthand)
+  - ✗ Avoid: `--section-padding-responsive-768` (ambiguous - which padding direction?)
 
 **State variables:**
 - Use `--element-hover-*` for hover states
@@ -155,10 +160,16 @@ border-inline-start: var(--element-border-inline-start, none);
 border-inline-end: var(--element-border-inline-end, none);
 ```
 
-**Apply this to:**
+**Apply this to CSS properties:**
 - `border` → use `border-block-start`, `border-block-end`, `border-inline-start`, `border-inline-end`
 - `margin` → use `margin-block-start`, `margin-block-end`, `margin-inline-start`, `margin-inline-end`
 - `padding` → use `padding-block-start`, `padding-block-end`, `padding-inline-start`, `padding-inline-end`
+
+**Apply this to CSS custom properties (variable definitions):**
+- ✓ Define: `--section-padding-block-start`, `--section-padding-inline-end`
+- ✗ Avoid: `--section-padding` (shorthand creates override conflicts)
+- This policy applies to both base variable definitions AND theme overrides
+- Themes that need uniform padding on all sides should set all four longhand properties
 
 ### Background Layering Pattern
 

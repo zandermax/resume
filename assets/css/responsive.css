@@ -134,7 +134,8 @@ Mobile layout
   }
 
   .resume-section {
-    padding-inline: var(--section-padding-inline-responsive-500);
+    padding-inline-start: var(--section-padding-inline-start-responsive-500);
+    padding-inline-end: var(--section-padding-inline-end-responsive-500);
   }
 
   /* Responsive item padding */

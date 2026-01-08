@@ -17,9 +17,15 @@
 
 .resume__main {
   max-width: 960px;
-  margin: 2rem auto;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   padding: var(--main-padding, 2.5rem 2.25rem);
-  border: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-block-start: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-block-end: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-inline-start: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
+  border-inline-end: var(--main-border-width, 4px) var(--main-border-style, solid) var(--border-color);
   border-radius: var(--main-border-radius, 0);
   background-color: var(--resume-main-background, var(--background-color));
   background-image: var(--main-background-image), var(--paper-texture);

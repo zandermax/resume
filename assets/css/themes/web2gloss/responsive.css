@@ -16,12 +16,18 @@ body[data-theme='web2gloss'] {
     --header-name-font-size: 2rem;
     --section-title-font-size: 1.1rem;
     --section-title-padding: 0.75rem 1rem;
-    --section-padding: 1.5rem;
+    --section-padding-block-start: 1.5rem;
+    --section-padding-inline-start: 1.5rem;
+    --section-padding-block-end: 1.5rem;
+    --section-padding-inline-end: 1.5rem;
     --header-padding: 2rem 1.5rem;
   }
 
   @media (max-width: 500px) {
-    --section-padding: 1rem;
+    --section-padding-block-start: 1rem;
+    --section-padding-inline-start: 1rem;
+    --section-padding-block-end: 1rem;
+    --section-padding-inline-end: 1rem;
     --experience-item-padding: 1.5rem;
     --education-item-padding: 1.5rem;
     --experience-item-border-radius: var(--web2-radius-md);

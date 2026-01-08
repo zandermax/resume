@@ -175,7 +175,10 @@
   font-size: var(--tech-badge-font-size, 0.8rem);
   text-transform: var(--tech-badge-text-transform, uppercase);
   letter-spacing: var(--tech-badge-letter-spacing, 0.08em);
-  border: var(--tech-badge-border, 1px solid var(--border-color));
+  border-block-start: var(--tech-badge-border-block-start, var(--tech-badge-border, 1px solid var(--border-color)));
+  border-block-end: var(--tech-badge-border-block-end, var(--tech-badge-border, 1px solid var(--border-color)));
+  border-inline-start: var(--tech-badge-border-inline-start, var(--tech-badge-border, 1px solid var(--border-color)));
+  border-inline-end: var(--tech-badge-border-inline-end, var(--tech-badge-border, 1px solid var(--border-color)));
   padding: var(--tech-badge-padding, 0.25rem 0.4rem);
   display: var(--tech-badge-display, inline-block);
   margin: var(--tech-badge-margin, 0.35rem 0 0.4rem);

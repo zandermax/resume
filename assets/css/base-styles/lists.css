@@ -17,10 +17,15 @@
 
 .community-list {
   list-style: none;
-  padding-inline-start: 0;
   padding: var(--list-padding, 0);
-  margin: 0;
-  border: var(--list-border, 3px solid var(--border-color));
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border-block-start: var(--list-border-block-start, var(--list-border, 3px solid var(--border-color)));
+  border-block-end: var(--list-border-block-end, var(--list-border, 3px solid var(--border-color)));
+  border-inline-start: var(--list-border-inline-start, var(--list-border, 3px solid var(--border-color)));
+  border-inline-end: var(--list-border-inline-end, var(--list-border, 3px solid var(--border-color)));
   border-radius: var(--list-border-radius, 0);
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
@@ -111,11 +116,16 @@
 
 .principles-list {
   list-style: none;
-  padding-inline-start: 0;
-  margin: 0;
-  border: var(--list-border, 3px solid var(--border-color));
-  border-radius: var(--list-border-radius, 0);
   padding: var(--list-padding, 0.7rem 0.8rem);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border-block-start: var(--list-border-block-start, var(--list-border, 3px solid var(--border-color)));
+  border-block-end: var(--list-border-block-end, var(--list-border, 3px solid var(--border-color)));
+  border-inline-start: var(--list-border-inline-start, var(--list-border, 3px solid var(--border-color)));
+  border-inline-end: var(--list-border-inline-end, var(--list-border, 3px solid var(--border-color)));
+  border-radius: var(--list-border-radius, 0);
   box-sizing: border-box;
   background-color: var(--list-background, var(--section-bg, transparent));
   background-image: var(--list-background-image);

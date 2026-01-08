@@ -19,7 +19,10 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--skills-grid-gap, 1rem);
-  border: var(--skills-grid-border, 3px solid var(--border-color));
+  border-block-start: var(--skills-grid-border-block-start, var(--skills-grid-border, 3px solid var(--border-color)));
+  border-block-end: var(--skills-grid-border-block-end, var(--skills-grid-border, 3px solid var(--border-color)));
+  border-inline-start: var(--skills-grid-border-inline-start, var(--skills-grid-border, 3px solid var(--border-color)));
+  border-inline-end: var(--skills-grid-border-inline-end, var(--skills-grid-border, 3px solid var(--border-color)));
   padding: var(--skills-grid-padding, 0.75rem);
   box-sizing: border-box;
   background: var(--skills-grid-background, transparent);
@@ -49,7 +52,10 @@
 /* === SKILLS GROUP BOXES === */
 
 .skills-grid__group {
-  border: var(--skills-group-border, 1px solid var(--border-color));
+  border-block-start: var(--skills-group-border-block-start, var(--skills-group-border, 1px solid var(--border-color)));
+  border-block-end: var(--skills-group-border-block-end, var(--skills-group-border, 1px solid var(--border-color)));
+  border-inline-start: var(--skills-group-border-inline-start, var(--skills-group-border, 1px solid var(--border-color)));
+  border-inline-end: var(--skills-group-border-inline-end, var(--skills-group-border, 1px solid var(--border-color)));
   padding: var(--skills-group-padding, 0.6rem 0.75rem);
   box-sizing: border-box;
   background-color: var(--skills-group-background, var(--section-bg, transparent));

@@ -14,7 +14,10 @@ Media queries for variable overrides
     /* Layout padding adjustments */
     --resume-main-animation: main-tilt-glitch-mobile var(--duration-fast) infinite;
     --main-padding: var(--spacing-lg);
-    --section-padding: var(--spacing-lg);
+    --section-padding-block-start: var(--spacing-lg);
+    --section-padding-inline-start: var(--spacing-lg);
+    --section-padding-block-end: var(--spacing-lg);
+    --section-padding-inline-end: var(--spacing-lg);
     --experience-item-padding: var(--spacing-lg);
     --education-item-padding: var(--spacing-lg);
   }
@@ -30,7 +33,10 @@ Media queries for variable overrides
 
     /* Layout padding adjustments */
     --main-padding: var(--spacing-md);
-    --section-padding: var(--spacing-md);
+    --section-padding-block-start: var(--spacing-md);
+    --section-padding-inline-start: var(--spacing-md);
+    --section-padding-block-end: var(--spacing-md);
+    --section-padding-inline-end: var(--spacing-md);
     --experience-item-padding: var(--spacing-md);
     --education-item-padding: var(--spacing-md);
 

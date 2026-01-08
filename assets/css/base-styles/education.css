@@ -15,10 +15,12 @@
 /* === EDUCATION ITEM CONTAINER === */
 
 .education-item {
-  border: var(--education-item-border, 2px solid var(--border-color));
-  border-radius: var(--education-item-border-radius, 0);
+  border-block-start: var(--education-item-border-block-start, var(--education-item-border, 2px solid var(--border-color)));
+  border-block-end: var(--education-item-border-block-end, var(--education-item-border, 2px solid var(--border-color)));
   border-inline-start: var(--education-item-border-inline-start-width, 0)
     var(--education-item-border-inline-start-style, none) var(--education-item-border-inline-start-color, transparent);
+  border-inline-end: var(--education-item-border-inline-end, var(--education-item-border, 2px solid var(--border-color)));
+  border-radius: var(--education-item-border-radius, 0);
   padding: var(--education-item-padding, 0.75rem 0.85rem);
   font-size: var(--education-item-font-size, 0.9rem);
   color: var(--education-item-color, inherit);
