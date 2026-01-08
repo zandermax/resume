@@ -97,7 +97,6 @@ body[data-theme='neoswiss'] {
 
   /* Neo-Swiss AI Modal - Minimal analytical summary */
   .neoswiss-ai-modal {
-    display: flex;
     position: fixed;
     top: 0;
     left: 0;

@@ -2,7 +2,6 @@
  * Experience items with tech badges and bullet points
  *
  * HTML ELEMENTS AFFECTED:
- *   - .resume-section--experience (experience section)
  *   - .experience-item (experience card containers)
  *   - .experience-item__header (header row with company/dates)
  *   - .experience-item__role (role title)
@@ -16,15 +15,8 @@
  * DEPENDENCIES:
  *   - variables-experience.css (all experience-specific variables)
  *   - variables-base.css (uses --border-color)
- *   - sections.css (experience is a section child)
+ *   - sections.css (experience section variant and container styles)
  */
-
-/* === EXPERIENCE SECTION === */
-
-.resume-section--experience {
-  border-block-start: 0;
-  padding-block-start: var(--experience-section-padding-block-start);
-}
 
 /* === EXPERIENCE ITEM CONTAINER === */
 

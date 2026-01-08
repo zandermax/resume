@@ -25,12 +25,12 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `_base.css` (~175 lines) - Base resets and generic element styles (html, body, h1-h3, p, li, a, strong, em)
 - `layout.css` (~58 lines) - Main resume container
 - `header.css` (~445 lines) - Resume header structure, name/role, meta, links, and buttons
-- `sections.css` (~185 lines) - Section containers
+- `sections.css` (~190 lines) - Section containers and variants
 - `title.css` (~95 lines) - Section title styling
 - `skills.css` (~115 lines) - Skills grid component
-- `experience.css` (~283 lines) - Experience items
+- `experience.css` (~275 lines) - Experience items
 - `lists.css` (~163 lines) - Community/principles lists
-- `education.css` (~68 lines) - Education component
+- `components/education.css` (~108 lines) - Education component
 
 ### Entry Point
 
@@ -62,8 +62,8 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 | `.experience-item__bullets`    | variables-experience.css | experience.css |
 | `.community-list`              | variables-lists.css      | lists.css      |
 | `.principles-list`             | variables-lists.css      | lists.css      |
-| `.education-item`              | variables-education.css  | education.css  |
-| `.education-item__institution` | variables-education.css  | education.css  |
+| `.education-item`              | variables-education.css  | components/education.css  |
+| `.education-item__institution` | variables-education.css  | components/education.css  |
 | `dial-selector`                | variables-buttons.css    | header.css     |
 
 ## Import Order & Dependencies
@@ -85,7 +85,8 @@ _base.css (uses variables-base.css, variables-layout.css)
   ├─ skills.css
   ├─ experience.css
   ├─ lists.css
-  └─ education.css
+  └─ components/
+      └─ education.css
 ```
 
 ## File Header Format

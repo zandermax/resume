@@ -4,6 +4,7 @@
  * HTML ELEMENTS AFFECTED:
  *   - .resume-section (main section containers)
  *   - .resume-section--summary (summary section variant)
+ *   - .resume-section--experience (experience section variant)
  *   - .resume-section--ashby (Ashby section variant)
  *   - .resume-section__text (text paragraphs within sections)
  *   - .resume-section__content (section content wrapper)
@@ -61,6 +62,7 @@
  */
 
 /* === SECTION CONTAINERS === */
+/* All section elements are nested here to reflect the DOM structure */
 
 .resume-section {
   margin-block-start: var(--section-margin-block-start, 0);
@@ -80,12 +82,99 @@
   position: var(--resume-section-position, static);
   z-index: var(--resume-section-z-index, auto);
 
+  /* Not first section - different border */
   &:not(:first-of-type) {
     border-block-start: var(--section-not-first-border-block-start-width, 0)
       var(--section-not-first-border-block-start-style, none)
       var(--section-not-first-border-block-start-color, transparent);
   }
+
+  /* === SECTION PSEUDO-ELEMENTS === */
+
+  &::before {
+    content: var(--section-before-content, none);
+    display: var(--section-before-display, none);
+    position: var(--section-before-position, static);
+    inset: var(--section-before-inset, auto);
+    width: var(--section-before-width, auto);
+    height: var(--section-before-height, auto);
+    border-style: var(--section-before-border-style, none);
+    border-width: var(--section-before-border-width, 0);
+    border-color: var(--section-before-border-color, transparent);
+    pointer-events: var(--section-before-pointer-events, auto);
+  }
+
+  &::after {
+    content: var(--section-after-content, none);
+    display: var(--section-after-display, none);
+    position: var(--section-after-position, static);
+    inset: var(--section-after-inset, auto);
+    width: var(--section-after-width, auto);
+    height: var(--section-after-height, auto);
+    border-style: var(--section-after-border-style, none);
+    border-width: var(--section-after-border-width, 0);
+    border-color: var(--section-after-border-color, transparent);
+    box-shadow: var(--section-after-box-shadow, none);
+    pointer-events: var(--section-after-pointer-events, auto);
+  }
+
+  /* === SECTION TEXT === */
+
+  .resume-section__text {
+    font-size: var(--section-text-font-size, 0.95rem);
+    line-height: var(--section-text-line-height, 1.6);
+    color: var(--section-text-color, inherit);
+    letter-spacing: var(--section-text-letter-spacing, normal);
+
+    &:not(:last-child) {
+      margin-block-end: var(--section-text-margin-block-end, 0.9rem);
+    }
+  }
+
+  /* === SECTION CONTENT === */
+
+  .resume-section__content {
+    padding-inline: var(--section-content-padding-inline, 0);
+    background: var(--section-content-background, transparent);
+  }
+
+  /* === SECTION ACCENT COLOR ROTATION === */
+  /* Assign accent colors to sections for themes to use */
+
+  &:nth-of-type(1) {
+    --section-accent-color: var(--theme-accent-1, var(--border-color));
+  }
+
+  &:nth-of-type(2) {
+    --section-accent-color: var(--theme-accent-2, var(--border-color));
+  }
+
+  &:nth-of-type(3) {
+    --section-accent-color: var(--theme-accent-3, var(--border-color));
+  }
+
+  &:nth-of-type(4) {
+    --section-accent-color: var(--theme-accent-4, var(--border-color));
+  }
+
+  &:nth-of-type(5) {
+    --section-accent-color: var(--theme-accent-5, var(--border-color));
+  }
+
+  &:nth-of-type(6) {
+    --section-accent-color: var(--theme-accent-6, var(--border-color));
+  }
+
+  &:nth-of-type(7) {
+    --section-accent-color: var(--theme-accent-1, var(--border-color));
+  }
+
+  &:nth-of-type(8) {
+    --section-accent-color: var(--theme-accent-2, var(--border-color));
+  }
 }
+
+/* === SECTION VARIANTS === */
 
 .resume-section--summary {
   border-block-start: 0;
@@ -97,84 +186,12 @@
   }
 }
 
+.resume-section--experience {
+  border-block-start: 0;
+  padding-block-start: var(--experience-section-padding-block-start);
+}
+
 .resume-section--ashby {
   border-block-start: var(--section-ashby-border-block-start, none);
   padding-block-start: var(--section-ashby-padding-block-start, 0);
-}
-
-/* === SECTION PSEUDO-ELEMENTS === */
-
-.resume-section::before {
-  content: var(--section-before-content, none);
-  display: var(--section-before-display, none);
-  position: var(--section-before-position, static);
-  inset: var(--section-before-inset, auto);
-  width: var(--section-before-width, auto);
-  height: var(--section-before-height, auto);
-  border-style: var(--section-before-border-style, none);
-  border-width: var(--section-before-border-width, 0);
-  border-color: var(--section-before-border-color, transparent);
-  pointer-events: var(--section-before-pointer-events, auto);
-}
-
-.resume-section::after {
-  content: var(--section-after-content, none);
-  display: var(--section-after-display, none);
-  position: var(--section-after-position, static);
-  inset: var(--section-after-inset, auto);
-  width: var(--section-after-width, auto);
-  height: var(--section-after-height, auto);
-  border-style: var(--section-after-border-style, none);
-  border-width: var(--section-after-border-width, 0);
-  border-color: var(--section-after-border-color, transparent);
-  box-shadow: var(--section-after-box-shadow, none);
-  pointer-events: var(--section-after-pointer-events, auto);
-}
-
-/* === SECTION TEXT === */
-
-.resume-section__text {
-  font-size: var(--section-text-font-size, 0.95rem);
-  line-height: var(--section-text-line-height, 1.6);
-  color: var(--section-text-color, inherit);
-  letter-spacing: var(--section-text-letter-spacing, normal);
-
-  &:not(:last-child) {
-    margin-block-end: var(--section-text-margin-block-end, 0.9rem);
-  }
-}
-
-/* === SECTION CONTENT === */
-
-.resume-section__content {
-  padding-inline: var(--section-content-padding-inline, 0);
-  background: var(--section-content-background, transparent);
-}
-
-/* === SECTION ACCENT COLOR ROTATION === */
-/* Assign accent colors to sections for themes to use */
-
-.resume-section:nth-of-type(1) {
-  --section-accent-color: var(--theme-accent-1, var(--border-color));
-}
-.resume-section:nth-of-type(2) {
-  --section-accent-color: var(--theme-accent-2, var(--border-color));
-}
-.resume-section:nth-of-type(3) {
-  --section-accent-color: var(--theme-accent-3, var(--border-color));
-}
-.resume-section:nth-of-type(4) {
-  --section-accent-color: var(--theme-accent-4, var(--border-color));
-}
-.resume-section:nth-of-type(5) {
-  --section-accent-color: var(--theme-accent-5, var(--border-color));
-}
-.resume-section:nth-of-type(6) {
-  --section-accent-color: var(--theme-accent-6, var(--border-color));
-}
-.resume-section:nth-of-type(7) {
-  --section-accent-color: var(--theme-accent-1, var(--border-color));
-}
-.resume-section:nth-of-type(8) {
-  --section-accent-color: var(--theme-accent-2, var(--border-color));
 }
