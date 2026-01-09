@@ -462,6 +462,7 @@
   --resume-header-after-background: transparent;
 
   /* === SCROLLBAR STYLING === */
+  /* Webkit properties (primary - full customization) */
   --scrollbar-width: auto;
   --scrollbar-height: auto;
   --scrollbar-track-background: transparent;
@@ -473,4 +474,9 @@
   --scrollbar-button-border: none;
   --scrollbar-button-height: auto;
   --scrollbar-button-width: auto;
+
+  /* Standard properties fallback (Firefox and non-webkit browsers) */
+  --scrollbar-width-value: auto; /* auto | thin | none */
+  --scrollbar-thumb-color: auto;
+  --scrollbar-track-color: auto;
 }

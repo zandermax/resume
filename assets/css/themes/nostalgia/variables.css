@@ -50,6 +50,7 @@ Nostalgia Theme Variables
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - bright 90s web aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 16px;
   --scrollbar-height: 16px;
   --scrollbar-track-background: var(--nostalgia-cyan);
@@ -71,4 +72,9 @@ Nostalgia Theme Variables
   --scrollbar-button-border: 3px solid var(--nostalgia-yellow);
   --scrollbar-button-height: 16px;
   --scrollbar-button-width: 16px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: auto;
+  --scrollbar-thumb-color: var(--nostalgia-orange);
+  --scrollbar-track-color: var(--nostalgia-cyan);
 }

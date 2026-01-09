@@ -434,6 +434,7 @@ Common properties for all modes
      =========================== */
 
   /* Scrollbar styling - chromatic aberration glitch effect (base values, overridden in dark/light mode) */
+  /* Webkit (primary - with chromatic aberration in extras.css) */
   --scrollbar-width: 14px;
   --scrollbar-height: 14px;
   --scrollbar-track-background: transparent;
@@ -445,4 +446,9 @@ Common properties for all modes
   --scrollbar-button-border: var(--border-width-md) solid var(--border-color);
   --scrollbar-button-height: 14px;
   --scrollbar-button-width: 14px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: var(--text-color);
+  --scrollbar-track-color: transparent;
 }

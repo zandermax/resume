@@ -28,6 +28,7 @@ XP Theme - Dark Mode
   --ds-line-stroke: var(--color-black);
 
   /* Scrollbar styling (dark mode) */
+  /* Webkit (primary) */
   --scrollbar-track-background: oklch(30% 0.06 250);
   --scrollbar-track-border: 1px solid oklch(45% 0.08 245);
   --scrollbar-thumb-background: linear-gradient(
@@ -45,4 +46,8 @@ XP Theme - Dark Mode
   );
   --scrollbar-button-background: oklch(42% 0.08 250);
   --scrollbar-button-border: 1px solid oklch(20% 0.08 250);
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: oklch(35% 0.08 250);
+  --scrollbar-track-color: oklch(30% 0.06 250);
 }

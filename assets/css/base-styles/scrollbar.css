@@ -3,48 +3,79 @@ Base Styles - Scrollbar
 =========================== */
 
 /**
- * Scrollbar styling for webkit browsers (Chrome, Safari, Edge)
+ * Modern scrollbar styling with progressive enhancement
+ *
+ * STRATEGY:
+ *   1. Webkit pseudo-elements (primary) - Full customization when available
+ *   2. Standard properties (fallback) - Simple color/width when webkit unavailable
+ *   3. Browser defaults - When neither is supported
  *
  * HTML ELEMENTS AFFECTED:
- *   - ::-webkit-scrollbar (scrollbar track container)
- *   - ::-webkit-scrollbar-track (scrollbar track)
- *   - ::-webkit-scrollbar-thumb (scrollbar thumb/handle)
- *   - ::-webkit-scrollbar-button (scrollbar arrow buttons)
+ *   - html (scrollbar-gutter to prevent layout shift)
+ *   - ::-webkit-scrollbar (primary - Chrome, Safari, Edge, Opera)
+ *   - ::-webkit-scrollbar-track (primary)
+ *   - ::-webkit-scrollbar-thumb (primary)
+ *   - ::-webkit-scrollbar-button (primary)
+ *   - html (fallback - Firefox and non-webkit browsers with standard support)
  *
  * DEPENDENCIES:
  *   - variables-layout.css (defines --scrollbar-* custom properties)
  *
  * USAGE:
- *   Themes can override scrollbar appearance by setting custom properties:
- *   --scrollbar-width, --scrollbar-height
- *   --scrollbar-track-background, --scrollbar-track-border
- *   --scrollbar-thumb-background, --scrollbar-thumb-border, --scrollbar-thumb-hover-background
- *   --scrollbar-button-background, --scrollbar-button-border, --scrollbar-button-height, --scrollbar-button-width
+ *   Themes should define both sets of properties for maximum compatibility:
+ *
+ *   Webkit properties (primary - full control):
+ *     --scrollbar-width, --scrollbar-height
+ *     --scrollbar-track-background, --scrollbar-track-border
+ *     --scrollbar-thumb-background, --scrollbar-thumb-border, --scrollbar-thumb-hover-background
+ *     --scrollbar-button-background, --scrollbar-button-border, --scrollbar-button-height, --scrollbar-button-width
+ *
+ *   Standard properties (fallback - simple colors):
+ *     --scrollbar-width-value (auto | thin | none)
+ *     --scrollbar-thumb-color, --scrollbar-track-color
  */
 
-::-webkit-scrollbar {
-  width: var(--scrollbar-width);
-  height: var(--scrollbar-height);
+/* Reserve scrollbar space to prevent layout shift when overflow is toggled */
+/* (e.g. when dialogs/modals disable scrolling) */
+html:has(dialog[open]) {
+  scrollbar-gutter: stable;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track-background);
-  border: var(--scrollbar-track-border);
-}
+/* Webkit pseudo-elements (primary) - Chrome, Safari, Edge, Opera */
+/* Full customization: gradients, borders, buttons, hover states */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-height);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-background);
-  border: var(--scrollbar-thumb-border);
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-background);
+    border: var(--scrollbar-track-border);
+  }
 
-  &:hover {
-    background: var(--scrollbar-thumb-hover-background);
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-background);
+    border: var(--scrollbar-thumb-border);
+
+    &:hover {
+      background: var(--scrollbar-thumb-hover-background);
+    }
+  }
+
+  ::-webkit-scrollbar-button {
+    background: var(--scrollbar-button-background);
+    border: var(--scrollbar-button-border);
+    height: var(--scrollbar-button-height);
+    width: var(--scrollbar-button-width);
   }
 }
 
-::-webkit-scrollbar-button {
-  background: var(--scrollbar-button-background);
-  border: var(--scrollbar-button-border);
-  height: var(--scrollbar-button-height);
-  width: var(--scrollbar-button-width);
+/* Standard properties fallback (Firefox and browsers without webkit support) */
+/* Simple color and width control only */
+@supports (not selector(::-webkit-scrollbar)) and (scrollbar-color: auto) {
+  html {
+    scrollbar-width: var(--scrollbar-width-value, auto);
+    scrollbar-color: var(--scrollbar-thumb-color, auto) var(--scrollbar-track-color, auto);
+  }
 }
-

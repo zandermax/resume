@@ -258,6 +258,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - modern dashboard aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 10px;
   --scrollbar-height: 10px;
   --scrollbar-track-background: var(--panel-bg);
@@ -269,6 +270,11 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --scrollbar-button-border: 1px solid var(--panel-border);
   --scrollbar-button-height: 10px;
   --scrollbar-button-width: 10px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: var(--accent-color);
+  --scrollbar-track-color: var(--panel-bg);
 
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 

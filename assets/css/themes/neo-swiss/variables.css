@@ -336,6 +336,7 @@ Ultra-modern minimalism with mathematical precision
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - ultra-minimal with grid-based precision (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: var(--spacing-1); /* 8px - 1 grid unit */
   --scrollbar-height: var(--spacing-1); /* 8px - 1 grid unit */
   --scrollbar-track-background: transparent;
@@ -347,4 +348,9 @@ Ultra-modern minimalism with mathematical precision
   --scrollbar-button-border: none;
   --scrollbar-button-height: var(--spacing-1); /* 8px */
   --scrollbar-button-width: var(--spacing-1); /* 8px */
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: var(--accent-color);
+  --scrollbar-track-color: transparent;
 }

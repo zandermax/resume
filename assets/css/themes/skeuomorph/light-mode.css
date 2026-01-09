@@ -90,6 +90,7 @@ SKEUOMORPH Theme - Light Mode Variables
   --sticky-note-shadow: 0 4px 6px var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
 
   /* Scrollbar styling - light metallic 3D with warm tones */
+  /* Webkit (primary) */
   --scrollbar-track-background: linear-gradient(
     90deg,
     oklch(0.78 0.04 70) 0%,
@@ -122,4 +123,8 @@ SKEUOMORPH Theme - Light Mode Variables
     oklch(0.6 0.06 70) 100%
   );
   --scrollbar-button-border: 1px solid oklch(0.5 0.04 65);
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: oklch(0.72 0.08 75);
+  --scrollbar-track-color: oklch(0.815 0.045 72.5);
 }

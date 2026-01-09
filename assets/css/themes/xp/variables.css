@@ -39,6 +39,7 @@ XP Theme - Common Variables
   --link-hover-border-block-end-color: var(--xp-start-green);
 
   /* Scrollbar styling (XP theme) */
+  /* Webkit (primary) - full XP gradient styling */
   --scrollbar-width: 16px;
   --scrollbar-height: 16px;
   --scrollbar-track-background: oklch(94% 0.01 85);
@@ -60,6 +61,11 @@ XP Theme - Common Variables
   --scrollbar-button-border: 1px solid oklch(51% 0.01 85);
   --scrollbar-button-height: 16px;
   --scrollbar-button-width: 16px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: auto;
+  --scrollbar-thumb-color: oklch(86% 0.01 85);
+  --scrollbar-track-color: oklch(94% 0.01 85);
 
   /* Experience item custom properties */
   --experience-item-background: var(--section-bg);

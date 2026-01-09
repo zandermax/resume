@@ -26,6 +26,7 @@ Amber CRT Display
   --crt-glow: oklch(20% 0.08 60 / 0.1); /* Dark glow */
 
   /* Scrollbar styling with amber glow */
+  /* Webkit (primary) */
   --scrollbar-track-background: oklch(85% 0.2 50 / 0.5);
   --scrollbar-track-border: 1px solid oklch(20% 0.08 60);
   --scrollbar-thumb-background: oklch(20% 0.08 60);
@@ -33,4 +34,8 @@ Amber CRT Display
   --scrollbar-thumb-hover-background: oklch(35% 0.12 55); /* Slightly lighter on hover */
   --scrollbar-button-background: oklch(85% 0.2 50 / 0.5);
   --scrollbar-button-border: 1px solid oklch(20% 0.08 60);
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: oklch(20% 0.08 60);
+  --scrollbar-track-color: oklch(85% 0.2 50 / 0.5);
 }

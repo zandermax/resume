@@ -311,6 +311,7 @@ Flat Design / Material Zero
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - flat, minimal Metro aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 10px;
   --scrollbar-height: 10px;
   --scrollbar-track-background: transparent;
@@ -322,4 +323,9 @@ Flat Design / Material Zero
   --scrollbar-button-border: none;
   --scrollbar-button-height: 10px;
   --scrollbar-button-width: 10px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: var(--accent-color);
+  --scrollbar-track-color: transparent;
 }

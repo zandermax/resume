@@ -251,6 +251,7 @@ WEB 2.0 GLOSS Theme - Variables
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - glossy Web 2.0 aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 12px;
   --scrollbar-height: 12px;
   --scrollbar-track-background: linear-gradient(
@@ -281,4 +282,9 @@ WEB 2.0 GLOSS Theme - Variables
   --scrollbar-button-border: 1px solid oklch(0% 0 0 / 0.2);
   --scrollbar-button-height: 12px;
   --scrollbar-button-width: 12px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: oklch(68% 0.18 215);
+  --scrollbar-track-color: oklch(94% 0 0 / 0.4);
 }

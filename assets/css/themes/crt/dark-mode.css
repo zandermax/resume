@@ -23,6 +23,7 @@ Green CRT Display
   --crt-glow: var(--color-green / 0.2); /* Brighter green glow */
 
   /* Scrollbar styling with green glow */
+  /* Webkit (primary) */
   --scrollbar-track-background: oklch(0% 0 0 / 0.5);
   --scrollbar-track-border: 1px solid var(--color-green);
   --scrollbar-thumb-background: var(--color-green);
@@ -30,5 +31,9 @@ Green CRT Display
   --scrollbar-thumb-hover-background: oklch(94% 0.29 142); /* Brighter green on hover */
   --scrollbar-button-background: oklch(0% 0 0 / 0.5);
   --scrollbar-button-border: 1px solid var(--color-green);
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: var(--color-green);
+  --scrollbar-track-color: oklch(0% 0 0 / 0.5);
 }
 

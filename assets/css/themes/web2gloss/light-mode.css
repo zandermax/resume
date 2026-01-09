@@ -62,6 +62,7 @@ WEB 2.0 GLOSS Theme - Light Mode
   --web2-text-shadow-lg: 0 1px 3px oklch(0% 0 0 / 0.3);
 
   /* Scrollbar styling - glossy light mode */
+  /* Webkit (primary) */
   --scrollbar-track-background: linear-gradient(
     180deg,
     oklch(95% 0.01 230 / 0.4) 0%,
@@ -87,4 +88,8 @@ WEB 2.0 GLOSS Theme - Light Mode
     oklch(85% 0.13 240) 0%,
     oklch(72% 0.15 245) 100%
   );
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: oklch(60% 0.17 245);
+  --scrollbar-track-color: oklch(96.5% 0.01 230 / 0.5);
 }

@@ -190,6 +190,7 @@ Classic cathode ray tube monitor aesthetic
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - glowing CRT aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 14px;
   --scrollbar-height: 14px;
   --scrollbar-track-background: transparent;
@@ -201,4 +202,9 @@ Classic cathode ray tube monitor aesthetic
   --scrollbar-button-border: 1px solid currentColor;
   --scrollbar-button-height: 14px;
   --scrollbar-button-width: 14px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: currentColor;
+  --scrollbar-track-color: transparent;
 }

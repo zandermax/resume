@@ -38,6 +38,7 @@
 body {
   /* Display/Box Model */
   min-width: var(--min-screen-width);
+  height: 100vh;
 
   /* Typography */
   font-family: var(--font-family);

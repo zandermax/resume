@@ -233,6 +233,7 @@ SKEUOMORPH Theme - Base Variables
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - 3D metallic skeuomorphic aesthetic (base values, overridden in dark/light mode) */
+  /* Webkit (primary) */
   --scrollbar-width: 14px;
   --scrollbar-height: 14px;
   --scrollbar-track-background: linear-gradient(
@@ -256,4 +257,9 @@ SKEUOMORPH Theme - Base Variables
   --scrollbar-button-border: 1px solid var(--skeu-black-30);
   --scrollbar-button-height: 14px;
   --scrollbar-button-width: 14px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: oklch(0.77 0.13 85);
+  --scrollbar-track-color: oklch(0.84 0.065 87.5);
 }

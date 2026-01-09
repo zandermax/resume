@@ -349,6 +349,7 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   /* ==================== SCROLLBAR ==================== */
 
   /* Scrollbar styling - bold brutalist aesthetic */
+  /* Webkit (primary) */
   --scrollbar-width: 18px;
   --scrollbar-height: 18px;
   --scrollbar-track-background: var(--background-color);
@@ -360,5 +361,10 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --scrollbar-button-border: var(--border-width-thick) solid var(--border-color);
   --scrollbar-button-height: 18px;
   --scrollbar-button-width: 18px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: auto;
+  --scrollbar-thumb-color: var(--accent-color);
+  --scrollbar-track-color: var(--background-color);
 }
 

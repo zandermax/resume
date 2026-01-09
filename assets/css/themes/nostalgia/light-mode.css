@@ -49,6 +49,7 @@ Nostalgia Theme - Light Mode
   --printlink-hover-text-shadow: 2px 2px 6px oklch(0% 0 0 / 0.7);
 
   /* Scrollbar styling - light mode with hot pink and orange */
+  /* Webkit (primary) */
   --scrollbar-track-background: var(--nostalgia-yellow);
   --scrollbar-track-border: 3px solid var(--nostalgia-hot-pink);
   --scrollbar-thumb-background: linear-gradient(
@@ -65,4 +66,8 @@ Nostalgia Theme - Light Mode
   );
   --scrollbar-button-background: var(--nostalgia-hot-pink);
   --scrollbar-button-border: 3px solid var(--nostalgia-blue);
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-thumb-color: var(--nostalgia-orange);
+  --scrollbar-track-color: var(--nostalgia-yellow);
 }

@@ -160,6 +160,7 @@ TERMINAL Theme - Common Variables
   --p-li-line-height: 1.6;
 
   /* Scrollbar styling - blocky terminal aesthetic */
+  /* Webkit (primary) */
   --scrollbar-width: 12px;
   --scrollbar-height: 12px;
   --scrollbar-track-background: var(--terminal-window-bg);
@@ -171,4 +172,9 @@ TERMINAL Theme - Common Variables
   --scrollbar-button-border: 2px solid var(--terminal-border-dark);
   --scrollbar-button-height: 12px;
   --scrollbar-button-width: 12px;
+
+  /* Standard fallback (Firefox) */
+  --scrollbar-width-value: thin;
+  --scrollbar-thumb-color: var(--terminal-button-bg);
+  --scrollbar-track-color: var(--terminal-window-bg);
 }
