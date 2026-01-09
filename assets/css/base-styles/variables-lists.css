@@ -13,25 +13,48 @@
  * RELATED FILES:
  *   - lists.css (applies these variables)
  *
- * VARIABLES DEFINED: ~35 variables controlling:
+ * VARIABLES DEFINED: 33 variables controlling:
+ *   - Theme accent colors (shared across components)
  *   - List containers (borders, backgrounds, padding)
  *   - Community items (solid borders, padding, hover states)
  *   - Principles items (dashed borders, padding, hover states)
  *   - List item pseudo-elements for decorations
  *
  * VARIABLE PATTERNS:
+ *   - All defaults are defined here with concrete values
+ *   - Zero inline fallbacks in lists.css
+ *   - Shorthand properties only (no shorthand/longhand conflicts)
+ *   - Position values are hardcoded in selectors (not via custom props)
  *   - Shared border colors: --list-item-border-color and --list-item-border-inline-start-color
  *     provide base colors that both community and principles items can reference
+ *   - Pseudo-element positioning: Both community and principles items use shared
+ *     --list-item-before-left and --list-item-before-top for consistency
+ *
+ * THEME CUSTOMIZATION:
+ *   - Use shorthand properties for border and background
+ *   - Define --theme-accent-1 through --theme-accent-4 for accent color rotation
  */
 
 :root {
+  /* === THEME ACCENT COLORS === */
+  /* Used for accent color rotation on list items and other components */
+  --theme-accent-1: var(--border-color);
+  --theme-accent-2: var(--border-color);
+  --theme-accent-3: var(--border-color);
+  --theme-accent-4: var(--border-color);
+
   /* === LIST CONTAINERS === */
+  /* Border properties */
   --list-border: 0;
   --list-border-radius: 0;
-  --list-background: transparent;
+
+  /* Visual properties */
+  --list-background: var(--section-bg);
   --list-box-shadow: none;
+
+  /* Layout properties */
   --list-padding: 0;
-  --list-position: relative;
+  --list-overflow: visible;
 
   /* === LIST CONTAINER PSEUDO-ELEMENTS === */
   --list-before-content: none;
@@ -49,37 +72,52 @@
   --list-item-border-inline-start-color: var(--border-color);
 
   /* === COMMUNITY LIST ITEMS === */
-  --community-item-border-style: solid;
-  --community-item-border-width: 1px;
-  --community-item-border-inline-start: none;
-  --community-item-padding: 0.6rem 0.75rem;
-  --community-item-padding-responsive-500: var(--community-item-padding);
+  /* Typography */
   --community-item-font-size: 0.9rem;
   --community-item-font-weight: normal;
   --community-item-line-height: 1.5;
+
+  /* Spacing */
+  --community-item-padding: 0.6rem 0.75rem;
+  --community-item-padding-responsive-500: var(--community-item-padding);
   --community-item-margin-bottom: 0;
-  --community-item-margin-top: 0;
+
+  /* Borders */
+  --community-item-border-style: solid;
+  --community-item-border-width: 1px;
+  --community-item-border-inline-start: none;
+  --community-item-border-radius: 0;
+
+  /* Visual */
   --community-item-background: transparent;
   --community-item-box-shadow: none;
-  --community-item-border-radius: 0;
-  --community-item-position: relative;
+
+  /* Layout */
   --community-item-transition: none;
 
   /* === PRINCIPLES LIST ITEMS === */
-  --principles-item-border-style: dashed;
-  --principles-item-border-width: 1px;
-  --principles-item-border-inline-start: none;
-  --principles-item-padding: 0.25rem 0;
-  --principles-item-padding-responsive-500: var(--principles-item-padding);
+  /* Typography */
   --principles-item-font-size: 0.9rem;
   --principles-item-font-weight: normal;
   --principles-item-line-height: 1.4;
+
+  /* Spacing */
+  --principles-item-padding: 0.25rem 0;
+  --principles-item-padding-responsive-500: var(--principles-item-padding);
   --principles-item-margin-bottom: 0;
   --principles-item-margin-top: 0;
+
+  /* Borders */
+  --principles-item-border-style: dashed;
+  --principles-item-border-width: 1px;
+  --principles-item-border-inline-start: none;
+  --principles-item-border-radius: 0;
+
+  /* Visual */
   --principles-item-background: transparent;
   --principles-item-box-shadow: none;
-  --principles-item-border-radius: 0;
-  --principles-item-position: relative;
+
+  /* Layout */
   --principles-item-transition: none;
 
   /* === LIST ITEM PSEUDO-ELEMENTS === */
@@ -91,17 +129,18 @@
   --list-item-before-font-weight: normal;
   --list-item-before-font-size: inherit;
 
-  /* === COMMUNITY ITEM PSEUDO-ELEMENT (specific positioning) === */
-  --community-item-before-left: var(--list-item-before-left);
-  --community-item-before-top: var(--list-item-before-top);
-
   /* === LIST ITEM HOVER STATES === */
+  /* Shared hover effects */
   --list-item-hover-transform: none;
   --list-item-hover-box-shadow: none;
   --list-item-hover-filter: none;
+
+  /* Community item hover states */
   --community-item-hover-border-inline-start-width: inherit;
   --community-item-hover-border-inline-start-color: inherit;
   --community-item-hover-padding-inline-start: inherit;
+
+  /* Principles item hover states */
   --principles-item-hover-border-inline-start-width: inherit;
   --principles-item-hover-border-inline-start-color: inherit;
   --principles-item-hover-padding-inline-start: inherit;

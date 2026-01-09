@@ -292,7 +292,6 @@ Common properties for all modes
   --community-item-padding: var(--spacing-md);
   --community-item-margin-bottom: var(--spacing-sm);
   --community-item-background: var(--section-bg);
-  --community-item-border: var(--border-width-sm) solid var(--border-color);
   --community-item-border-width: var(--border-width-sm);
   --community-item-border-style: solid;
   --community-item-position: relative;
@@ -300,7 +299,6 @@ Common properties for all modes
   --principles-item-padding: var(--spacing-md);
   --principles-item-margin-bottom: var(--spacing-sm);
   --principles-item-background: var(--section-bg);
-  --principles-item-border: var(--border-width-sm) solid var(--border-color);
   --principles-item-border-width: var(--border-width-sm);
   --principles-item-border-style: solid;
   --principles-item-position: relative;

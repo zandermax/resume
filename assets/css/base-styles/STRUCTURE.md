@@ -16,7 +16,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `variables-layout.css` (~308 lines) - Main container, header, section variables
 - `variables-skills.css` (~97 lines) - Skills grid variables
 - `variables-experience.css` (~197 lines) - Experience items, tech badges, bullets
-- `variables-lists.css` (~85 lines) - Community and principles lists
+- `variables-lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
 - `variables-education.css` (~60 lines) - Education section
 - `variables-buttons.css` (~179 lines) - Print/save buttons, dial selector
 
@@ -29,7 +29,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `title.css` (~95 lines) - Section title styling
 - `skills.css` (~115 lines) - Skills grid component
 - `experience.css` (~275 lines) - Experience items
-- `lists.css` (~163 lines) - Community/principles lists
+- `lists.css` (~319 lines) - Community/principles lists (native CSS nesting, zero fallbacks)
 - `components/education.css` (~108 lines) - Education component
 
 ### Entry Point
@@ -367,6 +367,46 @@ Do not redefine in themes if exactly matching base default:
 - ✗ `--main-overflow: visible`
 - ✗ `--main-filter: none`
 - ✗ Any `--resume-main-before-*` or `--resume-main-after-*` set to base default
+
+## List Customization Best Practices
+
+### Border Property Patterns
+
+For community and principles list items:
+
+- **Use longhand properties**: `--community-item-border-width`, `--community-item-border-style`
+- **Avoid shorthand**: Do not use `--community-item-border` or `--principles-item-border` in themes
+- **Share colors**: Use `--list-item-border-color` for both community and principles items
+
+### Pseudo-Element Positioning
+
+Both community and principles items share the same pseudo-element positioning variables:
+
+- `--list-item-before-left` - Horizontal position
+- `--list-item-before-top` - Vertical position
+- `--list-item-before-position` - Positioning context (absolute, relative, etc.)
+
+Do not create item-specific positioning variables like `--community-item-before-left`. Use the shared variables for consistency.
+
+### Theme Accent Color Rotation
+
+List items support automatic accent color rotation via `--item-accent-color`:
+
+- Define `--theme-accent-1` through `--theme-accent-4` in your theme
+- Colors automatically rotate per nth-child (2n, 3n, 4n)
+- Used by `--list-item-border-inline-start-color` for side accent bars
+- Falls back to `--border-color` if theme accents not defined
+
+Example theme setup:
+
+```css
+:root[data-theme='mytheme'] {
+  --theme-accent-1: oklch(60% 0.2 200);
+  --theme-accent-2: oklch(60% 0.2 250);
+  --theme-accent-3: oklch(60% 0.2 300);
+  --theme-accent-4: oklch(60% 0.2 350);
+}
+```
 
 ## Adding New Components
 

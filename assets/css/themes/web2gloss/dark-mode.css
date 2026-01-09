@@ -55,9 +55,8 @@ WEB 2.0 GLOSS Theme - Dark Mode
 
   /* Community/Principles list item custom properties - dark mode overrides */
   --community-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
-  --community-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
+  --list-item-border-color: oklch(82% 0.13 210 / 0.15);
   --principles-item-background: linear-gradient(180deg, oklch(62% 0.17 240 / 0.2) 0%, oklch(57% 0.18 245 / 0.1) 100%);
-  --principles-item-border: 1px solid oklch(82% 0.13 210 / 0.15);
 
   /* Experience and Education items - dark mode overrides */
   --experience-item-background: linear-gradient(180deg, oklch(30% 0.06 250 / 0.6) 0%, oklch(18% 0.04 250 / 0.4) 100%);

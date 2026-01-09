@@ -207,9 +207,9 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* List Item - Base */
   --principles-item-background: var(--panel-bg);
-  --principles-item-border: 1px solid var(--panel-border);
+  --principles-item-border-width: 1px;
   --principles-item-border-style: solid;
-  --principles-item-border-width: 0;
+  --list-item-border-color: var(--panel-border);
   --principles-item-border-radius: 6px;
   --principles-item-padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
   --principles-item-margin-top: var(--spacing-sm);
@@ -219,15 +219,11 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* List Item - Pseudo-element (checkmark) */
   --list-item-before-content: '✓';
   --list-item-before-position: absolute;
-  --list-item-before-left: 0.1rem;
-  --list-item-before-top: 0.75rem;
+  --list-item-before-left: -0.25rem;
+  --list-item-before-top: 0.5rem;
   --list-item-before-color: var(--status-green);
   --list-item-before-font-weight: 700;
   --list-item-before-font-size: 1rem;
-
-  /* Community List Item - Positioning adjustments */
-  --community-item-before-left: -0.25rem;
-  --community-item-before-top: 0.5rem;
 
   /* ==================== PRINT LINK ==================== */
 

@@ -100,20 +100,19 @@ WEB 2.0 GLOSS Theme - Variables
   --community-item-padding: var(--spacing-md);
   --community-item-margin-bottom: var(--spacing-sm);
   --community-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
-  --community-item-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.05);
+  --community-item-border-width: var(--border-width-thin);
+  --community-item-border-style: solid;
+  --list-item-border-color: oklch(0% 0 0 / 0.05);
   --community-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
   --community-item-transition: var(--web2-transition-fast);
-  --community-item-border-width: 0;
-  --community-item-border-style: solid;
   --principles-item-border-radius: var(--web2-radius-sm);
   --principles-item-padding: 1rem;
   --principles-item-margin-bottom: 0.75rem;
   --principles-item-background: linear-gradient(180deg, oklch(100% 0 0 / 0.6) 0%, oklch(100% 0 0 / 0.3) 100%);
-  --principles-item-border: 1px solid oklch(0% 0 0 / 0.05);
+  --principles-item-border-width: 1px;
+  --principles-item-border-style: solid;
   --principles-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
   --principles-item-transition: var(--web2-transition-fast);
-  --principles-item-border-width: 0;
-  --principles-item-border-style: solid;
 
   /* Header name custom properties */
   --header-name-font-size: 3rem;

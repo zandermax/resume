@@ -215,9 +215,7 @@ Flat Design / Material Zero
   --list-box-shadow: none;
 
   /* Community/Principles list item custom properties */
-  --community-item-border: 0;
   --community-item-border-width: 0;
-  --community-item-border-style: solid;
   --community-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
   --community-item-padding: 1rem 0 1rem 1.5rem;
   --community-item-margin-bottom: 1rem;
@@ -227,9 +225,7 @@ Flat Design / Material Zero
   --community-item-transition: all 0.15s ease;
   --community-item-hover-border-inline-start-width: 8px;
   --community-item-hover-padding-inline-start: var(--spacing-md);
-  --principles-item-border: 0;
   --principles-item-border-width: 0;
-  --principles-item-border-style: solid;
   --principles-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
   --principles-item-padding: 1rem 0 1rem 1.5rem;
   --principles-item-margin-bottom: 1rem;

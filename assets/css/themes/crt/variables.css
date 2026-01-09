@@ -97,6 +97,11 @@ Classic cathode ray tube monitor aesthetic
   --tech-badge-after-display: inline;
   --tech-badge-after-margin-inline-start: 2px;
 
+  /* Bullet Pseudo-elements */
+  --bullet-before-content: '>';
+  --bullet-font-size: 0.8rem;
+  --bullet-margin-inline-start: 0.5rem;
+
   /* ==================== SKILLS SECTION ==================== */
 
   /* Skills Grid */
@@ -134,27 +139,17 @@ Classic cathode ray tube monitor aesthetic
   --list-background: transparent;
   --list-padding: 0;
 
-  /* List Items */
-  --list-item-border-width: 1px;
-  --list-item-border-style: dotted;
-  --list-item-border-color: currentColor;
-  --list-item-padding: 0.75rem 0;
-
   /* Community Items */
-  --community-item-border: 0;
-  --community-item-border-width: 0;
-  --community-item-border-style: solid;
+  --community-item-border-width: 1px;
+  --community-item-border-style: dotted;
+  --community-item-padding: 0.75rem 0;
   --community-item-hover-padding-inline-start: 0.75rem;
+  --list-item-border-color: currentColor;
 
   /* Principles Items */
-  --principles-item-border: 0;
-  --principles-item-border-width: 0;
-  --principles-item-border-style: solid;
-
-  /* Bullet Pseudo-elements */
-  --bullet-before-content: '>';
-  --bullet-font-size: 0.8rem;
-  --bullet-margin-inline-start: 0.5rem;
+  --principles-item-border-width: 1px;
+  --principles-item-border-style: dotted;
+  --principles-item-padding: 0.75rem 0;
 
   /* ==================== PRINT LINK ==================== */
 

@@ -1,212 +1,319 @@
 /**
  * Community and principles lists (Why Ashby, How I Work sections)
  *
- * HTML ELEMENTS AFFECTED:
- *   - .community-list (container for "Open Source & Community" section)
- *   - .community-list__item (individual community/open source items)
- *   - .principles-list (container for "Why Ashby" and "How I Work" sections)
- *   - .principles-list__item (individual principle/value items)
+ * HTML STRUCTURE:
+ *   <ul class="community-list">
+ *     <li class="community-list__item">...</li>
+ *   </ul>
+ *
+ *   <ul class="principles-list">
+ *     <li class="principles-list__item">...</li>
+ *   </ul>
  *
  * DEPENDENCIES:
  *   - variables-lists.css (all list-specific variables)
  *   - variables-base.css (uses --border-color, --section-bg)
  *   - sections.css (lists are section children)
+ *
+ * PROPERTY POLICY:
+ *   - This file contains ZERO inline fallbacks
+ *   - All defaults are defined in variables-lists.css
+ *   - Nested variable references are resolved at the variable definition level
+ *   - Shorthand properties only (border, background) - no longhand conflicts
+ *   - Position values hardcoded as 'relative' (not via custom props)
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ *
+ * THEME ACCENT COLOR ROTATION:
+ *   - List items use --item-accent-color which rotates based on nth-child
+ *   - Themes can define --theme-accent-1 through --theme-accent-4 for custom accent colors
+ *   - Defaults to --border-color if theme accents are not defined
+ *   - Used by --list-item-border-inline-start-color for side accent bars
  */
 
-/* === COMMUNITY LIST === */
+/* ============================================
+   COMMUNITY LIST
+   ============================================ */
 
 .community-list {
+  /* Position */
+  position: relative;
+
+  /* Display/Box Model */
   list-style: none;
-  padding: var(--list-padding, 0);
+  padding: var(--list-padding);
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  border-block-start: var(--list-border-block-start, var(--list-border, 3px solid var(--border-color)));
-  border-block-end: var(--list-border-block-end, var(--list-border, 3px solid var(--border-color)));
-  border-inline-start: var(--list-border-inline-start, var(--list-border, 3px solid var(--border-color)));
-  border-inline-end: var(--list-border-inline-end, var(--list-border, 3px solid var(--border-color)));
-  border-radius: var(--list-border-radius, 0);
   box-sizing: border-box;
-  background-color: var(--list-background, var(--section-bg, transparent));
-  background-image: var(--list-background-image);
-  box-shadow: var(--list-box-shadow, none);
-  position: var(--list-position, relative);
-  overflow: var(--list-overflow, visible);
 
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for decorative borders/effects */
+  /* Borders */
+  border: var(--list-border);
+  border-radius: var(--list-border-radius);
 
+  /* Background */
+  background: var(--list-background);
+
+  /* Visual Effects */
+  box-shadow: var(--list-box-shadow);
+
+  /* Other */
+  overflow: var(--list-overflow);
+
+  /* Decorative Pseudo-Element */
   &::before {
     content: var(--list-before-content);
-    display: var(--list-before-display);
+
+    /* Position */
     position: var(--list-before-position);
     inset: var(--list-before-inset);
+
+    /* Display */
+    display: var(--list-before-display);
+
+    /* Borders */
     border: var(--list-before-border);
-    border-radius: var(--list-before-border-radius, 0);
+    border-radius: var(--list-before-border-radius);
+
+    /* Background */
     background: var(--list-before-background);
-    pointer-events: var(--list-before-pointer-events);
+
+    /* Visual Effects */
     opacity: var(--list-before-opacity);
+
+    /* Other */
+    pointer-events: var(--list-before-pointer-events);
+  }
+
+  /* List Items */
+  .community-list__item {
+    /* Custom Property: Accent Color */
+    --item-accent-color: var(--theme-accent-1);
+
+    /* Position */
+    position: relative;
+
+    /* Box Model */
+    padding: var(--community-item-padding);
+    margin-block-start: 0;
+    margin-block-end: var(--community-item-margin-bottom);
+
+    /* Borders */
+    border-block-start: var(--community-item-border-width) var(--community-item-border-style)
+      var(--list-item-border-color);
+    border-inline-start: var(--community-item-border-inline-start);
+    border-inline-start-color: var(--list-item-border-inline-start-color);
+    border-radius: var(--community-item-border-radius);
+
+    /* Background */
+    background: var(--community-item-background);
+
+    /* Typography */
+    font-size: var(--community-item-font-size);
+    font-weight: var(--community-item-font-weight);
+    line-height: var(--community-item-line-height);
+
+    /* Visual Effects */
+    box-shadow: var(--community-item-box-shadow);
+
+    /* Transitions */
+    transition: var(--community-item-transition);
+
+    /* First Item Variant */
+    &:first-child {
+      border-block-start: 0;
+    }
+
+    /* Accent Color Rotation */
+    &:nth-child(2n) {
+      --item-accent-color: var(--theme-accent-2);
+    }
+
+    &:nth-child(3n) {
+      --item-accent-color: var(--theme-accent-3);
+    }
+
+    &:nth-child(4n) {
+      --item-accent-color: var(--theme-accent-4);
+    }
+
+    /* Decorative Pseudo-Element */
+    &::before {
+      content: var(--list-item-before-content);
+
+      /* Position */
+      position: var(--list-item-before-position);
+      top: var(--list-item-before-top);
+      left: var(--list-item-before-left);
+
+      /* Typography */
+      font-size: var(--list-item-before-font-size);
+      font-weight: var(--list-item-before-font-weight);
+      color: var(--list-item-before-color);
+    }
+
+    /* Hover State */
+    &:hover {
+      /* Box Model */
+      padding-inline-start: var(--community-item-hover-padding-inline-start);
+
+      /* Borders */
+      border-inline-start-width: var(--community-item-hover-border-inline-start-width);
+      border-inline-start-color: var(--community-item-hover-border-inline-start-color);
+
+      /* Visual Effects */
+      box-shadow: var(--list-item-hover-box-shadow);
+      transform: var(--list-item-hover-transform);
+      filter: var(--list-item-hover-filter);
+    }
   }
 }
 
-.community-list__item {
-  /* Set default accent color, overridden by nth-child below */
-  --item-accent-color: var(--theme-accent-1, var(--border-color));
-
-  font-size: var(--community-item-font-size, 0.9rem);
-  font-weight: var(--community-item-font-weight, normal);
-  line-height: var(--community-item-line-height, 1.5);
-  padding: var(--community-item-padding, 0.6rem 0.75rem);
-  border-block-start: var(--community-item-border-width, 1px) var(--community-item-border-style, solid)
-    var(--list-item-border-color, var(--border-color));
-  border-inline-start: var(--community-item-border-inline-start, none);
-  border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
-  margin-block-end: var(--community-item-margin-bottom, 0);
-  margin-block-start: var(--community-item-margin-top, 0);
-  background: var(--community-item-background, transparent);
-  box-shadow: var(--community-item-box-shadow, none);
-  border-radius: var(--community-item-border-radius, 0);
-  position: var(--community-item-position, relative);
-  transition: var(--community-item-transition, none);
-
-  &:first-child {
-    border-block-start: 0;
-  }
-
-  /* === ACCENT COLOR ROTATION === */
-  /* Assign accent colors to items for themes to use */
-
-  &:nth-child(2n) {
-    --item-accent-color: var(--theme-accent-2, var(--border-color));
-  }
-  &:nth-child(3n) {
-    --item-accent-color: var(--theme-accent-3, var(--border-color));
-  }
-  &:nth-child(4n) {
-    --item-accent-color: var(--theme-accent-4, var(--border-color));
-  }
-
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for decorative icons/markers */
-
-  &::before {
-    content: var(--list-item-before-content);
-    position: var(--list-item-before-position);
-    left: var(--community-item-before-left);
-    top: var(--community-item-before-top);
-    color: var(--list-item-before-color);
-    font-weight: var(--list-item-before-font-weight);
-    font-size: var(--list-item-before-font-size);
-  }
-
-  /* === HOVER STATE === */
-
-  &:hover {
-    transform: var(--list-item-hover-transform);
-    box-shadow: var(--list-item-hover-box-shadow);
-    filter: var(--list-item-hover-filter);
-    border-inline-start-width: var(--community-item-hover-border-inline-start-width, inherit);
-    border-inline-start-color: var(--community-item-hover-border-inline-start-color, inherit);
-    padding-inline-start: var(--community-item-hover-padding-inline-start, inherit);
-  }
-}
-
-/* === PRINCIPLES LIST === */
+/* ============================================
+   PRINCIPLES LIST
+   ============================================ */
 
 .principles-list {
+  /* Position */
+  position: relative;
+
+  /* Display/Box Model */
   list-style: none;
-  padding: var(--list-padding, 0.7rem 0.8rem);
+  padding: var(--list-padding);
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  border-block-start: var(--list-border-block-start, var(--list-border, 3px solid var(--border-color)));
-  border-block-end: var(--list-border-block-end, var(--list-border, 3px solid var(--border-color)));
-  border-inline-start: var(--list-border-inline-start, var(--list-border, 3px solid var(--border-color)));
-  border-inline-end: var(--list-border-inline-end, var(--list-border, 3px solid var(--border-color)));
-  border-radius: var(--list-border-radius, 0);
   box-sizing: border-box;
-  background-color: var(--list-background, var(--section-bg, transparent));
-  background-image: var(--list-background-image);
-  box-shadow: var(--list-box-shadow, none);
-  position: var(--list-position, relative);
-  overflow: var(--list-overflow, visible);
 
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for decorative borders/effects */
+  /* Borders */
+  border: var(--list-border);
+  border-radius: var(--list-border-radius);
 
+  /* Background */
+  background: var(--list-background);
+
+  /* Visual Effects */
+  box-shadow: var(--list-box-shadow);
+
+  /* Other */
+  overflow: var(--list-overflow);
+
+  /* Decorative Pseudo-Element */
   &::before {
     content: var(--list-before-content);
-    display: var(--list-before-display);
+
+    /* Position */
     position: var(--list-before-position);
     inset: var(--list-before-inset);
+
+    /* Display */
+    display: var(--list-before-display);
+
+    /* Borders */
     border: var(--list-before-border);
-    border-radius: var(--list-before-border-radius, 0);
+    border-radius: var(--list-before-border-radius);
+
+    /* Background */
     background: var(--list-before-background);
-    pointer-events: var(--list-before-pointer-events);
+
+    /* Visual Effects */
     opacity: var(--list-before-opacity);
-  }
-}
 
-.principles-list__item {
-  /* Set default accent color, overridden by nth-child below */
-  --item-accent-color: var(--theme-accent-1, var(--border-color));
-
-  font-size: var(--principles-item-font-size, 0.9rem);
-  font-weight: var(--principles-item-font-weight, normal);
-  line-height: var(--principles-item-line-height, 1.4);
-  padding: var(--principles-item-padding, 0.25rem 0);
-  border-block-start: var(--principles-item-border-width, 1px) var(--principles-item-border-style, dashed)
-    var(--list-item-border-color, var(--border-color));
-  border-inline-start: var(--principles-item-border-inline-start, none);
-  border-inline-start-color: var(--list-item-border-inline-start-color, var(--item-accent-color));
-  margin-block-end: var(--principles-item-margin-bottom, 0);
-  margin-block-start: var(--principles-item-margin-top, 0);
-  background: var(--principles-item-background, transparent);
-  box-shadow: var(--principles-item-box-shadow, none);
-  border-radius: var(--principles-item-border-radius, 0);
-  position: var(--principles-item-position, relative);
-  transition: var(--principles-item-transition, none);
-
-  &:first-child {
-    border-block-start: 0;
+    /* Other */
+    pointer-events: var(--list-before-pointer-events);
   }
 
-  /* === ACCENT COLOR ROTATION === */
-  /* Assign accent colors to items for themes to use */
+  /* List Items */
+  .principles-list__item {
+    /* Custom Property: Accent Color */
+    --item-accent-color: var(--theme-accent-1);
 
-  &:nth-child(2n) {
-    --item-accent-color: var(--theme-accent-2, var(--border-color));
-  }
-  &:nth-child(3n) {
-    --item-accent-color: var(--theme-accent-3, var(--border-color));
-  }
-  &:nth-child(4n) {
-    --item-accent-color: var(--theme-accent-4, var(--border-color));
-  }
+    /* Position */
+    position: relative;
 
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for decorative icons/markers */
+    /* Box Model */
+    padding: var(--principles-item-padding);
+    margin-block-start: var(--principles-item-margin-top);
+    margin-block-end: var(--principles-item-margin-bottom);
 
-  &::before {
-    content: var(--list-item-before-content);
-    position: var(--list-item-before-position);
-    left: var(--list-item-before-left);
-    top: var(--list-item-before-top);
-    color: var(--list-item-before-color);
-    font-weight: var(--list-item-before-font-weight);
-    font-size: var(--list-item-before-font-size);
-  }
+    /* Borders */
+    border-block-start: var(--principles-item-border-width) var(--principles-item-border-style)
+      var(--list-item-border-color);
+    border-inline-start: var(--principles-item-border-inline-start);
+    border-inline-start-color: var(--list-item-border-inline-start-color);
+    border-radius: var(--principles-item-border-radius);
 
-  /* === HOVER STATE === */
+    /* Background */
+    background: var(--principles-item-background);
 
-  &:hover {
-    transform: var(--list-item-hover-transform);
-    box-shadow: var(--list-item-hover-box-shadow);
-    filter: var(--list-item-hover-filter);
-    border-inline-start-width: var(--principles-item-hover-border-inline-start-width, inherit);
-    border-inline-start-color: var(--principles-item-hover-border-inline-start-color, inherit);
-    padding-inline-start: var(--principles-item-hover-padding-inline-start, inherit);
+    /* Typography */
+    font-size: var(--principles-item-font-size);
+    font-weight: var(--principles-item-font-weight);
+    line-height: var(--principles-item-line-height);
+
+    /* Visual Effects */
+    box-shadow: var(--principles-item-box-shadow);
+
+    /* Transitions */
+    transition: var(--principles-item-transition);
+
+    /* First Item Variant */
+    &:first-child {
+      border-block-start: 0;
+    }
+
+    /* Accent Color Rotation */
+    &:nth-child(2n) {
+      --item-accent-color: var(--theme-accent-2);
+    }
+
+    &:nth-child(3n) {
+      --item-accent-color: var(--theme-accent-3);
+    }
+
+    &:nth-child(4n) {
+      --item-accent-color: var(--theme-accent-4);
+    }
+
+    /* Decorative Pseudo-Element */
+    &::before {
+      content: var(--list-item-before-content);
+
+      /* Position */
+      position: var(--list-item-before-position);
+      top: var(--list-item-before-top);
+      left: var(--list-item-before-left);
+
+      /* Typography */
+      font-size: var(--list-item-before-font-size);
+      font-weight: var(--list-item-before-font-weight);
+      color: var(--list-item-before-color);
+    }
+
+    /* Hover State */
+    &:hover {
+      /* Box Model */
+      padding-inline-start: var(--principles-item-hover-padding-inline-start);
+
+      /* Borders */
+      border-inline-start-width: var(--principles-item-hover-border-inline-start-width);
+      border-inline-start-color: var(--principles-item-hover-border-inline-start-color);
+
+      /* Visual Effects */
+      box-shadow: var(--list-item-hover-box-shadow);
+      transform: var(--list-item-hover-transform);
+      filter: var(--list-item-hover-filter);
+    }
   }
 }
