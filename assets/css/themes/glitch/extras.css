@@ -122,4 +122,17 @@ body[data-theme='glitch'] {
     transform-origin: center;
     text-shadow: var(--glitch-text-shadow);
   }
+
+  /* ===========================
+  SCROLLBAR CHROMATIC ABERRATION
+  =========================== */
+
+  /* Apply chromatic aberration effect to scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    box-shadow: var(--glitch-box-shadow-sm);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    box-shadow: var(--glitch-box-shadow-md);
+  }
 }

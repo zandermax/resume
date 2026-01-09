@@ -255,6 +255,21 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --link-hover-color: var(--accent-color);
   --link-hover-border-block-end-color: var(--link-color);
 
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - modern dashboard aesthetic (base values, overridden in dark/light mode) */
+  --scrollbar-width: 10px;
+  --scrollbar-height: 10px;
+  --scrollbar-track-background: var(--panel-bg);
+  --scrollbar-track-border: 1px solid var(--panel-border);
+  --scrollbar-thumb-background: var(--accent-color);
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: var(--accent-color);
+  --scrollbar-button-background: var(--panel-bg);
+  --scrollbar-button-border: 1px solid var(--panel-border);
+  --scrollbar-button-height: 10px;
+  --scrollbar-button-width: 10px;
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   @media (max-width: 768px) {

@@ -33,4 +33,10 @@ Modern Dark Dashboard
 
   /* Panel shadow */
   --panel-shadow: oklch(0% 0 0 / 0.3);
+
+  /* Scrollbar styling - dark mode */
+  --scrollbar-track-background: oklch(14% 0.01 240);
+  --scrollbar-track-border: 1px solid var(--color-dark-border);
+  --scrollbar-thumb-background: var(--color-blue-bright);
+  --scrollbar-thumb-hover-background: oklch(82% 0.18 210); /* Slightly brighter on hover */
 }

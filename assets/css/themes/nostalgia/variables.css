@@ -46,4 +46,29 @@ Nostalgia Theme Variables
   --printlink-transition: all 0.15s ease;
   --printlink-transform: translateY(0);
   --printlink-hover-transform: translateY(2px);
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - bright 90s web aesthetic (base values, overridden in dark/light mode) */
+  --scrollbar-width: 16px;
+  --scrollbar-height: 16px;
+  --scrollbar-track-background: var(--nostalgia-cyan);
+  --scrollbar-track-border: 3px solid var(--nostalgia-magenta);
+  --scrollbar-thumb-background: linear-gradient(
+    180deg,
+    var(--nostalgia-yellow) 0%,
+    var(--nostalgia-orange) 50%,
+    var(--nostalgia-hot-pink) 100%
+  );
+  --scrollbar-thumb-border: 3px solid var(--nostalgia-magenta);
+  --scrollbar-thumb-hover-background: linear-gradient(
+    180deg,
+    var(--nostalgia-green) 0%,
+    var(--nostalgia-cyan) 50%,
+    var(--nostalgia-magenta) 100%
+  );
+  --scrollbar-button-background: var(--nostalgia-magenta);
+  --scrollbar-button-border: 3px solid var(--nostalgia-yellow);
+  --scrollbar-button-height: 16px;
+  --scrollbar-button-width: 16px;
 }

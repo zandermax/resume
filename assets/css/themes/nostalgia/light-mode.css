@@ -47,4 +47,22 @@ Nostalgia Theme - Light Mode
   --printlink-hover-color: var(--nostalgia-white);
   --printlink-hover-shadow: 0 4px 0 var(--nostalgia-dark-pink), 0 6px 12px oklch(0% 0 0 / 0.4);
   --printlink-hover-text-shadow: 2px 2px 6px oklch(0% 0 0 / 0.7);
+
+  /* Scrollbar styling - light mode with hot pink and orange */
+  --scrollbar-track-background: var(--nostalgia-yellow);
+  --scrollbar-track-border: 3px solid var(--nostalgia-hot-pink);
+  --scrollbar-thumb-background: linear-gradient(
+    180deg,
+    var(--nostalgia-hot-pink) 0%,
+    var(--nostalgia-orange) 50%,
+    var(--nostalgia-blue) 100%
+  );
+  --scrollbar-thumb-hover-background: linear-gradient(
+    180deg,
+    var(--nostalgia-green) 0%,
+    var(--nostalgia-magenta) 50%,
+    var(--nostalgia-red) 100%
+  );
+  --scrollbar-button-background: var(--nostalgia-hot-pink);
+  --scrollbar-button-border: 3px solid var(--nostalgia-blue);
 }

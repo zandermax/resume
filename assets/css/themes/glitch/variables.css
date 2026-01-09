@@ -428,4 +428,21 @@ Common properties for all modes
   /* Bullet points */
   --bullet-before-content-alternate: '◇';
   --bullet-text-shadow-alternate: var(--glitch-text-shadow-alt);
+
+  /* ===========================
+     SCROLLBAR
+     =========================== */
+
+  /* Scrollbar styling - chromatic aberration glitch effect (base values, overridden in dark/light mode) */
+  --scrollbar-width: 14px;
+  --scrollbar-height: 14px;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: var(--border-width-md) solid var(--border-color);
+  --scrollbar-thumb-background: var(--background-color);
+  --scrollbar-thumb-border: var(--border-width-md) solid var(--border-color);
+  --scrollbar-thumb-hover-background: var(--background-color);
+  --scrollbar-button-background: var(--background-color);
+  --scrollbar-button-border: var(--border-width-md) solid var(--border-color);
+  --scrollbar-button-height: 14px;
+  --scrollbar-button-width: 14px;
 }

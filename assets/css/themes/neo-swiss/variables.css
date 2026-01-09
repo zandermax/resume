@@ -332,4 +332,19 @@ Ultra-modern minimalism with mathematical precision
   /* Ashby section specific */
   --section-ashby-border-block-start: 1px solid var(--accent-color);
   --section-ashby-padding-block-start: var(--spacing-8);
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - ultra-minimal with grid-based precision (base values, overridden in dark/light mode) */
+  --scrollbar-width: var(--spacing-1); /* 8px - 1 grid unit */
+  --scrollbar-height: var(--spacing-1); /* 8px - 1 grid unit */
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: var(--accent-color);
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: var(--text-color);
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: none;
+  --scrollbar-button-height: var(--spacing-1); /* 8px */
+  --scrollbar-button-width: var(--spacing-1); /* 8px */
 }

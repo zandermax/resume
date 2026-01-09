@@ -33,4 +33,10 @@ Clean & Professional Dashboard
 
   /* Panel shadow */
   --panel-shadow: oklch(0% 0 0 / 0.08);
+
+  /* Scrollbar styling - light mode */
+  --scrollbar-track-background: oklch(95% 0.005 245);
+  --scrollbar-track-border: 1px solid oklch(92% 0.005 245);
+  --scrollbar-thumb-background: var(--color-blue-dashboard);
+  --scrollbar-thumb-hover-background: oklch(50% 0.22 245); /* Slightly darker on hover */
 }

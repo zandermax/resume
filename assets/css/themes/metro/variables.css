@@ -307,4 +307,19 @@ Flat Design / Material Zero
   --theme-accent-4: var(--metro-magenta);
   --theme-accent-5: var(--metro-purple);
   --theme-accent-6: var(--metro-red);
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - flat, minimal Metro aesthetic (base values, overridden in dark/light mode) */
+  --scrollbar-width: 10px;
+  --scrollbar-height: 10px;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: var(--accent-color);
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: var(--accent-color);
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: none;
+  --scrollbar-button-height: 10px;
+  --scrollbar-button-width: 10px;
 }

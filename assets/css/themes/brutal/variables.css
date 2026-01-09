@@ -345,5 +345,20 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --link-hover-border-block-end-color: var(--border-color);
   --link-hover-transform: translate(-2px, -2px);
   --link-hover-box-shadow: 4px 4px 0 var(--border-color);
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - bold brutalist aesthetic */
+  --scrollbar-width: 18px;
+  --scrollbar-height: 18px;
+  --scrollbar-track-background: var(--background-color);
+  --scrollbar-track-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-thumb-background: var(--accent-color);
+  --scrollbar-thumb-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-thumb-hover-background: var(--text-color);
+  --scrollbar-button-background: var(--background-color);
+  --scrollbar-button-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-button-height: 18px;
+  --scrollbar-button-width: 18px;
 }
 

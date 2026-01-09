@@ -28,4 +28,9 @@ METRO Theme - Dark Mode
 
   /* Dial label hover properties (dark mode) */
   --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
+
+  /* Scrollbar styling - flat dark mode */
+  --scrollbar-track-background: oklch(24% 0 0 / 0.3);
+  --scrollbar-thumb-background: var(--color-cyan-bright);
+  --scrollbar-thumb-hover-background: oklch(85% 0.16 210); /* Slightly brighter on hover */
 }

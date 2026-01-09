@@ -186,4 +186,19 @@ Classic cathode ray tube monitor aesthetic
   --link-hover-text-decoration: none;
   --link-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
   --link-hover-border-block-end: 2px solid currentColor;
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - glowing CRT aesthetic (base values, overridden in dark/light mode) */
+  --scrollbar-width: 14px;
+  --scrollbar-height: 14px;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: 1px solid currentColor;
+  --scrollbar-thumb-background: currentColor;
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: currentColor;
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: 1px solid currentColor;
+  --scrollbar-button-height: 14px;
+  --scrollbar-button-width: 14px;
 }

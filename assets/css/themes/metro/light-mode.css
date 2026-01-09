@@ -25,4 +25,9 @@ METRO Theme - Light Mode
   --metro-red: oklch(60% 0.24 25);
   --metro-purple: var(--color-purple);
   --fade-in-bg: var(--color-black);
+
+  /* Scrollbar styling - flat light mode */
+  --scrollbar-track-background: oklch(94% 0 0 / 0.5);
+  --scrollbar-thumb-background: var(--color-blue-metro);
+  --scrollbar-thumb-hover-background: oklch(45% 0.2 245); /* Slightly darker on hover */
 }

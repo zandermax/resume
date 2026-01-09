@@ -26,4 +26,23 @@ XP Theme - Dark Mode
   --xp-panel-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px var(--xp-black-10);
   --ds-label-color: var(--color-black);
   --ds-line-stroke: var(--color-black);
+
+  /* Scrollbar styling (dark mode) */
+  --scrollbar-track-background: oklch(30% 0.06 250);
+  --scrollbar-track-border: 1px solid oklch(45% 0.08 245);
+  --scrollbar-thumb-background: linear-gradient(
+    90deg,
+    oklch(42% 0.08 250) 0%,
+    oklch(35% 0.08 250) 50%,
+    oklch(30% 0.06 250) 100%
+  );
+  --scrollbar-thumb-border: 1px solid oklch(20% 0.08 250);
+  --scrollbar-thumb-hover-background: linear-gradient(
+    90deg,
+    oklch(55% 0.1 245) 0%,
+    oklch(45% 0.09 250) 50%,
+    oklch(38% 0.08 250) 100%
+  );
+  --scrollbar-button-background: oklch(42% 0.08 250);
+  --scrollbar-button-border: 1px solid oklch(20% 0.08 250);
 }

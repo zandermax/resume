@@ -158,4 +158,17 @@ TERMINAL Theme - Common Variables
   --header-name-greeting-line-height: 1.6;
   --p-li-font-size: 0.95rem;
   --p-li-line-height: 1.6;
+
+  /* Scrollbar styling - blocky terminal aesthetic */
+  --scrollbar-width: 12px;
+  --scrollbar-height: 12px;
+  --scrollbar-track-background: var(--terminal-window-bg);
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: var(--terminal-button-bg);
+  --scrollbar-thumb-border: 2px solid var(--terminal-border-dark);
+  --scrollbar-thumb-hover-background: var(--terminal-title-bg);
+  --scrollbar-button-background: var(--terminal-button-bg);
+  --scrollbar-button-border: 2px solid var(--terminal-border-dark);
+  --scrollbar-button-height: 12px;
+  --scrollbar-button-width: 12px;
 }

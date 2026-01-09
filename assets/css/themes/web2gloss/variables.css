@@ -247,4 +247,38 @@ WEB 2.0 GLOSS Theme - Variables
   --list-item-hover-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.12), 0 0 10px var(--web2-glow),
     inset 0 1px 0 oklch(100% 0 0 / 0.5);
   --list-item-hover-transform: translateX(4px);
+
+  /* ==================== SCROLLBAR ==================== */
+
+  /* Scrollbar styling - glossy Web 2.0 aesthetic (base values, overridden in dark/light mode) */
+  --scrollbar-width: 12px;
+  --scrollbar-height: 12px;
+  --scrollbar-track-background: linear-gradient(
+    180deg,
+    oklch(92% 0 0 / 0.3) 0%,
+    oklch(96% 0 0 / 0.5) 50%,
+    oklch(92% 0 0 / 0.3) 100%
+  );
+  --scrollbar-track-border: 1px solid oklch(0% 0 0 / 0.1);
+  --scrollbar-thumb-background: linear-gradient(
+    180deg,
+    oklch(82% 0.16 210) 0%,
+    oklch(68% 0.18 215) 50%,
+    oklch(58% 0.16 220) 100%
+  );
+  --scrollbar-thumb-border: 1px solid oklch(0% 0 0 / 0.2);
+  --scrollbar-thumb-hover-background: linear-gradient(
+    180deg,
+    oklch(88% 0.18 210) 0%,
+    oklch(75% 0.19 215) 50%,
+    oklch(65% 0.18 220) 100%
+  );
+  --scrollbar-button-background: linear-gradient(
+    180deg,
+    oklch(94% 0.08 215) 0%,
+    oklch(82% 0.12 220) 100%
+  );
+  --scrollbar-button-border: 1px solid oklch(0% 0 0 / 0.2);
+  --scrollbar-button-height: 12px;
+  --scrollbar-button-width: 12px;
 }
