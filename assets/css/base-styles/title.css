@@ -1,95 +1,162 @@
 /**
  * Section title styles
  *
+ * DOM STRUCTURE:
+ *   <section class="resume-section">
+ *     <h2 class="resume-section__title">Section Title</h2>
+ *   </section>
+ *
  * HTML ELEMENTS AFFECTED:
  *   - h2.resume-section__title (main section titles)
+ *   - h2.resume-section__title::before (decorative pseudo-element)
+ *   - h2.resume-section__title::after (decorative pseudo-element)
+ *   - h2.resume-section__title:hover (hover state)
  *
  * DEPENDENCIES:
- *   - variables-layout.css (uses --section-title-* variables)
+ *   - variables-layout.css (defines all --section-title-* variables)
+ *   - sections.css (defines --section-accent-color for background fallback)
  *
  * RELATED FILES:
- *   - sections.css (section container styles, defines --section-accent-color)
+ *   - sections.css (section container styles)
+ *
+ * VARIABLE USAGE:
+ *   - All properties use custom properties defined in variables-layout.css
+ *   - NO inline fallbacks except --section-title-background which falls back to
+ *     --section-accent-color for automatic per-section color rotation
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index, inset)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
  *
  * NOTES:
  *   - Uses logical properties throughout (margin-block-*, padding-inline-*, etc.)
- *   - Background falls back to --section-accent-color for automatic color rotation
+ *   - Pure longhand for borders (no construction from separate width/style/color)
  *   - Pseudo-elements (::before, ::after) extensively customizable by themes
+ *   - All defaults defined in variables-layout.css - no inline fallbacks needed
  */
 
-/* ============================================
+/* ============================================================================
    SECTION TITLES
-   ============================================ */
+   ============================================================================ */
 
-/* Section Titles */
 h2.resume-section__title {
+  /* Display/Box Model */
+  display: var(--section-title-display);
+  width: var(--section-title-width);
+  padding-block-start: var(--section-title-padding-block-start);
+  padding-block-end: var(--section-title-padding-block-end);
+  padding-inline-start: var(--section-title-padding-inline-start);
+  padding-inline-end: var(--section-title-padding-inline-end);
+  margin-block-start: var(--section-title-margin-block-start);
+  margin-block-end: var(--section-title-margin-block-end);
+  margin-inline-start: var(--section-title-margin-inline-start);
+  margin-inline-end: var(--section-title-margin-inline-end);
+
+  /* Flex/Grid/Alignment */
+  align-items: var(--section-title-align-items);
+  gap: var(--section-title-gap);
+
+  /* Borders */
+  border-block-start: var(--section-title-border-block-start);
+  border-block-end: var(--section-title-border-block-end);
+  border-inline-start: var(--section-title-border-inline-start);
+  border-inline-end: var(--section-title-border-inline-end);
+  border-radius: var(--section-title-border-radius);
+
+  /* Background */
+  background-color: var(--section-title-background, var(--section-accent-color));
+  background-image: var(--section-title-background-image);
+
+  /* Typography */
   font-size: var(--section-title-font-size);
   font-weight: var(--section-title-font-weight);
   line-height: var(--section-title-line-height);
   letter-spacing: var(--section-title-letter-spacing);
   text-transform: var(--section-title-text-transform);
   color: var(--section-title-color);
-  border-block-start: var(--section-title-border-width) var(--section-title-border-style)
-    var(--section-title-border-color);
-  border-block-end: var(--section-title-border-block-end);
-  border-inline-start: var(--section-title-border-inline-start);
-  border-inline-end: var(--section-title-border-inline-end);
-  border-radius: var(--section-title-border-radius);
-  padding-block-start: var(--section-title-padding-block-start);
-  padding-block-end: var(--section-title-padding-block-end);
-  padding-inline-start: var(--section-title-padding-inline-start);
-  padding-inline-end: var(--section-title-padding-inline-end);
-  margin-block-start: var(--section-title-margin-block-start);
-  margin-inline-start: var(--section-title-margin-inline-start);
-  margin-inline-end: var(--section-title-margin-inline-end);
-  margin-block-end: var(--section-title-margin-block-end);
-  background-image: var(--section-title-background-image);
-  background: var(--section-title-background, var(--section-accent-color));
+
+  /* Visual Effects */
   box-shadow: var(--section-title-box-shadow);
   text-shadow: var(--section-title-text-shadow);
   transform: var(--section-title-transform);
-  display: var(--section-title-display);
-  width: var(--section-title-width);
-  max-width: var(--section-title-max-width);
+
+  /* Transitions/Animations */
+  animation: var(--section-title-animation);
+
+  /* Other */
   overflow: var(--section-title-overflow);
   contain: var(--section-title-contain);
   will-change: var(--section-title-will-change);
-  animation: var(--section-title-animation);
-  align-items: var(--section-title-align-items);
-  gap: var(--section-title-gap);
-}
 
-h2.resume-section__title::before {
-  content: var(--section-title-before-content);
-  display: var(--section-title-before-display);
-  position: var(--section-title-before-position);
-  inset: var(--section-title-before-inset);
-  border: var(--section-title-before-border);
-  background: var(--section-title-before-background);
-  border-radius: var(--section-title-before-border-radius);
-  color: var(--section-title-before-color);
-  font-size: var(--section-title-before-font-size);
-  text-shadow: var(--section-title-before-text-shadow);
-  opacity: var(--section-title-before-opacity);
-  pointer-events: var(--section-title-before-pointer-events);
-  animation: var(--section-title-before-animation);
-  will-change: var(--section-title-before-will-change);
-}
+  /* Hover State */
+  &:hover {
+    /* Visual Effects */
+    box-shadow: var(--section-title-hover-box-shadow);
+  }
 
-h2.resume-section__title:hover {
-  box-shadow: var(--section-title-hover-box-shadow);
-}
+  /* Decorative Pseudo-Elements */
+  &::before {
+    content: var(--section-title-before-content);
 
-h2.resume-section__title::after {
-  content: var(--section-title-after-content);
-  display: var(--section-title-after-display);
-  position: var(--section-title-after-position);
-  bottom: var(--section-title-after-bottom);
-  left: var(--section-title-after-left);
-  right: var(--section-title-after-right);
-  top: var(--section-title-after-top);
-  width: var(--section-title-after-width);
-  height: var(--section-title-after-height);
-  background: var(--section-title-after-background);
-  animation: var(--section-title-after-animation);
-  will-change: var(--section-title-after-will-change);
+    /* Position */
+    position: var(--section-title-before-position);
+    inset: var(--section-title-before-inset);
+
+    /* Display/Box Model */
+    display: var(--section-title-before-display);
+
+    /* Borders */
+    border: var(--section-title-before-border);
+    border-radius: var(--section-title-before-border-radius);
+
+    /* Background */
+    background: var(--section-title-before-background);
+
+    /* Typography */
+    font-size: var(--section-title-before-font-size);
+    color: var(--section-title-before-color);
+
+    /* Visual Effects */
+    text-shadow: var(--section-title-before-text-shadow);
+    opacity: var(--section-title-before-opacity);
+
+    /* Transitions/Animations */
+    animation: var(--section-title-before-animation);
+
+    /* Other */
+    pointer-events: var(--section-title-before-pointer-events);
+    will-change: var(--section-title-before-will-change);
+  }
+
+  &::after {
+    content: var(--section-title-after-content);
+
+    /* Position */
+    position: var(--section-title-after-position);
+    top: var(--section-title-after-top);
+    right: var(--section-title-after-right);
+    bottom: var(--section-title-after-bottom);
+    left: var(--section-title-after-left);
+
+    /* Display/Box Model */
+    display: var(--section-title-after-display);
+    width: var(--section-title-after-width);
+    height: var(--section-title-after-height);
+
+    /* Background */
+    background: var(--section-title-after-background);
+
+    /* Transitions/Animations */
+    animation: var(--section-title-after-animation);
+
+    /* Other */
+    will-change: var(--section-title-after-will-change);
+  }
 }

@@ -223,13 +223,11 @@
   --section-title-letter-spacing: 0.18em;
   --section-title-text-transform: uppercase;
   --section-title-color: inherit;
-  --section-title-border-style: solid;
-  --section-title-border-width: 3px;
-  --section-title-border-color: var(--border-color);
-  --section-title-border-radius: 0;
+  --section-title-border-block-start: 3px solid var(--border-color);
+  --section-title-border-block-end: none;
   --section-title-border-inline-start: none;
   --section-title-border-inline-end: none;
-  --section-title-border-block-end: none;
+  --section-title-border-radius: 0;
   --section-title-padding-block-start: 0.45rem;
   --section-title-padding-block-end: 0.45rem;
   --section-title-padding-inline-start: 0;
@@ -243,14 +241,7 @@
   --section-title-text-shadow: none;
   --section-title-transform: none;
   --section-title-display: block;
-  --section-title-width: auto;
-  --section-title-max-width: none;
-  --section-title-overflow: visible;
-  --section-title-contain: none;
-  --section-title-will-change: auto;
   --section-title-animation: none;
-  --section-title-align-items: normal;
-  --section-title-gap: normal;
   --section-title-background-image: none;
 
   /* === SECTION TITLE PSEUDO-ELEMENTS === */

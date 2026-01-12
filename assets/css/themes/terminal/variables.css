@@ -18,7 +18,7 @@ TERMINAL Theme - Common Variables
   --main-border-width: 0;
   --main-box-shadow: var(--terminal-inset-raised-lg), 2px 2px 4px var(--color-black / 0.4);
   --main-padding: 2rem;
-  --section-title-border-width: 0;
+  --section-title-border-block-start: none;
   --section-title-box-shadow: var(--terminal-inset-sunken-sm);
   --section-title-padding-block-start: 0.5rem;
   --section-title-padding-block-end: 0.5rem;

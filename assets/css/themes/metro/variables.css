@@ -78,7 +78,7 @@ Flat Design / Material Zero
   --section-title-font-size: 1.4rem;
   --section-title-letter-spacing: 0.05em;
   --section-title-line-height: 1;
-  --section-title-border-width: 0px;
+  --section-title-border-block-start: none;
 
   /* Section content custom properties */
   --section-content-padding-inline: 1em;

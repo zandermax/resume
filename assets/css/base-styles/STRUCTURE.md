@@ -257,7 +257,7 @@ The header component uses a mix of shorthand and longhand custom properties for 
 
 ### Section Title Properties
 
-Section titles (h2.resume-section__title) follow the same longhand-first principle:
+Section titles (h2.resume-section\_\_title) follow the same longhand-first principle:
 
 **Longhand properties** (used in actual CSS rules):
 
@@ -268,11 +268,25 @@ Section titles (h2.resume-section__title) follow the same longhand-first princip
 - `--section-title-border-block-start`, `--section-title-border-block-end`
 - `--section-title-border-inline-start`, `--section-title-border-inline-end`
 
-**Background layering**: Uses `background-image` before `background` shorthand to allow texture overlays (see line 205-212).
+**Variable organization in variables-layout.css:**
 
-**Fallback pattern**: `--section-title-background` falls back to `--section-accent-color` which provides automatic per-section color rotation (defined in sections.css).
+Properties are grouped by category for easy navigation:
 
-**Pseudo-elements**: Support extensive customization via `--section-title-before-*` and `--section-title-after-*` properties for theme-specific decorations.
+- Typography (font-size, weight, line-height, letter-spacing, text-transform, color)
+- Borders (block-start, block-end, inline-start, inline-end, radius)
+- Spacing - Padding (4 longhand properties)
+- Spacing - Margin (4 longhand properties)
+- Background & Visual Effects (background, background-image, box-shadow, text-shadow)
+- Layout & Display (display, width, overflow, align-items, gap)
+- Transform & Animation (transform, animation, contain, will-change)
+- Hover State (hover-box-shadow)
+- Pseudo-elements (::before and ::after properties in separate groups)
+
+**Background layering**: Uses `background-image` before `background` shorthand to allow texture overlays. The `background` property has a special inline fallback to `--section-accent-color` in title.css for automatic per-section color rotation (see sections.css).
+
+**Pseudo-elements**: Support extensive customization via `--section-title-before-*` and `--section-title-after-*` properties for theme-specific decorations. All properties default to neutral values (none/auto/transparent/static).
+
+**No inline fallbacks**: All properties have defaults defined in variables-layout.css except for the intentional `--section-accent-color` fallback pattern.
 
 **Dial selector housing**:
 
