@@ -14,15 +14,10 @@ Nostalgia Theme - Extras
 
 :root[data-theme='nostalgia'] {
   --display-nostalgia-elements: block;
-  --display-section-title-normal: none;
 
   .nostalgia-elements,
   .resume-section__title.nostalgia {
     display: var(--display-nostalgia-elements);
-  }
-
-  .resume-section__title--normal {
-    display: var(--display-section-title-normal);
   }
 }
 

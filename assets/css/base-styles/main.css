@@ -47,8 +47,8 @@
   box-sizing: border-box;
 
   /* Spacing */
-  margin-block-start: 2rem;
-  margin-block-end: 2rem;
+  margin-block-start: var(--spacing-xl);
+  margin-block-end: var(--spacing-xl);
   margin-inline-start: auto;
   margin-inline-end: auto;
   padding: var(--main-padding);

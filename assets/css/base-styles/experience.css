@@ -164,8 +164,8 @@
   .experience-item__header {
     /* Display/Box Model */
     display: flex;
-    gap: 1rem;
-    margin-block-end: 0.3rem;
+    gap: var(--spacing-md);
+    margin-block-end: var(--spacing-2xs);
 
     /* Flex/Alignment */
     justify-content: space-between;

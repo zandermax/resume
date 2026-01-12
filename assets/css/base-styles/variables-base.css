@@ -28,13 +28,17 @@
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* === RESPONSIVE BREAKPOINTS === */
+  /* NOTE: CSS custom properties cannot be used directly in @media queries.
+     These serve as reference values and documentation. Media queries must use
+     literal px values. Keep these in sync with actual @media queries. */
   --min-screen-width: 320px;
   --screen-width-mobile-small: 480px;
   --screen-width-mobile: 500px;
   --screen-width-mobile-large: 600px;
-  --screen-width-tablet: 768px;
 
   /* === SPACING SYSTEM === */
+  --spacing-3xs: 0.15rem; /* micro spacing for fine adjustments */
+  --spacing-2xs: 0.3rem; /* small spacing for tight layouts */
   --spacing-xs: 0.5rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
@@ -70,9 +74,7 @@
   --dial-color-knob-background: var(--color-dark-knob);
 
   /* === PAPER/TEXTURE PROPERTIES === */
+  /* Theme-specific: Used primarily by skeuomorph, nostalgia, and paper-style themes */
   --paper-shadow: none;
   --paper-texture: none;
-
-  /* === THEME ELEMENT VISIBILITY === */
-  --display-section-title-normal: block;
 }

@@ -5,7 +5,7 @@ Responsive Layout
 /* Always have room to breathe */
 @media (max-width: 960px) {
   .resume__main {
-    margin: var(--main-margin-responsive-960, 1rem);
+    margin: var(--main-margin-responsive-960, var(--spacing-md));
   }
 
   .resume-section__content {
@@ -16,18 +16,18 @@ Responsive Layout
 @media (max-width: 768px) {
   .resume__main {
     padding: var(--main-padding-responsive-768, 1.5rem 1.25rem);
-    border-width: var(--main-border-width-responsive-768, 3px);
+    border-width: var(--main-border-width-responsive-768, var(--border-width-thick));
   }
 
   .resume-header {
-    border-block-end-width: 2px;
+    border-block-end-width: var(--border-width-normal);
     padding-inline-start: var(--header-padding-inline-start-responsive-768);
     padding-inline-end: var(--header-padding-inline-end-responsive-768);
   }
 
   .resume-header__buttons {
     flex-direction: var(--header-buttons-flex-direction-responsive-768, row);
-    gap: var(--header-buttons-gap-responsive-768, 1rem);
+    gap: var(--header-buttons-gap-responsive-768, var(--spacing-md));
   }
 
   .resume-section {
@@ -74,13 +74,13 @@ Mobile layout
   .resume-header__mobile-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--spacing-sm);
   }
 
   .resume-header__name-greeting {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--spacing-xs);
   }
 
   h1.resume-header__name {
@@ -91,14 +91,14 @@ Mobile layout
 
   .resume-header__buttons {
     flex-direction: var(--header-buttons-flex-direction-responsive-600, row);
-    gap: var(--header-buttons-gap-responsive-600, 1rem);
+    gap: var(--header-buttons-gap-responsive-600, var(--spacing-md));
   }
 
   .resume-header__savelink,
   #resume-header__printlink {
     font-size: var(--printlink-font-size-responsive-600, var(--printlink-font-size));
-    padding-block: var(--printlink-padding-block-responsive-600, 0.5rem);
-    padding-inline: var(--printlink-padding-inline-responsive-600, 1rem);
+    padding-block: var(--printlink-padding-block-responsive-600, var(--spacing-xs));
+    padding-inline: var(--printlink-padding-inline-responsive-600, var(--spacing-md));
   }
 
   #resume-header__printlink {
@@ -123,14 +123,14 @@ Mobile layout
 
   .resume-header__buttons {
     flex-direction: var(--header-buttons-flex-direction-responsive-500, row);
-    gap: var(--header-buttons-gap-responsive-500, 1rem);
+    gap: var(--header-buttons-gap-responsive-500, var(--spacing-md));
   }
 
   .resume-header__savelink,
   #resume-header__printlink {
     font-size: var(--printlink-font-size-responsive-500, var(--printlink-font-size));
-    padding-block: var(--printlink-padding-block-responsive-500, 0.5rem);
-    padding-inline: var(--printlink-padding-inline-responsive-500, 1rem);
+    padding-block: var(--printlink-padding-block-responsive-500, var(--spacing-xs));
+    padding-inline: var(--printlink-padding-inline-responsive-500, var(--spacing-md));
   }
 
   .resume-section {
