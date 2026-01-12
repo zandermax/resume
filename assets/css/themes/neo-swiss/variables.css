@@ -59,20 +59,16 @@ Ultra-modern minimalism with mathematical precision
 
   /* Skills grid group custom properties */
   --skills-group-padding: 0 0 var(--spacing-4) 0;
-  --skills-group-margin-bottom: var(--spacing-4);
+  --skills-group-margin-block-end: var(--spacing-4);
   --skills-group-transition: none;
-
-  /* Skills grid group custom properties */
-  --skills-group-margin: 0 0 var(--spacing-4) 0;
   --skills-group-border: 0;
   --skills-group-border-radius: 0;
   --skills-group-box-shadow: none;
   --skills-group-background: transparent;
 
   /* Skills grid title custom properties */
-  --skills-title-padding-bottom: 0;
-  --skills-title-margin-bottom: var(--spacing-2);
-  --skills-title-margin: 0 0 var(--spacing-2) 0;
+  --skills-title-padding-block-end: 0;
+  --skills-title-margin-block-end: var(--spacing-2);
   --skills-title-font-weight: var(--font-weight-bold);
   --skills-title-color: var(--accent-color);
   --skills-title-letter-spacing: var(--letter-spacing-wide);

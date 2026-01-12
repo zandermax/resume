@@ -206,14 +206,14 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --skills-group-border: 4px solid var(--border-color);
   --skills-group-background: var(--background-color);
   --skills-group-padding: 1rem;
-  --skills-group-margin-bottom: 1rem;
+  --skills-group-margin-block-end: 1rem;
   --skills-group-transform: skewX(-0.5deg);
 
   /* Skills grid - Title */
   --skills-title-border-width: 3px;
   --skills-title-border-style: solid;
-  --skills-title-padding-bottom: 0.5rem;
-  --skills-title-margin-bottom: 0.75rem;
+  --skills-title-padding-block-end: 0.5rem;
+  --skills-title-margin-block-end: 0.75rem;
   --skills-title-font-weight: 900;
   --skills-title-font-size: 1.2rem;
   --skills-title-border-block-end-color: var(--accent-color);

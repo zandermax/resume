@@ -1,157 +1,223 @@
 /**
  * Skills grid layout and styling for skill category groups
  *
- * HTML ELEMENTS AFFECTED:
- *   - .skills-grid (2-column grid container)
- *   - .skills-grid__group (individual skill category boxes)
- *   - .skills-grid__title (skill category titles)
- *   - .skills-grid__items (skill list text)
+ * DOM STRUCTURE:
+ *   <div class="skills-grid">
+ *     <div class="skills-grid__group">
+ *       <h3 class="skills-grid__title">...</h3>
+ *       <p class="skills-grid__items">...</p>
+ *       <ul>                             <!-- optional -->
+ *         <li>...</li>
+ *       </ul>
+ *     </div>
+ *   </div>
  *
  * DEPENDENCIES:
- *   - variables-skills.css (all skills-specific variables)
+ *   - variables-skills.css (all skills-specific variables with defaults)
  *   - variables-base.css (uses --border-color, --section-bg)
  *   - sections.css (skills grid is a section child)
+ *
+ * VARIABLE USAGE:
+ *   - All var() calls use properties WITHOUT fallbacks
+ *   - All defaults are defined in variables-skills.css
+ *   - Themes override variables to customize appearance
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin, box-sizing)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
  */
 
-/* === SKILLS GRID CONTAINER === */
+/* ============================================================================
+   SKILLS GRID CONTAINER
+   ============================================================================ */
 
 .skills-grid {
+  /* Position */
+  position: relative;
+
+  /* Display/Box Model */
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--skills-grid-gap, 1rem);
-  border-block-start: var(--skills-grid-border-block-start, var(--skills-grid-border, 3px solid var(--border-color)));
-  border-block-end: var(--skills-grid-border-block-end, var(--skills-grid-border, 3px solid var(--border-color)));
-  border-inline-start: var(--skills-grid-border-inline-start, var(--skills-grid-border, 3px solid var(--border-color)));
-  border-inline-end: var(--skills-grid-border-inline-end, var(--skills-grid-border, 3px solid var(--border-color)));
-  padding: var(--skills-grid-padding, 0.75rem);
+  padding: var(--skills-grid-padding);
   box-sizing: border-box;
-  background: var(--skills-grid-background, transparent);
+
+  /* Grid Layout */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--skills-grid-gap);
+
+  /* Borders */
+  border: var(--skills-grid-border);
+  border-radius: var(--skills-grid-border-radius);
+
+  /* Background */
+  background: var(--skills-grid-background);
   background-image: var(--skills-grid-background-image);
-  box-shadow: var(--skills-grid-box-shadow, none);
-  border-radius: var(--skills-grid-border-radius, 0);
-  position: var(--skills-grid-position, relative);
-  transform: var(--skills-grid-transform, none);
-  overflow: var(--skills-grid-overflow, visible);
 
-  /* === PSEUDO-ELEMENT === */
+  /* Visual Effects */
+  box-shadow: var(--skills-grid-box-shadow);
+  transform: var(--skills-grid-transform);
+
+  /* Other */
+  overflow: var(--skills-grid-overflow);
+
+  /* === DECORATIVE PSEUDO-ELEMENT === */
   /* Used by themes for decorative borders/effects */
-
   &::before {
     content: var(--skills-grid-before-content);
-    display: var(--skills-grid-before-display);
+
+    /* Position */
     position: var(--skills-grid-before-position);
     inset: var(--skills-grid-before-inset);
+
+    /* Display/Box Model */
+    display: var(--skills-grid-before-display);
+
+    /* Borders */
     border: var(--skills-grid-before-border);
-    border-radius: var(--skills-grid-before-border-radius, 0);
+    border-radius: var(--skills-grid-before-border-radius);
+
+    /* Background */
     background: var(--skills-grid-before-background);
-    pointer-events: var(--skills-grid-before-pointer-events);
+
+    /* Visual Effects */
     opacity: var(--skills-grid-before-opacity);
+
+    /* Other */
+    pointer-events: none;
   }
-}
 
-/* === SKILLS GROUP BOXES === */
+  /* ========================================================================
+     SKILLS GROUP BOXES (nested children)
+     ======================================================================== */
 
-.skills-grid__group {
-  border-block-start: var(--skills-group-border-block-start, var(--skills-group-border, 1px solid var(--border-color)));
-  border-block-end: var(--skills-group-border-block-end, var(--skills-group-border, 1px solid var(--border-color)));
-  border-inline-start: var(--skills-group-border-inline-start, var(--skills-group-border, 1px solid var(--border-color)));
-  border-inline-end: var(--skills-group-border-inline-end, var(--skills-group-border, 1px solid var(--border-color)));
-  padding: var(--skills-group-padding, 0.6rem 0.75rem);
-  box-sizing: border-box;
-  background-color: var(--skills-group-background, var(--section-bg, transparent));
-  box-shadow: var(--skills-group-box-shadow, none);
-  border-radius: var(--skills-group-border-radius, 0);
-  margin-block-start: var(--skills-group-margin-block-start, 0);
-  margin-block-end: var(--skills-group-margin-bottom, 0);
-  margin-inline-start: var(--skills-group-margin-inline-start, 0);
-  margin-inline-end: var(--skills-group-margin-inline-end, 0);
-  position: var(--skills-group-position, relative);
-  transform: var(--skills-group-transform, none);
-  transition: var(--skills-group-transition, none);
-  overflow: var(--skills-group-overflow, visible);
-  animation: var(--skills-group-animation, none);
-  contain: var(--skills-group-contain, none);
-  will-change: var(--skills-group-will-change, auto);
+  .skills-grid__group {
+    /* Position */
+    position: relative;
 
-  /* === HOVER STATE === */
+    /* Box Model */
+    padding: var(--skills-group-padding);
+    margin-block-end: var(--skills-group-margin-block-end);
+    box-sizing: border-box;
 
-  &:hover {
-    transform: var(--skills-group-hover-transform, var(--skills-group-transform, none));
-    box-shadow: var(--skills-group-hover-box-shadow, var(--skills-group-box-shadow, none));
-    background: var(--skills-group-hover-background, var(--skills-group-background, transparent));
+    /* Borders */
+    border: var(--skills-group-border);
+    border-radius: var(--skills-group-border-radius);
 
-    * {
-      color: var(--skills-group-hover-child-color, inherit);
+    /* Background */
+    background-color: var(--skills-group-background);
+
+    /* Visual Effects */
+    box-shadow: var(--skills-group-box-shadow);
+    transform: var(--skills-group-transform);
+
+    /* Transitions */
+    transition: var(--skills-group-transition);
+
+    /* Animations */
+    animation: var(--skills-group-animation);
+
+    /* === HOVER STATE === */
+    &:hover {
+      /* Background */
+      background: var(--skills-group-hover-background);
+
+      /* Visual Effects */
+      box-shadow: var(--skills-group-hover-box-shadow);
+      transform: var(--skills-group-hover-transform);
+
+      /* Nested children text color override */
+      * {
+        color: var(--skills-group-hover-child-color);
+      }
     }
-  }
-}
 
-/* === SKILLS TITLE === */
+    /* ======================================================================
+       SKILLS TITLE (nested grandchild)
+       ====================================================================== */
 
-.skills-grid__title {
-  font-size: var(--skills-title-font-size, 0.9rem);
-  font-weight: var(--skills-title-font-weight, normal);
-  color: var(--skills-title-color, inherit);
-  text-transform: var(--skills-title-text-transform, uppercase);
-  letter-spacing: var(--skills-title-letter-spacing, 0.14em);
-  line-height: var(--skills-title-line-height, normal);
-  border-block-start: var(--skills-title-border-block-start, none);
-  border-block-end: var(--skills-title-border-width, 2px) var(--skills-title-border-style, solid)
-    var(--skills-title-border-block-end-color, var(--border-color));
-  border-inline-start: var(--skills-title-border-inline-start, none);
-  border-inline-end: var(--skills-title-border-inline-end, none);
-  padding-block-start: var(--skills-title-padding-block-start, 0);
-  padding-block-end: var(--skills-title-padding-bottom, 0.25rem);
-  padding-inline-start: var(--skills-title-padding-inline-start, 0);
-  padding-inline-end: var(--skills-title-padding-inline-end, 0);
-  margin-block-start: var(--skills-title-margin-block-start, 0);
-  margin-block-end: var(--skills-title-margin-bottom, 0.3rem);
-  margin-inline-start: var(--skills-title-margin-inline-start, 0);
-  margin-inline-end: var(--skills-title-margin-inline-end, 0);
-  text-shadow: var(--skills-title-text-shadow, none);
-  display: block;
-  align-items: var(--skills-title-align-items, normal);
-  gap: var(--skills-title-gap, normal);
+    .skills-grid__title {
+      /* Display/Box Model */
+      display: block;
+      padding-block-end: var(--skills-title-padding-block-end);
+      margin-block-end: var(--skills-title-margin-block-end);
 
-  /* === PSEUDO-ELEMENT === */
-  /* Used by themes for icons/decorations before title */
+      /* Borders */
+      border-block-end: var(--skills-title-border-width) var(--skills-title-border-style)
+        var(--skills-title-border-block-end-color);
 
-  &::before {
-    content: var(--skills-title-before-content);
-    display: var(--skills-title-before-display);
-    color: var(--skills-title-before-color);
-    font-size: var(--skills-title-before-font-size);
-  }
-}
+      /* Typography */
+      font-size: var(--skills-title-font-size);
+      font-weight: var(--skills-title-font-weight);
+      color: var(--skills-title-color);
+      text-transform: var(--skills-title-text-transform);
+      letter-spacing: var(--skills-title-letter-spacing);
 
-/* === SKILLS ITEMS TEXT === */
+      /* Visual Effects */
+      text-shadow: var(--skills-title-text-shadow);
 
-.skills-grid__items {
-  font-size: var(--skills-items-font-size, 0.85rem);
-  line-height: var(--skills-items-line-height, 1.4);
-  font-family: var(--skills-items-font-family, inherit);
-}
+      /* === DECORATIVE PSEUDO-ELEMENT === */
+      /* Used by themes for icons/decorations before title */
+      &::before {
+        content: var(--skills-title-before-content);
 
-/* === SKILLS GROUP UL === */
+        /* Display */
+        display: var(--skills-title-before-display);
 
-.skills-grid__group ul {
-  list-style: var(--skills-group-ul-list-style, none);
-  padding: var(--skills-group-ul-padding, 0);
-  margin: var(--skills-group-ul-margin, 0);
-  display: var(--skills-group-ul-display, block);
-  flex-wrap: var(--skills-group-ul-flex-wrap, nowrap);
-  gap: var(--skills-group-ul-gap, 0);
-}
+        /* Typography */
+        font-size: var(--skills-title-before-font-size);
+        color: var(--skills-title-before-color);
+      }
+    }
 
-/* === SKILLS LIST ITEMS === */
+    /* ======================================================================
+       SKILLS ITEMS TEXT (nested grandchild)
+       ====================================================================== */
 
-.skills-grid__group li {
-  font-size: var(--skills-group-li-font-size, 0.85rem);
-  font-weight: var(--skills-group-li-font-weight, normal);
-  line-height: var(--skills-group-li-line-height, 1.4);
+    .skills-grid__items {
+      /* Typography */
+      font-size: var(--skills-items-font-size);
+      font-family: var(--skills-items-font-family);
+      line-height: var(--skills-items-line-height);
+    }
 
-  &:not(:last-child)::after {
-    content: var(--skills-group-li-after-content, none);
-    margin-inline-start: var(--skills-group-li-after-margin-inline-start, 0);
+    /* ======================================================================
+       SKILLS LIST (nested grandchild - optional element)
+       ====================================================================== */
+
+    ul {
+      /* Display/Box Model */
+      display: var(--skills-group-ul-display);
+      padding: var(--skills-group-ul-padding);
+      margin: var(--skills-group-ul-margin);
+
+      /* Alignment */
+      gap: var(--skills-group-ul-gap);
+
+      /* Typography */
+      list-style: var(--skills-group-ul-list-style);
+
+      /* === LIST ITEMS === */
+      li {
+        /* Typography */
+        font-size: var(--skills-group-li-font-size);
+        font-weight: var(--skills-group-li-font-weight);
+        line-height: var(--skills-group-li-line-height);
+
+        /* === SEPARATOR PSEUDO-ELEMENT === */
+        /* Adds separator between items (e.g., comma) */
+        &:not(:last-child)::after {
+          content: var(--skills-group-li-after-content);
+
+          /* Box Model */
+          margin-inline-start: var(--skills-group-li-after-margin-inline-start);
+        }
+      }
+    }
   }
 }

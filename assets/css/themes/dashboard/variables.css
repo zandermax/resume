@@ -161,18 +161,14 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* ==================== SKILLS SECTION ==================== */
 
   /* Skills Grid - Container */
-  --skills-grid-display: grid;
   --skills-grid-padding: 0;
-  --skills-grid-grid-template-columns: repeat(2, minmax(0, 1fr));
-  --skills-grid-grid-template-columns-responsive-768: 1fr;
 
   /* Skills Grid - Group */
   --skills-group-background: var(--panel-bg);
   --skills-group-border: var(--border-width-thin) solid var(--panel-border);
   --skills-group-border-radius: 6px;
   --skills-group-padding: var(--spacing-md);
-  --skills-group-margin: var(--spacing-xs);
-  --skills-group-margin-bottom: var(--spacing-xs);
+  --skills-group-margin-block-end: var(--spacing-xs);
   --skills-group-box-shadow: var(--dashboard-shadow-sm);
   --skills-group-transition: transform 0.2s ease, box-shadow 0.2s ease;
 
@@ -187,8 +183,8 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --skills-title-letter-spacing: 0.1em;
   --skills-title-border-style: solid;
   --skills-title-border-width: var(--border-width-thin);
-  --skills-title-padding-bottom: var(--spacing-xs);
-  --skills-title-margin-bottom: var(--spacing-sm);
+  --skills-title-padding-block-end: var(--spacing-xs);
+  --skills-title-margin-block-end: var(--spacing-sm);
   --skills-title-align-items: center;
   --skills-title-gap: 0.5rem;
 

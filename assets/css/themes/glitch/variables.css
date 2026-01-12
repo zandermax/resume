@@ -64,6 +64,10 @@ Common properties for all modes
   --skew-light: 0.2deg;
   --skew-medium: -0.5deg;
 
+  /* Scroll-driven animation values */
+  --h2-drift-start: 100%;
+  --h2-drift-end: -100%;
+
   /* Animation durations */
   --duration-fast: 3s;
   --duration-medium: 14s;
@@ -126,7 +130,7 @@ Common properties for all modes
   --skills-group-border: var(--border-width-md) solid var(--border-color);
   --skills-group-background: var(--section-bg);
   --skills-group-padding: var(--spacing-md);
-  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-margin-block-end: var(--spacing-md);
   --skills-group-box-shadow: 2px 0 0 0 var(--glitch-primary), -2px 0 0 0 var(--glitch-secondary);
   --skills-group-animation: pixel-drift var(--duration-slow) infinite steps(1, jump-end);
   --skills-group-contain: layout;
@@ -139,8 +143,8 @@ Common properties for all modes
   --skills-title-text-shadow: var(--glitch-text-shadow-sm);
   --skills-title-border-style: solid;
   --skills-title-border-width: var(--border-width-md);
-  --skills-title-padding-bottom: var(--spacing-xs);
-  --skills-title-margin-bottom: var(--spacing-sm);
+  --skills-title-padding-block-end: var(--spacing-xs);
+  --skills-title-margin-block-end: var(--spacing-sm);
 
   /* Experience item role custom properties */
   --experience-role-font-size: var(--font-size-xxl);

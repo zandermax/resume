@@ -42,19 +42,19 @@
     transform: translateX(0);
   }
   20% {
-    text-shadow: -2px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)), 2px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
+    text-shadow: -2px 0 var(--glitch-primary), 2px 0 var(--glitch-secondary);
     transform: translateX(-2px);
   }
   40% {
-    text-shadow: 2px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)), -2px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
+    text-shadow: 2px 0 var(--glitch-primary), -2px 0 var(--glitch-secondary);
     transform: translateX(2px);
   }
   60% {
-    text-shadow: -1px 0 var(--glitch-tertiary, oklch(45.2% 0.313 264.1)), 1px 0 var(--glitch-primary, oklch(62.8% 0.258 29.2));
+    text-shadow: -1px 0 var(--glitch-tertiary), 1px 0 var(--glitch-primary);
     transform: translateX(1px);
   }
   80% {
-    text-shadow: 1px 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7)), -1px 0 var(--glitch-tertiary, oklch(45.2% 0.313 264.1));
+    text-shadow: 1px 0 var(--glitch-secondary), -1px 0 var(--glitch-tertiary);
     transform: translateX(-1px);
   }
 }
@@ -359,6 +359,41 @@
   }
 }
 
+/* Name view stretch - scroll-driven vertical smear effect */
+@keyframes name-view-stretch {
+  0% {
+    transform: scaleY(1);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    text-shadow: -4px 0 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)),
+      4px 0 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
+  }
+  50% {
+    transform: scaleY(1);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    text-shadow: -4px 0 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)),
+      4px 0 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
+  }
+  100% {
+    transform: scaleY(12);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-color);
+    text-shadow: -4px 0 0 var(--glitch-primary, oklch(62.8% 0.258 29.2)),
+      4px 0 0 var(--glitch-secondary, oklch(91.1% 0.139 195.7));
+  }
+}
+
+/* H2 view scroll - vertical drift effect */
+@keyframes h2-view-drift {
+  0% {
+    transform: translateY(var(--h2-drift-start, -50%));
+  }
+  100% {
+    transform: translateY(var(--h2-drift-end, 50%));
+  }
+}
+
 /* ===========================
 ANIMATION APPLICATIONS
 Apply animations to elements
@@ -375,6 +410,21 @@ body[data-theme='glitch'] {
 
     /* Performance optimizations */
     contain: layout paint;
+    will-change: transform;
+  }
+
+  #main-name {
+    animation: name-view-stretch linear;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+    transform-origin: bottom center;
+    will-change: transform;
+  }
+
+  h2 {
+    animation: h2-view-drift linear;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
     will-change: transform;
   }
 

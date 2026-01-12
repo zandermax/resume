@@ -86,8 +86,8 @@ XP Theme - Common Variables
   --skills-title-border-width: var(--border-width-normal);
   --skills-title-border-block-end-color: var(--xp-window-border-block-start);
   --skills-title-color: var(--text-color);
-  --skills-title-padding-bottom: 0.4rem;
-  --skills-title-margin-bottom: var(--spacing-xs);
+  --skills-title-padding-block-end: 0.4rem;
+  --skills-title-margin-block-end: var(--spacing-xs);
   --skills-title-font-weight: bold;
 
   /* Section text custom properties */

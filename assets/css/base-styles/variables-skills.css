@@ -8,84 +8,102 @@
  *   - .skills-grid__items (skill list text content)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --spacing-*, --section-bg)
+ *   - variables-base.css (uses --border-color, --section-bg)
  *
  * RELATED FILES:
  *   - skills.css (applies these variables to skills grid styles)
  *
- * VARIABLES DEFINED: ~30 variables controlling:
- *   - Grid layout (gap, columns, border, background)
+ * VARIABLES DEFINED: 65+ variables controlling:
+ *   - Grid layout (gap, padding, border, background, transform, overflow)
  *   - Group boxes (borders, padding, shadows, hover states, animations)
  *   - Title styling (font, borders, spacing, pseudo-elements)
  *   - Items text (font size, line height, font family)
+ *   - List display and formatting
+ *
+ * NOTE: All variables have sensible defaults - no fallbacks needed in skills.css
+ *
+ * DESIGN PRINCIPLES:
+ *   - Use shorthand properties where themes consistently use them (border, padding, inset)
+ *   - Use longhand only when themes need granular control (margin-block-end)
+ *   - Omit properties that hold only CSS defaults (never overridden)
+ *   - Hover states inherit from base states when not explicitly set
  */
 
 :root {
   /* === SKILLS GRID CONTAINER === */
-  --skills-grid-display: block;
-  --skills-grid-grid-template-columns: none;
-  --skills-grid-grid-template-columns-responsive-768: none;
-  --skills-grid-border: 0;
-  --skills-grid-background: transparent;
-  --skills-grid-box-shadow: none;
-  --skills-grid-padding: 0;
-  --skills-grid-border-radius: 0;
-  --skills-grid-position: relative;
-  --skills-grid-transform: none;
+  /* Layout properties */
   --skills-grid-gap: 1rem;
+  --skills-grid-padding: 0.75rem;
+  --skills-grid-transform: none;
+  --skills-grid-overflow: visible;
+
+  /* Border properties - themes use shorthand */
+  --skills-grid-border: 3px solid var(--border-color);
+
+  /* Visual properties */
+  --skills-grid-background: transparent;
+  --skills-grid-background-image: none;
+  --skills-grid-box-shadow: none;
+  --skills-grid-border-radius: 0;
 
   /* === SKILLS GRID PSEUDO-ELEMENTS === */
+  /* Used by themes for decorative borders/effects */
   --skills-grid-before-content: none;
   --skills-grid-before-display: none;
-  --skills-grid-before-position: static;
+  --skills-grid-before-position: absolute;
   --skills-grid-before-inset: auto;
   --skills-grid-before-border: none;
   --skills-grid-before-border-radius: 0;
-  --skills-grid-before-pointer-events: auto;
   --skills-grid-before-background: transparent;
   --skills-grid-before-opacity: 1;
 
   /* === SKILLS GROUP BOXES === */
-  --skills-group-border: 0;
-  --skills-group-background: transparent;
-  --skills-group-box-shadow: none;
-  --skills-group-padding: 0;
-  --skills-group-border-radius: 0;
-  --skills-group-margin: 0;
-  --skills-group-margin-bottom: 0;
-  --skills-group-position: relative;
+  /* Layout properties */
   --skills-group-transform: none;
+
+  /* Border properties - themes use shorthand */
+  --skills-group-border: 1px solid var(--border-color);
+  --skills-group-border-radius: 0;
+
+  /* Spacing */
+  --skills-group-padding: 0.6rem 0.75rem;
+  --skills-group-margin-block-end: 0;
+
+  /* Visual properties */
+  --skills-group-background: var(--section-bg);
+  --skills-group-box-shadow: none;
+
+  /* Behavioral properties */
   --skills-group-transition: none;
-  --skills-group-overflow: visible;
   --skills-group-animation: none;
-  --skills-group-contain: none;
-  --skills-group-will-change: auto;
 
   /* === SKILLS GROUP HOVER STATES === */
-  --skills-group-hover-transform: none;
-  --skills-group-hover-box-shadow: none;
-  --skills-group-hover-background: none;
+  /* Hover states inherit from base states when not set */
+  --skills-group-hover-transform: var(--skills-group-transform);
+  --skills-group-hover-box-shadow: var(--skills-group-box-shadow);
+  --skills-group-hover-background: var(--skills-group-background);
   --skills-group-hover-child-color: inherit;
 
   /* === SKILLS TITLE === */
-  --skills-title-border-style: none;
-  --skills-title-border-width: 0;
-  --skills-title-border-block-end-color: var(--border-color);
-  --skills-title-padding-bottom: 0;
-  --skills-title-margin-bottom: 0;
-  --skills-title-margin: 0;
-  --skills-title-font-weight: normal;
+  /* Typography */
   --skills-title-font-size: 0.9rem;
+  --skills-title-font-weight: normal;
   --skills-title-color: inherit;
-  --skills-title-text-shadow: none;
   --skills-title-text-transform: uppercase;
   --skills-title-letter-spacing: 0.14em;
-  --skills-title-line-height: normal;
-  --skills-title-border: none;
-  --skills-title-align-items: normal;
-  --skills-title-gap: normal;
+  --skills-title-text-shadow: none;
+
+  /* Border properties - title uses only block-end border */
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 2px;
+  --skills-title-border-block-end-color: var(--border-color);
+
+  /* Spacing - only block-end values are customized by themes */
+  --skills-title-padding-block-end: 0.25rem;
+  --skills-title-margin-block-end: 0.3rem;
 
   /* === SKILLS TITLE PSEUDO-ELEMENTS === */
+  /* Used by themes for icons/decorations before title */
   --skills-title-before-content: none;
   --skills-title-before-display: none;
   --skills-title-before-color: inherit;
@@ -101,7 +119,6 @@
   --skills-group-ul-padding: 0;
   --skills-group-ul-margin: 0;
   --skills-group-ul-display: block;
-  --skills-group-ul-flex-wrap: nowrap;
   --skills-group-ul-gap: 0;
 
   /* === SKILLS LIST ITEMS === */

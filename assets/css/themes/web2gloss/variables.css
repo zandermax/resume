@@ -30,7 +30,7 @@ WEB 2.0 GLOSS Theme - Variables
   --skills-group-border-radius: var(--web2-radius-md);
   --skills-group-background: linear-gradient(180deg, oklch(100% 0 0 / 0.8) 0%, oklch(100% 0 0 / 0.5) 100%);
   --skills-group-padding: var(--spacing-md);
-  --skills-group-margin-bottom: var(--spacing-md);
+  --skills-group-margin-block-end: var(--spacing-md);
   --skills-group-border: var(--border-width-thin) solid oklch(0% 0 0 / 0.1);
   --skills-group-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.5);
   --skills-group-transition: var(--web2-transition-fast);
@@ -46,10 +46,9 @@ WEB 2.0 GLOSS Theme - Variables
   --skills-title-text-shadow: 0 1px 2px oklch(100% 0 0 / 0.8);
   --skills-title-border-style: solid;
   --skills-title-border-width: var(--border-width-normal);
-  --skills-title-border: none;
   --skills-title-border-block-end-color: var(--web2-primary);
-  --skills-title-padding-bottom: var(--spacing-xs);
-  --skills-title-margin-bottom: var(--spacing-sm);
+  --skills-title-padding-block-end: var(--spacing-xs);
+  --skills-title-margin-block-end: var(--spacing-sm);
 
   /* Experience item company custom properties */
   --experience-company-font-weight: 600;

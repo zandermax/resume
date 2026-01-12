@@ -166,8 +166,7 @@ Flat Design / Material Zero
   --skills-group-background: var(--section-bg);
   --skills-group-padding: 1.5rem;
   --skills-group-border-radius: 0;
-  --skills-group-margin: 0;
-  --skills-group-margin-bottom: 0;
+  --skills-group-margin-block-end: 0;
   --skills-group-box-shadow: none;
   --skills-group-transition: background-color 0.15s ease;
   --skills-group-hover-background: var(--metro-blue);
@@ -176,11 +175,10 @@ Flat Design / Material Zero
   /* Skills grid title custom properties */
   --skills-title-border-style: solid;
   --skills-title-border-width: 3px;
-  --skills-title-border: 0;
   --skills-title-border-block-end-color: var(--accent-color);
   --skills-title-letter-spacing: 0.05em;
-  --skills-title-padding-bottom: 0.75rem;
-  --skills-title-margin-bottom: 1rem;
+  --skills-title-padding-block-end: 0.75rem;
+  --skills-title-margin-block-end: 1rem;
   --skills-title-font-weight: 600;
   --skills-title-font-size: 1rem;
 
