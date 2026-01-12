@@ -60,21 +60,6 @@
 
 body[data-theme='skeuomorph'] {
   /* --------------------------------------------------------------------
-     Label Variables
-     -------------------------------------------------------------------- */
-  --ds-label-color: var(--text-color);
-  --ds-label-font-weight: 600;
-  --ds-label-active-color: var(--dial-color-selection);
-  --ds-label-span-active-font-weight: 700;
-
-  /* Label hover - No hover effect for realism */
-  --ds-label-hover-box-shadow: none;
-  --ds-label-hover-background: transparent;
-  --ds-label-hover-color: var(--dial-color-ink);
-  --ds-label-hover-transform: none;
-  --ds-label-hover-padding: 0;
-
-  /* --------------------------------------------------------------------
      Housing Variables (Leather Pad)
      -------------------------------------------------------------------- */
   --dial-selector-housing-background: var(--skeu-black-20);
@@ -97,6 +82,18 @@ body[data-theme='skeuomorph'] {
      Dial Selector Variables
      -------------------------------------------------------------------- */
   dial-selector {
+    /* Label Variables */
+    --ds-label-color: var(--text-color);
+    --ds-label-font-weight: 600;
+    --ds-label-active-color: var(--dial-color-selection);
+    --ds-label-span-active-font-weight: 700;
+
+    /* Label hover - No hover effect for realism */
+    --ds-label-hover-box-shadow: none;
+    --ds-label-hover-background: transparent;
+    --ds-label-hover-color: var(--dial-color-ink);
+    --ds-label-hover-transform: none;
+    --ds-label-hover-padding: 0;
     /* Knob styling */
     --ds-knob-background-image: var(--metal-gradient);
     --ds-knob-box-shadow: var(--knob-shadow);

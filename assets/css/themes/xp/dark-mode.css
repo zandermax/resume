@@ -24,8 +24,6 @@ XP Theme - Dark Mode
   --xp-text-shadow: 1px 1px 2px var(--xp-black-50);
   --dial-selector-label-color: var(--color-black);
   --xp-panel-shadow: inset 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 2px var(--xp-black-10);
-  --ds-label-color: var(--color-black);
-  --ds-line-stroke: var(--color-black);
 
   /* Scrollbar styling (dark mode) */
   /* Webkit (primary) */

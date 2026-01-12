@@ -235,14 +235,12 @@
   --section-title-padding-inline-start: 0;
   --section-title-padding-inline-end: 0;
   --section-title-margin-block-start: 0;
-  --section-title-margin-bottom: 0.75rem;
-  --section-title-margin-top: 0;
+  --section-title-margin-block-end: 0.75rem;
   --section-title-margin-inline-start: 0;
   --section-title-margin-inline-end: 0;
   --section-title-background: transparent;
   --section-title-box-shadow: none;
   --section-title-text-shadow: none;
-  --section-title-position: static;
   --section-title-transform: none;
   --section-title-display: block;
   --section-title-width: auto;
@@ -262,6 +260,7 @@
   --section-title-before-inset: auto;
   --section-title-before-color: inherit;
   --section-title-before-font-size: inherit;
+  --section-title-before-text-shadow: none;
   --section-title-before-background: transparent;
   --section-title-before-border: none;
   --section-title-before-border-radius: 0;

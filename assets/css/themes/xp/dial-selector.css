@@ -65,6 +65,8 @@ XP Theme - Dial Selector
       oklch(34% 0.08 250) 50%,
       oklch(30% 0.06 250) 100%
     );
+    --ds-label-color: var(--color-black);
+    --ds-line-stroke: var(--color-black);
   }
 }
 

@@ -26,6 +26,9 @@ dial-selector {
   --ds-color-line: var(--dial-color-line, var(--dial-color-line-default));
   --ds-color-indicator: var(--dial-color-indicator, var(--dial-color-highlight-default));
 
+  /* Knob colors */
+  --ds-knob-background-color: var(--dial-color-knob-background, transparent);
+
   /* Circle colors */
   --ds-color-outer-circle: var(--ds-color-ink);
   --ds-color-inner-circle: var(--ds-color-ink);

@@ -12,7 +12,7 @@ METRO Theme - Light Mode
   --dial-color-ink: var(--color-black);
   --dial-color-selection: var(--color-blue-metro);
   --dial-color-indicator: var(--color-blue-metro);
-  --ds-knob-background-color: oklch(96% 0 0); /* Light gray */
+  --dial-color-knob-background: oklch(96% 0 0); /* Light gray */
   --link-color: var(--color-blue-metro);
   --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(96% 0 0);

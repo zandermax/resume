@@ -31,11 +31,6 @@ Nostalgia Theme Variables
   --header-border: 5px dotted;
   --main-padding-responsive-500: var(--spacing-sm);
 
-  /* Dial label hover properties */
-  --ds-label-hover-background: var(--accent-color);
-  --ds-label-hover-color: var(--background-color);
-  --ds-label-hover-padding: 0rem 0.5rem;
-
   /* Print link common properties */
   --printlink-border-radius: 8px;
   --printlink-padding-block: var(--font-size-sm);
@@ -77,4 +72,19 @@ Nostalgia Theme Variables
   --scrollbar-width-value: auto;
   --scrollbar-thumb-color: var(--nostalgia-orange);
   --scrollbar-track-color: var(--nostalgia-cyan);
+
+  /* Dial label hover properties */
+  dial-selector {
+    --ds-label-hover-background: var(--accent-color);
+    --ds-label-hover-color: var(--background-color);
+    --ds-label-hover-padding: 0rem 0.5rem;
+  }
+
+  &[data-mode='light'] dial-selector {
+    --ds-label-hover-color: var(--nostalgia-black);
+  }
+
+  &[data-mode='dark'] dial-selector {
+    --ds-label-hover-color: var(--nostalgia-white);
+  }
 }

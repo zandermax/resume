@@ -18,13 +18,13 @@ DASHBOARD Theme - Dial Selector Styles
     --dial-color-ink: oklch(20% 0 0);
     --dial-color-selection: var(--color-blue-dashboard);
     --dial-color-indicator: var(--color-blue-dashboard);
-    --ds-knob-background-color: var(--color-white);
+    --dial-color-knob-background: var(--color-white);
   }
 
   &[data-mode='dark'] {
     --dial-color-ink: oklch(93% 0.005 245);
     --dial-color-selection: var(--color-blue-bright);
     --dial-color-indicator: var(--color-blue-bright);
-    --ds-knob-background-color: oklch(17% 0.01 240);
+    --dial-color-knob-background: oklch(17% 0.01 240);
   }
 }

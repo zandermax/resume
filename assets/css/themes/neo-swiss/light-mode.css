@@ -8,7 +8,7 @@ Neo-Swiss Theme - Light Mode
   --heading-color: var(--color-black);
   --border-color: var(--color-black);
   --dial-color-ink: var(--color-black);
-  --ds-knob-background-color: var(--color-black);
+  --dial-color-knob-background: var(--color-black);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-black);
 }

@@ -18,7 +18,7 @@
   --border-color: var(--color-white);
   --dial-color-ink: var(--color-white);
   --dial-color-selection: var(--color-white);
-  --ds-knob-background-color: var(--color-gray-dark);
+  --dial-color-knob-background: var(--color-gray-dark);
   --link-color: var(--color-white);
   --link-visited-color: var(--color-gray-medium);
   --section-bg: var(--color-gray-darkest);

@@ -25,7 +25,7 @@ TERMINAL Theme - Common Variables
   --section-title-padding-inline-start: 0.75rem;
   --section-title-padding-inline-end: 0.75rem;
   --section-title-background: var(--terminal-button-bg);
-  --section-title-margin-bottom: 1rem;
+  --section-title-margin-block-end: 1rem;
   --section-title-font-size: 1.1rem;
   --section-title-text-transform: uppercase;
   --skills-grid-border: 0;

@@ -192,10 +192,7 @@ Ultra-modern minimalism with mathematical precision
   --section-title-line-height: var(--line-height-base);
   --section-title-text-transform: uppercase;
   --section-title-width: 60%;
-  --section-title-max-width: none;
   --section-title-border-block-end: 1px solid var(--accent-color);
-  --section-title-border-radius: 0;
-  --section-title-box-shadow: none;
 
   /* Print link custom properties */
   --printlink-font-size: var(--font-size-small);

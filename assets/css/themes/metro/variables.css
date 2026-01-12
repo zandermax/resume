@@ -64,7 +64,6 @@ Flat Design / Material Zero
   /* ==================== SECTIONS ==================== */
 
   /* Section title custom properties */
-  --section-title-border-radius: 0;
   --section-title-padding-block-start: 1em;
   --section-title-padding-block-end: 1em;
   --section-title-padding-inline-start: 1em;
@@ -79,7 +78,6 @@ Flat Design / Material Zero
   --section-title-font-size: 1.4rem;
   --section-title-letter-spacing: 0.05em;
   --section-title-line-height: 1;
-  --section-title-box-shadow: none;
   --section-title-border-width: 0px;
 
   /* Section content custom properties */

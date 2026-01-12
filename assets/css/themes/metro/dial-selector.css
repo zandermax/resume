@@ -51,4 +51,9 @@ METRO Theme - Dial Selector Custom Properties
     /* Dial selector spoke lines */
     --ds-line-width: 2px;
   }
+
+  &[data-mode='dark'] dial-selector {
+    /* Dial label hover properties (dark mode) */
+    --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
+  }
 }

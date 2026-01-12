@@ -255,6 +255,25 @@ The header component uses a mix of shorthand and longhand custom properties for 
 - All pseudo-element properties must be defined in base with defaults
 - Examples: `--resume-header-before-border`, `--resume-header-before-opacity`, `--resume-header-before-pointer-events`
 
+### Section Title Properties
+
+Section titles (h2.resume-section__title) follow the same longhand-first principle:
+
+**Longhand properties** (used in actual CSS rules):
+
+- `--section-title-margin-block-start`, `--section-title-margin-block-end`
+- `--section-title-margin-inline-start`, `--section-title-margin-inline-end`
+- `--section-title-padding-block-start`, `--section-title-padding-block-end`
+- `--section-title-padding-inline-start`, `--section-title-padding-inline-end`
+- `--section-title-border-block-start`, `--section-title-border-block-end`
+- `--section-title-border-inline-start`, `--section-title-border-inline-end`
+
+**Background layering**: Uses `background-image` before `background` shorthand to allow texture overlays (see line 205-212).
+
+**Fallback pattern**: `--section-title-background` falls back to `--section-accent-color` which provides automatic per-section color rotation (defined in sections.css).
+
+**Pseudo-elements**: Support extensive customization via `--section-title-before-*` and `--section-title-after-*` properties for theme-specific decorations.
+
 **Dial selector housing**:
 
 - Uses longhand properties in actual styles: `--dial-selector-housing-padding-block-start`, etc.
