@@ -272,7 +272,10 @@ Ultra-modern minimalism with mathematical precision
   --education-item-border-inline-end: 0;
   --education-item-border-radius: 0;
   --education-item-box-shadow: none;
-  --education-item-padding: 0;
+  --education-item-padding-block-start: 0;
+  --education-item-padding-block-end: 0;
+  --education-item-padding-inline-start: 0;
+  --education-item-padding-inline-end: 0;
   --education-item-margin-block-end: var(--spacing-6);
 
   /* Education item dates custom properties */
@@ -285,7 +288,10 @@ Ultra-modern minimalism with mathematical precision
   --education-institution-font-size: var(--font-size-xlarge);
   --education-institution-font-weight: var(--font-weight-bold);
   --education-institution-text-transform: none;
-  --education-institution-margin: 0 0 var(--spacing-1) 0;
+  --education-institution-margin-block-start: 0;
+  --education-institution-margin-block-end: var(--spacing-1);
+  --education-institution-margin-inline-start: 0;
+  --education-institution-margin-inline-end: 0;
   --education-institution-line-height: var(--line-height-tight);
   --education-institution-letter-spacing: var(--letter-spacing-tight);
 

@@ -71,7 +71,10 @@ TERMINAL Theme - Common Variables
   --education-item-border-inline-end: 0;
   --education-item-box-shadow: var(--terminal-inset-raised-sm);
   --education-item-background: var(--section-bg);
-  --education-item-padding: 1rem;
+  --education-item-padding-block-start: 1rem;
+  --education-item-padding-block-end: 1rem;
+  --education-item-padding-inline-start: 1rem;
+  --education-item-padding-inline-end: 1rem;
   --header-border-width: 0;
   --header-box-shadow: var(--terminal-inset-raised-lg);
   --header-padding: 0.5rem;

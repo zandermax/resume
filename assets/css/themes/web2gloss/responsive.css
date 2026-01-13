@@ -32,7 +32,10 @@ body[data-theme='web2gloss'] {
     --section-padding-block-end: 1rem;
     --section-padding-inline-end: 1rem;
     --experience-item-padding: 1.5rem;
-    --education-item-padding: 1.5rem;
+    --education-item-padding-block-start: 1.5rem;
+    --education-item-padding-block-end: 1.5rem;
+    --education-item-padding-inline-start: 1.5rem;
+    --education-item-padding-inline-end: 1.5rem;
     --experience-item-border-radius: var(--web2-radius-md);
     --education-item-border-radius: var(--web2-radius-md);
     --header-padding: 1.5rem 1rem;

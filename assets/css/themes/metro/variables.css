@@ -186,7 +186,10 @@ Flat Design / Material Zero
   --education-institution-font-size: 1.3rem;
   --education-institution-font-weight: 600;
   --education-institution-text-transform: uppercase;
-  --education-institution-margin: 0 0 0.5rem 0;
+  --education-institution-margin-block-start: 0;
+  --education-institution-margin-block-end: 0.5rem;
+  --education-institution-margin-inline-start: 0;
+  --education-institution-margin-inline-end: 0;
   --education-institution-line-height: 1.2;
   --education-institution-letter-spacing: 0.02em;
 
@@ -197,7 +200,10 @@ Flat Design / Material Zero
   --education-item-border-inline-end: 0;
   --education-item-border-radius: 0;
   --education-item-background: var(--section-bg);
-  --education-item-padding: var(--spacing-xl);
+  --education-item-padding-block-start: var(--spacing-xl);
+  --education-item-padding-block-end: var(--spacing-xl);
+  --education-item-padding-inline-start: var(--spacing-xl);
+  --education-item-padding-inline-end: var(--spacing-xl);
   --education-item-box-shadow: none;
   --education-item-position: relative;
   --education-item-hover-padding-inline-start: var(--spacing-xl);

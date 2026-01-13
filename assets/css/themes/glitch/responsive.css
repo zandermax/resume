@@ -23,7 +23,10 @@ Media queries for variable overrides
     --section-padding-block-end: var(--spacing-lg);
     --section-padding-inline-end: var(--spacing-lg);
     --experience-item-padding: var(--spacing-lg);
-    --education-item-padding: var(--spacing-lg);
+    --education-item-padding-block-start: var(--spacing-lg);
+    --education-item-padding-block-end: var(--spacing-lg);
+    --education-item-padding-inline-start: var(--spacing-lg);
+    --education-item-padding-inline-end: var(--spacing-lg);
   }
 }
 
@@ -46,7 +49,10 @@ Media queries for variable overrides
     --section-padding-block-end: var(--spacing-md);
     --section-padding-inline-end: var(--spacing-md);
     --experience-item-padding: var(--spacing-md);
-    --education-item-padding: var(--spacing-md);
+    --education-item-padding-block-start: var(--spacing-md);
+    --education-item-padding-block-end: var(--spacing-md);
+    --education-item-padding-inline-start: var(--spacing-md);
+    --education-item-padding-inline-end: var(--spacing-md);
 
     /* Header and dial selector padding adjustments */
     --header-padding: 0;

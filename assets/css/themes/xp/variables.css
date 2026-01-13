@@ -227,7 +227,10 @@ XP Theme - Common Variables
   --education-item-background: var(--section-bg);
   --education-item-border-radius: var(--xp-radius-sm);
   --education-item-box-shadow: var(--xp-panel-shadow);
-  --education-item-padding: 1rem;
+  --education-item-padding-block-start: 1rem;
+  --education-item-padding-block-end: 1rem;
+  --education-item-padding-inline-start: 1rem;
+  --education-item-padding-inline-end: 1rem;
 
   /* Education institution custom properties */
   --education-institution-font-size: 1.05rem;

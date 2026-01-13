@@ -59,7 +59,10 @@ body[data-theme='web2gloss'] {
 
   /* === EDUCATION ITEM - Floating glossy card === */
   --education-item-border-radius: var(--web2-radius-lg);
-  --education-item-padding: 2rem;
+  --education-item-padding-block-start: 2rem;
+  --education-item-padding-block-end: 2rem;
+  --education-item-padding-inline-start: 2rem;
+  --education-item-padding-inline-end: 2rem;
   --education-item-border-block-start: 1px solid var(--border-color);
   --education-item-border-block-end: 1px solid var(--border-color);
   --education-item-border-inline-start: 1px solid var(--border-color);
@@ -70,7 +73,10 @@ body[data-theme='web2gloss'] {
   --education-item-before-content: '';
   --education-item-before-display: block;
   --education-item-before-position: absolute;
-  --education-item-before-inset: 0 0 50% 0;
+  --education-item-before-top: 0;
+  --education-item-before-right: 0;
+  --education-item-before-bottom: 50%;
+  --education-item-before-left: 0;
   --education-item-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
   --education-item-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
   --education-item-before-pointer-events: none;

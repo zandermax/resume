@@ -117,8 +117,14 @@ body[data-theme='skeuomorph'] {
   --education-item-before-content: '';
   --education-item-before-display: block;
   --education-item-before-position: absolute;
-  --education-item-before-inset: -6px;
-  --education-item-before-border: 2px dashed var(--stitch-color);
+  --education-item-before-top: -6px;
+  --education-item-before-right: -6px;
+  --education-item-before-bottom: -6px;
+  --education-item-before-left: -6px;
+  --education-item-before-border-block-start: 2px dashed var(--stitch-color);
+  --education-item-before-border-block-end: 2px dashed var(--stitch-color);
+  --education-item-before-border-inline-start: 2px dashed var(--stitch-color);
+  --education-item-before-border-inline-end: 2px dashed var(--stitch-color);
   --education-item-before-pointer-events: none;
   --education-item-before-opacity: 0.6;
 }

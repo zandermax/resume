@@ -4,11 +4,13 @@
  * HTML ELEMENTS AFFECTED:
  *   - .education-item (education card container)
  *   - .education-item::before (decorative pseudo-element)
+ *   - .education-item:first-of-type (first item styling)
  *   - .education-item:nth-child(even) (alternate styling)
  *   - .education-item:hover (hover state)
  *   - h3.education-item__institution (institution name)
  *   - .education-item__degree (degree and major text)
  *   - .education-item__dates (date information)
+ *   - .education-item__details (additional details)
  *
  * DEPENDENCIES:
  *   - variables-education.css (all education-specific variables with defaults)
@@ -33,8 +35,7 @@
  * STRUCTURE:
  *   - All properties use CSS variables without fallbacks
  *   - All defaults are defined in variables-education.css
- *   - Uses longhand border properties (border-block-*, border-inline-*)
- *   - Uses shorthand margin only (no longhand overrides)
+ *   - Uses longhand properties exclusively (border-block-*, padding-block-*, margin-block-*, etc.)
  *   - Properties ordered by consistent methodology (see PROPERTY ORDER)
  *   - Uses CSS nesting for child elements and states
  */
@@ -47,8 +48,14 @@
   position: var(--education-item-position);
 
   /* Box Model */
-  padding: var(--education-item-padding);
+  padding-block-start: var(--education-item-padding-block-start);
+  padding-block-end: var(--education-item-padding-block-end);
+  padding-inline-start: var(--education-item-padding-inline-start);
+  padding-inline-end: var(--education-item-padding-inline-end);
+  margin-block-start: var(--education-item-margin-block-start);
   margin-block-end: var(--education-item-margin-block-end);
+  margin-inline-start: var(--education-item-margin-inline-start);
+  margin-inline-end: var(--education-item-margin-inline-end);
 
   /* Borders */
   border-block-start: var(--education-item-border-block-start);
@@ -68,6 +75,7 @@
   /* Visual Effects */
   box-shadow: var(--education-item-box-shadow);
   transform: var(--education-item-transform);
+  filter: var(--education-item-filter);
 
   /* Transitions */
   transition: var(--education-item-transition);
@@ -83,14 +91,20 @@
 
     /* Position */
     position: var(--education-item-before-position);
-    inset: var(--education-item-before-inset);
+    top: var(--education-item-before-top);
+    right: var(--education-item-before-right);
+    bottom: var(--education-item-before-bottom);
+    left: var(--education-item-before-left);
 
     /* Display/Box Model */
     display: var(--education-item-before-display);
     width: var(--education-item-before-width);
 
     /* Borders */
-    border: var(--education-item-before-border);
+    border-block-start: var(--education-item-before-border-block-start);
+    border-block-end: var(--education-item-before-border-block-end);
+    border-inline-start: var(--education-item-before-border-inline-start);
+    border-inline-end: var(--education-item-before-border-inline-end);
     border-radius: var(--education-item-before-border-radius);
 
     /* Background */
@@ -101,6 +115,12 @@
 
     /* Other */
     pointer-events: var(--education-item-before-pointer-events);
+  }
+
+  /* === FIRST ITEM STYLING === */
+
+  &:first-of-type {
+    border-block-start: var(--education-item-border-block-start-first);
   }
 
   /* === NTH-CHILD STYLING === */
@@ -115,6 +135,8 @@
     padding-inline-start: var(--education-item-hover-padding-inline-start);
     box-shadow: var(--education-item-hover-box-shadow);
     transform: var(--education-item-hover-transform);
+    filter: var(--education-item-hover-filter);
+    border-inline-start-color: var(--education-item-hover-border-color);
   }
 
   /* === EDUCATION INSTITUTION === */
@@ -122,7 +144,10 @@
   h3.education-item__institution {
     /* Box Model */
     padding-inline-start: var(--education-institution-padding-inline-start);
-    margin: var(--education-institution-margin);
+    margin-block-start: var(--education-institution-margin-block-start);
+    margin-block-end: var(--education-institution-margin-block-end);
+    margin-inline-start: var(--education-institution-margin-inline-start);
+    margin-inline-end: var(--education-institution-margin-inline-end);
 
     /* Borders */
     border-inline-start: var(--education-institution-border-inline-start);
@@ -155,5 +180,19 @@
 
     /* Visual Effects */
     opacity: var(--education-item-dates-opacity);
+  }
+
+  /* === EDUCATION DETAILS === */
+
+  .education-item__details {
+    /* Typography */
+    font-size: var(--education-details-font-size);
+    color: var(--education-details-color);
+
+    /* Box Model */
+    margin-block-end: var(--education-details-margin-block-end);
+
+    /* Visual Effects */
+    opacity: var(--education-details-opacity);
   }
 }

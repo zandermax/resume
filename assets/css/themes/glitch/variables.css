@@ -124,7 +124,10 @@ Common properties for all modes
   --education-item-border-inline-end: var(--border-width-md) solid var(--border-color);
   --education-item-background: var(--section-bg);
   --education-item-position: relative;
-  --education-item-padding: var(--spacing-xl);
+  --education-item-padding-block-start: var(--spacing-xl);
+  --education-item-padding-block-end: var(--spacing-xl);
+  --education-item-padding-inline-start: var(--spacing-xl);
+  --education-item-padding-inline-end: var(--spacing-xl);
 
   /* Skills grid group custom properties */
   --skills-group-border: var(--border-width-md) solid var(--border-color);
@@ -283,7 +286,10 @@ Common properties for all modes
   --education-institution-font-size: var(--font-size-xxl);
   --education-institution-font-weight: 700;
   --education-institution-color: var(--text-color);
-  --education-institution-margin: 0 0 var(--spacing-xs) 0;
+  --education-institution-margin-block-start: 0;
+  --education-institution-margin-block-end: var(--spacing-xs);
+  --education-institution-margin-inline-start: 0;
+  --education-institution-margin-inline-end: 0;
   --education-institution-text-shadow: var(--glitch-text-shadow);
 
   /* Experience bullets custom properties */
