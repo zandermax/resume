@@ -51,8 +51,11 @@ TERMINAL Theme - Common Variables
   --skills-items-line-height: 1.5;
   --community-item-font-size: 0.95rem;
   --community-item-line-height: 1.6;
+  --community-item-transition: all 0.1s ease;
+  --list-item-hover-filter: brightness(1.1);
   --principles-item-font-size: 0.95rem;
   --principles-item-line-height: 1.6;
+  --principles-item-transition: all 0.1s ease;
   --list-border: 0;
   --list-background: var(--terminal-window-bg);
   --list-box-shadow: var(--terminal-inset-sunken-lg);
@@ -77,7 +80,10 @@ TERMINAL Theme - Common Variables
   --education-item-padding-inline-end: 1rem;
   --header-border-width: 0;
   --header-box-shadow: var(--terminal-inset-raised-lg);
-  --header-padding: 0.5rem;
+  --header-padding-block-start: 0.5rem;
+  --header-padding-block-end: 0.5rem;
+  --header-padding-inline-start: 0.5rem;
+  --header-padding-inline-end: 0.5rem;
   --bullet-before-content: '▪';
   --bullet-font-size: 0.7rem;
   --header-meta-font-size: 0.9rem;

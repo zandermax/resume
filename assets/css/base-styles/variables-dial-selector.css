@@ -128,7 +128,7 @@
   /* --- Knob Styling --- */
   --dial-selector-knob-border-width: 2px;
   --dial-selector-knob-border-style: solid;
-  --dial-selector-knob-border-color: null; /* null = use --ds-color-outer-circle */
+  --dial-selector-knob-border-color: var(--ds-color-outer-circle); /* defaults to outer circle color */
   --dial-selector-knob-border-radius: 50%;
   --dial-selector-knob-background-image: none;
   --dial-selector-knob-box-shadow: none;
@@ -164,8 +164,8 @@
   --dial-selector-component-filter: none;
 
   /* --- Component Sizing --- */
-  --dial-selector-knob-size: null; /* null = use default responsive sizing */
-  --dial-selector-selector-gap: null; /* null = use default responsive gap */
+  --dial-selector-knob-size: 200px; /* default knob size */
+  --dial-selector-selector-gap: clamp(12px, 4vw, 40px); /* default responsive gap */
 
   /* --- Indicator Positioning --- */
   --dial-selector-indicator-vertical-offset: 46.75%;

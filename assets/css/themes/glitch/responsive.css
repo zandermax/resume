@@ -55,7 +55,10 @@ Media queries for variable overrides
     --education-item-padding-inline-end: var(--spacing-md);
 
     /* Header and dial selector padding adjustments */
-    --header-padding: 0;
+    --header-padding-block-start: 0;
+    --header-padding-block-end: 0;
+    --header-padding-inline-start: 0;
+    --header-padding-inline-end: 0;
     --dial-selector-housing-padding-block: 0;
     --dial-selector-housing-padding-inline: 0;
 

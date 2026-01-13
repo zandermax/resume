@@ -14,9 +14,10 @@ body[data-theme='web2gloss'] {
   --experience-item-overflow: hidden;
 
   /* Header - Big glossy banner */
-  --header-border: none;
-  --header-padding: 2.5rem 2rem;
-  --header-margin: 0;
+  --header-padding-block-start: 2.5rem;
+  --header-padding-block-end: 2.5rem;
+  --header-padding-inline-start: 2rem;
+  --header-padding-inline-end: 2rem;
   --header-position: relative;
   --header-overflow: hidden;
   --header-box-shadow: var(--web2-shadow-inset-light);

@@ -107,6 +107,8 @@ WEB 2.0 GLOSS Theme - Variables
   --list-item-border-color: oklch(0% 0 0 / 0.05);
   --community-item-box-shadow: 0 1px 3px oklch(0% 0 0 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.4);
   --community-item-transition: var(--web2-transition-fast);
+  --list-item-hover-box-shadow: 0 2px 8px oklch(0% 0 0 / 0.12), inset 0 1px 0 oklch(100% 0 0 / 0.6);
+  --list-item-hover-transform: translateY(-1px);
   --principles-item-border-radius: var(--web2-radius-sm);
   --principles-item-padding: 1rem;
   --principles-item-margin-bottom: 0.75rem;
@@ -121,8 +123,6 @@ WEB 2.0 GLOSS Theme - Variables
   --header-name-font-weight: 700;
   --header-name-letter-spacing: -0.02em;
   --header-name-text-shadow: 0 1px 2px oklch(0% 0 0 / 0.3), 0 2px 4px oklch(0% 0 0 / 0.2);
-  --header-name-border: none;
-  --header-name-padding: 0;
   --header-name-margin-block-end: 0.5rem;
 
   /* Section title custom properties */

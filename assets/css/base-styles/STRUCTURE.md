@@ -442,19 +442,14 @@ For community and principles list items:
 
 Both community and principles items share the same pseudo-element positioning variables:
 
-- `--list-item-before-left` - Horizontal position
-- `--list-item-before-top` - Vertical position
-- `--list-item-before-position` - Positioning context (absolute, relative, etc.)
-
-Do not create item-specific positioning variables like `--community-item-before-left`. Use the shared variables for consistency.
-
 ### Theme Accent Color Rotation
 
 List items support automatic accent color rotation via `--item-accent-color`:
 
 - Define `--theme-accent-1` through `--theme-accent-4` in your theme
 - Colors automatically rotate per nth-child (2n, 3n, 4n)
-- Used by `--list-item-border-inline-start-color` for side accent bars
+- The `--item-accent-color` variable is defined in `lists.css` and rotates based on nth-child
+- To use accent colors, set `--community-item-border-inline-start-color: var(--item-accent-color)` in your theme
 - Falls back to `--border-color` if theme accents not defined
 
 Example theme setup:
@@ -465,8 +460,22 @@ Example theme setup:
   --theme-accent-2: oklch(60% 0.2 250);
   --theme-accent-3: oklch(60% 0.2 300);
   --theme-accent-4: oklch(60% 0.2 350);
+
+  /* Connect accent colors to border */
+  --community-item-border-inline-start-color: var(--item-accent-color);
+  --principles-item-border-inline-start-color: var(--item-accent-color);
 }
 ```
+
+### Border Property Pattern
+
+List items use **longhand border properties** to avoid cascade conflicts:
+
+- `--community-item-border-inline-start-width` - Border width (e.g., `4px`, `var(--border-width-thick)`)
+- `--community-item-border-inline-start-style` - Border style (e.g., `solid`, `dashed`)
+- `--community-item-border-inline-start-color` - Border color (can use `var(--item-accent-color)` for rotation)
+
+Do NOT use shorthand `--community-item-border-inline-start` as it creates cascade ambiguity. Use the three longhand properties instead.
 
 ## Adding New Components
 

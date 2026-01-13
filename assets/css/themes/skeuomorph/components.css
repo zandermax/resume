@@ -35,11 +35,17 @@ body[data-theme='skeuomorph'] {
   /* ==================== HEADER - LEATHER BACKING ==================== */
 
   --header-position: relative;
-  --header-margin: -var(--spacing-md) -var(--spacing-md) var(--spacing-lg);
+  --header-margin-block-start: calc(-1 * var(--spacing-md));
+  --header-margin-block-end: var(--spacing-lg);
+  --header-margin-inline-start: calc(-1 * var(--spacing-md));
+  --header-margin-inline-end: calc(-1 * var(--spacing-md));
   --header-background-color: var(--paper-color);
   --header-background-image: var(--paper-texture);
   --header-box-shadow: 0 4px 8px var(--skeu-black-30), inset 0 1px 2px var(--skeu-white-50);
-  --header-border: 4px solid var(--leather-color);
+  --header-border-block-start: 4px solid var(--leather-color);
+  --header-border-block-end: 4px solid var(--leather-color);
+  --header-border-inline-start: 4px solid var(--leather-color);
+  --header-border-inline-end: 4px solid var(--leather-color);
   --header-child-color: var(--text-color);
   --header-child-border-color: var(--stitch-color);
 

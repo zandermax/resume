@@ -20,7 +20,9 @@
 @import './variables-base.css';
 
 /* Layout-level variables */
-@import './variables-layout.css';
+@import './variables-layout-main-header.css';
+@import './variables-layout-header-sections.css';
+@import './variables-layout-sections-global.css';
 
 /* Component-specific variables */
 @import './variables-skills.css';

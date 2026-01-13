@@ -19,7 +19,7 @@
  *   - This file contains ZERO inline fallbacks
  *   - All defaults are defined in variables-lists.css
  *   - Nested variable references are resolved at the variable definition level
- *   - Shorthand properties only (border, background) - no longhand conflicts
+ *   - Longhand border properties for inline-start (width, style, color) to avoid cascade conflicts
  *   - Position values hardcoded as 'relative' (not via custom props)
  *
  * PROPERTY ORDER:
@@ -34,10 +34,11 @@
  *   9. Other (overflow, contain, pointer-events, will-change)
  *
  * THEME ACCENT COLOR ROTATION:
- *   - List items use --item-accent-color which rotates based on nth-child
+ *   - List items define --item-accent-color which rotates based on nth-child
  *   - Themes can define --theme-accent-1 through --theme-accent-4 for custom accent colors
  *   - Defaults to --border-color if theme accents are not defined
- *   - Used by --list-item-border-inline-start-color for side accent bars
+ *   - Accent color feeds into --community-item-border-inline-start-color for side accent bars
+ *   - To use accent colors, themes should set border-inline-start-color to var(--item-accent-color)
  */
 
 /* ============================================
@@ -111,8 +112,9 @@
     /* Borders */
     border-block-start: var(--community-item-border-width) var(--community-item-border-style)
       var(--list-item-border-color);
-    border-inline-start: var(--community-item-border-inline-start);
-    border-inline-start-color: var(--list-item-border-inline-start-color);
+    border-inline-start-width: var(--community-item-border-inline-start-width);
+    border-inline-start-style: var(--community-item-border-inline-start-style);
+    border-inline-start-color: var(--community-item-border-inline-start-color);
     border-radius: var(--community-item-border-radius);
 
     /* Background */
@@ -209,31 +211,6 @@
   /* Other */
   overflow: var(--list-overflow);
 
-  /* Decorative Pseudo-Element */
-  &::before {
-    content: var(--list-before-content);
-
-    /* Position */
-    position: var(--list-before-position);
-    inset: var(--list-before-inset);
-
-    /* Display */
-    display: var(--list-before-display);
-
-    /* Borders */
-    border: var(--list-before-border);
-    border-radius: var(--list-before-border-radius);
-
-    /* Background */
-    background: var(--list-before-background);
-
-    /* Visual Effects */
-    opacity: var(--list-before-opacity);
-
-    /* Other */
-    pointer-events: var(--list-before-pointer-events);
-  }
-
   /* List Items */
   .principles-list__item {
     /* Custom Property: Accent Color */
@@ -250,8 +227,9 @@
     /* Borders */
     border-block-start: var(--principles-item-border-width) var(--principles-item-border-style)
       var(--list-item-border-color);
-    border-inline-start: var(--principles-item-border-inline-start);
-    border-inline-start-color: var(--list-item-border-inline-start-color);
+    border-inline-start-width: var(--principles-item-border-inline-start-width);
+    border-inline-start-style: var(--principles-item-border-inline-start-style);
+    border-inline-start-color: var(--principles-item-border-inline-start-color);
     border-radius: var(--principles-item-border-radius);
 
     /* Background */
@@ -284,21 +262,6 @@
 
     &:nth-child(4n) {
       --item-accent-color: var(--theme-accent-4);
-    }
-
-    /* Decorative Pseudo-Element */
-    &::before {
-      content: var(--list-item-before-content);
-
-      /* Position */
-      position: var(--list-item-before-position);
-      top: var(--list-item-before-top);
-      left: var(--list-item-before-left);
-
-      /* Typography */
-      font-size: var(--list-item-before-font-size);
-      font-weight: var(--list-item-before-font-weight);
-      color: var(--list-item-before-color);
     }
 
     /* Hover State */

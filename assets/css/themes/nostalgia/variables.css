@@ -27,8 +27,10 @@ Nostalgia Theme Variables
 
   /* Header custom properties */
   --header-name-wrapper-margin-block-start: 1.5rem;
-  --header-padding: 1rem;
-  --header-border: 5px dotted;
+  --header-padding-block-start: 1rem;
+  --header-padding-block-end: 1rem;
+  --header-padding-inline-start: 1rem;
+  --header-padding-inline-end: 1rem;
   --main-padding-responsive-500: var(--spacing-sm);
 
   /* Print link common properties */

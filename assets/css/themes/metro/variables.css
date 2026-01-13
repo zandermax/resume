@@ -30,8 +30,6 @@ Flat Design / Material Zero
   /* ==================== HEADER ==================== */
 
   /* Header name custom properties */
-  --header-name-border: 0;
-  --header-name-padding: 0;
   --header-name-margin-block-end: 1rem;
   --header-name-font-weight: 300;
   --header-name-font-size: 3.5rem;
@@ -47,8 +45,10 @@ Flat Design / Material Zero
   --header-role-margin-block-start: 0.5rem;
 
   /* Header styling */
-  --header-border: 0;
-  --header-padding: var(--spacing-xl);
+  --header-padding-block-start: var(--spacing-xl);
+  --header-padding-block-end: var(--spacing-xl);
+  --header-padding-inline-start: var(--spacing-xl);
+  --header-padding-inline-end: var(--spacing-xl);
   --header-box-shadow: none;
   --header-border-width: var(--border-width-extra-thick);
   --header-border-block-end-color: var(--metro-blue);
@@ -218,7 +218,9 @@ Flat Design / Material Zero
 
   /* Community/Principles list item custom properties */
   --community-item-border-width: 0;
-  --community-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
+  --community-item-border-inline-start-width: var(--border-width-extra-thick);
+  --community-item-border-inline-start-style: solid;
+  --community-item-border-inline-start-color: var(--metro-blue);
   --community-item-padding: 1rem 0 1rem 1.5rem;
   --community-item-margin-bottom: 1rem;
   --community-item-background: var(--section-bg);
@@ -228,7 +230,9 @@ Flat Design / Material Zero
   --community-item-hover-border-inline-start-width: 8px;
   --community-item-hover-padding-inline-start: var(--spacing-md);
   --principles-item-border-width: 0;
-  --principles-item-border-inline-start: var(--border-width-extra-thick) solid var(--metro-blue);
+  --principles-item-border-inline-start-width: var(--border-width-extra-thick);
+  --principles-item-border-inline-start-style: solid;
+  --principles-item-border-inline-start-color: var(--metro-blue);
   --principles-item-padding: 1rem 0 1rem 1.5rem;
   --principles-item-margin-bottom: 1rem;
   --principles-item-background: var(--section-bg);

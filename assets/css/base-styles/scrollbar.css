@@ -19,7 +19,7 @@ Base Styles - Scrollbar
  *   - html (fallback - Firefox and non-webkit browsers with standard support)
  *
  * DEPENDENCIES:
- *   - variables-layout.css (defines --scrollbar-* custom properties)
+ *   - variables-layout-sections-global.css (defines --scrollbar-* custom properties)
  *
  * USAGE:
  *   Themes should define both sets of properties for maximum compatibility:

@@ -13,65 +13,86 @@
  * RELATED FILES:
  *   - lists.css (applies these variables)
  *
- * VARIABLES DEFINED: 33 variables controlling:
- *   - Theme accent colors (shared across components)
- *   - List containers (borders, backgrounds, padding)
- *   - Community items (solid borders, padding, hover states)
- *   - Principles items (dashed borders, padding, hover states)
- *   - List item pseudo-elements for decorations
+ * ORGANIZATION:
+ *   Variables are organized into clear sections following this hierarchy:
+ *   1. Theme accent colors (shared across components)
+ *   2. List containers (styling for <ul> elements)
+ *   3. List item shared (border colors used by both item types)
+ *   4. Community items - base state (all properties in standard order)
+ *   5. Community items - hover state (hover-specific properties)
+ *   6. Principles items - base state (all properties in standard order)
+ *   7. Principles items - hover state (hover-specific properties)
+ *   8. Shared hover effects (visual effects applied to both item types)
  *
- * VARIABLE PATTERNS:
- *   - All defaults are defined here with concrete values
- *   - Zero inline fallbacks in lists.css
- *   - Shorthand properties only (no shorthand/longhand conflicts)
- *   - Position values are hardcoded in selectors (not via custom props)
- *   - Shared border colors: --list-item-border-color and --list-item-border-inline-start-color
- *     provide base colors that both community and principles items can reference
- *   - Pseudo-element positioning: Both community and principles items use shared
- *     --list-item-before-left and --list-item-before-top for consistency
+ * PROPERTY ORDER WITHIN SECTIONS:
+ *   Properties follow standard CSS application order:
+ *   1. Typography (font-*, line-height)
+ *   2. Spacing (padding, margin)
+ *   3. Borders (border-*, border-radius)
+ *   4. Background
+ *   5. Visual Effects (box-shadow, transform, filter)
+ *   6. Transitions
+ *   7. Other (overflow, etc.)
+ *
+ * BORDER PROPERTIES:
+ *   - Use longhand properties to avoid cascade conflicts:
+ *     • border-width, border-style (for top border)
+ *     • border-inline-start-width, -style, -color (for left border)
+ *   - Shared colors: --list-item-border-color and --list-item-border-inline-start-color
+ *     provide base values that both community and principles can reference
+ *
+ * ACCENT COLOR ROTATION:
+ *   - Define --theme-accent-1 through --theme-accent-4 for custom accent colors
+ *   - --item-accent-color (defined in lists.css) rotates through these via nth-child
+ *   - To use: set --community-item-border-inline-start-color: var(--item-accent-color)
  *
  * THEME CUSTOMIZATION:
- *   - Use shorthand properties for border and background
- *   - Define --theme-accent-1 through --theme-accent-4 for accent color rotation
+ *   - Override any variable with your theme-specific values
+ *   - Use longhand border properties for clarity
+ *   - Define accent colors to enable color rotation on list items
  */
 
 :root {
-  /* === THEME ACCENT COLORS === */
-  /* Used for accent color rotation on list items and other components */
+  /* ============================================================
+     THEME ACCENT COLORS
+     Used for accent color rotation on list items and other components
+     ============================================================ */
   --theme-accent-1: var(--border-color);
   --theme-accent-2: var(--border-color);
   --theme-accent-3: var(--border-color);
   --theme-accent-4: var(--border-color);
 
-  /* === LIST CONTAINERS === */
-  /* Border properties */
+  /* ============================================================
+     LIST CONTAINERS
+     Styles for .community-list and .principles-list containers
+     ============================================================ */
+  /* Spacing */
+  --list-padding: 0;
+
+  /* Borders */
   --list-border: 0;
   --list-border-radius: 0;
 
-  /* Visual properties */
+  /* Background */
   --list-background: var(--section-bg);
+
+  /* Visual Effects */
   --list-box-shadow: none;
 
-  /* Layout properties */
-  --list-padding: 0;
+  /* Other */
   --list-overflow: visible;
 
-  /* === LIST CONTAINER PSEUDO-ELEMENTS === */
-  --list-before-content: none;
-  --list-before-display: none;
-  --list-before-position: static;
-  --list-before-inset: auto;
-  --list-before-border: none;
-  --list-before-border-radius: 0;
-  --list-before-background: transparent;
-  --list-before-pointer-events: auto;
-  --list-before-opacity: 1;
-
-  /* === LIST ITEM SHARED === */
+  /* ============================================================
+     LIST ITEM SHARED
+     Border colors shared by both community and principles items
+     ============================================================ */
   --list-item-border-color: var(--border-color);
   --list-item-border-inline-start-color: var(--border-color);
 
-  /* === COMMUNITY LIST ITEMS === */
+  /* ============================================================
+     COMMUNITY LIST ITEMS - BASE STATE
+     Styles for .community-list__item
+     ============================================================ */
   /* Typography */
   --community-item-font-size: 0.9rem;
   --community-item-font-weight: normal;
@@ -82,20 +103,42 @@
   --community-item-padding-responsive-500: var(--community-item-padding);
   --community-item-margin-bottom: 0;
 
-  /* Borders */
-  --community-item-border-style: solid;
+  /* Borders - Block Start (top border) */
   --community-item-border-width: 1px;
-  --community-item-border-inline-start: none;
+  --community-item-border-style: solid;
+
+  /* Borders - Inline Start (left border) */
+  --community-item-border-inline-start-width: 0;
+  --community-item-border-inline-start-style: solid;
+  --community-item-border-inline-start-color: var(--list-item-border-inline-start-color);
+
+  /* Borders - Radius */
   --community-item-border-radius: 0;
 
-  /* Visual */
+  /* Background */
   --community-item-background: transparent;
+
+  /* Visual Effects */
   --community-item-box-shadow: none;
 
-  /* Layout */
+  /* Transitions */
   --community-item-transition: none;
 
-  /* === PRINCIPLES LIST ITEMS === */
+  /* ============================================================
+     COMMUNITY LIST ITEMS - HOVER STATE
+     Hover styles for .community-list__item:hover
+     ============================================================ */
+  /* Spacing */
+  --community-item-hover-padding-inline-start: inherit;
+
+  /* Borders */
+  --community-item-hover-border-inline-start-width: inherit;
+  --community-item-hover-border-inline-start-color: inherit;
+
+  /* ============================================================
+     PRINCIPLES LIST ITEMS - BASE STATE
+     Styles for .principles-list__item
+     ============================================================ */
   /* Typography */
   --principles-item-font-size: 0.9rem;
   --principles-item-font-weight: normal;
@@ -104,44 +147,46 @@
   /* Spacing */
   --principles-item-padding: 0.25rem 0;
   --principles-item-padding-responsive-500: var(--principles-item-padding);
-  --principles-item-margin-bottom: 0;
   --principles-item-margin-top: 0;
+  --principles-item-margin-bottom: 0;
 
-  /* Borders */
-  --principles-item-border-style: dashed;
+  /* Borders - Block Start (top border) */
   --principles-item-border-width: 1px;
-  --principles-item-border-inline-start: none;
+  --principles-item-border-style: dashed;
+
+  /* Borders - Inline Start (left border) */
+  --principles-item-border-inline-start-width: 0;
+  --principles-item-border-inline-start-style: solid;
+  --principles-item-border-inline-start-color: var(--list-item-border-inline-start-color);
+
+  /* Borders - Radius */
   --principles-item-border-radius: 0;
 
-  /* Visual */
+  /* Background */
   --principles-item-background: transparent;
+
+  /* Visual Effects */
   --principles-item-box-shadow: none;
 
-  /* Layout */
+  /* Transitions */
   --principles-item-transition: none;
 
-  /* === LIST ITEM PSEUDO-ELEMENTS === */
-  --list-item-before-content: none;
-  --list-item-before-position: static;
-  --list-item-before-left: auto;
-  --list-item-before-top: auto;
-  --list-item-before-color: inherit;
-  --list-item-before-font-weight: normal;
-  --list-item-before-font-size: inherit;
+  /* ============================================================
+     PRINCIPLES LIST ITEMS - HOVER STATE
+     Hover styles for .principles-list__item:hover
+     ============================================================ */
+  /* Spacing */
+  --principles-item-hover-padding-inline-start: inherit;
 
-  /* === LIST ITEM HOVER STATES === */
-  /* Shared hover effects */
+  /* Borders */
+  --principles-item-hover-border-inline-start-width: inherit;
+  --principles-item-hover-border-inline-start-color: inherit;
+
+  /* ============================================================
+     SHARED HOVER EFFECTS
+     Visual effects applied to both community and principles items on hover
+     ============================================================ */
   --list-item-hover-transform: none;
   --list-item-hover-box-shadow: none;
   --list-item-hover-filter: none;
-
-  /* Community item hover states */
-  --community-item-hover-border-inline-start-width: inherit;
-  --community-item-hover-border-inline-start-color: inherit;
-  --community-item-hover-padding-inline-start: inherit;
-
-  /* Principles item hover states */
-  --principles-item-hover-border-inline-start-width: inherit;
-  --principles-item-hover-border-inline-start-color: inherit;
-  --principles-item-hover-padding-inline-start: inherit;
 }

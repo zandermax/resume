@@ -141,11 +141,17 @@ XP Theme - Common Variables
   --community-item-padding: 0.75rem 0.5rem;
   --community-item-border-width: 0;
   --community-item-border-style: solid;
+  --community-item-transition: all 0.1s ease;
+  --list-item-hover-filter: brightness(1.05);
   --principles-item-border-width: 0;
   --principles-item-border-style: solid;
+  --principles-item-transition: all 0.1s ease;
 
   /* Header container custom properties */
-  --header-margin: 3rem 2rem 1.5rem 2rem;
+  --header-margin-block-start: 3rem;
+  --header-margin-block-end: 1.5rem;
+  --header-margin-inline-start: 2rem;
+  --header-margin-inline-end: 2rem;
   --header-padding-block-start: 3rem;
   --header-padding-block-end: 1rem;
   --header-border-block-end-color: transparent;

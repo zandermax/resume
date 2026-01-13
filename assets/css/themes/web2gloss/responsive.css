@@ -5,7 +5,10 @@ WEB 2.0 GLOSS Theme - Responsive
 /* Responsive adjustments for body */
 body[data-theme='web2gloss'] {
   --main-padding-responsive-500: 0.5rem;
-  --header-padding-responsive-500: 1rem;
+  --header-padding-block-start-responsive-500: 1rem;
+  --header-padding-block-end-responsive-500: 1rem;
+  --header-padding-inline-start-responsive-500: 1rem;
+  --header-padding-inline-end-responsive-500: 1rem;
 
   @media (min-width: 768px) {
     --header-name-wrapper-padding-inline: var(--spacing-md);
@@ -23,7 +26,10 @@ body[data-theme='web2gloss'] {
     --section-padding-inline-start: 1.5rem;
     --section-padding-block-end: 1.5rem;
     --section-padding-inline-end: 1.5rem;
-    --header-padding: 2rem 1.5rem;
+    --header-padding-block-start: 2rem;
+    --header-padding-block-end: 2rem;
+    --header-padding-inline-start: 1.5rem;
+    --header-padding-inline-end: 1.5rem;
   }
 
   @media (max-width: 500px) {
@@ -38,12 +44,16 @@ body[data-theme='web2gloss'] {
     --education-item-padding-inline-end: 1.5rem;
     --experience-item-border-radius: var(--web2-radius-md);
     --education-item-border-radius: var(--web2-radius-md);
-    --header-padding: 1.5rem 1rem;
+    --header-padding-block-start: 1.5rem;
+    --header-padding-block-end: 1.5rem;
+    --header-padding-inline-start: 1rem;
+    --header-padding-inline-end: 1rem;
   }
 
   /* Extra small screens - more aggressive scaling */
   @media (max-width: 400px) {
-    --header-padding: 1.25rem 0.5rem;
+    --header-padding-block-start: 1.25rem;
+    --header-padding-block-end: 1.25rem;
     --header-padding-inline-start: 0.75rem;
     --header-padding-inline-end: 0.75rem;
   }

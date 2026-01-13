@@ -15,7 +15,8 @@
  *   - .resume-header__links (social/professional links)
  *
  * DEPENDENCIES:
- *   - ../variables-layout.css (defines ALL --header-* custom properties)
+ *   - ../variables-layout-main-header.css (defines core --header-* custom properties)
+ *   - ../variables-layout-header-sections.css (defines extended --header-* custom properties)
  *   - ../variables-printlink.css (defines --printlink-* properties)
  *   - ../variables-dial-selector.css (defines --dial-selector-* properties)
  *   - ../_base.css (base heading and link styles)

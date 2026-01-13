@@ -32,11 +32,18 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --header-border-radius: 8px;
   --header-border-block-end: 2px solid var(--panel-border);
   --header-box-shadow: var(--dashboard-shadow-sm);
-  --header-margin: var(--spacing-xl);
-  --header-padding: 1.5rem;
+  --header-margin-block-start: var(--spacing-xl);
+  --header-margin-block-end: var(--spacing-xl);
+  --header-margin-inline-start: var(--spacing-xl);
+  --header-margin-inline-end: var(--spacing-xl);
+  --header-padding-block-start: 1.5rem;
+  --header-padding-block-end: 1.5rem;
   --header-padding-inline-start: var(--spacing-xl);
   --header-padding-inline-end: var(--spacing-xl);
-  --header-padding-responsive-500: 1rem;
+  --header-padding-block-start-responsive-500: 1rem;
+  --header-padding-block-end-responsive-500: 1rem;
+  --header-padding-inline-start-responsive-500: 1rem;
+  --header-padding-inline-end-responsive-500: 1rem;
 
   /* Header - Name */
   --header-name-font-weight: 700;
@@ -202,6 +209,16 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* ==================== PRINCIPLES & COMMUNITY SECTIONS ==================== */
 
   /* List Item - Base */
+  --community-item-background: var(--panel-bg);
+  --community-item-border-width: 1px;
+  --community-item-border-style: solid;
+  --community-item-border-radius: 6px;
+  --community-item-padding: var(--spacing-md);
+  --community-item-margin-bottom: var(--spacing-sm);
+  --community-item-box-shadow: var(--dashboard-shadow-sm);
+  --community-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --list-item-hover-transform: translateY(-2px);
+  --list-item-hover-box-shadow: var(--dashboard-shadow-md);
   --principles-item-background: var(--panel-bg);
   --principles-item-border-width: 1px;
   --principles-item-border-style: solid;
@@ -211,15 +228,6 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --principles-item-margin-top: var(--spacing-sm);
   --principles-item-box-shadow: var(--dashboard-shadow-sm);
   --principles-item-transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  /* List Item - Pseudo-element (checkmark) */
-  --list-item-before-content: '✓';
-  --list-item-before-position: absolute;
-  --list-item-before-left: -0.25rem;
-  --list-item-before-top: 0.5rem;
-  --list-item-before-color: var(--status-green);
-  --list-item-before-font-weight: 700;
-  --list-item-before-font-size: 1rem;
 
   /* ==================== PRINT LINK ==================== */
 
@@ -275,7 +283,10 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   @media (max-width: 768px) {
-    --header-margin: var(--spacing-xs);
+    --header-margin-block-start: var(--spacing-xs);
+    --header-margin-block-end: var(--spacing-xs);
+    --header-margin-inline-start: var(--spacing-xs);
+    --header-margin-inline-end: var(--spacing-xs);
     --header-padding-inline-start: var(--spacing-xs);
     --header-padding-inline-end: var(--spacing-xs);
     --section-title-padding-block-start: var(--spacing-sm);

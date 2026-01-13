@@ -1,0 +1,247 @@
+/**
+ * Layout variables for main container and core header elements
+ *
+ * This file contains layout-level CSS custom properties for:
+ *   - .resume__main (main container)
+ *   - .resume-header (header container)
+ *   - .resume-header__top-row (header top row)
+ *   - .resume-header__name-wrapper (name wrapper)
+ *   - .resume-header__name (h1 name element)
+ *
+ * Part 1 of 3 from the original variables-layout.css split
+ *
+ * DEPENDENCIES:
+ *   - variables-base.css (uses --border-color, --spacing-*, etc.)
+ *
+ * RELATED FILES:
+ *   - main.css (uses --main-* variables)
+ *   - header.css (uses --header-* variables)
+ *   - variables-layout-header-sections.css (extends header with role, meta, buttons, sections)
+ *
+ * ORGANIZATION:
+ *   This file follows a consistent structure for each element:
+ *   1. Position properties (position, z-index)
+ *   2. Display & Layout (display, order, overflow, filter, transform)
+ *   3. Spacing - Margin (block-start, block-end, inline-start, inline-end)
+ *   4. Spacing - Padding (block-start, block-end, inline-start, inline-end)
+ *   5. Borders (border-width, border-style, border-color, border-radius, individual borders)
+ *   6. Background (background-color, background-image)
+ *   7. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   8. Visual Effects (box-shadow, text-shadow, opacity)
+ *   9. Animations (animation, transition, will-change)
+ *   10. Responsive overrides (grouped at end of each element section)
+ *   11. Pseudo-elements (::before, ::after - following parent element)
+ *
+ * VARIABLE NAMING CONVENTIONS:
+ *   - Spacing: Use LONGHAND logical properties only
+ *     ✓ Correct: --section-padding-block-start, --section-padding-inline-end
+ *     ✗ Avoid:   --section-padding (ambiguous shorthand)
+ *
+ *   - Borders: Use SHORTHAND values for border property
+ *     ✓ Correct: --section-border-block-start: 1px solid color
+ *     ✗ Avoid:   --section-border-block-start-width, -style, -color (overly verbose)
+ *
+ *   - Responsive variables: Use explicit property + breakpoint
+ *     ✓ Correct: --section-padding-inline-start-responsive-768
+ *     ✗ Avoid:   --section-padding-responsive-768 (ambiguous)
+ *
+ *   - Pseudo-elements: Use pattern --element-before-* and --element-after-*
+ *     Examples: --section-before-content, --section-after-position
+ *
+ * NOTES:
+ *   - ALL properties have defined defaults - NO inline fallbacks in consuming CSS files
+ *   - All spacing uses logical properties for RTL support
+ *   - Pseudo-elements default to none/static/auto/transparent for minimal footprint
+ */
+
+:root {
+  /* ============================================================================
+     MAIN CONTAINER (.resume__main)
+     ============================================================================ */
+
+  /* Position & Layout */
+  --main-position: relative;
+  --main-overflow: visible;
+  --main-filter: none;
+  --main-transform: none;
+
+  /* Spacing - Padding */
+  --main-padding: 2.5rem 2.25rem;
+
+  /* Borders */
+  --main-border-width: 4px;
+  --main-border-style: solid;
+  --main-border-radius: 0;
+
+  /* Background */
+  --resume-main-background: var(--background-color);
+  --main-background-image: none;
+
+  /* Visual Effects */
+  --main-box-shadow: none;
+
+  /* Responsive Overrides */
+  --main-margin-responsive-960: var(--spacing-md);
+
+  /* --- Pseudo-element ::before --- */
+  --resume-main-before-content: none;
+  --resume-main-before-display: none;
+  --resume-main-before-position: static;
+  --resume-main-before-inset: auto;
+  --resume-main-before-bottom: auto;
+  --resume-main-before-height: auto;
+  --resume-main-before-background-color: transparent;
+  --resume-main-before-background-image: none;
+  --resume-main-before-border-radius: 0;
+  --resume-main-before-box-shadow: none;
+  --resume-main-before-opacity: 1;
+  --resume-main-before-z-index: auto;
+  --resume-main-before-pointer-events: auto;
+
+  /* --- Pseudo-element ::after --- */
+  --resume-main-after-content: none;
+  --resume-main-after-position: static;
+  --resume-main-after-inset: auto;
+  --resume-main-after-background: transparent;
+  --resume-main-after-border: none;
+  --resume-main-after-border-radius: 0;
+  --resume-main-after-opacity: 1;
+  --resume-main-after-z-index: auto;
+  --resume-main-after-pointer-events: auto;
+
+  /* ============================================================================
+     HEADER CONTAINER (.resume-header)
+     ============================================================================ */
+
+  /* Position & Layout */
+  --header-position: static;
+  --header-transform: none;
+
+  /* Spacing - Margin */
+  --header-margin-block-start: 0;
+  --header-margin-block-end: 1.5rem;
+  --header-margin-inline-start: 0;
+  --header-margin-inline-end: 0;
+
+  /* Spacing - Padding */
+  --header-padding-block-start: 0;
+  --header-padding-block-end: var(--spacing-md);
+  --header-padding-inline: 0;
+  --header-padding-inline-start: 0;
+  --header-padding-inline-end: 0;
+
+  /* Borders */
+  --header-border-width: 3px;
+  --header-border-style: solid;
+  --header-border-block-start: none;
+  --header-border-block-end: none;
+  --header-border-block-end-color: var(--border-color);
+  --header-border-block-end-width: var(--header-border-width);
+  --header-border-radius: var(--main-border-radius);
+
+  /* Background */
+  --header-background-color: transparent;
+  --header-background-image: none;
+
+  /* Typography */
+  --header-color: inherit;
+
+  /* Visual Effects */
+  --header-box-shadow: none;
+
+  /* Responsive Overrides */
+  --header-padding-inline-start-responsive-768: 0;
+  --header-padding-inline-end-responsive-768: 0;
+  --header-padding-block-start-responsive-500: 0;
+  --header-padding-block-end-responsive-500: 0;
+  --header-padding-inline-responsive-500: 0;
+  --header-padding-inline-start-responsive-500: 0;
+  --header-padding-inline-end-responsive-500: 0;
+
+  /* --- Pseudo-element ::before --- */
+  --resume-header-before-content: none;
+  --resume-header-before-position: static;
+  --resume-header-before-top: auto;
+  --resume-header-before-right: auto;
+  --resume-header-before-bottom: auto;
+  --resume-header-before-left: auto;
+  --resume-header-before-width: auto;
+  --resume-header-before-height: auto;
+  --resume-header-before-border: none;
+  --resume-header-before-background: transparent;
+  --resume-header-before-opacity: 1;
+  --resume-header-before-pointer-events: auto;
+
+  /* --- Pseudo-element ::after --- */
+  --resume-header-after-content: none;
+  --resume-header-after-position: static;
+  --resume-header-after-top: auto;
+  --resume-header-after-right: auto;
+  --resume-header-after-bottom: auto;
+  --resume-header-after-left: auto;
+  --resume-header-after-width: auto;
+  --resume-header-after-height: auto;
+  --resume-header-after-background: transparent;
+
+  /* ============================================================================
+     HEADER - TOP ROW (.resume-header__top-row)
+     ============================================================================ */
+
+  /* Spacing - Margin */
+  --header-top-row-margin-block-start: 0;
+  --header-top-row-margin-block-end: 0;
+
+  /* ============================================================================
+     HEADER - NAME WRAPPER (.resume-header__name-wrapper)
+     ============================================================================ */
+
+  /* Spacing - Margin */
+  --header-name-wrapper-margin-block-start: var(--spacing-xl);
+
+  /* Spacing - Padding */
+  --header-name-wrapper-padding-inline: var(--spacing-xs);
+
+  /* Typography */
+  --header-name-wrapper-color: inherit;
+
+  /* ============================================================================
+     HEADER - NAME (h1.resume-header__name)
+     ============================================================================ */
+
+  /* Position & Layout */
+  --header-name-position: static;
+  --header-name-order: 1;
+
+  /* Spacing - Margin */
+  --header-name-margin-block-start: 0;
+  --header-name-margin-block-end: 0.35rem;
+  --header-name-margin-inline-start: 0;
+  --header-name-margin-inline-end: 0;
+
+  /* Spacing - Padding */
+  --header-name-padding-block-start: 0;
+  --header-name-padding-block-end: 0.35rem;
+  --header-name-padding-inline-start: 0;
+  --header-name-padding-inline-end: 0;
+
+  /* Borders */
+  --header-name-border-width: 4px;
+  --header-name-border-style: solid;
+  --header-name-border-color: var(--border-color);
+  --header-name-border-inline-start: none;
+
+  /* Typography */
+  --header-name-font-size: 2.6rem;
+  --header-name-font-weight: normal;
+  --header-name-line-height: normal;
+  --header-name-letter-spacing: 0.08em;
+  --header-name-text-transform: uppercase;
+  --header-name-color: inherit;
+
+  /* Visual Effects */
+  --header-name-text-shadow: none;
+
+  /* Animations */
+  --header-name-animation: none;
+  --header-name-will-change: auto;
+}

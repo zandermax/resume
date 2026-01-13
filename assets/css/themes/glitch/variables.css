@@ -177,26 +177,18 @@ Common properties for all modes
   --header-meta-filter: var(--filter-contrast-base);
 
   /* Header custom properties */
-  --header-border: var(--border-width-md) solid var(--border-color);
+  --header-border-block-start: var(--border-width-md) solid var(--border-color);
+  --header-border-block-end: var(--border-width-md) solid var(--border-color);
   --header-border-block-end-width: var(--border-width-xxl);
   --header-background-color: var(--header-background-color);
-  --header-padding: var(--spacing-xl);
+  --header-padding-block-start: var(--spacing-xl);
+  --header-padding-block-end: var(--spacing-xl);
+  --header-padding-inline-start: var(--spacing-xl);
+  --header-padding-inline-end: var(--spacing-xl);
   --header-margin-block-end: var(--spacing-xl);
   --header-position: relative;
   --header-transform: skewX(var(--skew-light));
   --header-box-shadow: var(--glitch-box-shadow-header);
-
-  /* Header link custom properties */
-  --header-a-text-decoration: underline;
-  --header-a-text-decoration-style: solid;
-  --header-a-text-decoration-color: var(--text-color);
-  --header-a-transition: all 0.2s ease;
-  --header-a-position: relative;
-  --header-a-text-shadow: var(--glitch-text-shadow-sm);
-  --header-a-hover-text-decoration: none;
-  --header-a-hover-filter: invert(1);
-  --header-a-hover-padding: 2px 4px;
-  --header-a-visited-opacity: 0.7;
 
   /* Header name custom properties */
   --header-name-font-size: var(--font-size-hero);
@@ -306,6 +298,10 @@ Common properties for all modes
   --community-item-border-style: solid;
   --community-item-position: relative;
   --community-item-box-shadow: var(--glitch-box-shadow-list);
+  --community-item-transition: all 0.15s ease;
+  --list-item-hover-filter: brightness(1.05);
+  --list-item-hover-box-shadow: 0 0 8px oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.3),
+    inset 0 0 12px oklch(var(--accent-l) var(--accent-c) var(--accent-h) / 0.1);
   --principles-item-padding: var(--spacing-md);
   --principles-item-margin-bottom: var(--spacing-sm);
   --principles-item-background: var(--section-bg);
@@ -313,6 +309,7 @@ Common properties for all modes
   --principles-item-border-style: solid;
   --principles-item-position: relative;
   --principles-item-box-shadow: var(--glitch-box-shadow-list);
+  --principles-item-transition: all 0.15s ease;
 
   /* Body letter-spacing */
   --body-letter-spacing: 0.03em;
@@ -427,8 +424,12 @@ Common properties for all modes
 
   /* Lists */
   --list-box-shadow: var(--glitch-box-shadow-section);
-  --community-item-border-inline-start: var(--border-width-xl) solid var(--border-color);
-  --principles-item-border-inline-start: var(--border-width-xl) solid var(--border-color);
+  --community-item-border-inline-start-width: var(--border-width-xl);
+  --community-item-border-inline-start-style: solid;
+  --community-item-border-inline-start-color: var(--border-color);
+  --principles-item-border-inline-start-width: var(--border-width-xl);
+  --principles-item-border-inline-start-style: solid;
+  --principles-item-border-inline-start-color: var(--border-color);
 
   /* Education items */
   --education-item-transform: skewX(-0.25deg) rotate(-0.2deg);

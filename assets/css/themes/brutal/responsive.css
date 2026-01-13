@@ -44,11 +44,12 @@ BRUTAL Theme - Responsive Adjustments
     --section-title-border-inline-start: 10px solid var(--accent-color);
 
     /* Header and section padding responsive overrides */
+    --header-padding-block-start-responsive-500: var(--spacing-sm);
+    --header-padding-block-end-responsive-500: var(--spacing-sm);
     --header-padding-inline-start: var(--spacing-md);
     --header-padding-inline-end: var(--spacing-md);
     --section-padding-inline-start: var(--spacing-md);
     --section-padding-inline-end: var(--spacing-md);
-    --header-padding-responsive-500: var(--spacing-sm);
 
     /* Main container responsive overrides */
     --main-border-width: var(--border-width-extra-thick);
