@@ -71,7 +71,8 @@ body[data-theme='skeuomorph'] {
 
   --experience-item-background: var(--paper-texture);
   --experience-item-margin: var(--spacing-lg) -var(--spacing-xs);
-  --experience-item-border-inline: var(--border-width-extra-thick) solid var(--leather-color);
+  --experience-item-border-inline-start: var(--border-width-extra-thick) solid var(--leather-color);
+  --experience-item-border-inline-end: var(--border-width-extra-thick) solid var(--leather-color);
 
   /* ==================== SKILLS GRID - STITCHED EFFECT ==================== */
 
