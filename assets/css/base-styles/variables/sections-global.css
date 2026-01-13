@@ -11,12 +11,12 @@
  *   - Body pseudo-elements
  *   - Scrollbar styling
  *
- * Part 3 of 3 from the original variables-layout.css split
+ * Part 3 of 3 from the original variables/layout.css split
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --spacing-*, etc.)
- *   - variables-layout-main-header.css (defines main container and core header)
- *   - variables-layout-header-sections.css (defines extended header and section containers)
+ *   - base.css (uses --border-color, --spacing-*, etc.)
+ *   - main-header.css (defines main container and core header)
+ *   - header-sections.css (defines extended header and section containers)
  *
  * RELATED FILES:
  *   - sections.css (uses --section-* variables)

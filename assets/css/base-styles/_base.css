@@ -13,8 +13,8 @@
  *   - strong (inline text styles)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --font-family, --text-color, --background-color, etc.)
- *   - variables-layout-sections-global.css (uses --text-shadow, --body-*, --link-* variables)
+ *   - variables/base.css (uses --font-family, --text-color, --background-color, etc.)
+ *   - variables/sections-global.css (uses --text-shadow, --body-*, --link-* variables)
  *
  * RELATED FILES:
  *   - All component files (inherit from these base styles)

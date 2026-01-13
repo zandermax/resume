@@ -11,13 +11,13 @@
  *   </ul>
  *
  * DEPENDENCIES:
- *   - variables-lists.css (all list-specific variables)
- *   - variables-base.css (uses --border-color, --section-bg)
+ *   - variables/lists.css (all list-specific variables)
+ *   - variables/base.css (uses --border-color, --section-bg)
  *   - sections.css (lists are section children)
  *
  * PROPERTY POLICY:
  *   - This file contains ZERO inline fallbacks
- *   - All defaults are defined in variables-lists.css
+ *   - All defaults are defined in variables/lists.css
  *   - Nested variable references are resolved at the variable definition level
  *   - Longhand border properties for inline-start (width, style, color) to avoid cascade conflicts
  *   - Position values hardcoded as 'relative' (not via custom props)

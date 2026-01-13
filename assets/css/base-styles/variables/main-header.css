@@ -8,15 +8,15 @@
  *   - .resume-header__name-wrapper (name wrapper)
  *   - .resume-header__name (h1 name element)
  *
- * Part 1 of 3 from the original variables-layout.css split
+ * Part 1 of 3 from the original variables/layout.css split
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --spacing-*, etc.)
+ *   - base.css (uses --border-color, --spacing-*, etc.)
  *
  * RELATED FILES:
  *   - main.css (uses --main-* variables)
  *   - header.css (uses --header-* variables)
- *   - variables-layout-header-sections.css (extends header with role, meta, buttons, sections)
+ *   - header-sections.css (extends header with role, meta, buttons, sections)
  *
  * ORGANIZATION:
  *   This file follows a consistent structure for each element:

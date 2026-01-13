@@ -12,7 +12,7 @@ Main entry point that imports all other files in the correct order.
 
 **PRIVATE INTERNAL VARIABLES** (~150 variables with `--ds-*` prefix):
 
-This file defines the component's internal implementation. Themes should NOT directly override these variables. Instead, use the public API (`--dial-selector-*`) defined in `base-styles/variables-dial-selector.css`.
+This file defines the component's internal implementation. Themes should NOT directly override these variables. Instead, use the public API (`--dial-selector-*`) defined in `base-styles/variables/dial-selector.css`.
 
 Internal variable categories:
 - Color resolution (reads from public API)
@@ -113,7 +113,7 @@ The dial selector component has a clear public/private API boundary:
 
 ### Public API (~90 Variables)
 
-Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `base-styles/variables-dial-selector.css`:
+Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `base-styles/variables/dial-selector.css`:
 
 **Color System (5 variables):**
 - `--dial-selector-color-ink` - Main text/line color (default: black)

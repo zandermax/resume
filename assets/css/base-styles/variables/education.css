@@ -9,7 +9,7 @@
  *   - .education-item__details (additional education details)
  *
  * DEPENDENCIES:
- *   - variables-base.css (for inherited values like inherit, normal, etc.)
+ *   - base.css (for inherited values like inherit, normal, etc.)
  *
  * RELATED FILES:
  *   - education.css (applies these variables without fallbacks)

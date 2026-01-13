@@ -6,7 +6,7 @@
  *   - #resume-header__printlink (print link, visible in all themes)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --text-color, --background-color, --spacing-*)
+ *   - base.css (uses --text-color, --background-color, --spacing-*)
  *
  * RELATED FILES:
  *   - header/buttons.css (applies printlink variables and contains link styles)

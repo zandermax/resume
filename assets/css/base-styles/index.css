@@ -17,20 +17,20 @@
    =========================== */
 
 /* Core design tokens */
-@import './variables-base.css';
+@import './variables/base.css';
 
 /* Layout-level variables */
-@import './variables-layout-main-header.css';
-@import './variables-layout-header-sections.css';
-@import './variables-layout-sections-global.css';
+@import './variables/main-header.css';
+@import './variables/header-sections.css';
+@import './variables/sections-global.css';
 
 /* Component-specific variables */
-@import './variables-skills.css';
-@import './variables-experience.css';
-@import './variables-lists.css';
-@import './variables-education.css';
-@import './variables-printlink.css';
-@import './variables-dial-selector.css';
+@import './variables/skills.css';
+@import './variables/experience.css';
+@import './variables/lists.css';
+@import './variables/education.css';
+@import './variables/printlink.css';
+@import './variables/dial-selector.css';
 
 /* ===========================
    BASE STYLES

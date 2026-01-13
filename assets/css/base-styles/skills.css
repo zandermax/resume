@@ -13,13 +13,13 @@
  *   </div>
  *
  * DEPENDENCIES:
- *   - variables-skills.css (all skills-specific variables with defaults)
- *   - variables-base.css (uses --border-color, --section-bg)
+ *   - variables/skills.css (all skills-specific variables with defaults)
+ *   - variables/base.css (uses --border-color, --section-bg)
  *   - sections.css (skills grid is a section child)
  *
  * VARIABLE USAGE:
  *   - All var() calls use properties WITHOUT fallbacks
- *   - All defaults are defined in variables-skills.css
+ *   - All defaults are defined in variables/skills.css
  *   - Themes override variables to customize appearance
  *
  * PROPERTY ORDER:

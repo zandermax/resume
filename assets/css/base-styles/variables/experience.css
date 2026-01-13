@@ -10,7 +10,7 @@
  *   - .experience-item__bullets li (individual bullet points)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color for borders)
+ *   - base.css (uses --border-color for borders)
  *   - Theme files can override --theme-accent-1 through --theme-accent-5
  *
  * RELATED FILES:

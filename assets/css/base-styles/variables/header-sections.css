@@ -10,17 +10,17 @@
  *   - .resume-section (section containers)
  *   - .resume-section__title (h2 section titles)
  *
- * Part 2 of 3 from the original variables-layout.css split
+ * Part 2 of 3 from the original variables/layout.css split
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --spacing-*, etc.)
- *   - variables-layout-main-header.css (defines main container and core header)
+ *   - base.css (uses --border-color, --spacing-*, etc.)
+ *   - main-header.css (defines main container and core header)
  *
  * RELATED FILES:
  *   - header.css (uses --header-* variables)
  *   - sections.css (uses --section-* and --resume-section-* variables)
  *   - title.css (uses --section-title-* variables)
- *   - variables-layout-sections-global.css (section content and global styles)
+ *   - sections-global.css (section content and global styles)
  *
  * ORGANIZATION:
  *   This file follows a consistent structure for each element:

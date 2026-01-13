@@ -22,14 +22,14 @@
  *   </section>
  *
  * DEPENDENCIES:
- *   - variables-experience.css (all experience-specific variables with defaults)
- *   - variables-base.css (uses --border-color)
+ *   - variables/experience.css (all experience-specific variables with defaults)
+ *   - variables/base.css (uses --border-color)
  *   - sections.css (experience section variant and container styles)
  *   - Theme files can define --theme-accent-1 through --theme-accent-5
  *
  * VARIABLE USAGE:
  *   - All var() calls use properties WITHOUT fallbacks
- *   - All defaults are defined in variables-experience.css
+ *   - All defaults are defined in variables/experience.css
  *   - Themes override variables to customize appearance
  *
  * PROPERTY ORDER:

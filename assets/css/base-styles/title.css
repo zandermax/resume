@@ -13,14 +13,14 @@
  *   - h2.resume-section__title:hover (hover state)
  *
  * DEPENDENCIES:
- *   - variables-layout-header-sections.css (defines all --section-title-* variables)
+ *   - variables/header-sections.css (defines all --section-title-* variables)
  *   - sections.css (defines --section-accent-color for background fallback)
  *
  * RELATED FILES:
  *   - sections.css (section container styles)
  *
  * VARIABLE USAGE:
- *   - All properties use custom properties defined in variables-layout-header-sections.css
+ *   - All properties use custom properties defined in variables/header-sections.css
  *   - NO inline fallbacks except --section-title-background which falls back to
  *     --section-accent-color for automatic per-section color rotation
  *
@@ -39,7 +39,7 @@
  *   - Uses logical properties throughout (margin-block-*, padding-inline-*, etc.)
  *   - Pure longhand for borders (no construction from separate width/style/color)
  *   - Pseudo-elements (::before, ::after) extensively customizable by themes
- *   - All defaults defined in variables-layout-header-sections.css - no inline fallbacks needed
+ *   - All defaults defined in variables/header-sections.css - no inline fallbacks needed
  */
 
 /* ============================================================================

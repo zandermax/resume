@@ -13,12 +13,12 @@
  *   - .resume-section::after (pseudo-element for decorative effects)
  *
  * DEPENDENCIES:
- *   - variables-layout-header-sections.css (defines --section-* and --resume-section-* container/title variables)
- *   - variables-layout-sections-global.css (defines --section-text-*, --section-content-* variables)
- *   - variables-base.css (defines --border-color, --spacing-* tokens)
+ *   - variables/header-sections.css (defines --section-* and --resume-section-* container/title variables)
+ *   - variables/sections-global.css (defines --section-text-*, --section-content-* variables)
+ *   - variables/base.css (defines --border-color, --spacing-* tokens)
  *
  * CUSTOM PROPERTIES USED:
- *   All properties are defined in variables-layout-*.css files with sane defaults.
+ *   All properties are defined in variables/layout-*.css files with sane defaults.
  *   NO inline fallbacks are used in this file.
  *
  *   Container margins & padding:
@@ -74,7 +74,7 @@
  *   Section modifiers:
  *     --section-summary-p-font-size (default: inherit)
  *     --section-summary-p-margin-block-end (default: inherit)
- *     --experience-section-padding-block-start (defined in variables-experience.css)
+ *     --experience-section-padding-block-start (defined in variables/experience.css)
  *     --section-ashby-border-block-start (default: none)
  *     --section-ashby-padding-block-start (default: 0)
  *
@@ -86,7 +86,7 @@
  *   - Section content: --section-* prefix
  *
  * IMPORTANT NOTES:
- *   - NO INLINE FALLBACKS: All defaults defined in variables-layout-*.css files
+ *   - NO INLINE FALLBACKS: All defaults defined in variables/layout-*.css files
  *   - SHORTHAND PROPERTIES NOT SUPPORTED in this file or title.css
  *     ✗ Wrong: --section-title-padding, --section-title-margin, --section-title-border
  *     ✓ Correct: --section-title-padding-block-start, --section-title-margin-inline-end, etc.
@@ -96,7 +96,7 @@
  *     for themes that don't define multi-color palettes
  *
  * RELATED FILES:
- *   - variables-layout-header-sections.css and variables-layout-sections-global.css (all section property defaults)
+ *   - variables/header-sections.css and variables/sections-global.css (all section property defaults)
  *   - title.css (section title styles, uses similar pattern)
  *   - skills.css, experience.css, lists.css, education.css (section children)
  */

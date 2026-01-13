@@ -13,12 +13,12 @@
  *   - .education-item__details (additional details)
  *
  * DEPENDENCIES:
- *   - variables-education.css (all education-specific variables with defaults)
+ *   - variables/education.css (all education-specific variables with defaults)
  *   - sections.css (education items are section children)
  *
  * VARIABLE USAGE:
  *   - All var() calls use properties WITHOUT fallbacks
- *   - All defaults are defined in variables-education.css
+ *   - All defaults are defined in variables/education.css
  *   - Themes override variables to customize appearance
  *
  * PROPERTY ORDER:
@@ -34,7 +34,7 @@
  *
  * STRUCTURE:
  *   - All properties use CSS variables without fallbacks
- *   - All defaults are defined in variables-education.css
+ *   - All defaults are defined in variables/education.css
  *   - Uses longhand properties exclusively (border-block-*, padding-block-*, margin-block-*, etc.)
  *   - Properties ordered by consistent methodology (see PROPERTY ORDER)
  *   - Uses CSS nesting for child elements and states

@@ -7,7 +7,7 @@
  *   - #resume-header__printlink (print button, always visible)
  *
  * DEPENDENCIES:
- *   - ../variables-printlink.css (defines ALL --printlink-* properties)
+ *   - ../variables/printlink.css (defines ALL --printlink-* properties)
  *
  * NO INLINE FALLBACKS:
  *   All custom properties are defined in variable files with proper defaults.

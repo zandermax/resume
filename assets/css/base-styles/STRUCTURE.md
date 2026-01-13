@@ -10,16 +10,18 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 
 ## File Organization
 
-### CSS Variables (7 files)
+### CSS Variables (10 files in variables/ subdirectory)
 
-- `variables-base.css` (~70 lines) - Core design tokens
-- `variables-layout.css` (~308 lines) - Main container, header, section variables
-- `variables-skills.css` (~97 lines) - Skills grid variables
-- `variables-experience.css` (~197 lines) - Experience items, tech badges, bullets
-- `variables-lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
-- `variables-education.css` (~60 lines) - Education section
-- `variables-printlink.css` (~106 lines) - Print/save link buttons
-- `variables-dial-selector.css` (~84 lines) - Dial selector component and housing
+- `variables/base.css` (~70 lines) - Core design tokens
+- `variables/main-header.css` (~308 lines) - Main container and core header variables
+- `variables/header-sections.css` - Extended header and section container variables
+- `variables/sections-global.css` - Section content and global styles
+- `variables/skills.css` (~97 lines) - Skills grid variables
+- `variables/experience.css` (~197 lines) - Experience items, tech badges, bullets
+- `variables/lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
+- `variables/education.css` (~60 lines) - Education section
+- `variables/printlink.css` (~106 lines) - Print/save link buttons
+- `variables/dial-selector.css` (~84 lines) - Dial selector component and housing
 
 ### Style Rules (9 files)
 
@@ -39,47 +41,49 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 
 ## Quick Reference: HTML → CSS Files
 
-| HTML Element                   | Variable File            | Style File               |
-| ------------------------------ | ------------------------ | ------------------------ |
-| `body.resume`                  | variables-base.css       | \_base.css               |
-| `h1, h2, h3` (generic)         | variables-layout.css     | \_base.css               |
-| `p, li` (generic)              | variables-layout.css     | \_base.css               |
-| `a` (generic links)            | variables-layout.css     | \_base.css               |
-| `.resume__main`                | variables-layout.css     | main.css                 |
-| `.resume-header`               | variables-layout.css     | header.css               |
-| `.resume-header__name`         | variables-layout.css     | header.css               |
-| `.resume-header__role`         | variables-layout.css     | header.css               |
-| `.resume-header__meta`         | variables-layout.css     | header.css               |
-| `.resume-header__savelink`     | variables-printlink.css  | header/buttons.css       |
-| `#resume-header__printlink`    | variables-printlink.css  | header/buttons.css       |
-| `.resume-section`              | variables-layout.css     | sections.css             |
-| `.resume-section__title`       | variables-layout.css     | title.css                |
-| `.skills-grid`                 | variables-skills.css     | skills.css               |
-| `.skills-grid__group`          | variables-skills.css     | skills.css               |
-| `.skills-grid__title`          | variables-skills.css     | skills.css               |
-| `.experience-item`             | variables-experience.css | experience.css           |
-| `.experience-item__role`       | variables-experience.css | experience.css           |
-| `.experience-item__tech`       | variables-experience.css | experience.css           |
-| `.experience-item__bullets`    | variables-experience.css | experience.css           |
-| `.community-list`              | variables-lists.css      | lists.css                |
-| `.principles-list`             | variables-lists.css      | lists.css                |
-| `.education-item`              | variables-education.css  | components/education.css |
-| `.education-item__institution` | variables-education.css  | components/education.css |
-| `.dial-selector-housing`       | variables-dial-selector.css | header/dial-selectors.css |
+| HTML Element                   | Variable File                    | Style File               |
+| ------------------------------ | -------------------------------- | ------------------------ |
+| `body.resume`                  | variables/base.css               | \_base.css               |
+| `h1, h2, h3` (generic)         | variables/sections-global.css    | \_base.css               |
+| `p, li` (generic)              | variables/sections-global.css    | \_base.css               |
+| `a` (generic links)            | variables/sections-global.css    | \_base.css               |
+| `.resume__main`                | variables/main-header.css        | main.css                 |
+| `.resume-header`               | variables/main-header.css        | header.css               |
+| `.resume-header__name`         | variables/main-header.css        | header.css               |
+| `.resume-header__role`         | variables/header-sections.css    | header.css               |
+| `.resume-header__meta`         | variables/header-sections.css    | header.css               |
+| `.resume-header__savelink`     | variables/printlink.css          | header/buttons.css       |
+| `#resume-header__printlink`    | variables/printlink.css          | header/buttons.css       |
+| `.resume-section`              | variables/header-sections.css    | sections.css             |
+| `.resume-section__title`       | variables/header-sections.css    | title.css                |
+| `.skills-grid`                 | variables/skills.css             | skills.css               |
+| `.skills-grid__group`          | variables/skills.css             | skills.css               |
+| `.skills-grid__title`          | variables/skills.css             | skills.css               |
+| `.experience-item`             | variables/experience.css         | experience.css           |
+| `.experience-item__role`       | variables/experience.css         | experience.css           |
+| `.experience-item__tech`       | variables/experience.css         | experience.css           |
+| `.experience-item__bullets`    | variables/experience.css         | experience.css           |
+| `.community-list`              | variables/lists.css              | lists.css                |
+| `.principles-list`             | variables/lists.css              | lists.css                |
+| `.education-item`              | variables/education.css          | components/education.css |
+| `.education-item__institution` | variables/education.css          | components/education.css |
+| `.dial-selector-housing`       | variables/dial-selector.css      | header/dial-selectors.css |
 
 ## Import Order & Dependencies
 
 ```
-variables-base.css (no dependencies)
-variables-layout.css
-variables-skills.css
-variables-experience.css
-variables-lists.css
-variables-education.css
-variables-printlink.css
-variables-dial-selector.css
+variables/base.css (no dependencies)
+variables/main-header.css
+variables/header-sections.css
+variables/sections-global.css
+variables/skills.css
+variables/experience.css
+variables/lists.css
+variables/education.css
+variables/printlink.css
+variables/dial-selector.css
 
-_base.css (uses variables-base.css, variables-layout.css)
+_base.css (uses variables/base.css, variables/*-*.css)
   ├─ main.css
   ├─ header.css (includes buttons)
   ├─ sections.css
@@ -195,7 +199,7 @@ Shorthand custom properties can coexist with longhand properties if:
 
 Example from experience:
 
-- `variables-experience.css` defines both `--experience-item-padding` (shorthand) and the four longhand properties
+- `variables/experience.css` defines both `--experience-item-padding` (shorthand) and the four longhand properties
 - `experience.css` uses ONLY the longhand properties in its CSS rules
 - `responsive.css` uses the shorthand: `padding: var(--experience-item-padding)`
 - Themes can set either the shorthand (for uniform padding) or individual longhand properties (for custom edges)
@@ -270,7 +274,7 @@ Section titles (h2.resume-section\_\_title) follow the same longhand-first princ
 - `--section-title-border-block-start`, `--section-title-border-block-end`
 - `--section-title-border-inline-start`, `--section-title-border-inline-end`
 
-**Variable organization in variables-layout.css:**
+**Variable organization in variables/header-sections.css:**
 
 Properties are grouped by category for easy navigation:
 
@@ -288,7 +292,7 @@ Properties are grouped by category for easy navigation:
 
 **Pseudo-elements**: Support extensive customization via `--section-title-before-*` and `--section-title-after-*` properties for theme-specific decorations. All properties default to neutral values (none/auto/transparent/static).
 
-**No inline fallbacks**: All properties have defaults defined in variables-layout.css except for the intentional `--section-accent-color` fallback pattern.
+**No inline fallbacks**: All properties have defaults defined in variables/header-sections.css except for the intentional `--section-accent-color` fallback pattern.
 
 **Dial selector housing**:
 
@@ -300,7 +304,7 @@ Properties are grouped by category for easy navigation:
 
 The dial selector component exposes a comprehensive public API for theme customization through `--dial-selector-*` prefixed variables. This API establishes a clear boundary between what themes should customize (public API) and what should remain private (internal `--ds-*` variables).
 
-- **Public API (~45 variables)**: `--dial-selector-*` variables defined in `variables-dial-selector.css`
+- **Public API (~45 variables)**: `--dial-selector-*` variables defined in `variables/dial-selector.css`
   - Theme colors: ink, selection, indicator, line, knob background
   - Label styling: font, padding, colors, borders, shadows, transitions
   - Label states: hover (color, background, padding, box-shadow, transform, opacity)
@@ -356,7 +360,7 @@ This pattern should be followed in all other component CSS files.
 
 **How to add theme-specific properties:**
 
-1. Add the property to the appropriate base `variables-*.css` file with a sensible default
+1. Add the property to the appropriate base `variables/*.css` file with a sensible default
 2. Document it in the file header
 3. Then themes can override it as needed
 
@@ -364,7 +368,7 @@ Even if only one theme currently uses a property, it should be defined in base w
 
 ## Theme Overrides
 
-Theme files in `assets/css/themes/*.css` can override any CSS variable defined in the `variables-*.css` files. The base styles provide sensible defaults that themes customize.
+Theme files in `assets/css/themes/*.css` can override any CSS variable defined in the `variables/*.css` files. The base styles provide sensible defaults that themes customize.
 
 Themes should:
 
@@ -378,7 +382,7 @@ Themes should:
 
 ### Base Definition Requirement
 
-All properties used in main.css must be defined in variables-layout.css with sensible defaults, even if only one theme overrides them.
+All properties used in main.css must be defined in variables/main-header.css with sensible defaults, even if only one theme overrides them.
 
 ### Main Container Property Categories
 
@@ -479,7 +483,7 @@ Do NOT use shorthand `--community-item-border-inline-start` as it creates cascad
 
 ## Adding New Components
 
-1. Create `variables-{component}.css` with all component CSS variables
+1. Create `variables/{component}.css` with all component CSS variables
 2. Create `{component}.css` with component styles
 3. Add both imports to `index.css` in appropriate sections
 4. Update this STRUCTURE.md file with the new component mappings

@@ -6,7 +6,7 @@
  *   - .resume-header__dial-selector h3 (dial selector labels)
  *
  * DEPENDENCIES:
- *   - ../variables-dial-selector.css (defines ALL --dial-selector-* properties)
+ *   - ../variables/dial-selector.css (defines ALL --dial-selector-* properties)
  *
  * RELATED FILES:
  *   - ../../../dial-selector/index.js (custom element styled here)

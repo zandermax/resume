@@ -5,8 +5,8 @@
  *   - .resume__main (main container for entire resume)
  *
  * DEPENDENCIES:
- *   - variables-base.css (defines --border-color, --background-color, --paper-texture, --paper-shadow)
- *   - variables-layout-main-header.css (defines --main-*, --resume-main-*, --resume-main-before-*, --resume-main-after-*)
+ *   - variables/base.css (defines --border-color, --background-color, --paper-texture, --paper-shadow)
+ *   - variables/main-header.css (defines --main-*, --resume-main-*, --resume-main-before-*, --resume-main-after-*)
  *   - _base.css (builds on body reset styles)
  *
  * RELATED FILES:

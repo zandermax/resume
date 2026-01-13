@@ -25,8 +25,8 @@
  *
  * DEPENDENCIES:
  *   - variables.css (all internal --ds-* variables with defaults)
- *   - base-styles/variables-dial-selector.css (public API --dial-selector-* variables)
- *   - base-styles/variables-base.css (--screen-width-mobile-large)
+ *   - base-styles/variables/dial-selector.css (public API --dial-selector-* variables)
+ *   - base-styles/variables/base.css (--screen-width-mobile-large)
  *
  * PROPERTY ORDER:
  *   1. Position (position, top, right, bottom, left, z-index)

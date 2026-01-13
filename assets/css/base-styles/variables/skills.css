@@ -8,7 +8,7 @@
  *   - .skills-grid__items (skill list text content)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --section-bg)
+ *   - base.css (uses --border-color, --section-bg)
  *
  * RELATED FILES:
  *   - skills.css (applies these variables to skills grid styles)

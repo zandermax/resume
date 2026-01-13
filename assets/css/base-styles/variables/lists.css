@@ -8,7 +8,7 @@
  *   - .principles-list__item (individual principle/value items)
  *
  * DEPENDENCIES:
- *   - variables-base.css (uses --border-color, --section-bg, etc.)
+ *   - base.css (uses --border-color, --section-bg, etc.)
  *
  * RELATED FILES:
  *   - lists.css (applies these variables)
