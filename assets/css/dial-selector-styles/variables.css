@@ -92,10 +92,7 @@ dial-selector {
   --ds-selector-gap-xs: clamp(4px, 1.5vw, 10px);
 
   /* Component dimensions */
-  --ds-component-width: 100%;
-  --ds-component-height: auto;
   --ds-component-min-width: 200px;
-  --ds-component-min-height: 200px;
 
   /* Cursor */
   --ds-cursor: pointer;

@@ -13,7 +13,7 @@
  * RELATED FILES:
  *   - skills.css (applies these variables to skills grid styles)
  *
- * VARIABLES DEFINED: 65+ variables controlling:
+ * VARIABLES DEFINED: 70+ variables controlling:
  *   - Grid layout (gap, padding, border, background, transform, overflow)
  *   - Group boxes (borders, padding, shadows, hover states, animations)
  *   - Title styling (font, borders, spacing, pseudo-elements)
@@ -27,106 +27,205 @@
  *   - Use longhand only when themes need granular control (margin-block-end)
  *   - Omit properties that hold only CSS defaults (never overridden)
  *   - Hover states inherit from base states when not explicitly set
+ *
+ * PROPERTY ORDER (consistent with skills.css):
+ *   1. Position (position, top, right, bottom, left, z-index, inset)
+ *   2. Display/Box Model (display, width, height, padding, margin, box-sizing)
+ *   3. Flex/Grid/Alignment (gap, align-items, flex-wrap)
+ *   4. Borders (border, border-radius)
+ *   5. Background (background, background-image)
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height, list-style)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations (transition, animation)
+ *   9. Other (overflow, contain, pointer-events, will-change)
  */
 
 :root {
-  /* === SKILLS GRID CONTAINER === */
-  /* Layout properties */
-  --skills-grid-gap: var(--spacing-md);
+  /* ============================================================================
+     SKILLS GRID CONTAINER
+     ============================================================================ */
+
+  /* Display/Box Model */
   --skills-grid-padding: var(--spacing-sm);
-  --skills-grid-transform: none;
-  --skills-grid-overflow: visible;
 
-  /* Border properties - themes use shorthand */
+  /* Grid Layout */
+  --skills-grid-gap: var(--spacing-md);
+
+  /* Borders */
   --skills-grid-border: var(--border-width-thick) solid var(--border-color);
-
-  /* Visual properties */
-  --skills-grid-background: transparent;
-  --skills-grid-background-image: none;
-  --skills-grid-box-shadow: none;
   --skills-grid-border-radius: 0;
 
-  /* === SKILLS GRID PSEUDO-ELEMENTS === */
-  /* Used by themes for decorative borders/effects */
-  --skills-grid-before-content: none;
-  --skills-grid-before-display: none;
+  /* Background */
+  --skills-grid-background: transparent;
+  --skills-grid-background-image: none;
+
+  /* Visual Effects */
+  --skills-grid-box-shadow: none;
+  --skills-grid-transform: none;
+
+  /* Other */
+  --skills-grid-overflow: visible;
+
+  /* ============================================================================
+     SKILLS GRID - PSEUDO-ELEMENT (::before)
+     Used by themes for decorative borders/effects
+     ============================================================================ */
+
+  /* Position */
   --skills-grid-before-position: absolute;
   --skills-grid-before-inset: auto;
+
+  /* Display/Box Model */
+  --skills-grid-before-display: none;
+
+  /* Borders */
   --skills-grid-before-border: none;
   --skills-grid-before-border-radius: 0;
+
+  /* Background */
   --skills-grid-before-background: transparent;
+
+  /* Visual Effects */
   --skills-grid-before-opacity: 1;
 
-  /* === SKILLS GROUP BOXES === */
-  /* Layout properties */
-  --skills-group-transform: none;
+  /* Other */
+  --skills-grid-before-content: none;
+  --skills-grid-before-pointer-events: none;
 
-  /* Border properties - themes use shorthand */
-  --skills-group-border: var(--border-width-thin) solid var(--border-color);
-  --skills-group-border-radius: 0;
+  /* ============================================================================
+     SKILLS GROUP BOXES (.skills-grid__group)
+     Individual skill category containers
+     ============================================================================ */
 
-  /* Spacing */
+  /* Display/Box Model */
   --skills-group-padding: 0.6rem 0.75rem;
   --skills-group-margin-block-end: 0;
 
-  /* Visual properties */
-  --skills-group-background: var(--section-bg);
-  --skills-group-box-shadow: none;
+  /* Borders */
+  --skills-group-border: var(--border-width-thin) solid var(--border-color);
+  --skills-group-border-radius: 0;
 
-  /* Behavioral properties */
+  /* Background */
+  --skills-group-background: var(--section-bg);
+
+  /* Visual Effects */
+  --skills-group-box-shadow: none;
+  --skills-group-transform: none;
+
+  /* Transitions/Animations */
   --skills-group-transition: none;
   --skills-group-animation: none;
 
-  /* === SKILLS GROUP HOVER STATES === */
-  /* Hover states inherit from base states when not set */
-  --skills-group-hover-transform: var(--skills-group-transform);
-  --skills-group-hover-box-shadow: var(--skills-group-box-shadow);
+  /* Other */
+  --skills-group-overflow: visible;
+  --skills-group-contain: none;
+  --skills-group-will-change: auto;
+
+  /* ============================================================================
+     SKILLS GROUP - HOVER STATE
+     Hover states inherit from base states when not explicitly set
+     ============================================================================ */
+
+  /* Background */
   --skills-group-hover-background: var(--skills-group-background);
+
+  /* Visual Effects */
+  --skills-group-hover-box-shadow: var(--skills-group-box-shadow);
+  --skills-group-hover-transform: var(--skills-group-transform);
+
+  /* Child Color Override */
   --skills-group-hover-child-color: inherit;
 
-  /* === SKILLS TITLE === */
+  /* ============================================================================
+     SKILLS TITLE (.skills-grid__title)
+     Category titles like "Front-end & UI", "Back-end & Infrastructure"
+     ============================================================================ */
+
+  /* Display/Box Model */
+  --skills-title-display: block;
+  --skills-title-padding-block-end: 0.25rem;
+  --skills-title-margin-block-end: 0.3rem;
+
+  /* Flex/Alignment */
+  --skills-title-align-items: baseline;
+  --skills-title-gap: 0;
+
+  /* Borders - uses only block-end border (longhand for granular control) */
+  --skills-title-border-style: solid;
+  --skills-title-border-width: 2px;
+  --skills-title-border-block-end-color: var(--border-color);
+
   /* Typography */
   --skills-title-font-size: 0.9rem;
   --skills-title-font-weight: normal;
   --skills-title-color: inherit;
   --skills-title-text-transform: uppercase;
   --skills-title-letter-spacing: 0.14em;
+  --skills-title-line-height: 1.3;
+
+  /* Visual Effects */
   --skills-title-text-shadow: none;
 
-  /* Border properties - title uses only block-end border */
-  --skills-title-border-style: solid;
-  --skills-title-border-width: 2px;
-  --skills-title-border-block-end-color: var(--border-color);
+  /* ============================================================================
+     SKILLS TITLE - PSEUDO-ELEMENT (::before)
+     Used by themes for icons/decorations before title text
+     ============================================================================ */
 
-  /* Spacing - only block-end values are customized by themes */
-  --skills-title-padding-block-end: 0.25rem;
-  --skills-title-margin-block-end: 0.3rem;
-
-  /* === SKILLS TITLE PSEUDO-ELEMENTS === */
-  /* Used by themes for icons/decorations before title */
-  --skills-title-before-content: none;
+  /* Display/Box Model */
   --skills-title-before-display: none;
-  --skills-title-before-color: inherit;
+
+  /* Typography */
   --skills-title-before-font-size: inherit;
+  --skills-title-before-color: inherit;
 
-  /* === SKILLS ITEMS TEXT === */
+  /* Other */
+  --skills-title-before-content: none;
+
+  /* ============================================================================
+     SKILLS ITEMS TEXT (.skills-grid__items)
+     Paragraph text containing comma-separated skill lists
+     ============================================================================ */
+
+  /* Typography */
   --skills-items-font-size: var(--font-size-sm);
-  --skills-items-line-height: 1.4;
   --skills-items-font-family: inherit;
+  --skills-items-line-height: 1.4;
 
-  /* === SKILLS GROUP UL === */
-  --skills-group-ul-list-style: none;
+  /* ============================================================================
+     SKILLS GROUP - UL ELEMENT
+     Optional unordered list container for skill items
+     ============================================================================ */
+
+  /* Display/Box Model */
+  --skills-group-ul-display: block;
   --skills-group-ul-padding: 0;
   --skills-group-ul-margin: 0;
-  --skills-group-ul-display: block;
+
+  /* Flex/Alignment */
+  --skills-group-ul-flex-wrap: nowrap;
   --skills-group-ul-gap: 0;
 
-  /* === SKILLS LIST ITEMS === */
+  /* Typography */
+  --skills-group-ul-list-style: none;
+
+  /* ============================================================================
+     SKILLS GROUP - LI ELEMENTS
+     Individual list items within skill lists
+     ============================================================================ */
+
+  /* Typography */
   --skills-group-li-font-size: var(--font-size-sm);
   --skills-group-li-font-weight: normal;
   --skills-group-li-line-height: 1.4;
 
-  /* === SKILLS LIST ITEM AFTER PSEUDO === */
-  --skills-group-li-after-content: none;
+  /* ============================================================================
+     SKILLS GROUP LI - PSEUDO-ELEMENT (::after)
+     Used for separators between items (e.g., commas)
+     ============================================================================ */
+
+  /* Display/Box Model */
   --skills-group-li-after-margin-inline-start: 0;
+
+  /* Other */
+  --skills-group-li-after-content: none;
 }

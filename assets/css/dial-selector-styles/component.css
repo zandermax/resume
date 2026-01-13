@@ -1,46 +1,109 @@
-/* ===========================
-   Dial Selector - Base Component
-   =========================== */
+/**
+ * Dial Selector - Base Component Styles
+ *
+ * DOM STRUCTURE:
+ *   <dial-selector>
+ *     <div class="selector">
+ *       <div class="label-column left">
+ *         <label class="dial-label"><span>Option</span></label>
+ *       </div>
+ *       <div class="knob-wrap">
+ *         <svg id="lineContainer">
+ *           <polyline class="spoke-line-hit-area"></polyline>
+ *           <polyline class="spoke-line"></polyline>
+ *         </svg>
+ *         <div class="knob">
+ *           <div class="indicator"></div>
+ *           <div class="advance"></div>
+ *         </div>
+ *       </div>
+ *       <div class="label-column right">
+ *         <label class="dial-label"><span>Option</span></label>
+ *       </div>
+ *     </div>
+ *   </dial-selector>
+ *
+ * DEPENDENCIES:
+ *   - variables.css (all internal --ds-* variables with defaults)
+ *   - base-styles/variables-dial-selector.css (public API --dial-selector-* variables)
+ *   - base-styles/variables-base.css (--screen-width-mobile-large)
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ */
+
+/* ============================================================================
+   DIAL SELECTOR COMPONENT
+   ============================================================================ */
 
 dial-selector {
-  display: block;
+  /* Position */
   position: relative;
-  font-family: var(--ds-font-family);
+
+  /* Display/Box Model */
+  display: block;
   min-width: var(--ds-component-min-width);
-  max-width: var(--ds-component-width);
-  width: var(--ds-component-width);
-  height: var(--ds-component-height);
-  overflow: hidden;
-  box-sizing: border-box;
-  margin: 0;
+  max-width: var(--screen-width-mobile-large);
+  width: 100%;
+  height: auto;
   margin-block-start: var(--dial-selector-component-margin-block-start);
+  margin-block-end: 0;
+  margin-inline: auto;
   padding: 0;
-  max-width: var(--screen-width-mobile-large); /* Prevent component from getting too wide */
-  margin-inline: auto; /* Center when narrower than container */
-  filter: var(--ds-filter);
-}
-
-dial-selector * {
   box-sizing: border-box;
-}
 
-/* No transitions class for instant updates */
-dial-selector.no-transitions .knob {
-  transition: none;
-}
+  /* Typography */
+  font-family: var(--ds-font-family);
 
-dial-selector.no-transitions .spoke-line {
-  transition: none;
-}
+  /* Visual Effects */
+  filter: var(--ds-filter);
 
-dial-selector.no-transitions .dial-label {
-  transition: none !important;
-}
+  /* Other */
+  overflow: hidden;
 
-/* Pause animations during layout calculations to get accurate positions */
-dial-selector.calculating-layout,
-dial-selector.calculating-layout *,
-dial-selector.calculating-layout *::before,
-dial-selector.calculating-layout *::after {
-  animation-play-state: paused !important;
+  /* ===========================
+     Universal Descendant Styles
+     =========================== */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* ===========================
+     State: No Transitions
+     Instant updates without animation
+     =========================== */
+  &.no-transitions {
+    .knob {
+      transition: none;
+    }
+
+    .spoke-line {
+      transition: none;
+    }
+
+    .dial-label {
+      transition: none;
+    }
+  }
+
+  /* ===========================
+     State: Calculating Layout
+     Pause animations for accurate position measurements
+     =========================== */
+  &.calculating-layout {
+    &,
+    *,
+    *::before,
+    *::after {
+      animation-play-state: paused !important;
+    }
+  }
 }

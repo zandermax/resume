@@ -184,6 +184,7 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --skills-group-hover-box-shadow: var(--dashboard-shadow-md);
 
   /* Skills Grid - Title */
+  --skills-title-display: flex;
   --skills-title-color: var(--accent-color);
   --skills-title-font-size: var(--spacing-sm);
   --skills-title-font-weight: 600;

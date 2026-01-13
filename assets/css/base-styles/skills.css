@@ -89,7 +89,7 @@
     opacity: var(--skills-grid-before-opacity);
 
     /* Other */
-    pointer-events: none;
+    pointer-events: var(--skills-grid-before-pointer-events);
   }
 
   /* ========================================================================
@@ -110,7 +110,7 @@
     border-radius: var(--skills-group-border-radius);
 
     /* Background */
-    background-color: var(--skills-group-background);
+    background: var(--skills-group-background);
 
     /* Visual Effects */
     box-shadow: var(--skills-group-box-shadow);
@@ -121,6 +121,11 @@
 
     /* Animations */
     animation: var(--skills-group-animation);
+
+    /* Other */
+    overflow: var(--skills-group-overflow);
+    contain: var(--skills-group-contain);
+    will-change: var(--skills-group-will-change);
 
     /* === HOVER STATE === */
     &:hover {
@@ -143,9 +148,13 @@
 
     .skills-grid__title {
       /* Display/Box Model */
-      display: block;
+      display: var(--skills-title-display);
       padding-block-end: var(--skills-title-padding-block-end);
       margin-block-end: var(--skills-title-margin-block-end);
+
+      /* Flex/Alignment */
+      align-items: var(--skills-title-align-items);
+      gap: var(--skills-title-gap);
 
       /* Borders */
       border-block-end: var(--skills-title-border-width) var(--skills-title-border-style)
@@ -157,6 +166,7 @@
       color: var(--skills-title-color);
       text-transform: var(--skills-title-text-transform);
       letter-spacing: var(--skills-title-letter-spacing);
+      line-height: var(--skills-title-line-height);
 
       /* Visual Effects */
       text-shadow: var(--skills-title-text-shadow);
@@ -196,7 +206,8 @@
       padding: var(--skills-group-ul-padding);
       margin: var(--skills-group-ul-margin);
 
-      /* Alignment */
+      /* Flex/Alignment */
+      flex-wrap: var(--skills-group-ul-flex-wrap);
       gap: var(--skills-group-ul-gap);
 
       /* Typography */
