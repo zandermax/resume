@@ -22,7 +22,9 @@ body[data-theme='glitch'] {
   --dial-selector-indicator-will-change: transform;
 
   /* Knob */
-  --dial-selector-knob-border-color: var(--border-width-thick) solid var(--border-color);
+  --dial-selector-knob-border-width: var(--border-width-thick);
+  --dial-selector-knob-border-style: solid;
+  --dial-selector-knob-border-color: var(--border-color);
   --dial-selector-knob-box-shadow: 0 0 0 var(--border-width-normal) var(--glitch-primary),
     0 0 0 var(--border-width-extra-thick) var(--glitch-secondary), 5px 5px 10px oklch(0% 0 0 / 0.3);
 
@@ -59,7 +61,7 @@ body[data-theme='glitch'] {
   --dial-selector-label-active-span-border-color: var(--border-color);
   --dial-selector-label-active-span-box-shadow: 4px 4px 0 0 var(--glitch-primary), -2px -2px 0 0 var(--glitch-secondary);
   --dial-selector-label-active-animation: text-glitch 8s infinite;
-  --dial-selector-label-span-active-font-weight: 700;
+  --dial-selector-label-active-span-font-weight: 700;
   --dial-selector-label-active-will-change: transform, text-shadow;
 
   /* Selectors required for nth-child pseudo-classes only */

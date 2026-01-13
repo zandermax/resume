@@ -29,9 +29,9 @@ dial-selector {
   /* Knob colors */
   --ds-knob-background-color: var(--dial-selector-color-knob-background, transparent);
 
-  /* Circle colors */
-  --ds-color-outer-circle: var(--ds-color-ink);
-  --ds-color-inner-circle: var(--ds-color-ink);
+  /* Circle colors - read from public API, fallback to ink color */
+  --ds-color-outer-circle: var(--dial-selector-color-outer-circle, var(--ds-color-ink));
+  --ds-color-inner-circle: var(--dial-selector-color-inner-circle, var(--ds-color-ink));
 
   /* ===========================
      TYPOGRAPHY
@@ -67,6 +67,8 @@ dial-selector {
   --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 */
   --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 */
   --ds-indicator-vertical-offset: var(--dial-selector-indicator-vertical-offset, 46.75%);
+  --ds-indicator-width-override: var(--dial-selector-indicator-width, auto);
+  --ds-indicator-height-override: var(--dial-selector-indicator-height, auto);
   --ds-center-indicator: 0px;
 
   /* Line dimensions */
@@ -103,7 +105,8 @@ dial-selector {
      Base knob appearance - reads from public API
      =========================== */
   --ds-knob-border-color: var(--dial-selector-knob-border-color, var(--ds-color-outer-circle));
-  --ds-knob-border: var(--dial-selector-knob-border-width, 2px) var(--dial-selector-knob-border-style, solid) var(--ds-knob-border-color);
+  --ds-knob-border: var(--dial-selector-knob-border-width, 2px) var(--dial-selector-knob-border-style, solid)
+    var(--ds-knob-border-color);
   --ds-knob-border-radius: var(--dial-selector-knob-border-radius, 50%);
   --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow, unset);
   --ds-knob-background-image: var(--dial-selector-knob-background-image, unset);
@@ -138,10 +141,9 @@ dial-selector {
      The pointer/indicator on the knob - reads from public API
      =========================== */
   --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
-  --ds-indicator-width-override: var(--dial-selector-indicator-width, var(--ds-indicator-width));
-  --ds-indicator-height-override: var(--dial-selector-indicator-height, var(--ds-indicator-length));
   --ds-indicator-gradient: var(--dial-selector-indicator-gradient, var(--ds-color-indicator));
-  --ds-indicator-border: var(--dial-selector-indicator-border-width, 0) var(--dial-selector-indicator-border-style, none) var(--dial-selector-indicator-border-color, transparent);
+  --ds-indicator-border: var(--dial-selector-indicator-border-width, 0)
+    var(--dial-selector-indicator-border-style, none) var(--dial-selector-indicator-border-color, transparent);
   --ds-indicator-border-radius: var(--dial-selector-indicator-border-radius, 0);
   --ds-indicator-box-shadow: var(--dial-selector-indicator-box-shadow, none);
   --ds-indicator-opacity: 1;
@@ -165,11 +167,8 @@ dial-selector {
   --ds-line-filter-active: var(--dial-selector-line-filter-active, none);
   --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
 
-  /* Internal line variables (for JS to override) */
+  /* Internal line variable (for JS to override) */
   --ds-internal-line-stroke-width: 2px;
-  --ds-internal-line-opacity-inactive: 0.4;
-  --ds-internal-line-opacity-active: 0.8;
-  --ds-internal-line-transition: opacity 0.3s ease, stroke 0.3s ease;
 
   /* ===========================
      LABEL STYLING
@@ -192,10 +191,10 @@ dial-selector {
 
   /* Label sizing (responsive) - read from public API */
   --ds-label-font-size: var(--dial-selector-label-font-size, clamp(16px, 1.5vw, 22px));
-  --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
-  --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
-  --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
-  --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
+  --ds-label-font-size--tablet: var(--dial-selector-label-font-size--tablet, clamp(14px, 2.5vw, 18px));
+  --ds-label-font-size--phone: var(--dial-selector-label-font-size--phone, clamp(12px, 2.5vw, 16px));
+  --ds-label-font-size--phone-sm: var(--dial-selector-label-font-size--phone-sm, clamp(14px, 2.8vw, 14px));
+  --ds-label-font-size--xs: var(--dial-selector-label-font-size--xs, clamp(12px, 3vw, 13px));
 
   /* Label box model - read from public API */
   --ds-label-padding: var(--dial-selector-label-padding, 0.4rem 0.8rem);
@@ -260,7 +259,7 @@ dial-selector {
   --ds-label-active-will-change: var(--dial-selector-label-active-will-change, auto);
 
   /* Active span states - read from public API */
-  --ds-label-span-active-font-weight: inherit;
+  --ds-label-active-span-font-weight: var(--dial-selector-label-active-span-font-weight, inherit);
   --ds-label-active-span-padding-block: var(--dial-selector-label-active-span-padding-block, unset);
   --ds-label-active-span-padding-inline: var(--dial-selector-label-active-span-padding-inline, unset);
   --ds-label-active-span-padding-block--tablet: unset;
@@ -271,7 +270,6 @@ dial-selector {
   --ds-label-active-span-border-style: var(--dial-selector-label-active-span-border-style, unset);
   --ds-label-active-span-border-color: var(--dial-selector-label-active-span-border-color, transparent);
   --ds-label-active-span-box-shadow: var(--dial-selector-label-active-span-box-shadow, none);
-  --ds-label-active-span-box-shadow: none;
   --ds-label-active-span-transform: none;
 
   /* ===========================

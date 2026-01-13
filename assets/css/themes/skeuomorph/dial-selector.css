@@ -84,7 +84,7 @@ body[data-theme='skeuomorph'] {
   --dial-selector-label-color: var(--text-color);
   --dial-selector-label-font-weight: 600;
   --dial-selector-label-active-color: var(--dial-selector-color-selection);
-  --dial-selector-label-span-active-font-weight: 700;
+  --dial-selector-label-active-span-font-weight: 700;
 
   /* Label hover - No hover effect for realism */
   --dial-selector-label-hover-box-shadow: none;

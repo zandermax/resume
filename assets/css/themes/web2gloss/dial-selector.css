@@ -51,7 +51,7 @@ body[data-theme='web2gloss'] {
   --dial-selector-label-active-span-border-color: var(--web2-primary);
   --dial-selector-label-active-span-box-shadow: var(--web2-shadow-md), 0 0 16px var(--web2-glow), var(--web2-shadow-inset-light);
   --dial-selector-label-active-text-shadow: var(--web2-text-shadow-lg);
-  --dial-selector-label-span-active-font-weight: 700;
+  --dial-selector-label-active-span-font-weight: 700;
 
 
   /* === DIAL SELECTOR HOUSING === */

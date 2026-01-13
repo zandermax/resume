@@ -11,20 +11,20 @@ dial-selector #lineContainer {
 
 dial-selector .spoke-line {
   stroke: var(--ds-line-stroke);
-  stroke-width: var(--ds-line-width, 2px);
-  opacity: var(--ds-line-opacity, 1);
-  transition: var(--ds-line-transition, opacity 0.3s ease, stroke 0.3s ease);
-  filter: var(--ds-line-filter, none);
+  stroke-width: var(--ds-line-width);
+  opacity: var(--ds-line-opacity);
+  transition: var(--ds-line-transition);
+  filter: var(--ds-line-filter);
 }
 
 dial-selector .spoke-line:nth-of-type(even) {
-  opacity: var(--ds-line-opacity-alternate, var(--ds-line-opacity, 1));
+  opacity: var(--ds-line-opacity-alternate);
 }
 
 dial-selector .spoke-line.active {
   stroke: var(--ds-line-active-stroke);
-  opacity: var(--ds-line-opacity-active, 1);
-  filter: var(--ds-line-filter-active, none);
+  opacity: var(--ds-line-opacity-active);
+  filter: var(--ds-line-filter-active);
 }
 
 dial-selector .spoke-line-hit-area {

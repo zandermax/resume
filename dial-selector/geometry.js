@@ -102,7 +102,7 @@ export const Geometry = {
     }
 
     if (hasExplicitWidth || hasFixedHeight) {
-      this.style.setProperty('--knob-wrap-size', `${targetSize}px`);
+      this.style.setProperty('--ds-knob-wrap-size', `${targetSize}px`);
     }
 
     void knobWrap.offsetWidth;
@@ -167,7 +167,7 @@ export const Geometry = {
       this.style.setProperty('--ds-label-vertical-offset-scale', `${this.labelVerticalOffsetScale}px`);
       this.style.setProperty('--ds-horizontal-line-length', `${this.horizontalLineLength}px`);
       this.style.setProperty('--ds-max-line-length', `${this.maxSpokeLength}px`);
-      this.style.setProperty('--ds-indicator-width-override', `${this.indicatorWidth}px`);
+      this.style.setProperty('--dial-selector-indicator-width', `${this.indicatorWidth}px`);
     }
 
     this.style.setProperty('--ds-hit-area-stroke-width', `${this.hitAreaStrokeWidth}px`);

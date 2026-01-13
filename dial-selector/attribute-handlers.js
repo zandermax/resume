@@ -94,16 +94,16 @@ export const AttributeHandlers = {
   updateKnobSize() {
     const colorInnerCircle = this.getAttribute('color-inner-circle');
     if (colorInnerCircle) {
-      this.style.setProperty('--color-inner-circle', colorInnerCircle);
+      this.style.setProperty('--ds-color-inner-circle', colorInnerCircle);
     } else {
-      this.style.removeProperty('--color-inner-circle');
+      this.style.removeProperty('--ds-color-inner-circle');
     }
 
     const colorOuterCircle = this.getAttribute('color-outer-circle');
     if (colorOuterCircle) {
-      this.style.setProperty('--color-outer-circle', colorOuterCircle);
+      this.style.setProperty('--ds-color-outer-circle', colorOuterCircle);
     } else {
-      this.style.removeProperty('--color-outer-circle');
+      this.style.removeProperty('--ds-color-outer-circle');
     }
 
     this.widthInnerCirclePercentage = this.parsePercentageAttr(this.getAttribute('width-inner-circle'));
@@ -119,9 +119,9 @@ export const AttributeHandlers = {
     if (timeSelectionDelay) {
       const delayMs = parseFloat(timeSelectionDelay);
       const delaySeconds = Math.max(0, delayMs) / 1000;
-      this.style.setProperty('--time-selection-delay', `${delaySeconds}s`);
+      this.style.setProperty('--ds-time-selection-delay', `${delaySeconds}s`);
     } else {
-      this.style.removeProperty('--time-selection-delay');
+      this.style.removeProperty('--ds-time-selection-delay');
     }
   },
 
@@ -135,12 +135,12 @@ export const AttributeHandlers = {
         const baseMin = 10;
         const scaledMin = (baseMin * percentage) / 100;
         const viewportUnit = (1.5 * percentage) / 100;
-        this.style.setProperty('--font-size', `clamp(${scaledMin}px, ${viewportUnit}vw, ${scaledMax}px)`);
+        this.style.setProperty('--ds-label-font-size', `clamp(${scaledMin}px, ${viewportUnit}vw, ${scaledMax}px)`);
       } else {
-        this.style.setProperty('--font-size', fontSize);
+        this.style.setProperty('--ds-label-font-size', fontSize);
       }
     } else {
-      this.style.removeProperty('--font-size');
+      this.style.removeProperty('--ds-label-font-size');
     }
   },
 

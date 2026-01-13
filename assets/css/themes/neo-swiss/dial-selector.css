@@ -38,7 +38,7 @@ body[data-theme='neoswiss'] {
   /* Dial selector label active state */
   --dial-selector-label-active-background: var(--accent-color);
   --dial-selector-label-active-color: var(--color-white);
-  --dial-selector-label-span-active-font-weight: 600;
+  --dial-selector-label-active-span-font-weight: 600;
 
   /* Dial selector spoke lines */
   --dial-selector-line-width: 1px;

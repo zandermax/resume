@@ -125,9 +125,9 @@ TERMINAL Theme - Common Variables
 
   /* Print/Save button hover/active states */
   --printlink-hover-filter: brightness(1.15);
-  --printlink-active-box-shadow-override: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
+  --printlink-active-box-shadow: inset 3px 3px 0 var(--terminal-border-dark, var(--color-black)),
     inset -3px -3px 0 var(--terminal-border-light, var(--color-white));
-  --printlink-active-transform-override: translate(1px, 1px);
+  --printlink-active-transform: translate(1px, 1px);
 
   /* Education and experience styling */
   --experience-item-position: relative;

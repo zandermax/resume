@@ -67,7 +67,7 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-active-span-padding-block--phone: 0.2rem;
   --dial-selector-label-active-span-padding-inline--phone: 0.25rem;
   --dial-selector-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-  --dial-selector-label-span-active-font-weight: bold;
+  --dial-selector-label-active-span-font-weight: bold;
   --dial-selector-label-active-span-border-width: 2px;
   --dial-selector-label-active-span-border-style: solid;
   --dial-selector-label-active-span-border-color: currentColor;

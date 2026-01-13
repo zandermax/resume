@@ -62,6 +62,8 @@
   --dial-selector-color-indicator: var(--color-red-crimson);
   --dial-selector-color-line: var(--color-gray-400);
   --dial-selector-color-knob-background: var(--color-dark-knob);
+  --dial-selector-color-outer-circle: inherit; /* Defaults to outer circle (knob border) */
+  --dial-selector-color-inner-circle: inherit; /* Defaults to inner circle */
 
   /* --- Label Styling (Base State) --- */
   --dial-selector-label-padding: 0.4rem 0.8rem;
@@ -71,6 +73,10 @@
   --dial-selector-label-border-color: transparent;
   --dial-selector-label-border-radius: 0;
   --dial-selector-label-font-size: clamp(16px, 1.5vw, 22px);
+  --dial-selector-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
+  --dial-selector-label-font-size--phone: clamp(12px, 2.5vw, 16px);
+  --dial-selector-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
+  --dial-selector-label-font-size--xs: clamp(12px, 3vw, 13px);
   --dial-selector-label-font-weight: normal;
   --dial-selector-label-color: inherit;
   --dial-selector-label-text-transform: none;
@@ -105,6 +111,7 @@
   --dial-selector-label-active-span-border-style: unset;
   --dial-selector-label-active-span-border-color: transparent;
   --dial-selector-label-active-span-box-shadow: none;
+  --dial-selector-label-active-span-font-weight: inherit;
 
   /* --- Label Span (Inner Text Element) --- */
   --dial-selector-label-span-display: inline-block;
@@ -223,6 +230,7 @@
   --dial-selector-housing-padding-inline: 0;
   --dial-selector-housing-margin-block: 0;
   --dial-selector-housing-margin-inline: 0;
+  --dial-selector-housing-margin: 0; /* Full shorthand for margin */
 
   /* --- Housing Spacing Properties (Longhand) --- */
   --dial-selector-housing-padding-block-start: 0;

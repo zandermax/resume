@@ -11,78 +11,100 @@
  * RELATED FILES:
  *   - header/buttons.css (applies printlink variables and contains link styles)
  *
- * VARIABLES DEFINED: ~54 printlink-specific variables controlling:
- *   - Printlink base styles (border, padding, font, colors)
+ * VARIABLES DEFINED: 48 printlink-specific variables controlling:
+ *   - Printlink base styles (border shorthand, padding, font, colors)
  *   - Printlink hover/active states
  *   - Printlink pseudo-elements
  *   - Printlink responsive overrides
+ *
+ * NOTE: Border uses shorthand property only (--printlink-border).
  */
 
 :root {
   /* === PRINT/SAVE BUTTON BASE STYLES === */
-  --printlink-border: none;
-  --printlink-border-radius: 0;
+  /* Positioning */
+  --printlink-position: relative;
+
+  /* Spacing */
   --printlink-padding-block: 0.5rem;
   --printlink-padding-inline: 1rem;
   --printlink-margin-block-end: 1rem;
+
+  /* Borders */
+  --printlink-border: none;
+  --printlink-border-radius: 0;
+
+  /* Background */
+  --printlink-background-color: transparent;
+  --printlink-background-image: none;
+
+  /* Typography */
   --printlink-font-size: 0.8rem;
   --printlink-font-family: inherit;
   --printlink-font-weight: normal;
   --printlink-letter-spacing: 0.14em;
   --printlink-text-transform: uppercase;
+  --printlink-text-decoration: none;
   --printlink-color: var(--text-color);
-  --printlink-background-color: transparent;
-  --printlink-background-image: none;
+
+  /* Visual Effects */
   --printlink-box-shadow: none;
   --printlink-text-shadow: none;
-  --printlink-text-decoration: none;
-  --printlink-position: relative;
-  --printlink-transition: none;
-  --printlink-transform: none;
   --printlink-opacity: 1;
   --printlink-filter: none;
+  --printlink-transform: none;
+
+  /* Animation & Interaction */
+  --printlink-transition: none;
   --printlink-animation: none;
   --printlink-cursor: pointer;
 
-  /* === PRINT/SAVE BUTTON BORDER PRIMITIVES === */
-  --printlink-border-width: 4px;
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--border-color);
-
   /* === PRINT/SAVE BUTTON HOVER STATES === */
-  --printlink-hover-shadow: none;
-  --printlink-hover-background-color: var(--text-color);
-  --printlink-hover-background-image: none;
-  --printlink-hover-background-size: auto;
-  --printlink-hover-color: var(--background-color);
-  --printlink-hover-text-shadow: none;
+  /* Borders */
   --printlink-hover-outline-width: 0;
   --printlink-hover-outline-style: solid;
   --printlink-hover-outline-color: transparent;
   --printlink-hover-outline-offset: 0;
-  --printlink-hover-border-color: transparent;
-  --printlink-hover-transform: none;
-  --printlink-hover-filter: none;
-  --printlink-hover-opacity: 1;
+
+  /* Background */
+  --printlink-hover-background-color: var(--text-color);
+  --printlink-hover-background-image: none;
   --printlink-hover-background-size: auto;
+
+  /* Typography */
+  --printlink-hover-color: var(--background-color);
+
+  /* Visual Effects */
+  --printlink-hover-shadow: none;
+  --printlink-hover-text-shadow: none;
+  --printlink-hover-opacity: 1;
+  --printlink-hover-filter: none;
+  --printlink-hover-transform: none;
+
+  /* Animation */
   --printlink-hover-animation: none;
 
   /* === PRINT/SAVE BUTTON RESPONSIVE === */
-  --printlink-font-size-responsive-500: var(--printlink-font-size);
+
+  /* @media max-width: 500px */
   --printlink-padding-block-responsive-500: var(--spacing-xs);
   --printlink-padding-inline-responsive-500: var(--spacing-md);
-  --printlink-font-size-responsive-600: var(--printlink-font-size);
+  --printlink-font-size-responsive-500: var(--printlink-font-size);
+
+  /* @media max-width: 600px */
   --printlink-padding-block-responsive-600: var(--spacing-xs);
   --printlink-padding-inline-responsive-600: var(--spacing-md);
+  --printlink-font-size-responsive-600: var(--printlink-font-size);
 
   /* === PRINT/SAVE BUTTON ACTIVE STATES === */
-  --printlink-active-transform: none;
+  /* Visual Effects */
   --printlink-active-box-shadow: none;
   --printlink-active-opacity: 1;
-  --printlink-active-box-shadow-override: none;
-  --printlink-active-transform-override: none;
+  --printlink-active-transform: none;
 
   /* === PRINT/SAVE BUTTON PSEUDO-ELEMENTS === */
+
+  /* ::before pseudo-element */
   --printlink-before-content: none;
   --printlink-before-display: none;
   --printlink-before-position: static;
@@ -92,11 +114,13 @@
   --printlink-before-left: auto;
   --printlink-before-margin-inline-start: 0;
   --printlink-before-margin-inline-end: 0;
+  --printlink-before-border-radius: 0;
+  --printlink-before-background: transparent;
   --printlink-before-font-size: inherit;
   --printlink-before-transform: none;
-  --printlink-before-background: transparent;
-  --printlink-before-border-radius: 0;
   --printlink-before-pointer-events: auto;
+
+  /* ::after pseudo-element */
   --printlink-after-content: none;
   --printlink-after-display: none;
   --printlink-after-position: static;

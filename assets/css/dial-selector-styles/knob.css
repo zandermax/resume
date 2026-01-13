@@ -7,16 +7,16 @@ dial-selector .knob {
   width: calc(var(--ds-radius-outer) * 2);
   height: calc(var(--ds-radius-outer) * 2);
   border: var(--ds-knob-border);
-  border-radius: var(--ds-knob-border-radius, 50%);
-  background-color: var(--ds-knob-background-color, transparent);
-  background-image: var(--ds-knob-background-image, unset);
+  border-radius: var(--ds-knob-border-radius);
+  background-color: var(--ds-knob-background-color);
+  background-image: var(--ds-knob-background-image);
   background-size: var(--ds-knob-background-size);
   background-position: var(--ds-knob-background-position);
   background-repeat: var(--ds-knob-background-repeat);
-  box-shadow: var(--ds-knob-box-shadow, none);
+  box-shadow: var(--ds-knob-box-shadow);
   z-index: 2;
   transform: rotate(var(--ds-indicator-angle)) scale(var(--ds-knob-transform-scale));
-  transition: transform 0.25s ease-in var(--ds-time-selection-delay, 0s);
+  transition: transform 0.25s ease-in var(--ds-time-selection-delay);
   clip-path: var(--ds-knob-clip-path);
   filter: var(--ds-knob-filter);
   opacity: var(--ds-knob-opacity);
@@ -37,15 +37,15 @@ dial-selector .knob::before {
 }
 
 dial-selector .knob::after {
-  content: var(--ds-knob-after-content, none);
-  display: var(--ds-knob-after-display, none);
-  position: var(--ds-knob-after-position, static);
-  inset: var(--ds-knob-after-inset, auto);
-  border-radius: var(--ds-knob-after-border-radius, 0);
-  background: var(--ds-knob-after-background, none);
-  pointer-events: var(--ds-knob-after-pointer-events, auto);
-  opacity: var(--ds-knob-after-opacity, 1);
-  filter: var(--ds-knob-after-filter, none);
+  content: var(--ds-knob-after-content);
+  display: var(--ds-knob-after-display);
+  position: var(--ds-knob-after-position);
+  inset: var(--ds-knob-after-inset);
+  border-radius: var(--ds-knob-after-border-radius);
+  background: var(--ds-knob-after-background);
+  pointer-events: var(--ds-knob-after-pointer-events);
+  opacity: var(--ds-knob-after-opacity);
+  filter: var(--ds-knob-after-filter);
 }
 
 dial-selector .indicator {
@@ -54,7 +54,7 @@ dial-selector .indicator {
   height: var(--ds-indicator-height-override);
   background: var(--ds-indicator-gradient);
   border: var(--ds-indicator-border);
-  border-radius: var(--ds-indicator-border-radius, calc(var(--ds-indicator-width-override) / 2));
+  border-radius: var(--ds-indicator-border-radius);
   box-shadow: var(--ds-indicator-box-shadow);
   top: calc(var(--ds-indicator-vertical-offset) - var(--ds-indicator-height-override) / 2);
   left: calc(40% + var(--ds-radius-inner) - var(--ds-width-inner-circle) + var(--ds-center-indicator));
@@ -62,7 +62,7 @@ dial-selector .indicator {
   transform: rotate(90deg);
   opacity: var(--ds-indicator-opacity);
   filter: var(--ds-indicator-filter);
-  animation: var(--ds-indicator-animation, none);
-  will-change: var(--ds-indicator-will-change, auto);
+  animation: var(--ds-indicator-animation);
+  will-change: var(--ds-indicator-will-change);
   -webkit-tap-highlight-color: transparent;
 }

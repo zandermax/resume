@@ -28,6 +28,7 @@
     position: var(--dial-selector-housing-position);
 
     /* Spacing */
+    margin: var(--dial-selector-housing-margin);
     margin-block-start: var(--dial-selector-housing-margin-block-start);
     margin-block-end: var(--dial-selector-housing-margin-block-end);
     margin-inline-start: var(--dial-selector-housing-margin-inline-start);
@@ -38,6 +39,7 @@
     padding-inline-end: var(--dial-selector-housing-padding-inline-end);
 
     /* Borders */
+    border: var(--dial-selector-housing-border);
     border-radius: var(--dial-selector-housing-border-radius);
 
     /* Background */
