@@ -8,91 +8,105 @@
  *
  * DEPENDENCIES:
  *   - variables-base.css (uses spacing and color variables)
+ *   - colors.css (provides --color-* variables)
  *
  * RELATED FILES:
  *   - header/dial-selectors.css (applies housing variables)
- *   - dial-selector-styles/variables.css (dial selector component variables)
+ *   - dial-selector-styles/variables.css (dial selector component internal variables)
  *
- * VARIABLES DEFINED: ~130 variables controlling:
- *   - PUBLIC API (~90 variables):
- *     * Dial selector theme colors (5 variables)
- *     * Label styling (13 variables)
- *     * Label hover state (10 variables)
- *     * Label active state (11 variables)
- *     * Label span styling (13 variables)
- *     * Knob styling (11 variables)
- *     * Knob pseudo-elements (9 variables)
- *     * Indicator styling (10 variables)
- *     * Line styling (7 variables)
- *     * Component layout & positioning (5 variables)
- *     * Animation & performance (8 variables)
- *   - Housing container (padding, margin, background, border)
- *   - Housing responsive padding
- *   - Housing h3 title styles
- *   - Housing pseudo-elements
+ * VARIABLES DEFINED: 132 variables controlling:
+ *   - Dial selector theme colors (5 variables)
+ *   - Label styling (13 variables)
+ *   - Label hover state (10 variables)
+ *   - Label active state (11 variables)
+ *   - Label span styling (13 variables)
+ *   - Knob styling (8 variables)
+ *   - Knob pseudo-elements (9 variables)
+ *   - Indicator styling (9 variables)
+ *   - Line styling (7 variables)
+ *   - Component layout & positioning (5 variables)
+ *   - Animation & performance (16 variables)
+ *   - Housing container properties (17 variables)
+ *   - Housing h3 title styles (7 variables)
+ *   - Housing pseudo-elements (11 variables)
+ *
+ * ORGANIZATION:
+ *   PUBLIC API (Themes should override these):
+ *   1. Dial selector theme colors
+ *   2. Label styling (base, hover, active, span)
+ *   3. Knob styling (base, pseudo-elements)
+ *   4. Indicator styling
+ *   5. Line styling
+ *   6. Component layout & positioning
+ *   7. Animation & performance
+ *   HOUSING CONTAINER:
+ *   8. Housing container properties
+ *   9. Housing h3 title
+ *   10. Housing pseudo-elements
  *
  * PUBLIC API BOUNDARY:
  *   Themes should ONLY override --dial-selector-* variables defined here.
  *   Internal --ds-* variables in dial-selector-styles/variables.css are PRIVATE.
+ *   Do not override --ds-* variables directly.
  */
 
 :root {
-  /* ============================================================================
-     PUBLIC API - Dial Selector Component Styling
+  /* ============================================
+     PUBLIC API - DIAL SELECTOR COMPONENT
      Themes should use these variables to customize the dial selector appearance
-     ============================================================================ */
+     ============================================ */
 
-  /* === DIAL SELECTOR THEME COLORS === */
+  /* --- Theme Colors --- */
   --dial-selector-color-ink: var(--color-black);
   --dial-selector-color-selection: var(--color-red-crimson);
   --dial-selector-color-indicator: var(--color-red-crimson);
   --dial-selector-color-line: var(--color-gray-400);
   --dial-selector-color-knob-background: var(--color-dark-knob);
 
-  /* === DIAL SELECTOR LABEL STYLING === */
-  --dial-selector-label-font-size: clamp(16px, 1.5vw, 22px);
-  --dial-selector-label-font-weight: normal;
+  /* --- Label Styling (Base State) --- */
   --dial-selector-label-padding: 0.4rem 0.8rem;
   --dial-selector-label-background: transparent;
-  --dial-selector-label-color: inherit;
   --dial-selector-label-border-width: 0;
   --dial-selector-label-border-style: solid;
   --dial-selector-label-border-color: transparent;
   --dial-selector-label-border-radius: 0;
-  --dial-selector-label-box-shadow: none;
-  --dial-selector-label-text-shadow: none;
+  --dial-selector-label-font-size: clamp(16px, 1.5vw, 22px);
+  --dial-selector-label-font-weight: normal;
+  --dial-selector-label-color: inherit;
   --dial-selector-label-text-transform: none;
   --dial-selector-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
+  --dial-selector-label-box-shadow: none;
+  --dial-selector-label-text-shadow: none;
   --dial-selector-label-transition: none;
 
-  /* === DIAL SELECTOR LABEL HOVER STATE === */
-  --dial-selector-label-hover-color: inherit;
-  --dial-selector-label-hover-background: transparent;
+  /* --- Label Styling (Hover State) --- */
   --dial-selector-label-hover-padding: inherit;
+  --dial-selector-label-hover-background: transparent;
   --dial-selector-label-hover-border-width: unset;
   --dial-selector-label-hover-border-style: unset;
   --dial-selector-label-hover-border-color: transparent;
+  --dial-selector-label-hover-font-weight: inherit;
+  --dial-selector-label-hover-color: inherit;
   --dial-selector-label-hover-box-shadow: none;
   --dial-selector-label-hover-text-shadow: none;
-  --dial-selector-label-hover-font-weight: inherit;
   --dial-selector-label-hover-transform: none;
   --dial-selector-label-hover-opacity: 1;
 
-  /* === DIAL SELECTOR LABEL ACTIVE STATE === */
-  --dial-selector-label-active-color: unset;
+  /* --- Label Styling (Active State) --- */
   --dial-selector-label-active-background: transparent;
   --dial-selector-label-active-font-weight: normal;
+  --dial-selector-label-active-color: unset;
   --dial-selector-label-active-text-shadow: none;
   --dial-selector-label-active-box-shadow: none;
   --dial-selector-label-active-filter: none;
-  --dial-selector-label-active-span-padding-inline: unset;
   --dial-selector-label-active-span-padding-block: unset;
+  --dial-selector-label-active-span-padding-inline: unset;
   --dial-selector-label-active-span-border-width: unset;
   --dial-selector-label-active-span-border-style: unset;
   --dial-selector-label-active-span-border-color: transparent;
   --dial-selector-label-active-span-box-shadow: none;
 
-  /* === DIAL SELECTOR LABEL SPAN (INNER TEXT ELEMENT) === */
+  /* --- Label Span (Inner Text Element) --- */
   --dial-selector-label-span-display: inline-block;
   --dial-selector-label-span-padding-block: 0;
   --dial-selector-label-span-padding-inline: 0;
@@ -101,94 +115,94 @@
   --dial-selector-label-span-border-color: transparent;
   --dial-selector-label-span-border-radius: 0;
   --dial-selector-label-span-background: transparent;
-  --dial-selector-label-span-box-shadow: none;
-  --dial-selector-label-span-font-weight: inherit;
   --dial-selector-label-span-font-size: inherit;
+  --dial-selector-label-span-font-weight: inherit;
   --dial-selector-label-span-color: inherit;
+  --dial-selector-label-span-text-transform: none;
+  --dial-selector-label-span-letter-spacing: normal;
+  --dial-selector-label-span-box-shadow: none;
+  --dial-selector-label-span-transform: none;
   --dial-selector-label-span-transition: all 0.2s ease;
   --dial-selector-label-span-overflow: visible;
-  --dial-selector-label-span-transform: none;
-  --dial-selector-label-span-letter-spacing: normal;
-  --dial-selector-label-span-text-transform: none;
 
-  /* === DIAL SELECTOR KNOB STYLING === */
+  /* --- Knob Styling --- */
   --dial-selector-knob-border-width: 2px;
   --dial-selector-knob-border-style: solid;
   --dial-selector-knob-border-color: null; /* null = use --ds-color-outer-circle */
-  --dial-selector-knob-box-shadow: none;
   --dial-selector-knob-border-radius: 50%;
   --dial-selector-knob-background-image: none;
+  --dial-selector-knob-box-shadow: none;
   --dial-selector-knob-filter: none;
   --dial-selector-knob-clip-path: none;
 
-  /* === DIAL SELECTOR INDICATOR STYLING === */
+  /* --- Indicator Styling --- */
   --dial-selector-indicator-width: auto;
   --dial-selector-indicator-height: auto;
-  --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
-  --dial-selector-indicator-box-shadow: none;
   --dial-selector-indicator-border-width: 0;
   --dial-selector-indicator-border-style: none;
   --dial-selector-indicator-border-color: transparent;
   --dial-selector-indicator-border-radius: 0;
+  --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
+  --dial-selector-indicator-box-shadow: none;
 
-  /* === DIAL SELECTOR LINE STYLING === */
+  /* --- Line Styling --- */
   --dial-selector-line-width: 2px;
+  --dial-selector-line-stroke: var(--dial-selector-color-line);
   --dial-selector-line-opacity: 0.4;
   --dial-selector-line-opacity-active: 0.8;
   --dial-selector-line-opacity-alternate: inherit;
-  --dial-selector-line-stroke: var(--dial-selector-color-line);
   --dial-selector-line-filter: none;
   --dial-selector-line-filter-active: none;
 
-  /* ============================================================================
+  /* ============================================
      COMPONENT LAYOUT & POSITIONING
-     Advanced layout controls for themes that need precise positioning
-     ============================================================================ */
+     Advanced layout controls for precise positioning
+     ============================================ */
 
-  /* === COMPONENT POSITIONING === */
+  /* --- Component Positioning --- */
   --dial-selector-component-margin-block-start: 0;
   --dial-selector-component-filter: none;
 
-  /* === COMPONENT SIZING === */
+  /* --- Component Sizing --- */
   --dial-selector-knob-size: null; /* null = use default responsive sizing */
   --dial-selector-selector-gap: null; /* null = use default responsive gap */
 
-  /* === INDICATOR POSITIONING === */
+  /* --- Indicator Positioning --- */
   --dial-selector-indicator-vertical-offset: 46.75%;
 
-  /* ============================================================================
+  /* ============================================
      ANIMATION & PERFORMANCE
-     CSS animation and performance optimization properties
-     ============================================================================ */
+     CSS animation and performance optimization
+     ============================================ */
 
-  /* === KNOB ANIMATIONS === */
+  /* --- Knob Animations --- */
   --dial-selector-knob-animation: none;
   --dial-selector-knob-will-change: auto;
 
-  /* === INDICATOR ANIMATIONS === */
+  /* --- Indicator Animations --- */
   --dial-selector-indicator-animation: none;
   --dial-selector-indicator-will-change: auto;
 
-  /* === LABEL ANIMATIONS === */
+  /* --- Label Animations --- */
   --dial-selector-label-animation: none;
   --dial-selector-label-contain: none;
   --dial-selector-label-will-change: auto;
 
-  /* === LABEL HOVER ANIMATIONS === */
+  /* --- Label Hover Animations --- */
   --dial-selector-label-hover-animation: none;
   --dial-selector-label-hover-filter: none;
   --dial-selector-label-hover-will-change: auto;
 
-  /* === LABEL ACTIVE ANIMATIONS === */
+  /* --- Label Active Animations --- */
   --dial-selector-label-active-animation: none;
   --dial-selector-label-active-will-change: auto;
 
-  /* ============================================================================
-     KNOB PSEUDO-ELEMENTS
-     Advanced knob customization using ::after pseudo-element
-     ============================================================================ */
+  /* ============================================
+     KNOB PSEUDO-ELEMENT
+     Advanced knob customization using ::after
+     ============================================ */
 
-  /* === KNOB ::after PSEUDO-ELEMENT === */
+  /* --- Knob ::after Pseudo-Element --- */
   --dial-selector-knob-after-content: none;
   --dial-selector-knob-after-display: none;
   --dial-selector-knob-after-position: static;
@@ -199,13 +213,28 @@
   --dial-selector-knob-after-opacity: 1;
   --dial-selector-knob-after-filter: none;
 
-  /* ============================================================================
-     HOUSING CONTAINER - Dial Selector Housing
-     ============================================================================ */
+  /* ============================================
+     HOUSING CONTAINER
+     Container for dial selector component
+     ============================================ */
 
-  /* === DIAL SELECTOR HOUSING CONTAINER === */
+  /* --- Housing Spacing Properties (Shorthand) --- */
   --dial-selector-housing-padding-block: 0;
   --dial-selector-housing-padding-inline: 0;
+  --dial-selector-housing-margin-block: 0;
+  --dial-selector-housing-margin-inline: 0;
+
+  /* --- Housing Spacing Properties (Longhand) --- */
+  --dial-selector-housing-padding-block-start: 0;
+  --dial-selector-housing-padding-block-end: 0;
+  --dial-selector-housing-padding-inline-start: 0;
+  --dial-selector-housing-padding-inline-end: 0;
+  --dial-selector-housing-margin-block-start: 0;
+  --dial-selector-housing-margin-block-end: 0;
+  --dial-selector-housing-margin-inline-start: 0;
+  --dial-selector-housing-margin-inline-end: 0;
+
+  /* --- Housing Responsive Padding Overrides --- */
   --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block)
     var(--dial-selector-housing-padding-inline);
   --dial-selector-housing-padding-responsive-500: var(--dial-selector-housing-padding-block)
@@ -214,35 +243,39 @@
     var(--dial-selector-housing-padding-inline);
   --dial-selector-housing-padding-responsive-380: var(--dial-selector-housing-padding-block)
     var(--dial-selector-housing-padding-inline);
+
+  /* --- Housing Visual Properties --- */
   --dial-selector-housing-background: transparent;
   --dial-selector-housing-border: none;
   --dial-selector-housing-border-radius: 0;
   --dial-selector-housing-box-shadow: none;
   --dial-selector-housing-position: relative;
-  --dial-selector-housing-margin-inline: 0;
-  --dial-selector-housing-margin-block: 0;
 
-  /* === DIAL SELECTOR HOUSING LONGHAND PROPERTIES === */
-  --dial-selector-housing-padding-block-start: 0;
-  --dial-selector-housing-padding-block-end: 0;
-  --dial-selector-housing-padding-inline-start: 0;
-  --dial-selector-housing-padding-inline-end: 0;
-  --dial-selector-housing-margin-inline-start: 0;
-  --dial-selector-housing-margin-inline-end: 0;
-  --dial-selector-housing-margin-block-start: 0;
-  --dial-selector-housing-margin-block-end: 0;
+  /* ============================================
+     HOUSING H3 TITLE
+     Title element within housing container
+     ============================================ */
 
-  /* === DIAL SELECTOR HOUSING H3 === */
+  /* --- H3 Spacing Properties --- */
   --dial-selector-housing-h3-margin-block-start: 0;
   --dial-selector-housing-h3-margin-block-end: 0;
-  --dial-selector-housing-h3-font-weight: inherit;
+
+  /* --- H3 Typography --- */
   --dial-selector-housing-h3-font-size: inherit;
+  --dial-selector-housing-h3-font-weight: inherit;
   --dial-selector-housing-h3-color: inherit;
   --dial-selector-housing-h3-text-transform: none;
   --dial-selector-housing-h3-letter-spacing: normal;
+
+  /* --- H3 Visual Effects --- */
   --dial-selector-housing-h3-text-shadow: none;
 
-  /* === DIAL SELECTOR HOUSING PSEUDO-ELEMENT === */
+  /* ============================================
+     HOUSING PSEUDO-ELEMENT
+     Decorative ::before element for housing
+     ============================================ */
+
+  /* --- Housing ::before Pseudo-Element --- */
   --dial-selector-housing-before-content: unset;
   --dial-selector-housing-before-position: static;
   --dial-selector-housing-before-top: auto;
@@ -250,11 +283,13 @@
   --dial-selector-housing-before-bottom: auto;
   --dial-selector-housing-before-left: auto;
   --dial-selector-housing-before-height: auto;
-  --dial-selector-housing-before-background: transparent;
   --dial-selector-housing-before-border: none;
   --dial-selector-housing-before-border-radius: 0;
+  --dial-selector-housing-before-background: transparent;
   --dial-selector-housing-before-opacity: 1;
   --dial-selector-housing-before-pointer-events: auto;
+
+  /* --- Housing ::before Animations --- */
   --dial-selector-housing-before-animation: none;
   --dial-selector-housing-before-will-change: auto;
 }

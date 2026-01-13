@@ -5,40 +5,68 @@
  *   - All elements (via CSS inheritance and variable usage)
  *
  * DEPENDENCIES:
- *   - None (loads first, depends on color variables from colors.css)
+ *   - colors.css (provides --color-* variables)
  *
  * RELATED FILES:
  *   - All other variable files extend these base tokens
  *
- * VARIABLES DEFINED: ~20 core design tokens controlling:
+ * VARIABLES DEFINED: 26 core design tokens controlling:
  *   - Color system (border, text, heading, background)
- *   - Spacing scale (xs to 2xl)
+ *   - Typography system (font family, font sizes)
+ *   - Spacing scale (3xs to 2xl)
  *   - Border width system (thin to extra-thick)
- *   - Font size scale (xs to lg)
- *   - Theme properties (background, links, sections)
+ *   - Theme properties (background, links, sections, accents)
+ *   - Paper/texture properties (for decorative themes)
+ *   - Responsive breakpoints (reference values)
+ *
+ * ORGANIZATION:
+ *   1. Core colors
+ *   2. Typography system
+ *   3. Spacing system
+ *   4. Border width system
+ *   5. Theme base properties
+ *   6. Paper/texture properties
+ *   7. Responsive breakpoints (reference only)
+ *
+ * VARIABLE PATTERNS:
+ *   - All design tokens use consistent naming: --[category]-[property]-[variant]
+ *   - Scales progress from smallest to largest (xs → sm → md → lg → xl → 2xl)
+ *   - Color tokens reference colors.css variables (--color-*)
+ *   - Breakpoints are reference only (CSS custom properties can't be used in @media)
  */
 
 :root {
-  /* === CORE COLORS === */
-  /* Note: not necessarily used when printing */
+  /* ============================================
+     CORE COLORS
+     Base color palette for all elements
+     ============================================ */
+
   --border-color: var(--color-black);
   --text-color: var(--color-black);
   --heading-color: var(--color-black);
   --background-color: var(--color-white);
+
+  /* ============================================
+     TYPOGRAPHY SYSTEM
+     Font family and size scale
+     ============================================ */
+
+  /* --- Font Family --- */
   --font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  /* === RESPONSIVE BREAKPOINTS === */
-  /* NOTE: CSS custom properties cannot be used directly in @media queries.
-     These serve as reference values and documentation. Media queries must use
-     literal px values. Keep these in sync with actual @media queries. */
-  --min-screen-width: 320px;
-  --screen-width-mobile-small: 480px;
-  --screen-width-mobile: 500px;
-  --screen-width-mobile-large: 600px;
+  /* --- Font Size Scale --- */
+  --font-size-xs: 0.7rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 0.95rem;
+  --font-size-lg: 1.05rem;
 
-  /* === SPACING SYSTEM === */
-  --spacing-3xs: 0.15rem; /* micro spacing for fine adjustments */
-  --spacing-2xs: 0.3rem; /* small spacing for tight layouts */
+  /* ============================================
+     SPACING SYSTEM
+     Consistent spacing scale for margins and padding
+     ============================================ */
+
+  --spacing-3xs: 0.15rem; /* Micro spacing for fine adjustments */
+  --spacing-2xs: 0.3rem; /* Small spacing for tight layouts */
   --spacing-xs: 0.5rem;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
@@ -46,28 +74,55 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
 
-  /* === BORDER WIDTH SYSTEM === */
+  /* ============================================
+     BORDER WIDTH SYSTEM
+     Consistent border weight scale
+     ============================================ */
+
   --border-width-thin: 1px;
   --border-width-normal: 2px;
   --border-width-thick: 3px;
   --border-width-extra-thick: 4px;
 
-  /* === FONT SIZE SYSTEM === */
-  --font-size-xs: 0.7rem;
-  --font-size-sm: 0.85rem;
-  --font-size-md: 0.95rem;
-  --font-size-lg: 1.05rem;
+  /* ============================================
+     THEME BASE PROPERTIES
+     Core theme customization tokens
+     ============================================ */
 
-  /* === THEME BASE PROPERTIES === */
+  /* --- Background --- */
   --background-image: none;
+
+  /* --- Links --- */
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
+
+  /* --- Sections --- */
   --section-bg: transparent;
   --header-background: transparent;
+
+  /* --- Accents --- */
   --accent-color: var(--color-red-crimson);
 
-  /* === PAPER/TEXTURE PROPERTIES === */
+  /* ============================================
+     PAPER/TEXTURE PROPERTIES
+     Decorative properties for themed layouts
+     ============================================ */
+
   /* Theme-specific: Used primarily by skeuomorph, nostalgia, and paper-style themes */
   --paper-shadow: none;
   --paper-texture: none;
+
+  /* ============================================
+     RESPONSIVE BREAKPOINTS
+     Reference values for media queries
+     ============================================ */
+
+  /* NOTE: CSS custom properties cannot be used directly in @media queries.
+     These serve as reference values and documentation only. Media queries must use
+     literal px values. Keep these in sync with actual @media query breakpoints. */
+
+  --min-screen-width: 320px;
+  --screen-width-mobile-small: 480px;
+  --screen-width-mobile: 500px;
+  --screen-width-mobile-large: 600px;
 }
