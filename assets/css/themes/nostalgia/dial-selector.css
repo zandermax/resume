@@ -1,0 +1,39 @@
+/* ===========================
+NOSTALGIA Theme - Dial Selector Styles
+=========================== */
+
+/* ==================== COLOR SCHEMES ==================== */
+
+/* Light Mode - Bright 90s Colors */
+:root[data-theme='nostalgia'][data-mode='light'] {
+  --dial-selector-color-ink: var(--nostalgia-magenta);
+  --dial-selector-color-line: var(--nostalgia-magenta);
+  --dial-selector-color-selection: var(--nostalgia-red);
+  --dial-selector-color-indicator: var(--nostalgia-yellow);
+  --dial-selector-color-knob-background: var(--nostalgia-cyan);
+}
+
+/* Dark Mode - Neon 90s Colors */
+:root[data-theme='nostalgia'][data-mode='dark'] {
+  --dial-selector-color-ink: var(--nostalgia-green);
+  --dial-selector-color-selection: var(--nostalgia-magenta);
+  --dial-selector-color-indicator: var(--nostalgia-yellow);
+  --dial-selector-color-knob-background: var(--nostalgia-magenta);
+}
+
+/* ==================== DIAL SELECTOR OVERRIDES ==================== */
+
+:root[data-theme='nostalgia'] {
+  /* Dial label hover properties */
+  --dial-selector-label-hover-background: var(--accent-color);
+  --dial-selector-label-hover-color: var(--background-color);
+  --dial-selector-label-hover-padding: 0rem 0.5rem;
+
+  &[data-mode='light'] {
+    --dial-selector-label-hover-color: var(--nostalgia-black);
+  }
+
+  &[data-mode='dark'] {
+    --dial-selector-label-hover-color: var(--nostalgia-white);
+  }
+}

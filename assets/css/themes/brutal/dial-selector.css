@@ -6,81 +6,78 @@ BRUTAL Theme - Dial Selector Custom Properties
 
 /* Light Mode - High Contrast */
 :root[data-theme='brutal'][data-mode='light'] {
-  --dial-color-selection: var(--color-red-crimson);
-  --dial-color-indicator: var(--color-red-crimson);
-
-  dial-selector {
-    --ds-label-span-color: var(--color-black);
-    --ds-label-hover-color: var(--color-white);
-    --ds-knob-background-color: oklch(19% 0.02 240);
-  }
+  --dial-selector-color-selection: var(--color-red-crimson);
+  --dial-selector-color-indicator: var(--color-red-crimson);
+  --dial-selector-color-knob-background: oklch(19% 0.02 240);
+  --dial-selector-label-span-color: var(--color-black);
+  --dial-selector-label-hover-color: var(--color-white);
 }
 
 /* Dark Mode - Inverted Brutalism */
 :root[data-theme='brutal'][data-mode='dark'] {
-  --dial-color-selection: var(--color-red-bright);
-  --dial-color-indicator: var(--color-red-bright);
-
-  dial-selector {
-    --ds-label-hover-color: var(--color-white);
-    --ds-label-span-color: oklch(92% 0 0);
-    --ds-knob-background-color: var(--color-dark-bg-alt);
-    --ds-indicator-box-shadow: 0 0 20px var(--accent-color);
-    --ds-color-ink: var(--color-white);
-    --ds-color-line: oklch(95% 0 0);
-    --ds-line-opacity: 1;
-  }
+  --dial-selector-color-selection: var(--color-red-bright);
+  --dial-selector-color-indicator: var(--color-red-bright);
+  --dial-selector-color-ink: var(--color-white);
+  --dial-selector-color-line: oklch(95% 0 0);
+  --dial-selector-color-knob-background: var(--color-dark-bg-alt);
+  --dial-selector-label-hover-color: var(--color-white);
+  --dial-selector-label-span-color: oklch(92% 0 0);
+  --dial-selector-indicator-box-shadow: 0 0 20px var(--accent-color);
+  --dial-selector-line-opacity: 1;
 }
 
 :root[data-theme='brutal'] {
-  dial-selector {
-    /* Positioning */
-    --ds-margin-block-start: -3em;
+  /* Positioning */
+  --dial-selector-component-margin-block-start: -3em;
 
-    /* Knob */
-    --ds-knob-border: 8px solid var(--border-color);
-    --ds-knob-border-radius: 0;
-    --ds-knob-box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
+  /* Knob */
+  --dial-selector-knob-border-width: 8px;
+  --dial-selector-knob-border-style: solid;
+  --dial-selector-knob-border-color: var(--border-color);
+  --dial-selector-knob-border-radius: 0;
+  --dial-selector-knob-box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
 
-    /* Indicator */
-    --ds-indicator-border-radius: 0;
-    --ds-indicator-width-override: 16px;
-    --ds-indicator-gradient: var(--accent-color);
-    --ds-indicator-border: 3px solid var(--border-color);
+  /* Indicator */
+  --dial-selector-indicator-border-radius: 0;
+  --dial-selector-indicator-width: 16px;
+  --dial-selector-indicator-gradient: var(--accent-color);
+  --dial-selector-indicator-border-width: 3px;
+  --dial-selector-indicator-border-style: solid;
+  --dial-selector-indicator-border-color: var(--border-color);
 
-    /* Spoke Lines */
-    --ds-line-width: 4px;
-    --ds-line-opacity: 0.8;
+  /* Spoke Lines */
+  --dial-selector-line-width: 4px;
+  --dial-selector-line-opacity: 0.8;
 
-    /* Labels - Base */
-    --ds-label-span-font-size: 0.9rem;
-    --ds-label-span-font-weight: 900;
-    --ds-label-span-border-width: 0;
-    --ds-label-active-span-border-width: 3px;
-    --ds-label-active-span-border-style: solid;
-    --ds-label-active-span-border-color: var(--border-color);
-    --ds-label-span-transition: all 0.05s ease;
-    --ds-label-span-text-transform: uppercase;
-    --ds-label-span-letter-spacing: 0.05em;
-    --ds-label-span-transform: skewX(-3deg);
-    --ds-label-span-color: var(--text-color);
+  /* Labels - Base */
+  --dial-selector-label-span-font-size: 0.9rem;
+  --dial-selector-label-span-font-weight: 900;
+  --dial-selector-label-span-border-width: 0;
+  --dial-selector-label-active-span-border-width: 3px;
+  --dial-selector-label-active-span-border-style: solid;
+  --dial-selector-label-active-span-border-color: var(--border-color);
+  --dial-selector-label-span-transition: all 0.05s ease;
+  --dial-selector-label-span-text-transform: uppercase;
+  --dial-selector-label-span-letter-spacing: 0.05em;
+  --dial-selector-label-span-transform: skewX(-3deg);
+  --dial-selector-label-span-color: var(--text-color);
 
-    /* Labels - Active State */
-    --ds-label-active-span-border-color: var(--border-color);
-    --ds-label-active-background: var(--accent-color);
-    --ds-label-active-span-transform: skewX(-3deg) translate(-2px, -2px);
-    --ds-label-active-span-box-shadow: 4px 4px 0 var(--border-color);
-    --ds-label-active-color: var(--background-color);
-    --ds-label-active-span-padding-block: var(--spacing-xs);
-    --ds-label-active-span-padding-inline: var(--spacing-md);
+  /* Labels - Active State */
+  --dial-selector-label-active-span-border-color: var(--border-color);
+  --dial-selector-label-active-background: var(--accent-color);
+  --dial-selector-label-active-span-transform: skewX(-3deg) translate(-2px, -2px);
+  --dial-selector-label-active-span-box-shadow: 4px 4px 0 var(--border-color);
+  --dial-selector-label-active-color: var(--background-color);
+  --dial-selector-label-active-span-padding-block: var(--spacing-xs);
+  --dial-selector-label-active-span-padding-inline: var(--spacing-md);
 
-    /* Labels - Hover State */
-    --ds-label-hover-border-width: 3px;
-    --ds-label-hover-border-style: solid;
-    --ds-label-hover-border-color: var(--border-color);
-    --ds-label-hover-background: var(--accent-color);
-    --ds-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
-    --ds-label-hover-box-shadow: 4px 4px 0 var(--border-color);
-    --ds-label-hover-padding: var(--spacing-xs) var(--spacing-md);
-  }
+  /* Labels - Hover State */
+  --dial-selector-label-hover-border-width: 3px;
+  --dial-selector-label-hover-border-style: solid;
+  --dial-selector-label-hover-border-color: var(--border-color);
+  --dial-selector-label-hover-background: var(--accent-color);
+  --dial-selector-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
+  --dial-selector-label-hover-box-shadow: 4px 4px 0 var(--border-color);
+  --dial-selector-label-hover-padding: var(--spacing-xs) var(--spacing-md);
+
 }

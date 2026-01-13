@@ -7,7 +7,7 @@
  *   - #resume-header__printlink (print button, always visible)
  *
  * DEPENDENCIES:
- *   - ../variables-buttons.css (defines ALL --printlink-*, --savelink-* properties)
+ *   - ../variables-printlink.css (defines ALL --printlink-* properties)
  *
  * NO INLINE FALLBACKS:
  *   All custom properties are defined in variable files with proper defaults.
@@ -25,7 +25,7 @@
 
     .resume-header__savelink {
       /* Display & Layout */
-      display: var(--savelink-display);
+      display: var(--savelink-display, none);
       position: var(--printlink-position);
       box-sizing: border-box;
 

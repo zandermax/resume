@@ -9,10 +9,10 @@ METRO Theme - Light Mode
   --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-blue-metro);
-  --dial-color-indicator: var(--color-blue-metro);
-  --dial-color-knob-background: oklch(96% 0 0); /* Light gray */
+  --dial-selector-color-ink: var(--color-black);
+  --dial-selector-color-selection: var(--color-blue-metro);
+  --dial-selector-color-indicator: var(--color-blue-metro);
+  --dial-selector-color-knob-background: oklch(96% 0 0); /* Light gray */
   --link-color: var(--color-blue-metro);
   --link-visited-color: oklch(52% 0.24 340);
   --section-bg: oklch(96% 0 0);

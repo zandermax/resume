@@ -81,8 +81,8 @@ MOBILE - 500px and below
     --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
     --printlink-padding-block: calc(var(--swiss-grid) * 1.5);
     --printlink-padding-inline: var(--spacing-3);
-    --ds-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
-    --ds-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
+    --dial-selector-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --dial-selector-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
   }
 
   /* Component styles */

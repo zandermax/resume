@@ -27,7 +27,8 @@
 @import './variables-experience.css';
 @import './variables-lists.css';
 @import './variables-education.css';
-@import './variables-buttons.css';
+@import './variables-printlink.css';
+@import './variables-dial-selector.css';
 
 /* ===========================
    BASE STYLES

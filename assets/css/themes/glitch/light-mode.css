@@ -16,9 +16,9 @@
   --text-color: var(--color-black);
   --heading-color: var(--color-black);
   --border-color: var(--color-black);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-black);
-  --dial-color-knob-background: var(--color-gray-light);
+  --dial-selector-color-ink: var(--color-black);
+  --dial-selector-color-selection: var(--color-black);
+  --dial-selector-color-knob-background: var(--color-gray-light);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-gray-dark);
   --section-bg: var(--color-gray-lighter);

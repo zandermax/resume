@@ -18,8 +18,8 @@ METRO Theme - Responsive Adjustments
     --printlink-padding-inline: 1.5rem;
     --education-institution-font-size: 1.1rem;
     --experience-role-font-size: 1.1rem;
-    --ds-label-font-size: var(--spacing-sm);
-    --ds-label-padding: var(--spacing-xs) 0.8rem;
+    --dial-selector-label-font-size: var(--spacing-sm);
+    --dial-selector-label-padding: var(--spacing-xs) 0.8rem;
 
     /* Responsive padding overrides */
     --header-padding-inline-start-responsive-768: var(--spacing-lg);
@@ -96,8 +96,8 @@ METRO Theme - Responsive Adjustments
     --printlink-font-size: 0.75rem;
     --printlink-padding-block: 0.75rem;
     --printlink-padding-inline: 1.5rem;
-    --ds-label-font-size: var(--font-size-xs);
-    --ds-label-padding: 0.4rem var(--font-size-xs);
+    --dial-selector-label-font-size: var(--font-size-xs);
+    --dial-selector-label-padding: 0.4rem var(--font-size-xs);
 
     /* Responsive item padding overrides */
     --experience-item-padding-responsive-500: var(--spacing-md);

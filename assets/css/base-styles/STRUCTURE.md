@@ -18,7 +18,8 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `variables-experience.css` (~197 lines) - Experience items, tech badges, bullets
 - `variables-lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
 - `variables-education.css` (~60 lines) - Education section
-- `variables-buttons.css` (~179 lines) - Print/save buttons, dial selector
+- `variables-printlink.css` (~106 lines) - Print/save link buttons
+- `variables-dial-selector.css` (~84 lines) - Dial selector component and housing
 
 ### Style Rules (9 files)
 
@@ -49,8 +50,8 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 | `.resume-header__name`         | variables-layout.css     | header.css               |
 | `.resume-header__role`         | variables-layout.css     | header.css               |
 | `.resume-header__meta`         | variables-layout.css     | header.css               |
-| `.resume-header__savelink`     | variables-buttons.css    | header.css               |
-| `#resume-header__printlink`    | variables-buttons.css    | header.css               |
+| `.resume-header__savelink`     | variables-printlink.css  | header/buttons.css       |
+| `#resume-header__printlink`    | variables-printlink.css  | header/buttons.css       |
 | `.resume-section`              | variables-layout.css     | sections.css             |
 | `.resume-section__title`       | variables-layout.css     | title.css                |
 | `.skills-grid`                 | variables-skills.css     | skills.css               |
@@ -64,7 +65,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 | `.principles-list`             | variables-lists.css      | lists.css                |
 | `.education-item`              | variables-education.css  | components/education.css |
 | `.education-item__institution` | variables-education.css  | components/education.css |
-| `dial-selector`                | variables-buttons.css    | header.css               |
+| `.dial-selector-housing`       | variables-dial-selector.css | header/dial-selectors.css |
 
 ## Import Order & Dependencies
 
@@ -75,7 +76,8 @@ variables-skills.css
 variables-experience.css
 variables-lists.css
 variables-education.css
-variables-buttons.css
+variables-printlink.css
+variables-dial-selector.css
 
 _base.css (uses variables-base.css, variables-layout.css)
   ├─ main.css
@@ -293,6 +295,31 @@ Properties are grouped by category for easy navigation:
 - Uses longhand properties in actual styles: `--dial-selector-housing-padding-block-start`, etc.
 - Shorthand `--dial-selector-housing-margin-inline` and `--dial-selector-housing-margin-block` available for theme convenience
 - Follows same pattern as header properties
+
+**Dial Selector Public API**:
+
+The dial selector component exposes a comprehensive public API for theme customization through `--dial-selector-*` prefixed variables. This API establishes a clear boundary between what themes should customize (public API) and what should remain private (internal `--ds-*` variables).
+
+- **Public API (~45 variables)**: `--dial-selector-*` variables defined in `variables-dial-selector.css`
+  - Theme colors: ink, selection, indicator, line, knob background
+  - Label styling: font, padding, colors, borders, shadows, transitions
+  - Label states: hover (color, background, padding, box-shadow, transform, opacity)
+  - Label states: active (color, background, filter, text-shadow, box-shadow)
+  - Label span: display, padding, borders, background, colors, transform, letter-spacing
+  - Knob styling: border (width, style, color), box-shadow, border-radius, background-image, filter, clip-path
+  - Indicator styling: width, height, gradient, box-shadow, border, border-radius
+  - Line styling: width, opacity (default, active, alternate), stroke, filter
+
+- **Private Internal Variables**: `--ds-*` variables in `dial-selector-styles/variables.css`
+  - Layout calculations: knob-size, selector-gap, radius-*, component dimensions
+  - Animation/performance: will-change, contain, animation properties
+  - Pseudo-elements: knob-after-*, indicator internals
+  - These should NOT be overridden by themes except for advanced customization
+
+- **Pattern**: Component reads from public API with fallbacks: `var(--dial-selector-label-font-size, clamp(...))`
+- **Benefits**: Clear encapsulation, stable theming API, maintainable component internals
+
+Themes should ONLY override `--dial-selector-*` variables. Direct `--ds-*` overrides are considered advanced/internal customization and may break with component updates.
 
 **Link styling in header**:
 

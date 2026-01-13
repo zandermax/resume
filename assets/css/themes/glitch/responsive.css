@@ -54,7 +54,7 @@ Media queries for variable overrides
     --dial-selector-housing-padding-inline: 0;
 
     /* Dial label adjustments */
-    --ds-label-font-size: var(--font-size-sm);
-    --ds-label-padding: 0.3rem var(--font-size-xs);
+    --dial-selector-label-font-size: var(--font-size-sm);
+    --dial-selector-label-padding: 0.3rem var(--font-size-xs);
   }
 }

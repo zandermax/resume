@@ -8,9 +8,9 @@
    =========================== */
 :root {
   /* Default dial selector colors */
-  --dial-color-ink-default: oklch(96% 0 0);
-  --dial-color-highlight-default: oklch(58% 0.22 25);
-  --dial-color-line-default: oklch(80% 0.02 75);
+  --dial-selector-color-ink-default: oklch(96% 0 0);
+  --dial-selector-color-highlight-default: oklch(58% 0.22 25);
+  --dial-selector-color-line-default: oklch(80% 0.02 75);
 }
 
 /* ===========================
@@ -21,13 +21,13 @@ dial-selector {
      COLORS
      Core color system with fallbacks
      =========================== */
-  --ds-color-ink: var(--dial-color-ink, var(--dial-color-ink-default));
-  --ds-color-selection: var(--dial-color-selection, var(--dial-color-highlight-default));
-  --ds-color-line: var(--dial-color-line, var(--dial-color-line-default));
-  --ds-color-indicator: var(--dial-color-indicator, var(--dial-color-highlight-default));
+  --ds-color-ink: var(--dial-selector-color-ink, var(--dial-selector-color-ink-default));
+  --ds-color-selection: var(--dial-selector-color-selection, var(--dial-selector-color-highlight-default));
+  --ds-color-line: var(--dial-selector-color-line, var(--dial-selector-color-line-default));
+  --ds-color-indicator: var(--dial-selector-color-indicator, var(--dial-selector-color-highlight-default));
 
   /* Knob colors */
-  --ds-knob-background-color: var(--dial-color-knob-background, transparent);
+  --ds-knob-background-color: var(--dial-selector-color-knob-background, transparent);
 
   /* Circle colors */
   --ds-color-outer-circle: var(--ds-color-ink);
@@ -41,15 +41,15 @@ dial-selector {
   /* ===========================
      FILTERS & EFFECTS
      =========================== */
-  --ds-filter: none;
+  --ds-filter: var(--dial-selector-component-filter, none);
 
   /* ===========================
      SIZING SYSTEM
      Master size variable with derived calculations
      =========================== */
 
-  /* Master knob size - media queries override this */
-  --ds-knob-size: 200px;
+  /* Master knob size - media queries override this, themes can override via public API */
+  --ds-knob-size: var(--dial-selector-knob-size, 200px);
 
   /* Derived knob dimensions */
   --ds-knob-wrap-size: var(--ds-knob-size);
@@ -66,7 +66,7 @@ dial-selector {
   /* Indicator dimensions */
   --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 */
   --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 */
-  --ds-indicator-vertical-offset: 46.75%;
+  --ds-indicator-vertical-offset: var(--dial-selector-indicator-vertical-offset, 46.75%);
   --ds-center-indicator: 0px;
 
   /* Line dimensions */
@@ -83,8 +83,8 @@ dial-selector {
      LAYOUT & SPACING
      =========================== */
 
-  /* Grid gaps (responsive) */
-  --ds-selector-gap: clamp(12px, 4vw, 40px);
+  /* Grid gaps (responsive) - themes can override via public API */
+  --ds-selector-gap: var(--dial-selector-selector-gap, clamp(12px, 4vw, 40px));
   --ds-selector-gap-tablet: clamp(8px, 2vw, 20px);
   --ds-selector-gap-phone: clamp(8px, 2.5vw, 16px);
   --ds-selector-gap-xs: clamp(4px, 1.5vw, 10px);
@@ -100,64 +100,69 @@ dial-selector {
 
   /* ===========================
      KNOB STYLING
-     Base knob appearance
+     Base knob appearance - reads from public API
      =========================== */
-  --ds-knob-border: var(--ds-width-outer-circle) solid var(--ds-color-outer-circle);
-  --ds-knob-border-radius: 50%;
-  --ds-knob-box-shadow: unset;
-  --ds-knob-background-image: unset;
+  --ds-knob-border-color: var(--dial-selector-knob-border-color, var(--ds-color-outer-circle));
+  --ds-knob-border: var(--dial-selector-knob-border-width, 2px) var(--dial-selector-knob-border-style, solid) var(--ds-knob-border-color);
+  --ds-knob-border-radius: var(--dial-selector-knob-border-radius, 50%);
+  --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow, unset);
+  --ds-knob-background-image: var(--dial-selector-knob-background-image, unset);
   --ds-knob-background-size: cover;
   --ds-knob-background-position: center;
   --ds-knob-background-repeat: no-repeat;
   --ds-knob-transform-scale: 1;
-  --ds-knob-filter: none;
+  --ds-knob-filter: var(--dial-selector-knob-filter, none);
+  --ds-knob-clip-path: var(--dial-selector-knob-clip-path, none);
   --ds-knob-opacity: 1;
-  --ds-knob-animation: none;
+  --ds-knob-animation: var(--dial-selector-knob-animation, none);
   --ds-knob-animation-play-state: running;
-  --ds-knob-will-change: auto;
+  --ds-knob-will-change: var(--dial-selector-knob-will-change, auto);
 
   /* Knob inner circle (::before) */
   --ds-knob-before-opacity: 0.6;
   --ds-knob-before-filter: none;
 
-  /* Knob decorative element (::after) */
-  --ds-knob-after-content: none;
-  --ds-knob-after-display: none;
-  --ds-knob-after-position: static;
-  --ds-knob-after-inset: auto;
-  --ds-knob-after-border-radius: 0;
-  --ds-knob-after-background: none;
-  --ds-knob-after-pointer-events: auto;
-  --ds-knob-after-opacity: 1;
-  --ds-knob-after-filter: none;
+  /* Knob decorative element (::after) - reads from public API */
+  --ds-knob-after-content: var(--dial-selector-knob-after-content, none);
+  --ds-knob-after-display: var(--dial-selector-knob-after-display, none);
+  --ds-knob-after-position: var(--dial-selector-knob-after-position, static);
+  --ds-knob-after-inset: var(--dial-selector-knob-after-inset, auto);
+  --ds-knob-after-border-radius: var(--dial-selector-knob-after-border-radius, 0);
+  --ds-knob-after-background: var(--dial-selector-knob-after-background, none);
+  --ds-knob-after-pointer-events: var(--dial-selector-knob-after-pointer-events, auto);
+  --ds-knob-after-opacity: var(--dial-selector-knob-after-opacity, 1);
+  --ds-knob-after-filter: var(--dial-selector-knob-after-filter, none);
 
   /* ===========================
      INDICATOR STYLING
-     The pointer/indicator on the knob
+     The pointer/indicator on the knob - reads from public API
      =========================== */
   --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
-  --ds-indicator-width-override: var(--ds-indicator-width);
-  --ds-indicator-height-override: var(--ds-indicator-length);
-  --ds-indicator-gradient: var(--ds-color-indicator);
-  --ds-indicator-border: none;
-  --ds-indicator-box-shadow: none;
+  --ds-indicator-width-override: var(--dial-selector-indicator-width, var(--ds-indicator-width));
+  --ds-indicator-height-override: var(--dial-selector-indicator-height, var(--ds-indicator-length));
+  --ds-indicator-gradient: var(--dial-selector-indicator-gradient, var(--ds-color-indicator));
+  --ds-indicator-border: var(--dial-selector-indicator-border-width, 0) var(--dial-selector-indicator-border-style, none) var(--dial-selector-indicator-border-color, transparent);
+  --ds-indicator-border-radius: var(--dial-selector-indicator-border-radius, 0);
+  --ds-indicator-box-shadow: var(--dial-selector-indicator-box-shadow, none);
   --ds-indicator-opacity: 1;
   --ds-indicator-filter: none;
-  --ds-indicator-animation: none;
-  --ds-indicator-will-change: auto;
+  --ds-indicator-animation: var(--dial-selector-indicator-animation, none);
+  --ds-indicator-will-change: var(--dial-selector-indicator-will-change, auto);
 
   /* ===========================
      SPOKE LINES
-     Radial lines connecting to labels
+     Radial lines connecting to labels - reads from public API
      =========================== */
 
-  /* Base line properties (defaults) */
-  --ds-line-width: 2px;
-  --ds-line-opacity: 0.4;
-  --ds-line-opacity-active: 0.8;
-  --ds-line-opacity-alternate: inherit; /* For nth-of-type(even) styling - inherits from --ds-line-opacity by default */
-  --ds-line-stroke: var(--ds-color-line);
+  /* Base line properties - read from public API */
+  --ds-line-width: var(--dial-selector-line-width, 2px);
+  --ds-line-opacity: var(--dial-selector-line-opacity, 0.4);
+  --ds-line-opacity-active: var(--dial-selector-line-opacity-active, 0.8);
+  --ds-line-opacity-alternate: var(--dial-selector-line-opacity-alternate, inherit); /* For nth-of-type(even) styling */
+  --ds-line-stroke: var(--dial-selector-line-stroke, var(--ds-color-line));
   --ds-line-active-stroke: var(--ds-color-selection);
+  --ds-line-filter: var(--dial-selector-line-filter, none);
+  --ds-line-filter-active: var(--dial-selector-line-filter-active, none);
   --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
 
   /* Internal line variables (for JS to override) */
@@ -168,101 +173,104 @@ dial-selector {
 
   /* ===========================
      LABEL STYLING
-     Base label appearance
+     Base label appearance - reads from public API
      =========================== */
   --ds-label-font-family: var(--ds-font-family);
-  --ds-label-font-weight: normal;
-  --ds-label-color: inherit;
+  --ds-label-font-weight: var(--dial-selector-label-font-weight, normal);
+  --ds-label-color: var(--dial-selector-label-color, inherit);
   --ds-label-opacity: 1;
   --ds-label-filter: none;
-  --ds-label-text-shadow: none;
-  --ds-label-box-shadow: none;
-  --ds-label-letter-spacing: clamp(0.5px, 0.1vw, 1px);
-  --ds-label-text-transform: none;
+  --ds-label-text-shadow: var(--dial-selector-label-text-shadow, none);
+  --ds-label-box-shadow: var(--dial-selector-label-box-shadow, none);
+  --ds-label-letter-spacing: var(--dial-selector-label-letter-spacing, clamp(0.5px, 0.1vw, 1px));
+  --ds-label-text-transform: var(--dial-selector-label-text-transform, none);
   --ds-label-transform: none;
-  --ds-label-transition: none;
-  --ds-label-animation: none;
-  --ds-label-contain: none;
-  --ds-label-will-change: auto;
+  --ds-label-transition: var(--dial-selector-label-transition, none);
+  --ds-label-animation: var(--dial-selector-label-animation, none);
+  --ds-label-contain: var(--dial-selector-label-contain, none);
+  --ds-label-will-change: var(--dial-selector-label-will-change, auto);
 
-  /* Label sizing (responsive) */
-  --ds-label-font-size: clamp(16px, 1.5vw, 22px);
+  /* Label sizing (responsive) - read from public API */
+  --ds-label-font-size: var(--dial-selector-label-font-size, clamp(16px, 1.5vw, 22px));
   --ds-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
   --ds-label-font-size--phone: clamp(12px, 2.5vw, 16px);
   --ds-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
   --ds-label-font-size--xs: clamp(12px, 3vw, 13px);
 
-  /* Label box model */
-  --ds-label-padding: 0.4rem 0.8rem;
-  --ds-label-border-width: 0;
-  --ds-label-border-style: solid;
-  --ds-label-border-color: transparent;
-  --ds-label-border-radius: 0;
-  --ds-label-background: transparent;
+  /* Label box model - read from public API */
+  --ds-label-padding: var(--dial-selector-label-padding, 0.4rem 0.8rem);
+  --ds-label-border-width: var(--dial-selector-label-border-width, 0);
+  --ds-label-border-style: var(--dial-selector-label-border-style, solid);
+  --ds-label-border-color: var(--dial-selector-label-border-color, transparent);
+  --ds-label-border-radius: var(--dial-selector-label-border-radius, 0);
+  --ds-label-background: var(--dial-selector-label-background, transparent);
 
   /* ===========================
      LABEL SPAN STYLING
-     Inner text element styling
+     Inner text element styling - reads from public API
      =========================== */
-  --ds-label-span-display: inline-block;
-  --ds-label-span-font-weight: inherit;
-  --ds-label-span-font-size: inherit;
-  --ds-label-span-color: inherit;
-  --ds-label-span-padding-block: 0;
-  --ds-label-span-padding-inline: 0;
-  --ds-label-span-border-width: 0;
-  --ds-label-span-border-style: solid;
-  --ds-label-span-border-color: transparent;
-  --ds-label-span-border-radius: 0;
-  --ds-label-span-background: transparent;
-  --ds-label-span-box-shadow: none;
+  --ds-label-span-display: var(--dial-selector-label-span-display, inline-block);
+  --ds-label-span-font-weight: var(--dial-selector-label-span-font-weight, inherit);
+  --ds-label-span-font-size: var(--dial-selector-label-span-font-size, inherit);
+  --ds-label-span-color: var(--dial-selector-label-span-color, inherit);
+  --ds-label-span-padding-block: var(--dial-selector-label-span-padding-block, 0);
+  --ds-label-span-padding-inline: var(--dial-selector-label-span-padding-inline, 0);
+  --ds-label-span-border-width: var(--dial-selector-label-span-border-width, 0);
+  --ds-label-span-border-style: var(--dial-selector-label-span-border-style, solid);
+  --ds-label-span-border-color: var(--dial-selector-label-span-border-color, transparent);
+  --ds-label-span-border-radius: var(--dial-selector-label-span-border-radius, 0);
+  --ds-label-span-background: var(--dial-selector-label-span-background, transparent);
+  --ds-label-span-box-shadow: var(--dial-selector-label-span-box-shadow, none);
   --ds-label-span-text-shadow: none;
-  --ds-label-span-transform: none;
+  --ds-label-span-transform: var(--dial-selector-label-span-transform, none);
+  --ds-label-span-letter-spacing: var(--dial-selector-label-span-letter-spacing, normal);
+  --ds-label-span-text-transform: var(--dial-selector-label-span-text-transform, none);
   --ds-label-span-filter: none;
-  --ds-label-span-overflow: visible;
-  --ds-label-span-transition: all 0.2s ease;
+  --ds-label-span-overflow: var(--dial-selector-label-span-overflow, visible);
+  --ds-label-span-transition: var(--dial-selector-label-span-transition, all 0.2s ease);
 
   /* ===========================
-     LABEL STATES - HOVER
+     LABEL STATES - HOVER - reads from public API
      =========================== */
-  --ds-label-hover-color: inherit;
-  --ds-label-hover-opacity: 1;
-  --ds-label-hover-font-weight: inherit;
-  --ds-label-hover-text-shadow: none;
-  --ds-label-hover-padding: inherit;
-  --ds-label-hover-border-width: unset;
-  --ds-label-hover-border-style: unset;
-  --ds-label-hover-border-color: transparent;
-  --ds-label-hover-background: transparent;
-  --ds-label-hover-box-shadow: none;
-  --ds-label-hover-transform: none;
-  --ds-label-hover-filter: none;
-  --ds-label-hover-animation: none;
-  --ds-label-hover-will-change: auto;
+  --ds-label-hover-color: var(--dial-selector-label-hover-color, inherit);
+  --ds-label-hover-opacity: var(--dial-selector-label-hover-opacity, 1);
+  --ds-label-hover-font-weight: var(--dial-selector-label-hover-font-weight, inherit);
+  --ds-label-hover-text-shadow: var(--dial-selector-label-hover-text-shadow, none);
+  --ds-label-hover-padding: var(--dial-selector-label-hover-padding, inherit);
+  --ds-label-hover-border-width: var(--dial-selector-label-hover-border-width, unset);
+  --ds-label-hover-border-style: var(--dial-selector-label-hover-border-style, unset);
+  --ds-label-hover-border-color: var(--dial-selector-label-hover-border-color, transparent);
+  --ds-label-hover-background: var(--dial-selector-label-hover-background, transparent);
+  --ds-label-hover-box-shadow: var(--dial-selector-label-hover-box-shadow, none);
+  --ds-label-hover-transform: var(--dial-selector-label-hover-transform, none);
+  --ds-label-hover-filter: var(--dial-selector-label-hover-filter, none);
+  --ds-label-hover-animation: var(--dial-selector-label-hover-animation, none);
+  --ds-label-hover-will-change: var(--dial-selector-label-hover-will-change, auto);
 
   /* ===========================
-     LABEL STATES - ACTIVE
+     LABEL STATES - ACTIVE - reads from public API
      =========================== */
-  --ds-label-active-color: unset;
-  --ds-label-active-font-weight: normal;
-  --ds-label-active-text-shadow: none;
-  --ds-label-active-background: transparent;
-  --ds-label-active-box-shadow: none;
-  --ds-label-active-filter: none;
-  --ds-label-active-animation: none;
-  --ds-label-active-will-change: auto;
+  --ds-label-active-color: var(--dial-selector-label-active-color, unset);
+  --ds-label-active-font-weight: var(--dial-selector-label-active-font-weight, normal);
+  --ds-label-active-text-shadow: var(--dial-selector-label-active-text-shadow, none);
+  --ds-label-active-background: var(--dial-selector-label-active-background, transparent);
+  --ds-label-active-box-shadow: var(--dial-selector-label-active-box-shadow, none);
+  --ds-label-active-filter: var(--dial-selector-label-active-filter, none);
+  --ds-label-active-animation: var(--dial-selector-label-active-animation, none);
+  --ds-label-active-will-change: var(--dial-selector-label-active-will-change, auto);
 
-  /* Active span states */
+  /* Active span states - read from public API */
   --ds-label-span-active-font-weight: inherit;
-  --ds-label-active-span-padding-block: unset;
-  --ds-label-active-span-padding-inline: unset;
+  --ds-label-active-span-padding-block: var(--dial-selector-label-active-span-padding-block, unset);
+  --ds-label-active-span-padding-inline: var(--dial-selector-label-active-span-padding-inline, unset);
   --ds-label-active-span-padding-block--tablet: unset;
   --ds-label-active-span-padding-inline--tablet: unset;
   --ds-label-active-span-padding-block--phone: unset;
   --ds-label-active-span-padding-inline--phone: unset;
-  --ds-label-active-span-border-width: unset;
-  --ds-label-active-span-border-style: unset;
-  --ds-label-active-span-border-color: transparent;
+  --ds-label-active-span-border-width: var(--dial-selector-label-active-span-border-width, unset);
+  --ds-label-active-span-border-style: var(--dial-selector-label-active-span-border-style, unset);
+  --ds-label-active-span-border-color: var(--dial-selector-label-active-span-border-color, transparent);
+  --ds-label-active-span-box-shadow: var(--dial-selector-label-active-span-box-shadow, none);
   --ds-label-active-span-box-shadow: none;
   --ds-label-active-span-transform: none;
 

@@ -4,27 +4,26 @@ DASHBOARD Theme - Dial Selector Styles
 
 /* Common dial-selector properties */
 :root[data-theme='dashboard'] {
-  dial-selector {
-    /* Dial label hover properties */
-    --ds-label-hover-border-width: 1px;
-    --ds-label-hover-border-style: solid;
-    --ds-label-hover-border-color: var(--accent-color);
-    --ds-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
-    --ds-label-hover-color: var(--accent-color);
-    --ds-label-hover-transform: translateY(-2px);
-  }
+  /* Dial label hover properties */
+  --dial-selector-label-hover-border-width: 1px;
+  --dial-selector-label-hover-border-style: solid;
+  --dial-selector-label-hover-border-color: var(--accent-color);
+  --dial-selector-label-hover-box-shadow: 0 0 0 2px var(--accent-color);
+  --dial-selector-label-hover-color: var(--accent-color);
+  --dial-selector-label-hover-transform: translateY(-2px);
+
 
   &[data-mode='light'] {
-    --dial-color-ink: oklch(20% 0 0);
-    --dial-color-selection: var(--color-blue-dashboard);
-    --dial-color-indicator: var(--color-blue-dashboard);
-    --dial-color-knob-background: var(--color-white);
+    --dial-selector-color-ink: oklch(20% 0 0);
+    --dial-selector-color-selection: var(--color-blue-dashboard);
+    --dial-selector-color-indicator: var(--color-blue-dashboard);
+    --dial-selector-color-knob-background: var(--color-white);
   }
 
   &[data-mode='dark'] {
-    --dial-color-ink: oklch(93% 0.005 245);
-    --dial-color-selection: var(--color-blue-bright);
-    --dial-color-indicator: var(--color-blue-bright);
-    --dial-color-knob-background: oklch(17% 0.01 240);
+    --dial-selector-color-ink: oklch(93% 0.005 245);
+    --dial-selector-color-selection: var(--color-blue-bright);
+    --dial-selector-color-indicator: var(--color-blue-bright);
+    --dial-selector-color-knob-background: oklch(17% 0.01 240);
   }
 }

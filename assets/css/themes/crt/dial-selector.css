@@ -6,76 +6,71 @@ CRT Theme - Dial Selector Styles
 
 /* Light Mode - Amber CRT */
 :root[data-theme='crt'][data-mode='light'] {
-  --dial-color-ink: oklch(20% 0.08 60);
-  --dial-color-selection: oklch(20% 0.08 60);
-  --dial-color-indicator: oklch(20% 0.08 60);
-  --dial-color-knob-background: oklch(82% 0.18 52); /* Lighter amber */
+  --dial-selector-color-ink: oklch(20% 0.08 60);
+  --dial-selector-color-selection: oklch(20% 0.08 60);
+  --dial-selector-color-indicator: oklch(20% 0.08 60);
+  --dial-selector-color-knob-background: oklch(82% 0.18 52); /* Lighter amber */
+  --dial-selector-label-font-size: 0.85rem;
 
-  dial-selector {
-    --ds-label-font-size: 0.85rem;
-  }
 }
 
 /* Dark Mode - Green CRT */
 :root[data-theme='crt'][data-mode='dark'] {
-  --dial-color-ink: var(--color-green);
-  --dial-color-selection: var(--color-green);
-  --dial-color-indicator: var(--color-green);
-  --dial-color-knob-background: oklch(5% 0.02 142); /* Dark green tint */
+  --dial-selector-color-ink: var(--color-green);
+  --dial-selector-color-selection: var(--color-green);
+  --dial-selector-color-indicator: var(--color-green);
+  --dial-selector-color-knob-background: oklch(5% 0.02 142); /* Dark green tint */
+  --dial-selector-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
 
-  dial-selector {
-    --ds-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-  }
 }
 
 /* ==================== DIAL SELECTOR OVERRIDES ==================== */
 
 :root[data-theme='crt'] {
-  dial-selector {
-    /* Knob */
-    --ds-knob-border: 2px;
-    --ds-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
+  /* Knob */
+  --dial-selector-knob-border-width: 2px;
+  --dial-selector-knob-box-shadow: 0 0 15px currentColor, inset 0 0 10px var(--crt-glow);
 
-    /* Indicator */
-    --ds-indicator-box-shadow: 0 0 10px currentColor;
-    --ds-indicator-gradient: currentColor;
+  /* Indicator */
+  --dial-selector-indicator-box-shadow: 0 0 10px currentColor;
+  --dial-selector-indicator-gradient: currentColor;
 
-    /* Spoke Lines */
-    --ds-line-width: 1px;
-    --ds-line-opacity: 0.5;
+  /* Spoke Lines */
+  --dial-selector-line-width: 1px;
+  --dial-selector-line-opacity: 0.5;
 
-    /* Labels - Base */
-    --ds-label-border-width: 1px;
-    --ds-label-border-style: solid;
-    --ds-label-border-color: transparent;
-    --ds-label-padding: 0.4rem 0.8rem;
+  /* Labels - Base */
+  --dial-selector-label-border-width: 1px;
+  --dial-selector-label-border-style: solid;
+  --dial-selector-label-border-color: transparent;
+  --dial-selector-label-padding: 0.4rem 0.8rem;
 
-    /* Labels - Responsive Font Sizes */
-    --ds-label-font-size--tablet: 0.75rem;
-    --ds-label-font-size--phone: 0.7rem;
-    --ds-label-font-size--phone-sm: 0.7rem;
-    --ds-label-font-size--xs: 0.65rem;
+  /* Labels - Responsive Font Sizes */
+  --dial-selector-label-font-size--tablet: 0.75rem;
+  --dial-selector-label-font-size--phone: 0.7rem;
+  --dial-selector-label-font-size--phone-sm: 0.7rem;
+  --dial-selector-label-font-size--xs: 0.65rem;
 
-    /* Labels - Hover */
-    --ds-label-hover-text-shadow: 0 0 10px currentColor;
-    --ds-label-hover-border-width: 1px;
-    --ds-label-hover-border-style: solid;
-    --ds-label-hover-border-color: currentColor;
-    --ds-label-hover-color: var(--dial-color-ink);
-    --ds-label-hover-padding: 0rem 0.5rem;
+  /* Labels - Hover */
+  --dial-selector-label-hover-text-shadow: 0 0 10px currentColor;
+  --dial-selector-label-hover-border-width: 1px;
+  --dial-selector-label-hover-border-style: solid;
+  --dial-selector-label-hover-border-color: currentColor;
+  --dial-selector-label-hover-color: var(--dial-selector-color-ink);
+  --dial-selector-label-hover-padding: 0rem 0.5rem;
 
-    /* Labels - Active State */
-    --ds-label-active-span-padding-block: 0.25rem;
-    --ds-label-active-span-padding-inline: 0.6rem;
-    --ds-label-active-span-padding-block--tablet: 0.35rem;
-    --ds-label-active-span-padding-inline--tablet: 0.4rem;
-    --ds-label-active-span-padding-block--phone: 0.2rem;
-    --ds-label-active-span-padding-inline--phone: 0.25rem;
-    --ds-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-    --ds-label-span-active-font-weight: bold;
-    --ds-label-active-span-border-width: 2px;
-    --ds-label-active-span-border-style: solid;
-    --ds-label-active-span-border-color: currentColor;
-    --ds-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
-  }
+  /* Labels - Active State */
+  --dial-selector-label-active-span-padding-block: 0.25rem;
+  --dial-selector-label-active-span-padding-inline: 0.6rem;
+  --dial-selector-label-active-span-padding-block--tablet: 0.35rem;
+  --dial-selector-label-active-span-padding-inline--tablet: 0.4rem;
+  --dial-selector-label-active-span-padding-block--phone: 0.2rem;
+  --dial-selector-label-active-span-padding-inline--phone: 0.25rem;
+  --dial-selector-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  --dial-selector-label-span-active-font-weight: bold;
+  --dial-selector-label-active-span-border-width: 2px;
+  --dial-selector-label-active-span-border-style: solid;
+  --dial-selector-label-active-span-border-color: currentColor;
+  --dial-selector-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+
 }

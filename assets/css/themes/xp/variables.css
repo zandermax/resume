@@ -240,8 +240,8 @@ XP Theme - Common Variables
 
   --font-family: 'Tahoma', 'Segoe UI', 'Verdana', sans-serif;
   --border-color: var(--color-blue-dark);
-  --dial-color-selection: var(--color-green-xp);
-  --dial-color-indicator: var(--color-green-xp);
+  --dial-selector-color-selection: var(--color-green-xp);
+  --dial-selector-color-indicator: var(--color-green-xp);
   --accent-color: var(--color-green-xp);
   --section-title-color: var(--color-white);
   --xp-window-border-block-start: var(--color-blue-dark);

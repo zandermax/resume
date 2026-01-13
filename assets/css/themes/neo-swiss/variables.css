@@ -9,8 +9,8 @@ Ultra-modern minimalism with mathematical precision
   --background-image: none;
   --section-bg: transparent;
   --header-background-color: transparent;
-  --dial-color-selection: var(--color-red);
-  --dial-color-indicator: var(--color-red);
+  --dial-selector-color-selection: var(--color-red);
+  --dial-selector-color-indicator: var(--color-red);
   --accent-color: var(--color-red);
   --swiss-grid: 8px;
 

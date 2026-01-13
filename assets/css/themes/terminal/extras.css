@@ -337,8 +337,8 @@ body[data-theme='terminal'] {
   .terminal-dialog__button-mobile--print {
     visibility: hidden;
     background: var(--terminal-title-bg);
-    color: var(--dial-color-selection);
-    border-color: var(--dial-color-selection);
+    color: var(--dial-selector-color-selection);
+    border-color: var(--dial-selector-color-selection);
   }
 
   /* Dark mode adjustments for mobile loading bar */

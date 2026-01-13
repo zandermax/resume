@@ -7,48 +7,47 @@
    ======================================================================== */
 
 :root[data-theme='skeuomorph'] {
-  dial-selector {
-    /* Light Mode Variables */
-    &[data-mode='light'] {
-      /* Knob appearance */
-      --ds-knob-background-image: radial-gradient(
-        circle at 35% 35%,
-        oklch(0.93 0 0) 0%,
-        var(--color-silver) 30%,
-        oklch(0.67 0 0) 60%,
-        oklch(0.51 0 0) 100%
-      );
-      --ds-color-outer-circle: oklch(0.6 0.13 80);
-      --ds-color-inner-circle: oklch(0.36 0.05 45);
+  /* Light Mode Variables */
+  &[data-mode='light'] {
+    /* Knob appearance */
+    --dial-selector-knob-background-image: radial-gradient(
+      circle at 35% 35%,
+      oklch(0.93 0 0) 0%,
+      var(--color-silver) 30%,
+      oklch(0.67 0 0) 60%,
+      oklch(0.51 0 0) 100%
+    );
+    --dial-selector-color-outer-circle: oklch(0.6 0.13 80);
+    --dial-selector-color-inner-circle: oklch(0.36 0.05 45);
 
-      /* Spoke line opacity - More subtle for light leather */
-      --ds-line-opacity: 0.6;
-      --ds-line-opacity-active: 0.85;
+    /* Spoke line opacity - More subtle for light leather */
+    --dial-selector-line-opacity: 0.6;
+    --dial-selector-line-opacity-active: 0.85;
 
-      /* Spoke line filters - Subtle inset carved effect */
-      --ds-line-filter: brightness(0.92) drop-shadow(0 -0.5px 0.5px rgba(0, 0, 0, 0.12))
-        drop-shadow(0 0.5px 0.5px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.08));
-      --ds-line-filter-active: brightness(0.88) drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.18))
-        drop-shadow(0 1px 1px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.12));
-    }
+    /* Spoke line filters - Subtle inset carved effect */
+    --dial-selector-line-filter: brightness(0.92) drop-shadow(0 -0.5px 0.5px rgba(0, 0, 0, 0.12))
+      drop-shadow(0 0.5px 0.5px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.08));
+    --dial-selector-line-filter-active: brightness(0.88) drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.18))
+      drop-shadow(0 1px 1px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.12));
+
 
     /* Dark Mode Variables */
     &[data-mode='dark'] {
       /* Knob appearance */
-      --ds-knob-background-image: radial-gradient(
+      --dial-selector-knob-background-image: radial-gradient(
         circle at 30% 30%,
         oklch(0.45 0 0) 0%,
         oklch(0.33 0 0) 40%,
         oklch(0.26 0 0) 70%,
         oklch(0.18 0 0) 100%
       );
-      --ds-color-outer-circle: oklch(0.77 0.13 85);
-      --ds-color-inner-circle: oklch(0.54 0.04 50);
+      --dial-selector-color-outer-circle: oklch(0.77 0.13 85);
+      --dial-selector-color-inner-circle: oklch(0.54 0.04 50);
 
       /* Spoke line filters - Deep inset groove effect for dark leather */
-      --ds-line-filter: brightness(0.45) drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.65))
+      --dial-selector-line-filter: brightness(0.45) drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.65))
         drop-shadow(0 2px 2px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-      --ds-line-filter-active: brightness(0.35) drop-shadow(0 -3px 2.5px rgba(0, 0, 0, 0.75))
+      --dial-selector-line-filter-active: brightness(0.35) drop-shadow(0 -3px 2.5px rgba(0, 0, 0, 0.75))
         drop-shadow(0 3px 2.5px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
     }
   }
@@ -81,46 +80,49 @@ body[data-theme='skeuomorph'] {
   /* --------------------------------------------------------------------
      Dial Selector Variables
      -------------------------------------------------------------------- */
-  dial-selector {
-    /* Label Variables */
-    --ds-label-color: var(--text-color);
-    --ds-label-font-weight: 600;
-    --ds-label-active-color: var(--dial-color-selection);
-    --ds-label-span-active-font-weight: 700;
+  /* Label Variables */
+  --dial-selector-label-color: var(--text-color);
+  --dial-selector-label-font-weight: 600;
+  --dial-selector-label-active-color: var(--dial-selector-color-selection);
+  --dial-selector-label-span-active-font-weight: 700;
 
-    /* Label hover - No hover effect for realism */
-    --ds-label-hover-box-shadow: none;
-    --ds-label-hover-background: transparent;
-    --ds-label-hover-color: var(--dial-color-ink);
-    --ds-label-hover-transform: none;
-    --ds-label-hover-padding: 0;
-    /* Knob styling */
-    --ds-knob-background-image: var(--metal-gradient);
-    --ds-knob-box-shadow: var(--knob-shadow);
-    --ds-knob-border: 3px solid var(--ds-color-outer-circle);
+  /* Label hover - No hover effect for realism */
+  --dial-selector-label-hover-box-shadow: none;
+  --dial-selector-label-hover-background: transparent;
+  --dial-selector-label-hover-color: var(--dial-selector-color-ink);
+  --dial-selector-label-hover-transform: none;
+  --dial-selector-label-hover-padding: 0;
+  /* Knob styling */
+  --dial-selector-knob-background-image: var(--metal-gradient);
+  --dial-selector-knob-box-shadow: var(--knob-shadow);
+  --dial-selector-knob-border-width: 3px;
+  --dial-selector-knob-border-style: solid;
+  --dial-selector-knob-border-color: var(--dial-selector-color-outer-circle);
 
-    /* Knob ridges (::after pseudo-element) */
-    --ds-knob-after-content: '';
-    --ds-knob-after-display: block;
-    --ds-knob-after-position: absolute;
-    --ds-knob-after-inset: 12px;
-    --ds-knob-after-border-radius: 50%;
-    --ds-knob-after-background: repeating-conic-gradient(
-      from 0deg,
-      var(--skeu-black-15) 0deg 4deg,
-      transparent 4deg 8deg
-    );
-    --ds-knob-after-pointer-events: none;
+  /* Knob ridges (::after pseudo-element) */
+  --dial-selector-knob-after-content: '';
+  --dial-selector-knob-after-display: block;
+  --dial-selector-knob-after-position: absolute;
+  --dial-selector-knob-after-inset: 12px;
+  --dial-selector-knob-after-border-radius: 50%;
+  --dial-selector-knob-after-background: repeating-conic-gradient(
+    from 0deg,
+    var(--skeu-black-15) 0deg 4deg,
+    transparent 4deg 8deg
+  );
+  --dial-selector-knob-after-pointer-events: none;
 
-    /* Indicator styling */
-    --ds-indicator-gradient: var(--ds-color-indicator);
-    --ds-indicator-box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--ds-color-indicator),
-      inset 0 1px 2px var(--skeu-white-30);
-    --ds-indicator-border: 1px solid var(--skeu-black-30);
+  /* Indicator styling */
+  --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
+  --dial-selector-indicator-box-shadow: 0 2px 4px var(--skeu-black-40), 0 0 8px var(--dial-selector-color-indicator),
+    inset 0 1px 2px var(--skeu-white-30);
+  --dial-selector-indicator-border-width: 1px;
+  --dial-selector-indicator-border-style: solid;
+  --dial-selector-indicator-border-color: var(--skeu-black-30);
 
-    /* Spoke lines - Deep stamped/tooled into leather effect */
-    --ds-line-width: 2.5px;
-    --ds-line-opacity: 0.7;
-    --ds-line-opacity-active: 0.9;
-  }
+  /* Spoke lines - Deep stamped/tooled into leather effect */
+  --dial-selector-line-width: 2.5px;
+  --dial-selector-line-opacity: 0.7;
+  --dial-selector-line-opacity-active: 0.9;
+
 }

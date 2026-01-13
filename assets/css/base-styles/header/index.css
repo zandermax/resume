@@ -16,7 +16,8 @@
  *
  * DEPENDENCIES:
  *   - ../variables-layout.css (defines ALL --header-* custom properties)
- *   - ../variables-buttons.css (defines --dial-selector-housing-*, --printlink-* properties)
+ *   - ../variables-printlink.css (defines --printlink-* properties)
+ *   - ../variables-dial-selector.css (defines --dial-selector-* properties)
  *   - ../_base.css (base heading and link styles)
  *
  * NO INLINE FALLBACKS:

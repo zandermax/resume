@@ -8,13 +8,13 @@ DEFAULT Theme - Light Mode
   --text-color: var(--color-black);
   --heading-color: var(--color-black);
   --border-color: var(--color-black);
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-red-crimson);
-  --dial-color-indicator: var(--color-red-crimson);
+  --dial-selector-color-ink: var(--color-black);
+  --dial-selector-color-selection: var(--color-red-crimson);
+  --dial-selector-color-indicator: var(--color-red-crimson);
   --link-color: var(--color-black);
   --link-visited-color: var(--color-purple-link);
   --accent-color: var(--color-red-crimson);
-  --dial-color-knob-background: var(--color-dark-knob);
+  --dial-selector-color-knob-background: var(--color-dark-knob);
   --printlink-background-color: var(--color-black);
   --printlink-color: var(--color-white);
   --printlink-border: var(--border-width-normal) solid var(--color-black);

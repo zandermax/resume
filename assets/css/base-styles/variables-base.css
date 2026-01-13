@@ -66,13 +66,6 @@
   --header-background: transparent;
   --accent-color: var(--color-red-crimson);
 
-  /* === DIAL SELECTOR THEME COLORS === */
-  --dial-color-ink: var(--color-black);
-  --dial-color-selection: var(--color-red-crimson);
-  --dial-color-indicator: var(--color-red-crimson);
-  --dial-color-line: var(--color-gray-400);
-  --dial-color-knob-background: var(--color-dark-knob);
-
   /* === PAPER/TEXTURE PROPERTIES === */
   /* Theme-specific: Used primarily by skeuomorph, nostalgia, and paper-style themes */
   --paper-shadow: none;

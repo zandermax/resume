@@ -7,8 +7,8 @@ XP Theme - Light Mode
   --background-color: var(--color-blue-steel);
   --text-color: var(--color-black);
   --heading-color: var(--color-white);
-  --dial-color-ink: var(--color-blue-dark);
-  --dial-color-line: var(--color-blue-dark);
+  --dial-selector-color-ink: var(--color-blue-dark);
+  --dial-selector-color-line: var(--color-blue-dark);
   --background-image: linear-gradient(
     180deg,
     var(--color-blue-steel) 0%,

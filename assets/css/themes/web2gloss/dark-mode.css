@@ -9,9 +9,9 @@ WEB 2.0 GLOSS Theme - Dark Mode
   --heading-color: var(--color-white);
   --web2-blue-dark: oklch(50% 0.18 240);
   --border-color: var(--web2-blue-dark);
-  --dial-color-ink: oklch(82% 0.13 210);
-  --dial-color-selection: oklch(82% 0.13 210);
-  --dial-color-indicator: oklch(82% 0.13 210);
+  --dial-selector-color-ink: oklch(82% 0.13 210);
+  --dial-selector-color-selection: oklch(82% 0.13 210);
+  --dial-selector-color-indicator: oklch(82% 0.13 210);
 
   /* Header text colors - all white for glossy header banner */
   --header-color: var(--color-white);

@@ -5,55 +5,53 @@ METRO Theme - Dial Selector Custom Properties
 /* ==================== DIAL SELECTOR ==================== */
 
 :root[data-theme='metro'] {
-  dial-selector {
-    /* Dial label active span padding - Metro tiles have generous padding */
-    --ds-label-active-span-padding-block: 0.6rem;
-    --ds-label-active-span-padding-inline: 1rem;
-    --ds-label-active-span-padding-block--tablet: 0.5rem;
-    --ds-label-active-span-padding-inline--tablet: 0.85rem;
-    --ds-label-active-span-padding-block--phone: 0.35rem;
-    --ds-label-active-span-padding-inline--phone: 0.6rem;
+  /* Dial label active span padding - Metro tiles have generous padding */
+  --dial-selector-label-active-span-padding-block: 0.6rem;
+  --dial-selector-label-active-span-padding-inline: 1rem;
+  --dial-selector-label-active-span-padding-block--tablet: 0.5rem;
+  --dial-selector-label-active-span-padding-inline--tablet: 0.85rem;
+  --dial-selector-label-active-span-padding-block--phone: 0.35rem;
+  --dial-selector-label-active-span-padding-inline--phone: 0.6rem;
 
-    /* Dial label hover properties - Bold Metro hover */
-    --ds-label-hover-background: oklch(57% 0.17 246 / 0.2);
-    --ds-label-hover-box-shadow: none;
-    --ds-label-hover-transform: translateY(-1px);
+  /* Dial label hover properties - Bold Metro hover */
+  --dial-selector-label-hover-background: oklch(57% 0.17 246 / 0.2);
+  --dial-selector-label-hover-box-shadow: none;
+  --dial-selector-label-hover-transform: translateY(-1px);
 
-    /* Dial selector knob styling */
-    --ds-knob-border-radius: 50%;
-    --ds-knob-border: 0;
-    --ds-knob-box-shadow: none; /* Reset knob box-shadow */
+  /* Dial selector knob styling */
+  --dial-selector-knob-border-radius: 50%;
+  --dial-selector-knob-border-width: 0;
+  --dial-selector-knob-box-shadow: none; /* Reset knob box-shadow */
 
-    /* Dial selector indicator styling - Sharp, bold indicator */
-    --ds-indicator-border-radius: 0;
-    --ds-indicator-border: 0;
-    --ds-indicator-box-shadow: none;
-    --ds-indicator-width-override: 5px;
+  /* Dial selector indicator styling - Sharp, bold indicator */
+  --dial-selector-indicator-border-radius: 0;
+  --dial-selector-indicator-border-width: 0;
+  --dial-selector-indicator-box-shadow: none;
+  --dial-selector-indicator-width: 5px;
 
-    /* Dial selector label styling - Metro tile-like labels */
-    --ds-label-font-size: 0.9rem;
-    --ds-label-hover-color: var(--dial-color-ink);
-    --ds-label-padding: 0.75rem 1rem;
-    --ds-label-border-radius: 0;
-    --ds-label-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --ds-label-background: transparent;
-    --ds-label-font-weight: 600;
-    --ds-label-text-transform: uppercase;
-    --ds-label-letter-spacing: 0.08em;
-    --ds-label-border-width: 0;
+  /* Dial selector label styling - Metro tile-like labels */
+  --dial-selector-label-font-size: 0.9rem;
+  --dial-selector-label-hover-color: var(--dial-selector-color-ink);
+  --dial-selector-label-padding: 0.75rem 1rem;
+  --dial-selector-label-border-radius: 0;
+  --dial-selector-label-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --dial-selector-label-background: transparent;
+  --dial-selector-label-font-weight: 600;
+  --dial-selector-label-text-transform: uppercase;
+  --dial-selector-label-letter-spacing: 0.08em;
+  --dial-selector-label-border-width: 0;
 
-    /* Dial selector label active state - Bold Metro accent */
-    --ds-label-active-background: var(--accent-color);
-    --ds-label-active-box-shadow: none;
-    --ds-label-active-color: var(--color-white);
-    --ds-label-active-font-weight: 600;
+  /* Dial selector label active state - Bold Metro accent */
+  --dial-selector-label-active-background: var(--accent-color);
+  --dial-selector-label-active-box-shadow: none;
+  --dial-selector-label-active-color: var(--color-white);
+  --dial-selector-label-active-font-weight: 600;
 
-    /* Dial selector spoke lines */
-    --ds-line-width: 2px;
-  }
+  /* Dial selector spoke lines */
+  --dial-selector-line-width: 2px;
 
-  &[data-mode='dark'] dial-selector {
+  &[data-mode='dark'] {
     /* Dial label hover properties (dark mode) */
-    --ds-label-hover-background: oklch(75% 0.14 210 / 0.2);
+    --dial-selector-label-hover-background: oklch(75% 0.14 210 / 0.2);
   }
 }

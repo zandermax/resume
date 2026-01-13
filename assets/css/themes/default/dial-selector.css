@@ -4,11 +4,10 @@ DEFAULT Theme - Dial Selector
 
 /* Dial Selector Hover Effects */
 :root[data-theme='default'] {
-  dial-selector {
-    --ds-label-hover-color: var(--background-color);
-    --ds-label-hover-background: var(--dial-color-ink);
-    --ds-label-hover-opacity: 0.7;
-    --ds-label-hover-transform: translateY(-1px);
-    --ds-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
-  }
+  --dial-selector-label-hover-color: var(--background-color);
+  --dial-selector-label-hover-background: var(--dial-selector-color-ink);
+  --dial-selector-label-hover-opacity: 0.7;
+  --dial-selector-label-hover-transform: translateY(-1px);
+  --dial-selector-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
+
 }

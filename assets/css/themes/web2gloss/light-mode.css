@@ -8,9 +8,9 @@ WEB 2.0 GLOSS Theme - Light Mode
   --text-color: oklch(27% 0 0);
   --heading-color: var(--color-white);
   --border-color: oklch(88% 0.02 230);
-  --dial-color-ink: oklch(62% 0.17 240);
-  --dial-color-selection: oklch(62% 0.17 240);
-  --dial-color-indicator: oklch(62% 0.17 240);
+  --dial-selector-color-ink: oklch(62% 0.17 240);
+  --dial-selector-color-selection: oklch(62% 0.17 240);
+  --dial-selector-color-indicator: oklch(62% 0.17 240);
 
   /* Header text colors - all white for glossy header banner */
   --header-color: var(--color-white);
