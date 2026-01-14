@@ -1,41 +1,90 @@
-/* ===========================
-   Dial Selector - Layout & Grid
-   =========================== */
+/**
+ * Dial Selector - Layout & Grid
+ *
+ * DOM STRUCTURE:
+ *   <dial-selector>
+ *     <div class="selector">
+ *       <div class="label-column left">...</div>
+ *       <div class="knob-wrap">...</div>
+ *       <div class="label-column right">...</div>
+ *     </div>
+ *   </dial-selector>
+ *
+ * DEPENDENCIES:
+ *   - variables.css (--ds-gap, --ds-label-column-height, --ds-knob-wrap-size)
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ */
 
-dial-selector .selector {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--ds-gap);
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* ============================================================================
+   DIAL SELECTOR LAYOUT
+   ============================================================================ */
 
-dial-selector .label-column {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: var(--ds-label-column-height);
-  margin: 0;
-  padding: 0;
-}
+dial-selector {
+  /* Selector Container - Grid Layout */
+  .selector {
+    /* Display/Box Model */
+    display: grid;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
-dial-selector .label-column.left {
-  align-items: flex-end;
-}
+    /* Grid */
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--ds-gap);
+    align-items: center;
+    justify-content: center;
 
-dial-selector .label-column.right {
-  align-items: flex-start;
-}
+    /* --- Label Columns (Left/Right) --- */
+    .label-column {
+      /* Position */
+      position: relative;
 
-dial-selector .knob-wrap {
-  position: relative;
-  width: var(--ds-knob-wrap-size);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
+      /* Display/Box Model */
+      display: flex;
+      height: var(--ds-label-column-height);
+      margin: 0;
+      padding: 0;
+
+      /* Flex */
+      flex-direction: column;
+      justify-content: center;
+
+      /* Left Column Alignment */
+      &.left {
+        align-items: flex-end;
+      }
+
+      /* Right Column Alignment */
+      &.right {
+        align-items: flex-start;
+      }
+    }
+
+    /* --- Knob Container --- */
+    .knob-wrap {
+      /* Position */
+      position: relative;
+
+      /* Display/Box Model */
+      display: grid;
+      width: var(--ds-knob-wrap-size);
+      aspect-ratio: 1;
+
+      /* Grid */
+      place-items: center;
+
+      /* Other */
+      flex-shrink: 0;
+    }
+  }
 }
