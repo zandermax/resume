@@ -11,7 +11,6 @@ CRT Theme - Dial Selector Styles
   --dial-selector-color-indicator: oklch(20% 0.08 60);
   --dial-selector-color-knob-background: oklch(82% 0.18 52); /* Lighter amber */
   --dial-selector-label-font-size: 0.85rem;
-
 }
 
 /* Dark Mode - Green CRT */
@@ -21,7 +20,6 @@ CRT Theme - Dial Selector Styles
   --dial-selector-color-indicator: var(--color-green);
   --dial-selector-color-knob-background: oklch(5% 0.02 142); /* Dark green tint */
   --dial-selector-label-font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-
 }
 
 /* ==================== DIAL SELECTOR OVERRIDES ==================== */
@@ -43,7 +41,6 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-border-width: 1px;
   --dial-selector-label-border-style: solid;
   --dial-selector-label-border-color: transparent;
-  --dial-selector-label-padding: 0.4rem 0.8rem;
 
   /* Labels - Responsive Font Sizes */
   --dial-selector-label-font-size--tablet: 0.75rem;
@@ -72,5 +69,4 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-active-span-border-style: solid;
   --dial-selector-label-active-span-border-color: currentColor;
   --dial-selector-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
-
 }

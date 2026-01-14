@@ -1,0 +1,189 @@
+/**
+ * Layout variables for section content elements and global styles
+ *
+ * This file contains layout-level CSS custom properties for:
+ *   - .resume-section__text (section text paragraphs)
+ *   - .resume-section__content (section content wrapper)
+ *   - .resume-section--summary (summary section modifier)
+ *   - .resume-section--ashby (ashby section modifier)
+ *   - Global typography variables
+ *   - Global link variables
+ *   - Body pseudo-elements
+ *   - Scrollbar styling
+ *
+ * Part 3 of 3 from the original variables/layout.css split
+ *
+ * DEPENDENCIES:
+ *   - base.css (uses --border-color, --spacing-*, etc.)
+ *   - layout-main-header.css (defines main container and core header)
+ *   - layout-header-sections.css (defines extended header and section containers)
+ *
+ * RELATED FILES:
+ *   - sections.css (uses --section-* variables)
+ *   - _base.css (uses typography-related variables)
+ *   - scrollbar.css (uses scrollbar variables)
+ *
+ * ORGANIZATION:
+ *   This file follows a consistent structure for each element:
+ *   1. Position properties (position, z-index)
+ *   2. Display & Layout (display, order, overflow, filter, transform)
+ *   3. Spacing - Margin (block-start, block-end, inline-start, inline-end)
+ *   4. Spacing - Padding (block-start, block-end, inline-start, inline-end)
+ *   5. Borders (border-width, border-style, border-color, border-radius, individual borders)
+ *   6. Background (background-color, background-image)
+ *   7. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   8. Visual Effects (box-shadow, text-shadow, opacity)
+ *   9. Animations (animation, transition, will-change)
+ *
+ * NOTES:
+ *   - ALL properties have defined defaults - NO inline fallbacks in consuming CSS files
+ *   - All spacing uses logical properties for RTL support
+ *   - Pseudo-elements default to none/static/auto/transparent for minimal footprint
+ */
+
+:root {
+  /* ============================================================================
+     SECTION - TEXT (.resume-section__text)
+     ============================================================================ */
+
+  /* Spacing - Margin */
+  --section-text-margin-block-end: 0.9rem;
+
+  /* Typography */
+  --section-text-font-size: var(--font-size-md);
+  --section-text-line-height: 1.6;
+  --section-text-letter-spacing: normal;
+  --section-text-color: inherit;
+
+  /* ============================================================================
+     SECTION - CONTENT (.resume-section__content)
+     ============================================================================ */
+
+  /* Spacing - Padding */
+  --section-content-padding-inline: 0;
+
+  /* Background */
+  --section-content-background: transparent;
+
+  /* ============================================================================
+     SECTION - SUMMARY MODIFIER (.resume-section--summary)
+     ============================================================================ */
+
+  /* Typography */
+  --section-summary-p-font-size: inherit;
+  --section-summary-p-margin-block-end: inherit;
+
+  /* ============================================================================
+     SECTION - ASHBY MODIFIER (.resume-section--ashby)
+     ============================================================================ */
+
+  /* Spacing - Padding */
+  --section-ashby-padding-block-start: 0;
+
+  /* Borders */
+  --section-ashby-border-block-start: none;
+
+  /* ============================================================================
+     GLOBAL TYPOGRAPHY
+     ============================================================================ */
+
+  /* --- Body --- */
+  --body-font-weight: normal;
+  --body-letter-spacing: normal;
+  --body-line-height: normal;
+
+  /* --- Headings (all) --- */
+  --heading-letter-spacing: normal;
+  --heading-text-shadow: none;
+
+  /* --- Headings (h2, h3) --- */
+  --h2-h3-font-weight: normal;
+  --h2-h3-text-transform: none;
+  --h2-h3-letter-spacing: normal;
+
+  /* --- Paragraphs & List Items --- */
+  --p-margin-block-end: 0;
+  --p-li-font-weight: normal;
+  --p-li-line-height: normal;
+  --p-li-font-size: inherit;
+  --body-text-letter-spacing: normal;
+
+  /* --- Strong --- */
+  --strong-font-weight: bold;
+
+  /* --- Text Effects --- */
+  --text-shadow: none;
+  --header-text-shadow: none;
+
+  /* ============================================================================
+     GLOBAL LINKS
+     ============================================================================ */
+
+  /* Position & Layout */
+  --link-position: static;
+
+  /* Borders */
+  --link-border-block-end: none;
+  --link-border-block-end-color: transparent;
+
+  /* Typography */
+  --link-text-decoration: underline;
+  --link-font-weight: normal;
+
+  /* Visual Effects */
+  --link-hover-text-shadow: none;
+
+  /* Animations */
+  --link-transition: none;
+
+  /* --- Hover State --- */
+  --link-hover-text-decoration: none;
+  --link-hover-border-block-end: none;
+  --link-hover-border-block-end-color: transparent;
+  --link-hover-color: inherit;
+  --link-hover-background: transparent;
+  --link-hover-transform: none;
+  --link-hover-box-shadow: none;
+
+  /* --- Visited State --- */
+  --link-visited-border-block-end-color: transparent;
+
+  /* --- Visited Hover State --- */
+  --link-visited-hover-background: var(--link-hover-background);
+  --link-visited-hover-color: var(--link-hover-color);
+  --link-visited-hover-border-block-end-color: var(--link-hover-border-block-end-color);
+
+  /* ============================================================================
+     BODY PSEUDO-ELEMENT (body.resume::before)
+     ============================================================================ */
+
+  --body-before-content: none;
+  --body-before-display: none;
+  --body-before-position: static;
+  --body-before-inset: auto;
+  --body-before-background: transparent;
+  --body-before-pointer-events: auto;
+  --body-before-z-index: auto;
+
+  /* ============================================================================
+     SCROLLBAR STYLING
+     ============================================================================ */
+
+  /* --- Webkit (Chrome, Safari, Edge, Opera) --- */
+  --scrollbar-width: auto;
+  --scrollbar-height: auto;
+  --scrollbar-track-background: transparent;
+  --scrollbar-track-border: none;
+  --scrollbar-thumb-background: transparent;
+  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-hover-background: transparent;
+  --scrollbar-button-background: transparent;
+  --scrollbar-button-border: none;
+  --scrollbar-button-height: auto;
+  --scrollbar-button-width: auto;
+
+  /* --- Standard (Firefox and non-webkit browsers) --- */
+  --scrollbar-width-value: auto; /* auto | thin | none */
+  --scrollbar-thumb-color: auto;
+  --scrollbar-track-color: auto;
+}

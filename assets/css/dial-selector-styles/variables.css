@@ -19,19 +19,19 @@
 dial-selector {
   /* ===========================
      COLORS
-     Core color system with fallbacks
+     Core color system
      =========================== */
-  --ds-color-ink: var(--dial-selector-color-ink, var(--dial-selector-color-ink-default));
-  --ds-color-selection: var(--dial-selector-color-selection, var(--dial-selector-color-highlight-default));
-  --ds-color-line: var(--dial-selector-color-line, var(--dial-selector-color-line-default));
-  --ds-color-indicator: var(--dial-selector-color-indicator, var(--dial-selector-color-highlight-default));
+  --ds-color-ink: var(--dial-selector-color-ink);
+  --ds-color-selection: var(--dial-selector-color-selection);
+  --ds-color-line: var(--dial-selector-color-line);
+  --ds-color-indicator: var(--dial-selector-color-indicator);
 
   /* Knob colors */
-  --ds-knob-background-color: var(--dial-selector-color-knob-background, transparent);
+  --ds-knob-background-color: var(--dial-selector-color-knob-background);
 
-  /* Circle colors - read from public API, fallback to ink color */
-  --ds-color-outer-circle: var(--dial-selector-color-outer-circle, var(--ds-color-ink));
-  --ds-color-inner-circle: var(--dial-selector-color-inner-circle, var(--ds-color-ink));
+  /* Circle colors - read from public API */
+  --ds-color-outer-circle: var(--dial-selector-color-outer-circle);
+  --ds-color-inner-circle: var(--dial-selector-color-inner-circle);
 
   /* ===========================
      TYPOGRAPHY
@@ -49,7 +49,7 @@ dial-selector {
      =========================== */
 
   /* Master knob size - media queries override this, themes can override via public API */
-  --ds-knob-size: var(--dial-selector-knob-size, 200px);
+  --ds-knob-size: var(--dial-selector-knob-size);
 
   /* Derived knob dimensions */
   --ds-knob-wrap-size: var(--ds-knob-size);
@@ -66,9 +66,9 @@ dial-selector {
   /* Indicator dimensions */
   --ds-indicator-length: calc(var(--ds-knob-size) * 0.1875); /* 60/320 */
   --ds-indicator-width: calc(var(--ds-knob-size) * 0.03125); /* 10/320 */
-  --ds-indicator-vertical-offset: var(--dial-selector-indicator-vertical-offset, 46.75%);
-  --ds-indicator-width-override: var(--dial-selector-indicator-width, auto);
-  --ds-indicator-height-override: var(--dial-selector-indicator-height, auto);
+  --ds-indicator-vertical-offset: var(--dial-selector-indicator-vertical-offset);
+  --ds-indicator-width-override: var(--dial-selector-indicator-width);
+  --ds-indicator-height-override: var(--dial-selector-indicator-height);
   --ds-center-indicator: 0px;
 
   /* Line dimensions */
@@ -101,52 +101,39 @@ dial-selector {
      KNOB STYLING
      Base knob appearance - reads from public API
      =========================== */
-  --ds-knob-border-color: var(--dial-selector-knob-border-color, var(--ds-color-outer-circle));
-  --ds-knob-border: var(--dial-selector-knob-border-width, 2px) var(--dial-selector-knob-border-style, solid)
-    var(--ds-knob-border-color);
-  --ds-knob-border-radius: var(--dial-selector-knob-border-radius, 50%);
-  --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow, unset);
-  --ds-knob-background-image: var(--dial-selector-knob-background-image, unset);
-  --ds-knob-background-size: cover;
-  --ds-knob-background-position: center;
-  --ds-knob-background-repeat: no-repeat;
-  --ds-knob-transform-scale: 1;
-  --ds-knob-filter: var(--dial-selector-knob-filter, none);
-  --ds-knob-clip-path: var(--dial-selector-knob-clip-path, none);
-  --ds-knob-opacity: 1;
-  --ds-knob-animation: var(--dial-selector-knob-animation, none);
-  --ds-knob-animation-play-state: running;
-  --ds-knob-will-change: var(--dial-selector-knob-will-change, auto);
-
-  /* Knob inner circle (::before) */
-  --ds-knob-before-opacity: 0.6;
-  --ds-knob-before-filter: none;
+  --ds-knob-border-width: var(--dial-selector-knob-border-width);
+  --ds-knob-border-style: var(--dial-selector-knob-border-style);
+  --ds-knob-border-color: var(--dial-selector-knob-border-color);
+  --ds-knob-border-radius: var(--dial-selector-knob-border-radius);
+  --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow);
+  --ds-knob-background-image: var(--dial-selector-knob-background-image);
+  --ds-knob-filter: var(--dial-selector-knob-filter);
+  --ds-knob-clip-path: var(--dial-selector-knob-clip-path);
+  --ds-knob-animation: var(--dial-selector-knob-animation);
+  --ds-knob-will-change: var(--dial-selector-knob-will-change);
 
   /* Knob decorative element (::after) - reads from public API */
-  --ds-knob-after-content: var(--dial-selector-knob-after-content, none);
-  --ds-knob-after-display: var(--dial-selector-knob-after-display, none);
-  --ds-knob-after-position: var(--dial-selector-knob-after-position, static);
-  --ds-knob-after-inset: var(--dial-selector-knob-after-inset, auto);
-  --ds-knob-after-border-radius: var(--dial-selector-knob-after-border-radius, 0);
-  --ds-knob-after-background: var(--dial-selector-knob-after-background, none);
-  --ds-knob-after-pointer-events: var(--dial-selector-knob-after-pointer-events, auto);
-  --ds-knob-after-opacity: var(--dial-selector-knob-after-opacity, 1);
-  --ds-knob-after-filter: var(--dial-selector-knob-after-filter, none);
+  --ds-knob-after-content: var(--dial-selector-knob-after-content);
+  --ds-knob-after-display: var(--dial-selector-knob-after-display);
+  --ds-knob-after-position: var(--dial-selector-knob-after-position);
+  --ds-knob-after-inset: var(--dial-selector-knob-after-inset);
+  --ds-knob-after-border-radius: var(--dial-selector-knob-after-border-radius);
+  --ds-knob-after-background: var(--dial-selector-knob-after-background);
+  --ds-knob-after-pointer-events: var(--dial-selector-knob-after-pointer-events);
 
   /* ===========================
      INDICATOR STYLING
      The pointer/indicator on the knob - reads from public API
      =========================== */
   --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
-  --ds-indicator-gradient: var(--dial-selector-indicator-gradient, var(--ds-color-indicator));
-  --ds-indicator-border: var(--dial-selector-indicator-border-width, 0)
-    var(--dial-selector-indicator-border-style, none) var(--dial-selector-indicator-border-color, transparent);
-  --ds-indicator-border-radius: var(--dial-selector-indicator-border-radius, 0);
-  --ds-indicator-box-shadow: var(--dial-selector-indicator-box-shadow, none);
-  --ds-indicator-opacity: 1;
-  --ds-indicator-filter: none;
-  --ds-indicator-animation: var(--dial-selector-indicator-animation, none);
-  --ds-indicator-will-change: var(--dial-selector-indicator-will-change, auto);
+  --ds-indicator-gradient: var(--dial-selector-indicator-gradient);
+  --ds-indicator-border-width: var(--dial-selector-indicator-border-width);
+  --ds-indicator-border-style: var(--dial-selector-indicator-border-style);
+  --ds-indicator-border-color: var(--dial-selector-indicator-border-color);
+  --ds-indicator-border-radius: var(--dial-selector-indicator-border-radius);
+  --ds-indicator-box-shadow: var(--dial-selector-indicator-box-shadow);
+  --ds-indicator-animation: var(--dial-selector-indicator-animation);
+  --ds-indicator-will-change: var(--dial-selector-indicator-will-change);
 
   /* ===========================
      SPOKE LINES

@@ -14,15 +14,15 @@
  *   - header/dial-selectors.css (applies housing variables)
  *   - dial-selector-styles/variables.css (dial selector component internal variables)
  *
- * VARIABLES DEFINED: 132 variables controlling:
- *   - Dial selector theme colors (5 variables)
+ * VARIABLES DEFINED: ~140 variables controlling:
+ *   - Dial selector theme colors (7 variables)
  *   - Label styling (13 variables)
  *   - Label hover state (10 variables)
  *   - Label active state (11 variables)
  *   - Label span styling (13 variables)
- *   - Knob styling (8 variables)
- *   - Knob pseudo-elements (9 variables)
- *   - Indicator styling (9 variables)
+ *   - Knob styling (9 variables)
+ *   - Knob pseudo-elements (11 variables)
+ *   - Indicator styling (11 variables)
  *   - Line styling (7 variables)
  *   - Component layout & positioning (5 variables)
  *   - Animation & performance (16 variables)
@@ -62,8 +62,8 @@
   --dial-selector-color-indicator: var(--color-red-crimson);
   --dial-selector-color-line: var(--color-gray-400);
   --dial-selector-color-knob-background: var(--color-dark-knob);
-  --dial-selector-color-outer-circle: inherit; /* Defaults to outer circle (knob border) */
-  --dial-selector-color-inner-circle: inherit; /* Defaults to inner circle */
+  --dial-selector-color-outer-circle: var(--dial-selector-color-ink); /* Defaults to ink color */
+  --dial-selector-color-inner-circle: var(--dial-selector-color-ink); /* Defaults to ink color */
 
   /* --- Label Styling (Base State) --- */
   --dial-selector-label-padding: 0.4rem 0.8rem;
@@ -135,12 +135,13 @@
   /* --- Knob Styling --- */
   --dial-selector-knob-border-width: 2px;
   --dial-selector-knob-border-style: solid;
-  --dial-selector-knob-border-color: var(--ds-color-outer-circle); /* defaults to outer circle color */
+  --dial-selector-knob-border-color: var(--dial-selector-color-outer-circle); /* defaults to outer circle color */
   --dial-selector-knob-border-radius: 50%;
   --dial-selector-knob-background-image: none;
   --dial-selector-knob-box-shadow: none;
   --dial-selector-knob-filter: none;
   --dial-selector-knob-clip-path: none;
+  --dial-selector-knob-opacity: 1;
 
   /* --- Indicator Styling --- */
   --dial-selector-indicator-width: auto;
@@ -151,6 +152,8 @@
   --dial-selector-indicator-border-radius: 0;
   --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
   --dial-selector-indicator-box-shadow: none;
+  --dial-selector-indicator-opacity: 1;
+  --dial-selector-indicator-filter: none;
 
   /* --- Line Styling --- */
   --dial-selector-line-width: 2px;
@@ -219,6 +222,11 @@
   --dial-selector-knob-after-pointer-events: auto;
   --dial-selector-knob-after-opacity: 1;
   --dial-selector-knob-after-filter: none;
+
+  /* --- Knob ::before Pseudo-element (Inner Circle) --- */
+  /* Controls the inner circle ring inside the knob */
+  --dial-selector-knob-before-opacity: 0.6;
+  --dial-selector-knob-before-filter: none;
 
   /* ============================================
      HOUSING CONTAINER

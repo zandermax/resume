@@ -21,7 +21,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `variables/lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
 - `variables/education.css` (~60 lines) - Education section
 - `variables/printlink.css` (~106 lines) - Print/save link buttons
-- `variables/dial-selector.css` (~84 lines) - Dial selector component and housing
+- `variables/dial-selector.css` (~150 lines) - Dial selector component and housing (50+ public API variables)
 
 ### Style Rules (9 files)
 
@@ -304,14 +304,16 @@ Properties are grouped by category for easy navigation:
 
 The dial selector component exposes a comprehensive public API for theme customization through `--dial-selector-*` prefixed variables. This API establishes a clear boundary between what themes should customize (public API) and what should remain private (internal `--ds-*` variables).
 
-- **Public API (~45 variables)**: `--dial-selector-*` variables defined in `variables/dial-selector.css`
-  - Theme colors: ink, selection, indicator, line, knob background
+- **Public API (~50 variables)**: `--dial-selector-*` variables defined in `variables/dial-selector.css`
+  - Theme colors: ink, selection, indicator, line, knob background, outer circle, inner circle
   - Label styling: font, padding, colors, borders, shadows, transitions
-  - Label states: hover (color, background, padding, box-shadow, transform, opacity)
+  - Label states: hover (color, background, padding, box-shadow, transform, opacity, filter)
   - Label states: active (color, background, filter, text-shadow, box-shadow)
   - Label span: display, padding, borders, background, colors, transform, letter-spacing
-  - Knob styling: border (width, style, color), box-shadow, border-radius, background-image, filter, clip-path
-  - Indicator styling: width, height, gradient, box-shadow, border, border-radius
+  - Knob styling: border (width, style, color), box-shadow, border-radius, background-image, filter, clip-path, opacity
+  - Knob ::before: opacity, filter (inner circle customization)
+  - Knob ::after: 9 properties for decorative pseudo-element
+  - Indicator styling: width, height, gradient, box-shadow, border, border-radius, opacity, filter
   - Line styling: width, opacity (default, active, alternate), stroke, filter
 
 - **Private Internal Variables**: `--ds-*` variables in `dial-selector-styles/variables.css`

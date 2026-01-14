@@ -24,9 +24,6 @@ XP Theme - Dial Selector (Public API)
   --dial-selector-indicator-border-style: solid;
   --dial-selector-indicator-border-color: var(--xp-black-20);
 
-  /* Dial spoke line */
-  --dial-selector-line-width: 2px;
-
   /* Dial label XP styling */
   --dial-selector-label-font-size: 0.85rem;
   --dial-selector-label-padding: 0.45rem 0.8rem;

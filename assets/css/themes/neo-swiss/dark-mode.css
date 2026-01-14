@@ -11,8 +11,5 @@ Neo-Swiss Theme - Dark Mode
   --dial-selector-color-knob-background: var(--color-white);
   --link-color: var(--color-white);
   --link-visited-color: var(--color-white);
-
-  /* Increase line width for better visibility in dark mode */
-  --dial-selector-line-width: 2px;
 }
 

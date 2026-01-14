@@ -1,68 +1,135 @@
-/* ===========================
-   Dial Selector - Knob & Indicator
-   =========================== */
+/**
+ * Dial Selector - Knob & Indicator
+ *
+ * DOM STRUCTURE:
+ *   <dial-selector>
+ *     <div class="knob">
+ *       <div class="indicator"></div>
+ *       <div class="advance"></div>
+ *     </div>
+ *   </dial-selector>
+ *
+ * DEPENDENCIES:
+ *   - variables.css (internal --ds-* variables)
+ *   - base-styles/variables/dial-selector.css (public API --dial-selector-* variables)
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, inset, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter, clip-path)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ */
 
-dial-selector .knob {
-  position: relative;
-  width: calc(var(--ds-radius-outer) * 2);
-  height: calc(var(--ds-radius-outer) * 2);
-  border: var(--ds-knob-border);
-  border-radius: var(--ds-knob-border-radius);
-  background-color: var(--ds-knob-background-color);
-  background-image: var(--ds-knob-background-image);
-  background-size: var(--ds-knob-background-size);
-  background-position: var(--ds-knob-background-position);
-  background-repeat: var(--ds-knob-background-repeat);
-  box-shadow: var(--ds-knob-box-shadow);
-  z-index: 2;
-  transform: rotate(var(--ds-indicator-angle)) scale(var(--ds-knob-transform-scale));
-  transition: transform 0.25s ease-in var(--ds-time-selection-delay);
-  clip-path: var(--ds-knob-clip-path);
-  filter: var(--ds-knob-filter);
-  opacity: var(--ds-knob-opacity);
-  animation: var(--ds-knob-animation);
-  animation-play-state: var(--ds-knob-animation-play-state);
-  will-change: var(--ds-knob-will-change);
-  -webkit-tap-highlight-color: transparent;
-}
+/* ============================================================================
+   KNOB & INDICATOR
+   ============================================================================ */
 
-dial-selector .knob::before {
-  content: '';
-  position: absolute;
-  inset: calc(var(--ds-radius-outer) - var(--ds-radius-inner));
-  border: var(--ds-width-inner-circle) solid var(--ds-color-inner-circle);
-  border-radius: 50%;
-  opacity: var(--ds-knob-before-opacity);
-  filter: var(--ds-knob-before-filter);
-}
+dial-selector {
+  .knob {
+    /* Position */
+    position: relative;
+    z-index: 2;
 
-dial-selector .knob::after {
-  content: var(--ds-knob-after-content);
-  display: var(--ds-knob-after-display);
-  position: var(--ds-knob-after-position);
-  inset: var(--ds-knob-after-inset);
-  border-radius: var(--ds-knob-after-border-radius);
-  background: var(--ds-knob-after-background);
-  pointer-events: var(--ds-knob-after-pointer-events);
-  opacity: var(--ds-knob-after-opacity);
-  filter: var(--ds-knob-after-filter);
-}
+    /* Display/Box Model */
+    width: calc(var(--ds-radius-outer) * 2);
+    height: calc(var(--ds-radius-outer) * 2);
 
-dial-selector .indicator {
-  position: absolute;
-  width: var(--ds-indicator-width-override);
-  height: var(--ds-indicator-height-override);
-  background: var(--ds-indicator-gradient);
-  border: var(--ds-indicator-border);
-  border-radius: var(--ds-indicator-border-radius);
-  box-shadow: var(--ds-indicator-box-shadow);
-  top: calc(var(--ds-indicator-vertical-offset) - var(--ds-indicator-height-override) / 2);
-  left: calc(40% + var(--ds-radius-inner) - var(--ds-width-inner-circle) + var(--ds-center-indicator));
-  transform-origin: 0% 50%;
-  transform: rotate(90deg);
-  opacity: var(--ds-indicator-opacity);
-  filter: var(--ds-indicator-filter);
-  animation: var(--ds-indicator-animation);
-  will-change: var(--ds-indicator-will-change);
-  -webkit-tap-highlight-color: transparent;
+    /* Borders */
+    border-width: var(--ds-knob-border-width);
+    border-style: var(--ds-knob-border-style);
+    border-color: var(--ds-knob-border-color);
+    border-radius: var(--ds-knob-border-radius);
+
+    /* Background */
+    background-color: var(--ds-knob-background-color);
+    background-image: var(--ds-knob-background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Visual Effects */
+    box-shadow: var(--ds-knob-box-shadow);
+    transform: rotate(var(--ds-indicator-angle));
+    filter: var(--ds-knob-filter);
+    clip-path: var(--ds-knob-clip-path);
+
+    /* Transitions/Animations */
+    transition: transform 0.25s ease-in var(--ds-time-selection-delay);
+    animation: var(--ds-knob-animation);
+
+    /* Other */
+    will-change: var(--ds-knob-will-change);
+    -webkit-tap-highlight-color: transparent;
+
+    /* Inner Circle (::before) */
+    &::before {
+      content: '';
+
+      /* Position */
+      position: absolute;
+      inset: calc(var(--ds-radius-outer) - var(--ds-radius-inner));
+
+      /* Borders */
+      border: var(--ds-width-inner-circle) solid var(--ds-color-inner-circle);
+      border-radius: 50%;
+    }
+
+    /* Decorative Element (::after) */
+    &::after {
+      content: var(--ds-knob-after-content);
+
+      /* Position */
+      position: var(--ds-knob-after-position);
+      inset: var(--ds-knob-after-inset);
+
+      /* Display/Box Model */
+      display: var(--ds-knob-after-display);
+
+      /* Borders */
+      border-radius: var(--ds-knob-after-border-radius);
+
+      /* Background */
+      background: var(--ds-knob-after-background);
+
+      /* Other */
+      pointer-events: var(--ds-knob-after-pointer-events);
+    }
+  }
+
+  .indicator {
+    /* Position */
+    position: absolute;
+    top: calc(var(--ds-indicator-vertical-offset) - var(--ds-indicator-height-override) / 2);
+    left: calc(40% + var(--ds-radius-inner) - var(--ds-width-inner-circle) + var(--ds-center-indicator));
+
+    /* Display/Box Model */
+    width: var(--ds-indicator-width-override);
+    height: var(--ds-indicator-height-override);
+
+    /* Borders */
+    border-width: var(--ds-indicator-border-width);
+    border-style: var(--ds-indicator-border-style);
+    border-color: var(--ds-indicator-border-color);
+    border-radius: var(--ds-indicator-border-radius);
+
+    /* Background */
+    background: var(--ds-indicator-gradient);
+
+    /* Visual Effects */
+    box-shadow: var(--ds-indicator-box-shadow);
+    transform: rotate(90deg);
+    transform-origin: 0% 50%;
+
+    /* Animations */
+    animation: var(--ds-indicator-animation);
+
+    /* Other */
+    will-change: var(--ds-indicator-will-change);
+    -webkit-tap-highlight-color: transparent;
+  }
 }

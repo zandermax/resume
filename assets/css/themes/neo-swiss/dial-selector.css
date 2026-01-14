@@ -45,4 +45,7 @@ body[data-theme='neoswiss'] {
   --dial-selector-line-opacity: 0.2;
   --dial-selector-line-stroke: var(--dial-selector-color-ink);
 
+  &[data-mode='dark'] {
+    --dial-selector-line-width: 2px;
+  }
 }

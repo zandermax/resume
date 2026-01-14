@@ -144,19 +144,22 @@ Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `ba
 - `label-span-font-*`, `label-span-color`, `label-span-transform`, `label-span-letter-spacing`, `label-span-text-transform`
 - `label-span-transition`, `label-span-overflow`
 
-**Knob Styling (11 variables):**
+**Knob Styling (12 variables):**
 - `knob-border-width`, `knob-border-style`, `knob-border-color`
 - `knob-box-shadow`, `knob-border-radius`, `knob-background-image`, `knob-filter`, `knob-clip-path`
+- `knob-opacity` (overall knob opacity)
 - `knob-animation`, `knob-will-change`
 
-**Knob Pseudo-elements (9 variables):**
+**Knob Pseudo-elements (11 variables):**
+- `knob-before-opacity`, `knob-before-filter` (inner circle customization)
 - `knob-after-content`, `knob-after-display`, `knob-after-position`, `knob-after-inset`
 - `knob-after-border-radius`, `knob-after-background`, `knob-after-pointer-events`
 - `knob-after-opacity`, `knob-after-filter`
 
-**Indicator Styling (10 variables):**
+**Indicator Styling (12 variables):**
 - `indicator-width`, `indicator-height`, `indicator-gradient`, `indicator-box-shadow`
 - `indicator-border-*`, `indicator-border-radius`, `indicator-vertical-offset`
+- `indicator-opacity`, `indicator-filter` (indicator visibility and effects)
 - `indicator-animation`, `indicator-will-change`
 
 **Line Styling (7 variables):**
@@ -184,7 +187,9 @@ Variables with `--ds-*` prefix are **PRIVATE** to the component (`dial-selector-
 **Internal Only (Do NOT Override Directly):**
 - Layout calculations: `--ds-radius-*`, `--ds-component-width`, `--ds-indicator-length`
 - Derived dimensions: `--ds-knob-center`, `--ds-horizontal-line-length`, `--ds-label-vertical-offset-scale`
-- Pseudo-elements: `--ds-knob-before-*` (inner circle)
+- Transform internals: `--ds-knob-transform-scale` (always 1)
+- Timing: `--ds-time-selection-delay` (animation delay)
+- Positioning: `--ds-center-indicator` (indicator offset)
 - Internal line properties: `--ds-internal-line-*`
 
 **Now Available via Public API:**
