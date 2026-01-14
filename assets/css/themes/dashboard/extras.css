@@ -96,7 +96,6 @@ body[data-theme='dashboard'] {
   .active-processes .dashboard-metric__value {
     counter-set: processes-count var(--processes-count);
     animation: count-processes 16s steps(4) infinite;
-    will-change: counter-set;
 
     &::after {
       content: counter(processes-count);
@@ -173,7 +172,6 @@ body[data-theme='dashboard'] {
   .years-experience .dashboard-card__value {
     counter-set: years-count var(--years-count);
     animation: count-years 10s linear infinite;
-    will-change: counter-set;
 
     &::after {
       content: counter(years-count) '+';
@@ -183,7 +181,6 @@ body[data-theme='dashboard'] {
   .technologies-monitored .dashboard-card__value {
     counter-set: technologies-count var(--technologies-count);
     animation: count-technologies 30s linear infinite;
-    will-change: counter-set;
 
     &::after {
       content: counter(technologies-count) '+';
@@ -193,7 +190,6 @@ body[data-theme='dashboard'] {
   .projects-shipped .dashboard-card__value {
     counter-set: projects-count var(--projects-count);
     animation: count-projects 35s linear infinite;
-    will-change: counter-set;
 
     &::after {
       content: counter(projects-count) '+';
@@ -203,7 +199,6 @@ body[data-theme='dashboard'] {
   .code-quality .dashboard-card__value::after {
     content: 'A+';
     animation: quality-cycle 10s steps(2) infinite;
-    will-change: contents;
   }
 
   /* ========== METRICS DIALOG ========== */

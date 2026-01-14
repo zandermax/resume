@@ -53,7 +53,6 @@ body[data-theme='crt'] {
 
   .terminal-log__content {
     animation: terminal-scroll 14s steps(1) infinite;
-    will-change: transform;
   }
 
   .terminal-log__line {

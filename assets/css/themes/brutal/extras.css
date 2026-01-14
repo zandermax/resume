@@ -98,7 +98,6 @@ body[data-theme='brutal'] {
     text-align: center;
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
     animation: pulse 2s ease-in-out infinite;
-    will-change: transform;
 
     @media (max-width: 768px) {
       font-size: var(--spacing-lg);
@@ -181,7 +180,6 @@ body[data-theme='brutal'] {
     text-transform: uppercase;
     box-shadow: 4px 4px 0 var(--brutal-shadow-dark);
     animation: shake 0.5s ease-in-out infinite;
-    will-change: transform;
 
     @media (max-width: 768px) {
       font-size: var(--spacing-sm);
@@ -235,7 +233,6 @@ body[data-theme='brutal'] {
     box-shadow: 6px 6px 0 var(--brutal-shadow-dark);
     transition: all 0.1s ease;
     animation: bounce 1s ease-in-out infinite;
-    will-change: transform;
 
     @media (max-width: 768px) {
       padding: var(--spacing-sm) var(--spacing-lg);

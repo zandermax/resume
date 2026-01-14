@@ -129,7 +129,6 @@ Nostalgia Theme - Animations
 :root[data-theme='nostalgia']
   *:not(.marquee):not(.blink):not(.retro-gif):not(.retro-badge):not(.visitor-counter__digit) {
   animation: cursor-cycle 3s steps(1) infinite;
-  will-change: cursor;
 }
 
 /* These elements have their own animations, so we need to animate the cursor on hover */
@@ -138,7 +137,6 @@ Nostalgia Theme - Animations
 :root[data-theme='nostalgia'] [role='button']:not(.blink),
 :root[data-theme='nostalgia'] .dial-selector__label {
   animation: cursor-cycle-hover 3s steps(1) infinite;
-  will-change: cursor;
 }
 
 /* Keyframes for regular cursor - cycles through 3 cursor styles */
