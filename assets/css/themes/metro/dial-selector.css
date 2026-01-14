@@ -8,10 +8,6 @@ METRO Theme - Dial Selector Custom Properties
   /* Dial label active span padding - Metro tiles have generous padding */
   --dial-selector-label-active-span-padding-block: 0.6rem;
   --dial-selector-label-active-span-padding-inline: 1rem;
-  --dial-selector-label-active-span-padding-block--tablet: 0.5rem;
-  --dial-selector-label-active-span-padding-inline--tablet: 0.85rem;
-  --dial-selector-label-active-span-padding-block--phone: 0.35rem;
-  --dial-selector-label-active-span-padding-inline--phone: 0.6rem;
 
   /* Dial label hover properties - Bold Metro hover */
   --dial-selector-label-hover-background: oklch(57% 0.17 246 / 0.2);

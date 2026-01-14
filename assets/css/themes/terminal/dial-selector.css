@@ -26,14 +26,6 @@ TERMINAL Theme - Dial Selector Styles
   --dial-selector-indicator-width: 10px;
   --dial-selector-label-active-span-padding-block: 0.25rem;
   --dial-selector-label-active-span-padding-inline: 0.3rem;
-  --dial-selector-label-active-span-padding-block--tablet: 0.2rem;
-  --dial-selector-label-active-span-padding-inline--tablet: 0.6rem;
-  --dial-selector-label-active-span-padding-block--phone: 0.2rem;
-  --dial-selector-label-active-span-padding-inline--phone: 0.55rem;
-  --dial-selector-label-font-size--tablet: 0.75rem;
-  --dial-selector-label-font-size--phone: 0.7rem;
-  --dial-selector-label-font-size--phone-sm: 0.7rem;
-  --dial-selector-label-font-size--xs: 0.65rem;
 
   /* Dial selector hover/active states */
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);

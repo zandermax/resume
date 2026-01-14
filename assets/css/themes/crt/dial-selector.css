@@ -42,12 +42,6 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-border-style: solid;
   --dial-selector-label-border-color: transparent;
 
-  /* Labels - Responsive Font Sizes */
-  --dial-selector-label-font-size--tablet: 0.75rem;
-  --dial-selector-label-font-size--phone: 0.7rem;
-  --dial-selector-label-font-size--phone-sm: 0.7rem;
-  --dial-selector-label-font-size--xs: 0.65rem;
-
   /* Labels - Hover */
   --dial-selector-label-hover-text-shadow: 0 0 10px currentColor;
   --dial-selector-label-hover-border-width: 1px;
@@ -59,10 +53,6 @@ CRT Theme - Dial Selector Styles
   /* Labels - Active State */
   --dial-selector-label-active-span-padding-block: 0.25rem;
   --dial-selector-label-active-span-padding-inline: 0.6rem;
-  --dial-selector-label-active-span-padding-block--tablet: 0.35rem;
-  --dial-selector-label-active-span-padding-inline--tablet: 0.4rem;
-  --dial-selector-label-active-span-padding-block--phone: 0.2rem;
-  --dial-selector-label-active-span-padding-inline--phone: 0.25rem;
   --dial-selector-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
   --dial-selector-label-active-span-font-weight: bold;
   --dial-selector-label-active-span-border-width: 2px;

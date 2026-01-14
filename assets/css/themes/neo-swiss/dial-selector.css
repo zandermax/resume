@@ -6,10 +6,6 @@ body[data-theme='neoswiss'] {
   /* Dial label active span padding */
   --dial-selector-label-active-span-padding-block: 0.05rem;
   --dial-selector-label-active-span-padding-inline: 0.6rem;
-  --dial-selector-label-active-span-padding-block--tablet: 0.025rem;
-  --dial-selector-label-active-span-padding-inline--tablet: 0.55rem;
-  --dial-selector-label-active-span-padding-block--phone: 0.025rem;
-  --dial-selector-label-active-span-padding-inline--phone: 0.5rem;
 
   /* Dial label hover properties */
   --dial-selector-label-hover-color: var(--accent-color);

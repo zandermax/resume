@@ -91,14 +91,6 @@ dial-selector {
   --ds-gap-phone: clamp(8px, 2.5vw, 16px);
   --ds-gap-xs: clamp(4px, 1.5vw, 10px);
 
-  /* Label padding (responsive) - internal defaults, could be exposed to public API if needed */
-  --ds-label-padding-tablet: clamp(3px, 0.8vw, 6px) clamp(5px, 1.2vw, 10px);
-  --ds-label-padding-phone: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
-
-  /* Label letter spacing (responsive) - internal defaults */
-  --ds-label-letter-spacing-tablet: clamp(0.3px, 0.08vw, 0.8px);
-  --ds-label-letter-spacing-phone: 0.3px;
-
   /* Component dimensions */
   --ds-component-min-width: 200px;
 
@@ -170,12 +162,8 @@ dial-selector {
   --ds-label-contain: var(--dial-selector-label-contain);
   --ds-label-will-change: var(--dial-selector-label-will-change);
 
-  /* Label sizing (responsive) - read from public API */
+  /* Label sizing - read from public API */
   --ds-label-font-size: var(--dial-selector-label-font-size);
-  --ds-label-font-size--tablet: var(--dial-selector-label-font-size--tablet);
-  --ds-label-font-size--phone: var(--dial-selector-label-font-size--phone);
-  --ds-label-font-size--phone-sm: var(--dial-selector-label-font-size--phone-sm);
-  --ds-label-font-size--xs: var(--dial-selector-label-font-size--xs);
 
   /* Label box model - read from public API */
   --ds-label-padding: var(--dial-selector-label-padding);
@@ -239,10 +227,6 @@ dial-selector {
   --ds-label-active-span-font-weight: var(--dial-selector-label-active-span-font-weight);
   --ds-label-active-span-padding-block: var(--dial-selector-label-active-span-padding-block);
   --ds-label-active-span-padding-inline: var(--dial-selector-label-active-span-padding-inline);
-  --ds-label-active-span-padding-block--tablet: var(--dial-selector-label-active-span-padding-block--tablet);
-  --ds-label-active-span-padding-inline--tablet: var(--dial-selector-label-active-span-padding-inline--tablet);
-  --ds-label-active-span-padding-block--phone: var(--dial-selector-label-active-span-padding-block--phone);
-  --ds-label-active-span-padding-inline--phone: var(--dial-selector-label-active-span-padding-inline--phone);
   --ds-label-active-span-border-width: var(--dial-selector-label-active-span-border-width);
   --ds-label-active-span-border-style: var(--dial-selector-label-active-span-border-style);
   --ds-label-active-span-border-color: var(--dial-selector-label-active-span-border-color);

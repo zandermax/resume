@@ -89,7 +89,5 @@ BRUTAL Theme - Dial Selector Custom Properties
     --dial-selector-label-span-font-size: var(--font-size-xs);
     --dial-selector-label-span-padding-block: 0.35rem;
     --dial-selector-label-span-padding-inline: 0.6rem;
-    --dial-selector-label-active-span-padding-block: var(--spacing-xs);
-    --dial-selector-label-active-span-padding-inline: var(--spacing-sm);
   }
 }

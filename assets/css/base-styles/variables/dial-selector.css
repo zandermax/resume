@@ -74,10 +74,6 @@
   --dial-selector-label-border-color: transparent;
   --dial-selector-label-border-radius: 0;
   --dial-selector-label-font-size: clamp(16px, 1.5vw, 22px);
-  --dial-selector-label-font-size--tablet: clamp(14px, 2.5vw, 18px);
-  --dial-selector-label-font-size--phone: clamp(12px, 2.5vw, 16px);
-  --dial-selector-label-font-size--phone-sm: clamp(14px, 2.8vw, 14px);
-  --dial-selector-label-font-size--xs: clamp(12px, 3vw, 13px);
   --dial-selector-label-font-weight: normal;
   --dial-selector-label-color: inherit;
   --dial-selector-label-text-transform: none;
@@ -112,13 +108,6 @@
   --dial-selector-label-active-span-box-shadow: none;
   --dial-selector-label-active-span-font-weight: inherit;
   --dial-selector-label-active-span-transform: none;
-
-  /* --- Label Responsive Overrides --- */
-  /* Fine-tune active span padding at different breakpoints */
-  --dial-selector-label-active-span-padding-block--tablet: unset;
-  --dial-selector-label-active-span-padding-inline--tablet: unset;
-  --dial-selector-label-active-span-padding-block--phone: unset;
-  --dial-selector-label-active-span-padding-inline--phone: unset;
 
   /* --- Label Span (Inner Text Element) --- */
   --dial-selector-label-span-display: inline-block;
