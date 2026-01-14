@@ -91,6 +91,14 @@ dial-selector {
   --ds-gap-phone: clamp(8px, 2.5vw, 16px);
   --ds-gap-xs: clamp(4px, 1.5vw, 10px);
 
+  /* Label padding (responsive) - internal defaults, could be exposed to public API if needed */
+  --ds-label-padding-tablet: clamp(3px, 0.8vw, 6px) clamp(5px, 1.2vw, 10px);
+  --ds-label-padding-phone: clamp(2px, 0.6vw, 5px) clamp(4px, 1vw, 8px);
+
+  /* Label letter spacing (responsive) - internal defaults */
+  --ds-label-letter-spacing-tablet: clamp(0.3px, 0.08vw, 0.8px);
+  --ds-label-letter-spacing-phone: 0.3px;
+
   /* Component dimensions */
   --ds-component-min-width: 200px;
 

@@ -21,7 +21,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 - `variables/lists.css` (~145 lines) - Community and principles lists (33 variables, zero fallbacks)
 - `variables/education.css` (~60 lines) - Education section
 - `variables/printlink.css` (~106 lines) - Print/save link buttons
-- `variables/dial-selector.css` (~150 lines) - Dial selector component and housing (50+ public API variables)
+- `variables/dial-selector.css` (~310 lines) - Dial selector component and housing (~136 public API variables)
 
 ### Style Rules (9 files)
 
@@ -138,6 +138,10 @@ Every CSS file includes a structured header:
   - ✓ Correct: `--section-padding-inline-start-responsive-768`
   - ✓ Correct: `--header-padding-responsive-500` (if header uses shorthand)
   - ✗ Avoid: `--section-padding-responsive-768` (ambiguous - which padding direction?)
+
+**Responsive Gap Pattern (Dial Selector):**
+
+The dial selector component uses internal responsive gap variables (`--ds-gap-tablet`, `--ds-gap-phone`, `--ds-gap-xs`) that are applied at different breakpoints in `dial-selector-styles/responsive.css`. These derive from the public `--dial-selector-gap` variable, providing consistent responsive behavior while allowing themes to override the base gap value.
 
 **State variables:**
 
@@ -379,6 +383,8 @@ Themes should:
 3. Use colors from `colors.css` when possible, or define custom oklch() colors
 4. Document any custom spacing systems if not using base `--spacing-*` scale
 5. When overriding box model properties, prefer setting all four longhand directions for uniform effects
+6. **Avoid redundancy**: Do not redefine properties that exactly match base defaults (e.g., don't set `--main-position: relative` if that's already the base default)
+7. **Remove unused properties**: Deprecated or unused properties should be removed from theme files to maintain clarity and prevent confusion
 
 ## Main Container Property Guidelines
 

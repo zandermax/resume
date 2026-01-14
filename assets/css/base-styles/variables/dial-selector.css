@@ -92,7 +92,6 @@
   --dial-selector-label-hover-border-width: unset;
   --dial-selector-label-hover-border-style: unset;
   --dial-selector-label-hover-border-color: transparent;
-  --dial-selector-label-hover-font-weight: inherit;
   --dial-selector-label-hover-color: inherit;
   --dial-selector-label-hover-box-shadow: none;
   --dial-selector-label-hover-text-shadow: none;
@@ -101,7 +100,6 @@
 
   /* --- Label Styling (Active State) --- */
   --dial-selector-label-active-background: transparent;
-  --dial-selector-label-active-font-weight: normal;
   --dial-selector-label-active-color: unset;
   --dial-selector-label-active-text-shadow: none;
   --dial-selector-label-active-box-shadow: none;
@@ -150,7 +148,6 @@
   --dial-selector-knob-box-shadow: none;
   --dial-selector-knob-filter: none;
   --dial-selector-knob-clip-path: none;
-  --dial-selector-knob-opacity: 1;
 
   /* --- Indicator Styling --- */
   --dial-selector-indicator-width: auto;
@@ -161,8 +158,6 @@
   --dial-selector-indicator-border-radius: 0;
   --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
   --dial-selector-indicator-box-shadow: none;
-  --dial-selector-indicator-opacity: 1;
-  --dial-selector-indicator-filter: none;
 
   /* --- Line Styling --- */
   --dial-selector-line-width: 2px;
@@ -229,13 +224,6 @@
   --dial-selector-knob-after-border-radius: 0;
   --dial-selector-knob-after-background: none;
   --dial-selector-knob-after-pointer-events: auto;
-  --dial-selector-knob-after-opacity: 1;
-  --dial-selector-knob-after-filter: none;
-
-  /* --- Knob ::before Pseudo-element (Inner Circle) --- */
-  /* Controls the inner circle ring inside the knob */
-  --dial-selector-knob-before-opacity: 0.6;
-  --dial-selector-knob-before-filter: none;
 
   /* ============================================
      HOUSING CONTAINER

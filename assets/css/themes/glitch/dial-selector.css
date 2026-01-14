@@ -69,27 +69,26 @@ body[data-theme='glitch'] {
     /* Broken misaligned transforms for each label */
     &:nth-child(1) {
       transform: skewX(-2deg) rotate(-0.3deg) translateY(-1px);
+    }
 
+    &:nth-child(2) {
+      transform: skewX(1.5deg) rotate(0.5deg) translateY(1px);
+      animation-delay: 1s;
+    }
 
-      &:nth-child(2) {
-        transform: skewX(1.5deg) rotate(0.5deg) translateY(1px);
-        animation-delay: 1s;
-      }
+    &:nth-child(3) {
+      transform: skewX(-0.8deg) rotate(-0.2deg) translateX(1px);
+      animation-delay: 2.5s;
+    }
 
-      &:nth-child(3) {
-        transform: skewX(-0.8deg) rotate(-0.2deg) translateX(1px);
-        animation-delay: 2.5s;
-      }
+    &:nth-child(4) {
+      transform: skewX(2deg) rotate(0.4deg) translateY(-1px);
+      animation-delay: 3s;
+    }
 
-      &:nth-child(4) {
-        transform: skewX(2deg) rotate(0.4deg) translateY(-1px);
-        animation-delay: 3s;
-      }
-
-      &:nth-child(5) {
-        transform: skewX(-1.2deg) rotate(-0.6deg) translateX(-1px);
-        animation-delay: 1.5s;
-      }
+    &:nth-child(5) {
+      transform: skewX(-1.2deg) rotate(-0.6deg) translateX(-1px);
+      animation-delay: 1.5s;
     }
   }
 }

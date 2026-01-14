@@ -29,27 +29,26 @@
       drop-shadow(0 0.5px 0.5px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.08));
     --dial-selector-line-filter-active: brightness(0.88) drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.18))
       drop-shadow(0 1px 1px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 1px rgba(0, 0, 0, 0.12));
+  }
 
+  /* Dark Mode Variables */
+  &[data-mode='dark'] {
+    /* Knob appearance */
+    --dial-selector-knob-background-image: radial-gradient(
+      circle at 30% 30%,
+      oklch(0.45 0 0) 0%,
+      oklch(0.33 0 0) 40%,
+      oklch(0.26 0 0) 70%,
+      oklch(0.18 0 0) 100%
+    );
+    --dial-selector-color-outer-circle: oklch(0.77 0.13 85);
+    --dial-selector-color-inner-circle: oklch(0.54 0.04 50);
 
-    /* Dark Mode Variables */
-    &[data-mode='dark'] {
-      /* Knob appearance */
-      --dial-selector-knob-background-image: radial-gradient(
-        circle at 30% 30%,
-        oklch(0.45 0 0) 0%,
-        oklch(0.33 0 0) 40%,
-        oklch(0.26 0 0) 70%,
-        oklch(0.18 0 0) 100%
-      );
-      --dial-selector-color-outer-circle: oklch(0.77 0.13 85);
-      --dial-selector-color-inner-circle: oklch(0.54 0.04 50);
-
-      /* Spoke line filters - Deep inset groove effect for dark leather */
-      --dial-selector-line-filter: brightness(0.45) drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.65))
-        drop-shadow(0 2px 2px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-      --dial-selector-line-filter-active: brightness(0.35) drop-shadow(0 -3px 2.5px rgba(0, 0, 0, 0.75))
-        drop-shadow(0 3px 2.5px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
-    }
+    /* Spoke line filters - Deep inset groove effect for dark leather */
+    --dial-selector-line-filter: brightness(0.45) drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.65))
+      drop-shadow(0 2px 2px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+    --dial-selector-line-filter-active: brightness(0.35) drop-shadow(0 -3px 2.5px rgba(0, 0, 0, 0.75))
+      drop-shadow(0 3px 2.5px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
   }
 }
 

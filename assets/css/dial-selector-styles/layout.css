@@ -9,7 +9,6 @@ dial-selector .selector {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -35,8 +34,6 @@ dial-selector .label-column.right {
 dial-selector .knob-wrap {
   position: relative;
   width: var(--ds-knob-wrap-size);
-  max-width: var(--ds-knob-wrap-size);
-  min-width: var(--ds-knob-wrap-size);
   aspect-ratio: 1;
   display: grid;
   place-items: center;

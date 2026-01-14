@@ -132,10 +132,10 @@ Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `ba
 - Borders: `label-border-width`, `label-border-style`, `label-border-color`, `label-border-radius`, `label-box-shadow`
 - Behavior: `label-transition`
 
-**Label Hover State (10 variables):**
+**Label Hover State (9 variables):**
 
 - `label-hover-color`, `label-hover-background`, `label-hover-padding`, `label-hover-border-*`, `label-hover-box-shadow`
-- `label-hover-text-shadow`, `label-hover-font-weight`, `label-hover-transform`, `label-hover-opacity`
+- `label-hover-text-shadow`, `label-hover-transform`, `label-hover-opacity`
 - `label-hover-animation`, `label-hover-filter`, `label-hover-will-change`
 
 **Label Active State (15 variables):**
@@ -156,25 +156,21 @@ Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `ba
 - `label-span-font-*`, `label-span-color`, `label-span-transform`, `label-span-letter-spacing`, `label-span-text-transform`
 - `label-span-transition`, `label-span-overflow`
 
-**Knob Styling (12 variables):**
+**Knob Styling (11 variables):**
 
 - `knob-border-width`, `knob-border-style`, `knob-border-color`
 - `knob-box-shadow`, `knob-border-radius`, `knob-background-image`, `knob-filter`, `knob-clip-path`
-- `knob-opacity` (overall knob opacity)
 - `knob-animation`, `knob-will-change`
 
-**Knob Pseudo-elements (11 variables):**
+**Knob Pseudo-elements (7 variables):**
 
-- `knob-before-opacity`, `knob-before-filter` (inner circle customization)
 - `knob-after-content`, `knob-after-display`, `knob-after-position`, `knob-after-inset`
 - `knob-after-border-radius`, `knob-after-background`, `knob-after-pointer-events`
-- `knob-after-opacity`, `knob-after-filter`
 
-**Indicator Styling (12 variables):**
+**Indicator Styling (10 variables):**
 
 - `indicator-width`, `indicator-height`, `indicator-gradient`, `indicator-box-shadow`
 - `indicator-border-*`, `indicator-border-radius`, `indicator-vertical-offset`
-- `indicator-opacity`, `indicator-filter` (indicator visibility and effects)
 - `indicator-animation`, `indicator-will-change`
 
 **Line Styling (7 variables):**
@@ -223,6 +219,9 @@ The following previously-private variables now have public API equivalents:
 - `--ds-*-will-change` → Use `--dial-selector-*-will-change`
 - `--ds-label-contain` → Use `--dial-selector-label-contain`
 - `--ds-knob-after-*` → Use `--dial-selector-knob-after-*`
+
+**Responsive Gap Variables:**
+The internal `--ds-gap-tablet`, `--ds-gap-phone`, and `--ds-gap-xs` variables are now used in responsive.css instead of hardcoded values, making the grid gaps consistent and maintainable. These derive from the public `--dial-selector-gap` API variable.
 
 **Pattern:**
 
