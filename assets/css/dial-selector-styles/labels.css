@@ -1,90 +1,188 @@
-/* ===========================
-   Dial Selector - Labels
-   =========================== */
+/**
+ * Dial Selector - Label Styles
+ *
+ * DOM STRUCTURE:
+ *   <dial-selector>
+ *     <label class="dial-label">
+ *       <span>Option Text</span>
+ *     </label>
+ *     <label class="dial-label active">
+ *       <span>Active Option</span>
+ *     </label>
+ *   </dial-selector>
+ *
+ * DEPENDENCIES:
+ *   - variables.css (all --ds-label-* variables)
+ *
+ * VARIABLE USAGE:
+ *   - All var() calls use properties WITHOUT fallbacks
+ *   - All defaults are defined in variables.css
+ *   - Themes override variables to customize appearance
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ */
 
-dial-selector .dial-label {
-  text-decoration: none;
-  color: var(--ds-label-color);
-  font-size: var(--ds-label-font-size);
-  font-family: var(--ds-label-font-family);
-  font-weight: var(--ds-label-font-weight);
-  letter-spacing: var(--ds-label-letter-spacing);
-  text-transform: var(--ds-label-text-transform);
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  cursor: var(--ds-cursor);
-  user-select: none;
-  padding: var(--ds-label-padding);
-  position: absolute;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  transition: var(--ds-label-transition);
-  background: var(--ds-label-background);
-  border-radius: var(--ds-label-border-radius);
-  border-width: var(--ds-label-border-width);
-  border-style: var(--ds-label-border-style);
-  border-color: var(--ds-label-border-color);
-  opacity: var(--ds-label-opacity);
-  filter: var(--ds-label-filter);
-  text-shadow: var(--ds-label-text-shadow);
-  box-shadow: var(--ds-label-box-shadow);
-  animation: var(--ds-label-animation);
-  contain: var(--ds-label-contain);
-  will-change: var(--ds-label-will-change);
-  -webkit-tap-highlight-color: transparent;
-}
+/* ============================================================================
+   LABEL ELEMENTS
+   ============================================================================ */
 
-dial-selector .dial-label > span {
-  display: var(--ds-label-span-display);
-  border-radius: var(--ds-label-span-border-radius);
-  background: var(--ds-label-span-background);
-  border-width: var(--ds-label-span-border-width);
-  border-style: var(--ds-label-span-border-style);
-  border-color: var(--ds-label-span-border-color);
-  padding-block: var(--ds-label-span-padding-block);
-  padding-inline: var(--ds-label-span-padding-inline);
-  font-weight: var(--ds-label-span-font-weight);
-  font-size: var(--ds-label-span-font-size);
-  color: var(--ds-label-span-color);
-  transition: var(--ds-label-span-transition);
-  box-shadow: var(--ds-label-span-box-shadow);
-  overflow: var(--ds-label-span-overflow);
-  text-transform: var(--ds-label-span-text-transform);
-  letter-spacing: var(--ds-label-span-letter-spacing);
-  transform: var(--ds-label-span-transform);
-}
+dial-selector {
+  .dial-label {
+    /* Position */
+    position: absolute;
+    transform: translateY(-50%);
 
-dial-selector .dial-label:not(.active):hover > span {
-  background: var(--ds-label-hover-background);
-  color: var(--ds-label-hover-color);
-  opacity: var(--ds-label-hover-opacity);
-  transform: var(--ds-label-hover-transform);
-  filter: var(--ds-label-hover-filter);
-  animation: var(--ds-label-hover-animation);
-  text-shadow: var(--ds-label-hover-text-shadow);
-  box-shadow: var(--ds-label-hover-box-shadow);
-  border-width: var(--ds-label-hover-border-width);
-  border-style: var(--ds-label-hover-border-style);
-  border-color: var(--ds-label-hover-border-color);
-  padding: var(--ds-label-hover-padding);
-  will-change: var(--ds-label-hover-will-change);
-}
+    /* Display/Box Model */
+    display: inline-flex;
+    padding: var(--ds-label-padding);
 
-/* Active option */
-dial-selector .dial-label.active > span {
-  background: var(--ds-label-active-background);
-  border-width: var(--ds-label-active-span-border-width);
-  border-style: var(--ds-label-active-span-border-style);
-  border-color: var(--ds-label-active-span-border-color);
-  box-shadow: var(--ds-label-active-span-box-shadow);
-  color: var(--ds-label-active-color);
-  text-shadow: var(--ds-label-active-text-shadow);
-  font-weight: var(--ds-label-active-span-font-weight);
-  transform: var(--ds-label-active-span-transform);
-  filter: var(--ds-label-active-filter);
-  animation: var(--ds-label-active-animation);
-  will-change: var(--ds-label-active-will-change);
-  padding-block: var(--ds-label-active-span-padding-block);
-  padding-inline: var(--ds-label-active-span-padding-inline);
+    /* Flex/Grid/Alignment */
+    align-items: center;
+
+    /* Borders */
+    border-width: var(--ds-label-border-width);
+    border-style: var(--ds-label-border-style);
+    border-color: var(--ds-label-border-color);
+    border-radius: var(--ds-label-border-radius);
+
+    /* Background */
+    background: var(--ds-label-background);
+
+    /* Typography */
+    font-family: var(--ds-label-font-family);
+    font-size: var(--ds-label-font-size);
+    font-weight: var(--ds-label-font-weight);
+    color: var(--ds-label-color);
+    text-transform: var(--ds-label-text-transform);
+    letter-spacing: var(--ds-label-letter-spacing);
+    white-space: nowrap;
+
+    /* Visual Effects */
+    box-shadow: var(--ds-label-box-shadow);
+    text-shadow: var(--ds-label-text-shadow);
+
+    /* Transitions/Animations */
+    transition: var(--ds-label-transition);
+    animation: var(--ds-label-animation);
+
+    /* Other */
+    cursor: var(--ds-cursor);
+    user-select: none;
+    contain: var(--ds-label-contain);
+    will-change: var(--ds-label-will-change);
+    -webkit-tap-highlight-color: transparent;
+
+    /* ========================================================================
+       NESTED SPAN ELEMENT
+       ======================================================================== */
+
+    & > span {
+      /* Display/Box Model */
+      display: var(--ds-label-span-display);
+      padding-block: var(--ds-label-span-padding-block);
+      padding-inline: var(--ds-label-span-padding-inline);
+
+      /* Borders */
+      border-width: var(--ds-label-span-border-width);
+      border-style: var(--ds-label-span-border-style);
+      border-color: var(--ds-label-span-border-color);
+      border-radius: var(--ds-label-span-border-radius);
+
+      /* Background */
+      background: var(--ds-label-span-background);
+
+      /* Typography */
+      font-size: var(--ds-label-span-font-size);
+      font-weight: var(--ds-label-span-font-weight);
+      color: var(--ds-label-span-color);
+      text-transform: var(--ds-label-span-text-transform);
+      letter-spacing: var(--ds-label-span-letter-spacing);
+
+      /* Visual Effects */
+      box-shadow: var(--ds-label-span-box-shadow);
+      transform: var(--ds-label-span-transform);
+
+      /* Transitions/Animations */
+      transition: var(--ds-label-span-transition);
+
+      /* Other */
+      overflow: var(--ds-label-span-overflow);
+    }
+
+    /* ========================================================================
+       HOVER STATE (non-active labels only)
+       ======================================================================== */
+
+    &:not(.active):hover > span {
+      /* Display/Box Model */
+      padding: var(--ds-label-hover-padding);
+
+      /* Borders */
+      border-width: var(--ds-label-hover-border-width);
+      border-style: var(--ds-label-hover-border-style);
+      border-color: var(--ds-label-hover-border-color);
+
+      /* Background */
+      background: var(--ds-label-hover-background);
+
+      /* Typography */
+      color: var(--ds-label-hover-color);
+
+      /* Visual Effects */
+      box-shadow: var(--ds-label-hover-box-shadow);
+      text-shadow: var(--ds-label-hover-text-shadow);
+      opacity: var(--ds-label-hover-opacity);
+      transform: var(--ds-label-hover-transform);
+      filter: var(--ds-label-hover-filter);
+
+      /* Transitions/Animations */
+      animation: var(--ds-label-hover-animation);
+
+      /* Other */
+      will-change: var(--ds-label-hover-will-change);
+    }
+
+    /* ========================================================================
+       ACTIVE STATE
+       ======================================================================== */
+
+    &.active > span {
+      /* Display/Box Model */
+      padding-block: var(--ds-label-active-span-padding-block);
+      padding-inline: var(--ds-label-active-span-padding-inline);
+
+      /* Borders */
+      border-width: var(--ds-label-active-span-border-width);
+      border-style: var(--ds-label-active-span-border-style);
+      border-color: var(--ds-label-active-span-border-color);
+
+      /* Background */
+      background: var(--ds-label-active-background);
+
+      /* Typography */
+      font-weight: var(--ds-label-active-span-font-weight);
+      color: var(--ds-label-active-color);
+
+      /* Visual Effects */
+      box-shadow: var(--ds-label-active-span-box-shadow);
+      text-shadow: var(--ds-label-active-text-shadow);
+      transform: var(--ds-label-active-span-transform);
+      filter: var(--ds-label-active-filter);
+
+      /* Transitions/Animations */
+      animation: var(--ds-label-active-animation);
+
+      /* Other */
+      will-change: var(--ds-label-active-will-change);
+    }
+  }
 }

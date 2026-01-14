@@ -317,7 +317,7 @@ The dial selector component exposes a comprehensive public API for theme customi
   - Line styling: width, opacity (default, active, alternate), stroke, filter
 
 - **Private Internal Variables**: `--ds-*` variables in `dial-selector-styles/variables.css`
-  - Layout calculations: knob-size, selector-gap, radius-*, component dimensions
+  - Layout calculations: knob-size, gap, radius-*, component dimensions
   - Animation/performance: will-change, contain, animation properties
   - Pseudo-elements: knob-after-*, indicator internals
   - These should NOT be overridden by themes except for advanced customization

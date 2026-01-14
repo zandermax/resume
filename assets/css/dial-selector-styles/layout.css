@@ -5,7 +5,7 @@
 dial-selector .selector {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: var(--ds-selector-gap);
+  gap: var(--ds-gap);
   align-items: center;
   justify-content: center;
   width: 100%;

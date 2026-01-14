@@ -14,11 +14,12 @@
  *   - header/dial-selectors.css (applies housing variables)
  *   - dial-selector-styles/variables.css (dial selector component internal variables)
  *
- * VARIABLES DEFINED: ~140 variables controlling:
+ * VARIABLES DEFINED: ~145 variables controlling:
  *   - Dial selector theme colors (7 variables)
  *   - Label styling (13 variables)
- *   - Label hover state (10 variables)
- *   - Label active state (11 variables)
+ *   - Label hover state (9 variables)
+ *   - Label active state (15 variables)
+ *   - Label responsive overrides (4 variables)
  *   - Label span styling (13 variables)
  *   - Knob styling (9 variables)
  *   - Knob pseudo-elements (11 variables)
@@ -112,6 +113,14 @@
   --dial-selector-label-active-span-border-color: transparent;
   --dial-selector-label-active-span-box-shadow: none;
   --dial-selector-label-active-span-font-weight: inherit;
+  --dial-selector-label-active-span-transform: none;
+
+  /* --- Label Responsive Overrides --- */
+  /* Fine-tune active span padding at different breakpoints */
+  --dial-selector-label-active-span-padding-block--tablet: unset;
+  --dial-selector-label-active-span-padding-inline--tablet: unset;
+  --dial-selector-label-active-span-padding-block--phone: unset;
+  --dial-selector-label-active-span-padding-inline--phone: unset;
 
   /* --- Label Span (Inner Text Element) --- */
   --dial-selector-label-span-display: inline-block;
@@ -175,7 +184,7 @@
 
   /* --- Component Sizing --- */
   --dial-selector-knob-size: 200px; /* default knob size */
-  --dial-selector-selector-gap: clamp(12px, 4vw, 40px); /* default responsive gap */
+  --dial-selector-gap: clamp(12px, 4vw, 40px); /* default responsive gap */
 
   /* --- Indicator Positioning --- */
   --dial-selector-indicator-vertical-offset: 46.75%;
