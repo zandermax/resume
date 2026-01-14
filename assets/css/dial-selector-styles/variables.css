@@ -82,17 +82,46 @@ dial-selector {
   --ds-label-vertical-offset-scale: calc(var(--ds-knob-size) * 0.4375); /* 140/320 */
 
   /* ===========================
+     RESPONSIVE SCALING
+     Smooth viewport-based scale applied to padding
+     =========================== */
+
+  /* Responsive scale: 50% (mobile) → 100% (desktop)
+   * Formula: clamp(0.5, 0.25 + 0.625vw, 1)
+   *
+   * Scale at different viewports:
+   *   1200px+: 100% (max, no scaling)
+   *   800px:   100% (hits max)
+   *   640px:   85%
+   *   480px:   75%
+   *   400px:   65%
+   *   320px:   55%
+   *   280px-:  50% (min)
+   *
+   * Applied to: --ds-label-active-span-padding-block/inline
+   * Benefits: Smooth transitions, no breakpoint jumps, consistent across themes
+   */
+  --ds-responsive-scale: clamp(0.5, 0.25 + 0.625vw, 1);
+
+  /* ===========================
      LAYOUT & SPACING
      =========================== */
 
-  /* Grid gaps (responsive) - themes can override via public API */
+  /* Grid gaps - themes can override via public API */
   --ds-gap: var(--dial-selector-gap);
-  --ds-gap-tablet: clamp(8px, 2vw, 20px);
-  --ds-gap-phone: clamp(8px, 2.5vw, 16px);
-  --ds-gap-xs: clamp(4px, 1.5vw, 10px);
 
-  /* Component dimensions */
-  --ds-component-min-width: 200px;
+  /* Component dimensions - accounts for knob + label columns + gaps
+   * Formula: (knob * 2.5) + (gap * 2)
+   * Rationale:
+   *   - Knob: 1x (center)
+   *   - Label columns: 0.75x each (left + right = 1.5x)
+   *   - Gaps: 2x between sections
+   * Result at different viewports:
+   *   - Desktop: (200 * 2.5) + (40 * 2) = 580px
+   *   - Tablet:  (160 * 2.5) + (30 * 2) = 460px
+   *   - Mobile:  (120 * 2.5) + (12 * 2) = 324px
+   */
+  --ds-component-min-width: calc((var(--ds-knob-size) * 2.5) + (var(--ds-gap) * 2));
 
   /* ===========================
      KNOB STYLING
@@ -223,10 +252,14 @@ dial-selector {
   --ds-label-active-animation: var(--dial-selector-label-active-animation);
   --ds-label-active-will-change: var(--dial-selector-label-active-will-change);
 
-  /* Active span states - read from public API */
+  /* Active span states - read from public API with responsive scaling applied */
   --ds-label-active-span-font-weight: var(--dial-selector-label-active-span-font-weight);
-  --ds-label-active-span-padding-block: var(--dial-selector-label-active-span-padding-block);
-  --ds-label-active-span-padding-inline: var(--dial-selector-label-active-span-padding-inline);
+  --ds-label-active-span-padding-block: calc(
+    var(--dial-selector-label-active-span-padding-block) * var(--ds-responsive-scale)
+  );
+  --ds-label-active-span-padding-inline: calc(
+    var(--dial-selector-label-active-span-padding-inline) * var(--ds-responsive-scale)
+  );
   --ds-label-active-span-border-width: var(--dial-selector-label-active-span-border-width);
   --ds-label-active-span-border-style: var(--dial-selector-label-active-span-border-style);
   --ds-label-active-span-border-color: var(--dial-selector-label-active-span-border-color);

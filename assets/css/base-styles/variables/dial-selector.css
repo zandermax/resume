@@ -165,8 +165,8 @@
   --dial-selector-component-filter: none;
 
   /* --- Component Sizing --- */
-  --dial-selector-knob-size: 200px; /* default knob size */
-  --dial-selector-gap: clamp(12px, 4vw, 40px); /* default responsive gap */
+  --dial-selector-knob-size: clamp(120px, 25vw, 200px); /* responsive knob size */
+  --dial-selector-gap: clamp(12px, 4vw, 40px); /* responsive gap */
 
   /* --- Indicator Positioning --- */
   --dial-selector-indicator-vertical-offset: 46.75%;

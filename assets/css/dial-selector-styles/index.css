@@ -5,7 +5,7 @@
 
 /* Import order matters! */
 
-/* 1. Variables first - foundation for all other styles */
+/* 1. Variables first - foundation for all styles (includes responsive scaling) */
 @import './variables.css';
 
 /* 2. Base component styles */
@@ -22,6 +22,3 @@
 
 /* 6. Lines and SVG elements */
 @import './lines.css';
-
-/* 7. Responsive overrides last */
-@import './responsive.css';
