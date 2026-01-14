@@ -386,6 +386,49 @@ Themes should:
 6. **Avoid redundancy**: Do not redefine properties that exactly match base defaults (e.g., don't set `--main-position: relative` if that's already the base default)
 7. **Remove unused properties**: Deprecated or unused properties should be removed from theme files to maintain clarity and prevent confusion
 
+### Theme Property Optimization Guidelines
+
+When creating or maintaining themes:
+
+1. **Avoid Redundant Defaults**: Do not set properties that match base defaults
+   - ✗ Bad: `--dial-selector-knob-border-radius: 50%` (already the default)
+   - ✓ Good: Only set if changing from default (e.g., `--dial-selector-knob-border-radius: 0`)
+
+2. **Common Redundant Properties to Avoid**:
+   - `--dial-selector-knob-border-radius: 50%`
+   - `--dial-selector-knob-box-shadow: none`
+   - `--dial-selector-indicator-box-shadow: none`
+   - `--dial-selector-indicator-border-radius: 0`
+   - `--dial-selector-label-background: transparent`
+   - `--dial-selector-label-border-width: 0`
+   - `--dial-selector-label-hover-background: transparent`
+   - `--dial-selector-label-hover-transform: none`
+
+3. **Responsive Dial-Selector Properties** - REQUIRED PATTERN:
+   - **MUST** use `@media` blocks within theme's `dial-selector.css` file
+   - **DO NOT** scatter dial-selector properties across `responsive.css`
+   - **Exception**: Housing padding properties can remain in `responsive.css` for broader layout changes
+
+   **Example**:
+   ```css
+   /* In themes/mytheme/dial-selector.css */
+   :root[data-theme='mytheme'] {
+     --dial-selector-label-font-size: 1rem;
+   }
+
+   /* Responsive overrides in same file */
+   @media (max-width: 768px) {
+     :root[data-theme='mytheme'] {
+       --dial-selector-label-font-size: 0.85rem;
+       --dial-selector-label-padding: 0.5rem 0.75rem;
+     }
+   }
+   ```
+
+4. **Housing Property Location**:
+   - Housing padding responsive overrides can stay in `responsive.css`
+   - Base housing properties should be in `variables.css`
+
 ## Main Container Property Guidelines
 
 ### Base Definition Requirement

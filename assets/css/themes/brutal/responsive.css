@@ -17,11 +17,6 @@ BRUTAL Theme - Responsive Adjustments
     --education-institution-font-size: 1.4rem;
     --experience-role-font-size: 1.4rem;
 
-    /* Dial selector label responsive overrides */
-    --dial-selector-label-span-font-size: var(--spacing-sm);
-    --dial-selector-label-span-padding-block: 0.6rem;
-    --dial-selector-label-span-padding-inline: var(--spacing-md);
-
     /* Main container responsive overrides */
     --main-border-width: 6px;
     --main-box-shadow: 10px 10px 0 oklch(0% 0 0 / 0.7), 20px 20px 0 var(--brutal-shadow-light);
@@ -54,12 +49,5 @@ BRUTAL Theme - Responsive Adjustments
     /* Main container responsive overrides */
     --main-border-width: var(--border-width-extra-thick);
     --main-box-shadow: 6px 6px 0 oklch(0% 0 0 / 0.7), 12px 12px 0 var(--brutal-shadow-light);
-
-    /* Dial selector label responsive overrides */
-    --dial-selector-label-span-font-size: var(--font-size-xs);
-    --dial-selector-label-span-padding-block: 0.35rem;
-    --dial-selector-label-span-padding-inline: 0.6rem;
-    --dial-selector-label-active-span-padding-block: var(--spacing-xs);
-    --dial-selector-label-active-span-padding-inline: var(--spacing-sm);
   }
 }

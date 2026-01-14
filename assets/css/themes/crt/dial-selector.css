@@ -69,4 +69,13 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-active-span-border-style: solid;
   --dial-selector-label-active-span-border-color: currentColor;
   --dial-selector-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
+
+  /* Responsive overrides */
+  @media (max-width: 768px) {
+    --dial-selector-label-padding: 0.35rem 0;
+  }
+
+  @media (max-width: 500px) {
+    --dial-selector-label-padding: 0.3rem 0;
+  }
 }

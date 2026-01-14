@@ -251,6 +251,58 @@ Prior to v2024.01, themes could directly override `--ds-*` variables. This has b
 }
 ```
 
+### Theme Property Best Practices
+
+**Avoid Redundant Overrides:**
+Themes should NOT set properties that match base defaults. This creates unnecessary duplication and maintenance overhead.
+
+**Example of what to avoid:**
+```css
+:root[data-theme='mytheme'] {
+  /* ✗ Bad - these already match base defaults */
+  --dial-selector-knob-border-radius: 50%;
+  --dial-selector-label-background: transparent;
+  --dial-selector-knob-box-shadow: none;
+}
+```
+
+**Better approach:**
+```css
+:root[data-theme='mytheme'] {
+  /* ✓ Good - only override what needs to change */
+  --dial-selector-knob-border-color: var(--accent-color);
+  --dial-selector-label-active-background: var(--theme-primary);
+}
+```
+
+**Responsive Property Pattern:**
+ALL dial-selector responsive overrides MUST be defined in `@media` blocks within the theme's `dial-selector.css` file:
+
+```css
+/* In themes/mytheme/dial-selector.css */
+:root[data-theme='mytheme'] {
+  --dial-selector-label-font-size: 1rem;
+  --dial-selector-label-padding: 0.5rem 1rem;
+}
+
+/* Responsive overrides in same file */
+@media (max-width: 768px) {
+  :root[data-theme='mytheme'] {
+    --dial-selector-label-font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root[data-theme='mytheme'] {
+    --dial-selector-label-font-size: 0.75rem;
+    --dial-selector-label-padding: 0.35rem 0.6rem;
+  }
+}
+```
+
+**Check Base Defaults First:**
+Before adding a property to your theme, verify in [`base-styles/variables/dial-selector.css`](../../base-styles/variables/dial-selector.css) whether the default already matches your intended value.
+
 ### Recent API Additions (2026.01)
 
 The following variables were added to the public API based on theme requirements:

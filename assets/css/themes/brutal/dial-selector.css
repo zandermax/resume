@@ -38,7 +38,6 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-knob-box-shadow: 12px 12px 0 var(--brutal-shadow-medium), inset 0 0 0 4px var(--accent-color);
 
   /* Indicator */
-  --dial-selector-indicator-border-radius: 0;
   --dial-selector-indicator-width: 16px;
   --dial-selector-indicator-gradient: var(--accent-color);
   --dial-selector-indicator-border-width: 3px;
@@ -80,4 +79,18 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-label-hover-box-shadow: 4px 4px 0 var(--border-color);
   --dial-selector-label-hover-padding: var(--spacing-xs) var(--spacing-md);
 
+  /* Responsive overrides */
+  @media (max-width: 768px) {
+    --dial-selector-label-span-font-size: var(--spacing-sm);
+    --dial-selector-label-span-padding-block: 0.6rem;
+    --dial-selector-label-span-padding-inline: var(--spacing-md);
+  }
+
+  @media (max-width: 500px) {
+    --dial-selector-label-span-font-size: var(--font-size-xs);
+    --dial-selector-label-span-padding-block: 0.35rem;
+    --dial-selector-label-span-padding-inline: 0.6rem;
+    --dial-selector-label-active-span-padding-block: var(--spacing-xs);
+    --dial-selector-label-active-span-padding-inline: var(--spacing-sm);
+  }
 }

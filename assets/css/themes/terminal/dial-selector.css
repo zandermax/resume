@@ -23,7 +23,6 @@ TERMINAL Theme - Dial Selector Styles
 
 :root[data-theme='terminal'] {
   --dial-selector-knob-border-width: 0;
-  --dial-selector-indicator-box-shadow: none;
   --dial-selector-indicator-width: 10px;
   --dial-selector-label-active-span-padding-block: 0.25rem;
   --dial-selector-label-active-span-padding-inline: 0.3rem;

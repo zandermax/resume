@@ -7,7 +7,6 @@ CRT Theme - Responsive Adjustments
   :root[data-theme='crt'] {
     --main-padding-responsive-768: var(--spacing-lg);
     --header-name-font-size: 2rem;
-    --dial-selector-label-padding: 0.35rem 0;
   }
 }
 
@@ -19,7 +18,6 @@ CRT Theme - Responsive Adjustments
     --printlink-padding-block: 0.45rem;
     --printlink-padding-inline: 0.85rem;
     --printlink-margin-block-end: 0;
-    --dial-selector-label-padding: 0.3rem 0;
   }
 }
 

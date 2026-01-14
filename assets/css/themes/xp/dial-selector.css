@@ -4,7 +4,6 @@ XP Theme - Dial Selector (Public API)
 
 :root[data-theme='xp'] {
   /* Dial selector knob (XP specific 3D effect) */
-  --dial-selector-knob-border-radius: 50%;
   --dial-selector-knob-border-width: 3px;
   --dial-selector-knob-border-style: solid;
   --dial-selector-knob-border-color: var(--xp-button-shadow);
@@ -29,7 +28,6 @@ XP Theme - Dial Selector (Public API)
   --dial-selector-label-padding: 0.45rem 0.8rem;
   --dial-selector-label-border-radius: 3px;
   --dial-selector-label-transition: all 0.15s ease;
-  --dial-selector-label-background: transparent;
   --dial-selector-label-font-weight: 700;
   --dial-selector-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
   --dial-selector-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);

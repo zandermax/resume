@@ -87,9 +87,7 @@ body[data-theme='skeuomorph'] {
 
   /* Label hover - No hover effect for realism */
   --dial-selector-label-hover-box-shadow: none;
-  --dial-selector-label-hover-background: transparent;
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
-  --dial-selector-label-hover-transform: none;
   --dial-selector-label-hover-padding: 0;
   /* Knob styling */
   --dial-selector-knob-background-image: var(--metal-gradient);

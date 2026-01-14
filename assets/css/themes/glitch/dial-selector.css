@@ -10,7 +10,6 @@ body[data-theme='glitch'] {
   --dial-selector-component-filter: var(--filter-contrast-base);
 
   /* Indicator */
-  --dial-selector-indicator-border-radius: 0;
   --dial-selector-indicator-width: 14px;
   --dial-selector-indicator-height: 14px;
   --dial-selector-indicator-gradient: var(--dial-selector-color-indicator);
@@ -53,7 +52,6 @@ body[data-theme='glitch'] {
   --dial-selector-label-hover-filter: none;
   --dial-selector-label-hover-animation: none;
   --dial-selector-label-hover-text-shadow: none;
-  --dial-selector-label-hover-transform: none;
   --dial-selector-label-hover-will-change: auto;
 
   /* Label active state */
@@ -90,5 +88,13 @@ body[data-theme='glitch'] {
       transform: skewX(-1.2deg) rotate(-0.6deg) translateX(-1px);
       animation-delay: 1.5s;
     }
+  }
+}
+
+/* Responsive overrides */
+@media (max-width: 400px) {
+  body[data-theme='glitch'] {
+    --dial-selector-label-font-size: var(--font-size-sm);
+    --dial-selector-label-padding: 0.3rem var(--font-size-xs);
   }
 }

@@ -12,15 +12,12 @@ body[data-theme='neoswiss'] {
   --dial-selector-label-active-span-padding-inline--phone: 0.5rem;
 
   /* Dial label hover properties */
-  --dial-selector-label-hover-background: transparent;
   --dial-selector-label-hover-color: var(--accent-color);
 
   /* Dial selector knob styling */
   --dial-selector-knob-border-width: 2px;
   --dial-selector-knob-border-style: solid;
   --dial-selector-knob-border-color: var(--dial-selector-color-ink);
-  --dial-selector-knob-border-radius: 50%;
-  --dial-selector-knob-box-shadow: none; /* Reset knob box-shadow */
 
   /* Dial selector indicator styling */
   --dial-selector-indicator-width: 2px;
@@ -47,5 +44,11 @@ body[data-theme='neoswiss'] {
 
   &[data-mode='dark'] {
     --dial-selector-line-width: 2px;
+  }
+
+  /* Responsive overrides */
+  @media (max-width: 500px) {
+    --dial-selector-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --dial-selector-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
   }
 }
