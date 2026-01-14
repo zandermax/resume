@@ -1,42 +1,87 @@
-/* ===========================
-   Dial Selector - Lines & SVG
-   =========================== */
+/**
+ * Dial Selector - Lines & SVG
+ *
+ * DOM STRUCTURE:
+ *   <dial-selector>
+ *     <svg id="lineContainer">
+ *       <line class="spoke-line">...</line>
+ *       <line class="spoke-line active">...</line>
+ *     </svg>
+ *     <div class="spoke-line-hit-area">...</div>
+ *     <div class="advance">...</div>
+ *   </dial-selector>
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index, inset)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change, cursor)
+ */
 
-dial-selector #lineContainer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: visible;
-}
+/* ============================================================================
+   DIAL SELECTOR - LINES & SVG CONTAINER
+   ============================================================================ */
 
-dial-selector .spoke-line {
-  stroke: var(--ds-line-stroke);
-  stroke-width: var(--ds-line-width);
-  opacity: var(--ds-line-opacity);
-  transition: var(--ds-line-transition);
-  filter: var(--ds-line-filter);
-}
+dial-selector {
+  /* SVG Container for radial lines */
+  #lineContainer {
+    /* Position */
+    position: absolute;
+    inset: 0;
 
-dial-selector .spoke-line:nth-of-type(even) {
-  opacity: var(--ds-line-opacity-alternate);
-}
+    /* Other */
+    pointer-events: none;
+  }
 
-dial-selector .spoke-line.active {
-  stroke: var(--ds-line-active-stroke);
-  opacity: var(--ds-line-opacity-active);
-  filter: var(--ds-line-filter-active);
-}
+  /* Radial spoke lines */
+  .spoke-line {
+    /* Visual Effects */
+    opacity: var(--ds-line-opacity);
+    filter: var(--ds-line-filter);
 
-dial-selector .spoke-line-hit-area {
-  cursor: var(--ds-cursor);
-  -webkit-tap-highlight-color: transparent;
-}
+    /* Transitions */
+    transition: opacity 0.3s ease, stroke 0.3s ease;
 
-dial-selector .advance {
-  position: absolute;
-  inset: 0;
-  cursor: var(--ds-cursor);
-  pointer-events: auto;
-  background: transparent;
-  -webkit-tap-highlight-color: transparent;
+    /* SVG-specific properties */
+    stroke: var(--ds-line-stroke);
+    stroke-width: var(--ds-line-width);
+
+    /* Alternate styling for even lines */
+    &:nth-of-type(even) {
+      opacity: var(--ds-line-opacity-alternate);
+    }
+
+    /* Active line state */
+    &.active {
+      /* Visual Effects */
+      opacity: var(--ds-line-opacity-active);
+      filter: var(--ds-line-filter-active);
+
+      /* SVG-specific properties */
+      stroke: var(--ds-line-active-stroke);
+    }
+  }
+
+  /* Interactive hit areas for lines */
+  .spoke-line-hit-area {
+    /* Other */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Full-area interactive overlay */
+  .advance {
+    /* Position */
+    position: absolute;
+    inset: 0;
+
+    /* Other */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
 }

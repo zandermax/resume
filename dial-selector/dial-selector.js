@@ -68,7 +68,6 @@ export class DialSelector extends HTMLElement {
       'onchange',
       'indicator-rainbow',
       'indicator-gradient',
-      'line-thickness',
       'length-indicator',
       'center-indicator',
       'radius-inner',
@@ -174,10 +173,6 @@ export class DialSelector extends HTMLElement {
 
       case 'color-selection':
         this.updateSelectionColor();
-        break;
-
-      case 'line-thickness':
-        this.updateLineThickness();
         break;
 
       case 'length-indicator':

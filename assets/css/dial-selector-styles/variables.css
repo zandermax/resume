@@ -102,9 +102,6 @@ dial-selector {
   /* Component dimensions */
   --ds-component-min-width: 200px;
 
-  /* Cursor */
-  --ds-cursor: pointer;
-
   /* ===========================
      KNOB STYLING
      Base knob appearance - reads from public API
@@ -155,13 +152,8 @@ dial-selector {
   --ds-line-opacity-alternate: var(--dial-selector-line-opacity-alternate); /* For nth-of-type(even) styling */
   --ds-line-stroke: var(--dial-selector-line-stroke);
   --ds-line-active-stroke: var(--ds-color-selection);
-  --ds-line-filter: var(--dial-selector-line-filter);
-  --ds-line-filter-active: var(--dial-selector-line-filter-active);
-  --ds-line-transition: opacity 0.3s ease, stroke 0.3s ease;
-
-  /* Internal line variable (for JS to override) */
-  --ds-internal-line-stroke-width: 2px;
-
+  --ds-line-filter: var(--dial-selector-line-filter, none);
+  --ds-line-filter-active: var(--dial-selector-line-filter-active, none);
   /* ===========================
      LABEL STYLING
      Base label appearance - reads from public API

@@ -10,7 +10,7 @@ Main entry point that imports all other files in the correct order.
 
 ### `variables.css`
 
-**PRIVATE INTERNAL VARIABLES** (~145 variables with `--ds-*` prefix):
+**PRIVATE INTERNAL VARIABLES** (~142 variables with `--ds-*` prefix):
 
 This file defines the component's internal implementation. Themes should NOT directly override these variables. Instead, use the public API (`--dial-selector-*`) defined in `base-styles/variables/dial-selector.css`.
 
@@ -178,6 +178,8 @@ Themes should **ONLY** use `--dial-selector-*` prefixed variables defined in `ba
 - `line-width`, `line-opacity`, `line-opacity-active`, `line-opacity-alternate`
 - `line-stroke`, `line-filter`, `line-filter-active`
 
+Note: Filter properties default to CSS `none` when not specified by themes.
+
 **Component Layout & Positioning (5 variables):**
 
 - `component-margin-block-start` - Vertical positioning offset
@@ -257,6 +259,7 @@ Prior to v2024.01, themes could directly override `--ds-*` variables. This has b
 Themes should NOT set properties that match base defaults. This creates unnecessary duplication and maintenance overhead.
 
 **Example of what to avoid:**
+
 ```css
 :root[data-theme='mytheme'] {
   /* ✗ Bad - these already match base defaults */
@@ -267,6 +270,7 @@ Themes should NOT set properties that match base defaults. This creates unnecess
 ```
 
 **Better approach:**
+
 ```css
 :root[data-theme='mytheme'] {
   /* ✓ Good - only override what needs to change */

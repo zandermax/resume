@@ -75,7 +75,7 @@ dial-selector {
     animation: var(--ds-label-animation);
 
     /* Other */
-    cursor: var(--ds-cursor);
+    cursor: pointer;
     user-select: none;
     contain: var(--ds-label-contain);
     will-change: var(--ds-label-will-change);

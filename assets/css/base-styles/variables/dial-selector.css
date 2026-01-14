@@ -14,7 +14,7 @@
  *   - header/dial-selectors.css (applies housing variables)
  *   - dial-selector-styles/variables.css (dial selector component internal variables)
  *
- * VARIABLES DEFINED: ~145 variables controlling:
+ * VARIABLES DEFINED: ~142 variables controlling:
  *   - Dial selector theme colors (7 variables)
  *   - Label styling (13 variables)
  *   - Label hover state (9 variables)
@@ -164,9 +164,7 @@
   --dial-selector-line-stroke: var(--dial-selector-color-line);
   --dial-selector-line-opacity: 0.4;
   --dial-selector-line-opacity-active: 0.8;
-  --dial-selector-line-opacity-alternate: inherit;
-  --dial-selector-line-filter: none;
-  --dial-selector-line-filter-active: none;
+  --dial-selector-line-opacity-alternate: var(--dial-selector-line-opacity);
 
   /* ============================================
      COMPONENT LAYOUT & POSITIONING
