@@ -53,11 +53,13 @@ Each theme is primarily implemented in CSS with light JavaScript for dynamic con
 
 ### Styles
 
+- `assets/css/colors.css` - Global color palette (shared colors only)
 - `assets/css/base-styles/` - Modular base CSS split into focused files
   - See `base-styles/STRUCTURE.md` for complete reference
 - `assets/css/dial-selector-styles/` - Styles for the dial selector component
 - `assets/css/themes/` - Theme-specific CSS overrides
   - Each theme in its own directory with modular structure
+  - Theme-specific colors defined in theme files (not global colors.css)
 
 ## Made by Me
 

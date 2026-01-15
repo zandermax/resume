@@ -41,33 +41,33 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 
 ## Quick Reference: HTML → CSS Files
 
-| HTML Element                   | Variable File                    | Style File               |
-| ------------------------------ | -------------------------------- | ------------------------ |
-| `body.resume`                  | variables/base.css               | \_base.css               |
-| `h1, h2, h3` (generic)         | variables/sections-global.css    | \_base.css               |
-| `p, li` (generic)              | variables/sections-global.css    | \_base.css               |
-| `a` (generic links)            | variables/sections-global.css    | \_base.css               |
-| `.resume__main`                | variables/main-header.css        | main.css                 |
-| `.resume-header`               | variables/main-header.css        | header.css               |
-| `.resume-header__name`         | variables/main-header.css        | header.css               |
-| `.resume-header__role`         | variables/header-sections.css    | header.css               |
-| `.resume-header__meta`         | variables/header-sections.css    | header.css               |
-| `.resume-header__savelink`     | variables/printlink.css          | header/buttons.css       |
-| `#resume-header__printlink`    | variables/printlink.css          | header/buttons.css       |
-| `.resume-section`              | variables/header-sections.css    | sections.css             |
-| `.resume-section__title`       | variables/header-sections.css    | title.css                |
-| `.skills-grid`                 | variables/skills.css             | skills.css               |
-| `.skills-grid__group`          | variables/skills.css             | skills.css               |
-| `.skills-grid__title`          | variables/skills.css             | skills.css               |
-| `.experience-item`             | variables/experience.css         | experience.css           |
-| `.experience-item__role`       | variables/experience.css         | experience.css           |
-| `.experience-item__tech`       | variables/experience.css         | experience.css           |
-| `.experience-item__bullets`    | variables/experience.css         | experience.css           |
-| `.community-list`              | variables/lists.css              | lists.css                |
-| `.principles-list`             | variables/lists.css              | lists.css                |
-| `.education-item`              | variables/education.css          | components/education.css |
-| `.education-item__institution` | variables/education.css          | components/education.css |
-| `.dial-selector-housing`       | variables/dial-selector.css      | header/dial-selectors.css |
+| HTML Element                   | Variable File                 | Style File                |
+| ------------------------------ | ----------------------------- | ------------------------- |
+| `body.resume`                  | variables/base.css            | \_base.css                |
+| `h1, h2, h3` (generic)         | variables/sections-global.css | \_base.css                |
+| `p, li` (generic)              | variables/sections-global.css | \_base.css                |
+| `a` (generic links)            | variables/sections-global.css | \_base.css                |
+| `.resume__main`                | variables/main-header.css     | main.css                  |
+| `.resume-header`               | variables/main-header.css     | header.css                |
+| `.resume-header__name`         | variables/main-header.css     | header.css                |
+| `.resume-header__role`         | variables/header-sections.css | header.css                |
+| `.resume-header__meta`         | variables/header-sections.css | header.css                |
+| `.resume-header__savelink`     | variables/printlink.css       | header/buttons.css        |
+| `#resume-header__printlink`    | variables/printlink.css       | header/buttons.css        |
+| `.resume-section`              | variables/header-sections.css | sections.css              |
+| `.resume-section__title`       | variables/header-sections.css | title.css                 |
+| `.skills-grid`                 | variables/skills.css          | skills.css                |
+| `.skills-grid__group`          | variables/skills.css          | skills.css                |
+| `.skills-grid__title`          | variables/skills.css          | skills.css                |
+| `.experience-item`             | variables/experience.css      | experience.css            |
+| `.experience-item__role`       | variables/experience.css      | experience.css            |
+| `.experience-item__tech`       | variables/experience.css      | experience.css            |
+| `.experience-item__bullets`    | variables/experience.css      | experience.css            |
+| `.community-list`              | variables/lists.css           | lists.css                 |
+| `.principles-list`             | variables/lists.css           | lists.css                 |
+| `.education-item`              | variables/education.css       | components/education.css  |
+| `.education-item__institution` | variables/education.css       | components/education.css  |
+| `.dial-selector-housing`       | variables/dial-selector.css   | header/dial-selectors.css |
 
 ## Import Order & Dependencies
 
@@ -221,14 +221,25 @@ When using both `background-image` and `background` properties:
   background: var(--section-title-background, transparent);
   ```
 
-### Theme-Specific Intermediate Variables
+### Theme-Specific Variables
 
-Themes can define their own prefixed variables for internal reuse:
+Themes can define their own prefixed variables for internal reuse and theme-specific colors:
+
+**Theme-Specific Colors** (defined in theme files, NOT in global colors.css):
+
+- `--color-blue-metro` (Metro theme)
+- `--color-blue-dashboard` (Dashboard theme)
+- `--color-blue-sky` (Terminal theme)
+- `--color-blue-steel`, `--color-green-xp` (XP theme)
+
+**Theme-Specific Style Variables**:
 
 - `--brutal-shadow-*`, `--brutal-texture` (Brutal theme)
 - `--terminal-inset-*`, `--terminal-border-*` (Terminal theme)
-- `--glitch-primary`, `--glitch-text-shadow` (Glitch theme)
+- `--glitch-*` colors and effects (Glitch theme)
 - `--nostalgia-*` colors (Nostalgia theme)
+- `--metro-*` color palette (Metro theme)
+- `--xp-*` system colors (XP theme)
 
 These intermediate variables help themes maintain consistency and avoid repetition.
 
@@ -309,6 +320,7 @@ Properties are grouped by category for easy navigation:
 The dial selector component exposes a comprehensive public API for theme customization through `--dial-selector-*` prefixed variables. This API establishes a clear boundary between what themes should customize (public API) and what should remain private (internal `--ds-*` variables).
 
 - **Public API (~50 variables)**: `--dial-selector-*` variables defined in `variables/dial-selector.css`
+
   - Theme colors: ink, selection, indicator, line, knob background, outer circle, inner circle
   - Label styling: font, padding, colors, borders, shadows, transitions
   - Label states: hover (color, background, padding, box-shadow, transform, opacity, filter)
@@ -321,9 +333,10 @@ The dial selector component exposes a comprehensive public API for theme customi
   - Line styling: width, opacity (default, active, alternate), stroke, filter
 
 - **Private Internal Variables**: `--ds-*` variables in `dial-selector-styles/variables.css`
-  - Layout calculations: knob-size, gap, radius-*, component dimensions
+
+  - Layout calculations: knob-size, gap, radius-\*, component dimensions
   - Animation/performance: will-change, contain, animation properties
-  - Pseudo-elements: knob-after-*, indicator internals
+  - Pseudo-elements: knob-after-\*, indicator internals
   - These should NOT be overridden by themes except for advanced customization
 
 - **Pattern**: Component reads from public API with fallbacks: `var(--dial-selector-label-font-size, clamp(...))`
@@ -372,6 +385,39 @@ This pattern should be followed in all other component CSS files.
 
 Even if only one theme currently uses a property, it should be defined in base with a neutral default (like `none`, `visible`, `relative`, `transparent`).
 
+## Color System Architecture
+
+### Global Colors (`assets/css/colors.css`)
+
+The global `colors.css` file contains **ONLY colors shared across multiple themes**:
+
+- **Base colors**: `--color-black`, `--color-white`, `--color-gray-*`
+- **Shared color families**: red, blue, green, yellow, cyan, magenta, orange, purple
+- **Neutral tones**: beige, cream, tan, brown (used by multiple specialty themes)
+- **System colors**: silver, gray variants for terminal/UI themes
+- **Dark mode defaults**: `--color-dark-bg`, `--color-dark-knob` (shared by default & brutal themes)
+
+### Theme-Specific Colors (in theme files)
+
+**Theme-specific colors MUST be defined in the theme's own files**, not in `colors.css`.
+
+**Benefits of this architecture**:
+
+- Clear ownership: each theme owns its specific colors
+- No pollution of global namespace
+- Easier to understand what colors are actually shared
+- Better encapsulation and maintainability
+
+### When to Add Colors to `colors.css`
+
+Only add a color to the global `colors.css` if:
+
+1. It's used by **2 or more themes** (shared color)
+2. It's a fundamental base color (black, white, primary colors)
+3. It's part of a system color set (grays, terminal colors)
+
+Otherwise, define it in the theme's own file with a descriptive name.
+
 ## Theme Overrides
 
 Theme files in `assets/css/themes/*.css` can override any CSS variable defined in the `variables/*.css` files. The base styles provide sensible defaults that themes customize.
@@ -379,22 +425,25 @@ Theme files in `assets/css/themes/*.css` can override any CSS variable defined i
 Themes should:
 
 1. **Only override** base variables to customize appearance (never define new custom properties without base definitions)
-2. Define theme-specific intermediate variables (with theme prefix like `--brutal-*`, `--glitch-*`) for internal reuse
-3. Use colors from `colors.css` when possible, or define custom oklch() colors
-4. Document any custom spacing systems if not using base `--spacing-*` scale
-5. When overriding box model properties, prefer setting all four longhand directions for uniform effects
-6. **Avoid redundancy**: Do not redefine properties that exactly match base defaults (e.g., don't set `--main-position: relative` if that's already the base default)
-7. **Remove unused properties**: Deprecated or unused properties should be removed from theme files to maintain clarity and prevent confusion
+2. **Define theme-specific colors** in the theme file itself (not in global colors.css)
+3. Define theme-specific intermediate variables (with theme prefix like `--brutal-*`, `--glitch-*`) for internal reuse
+4. Use colors from `colors.css` when possible for shared colors, or define custom oklch() colors in the theme
+5. Document any custom spacing systems if not using base `--spacing-*` scale
+6. When overriding box model properties, prefer setting all four longhand directions for uniform effects
+7. **Avoid redundancy**: Do not redefine properties that exactly match base defaults (e.g., don't set `--main-position: relative` if that's already the base default)
+8. **Remove unused properties**: Deprecated or unused properties should be removed from theme files to maintain clarity and prevent confusion
 
 ### Theme Property Optimization Guidelines
 
 When creating or maintaining themes:
 
 1. **Avoid Redundant Defaults**: Do not set properties that match base defaults
+
    - ✗ Bad: `--dial-selector-knob-border-radius: 50%` (already the default)
    - ✓ Good: Only set if changing from default (e.g., `--dial-selector-knob-border-radius: 0`)
 
 2. **Common Redundant Properties to Avoid**:
+
    - `--dial-selector-knob-border-radius: 50%`
    - `--dial-selector-knob-box-shadow: none`
    - `--dial-selector-indicator-box-shadow: none`
@@ -405,11 +454,13 @@ When creating or maintaining themes:
    - `--dial-selector-label-hover-transform: none`
 
 3. **Responsive Dial-Selector Properties** - REQUIRED PATTERN:
+
    - **MUST** use `@media` blocks within theme's `dial-selector.css` file
    - **DO NOT** scatter dial-selector properties across `responsive.css`
    - **Exception**: Housing padding properties can remain in `responsive.css` for broader layout changes
 
    **Example**:
+
    ```css
    /* In themes/mytheme/dial-selector.css */
    :root[data-theme='mytheme'] {

@@ -1,19 +1,20 @@
 /* ===========================
-Color Palette - Semantic Color Names
+Color Palette - Global Semantic Colors
 ===========================
 
 USAGE GUIDELINES:
-- Theme-specific colors are kept in this global palette for consistency
+- This file contains ONLY globally shared colors used across multiple themes
+- Theme-specific colors (e.g., --color-blue-metro) should be defined in the theme files themselves
 - Themes should NOT redefine base colors (use semantic tokens instead)
-- Use --glitch-*, --terminal-*, etc. for theme-specific color variations
+- Use theme-prefixed variables (--metro-*, --terminal-*, etc.) for theme-specific variations
 - Gray scale uses named variants for semantic clarity (not numbered scales)
 
 COLOR ORGANIZATION:
-- Grayscale: Semantic named grays for clarity
+- Grayscale: Base black, white, and semantic named grays
 - Primary Colors: Full color families (red, blue, green, yellow, cyan, magenta, orange, purple)
 - Neutral Tones: Beige, cream, tan, brown for specialty themes
 - Terminal/System Colors: Named grays for UI elements
-- Theme-specific: Dark mode backgrounds and knob colors
+- Dark Mode Defaults: Shared dark mode backgrounds and knob colors
 
 =========================== */
 
@@ -35,18 +36,12 @@ COLOR ORGANIZATION:
   --color-blue-bright: oklch(70% 0.16 245);
   --color-blue-dark: oklch(50% 0.24 264);
   --color-blue-navy: oklch(32% 0.15 264);
-  --color-blue-sky: oklch(49% 0.13 276);
-  --color-blue-steel: oklch(64% 0.12 245);
   --color-blue-link: oklch(42% 0.3 264);
-  --color-blue-metro: oklch(57% 0.17 246);
-  --color-blue-dashboard: oklch(54% 0.19 250);
 
   /* Green family */
   --color-green: oklch(87% 0.29 142);
-  --color-green-terminal: oklch(88% 0.27 142);
   --color-green-bright: oklch(70% 0.2 166);
   --color-green-success: oklch(65% 0.18 145);
-  --color-green-xp: oklch(72% 0.16 130);
 
   /* Yellow family */
   --color-yellow: oklch(97% 0.21 110);

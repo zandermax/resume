@@ -6,6 +6,9 @@ METRO Theme - Light Mode
    See base-styles/variables/base.css for default values. */
 
 :root[data-theme='metro'][data-mode='light'] {
+  /* Metro theme color */
+  --color-blue-metro: oklch(57% 0.17 246);
+
   --header-background-color: var(--color-white);
   --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);

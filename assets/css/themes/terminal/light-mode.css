@@ -7,6 +7,9 @@ TERMINAL Theme - Light Mode
 
 :root[data-theme='terminal'] {
   &[data-mode='light'] {
+    /* Terminal theme color */
+    --color-blue-sky: oklch(49% 0.13 276);
+
     --background-color: var(--color-blue-sky);
     --link-color: var(--color-yellow);
     --link-visited-color: var(--color-cyan);

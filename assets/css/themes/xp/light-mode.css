@@ -6,6 +6,10 @@ XP Theme - Light Mode
    See base-styles/variables/base.css for default values. */
 
 :root[data-theme='xp'][data-mode='light'] {
+  /* XP theme colors */
+  --color-blue-steel: oklch(64% 0.12 245);
+  --color-green-xp: oklch(72% 0.16 130);
+
   --background-color: var(--color-blue-steel);
   --heading-color: var(--color-white);
   --dial-selector-color-ink: var(--color-blue-dark);

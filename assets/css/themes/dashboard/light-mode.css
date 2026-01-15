@@ -6,6 +6,9 @@ Clean & Professional Dashboard
 :root[data-theme='dashboard'][data-mode='light'] {
   /* ==================== COLOR PALETTE ==================== */
 
+  /* Dashboard theme color */
+  --color-blue-dashboard: oklch(54% 0.19 250);
+
   /* Base colors */
   --background-color: oklch(97% 0.005 245);
   --text-color: oklch(20% 0 0);

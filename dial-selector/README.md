@@ -34,18 +34,10 @@ The component is split into logical modules using ES6 imports/exports:
 <script type="module" src="./dial-selector/index.js"></script>
 
 <!-- Basic usage -->
-<dial-selector
-  options="Option 1,Option 2,Option 3"
-  default-option="Option 1">
-</dial-selector>
+<dial-selector options="Option 1,Option 2,Option 3" default-option="Option 1"> </dial-selector>
 
 <!-- With haptic feedback customization (mobile) -->
-<dial-selector
-  options="Light,Dark"
-  default-option="Light"
-  haptic-feedback="true"
-  haptic-duration="30">
-</dial-selector>
+<dial-selector options="Light,Dark" default-option="Light" haptic-feedback="true" haptic-duration="30"> </dial-selector>
 ```
 
 ### Real-World Examples
@@ -57,15 +49,12 @@ From this resume project:
 <dial-selector
   id="theme-selector"
   options="Today,1985,1992,1996,2001,2004,2007,2012,2017,2020,2027,2039"
-  default-option="Today">
+  default-option="Today"
+>
 </dial-selector>
 
 <!-- Mode selector -->
-<dial-selector
-  id="mode-selector"
-  options="Light,Dark"
-  default-option="Light">
-</dial-selector>
+<dial-selector id="mode-selector" options="Light,Dark" default-option="Light"> </dial-selector>
 ```
 
 ### In JavaScript (Programmatic)
@@ -103,6 +92,7 @@ Comma-separated list of selectable options.
 Initial selected option. Can be either the option name or numeric index.
 
 **Examples:**
+
 - `default-option="Red"` - Select by name
 - `default-option="0"` - Select by index
 
@@ -113,6 +103,7 @@ Initial selected option. Can be either the option name or numeric index.
 Enable/disable vibration feedback on mobile devices when selecting an option.
 
 **Examples:**
+
 - `haptic-feedback="true"` - Enable (default)
 - `haptic-feedback="false"` - Disable
 
@@ -197,8 +188,8 @@ The component fires a custom `change` event when the selection changes:
 
 ```javascript
 selector.addEventListener('change', (event) => {
-  console.log(event.detail.value);  // Selected option text
-  console.log(event.detail.index);  // Selected option index
+  console.log(event.detail.value); // Selected option text
+  console.log(event.detail.index); // Selected option index
 });
 ```
 
