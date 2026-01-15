@@ -45,15 +45,6 @@ export class DialSelector extends HTMLElement {
     this.hitAreaStrokeWidth = BASE_HIT_AREA_STROKE_WIDTH;
     this.horizontalLineEndOffset = BASE_HORIZONTAL_LINE_END_OFFSET;
     this.indicatorWidth = BASE_INDICATOR_WIDTH;
-    this.indicatorLengthPercentage = 100;
-
-    // Percentage values
-    this.centerIndicatorPercentage = 0;
-    this.radiusOuterPercentage = 100;
-    this.radiusInnerPercentage = 100;
-    this.widthOuterCirclePercentage = 100;
-    this.widthInnerCirclePercentage = 100;
-    this.lineThicknessPercentage = 100;
 
     // Haptic feedback configuration
     this.hapticFeedbackEnabled = true;
@@ -62,28 +53,8 @@ export class DialSelector extends HTMLElement {
 
   static get observedAttributes() {
     return [
-      'color-indicator',
-      'color-selection',
       'options',
-      'onchange',
-      'indicator-rainbow',
-      'indicator-gradient',
-      'length-indicator',
-      'center-indicator',
-      'radius-inner',
-      'color-inner-circle',
-      'color-outer-circle',
-      'width-inner-circle',
-      'radius-outer',
-      'width-outer-circle',
-      'line-thickness',
-      'time-selection-delay',
-      'font-size',
-      'font-family',
-      'width',
-      'height',
       'default-option',
-      'cursor',
       'haptic-feedback',
       'haptic-duration',
     ];
@@ -94,20 +65,6 @@ export class DialSelector extends HTMLElement {
     this.OPTIONS = optionsAttr ? optionsAttr.split(',').map((opt) => opt.trim()) : DEFAULT_OPTIONS;
 
     this.setDefaultOption();
-
-    this.updateIndicatorColor();
-    this.updateIndicatorGradient();
-    this.updateSelectionColor();
-    this.updateLineThickness();
-    this.updateIndicatorLength();
-    this.updateCenterIndicator();
-    this.updateKnobSize();
-    this.updateSelectionDelay();
-    this.updateFontSize();
-    this.updateFontFamily();
-    this.updateCursor();
-    this.updateWidth();
-    this.updateHeight();
     this.updateHapticFeedback();
     this.updateHapticDuration();
     this.buildDOM();
@@ -163,60 +120,6 @@ export class DialSelector extends HTMLElement {
 
   handleAttributeChange({ name, oldValue, newValue }) {
     switch (name) {
-      case 'color-indicator':
-        this.updateIndicatorColor();
-        break;
-
-      case 'indicator-rainbow':
-      case 'indicator-gradient':
-        this.updateIndicatorGradient();
-        break;
-
-      case 'color-selection':
-        this.updateSelectionColor();
-        break;
-
-      case 'length-indicator':
-        this.updateIndicatorLength();
-        break;
-
-      case 'center-indicator':
-        this.updateCenterIndicator();
-        break;
-
-      case 'radius-inner':
-      case 'color-inner-circle':
-      case 'color-outer-circle':
-      case 'width-inner-circle':
-      case 'radius-outer':
-      case 'width-outer-circle':
-        this.updateKnobSize();
-        break;
-
-      case 'line-thickness':
-        this.updateLineThickness();
-        break;
-
-      case 'time-selection-delay':
-        this.updateSelectionDelay();
-        break;
-
-      case 'font-size':
-        this.updateFontSize();
-        break;
-
-      case 'font-family':
-        this.updateFontFamily();
-        break;
-
-      case 'width':
-        this.updateWidth();
-        break;
-
-      case 'height':
-        this.updateHeight();
-        break;
-
       case 'options':
         if (this.isInitialized) {
           this.classList.add('no-transitions');
@@ -238,9 +141,6 @@ export class DialSelector extends HTMLElement {
         }
         break;
 
-      case 'onchange':
-        break;
-
       case 'default-option':
         if (!this.isInitialized) {
           this.setDefaultOption();
@@ -248,10 +148,6 @@ export class DialSelector extends HTMLElement {
             this.updateSelector();
           }
         }
-        break;
-
-      case 'cursor':
-        this.updateCursor();
         break;
 
       case 'haptic-feedback':

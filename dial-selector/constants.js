@@ -41,14 +41,3 @@ export const FULL_CIRCLE_DEGREES = 360;
 
 // Default options
 export const DEFAULT_OPTIONS = ['PHONO-2', 'PHONO-1', 'TUNER', 'AUX', 'CD', 'TAPE', 'STREAM', 'TV'];
-
-// Rainbow gradient colors
-export const RAINBOW_COLORS = [
-  'oklch(62.8% 0.258 29.2)', // Red
-  'oklch(75.5% 0.212 70.5)', // Orange
-  'oklch(96.8% 0.211 109.8)', // Yellow
-  'oklch(86.6% 0.295 142.5)', // Green
-  'oklch(45.2% 0.313 264.1)', // Blue
-  'oklch(30.8% 0.159 301.4)', // Indigo
-  'oklch(47.2% 0.233 308.3)', // Violet
-];
