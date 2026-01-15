@@ -31,7 +31,8 @@ XP Theme - Dial Selector (Public API)
   --dial-selector-label-font-weight: 700;
   --dial-selector-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
   --dial-selector-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
-  --dial-selector-label-hover-padding: 0.45rem 0.25rem;
+  --dial-selector-label-hover-padding-block: 0.45rem;
+  --dial-selector-label-hover-padding-inline: 0.25rem;
   --dial-selector-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
   --dial-selector-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
     0 2px 4px var(--xp-black-20);

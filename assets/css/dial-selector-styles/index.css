@@ -6,19 +6,19 @@
 /* Import order matters! */
 
 /* 1. Variables first - foundation for all styles (includes responsive scaling) */
-@import './variables.css';
+@import url('./variables.css');
 
 /* 2. Base component styles */
-@import './component.css';
+@import url('./component.css');
 
 /* 3. Layout and grid structure */
-@import './layout.css';
+@import url('./layout.css');
 
 /* 4. Knob and indicator */
-@import './knob.css';
+@import url('./knob.css');
 
 /* 5. Labels and text */
-@import './labels.css';
+@import url('./labels.css');
 
 /* 6. Lines and SVG elements */
-@import './lines.css';
+@import url('./lines.css');

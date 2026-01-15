@@ -90,7 +90,9 @@ TERMINAL Theme - Common Variables
   --header-name-font-size: 2.5rem;
   --header-name-line-height: 1.3;
   --header-name-border-color: var(--terminal-border-dark);
-  --printlink-border: 2px solid var(--text-color);
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--text-color);
   --printlink-background-color: var(--terminal-button-bg);
   --printlink-position: relative;
   --printlink-transition: all 0.15s ease;
@@ -149,7 +151,9 @@ TERMINAL Theme - Common Variables
   --printlink-box-shadow: var(--terminal-inset-raised-lg);
   --printlink-text-transform: uppercase;
   --printlink-letter-spacing: 0.1em;
-  --printlink-border: 2px solid var(--terminal-border-dark);
+  --printlink-border-width: 2px;
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--terminal-border-dark);
 
   /* Consolidated inset border patterns for 3D effects */
   --terminal-inset-raised-lg: inset 2px 2px 0 var(--terminal-border-light, var(--color-white)),

@@ -59,7 +59,9 @@
   box-sizing: border-box;
 
   /* Borders */
-  border: var(--list-border);
+  border-width: var(--list-border-width);
+  border-style: var(--list-border-style);
+  border-color: var(--list-border-color);
   border-radius: var(--list-border-radius);
 
   /* Background */
@@ -199,7 +201,9 @@
   box-sizing: border-box;
 
   /* Borders */
-  border: var(--list-border);
+  border-width: var(--list-border-width);
+  border-style: var(--list-border-style);
+  border-color: var(--list-border-color);
   border-radius: var(--list-border-radius);
 
   /* Background */

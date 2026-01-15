@@ -76,6 +76,7 @@ export class DialSelector extends HTMLElement {
       'width-inner-circle',
       'radius-outer',
       'width-outer-circle',
+      'line-thickness',
       'time-selection-delay',
       'font-size',
       'font-family',
@@ -190,6 +191,10 @@ export class DialSelector extends HTMLElement {
       case 'radius-outer':
       case 'width-outer-circle':
         this.updateKnobSize();
+        break;
+
+      case 'line-thickness':
+        this.updateLineThickness();
         break;
 
       case 'time-selection-delay':

@@ -2,10 +2,11 @@
 XP Theme - Light Mode
 =========================== */
 
-/* Light Mode */
+/* This theme only declares values that differ from base defaults.
+   See base-styles/variables/base.css for default values. */
+
 :root[data-theme='xp'][data-mode='light'] {
   --background-color: var(--color-blue-steel);
-  --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --dial-selector-color-ink: var(--color-blue-dark);
   --dial-selector-color-line: var(--color-blue-dark);

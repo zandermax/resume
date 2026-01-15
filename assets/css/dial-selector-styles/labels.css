@@ -124,7 +124,8 @@ dial-selector {
 
     &:not(.active):hover > span {
       /* Display/Box Model */
-      padding: var(--ds-label-hover-padding);
+      padding-block: var(--ds-label-hover-padding-block);
+      padding-inline: var(--ds-label-hover-padding-inline);
 
       /* Borders */
       border-width: var(--ds-label-hover-border-width);
@@ -154,6 +155,11 @@ dial-selector {
     /* ========================================================================
        ACTIVE STATE
        ======================================================================== */
+
+    &.active {
+      /* Visual Effects */
+      box-shadow: var(--ds-label-active-box-shadow);
+    }
 
     &.active > span {
       /* Display/Box Model */

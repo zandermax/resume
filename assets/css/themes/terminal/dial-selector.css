@@ -30,7 +30,8 @@ TERMINAL Theme - Dial Selector Styles
   /* Dial selector hover/active states */
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
   --dial-selector-label-hover-background: var(--terminal-button-bg);
-  --dial-selector-label-hover-padding: 0rem 0.5rem;
+  --dial-selector-label-hover-padding-block: 0rem;
+  --dial-selector-label-hover-padding-inline: 0.5rem;
   --dial-selector-label-hover-box-shadow: var(--terminal-inset-raised-sm);
   --dial-selector-label-active-background: var(--terminal-title-bg);
   --dial-selector-label-active-box-shadow: var(--terminal-inset-sunken-sm);

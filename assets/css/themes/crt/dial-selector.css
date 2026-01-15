@@ -48,7 +48,8 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-hover-border-style: solid;
   --dial-selector-label-hover-border-color: currentColor;
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
-  --dial-selector-label-hover-padding: 0rem 0.5rem;
+  --dial-selector-label-hover-padding-block: 0rem;
+  --dial-selector-label-hover-padding-inline: 0.5rem;
 
   /* Labels - Active State */
   --dial-selector-label-active-span-padding-block: 0.25rem;

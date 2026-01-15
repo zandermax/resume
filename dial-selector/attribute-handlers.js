@@ -60,6 +60,14 @@ export const AttributeHandlers = {
     this.updateColorProperty('color-selection', '--ds-color-selection');
   },
 
+  updateLineThickness() {
+    const lineThickness = this.getAttribute('line-thickness');
+    this.lineThicknessPercentage = this.parsePercentageAttr(lineThickness);
+    if (this.isInitialized) {
+      this.updateDimensions();
+    }
+  },
+
   updateIndicatorLength() {
     const lengthIndicator = this.getAttribute('length-indicator');
     this.indicatorLengthPercentage = this.parsePercentageAttr(lengthIndicator);

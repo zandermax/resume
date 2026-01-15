@@ -37,8 +37,11 @@
 
 :root {
   /* ============================================
-     CORE COLORS
-     Base color palette for all elements
+     CORE COLORS - Global Defaults
+
+     NOTE: These are the default values for all themes.
+     Theme files should ONLY override values that differ.
+     Do NOT restate these defaults in theme files.
      ============================================ */
 
   --border-color: var(--color-black);

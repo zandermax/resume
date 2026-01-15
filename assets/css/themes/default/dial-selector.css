@@ -8,6 +8,7 @@ DEFAULT Theme - Dial Selector
   --dial-selector-label-hover-background: var(--dial-selector-color-ink);
   --dial-selector-label-hover-opacity: 0.7;
   --dial-selector-label-hover-transform: translateY(-1px);
-  --dial-selector-label-hover-padding: clamp(4px, 1vw, 8px) clamp(0px, 0.5vw, 3px);
+  --dial-selector-label-hover-padding-block: clamp(4px, 1vw, 8px);
+  --dial-selector-label-hover-padding-inline: clamp(0px, 0.5vw, 3px);
 
 }

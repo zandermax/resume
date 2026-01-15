@@ -196,7 +196,9 @@ SKEUOMORPH Theme - Base Variables
 
   --printlink-background-image: var(--metal-gradient);
   --printlink-color: var(--print-button-text-color, var(--ink-color));
-  --printlink-border: 3px solid var(--stitch-color);
+  --printlink-border-width: 3px;
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--stitch-color);
   --printlink-box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
     inset 0 -2px 4px var(--skeu-black-30);
   --printlink-text-shadow: 0 1px 0 var(--skeu-white-30);

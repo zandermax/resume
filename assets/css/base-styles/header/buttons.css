@@ -38,7 +38,9 @@
       padding-inline: var(--printlink-padding-inline);
 
       /* Borders */
-      border: var(--printlink-border);
+      border-width: var(--printlink-border-width);
+      border-style: var(--printlink-border-style);
+      border-color: var(--printlink-border-color);
       border-radius: var(--printlink-border-radius);
 
       /* Background */
@@ -112,7 +114,9 @@
       padding-inline: var(--printlink-padding-inline);
 
       /* Borders */
-      border: var(--printlink-border);
+      border-width: var(--printlink-border-width);
+      border-style: var(--printlink-border-style);
+      border-color: var(--printlink-border-color);
       border-radius: var(--printlink-border-radius);
 
       /* Background */

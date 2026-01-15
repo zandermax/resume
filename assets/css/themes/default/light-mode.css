@@ -2,22 +2,16 @@
 DEFAULT Theme - Light Mode
 =========================== */
 
-/* Light Mode */
+/* This theme only declares values that differ from base defaults.
+   See base-styles/variables/base.css for default values. */
+
 :root[data-theme='default'][data-mode='light'] {
-  --background-color: var(--color-white);
-  --text-color: var(--color-black);
-  --heading-color: var(--color-black);
-  --border-color: var(--color-black);
-  --dial-selector-color-ink: var(--color-black);
-  --dial-selector-color-selection: var(--color-red-crimson);
-  --dial-selector-color-indicator: var(--color-red-crimson);
-  --link-color: var(--color-black);
-  --link-visited-color: var(--color-purple-link);
-  --accent-color: var(--color-red-crimson);
   --dial-selector-color-knob-background: var(--color-dark-knob);
   --printlink-background-color: var(--color-black);
   --printlink-color: var(--color-white);
-  --printlink-border: var(--border-width-normal) solid var(--color-black);
+  --printlink-border-width: var(--border-width-normal);
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--color-black);
   --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
   --printlink-hover-background-color: var(--color-red-crimson);
   --printlink-hover-outline-color: var(--color-red-crimson);

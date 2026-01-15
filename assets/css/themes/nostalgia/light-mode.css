@@ -25,7 +25,9 @@ Nostalgia Theme - Light Mode
     var(--nostalgia-yellow) 100%
   );
   --printlink-color: var(--nostalgia-white);
-  --printlink-border: var(--border-width-extra-thick) outset var(--nostalgia-magenta);
+  --printlink-border-width: var(--border-width-extra-thick);
+  --printlink-border-style: outset;
+  --printlink-border-color: var(--nostalgia-magenta);
   --printlink-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
   --printlink-box-shadow: 0 6px 0 var(--nostalgia-dark-pink), 0 8px 15px oklch(0% 0 0 / 0.3);
 

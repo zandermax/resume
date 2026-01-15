@@ -52,7 +52,9 @@
   gap: var(--skills-grid-gap);
 
   /* Borders */
-  border: var(--skills-grid-border);
+  border-width: var(--skills-grid-border-width);
+  border-style: var(--skills-grid-border-style);
+  border-color: var(--skills-grid-border-color);
   border-radius: var(--skills-grid-border-radius);
 
   /* Background */
@@ -79,7 +81,9 @@
     display: var(--skills-grid-before-display);
 
     /* Borders */
-    border: var(--skills-grid-before-border);
+    border-width: var(--skills-grid-before-border-width);
+    border-style: var(--skills-grid-before-border-style);
+    border-color: var(--skills-grid-before-border-color);
     border-radius: var(--skills-grid-before-border-radius);
 
     /* Background */
@@ -106,7 +110,9 @@
     box-sizing: border-box;
 
     /* Borders */
-    border: var(--skills-group-border);
+    border-width: var(--skills-group-border-width);
+    border-style: var(--skills-group-border-style);
+    border-color: var(--skills-group-border-color);
     border-radius: var(--skills-group-border-radius);
 
     /* Background */

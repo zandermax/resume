@@ -66,7 +66,9 @@ body[data-theme='web2gloss'] {
   --dial-selector-housing-padding-block: 1.5rem;
   --dial-selector-housing-padding-inline: 1.5rem;
   --dial-selector-housing-background: oklch(100% 0 0 / 0.2);
-  --dial-selector-housing-border: 1px solid oklch(100% 0 0 / 0.3);
+  --dial-selector-housing-border-width: 1px;
+  --dial-selector-housing-border-style: solid;
+  --dial-selector-housing-border-color: oklch(100% 0 0 / 0.3);
   --dial-selector-housing-border-radius: var(--web2-radius-lg);
   --dial-selector-housing-box-shadow: inset 0 1px 3px oklch(0% 0 0 / 0.1), inset 0 -1px 0 oklch(100% 0 0 / 0.3);
 

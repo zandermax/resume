@@ -11,13 +11,14 @@
  * RELATED FILES:
  *   - header/buttons.css (applies printlink variables and contains link styles)
  *
- * VARIABLES DEFINED: 48 printlink-specific variables controlling:
- *   - Printlink base styles (border shorthand, padding, font, colors)
+ * VARIABLES DEFINED: 50 printlink-specific variables controlling:
+ *   - Printlink base styles (border longhand, padding, font, colors)
  *   - Printlink hover/active states
  *   - Printlink pseudo-elements
  *   - Printlink responsive overrides
  *
- * NOTE: Border uses shorthand property only (--printlink-border).
+ * NOTE: Border uses longhand properties (--printlink-border-width/style/color) for
+ *       maximum flexibility in theme overrides.
  */
 
 :root {
@@ -31,7 +32,9 @@
   --printlink-margin-block-end: 1rem;
 
   /* Borders */
-  --printlink-border: none;
+  --printlink-border-width: 0;
+  --printlink-border-style: solid;
+  --printlink-border-color: transparent;
   --printlink-border-radius: 0;
 
   /* Background */

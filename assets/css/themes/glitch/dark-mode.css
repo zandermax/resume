@@ -6,10 +6,12 @@
   /* Base colors */
   --color-white: oklch(100% 0 0);
   --color-black: oklch(0% 0 0);
-  --color-gray-darkest: oklch(4.7% 0 0); /* #0a0a0a */
-  --color-gray-darker: oklch(8.3% 0 0); /* #111111 */
-  --color-gray-dark: oklch(13% 0 0); /* #1a1a1a */
-  --color-gray-medium: oklch(83% 0 0); /* #cccccc */
+  
+  /* Glitch theme-specific colors */
+  --glitch-bg-darkest: oklch(4.7% 0 0); /* #0a0a0a */
+  --glitch-bg-darker: oklch(8.3% 0 0); /* #111111 */
+  --glitch-knob-bg: oklch(13% 0 0); /* #1a1a1a */
+  --glitch-visited-link: oklch(83% 0 0); /* #cccccc */
 
   /* Theme mappings */
   --background-color: var(--color-black);
@@ -18,11 +20,11 @@
   --border-color: var(--color-white);
   --dial-selector-color-ink: var(--color-white);
   --dial-selector-color-selection: var(--color-white);
-  --dial-selector-color-knob-background: var(--color-gray-dark);
+  --dial-selector-color-knob-background: var(--glitch-knob-bg);
   --link-color: var(--color-white);
-  --link-visited-color: var(--color-gray-medium);
-  --section-bg: var(--color-gray-darkest);
-  --header-background-color: var(--color-gray-darker);
+  --link-visited-color: var(--glitch-visited-link);
+  --section-bg: var(--glitch-bg-darkest);
+  --header-background-color: var(--glitch-bg-darker);
   --accent-color: var(--color-white);
 
   /* Dark mode scan lines (different from light mode) */

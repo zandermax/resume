@@ -103,7 +103,9 @@
   --resume-main-after-position: static;
   --resume-main-after-inset: auto;
   --resume-main-after-background: transparent;
-  --resume-main-after-border: none;
+  --resume-main-after-border-width: 0;
+  --resume-main-after-border-style: solid;
+  --resume-main-after-border-color: transparent;
   --resume-main-after-border-radius: 0;
   --resume-main-after-opacity: 1;
   --resume-main-after-z-index: auto;
@@ -167,7 +169,9 @@
   --resume-header-before-left: auto;
   --resume-header-before-width: auto;
   --resume-header-before-height: auto;
-  --resume-header-before-border: none;
+  --resume-header-before-border-width: 0;
+  --resume-header-before-border-style: solid;
+  --resume-header-before-border-color: transparent;
   --resume-header-before-background: transparent;
   --resume-header-before-opacity: 1;
   --resume-header-before-pointer-events: auto;

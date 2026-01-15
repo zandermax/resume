@@ -76,7 +76,8 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-label-hover-background: var(--accent-color);
   --dial-selector-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
   --dial-selector-label-hover-box-shadow: 4px 4px 0 var(--border-color);
-  --dial-selector-label-hover-padding: var(--spacing-xs) var(--spacing-md);
+  --dial-selector-label-hover-padding-block: var(--spacing-xs);
+  --dial-selector-label-hover-padding-inline: var(--spacing-md);
 
   /* Responsive overrides */
   @media (max-width: 768px) {

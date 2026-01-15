@@ -39,7 +39,9 @@
     padding-inline-end: var(--dial-selector-housing-padding-inline-end);
 
     /* Borders */
-    border: var(--dial-selector-housing-border);
+    border-width: var(--dial-selector-housing-border-width);
+    border-style: var(--dial-selector-housing-border-style);
+    border-color: var(--dial-selector-housing-border-color);
     border-radius: var(--dial-selector-housing-border-radius);
 
     /* Background */
@@ -63,7 +65,9 @@
       height: var(--dial-selector-housing-before-height);
 
       /* Borders */
-      border: var(--dial-selector-housing-before-border);
+      border-width: var(--dial-selector-housing-before-border-width);
+      border-style: var(--dial-selector-housing-before-border-style);
+      border-color: var(--dial-selector-housing-before-border-color);
       border-radius: var(--dial-selector-housing-before-border-radius);
 
       /* Background */

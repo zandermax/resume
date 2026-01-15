@@ -14,7 +14,7 @@
  *   - header/dial-selectors.css (applies housing variables)
  *   - dial-selector-styles/variables.css (dial selector component internal variables)
  *
- * VARIABLES DEFINED: ~142 variables controlling:
+ * VARIABLES DEFINED: ~150 variables controlling:
  *   - Dial selector theme colors (7 variables)
  *   - Label styling (13 variables)
  *   - Label hover state (9 variables)
@@ -61,7 +61,7 @@
   --dial-selector-color-ink: var(--color-black);
   --dial-selector-color-selection: var(--color-red-crimson);
   --dial-selector-color-indicator: var(--color-red-crimson);
-  --dial-selector-color-line: var(--color-gray-400);
+  --dial-selector-color-line: var(--color-gray-muted);
   --dial-selector-color-knob-background: var(--color-dark-knob);
   --dial-selector-color-outer-circle: var(--dial-selector-color-ink); /* Defaults to ink color */
   --dial-selector-color-inner-circle: var(--dial-selector-color-ink); /* Defaults to ink color */
@@ -83,7 +83,8 @@
   --dial-selector-label-transition: none;
 
   /* --- Label Styling (Hover State) --- */
-  --dial-selector-label-hover-padding: inherit;
+  --dial-selector-label-hover-padding-block: 0;
+  --dial-selector-label-hover-padding-inline: 0;
   --dial-selector-label-hover-background: transparent;
   --dial-selector-label-hover-border-width: unset;
   --dial-selector-label-hover-border-style: unset;
@@ -217,13 +218,6 @@
      Container for dial selector component
      ============================================ */
 
-  /* --- Housing Spacing Properties (Shorthand) --- */
-  --dial-selector-housing-padding-block: 0;
-  --dial-selector-housing-padding-inline: 0;
-  --dial-selector-housing-margin-block: 0;
-  --dial-selector-housing-margin-inline: 0;
-  --dial-selector-housing-margin: 0; /* Full shorthand for margin */
-
   /* --- Housing Spacing Properties (Longhand) --- */
   --dial-selector-housing-padding-block-start: 0;
   --dial-selector-housing-padding-block-end: 0;
@@ -235,18 +229,16 @@
   --dial-selector-housing-margin-inline-end: 0;
 
   /* --- Housing Responsive Padding Overrides --- */
-  --dial-selector-housing-padding-responsive-768: var(--dial-selector-housing-padding-block)
-    var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-500: var(--dial-selector-housing-padding-block)
-    var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-480: var(--dial-selector-housing-padding-block)
-    var(--dial-selector-housing-padding-inline);
-  --dial-selector-housing-padding-responsive-380: var(--dial-selector-housing-padding-block)
-    var(--dial-selector-housing-padding-inline);
+  --dial-selector-housing-padding-responsive-768: 0;
+  --dial-selector-housing-padding-responsive-500: 0;
+  --dial-selector-housing-padding-responsive-480: 0;
+  --dial-selector-housing-padding-responsive-380: 0;
 
   /* --- Housing Visual Properties --- */
   --dial-selector-housing-background: transparent;
-  --dial-selector-housing-border: none;
+  --dial-selector-housing-border-width: 0;
+  --dial-selector-housing-border-style: solid;
+  --dial-selector-housing-border-color: transparent;
   --dial-selector-housing-border-radius: 0;
   --dial-selector-housing-box-shadow: none;
   --dial-selector-housing-position: relative;
@@ -283,7 +275,9 @@
   --dial-selector-housing-before-bottom: auto;
   --dial-selector-housing-before-left: auto;
   --dial-selector-housing-before-height: auto;
-  --dial-selector-housing-before-border: none;
+  --dial-selector-housing-before-border-width: 0;
+  --dial-selector-housing-before-border-style: solid;
+  --dial-selector-housing-before-border-color: transparent;
   --dial-selector-housing-before-border-radius: 0;
   --dial-selector-housing-before-background: transparent;
   --dial-selector-housing-before-opacity: 1;

@@ -234,7 +234,9 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* Print Link - Base */
   --printlink-background-color: var(--accent-color);
-  --printlink-border: var(--border-width-normal) solid var(--accent-color);
+  --printlink-border-width: var(--border-width-normal);
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--accent-color);
   --printlink-border-radius: 6px;
   --printlink-color: var(--color-white);
   --printlink-padding-block: var(--spacing-sm);

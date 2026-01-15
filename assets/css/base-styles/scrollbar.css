@@ -51,12 +51,16 @@ html:has(dialog[open]) {
 
   ::-webkit-scrollbar-track {
     background: var(--scrollbar-track-background);
-    border: var(--scrollbar-track-border);
+    border-width: var(--scrollbar-track-border-width);
+    border-style: var(--scrollbar-track-border-style);
+    border-color: var(--scrollbar-track-border-color);
   }
 
   ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-background);
-    border: var(--scrollbar-thumb-border);
+    border-width: var(--scrollbar-thumb-border-width);
+    border-style: var(--scrollbar-thumb-border-style);
+    border-color: var(--scrollbar-thumb-border-color);
 
     &:hover {
       background: var(--scrollbar-thumb-hover-background);
@@ -65,7 +69,9 @@ html:has(dialog[open]) {
 
   ::-webkit-scrollbar-button {
     background: var(--scrollbar-button-background);
-    border: var(--scrollbar-button-border);
+    border-width: var(--scrollbar-button-border-width);
+    border-style: var(--scrollbar-button-border-style);
+    border-color: var(--scrollbar-button-border-color);
     height: var(--scrollbar-button-height);
     width: var(--scrollbar-button-width);
   }

@@ -256,7 +256,9 @@
   --section-title-before-display: none;
   --section-title-before-position: static;
   --section-title-before-inset: auto;
-  --section-title-before-border: none;
+  --section-title-before-border-width: 0;
+  --section-title-before-border-style: solid;
+  --section-title-before-border-color: transparent;
   --section-title-before-border-radius: 0;
   --section-title-before-background: transparent;
   --section-title-before-font-size: inherit;

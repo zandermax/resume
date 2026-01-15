@@ -2,14 +2,13 @@
 METRO Theme - Light Mode
 =========================== */
 
-/* Light Mode */
+/* This theme only declares values that differ from base defaults.
+   See base-styles/variables/base.css for default values. */
+
 :root[data-theme='metro'][data-mode='light'] {
-  --background-color: var(--color-white);
   --header-background-color: var(--color-white);
-  --text-color: var(--color-black);
   --heading-color: var(--color-white);
   --border-color: var(--color-blue-metro);
-  --dial-selector-color-ink: var(--color-black);
   --dial-selector-color-selection: var(--color-blue-metro);
   --dial-selector-color-indicator: var(--color-blue-metro);
   --dial-selector-color-knob-background: oklch(96% 0 0); /* Light gray */

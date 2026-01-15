@@ -52,7 +52,9 @@
   --skills-grid-gap: var(--spacing-md);
 
   /* Borders */
-  --skills-grid-border: var(--border-width-thick) solid var(--border-color);
+  --skills-grid-border-width: var(--border-width-thick);
+  --skills-grid-border-style: solid;
+  --skills-grid-border-color: var(--border-color);
   --skills-grid-border-radius: 0;
 
   /* Background */
@@ -79,7 +81,9 @@
   --skills-grid-before-display: none;
 
   /* Borders */
-  --skills-grid-before-border: none;
+  --skills-grid-before-border-width: 0;
+  --skills-grid-before-border-style: solid;
+  --skills-grid-before-border-color: transparent;
   --skills-grid-before-border-radius: 0;
 
   /* Background */
@@ -102,7 +106,9 @@
   --skills-group-margin-block-end: 0;
 
   /* Borders */
-  --skills-group-border: var(--border-width-thin) solid var(--border-color);
+  --skills-group-border-width: var(--border-width-thin);
+  --skills-group-border-style: solid;
+  --skills-group-border-color: var(--border-color);
   --skills-group-border-radius: 0;
 
   /* Background */

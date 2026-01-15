@@ -173,12 +173,18 @@
   --scrollbar-width: auto;
   --scrollbar-height: auto;
   --scrollbar-track-background: transparent;
-  --scrollbar-track-border: none;
+  --scrollbar-track-border-width: 0;
+  --scrollbar-track-border-style: solid;
+  --scrollbar-track-border-color: transparent;
   --scrollbar-thumb-background: transparent;
-  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-border-width: 0;
+  --scrollbar-thumb-border-style: solid;
+  --scrollbar-thumb-border-color: transparent;
   --scrollbar-thumb-hover-background: transparent;
   --scrollbar-button-background: transparent;
-  --scrollbar-button-border: none;
+  --scrollbar-button-border-width: 0;
+  --scrollbar-button-border-style: solid;
+  --scrollbar-button-border-color: transparent;
   --scrollbar-button-height: auto;
   --scrollbar-button-width: auto;
 

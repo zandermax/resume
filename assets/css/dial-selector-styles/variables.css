@@ -3,18 +3,18 @@
    =========================== */
 
 /* ===========================
-   DEFAULT COLOR DEFINITIONS
-   Root-level defaults that can be overridden by themes
-   =========================== */
-:root {
-  /* Default dial selector colors */
-  --dial-selector-color-ink-default: oklch(96% 0 0);
-  --dial-selector-color-highlight-default: oklch(58% 0.22 25);
-  --dial-selector-color-line-default: oklch(80% 0.02 75);
-}
-
-/* ===========================
    DIAL SELECTOR COMPONENT VARIABLES
+
+   Property order within each section follows CSS property hierarchy:
+   1. Position (position, top, right, bottom, left, inset, z-index)
+   2. Display/Box Model (display, width, height, padding, margin)
+   3. Flex/Grid/Alignment
+   4. Borders (border-width, border-style, border-color, border-radius)
+   5. Background
+   6. Typography (font-*, color, text-*, letter-spacing)
+   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter, clip-path)
+   8. Transitions/Animations
+   9. Other (overflow, contain, pointer-events, will-change)
    =========================== */
 dial-selector {
   /* ===========================
@@ -25,11 +25,6 @@ dial-selector {
   --ds-color-selection: var(--dial-selector-color-selection);
   --ds-color-line: var(--dial-selector-color-line);
   --ds-color-indicator: var(--dial-selector-color-indicator);
-
-  /* Knob colors */
-  --ds-knob-background-color: var(--dial-selector-color-knob-background);
-
-  /* Circle colors - read from public API */
   --ds-color-outer-circle: var(--dial-selector-color-outer-circle);
   --ds-color-inner-circle: var(--dial-selector-color-inner-circle);
 
@@ -124,150 +119,256 @@ dial-selector {
   --ds-component-min-width: calc((var(--ds-knob-size) * 2.5) + (var(--ds-gap) * 2));
 
   /* ===========================
-     KNOB STYLING
-     Base knob appearance - reads from public API
+     TIMING & DELAYS
      =========================== */
+  --ds-time-selection-delay: 0s;
+
+  /* ===========================
+     KNOB STYLING
+     Properties follow CSS property order
+     =========================== */
+
+  /* Borders */
   --ds-knob-border-width: var(--dial-selector-knob-border-width);
   --ds-knob-border-style: var(--dial-selector-knob-border-style);
   --ds-knob-border-color: var(--dial-selector-knob-border-color);
   --ds-knob-border-radius: var(--dial-selector-knob-border-radius);
-  --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow);
+
+  /* Background */
+  --ds-knob-background-color: var(--dial-selector-color-knob-background);
   --ds-knob-background-image: var(--dial-selector-knob-background-image);
+
+  /* Visual Effects */
+  --ds-knob-box-shadow: var(--dial-selector-knob-box-shadow);
   --ds-knob-filter: var(--dial-selector-knob-filter);
   --ds-knob-clip-path: var(--dial-selector-knob-clip-path);
+
+  /* Transitions/Animations */
   --ds-knob-animation: var(--dial-selector-knob-animation);
+
+  /* Other */
   --ds-knob-will-change: var(--dial-selector-knob-will-change);
 
-  /* Knob decorative element (::after) - reads from public API */
-  --ds-knob-after-content: var(--dial-selector-knob-after-content);
-  --ds-knob-after-display: var(--dial-selector-knob-after-display);
+  /* ===========================
+     KNOB PSEUDO-ELEMENT (::after)
+     Properties follow CSS property order
+     =========================== */
+
+  /* Position */
   --ds-knob-after-position: var(--dial-selector-knob-after-position);
   --ds-knob-after-inset: var(--dial-selector-knob-after-inset);
+
+  /* Display/Box Model */
+  --ds-knob-after-display: var(--dial-selector-knob-after-display);
+  --ds-knob-after-content: var(--dial-selector-knob-after-content);
+
+  /* Borders */
   --ds-knob-after-border-radius: var(--dial-selector-knob-after-border-radius);
+
+  /* Background */
   --ds-knob-after-background: var(--dial-selector-knob-after-background);
+
+  /* Other */
   --ds-knob-after-pointer-events: var(--dial-selector-knob-after-pointer-events);
 
   /* ===========================
      INDICATOR STYLING
-     The pointer/indicator on the knob - reads from public API
+     Properties follow CSS property order
      =========================== */
-  --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
-  --ds-indicator-gradient: var(--dial-selector-indicator-gradient);
+
+  /* Borders */
   --ds-indicator-border-width: var(--dial-selector-indicator-border-width);
   --ds-indicator-border-style: var(--dial-selector-indicator-border-style);
   --ds-indicator-border-color: var(--dial-selector-indicator-border-color);
   --ds-indicator-border-radius: var(--dial-selector-indicator-border-radius);
+
+  /* Background */
+  --ds-indicator-gradient: var(--dial-selector-indicator-gradient);
+
+  /* Visual Effects */
+  --ds-indicator-angle: 0deg; /* Dynamic - updated by JS */
   --ds-indicator-box-shadow: var(--dial-selector-indicator-box-shadow);
+
+  /* Transitions/Animations */
   --ds-indicator-animation: var(--dial-selector-indicator-animation);
+
+  /* Other */
   --ds-indicator-will-change: var(--dial-selector-indicator-will-change);
 
   /* ===========================
      SPOKE LINES
-     Radial lines connecting to labels - reads from public API
+     Properties follow CSS property order
      =========================== */
 
-  /* Base line properties - read from public API */
+  /* Default line filters (can be overridden by themes) */
+  --dial-selector-line-filter: none;
+  --dial-selector-line-filter-active: none;
+
+  /* Display/Box Model */
   --ds-line-width: var(--dial-selector-line-width);
-  --ds-line-opacity: var(--dial-selector-line-opacity);
-  --ds-line-opacity-active: var(--dial-selector-line-opacity-active);
-  --ds-line-opacity-alternate: var(--dial-selector-line-opacity-alternate); /* For nth-of-type(even) styling */
+
+  /* Background (SVG stroke) */
   --ds-line-stroke: var(--dial-selector-line-stroke);
   --ds-line-active-stroke: var(--ds-color-selection);
-  --ds-line-filter: var(--dial-selector-line-filter, none);
-  --ds-line-filter-active: var(--dial-selector-line-filter-active, none);
+
+  /* Visual Effects */
+  --ds-line-opacity: var(--dial-selector-line-opacity);
+  --ds-line-opacity-active: var(--dial-selector-line-opacity-active);
+  --ds-line-opacity-alternate: var(--dial-selector-line-opacity-alternate);
+  --ds-line-filter: var(--dial-selector-line-filter);
+  --ds-line-filter-active: var(--dial-selector-line-filter-active);
+
   /* ===========================
-     LABEL STYLING
-     Base label appearance - reads from public API
+     LABEL BASE STYLING
+     Properties follow CSS property order
      =========================== */
-  --ds-label-font-family: var(--ds-font-family);
-  --ds-label-font-weight: var(--dial-selector-label-font-weight);
-  --ds-label-color: var(--dial-selector-label-color);
-  --ds-label-text-shadow: var(--dial-selector-label-text-shadow);
-  --ds-label-box-shadow: var(--dial-selector-label-box-shadow);
-  --ds-label-letter-spacing: var(--dial-selector-label-letter-spacing);
-  --ds-label-text-transform: var(--dial-selector-label-text-transform);
-  --ds-label-transition: var(--dial-selector-label-transition);
-  --ds-label-animation: var(--dial-selector-label-animation);
-  --ds-label-contain: var(--dial-selector-label-contain);
-  --ds-label-will-change: var(--dial-selector-label-will-change);
 
-  /* Label sizing - read from public API */
-  --ds-label-font-size: var(--dial-selector-label-font-size);
-
-  /* Label box model - read from public API */
+  /* Display/Box Model */
   --ds-label-padding: var(--dial-selector-label-padding);
+
+  /* Borders */
   --ds-label-border-width: var(--dial-selector-label-border-width);
   --ds-label-border-style: var(--dial-selector-label-border-style);
   --ds-label-border-color: var(--dial-selector-label-border-color);
   --ds-label-border-radius: var(--dial-selector-label-border-radius);
+
+  /* Background */
   --ds-label-background: var(--dial-selector-label-background);
 
+  /* Typography */
+  --ds-label-font-family: var(--ds-font-family);
+  --ds-label-font-size: var(--dial-selector-label-font-size);
+  --ds-label-font-weight: var(--dial-selector-label-font-weight);
+  --ds-label-color: var(--dial-selector-label-color);
+  --ds-label-text-transform: var(--dial-selector-label-text-transform);
+  --ds-label-letter-spacing: var(--dial-selector-label-letter-spacing);
+
+  /* Visual Effects */
+  --ds-label-box-shadow: var(--dial-selector-label-box-shadow);
+  --ds-label-text-shadow: var(--dial-selector-label-text-shadow);
+
+  /* Transitions/Animations */
+  --ds-label-transition: var(--dial-selector-label-transition);
+  --ds-label-animation: var(--dial-selector-label-animation);
+
+  /* Other */
+  --ds-label-contain: var(--dial-selector-label-contain);
+  --ds-label-will-change: var(--dial-selector-label-will-change);
+
   /* ===========================
-     LABEL SPAN STYLING
-     Inner text element styling - reads from public API
+     LABEL SPAN (Inner Text Element)
+     Properties follow CSS property order
      =========================== */
+
+  /* Display/Box Model */
   --ds-label-span-display: var(--dial-selector-label-span-display);
-  --ds-label-span-font-weight: var(--dial-selector-label-span-font-weight);
-  --ds-label-span-font-size: var(--dial-selector-label-span-font-size);
-  --ds-label-span-color: var(--dial-selector-label-span-color);
   --ds-label-span-padding-block: var(--dial-selector-label-span-padding-block);
   --ds-label-span-padding-inline: var(--dial-selector-label-span-padding-inline);
+
+  /* Borders */
   --ds-label-span-border-width: var(--dial-selector-label-span-border-width);
   --ds-label-span-border-style: var(--dial-selector-label-span-border-style);
   --ds-label-span-border-color: var(--dial-selector-label-span-border-color);
   --ds-label-span-border-radius: var(--dial-selector-label-span-border-radius);
+
+  /* Background */
   --ds-label-span-background: var(--dial-selector-label-span-background);
+
+  /* Typography */
+  --ds-label-span-font-size: var(--dial-selector-label-span-font-size);
+  --ds-label-span-font-weight: var(--dial-selector-label-span-font-weight);
+  --ds-label-span-color: var(--dial-selector-label-span-color);
+  --ds-label-span-text-transform: var(--dial-selector-label-span-text-transform);
+  --ds-label-span-letter-spacing: var(--dial-selector-label-span-letter-spacing);
+
+  /* Visual Effects */
   --ds-label-span-box-shadow: var(--dial-selector-label-span-box-shadow);
   --ds-label-span-transform: var(--dial-selector-label-span-transform);
-  --ds-label-span-letter-spacing: var(--dial-selector-label-span-letter-spacing);
-  --ds-label-span-text-transform: var(--dial-selector-label-span-text-transform);
-  --ds-label-span-overflow: var(--dial-selector-label-span-overflow);
+
+  /* Transitions/Animations */
   --ds-label-span-transition: var(--dial-selector-label-span-transition);
 
+  /* Other */
+  --ds-label-span-overflow: var(--dial-selector-label-span-overflow);
+
   /* ===========================
-     LABEL STATES - HOVER - reads from public API
+     LABEL HOVER STATE
+     Properties follow CSS property order
      =========================== */
-  --ds-label-hover-color: var(--dial-selector-label-hover-color);
-  --ds-label-hover-opacity: var(--dial-selector-label-hover-opacity);
-  --ds-label-hover-text-shadow: var(--dial-selector-label-hover-text-shadow);
-  --ds-label-hover-padding: var(--dial-selector-label-hover-padding);
+
+  /* Display/Box Model */
+  --ds-label-hover-padding-block: var(--dial-selector-label-hover-padding-block);
+  --ds-label-hover-padding-inline: var(--dial-selector-label-hover-padding-inline);
+
+  /* Borders */
   --ds-label-hover-border-width: var(--dial-selector-label-hover-border-width);
   --ds-label-hover-border-style: var(--dial-selector-label-hover-border-style);
   --ds-label-hover-border-color: var(--dial-selector-label-hover-border-color);
+
+  /* Background */
   --ds-label-hover-background: var(--dial-selector-label-hover-background);
+
+  /* Typography */
+  --ds-label-hover-color: var(--dial-selector-label-hover-color);
+
+  /* Visual Effects */
   --ds-label-hover-box-shadow: var(--dial-selector-label-hover-box-shadow);
+  --ds-label-hover-text-shadow: var(--dial-selector-label-hover-text-shadow);
+  --ds-label-hover-opacity: var(--dial-selector-label-hover-opacity);
   --ds-label-hover-transform: var(--dial-selector-label-hover-transform);
   --ds-label-hover-filter: var(--dial-selector-label-hover-filter);
+
+  /* Transitions/Animations */
   --ds-label-hover-animation: var(--dial-selector-label-hover-animation);
+
+  /* Other */
   --ds-label-hover-will-change: var(--dial-selector-label-hover-will-change);
 
   /* ===========================
-     LABEL STATES - ACTIVE - reads from public API
+     LABEL ACTIVE STATE
+     Properties follow CSS property order
      =========================== */
-  --ds-label-active-color: var(--dial-selector-label-active-color);
-  --ds-label-active-text-shadow: var(--dial-selector-label-active-text-shadow);
+
+  /* Background */
   --ds-label-active-background: var(--dial-selector-label-active-background);
+
+  /* Typography */
+  --ds-label-active-color: var(--dial-selector-label-active-color);
+
+  /* Visual Effects */
   --ds-label-active-box-shadow: var(--dial-selector-label-active-box-shadow);
+  --ds-label-active-text-shadow: var(--dial-selector-label-active-text-shadow);
   --ds-label-active-filter: var(--dial-selector-label-active-filter);
+
+  /* Transitions/Animations */
   --ds-label-active-animation: var(--dial-selector-label-active-animation);
+
+  /* Other */
   --ds-label-active-will-change: var(--dial-selector-label-active-will-change);
 
-  /* Active span states - read from public API with responsive scaling applied */
-  --ds-label-active-span-font-weight: var(--dial-selector-label-active-span-font-weight);
+  /* ===========================
+     LABEL ACTIVE SPAN STATE
+     Properties follow CSS property order
+     Applies responsive scaling to padding
+     =========================== */
+
+  /* Display/Box Model */
   --ds-label-active-span-padding-block: calc(
     var(--dial-selector-label-active-span-padding-block) * var(--ds-responsive-scale)
   );
   --ds-label-active-span-padding-inline: calc(
     var(--dial-selector-label-active-span-padding-inline) * var(--ds-responsive-scale)
   );
+
+  /* Borders */
   --ds-label-active-span-border-width: var(--dial-selector-label-active-span-border-width);
   --ds-label-active-span-border-style: var(--dial-selector-label-active-span-border-style);
   --ds-label-active-span-border-color: var(--dial-selector-label-active-span-border-color);
+
+  /* Typography */
+  --ds-label-active-span-font-weight: var(--dial-selector-label-active-span-font-weight);
+
+  /* Visual Effects */
   --ds-label-active-span-box-shadow: var(--dial-selector-label-active-span-box-shadow);
   --ds-label-active-span-transform: var(--dial-selector-label-active-span-transform);
-
-  /* ===========================
-     TIMING & DELAYS
-     =========================== */
-  --ds-time-selection-delay: 0s;
 }

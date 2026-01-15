@@ -79,7 +79,9 @@
     height: var(--resume-header-before-height);
 
     /* Borders */
-    border: var(--resume-header-before-border);
+    border-width: var(--resume-header-before-border-width);
+    border-style: var(--resume-header-before-border-style);
+    border-color: var(--resume-header-before-border-color);
 
     /* Background */
     background: var(--resume-header-before-background);
@@ -282,7 +284,7 @@
 /* === IMPORT ADDITIONAL HEADER MODULES === */
 
 /* Dial selector housing and positioning */
-@import './dial-selectors.css';
+@import url('./dial-selectors.css');
 
 /* Print and save button styles */
-@import './buttons.css';
+@import url('./buttons.css');

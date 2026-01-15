@@ -2,11 +2,12 @@
 TERMINAL Theme - Light Mode
 =========================== */
 
+/* This theme only declares values that differ from base defaults.
+   See base-styles/variables/base.css for default values. */
+
 :root[data-theme='terminal'] {
   &[data-mode='light'] {
     --background-color: var(--color-blue-sky);
-    --text-color: var(--color-black);
-    --heading-color: var(--color-black);
     --link-color: var(--color-yellow);
     --link-visited-color: var(--color-cyan);
     --section-bg: var(--color-silver);

@@ -3,21 +3,17 @@ BRUTAL Theme - Light Mode
 High Contrast Brutalism
 =========================== */
 
+/* This theme only declares values that differ from base defaults.
+   See base-styles/variables/base.css for default values. */
+
 :root[data-theme='brutal'][data-mode='light'] {
   /* ==================== COLOR PALETTE ==================== */
 
-  /* Base colors */
-  --background-color: var(--color-white);
-  --text-color: var(--color-black);
+  /* Base color overrides */
   --heading-color: var(--color-white);
-  --border-color: var(--color-black);
 
   /* Link colors */
   --link-color: var(--color-white);
-  --link-visited-color: var(--color-purple-link);
-
-  /* Accent color */
-  --accent-color: var(--color-red-crimson);
 
   /* ==================== INVERTED ELEMENTS ==================== */
   /* Elements that should have white text on light mode */

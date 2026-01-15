@@ -113,7 +113,9 @@ h2.resume-section__title {
     display: var(--section-title-before-display);
 
     /* Borders */
-    border: var(--section-title-before-border);
+    border-width: var(--section-title-before-border-width);
+    border-style: var(--section-title-before-border-style);
+    border-color: var(--section-title-before-border-color);
     border-radius: var(--section-title-before-border-radius);
 
     /* Background */

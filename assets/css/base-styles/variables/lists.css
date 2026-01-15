@@ -70,7 +70,9 @@
   --list-padding: 0;
 
   /* Borders */
-  --list-border: 0;
+  --list-border-width: 0;
+  --list-border-style: solid;
+  --list-border-color: transparent;
   --list-border-radius: 0;
 
   /* Background */

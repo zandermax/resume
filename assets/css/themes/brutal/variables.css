@@ -294,7 +294,9 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   /* ==================== PRINT LINK ==================== */
 
   /* Print link - Base */
-  --printlink-border: 6px solid var(--background-color);
+  --printlink-border-width: 6px;
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--background-color);
   --printlink-background-color: var(--accent-color);
   --printlink-color: var(--color-white);
   --printlink-font-weight: 900;
@@ -326,7 +328,9 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
     var(--spacing-xl)
   );
   --dial-selector-housing-background: var(--background-color);
-  --dial-selector-housing-border: var(--border-width-extra-thick) solid var(--border-color);
+  --dial-selector-housing-border-width: var(--border-width-extra-thick);
+  --dial-selector-housing-border-style: solid;
+  --dial-selector-housing-border-color: var(--border-color);
   --dial-selector-housing-box-shadow: 8px 8px 0 var(--brutal-shadow-light);
   --dial-selector-housing-h3-margin-block-end: var(--spacing-md);
   --dial-selector-housing-h3-font-size: var(--spacing-lg);

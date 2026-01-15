@@ -199,7 +199,9 @@ Common properties for all modes
   --header-name-will-change: transform, text-shadow;
 
   /* Print link custom properties */
-  --printlink-border: var(--border-width-lg) solid var(--border-color);
+  --printlink-border-width: var(--border-width-lg);
+  --printlink-border-style: solid;
+  --printlink-border-color: var(--border-color);
   --printlink-background-color: var(--background-color);
   --printlink-color: var(--text-color);
   --printlink-font-weight: 700;
@@ -236,7 +238,9 @@ Common properties for all modes
   --list-position: relative;
 
   /* Resume header dial-selector custom properties */
-  --dial-selector-housing-border: var(--border-width-md) solid var(--border-color);
+  --dial-selector-housing-border-width: var(--border-width-md);
+  --dial-selector-housing-border-style: solid;
+  --dial-selector-housing-border-color: var(--border-color);
   --dial-selector-housing-background: var(--section-bg);
   --dial-selector-housing-padding-block: var(--spacing-lg);
   --dial-selector-housing-padding-inline: var(--spacing-lg);

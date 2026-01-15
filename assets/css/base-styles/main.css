@@ -111,7 +111,9 @@
 
     /* Background & Borders */
     background: var(--resume-main-after-background);
-    border: var(--resume-main-after-border);
+    border-width: var(--resume-main-after-border-width);
+    border-style: var(--resume-main-after-border-style);
+    border-color: var(--resume-main-after-border-color);
     border-radius: var(--resume-main-after-border-radius);
 
     /* Layering & Interaction */

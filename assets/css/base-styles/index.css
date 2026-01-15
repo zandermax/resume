@@ -17,59 +17,62 @@
    =========================== */
 
 /* Core design tokens */
-@import './variables/base.css';
+@import url('./variables/base.css');
 
 /* Layout-level variables */
-@import './variables/main-header.css';
-@import './variables/header-sections.css';
-@import './variables/sections-global.css';
+@import url('./variables/main-header.css');
+@import url('./variables/layout-main-header.css');
+@import url('./variables/header-sections.css');
+@import url('./variables/layout-header-sections.css');
+@import url('./variables/sections-global.css');
+@import url('./variables/layout-sections-global.css');
 
 /* Component-specific variables */
-@import './variables/skills.css';
-@import './variables/experience.css';
-@import './variables/lists.css';
-@import './variables/education.css';
-@import './variables/printlink.css';
-@import './variables/dial-selector.css';
+@import url('./variables/skills.css');
+@import url('./variables/experience.css');
+@import url('./variables/lists.css');
+@import url('./variables/education.css');
+@import url('./variables/printlink.css');
+@import url('./variables/dial-selector.css');
 
 /* ===========================
    BASE STYLES
    =========================== */
 
 /* HTML/body resets and base text elements */
-@import './_base.css';
+@import url('./_base.css');
 
 /* ===========================
    LAYOUT STRUCTURE
    =========================== */
 
 /* Main container */
-@import './main.css';
+@import url('./main.css');
 
 /* Header structure (includes dial-selectors and buttons) */
-@import './header/index.css';
+@import url('./header/index.css');
 
 /* Section containers */
-@import './sections.css';
+@import url('./sections.css');
 
 /* Section titles */
-@import './title.css';
+@import url('./title.css');
 
 /* ===========================
    COMPONENTS
    =========================== */
 
 /* Skills grid */
-@import './skills.css';
+@import url('./skills.css');
 
 /* Experience items */
-@import './experience.css';
+@import url('./experience.css');
 
 /* Community/principles lists */
-@import './lists.css';
+@import url('./lists.css');
 
 /* Education */
-@import './education.css';
+@import url('./education.css');
 
 /* Scrollbar styling */
-@import './scrollbar.css';
+@import url('./scrollbar.css');

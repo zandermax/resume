@@ -262,7 +262,7 @@ Flat Design / Material Zero
   /* ==================== PRINT LINK ==================== */
 
   /* Print link custom properties */
-  --printlink-border: 0;
+  --printlink-border-width: 0;
   --printlink-border-radius: 0;
   --printlink-background-color: var(--metro-green);
   --printlink-color: var(--color-white);

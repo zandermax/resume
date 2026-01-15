@@ -1,33 +1,37 @@
 /* ===========================
 Color Palette - Semantic Color Names
+===========================
+
+USAGE GUIDELINES:
+- Theme-specific colors are kept in this global palette for consistency
+- Themes should NOT redefine base colors (use semantic tokens instead)
+- Use --glitch-*, --terminal-*, etc. for theme-specific color variations
+- Gray scale uses named variants for semantic clarity (not numbered scales)
+
+COLOR ORGANIZATION:
+- Grayscale: Semantic named grays for clarity
+- Primary Colors: Full color families (red, blue, green, yellow, cyan, magenta, orange, purple)
+- Neutral Tones: Beige, cream, tan, brown for specialty themes
+- Terminal/System Colors: Named grays for UI elements
+- Theme-specific: Dark mode backgrounds and knob colors
+
 =========================== */
 
 :root {
-  /* Grayscale - OKLCH format: lightness, chroma, hue */
+  /* Grayscale - Semantic named grays for clarity */
   --color-black: oklch(0% 0 0);
   --color-white: oklch(100% 0 0);
-  --color-gray-50: oklch(98.5% 0.002 264);
-  --color-gray-100: oklch(96.5% 0.002 264);
-  --color-gray-200: oklch(92% 0.004 264);
-  --color-gray-300: oklch(86% 0.006 264);
-  --color-gray-400: oklch(69% 0.012 264);
-  --color-gray-500: oklch(55% 0.016 264);
-  --color-gray-600: oklch(45% 0.015 264);
-  --color-gray-700: oklch(37% 0.013 264);
-  --color-gray-800: oklch(28% 0.011 264);
-  --color-gray-900: oklch(21% 0.01 264);
-
-  /* Pure grays (no color tint) */
+  --color-gray-muted: oklch(69% 0.012 264); /* Muted gray for subtle UI elements */
   --color-gray-pure-light: oklch(92% 0 0);
 
   /* Primary Colors - Red family */
-  --color-red: oklch(63% 0.26 29); /* Pure red: high chroma at 29° hue */
-  --color-red-bright: oklch(70% 0.22 29); /* Lighter, less saturated */
+  --color-red: oklch(63% 0.26 29);
+  --color-red-bright: oklch(70% 0.22 29);
   --color-red-dark: oklch(58% 0.21 27);
   --color-red-crimson: oklch(62% 0.24 29);
 
   /* Blue family */
-  --color-blue: oklch(45% 0.31 264); /* Pure blue: 264° hue */
+  --color-blue: oklch(45% 0.31 264);
   --color-blue-bright: oklch(70% 0.16 245);
   --color-blue-dark: oklch(50% 0.24 264);
   --color-blue-navy: oklch(32% 0.15 264);
@@ -38,37 +42,36 @@ Color Palette - Semantic Color Names
   --color-blue-dashboard: oklch(54% 0.19 250);
 
   /* Green family */
-  --color-green: oklch(87% 0.29 142); /* Pure green: 142° hue */
+  --color-green: oklch(87% 0.29 142);
   --color-green-terminal: oklch(88% 0.27 142);
   --color-green-bright: oklch(70% 0.2 166);
   --color-green-success: oklch(65% 0.18 145);
   --color-green-xp: oklch(72% 0.16 130);
 
   /* Yellow family */
-  --color-yellow: oklch(97% 0.21 110); /* Pure yellow: 110° hue */
+  --color-yellow: oklch(97% 0.21 110);
   --color-yellow-bright: oklch(82% 0.15 85);
   --color-yellow-cream: oklch(94% 0.09 105);
 
   /* Cyan family */
-  --color-cyan: oklch(91% 0.15 195); /* Pure cyan: ~195° hue */
+  --color-cyan: oklch(91% 0.15 195);
   --color-cyan-bright: oklch(75% 0.14 210);
 
   /* Magenta/Pink family */
-  --color-magenta: oklch(70% 0.32 328); /* Pure magenta: 328° hue */
+  --color-magenta: oklch(70% 0.32 328);
   --color-magenta-bright: oklch(68% 0.27 350);
-  --color-magenta-pink: oklch(85% 0.18 328);
 
   /* Orange family */
-  --color-orange: oklch(70% 0.19 55); /* Orange: ~55° hue */
+  --color-orange: oklch(70% 0.19 55);
   --color-orange-bright: oklch(68% 0.22 40);
 
   /* Purple family */
-  --color-purple: oklch(44% 0.17 310); /* Purple: 310° hue */
+  --color-purple: oklch(44% 0.17 310);
   --color-purple-link: oklch(35% 0.13 305);
 
   /* Neutral Tones */
-  --color-beige: oklch(93% 0.02 85); /* Beige: low chroma yellow tint */
-  --color-cream: oklch(95% 0.01 80); /* Cream: very low chroma */
+  --color-beige: oklch(93% 0.02 85);
+  --color-cream: oklch(95% 0.01 80);
   --color-tan: oklch(41% 0.04 40);
   --color-brown: oklch(30% 0.03 40);
 
@@ -83,9 +86,5 @@ Color Palette - Semantic Color Names
   --color-dark-bg-alt: oklch(28% 0.01 240);
   --color-dark-surface: oklch(18% 0.01 240);
   --color-dark-border: oklch(32% 0.01 240);
-  --color-dark-knob: oklch(19% 0.015 240); /* Dark blue-tinted knob */
-
-  /* 3D Beveled Border Patterns (Terminal/XP/Skeuomorph) */
-  --bevel-light: var(--terminal-border-light, var(--color-white));
-  --bevel-dark: var(--terminal-border-dark, var(--color-black));
+  --color-dark-knob: oklch(19% 0.015 240);
 }
