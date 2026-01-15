@@ -1,40 +1,50 @@
-/* Base */
+/**
+ * Print Resume Styles (print.html ONLY)
+ *
+ * Styles for the dedicated print-optimized resume page (print.html)
+ * with native CSS nesting that follows the actual DOM structure.
+ *
+ * This file should NOT be imported by the interactive resume (index.html).
+ * The interactive resume has its own print styles in print.css.
+ *
+ * DOM STRUCTURE (print.html):
+ *   body.resume-print
+ *     main.resume-print__main
+ *       header.resume-print__header
+ *         div.resume-print__header-main
+ *         div.resume-print__ats-contact
+ *       section.resume-print__section
+ *         h2.resume-print__section-title
+ *         p.resume-print__text
+ *         div.resume-print__skills-grid
+ *         article.resume-print__experience-item
+ *         article.resume-print__education-item
+ *         ul.resume-print__list
+ *
+ * PROPERTY ORDER:
+ *   1. Position (position, top, right, bottom, left, z-index)
+ *   2. Display/Box Model (display, width, height, padding, margin)
+ *   3. Flex/Grid/Alignment
+ *   4. Borders
+ *   5. Background
+ *   6. Typography (font-*, color, text-*, letter-spacing, line-height)
+ *   7. Visual Effects (box-shadow, text-shadow, opacity, transform, filter)
+ *   8. Transitions/Animations
+ *   9. Other (overflow, contain, pointer-events, will-change)
+ */
+
+/* ============================================
+   BASE RESETS
+   ============================================ */
 
 html,
 body {
+  /* Display/Box Model */
   margin: 0;
   padding: 0;
 }
 
-body.resume-print {
-  font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: oklch(11% 0 0);
-  background: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  font-size: 11pt;
-}
-
-/* A4-friendly container */
-
-.resume-print__main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem;
-  box-sizing: border-box;
-}
-
-/* ===========================
-ATS-Specific (not shown on screen)
-=========================== */
-.resume-print__ats-contact {
-  font-size: 0;
-  height: 0;
-  line-height: 0;
-  visibility: hidden;
-}
-
-/* Headings & text */
-
+/* Reset margins for common elements */
 h1,
 h2,
 h3,
@@ -42,192 +52,324 @@ p {
   margin: 0;
 }
 
-.resume-print__name {
-  font-size: 1.8rem;
-  font-weight: 600;
+/* ============================================
+   BODY & MAIN CONTAINER
+   ============================================ */
+
+body.resume-print {
+  /* Background */
+  background: var(--color-white);
+
+  /* Typography */
+  font-family: 'Public Sans', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  color: oklch(11% 0 0);
+  -webkit-font-smoothing: antialiased;
 }
 
-.resume-print__role {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-block-start: 0.2rem;
+.resume-print__main {
+  /* Display/Box Model */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+
+  /* Other */
+  box-sizing: border-box;
 }
 
-.resume-print__section-title {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  border-block-end: 1px solid oklch(55% 0 0);
-  padding-block-end: 0.2rem;
-  margin-block-end: 0.6rem;
-}
-
-.resume-print__text {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-block-end: 0.45rem;
-}
-
-/* Header layout */
+/* ============================================
+   HEADER
+   ============================================ */
 
 .resume-print__header {
+  /* Display/Box Model */
   margin-block-end: 1.2rem;
-  border-block-end: 1px solid oklch(72% 0 0);
   padding-block-end: 0.6rem;
-}
 
-.resume-print__header-main {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
-}
+  /* Borders */
+  border-block-end: 1px solid oklch(72% 0 0);
 
-.resume-print__contact {
-  text-align: right;
-  font-size: 0.85rem;
-}
-
-.resume-print__contact p + p {
-  margin-block-start: 0.15rem;
-}
-
-.resume-print__contact a {
-  color: oklch(11% 0 0);
-  text-decoration: none;
-}
-
-.resume-print__full-resume-link {
-  margin-block-start: 0.4rem;
-  font-size: 0.9rem;
-}
-
-.resume-print__full-resume-link a {
-  font-weight: 600;
-  color: var(--color-blue-link, oklch(42% 0.3 264));
-  text-decoration: underline;
-}
-
-/* Sections */
-
-.resume-print__section {
-  margin-block-end: 1rem;
-}
-
-/* Skills */
-
-.resume-print__skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem 1.5rem;
-}
-
-.resume-print__skills-group h3 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-block-end: 0.15rem;
-}
-
-.resume-print__skills-group p {
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* Experience */
-
-.resume-print__experience-item {
-  margin-block-end: 0.65rem;
-}
-
-.resume-print__experience-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.resume-print__experience-role {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.resume-print__experience-company {
-  font-size: 0.85rem;
-  color: oklch(33% 0 0);
-}
-
-.resume-print__experience-meta {
-  font-size: 0.8rem;
-  text-align: right;
-}
-
-.resume-print__experience-tech {
-  font-size: 0.8rem;
-  margin: 0.25rem 0 0.25rem;
-}
-
-.resume-print__bullets {
-  margin: 0;
-  padding-inline-start: 1.1rem;
-  font-size: 0.86rem;
-}
-
-.resume-print__bullets li {
-  line-height: 1.4;
-  margin-block-end: 0.18rem;
-}
-
-/* Lists */
-
-.resume-print__list {
-  margin: 0;
-  padding-inline-start: 1.1rem;
-  font-size: 0.86rem;
-}
-
-.resume-print__list li {
-  line-height: 1.4;
-  margin-block-end: 0.2rem;
-}
-
-/* Education */
-
-.resume-print__education-item {
-  font-size: 0.86rem;
-}
-
-.resume-print__education-institution {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.resume-print__education-degree {
-  margin-block-start: 0.1rem;
-}
-
-.resume-print__education-details {
-  margin-block-start: 0.1rem;
-}
-
-/* Small-screen (if someone views print version on mobile) */
-
-@media screen and (max-width: 700px) {
+  /* --- Header Main Container --- */
   .resume-print__header-main {
-    flex-direction: column;
+    /* Display/Box Model */
+    display: flex;
+    gap: 1rem;
+
+    /* Flex/Alignment */
+    justify-content: space-between;
     align-items: flex-start;
   }
 
+  /* --- Name & Role --- */
+  .resume-print__name {
+    /* Typography */
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .resume-print__role {
+    /* Display/Box Model */
+    margin-block-start: 0.2rem;
+
+    /* Typography */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* --- Full Resume Link --- */
+  .resume-print__full-resume-link {
+    /* Display/Box Model */
+    margin-block-start: 0.4rem;
+
+    /* Typography */
+    font-size: 0.9rem;
+
+    a {
+      /* Typography */
+      font-weight: 600;
+      color: var(--color-blue-link, oklch(42% 0.3 264));
+      text-decoration: underline;
+    }
+  }
+
+  /* --- Contact Info --- */
   .resume-print__contact {
-    text-align: left;
+    /* Typography */
+    font-size: 0.85rem;
+    text-align: right;
+
+    p + p {
+      /* Display/Box Model */
+      margin-block-start: 0.15rem;
+    }
+
+    a {
+      /* Typography */
+      color: oklch(11% 0 0);
+      text-decoration: none;
+    }
+  }
+
+  /* --- ATS-Specific Contact (Hidden) --- */
+  .resume-print__ats-contact {
+    /* Display/Box Model */
+    height: 0;
+
+    /* Typography */
+    font-size: 0;
+    line-height: 0;
+
+    /* Other */
+    visibility: hidden;
+  }
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.resume-print__section {
+  /* Display/Box Model */
+  margin-block-end: 1rem;
+
+  /* --- Section Title --- */
+  .resume-print__section-title {
+    /* Display/Box Model */
+    padding-block-end: 0.2rem;
+    margin-block-end: 0.6rem;
+
+    /* Borders */
+    border-block-end: 1px solid oklch(55% 0 0);
+
+    /* Typography */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+
+  /* --- Section Text (Paragraphs) --- */
+  .resume-print__text {
+    /* Display/Box Model */
+    margin-block-end: 0.45rem;
+
+    /* Typography */
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================
+   SKILLS GRID
+   ============================================ */
+
+.resume-print__skills-grid {
+  /* Display/Box Model */
+  display: grid;
+  gap: 0.6rem 1.5rem;
+
+  /* Grid */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resume-print__skills-group {
+  h3 {
+    /* Display/Box Model */
+    margin-block-end: 0.15rem;
+
+    /* Typography */
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  p {
+    /* Typography */
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* ============================================
+   EXPERIENCE ITEMS
+   ============================================ */
+
+.resume-print__experience-item {
+  /* Display/Box Model */
+  margin-block-end: 0.65rem;
+
+  /* --- Experience Header --- */
+  .resume-print__experience-header {
+    /* Display/Box Model */
+    display: flex;
+    gap: 1rem;
+
+    /* Flex/Alignment */
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  /* --- Experience Role --- */
+  .resume-print__experience-role {
+    /* Typography */
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* --- Experience Company --- */
+  .resume-print__experience-company {
+    /* Typography */
+    font-size: 0.85rem;
+    color: oklch(33% 0 0);
+  }
+
+  /* --- Experience Meta (Date/Location) --- */
+  .resume-print__experience-meta {
+    /* Typography */
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  /* --- Experience Tech Stack --- */
+  .resume-print__experience-tech {
+    /* Display/Box Model */
+    margin: 0.25rem 0 0.25rem;
+
+    /* Typography */
+    font-size: 0.8rem;
+  }
+
+  /* --- Bullet Points --- */
+  .resume-print__bullets {
+    /* Display/Box Model */
+    margin: 0;
+    padding-inline-start: 1.1rem;
+
+    /* Typography */
+    font-size: 0.86rem;
+
+    li {
+      /* Display/Box Model */
+      margin-block-end: 0.18rem;
+
+      /* Typography */
+      line-height: 1.4;
+    }
+  }
+}
+
+/* ============================================
+   EDUCATION ITEMS
+   ============================================ */
+
+.resume-print__education-item {
+  /* Typography */
+  font-size: 0.86rem;
+
+  .resume-print__education-institution {
+    /* Typography */
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .resume-print__education-degree {
+    /* Display/Box Model */
+    margin-block-start: 0.1rem;
+  }
+
+  .resume-print__education-details {
+    /* Display/Box Model */
+    margin-block-start: 0.1rem;
+  }
+}
+
+/* ============================================
+   GENERIC LISTS
+   ============================================ */
+
+.resume-print__list {
+  /* Display/Box Model */
+  margin: 0;
+  padding-inline-start: 1.1rem;
+
+  /* Typography */
+  font-size: 0.86rem;
+
+  li {
+    /* Display/Box Model */
+    margin-block-end: 0.2rem;
+
+    /* Typography */
+    line-height: 1.4;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: SMALL SCREENS
+   ============================================ */
+
+@media screen and (max-width: 700px) {
+  .resume-print__header {
+    .resume-print__header-main {
+      /* Flex/Alignment */
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .resume-print__contact {
+      /* Typography */
+      text-align: left;
+    }
   }
 
   .resume-print__skills-grid {
+    /* Grid */
     grid-template-columns: 1fr;
   }
 }
 
-/* Print-specific rules */
+/* ============================================
+   PRINT-SPECIFIC RULES (print.html only)
+   ============================================ */
 
 @media print {
   @page {
@@ -236,16 +378,42 @@ p {
   }
 
   body.resume-print {
+    /* Typography */
     font-size: 10.5pt;
   }
 
   .resume-print__main {
+    /* Display/Box Model */
     max-width: none;
     padding: 0;
     margin: 0;
   }
 
+  .resume-print__section {
+    page-break-inside: avoid;
+
+    /* Display/Box Model */
+    margin-block-end: 0.85rem;
+  }
+
+  .resume-print__experience-item {
+    page-break-inside: auto;
+
+    /* Display/Box Model */
+    margin-block-end: 0.55rem;
+
+    /* Force page break before AWS role to fit better */
+    &:nth-of-type(2) {
+      page-break-before: always;
+    }
+
+    .resume-print__bullets li {
+      page-break-inside: avoid;
+    }
+  }
+
   a {
+    /* Typography */
     color: var(--color-black, oklch(0% 0 0));
     text-decoration: none;
   }
@@ -255,33 +423,5 @@ p {
   li {
     orphans: 3;
     widows: 3;
-  }
-
-  /* Prevent awkward splits within sections and items */
-  .resume-print__section {
-    page-break-inside: avoid;
-  }
-
-  .resume-print__experience-item {
-    page-break-inside: auto;
-  }
-
-  /* Keep bullets together as much as possible */
-  .resume-print__bullets li {
-    page-break-inside: avoid;
-  }
-
-  /* Force page break before AWS role to fit better */
-  .resume-print__experience-item:nth-of-type(2) {
-    page-break-before: always;
-  }
-
-  /* Slightly tighten spacing to fit content */
-  .resume-print__section {
-    margin-block-end: 0.85rem;
-  }
-
-  .resume-print__experience-item {
-    margin-block-end: 0.55rem;
   }
 }

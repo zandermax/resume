@@ -1,34 +1,36 @@
-/* ===========================
-Print Styles
-=========================== */
+/**
+ * Print Styles (index.html only)
+ *
+ * Print-specific styles for the interactive resume (body.resume)
+ * when printed via browser print dialog.
+ */
 
 @media print {
   body.resume {
+    /* Background */
     background: var(--color-white);
   }
 
   .resume__main {
-    border: none;
+    /* Display/Box Model */
     margin: 0;
     padding: 0.5in 0.65in;
+
+    /* Borders */
+    border: none;
   }
 
-  /* Avoid awkward splits across pages */
   .resume-section {
     page-break-inside: avoid;
-  }
 
-  .resume-section--experience .experience-item {
-    page-break-inside: avoid;
+    &.resume-section--experience .experience-item {
+      page-break-inside: avoid;
+    }
   }
 
   a {
+    /* Typography */
     color: var(--color-black, oklch(0% 0 0));
     text-decoration: none;
-  }
-
-  /* Hide this element when printing the main page */
-  #resume-header__printlink {
-    display: none !important;
   }
 }
