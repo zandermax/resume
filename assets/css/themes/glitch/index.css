@@ -3,7 +3,7 @@
 Dystopian Anti-Design
 =========================== */
 
-/* Import order: variables → dial-selector → theme modes → animations → extras → responsive */
+/* Import order: variables → dial-selector → theme modes → animations → extras */
 
 @import url('./variables.css');
 @import url('./dial-selector.css');
@@ -11,4 +11,3 @@ Dystopian Anti-Design
 @import url('./dark-mode.css');
 @import url('./animations.css');
 @import url('./extras.css');
-@import url('./responsive.css');

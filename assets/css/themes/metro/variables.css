@@ -334,4 +334,67 @@ Flat Design / Material Zero
   --scrollbar-width-value: thin;
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: transparent;
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --header-name-font-size: 2.5rem;
+    --section-title-font-size: 1.2rem;
+    --section-title-padding-block-start: 1rem;
+    --section-title-padding-block-end: 1rem;
+    --section-title-padding-inline-start: 1.5rem;
+    --section-title-padding-inline-end: 1.5rem;
+    --printlink-font-size: 0.75rem;
+    --printlink-padding-block: 0.75rem;
+    --printlink-padding-inline: 1.5rem;
+    --education-institution-font-size: 1.1rem;
+    --experience-role-font-size: 1.1rem;
+
+    /* Responsive padding overrides */
+    --header-padding-inline-start-responsive-768: var(--spacing-lg);
+    --header-padding-inline-end-responsive-768: var(--spacing-lg);
+    --section-padding-inline-start-responsive-768: var(--spacing-lg);
+    --section-padding-inline-end-responsive-768: var(--spacing-lg);
+
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-768: var(--spacing-md);
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --header-name-font-size: 2rem;
+    --section-title-font-size: 1rem;
+    --section-title-padding-block-start: 0.75rem;
+    --section-title-padding-block-end: 0.75rem;
+    --section-title-padding-inline-start: 1rem;
+    --section-title-padding-inline-end: 1rem;
+    --printlink-font-size: 0.75rem;
+    --printlink-padding-block: 0.75rem;
+    --printlink-padding-inline: 1.5rem;
+
+    /* Responsive item padding overrides */
+    --experience-item-padding-responsive-500: var(--spacing-md);
+    --community-item-padding-responsive-500: var(--spacing-md);
+    --principles-item-padding-responsive-500: var(--spacing-md);
+
+    /* Responsive padding overrides */
+    --header-padding-inline-responsive-500: 0;
+    --section-padding-inline-responsive-500: 0;
+
+    /* Dial selector housing responsive padding overrides */
+    --dial-selector-housing-padding-responsive-500: var(--spacing-sm);
+  }
+
+  /* Extra small mobile (480px and below) */
+  @media (max-width: 480px) {
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-480: var(--spacing-xs);
+  }
+
+  /* Very small mobile (380px and below) */
+  @media (max-width: 380px) {
+    /* Dial selector housing responsive padding override */
+    --dial-selector-housing-padding-responsive-380: var(--spacing-xs);
+  }
 }

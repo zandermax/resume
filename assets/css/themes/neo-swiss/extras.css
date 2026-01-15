@@ -410,4 +410,129 @@ body[data-theme='neoswiss'] {
       }
     }
   }
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    /* Header and section padding adjustments */
+    --header-padding-inline: var(--spacing-4);
+    --header-padding-block: var(--spacing-6);
+    --section-padding-inline: var(--spacing-4);
+
+    /* Button container alignment */
+    --header-buttons-justify-content: flex-start;
+
+    /* AI Button */
+    .neoswiss-ai-button {
+      inline-size: calc(var(--swiss-grid) * 7);
+      block-size: calc(var(--swiss-grid) * 7);
+      inset-block-end: var(--spacing-4);
+      inset-inline-end: var(--spacing-4);
+    }
+
+    /* AI Modal */
+    .neoswiss-ai-modal__container {
+      inline-size: 95%;
+    }
+
+    .neoswiss-ai-modal__header {
+      padding: var(--spacing-3);
+      position: sticky;
+      inset-block-start: 0;
+      background: var(--background-color);
+      z-index: 1;
+    }
+
+    .neoswiss-ai-modal__content {
+      padding-block: var(--spacing-4) calc(var(--spacing-4) * 2);
+      padding-inline: var(--spacing-4);
+    }
+
+    .neoswiss-ai-modal__section {
+      margin-block-end: var(--spacing-4);
+      padding-block-end: var(--spacing-4);
+    }
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    /* Header and section padding adjustments */
+    --header-padding-inline: var(--spacing-3);
+    --header-padding-block: var(--spacing-4);
+    --section-padding-inline: var(--spacing-3);
+
+    /* Button container alignment */
+    --header-buttons-justify-content: flex-start;
+
+    /* Dial selector housing */
+    --dial-selector-housing-padding-block: 0;
+    --dial-selector-housing-padding-inline: 0;
+
+    /* Experience item spacing */
+    --experience-item-margin-block-end: var(--spacing-6);
+
+    /* AI Button */
+    .neoswiss-ai-button {
+      inline-size: var(--spacing-6);
+      block-size: var(--spacing-6);
+      inset-block-end: var(--spacing-3);
+      inset-inline-end: var(--spacing-4);
+    }
+
+    .neoswiss-ai-button__label {
+      font-size: var(--font-size-small);
+    }
+
+    .neoswiss-ai-button__spark {
+      inline-size: calc(var(--swiss-grid) * 0.75);
+      block-size: calc(var(--swiss-grid) * 0.75);
+    }
+
+    .neoswiss-ai-button__spark--1,
+    .neoswiss-ai-button__spark--3 {
+      inset-block-start: calc(var(--swiss-grid) * -1);
+    }
+
+    .neoswiss-ai-button__spark--3 {
+      inset-block-end: calc(var(--swiss-grid) * -1);
+      inset-block-start: auto;
+    }
+
+    .neoswiss-ai-button__spark--2,
+    .neoswiss-ai-button__spark--4 {
+      inset-inline-end: calc(var(--swiss-grid) * -1);
+    }
+
+    .neoswiss-ai-button__spark--4 {
+      inset-inline-start: calc(var(--swiss-grid) * -1);
+      inset-inline-end: auto;
+    }
+
+    /* AI Modal */
+    .neoswiss-ai-modal__title {
+      font-size: var(--font-size-medium);
+    }
+
+    .neoswiss-ai-modal__close {
+      inline-size: calc(var(--swiss-grid) * 5);
+      block-size: calc(var(--swiss-grid) * 5);
+    }
+
+    .neoswiss-ai-modal__content {
+      padding-block: var(--spacing-3) calc(var(--spacing-3) * 2);
+      padding-inline: var(--spacing-3);
+    }
+
+    .neoswiss-ai-modal__section {
+      margin-block-end: var(--spacing-3);
+      padding-block-end: var(--spacing-3);
+    }
+
+    .neoswiss-ai-modal__metric {
+      display: block;
+      min-inline-size: auto;
+      margin-block-end: calc(var(--swiss-grid) * 0.5);
+    }
+  }
 }

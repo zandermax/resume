@@ -6,10 +6,6 @@
    See base-styles/variables/base.css for default values. */
 
 :root[data-theme='glitch'][data-mode='light'] {
-  /* Base colors */
-  --color-white: oklch(100% 0 0);
-  --color-black: oklch(0% 0 0);
-
   /* Glitch theme-specific colors */
   --glitch-knob-bg: oklch(97% 0 0); /* #f5f5f5 */
   --glitch-section-bg: oklch(98.4% 0 0); /* #fafafa */

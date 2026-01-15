@@ -2,12 +2,11 @@
 SKEUOMORPH Theme - Main Entry Point
 =========================== */
 
-/* Import order: variables → theme modes → components → features → responsive → animations */
+/* Import order: variables → theme modes → components → features → animations */
 
 @import url('./variables.css');
 @import url('./light-mode.css');
 @import url('./dark-mode.css');
 @import url('./dial-selector.css');
 @import url('./extras.css');
-@import url('./responsive.css');
 @import url('./animations.css');

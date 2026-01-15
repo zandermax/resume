@@ -466,4 +466,65 @@ Common properties for all modes
   --scrollbar-width-value: thin;
   --scrollbar-thumb-color: var(--text-color);
   --scrollbar-track-color: transparent;
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --header-name-font-size: 2rem;
+    --section-title-font-size: var(--font-size-md);
+    --section-title-padding-block-start: 0.6rem;
+    --section-title-padding-block-end: 0.6rem;
+    --section-title-padding-inline-start: var(--spacing-md);
+    --section-title-padding-inline-end: var(--spacing-md);
+    --printlink-font-size: var(--font-size-xs);
+    --printlink-padding-block: var(--spacing-sm);
+    --printlink-padding-inline: var(--spacing-lg);
+
+    /* Layout padding adjustments */
+    --resume-main-animation: main-tilt-glitch-mobile var(--duration-fast) infinite;
+    --main-padding: var(--spacing-lg);
+    --section-padding-block-start: var(--spacing-lg);
+    --section-padding-inline-start: var(--spacing-lg);
+    --section-padding-block-end: var(--spacing-lg);
+    --section-padding-inline-end: var(--spacing-lg);
+    --experience-item-padding: var(--spacing-lg);
+    --education-item-padding-block-start: var(--spacing-lg);
+    --education-item-padding-block-end: var(--spacing-lg);
+    --education-item-padding-inline-start: var(--spacing-lg);
+    --education-item-padding-inline-end: var(--spacing-lg);
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --header-name-font-size: 1.75rem;
+    --section-title-font-size: var(--font-size-base);
+    --section-title-padding-block-start: var(--spacing-xs);
+    --section-title-padding-block-end: var(--spacing-xs);
+    --section-title-padding-inline-start: 0.8rem;
+    --section-title-padding-inline-end: 0.8rem;
+    --printlink-font-size: var(--font-size-xs);
+    --printlink-padding-block: var(--spacing-sm);
+    --printlink-padding-inline: var(--spacing-lg);
+
+    /* Layout padding adjustments */
+    --main-padding: var(--spacing-md);
+    --section-padding-block-start: var(--spacing-md);
+    --section-padding-inline-start: var(--spacing-md);
+    --section-padding-block-end: var(--spacing-md);
+    --section-padding-inline-end: var(--spacing-md);
+    --experience-item-padding: var(--spacing-md);
+    --education-item-padding-block-start: var(--spacing-md);
+    --education-item-padding-block-end: var(--spacing-md);
+    --education-item-padding-inline-start: var(--spacing-md);
+    --education-item-padding-inline-end: var(--spacing-md);
+
+    /* Header and dial selector padding adjustments */
+    --header-padding-block-start: 0;
+    --header-padding-block-end: 0;
+    --header-padding-inline-start: 0;
+    --header-padding-inline-end: 0;
+    --dial-selector-housing-padding-block: 0;
+    --dial-selector-housing-padding-inline: 0;
+  }
 }

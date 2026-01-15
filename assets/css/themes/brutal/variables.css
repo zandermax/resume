@@ -390,4 +390,53 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --scrollbar-width-value: auto;
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: var(--background-color);
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --header-name-font-size: 2.5rem;
+    --section-title-font-size: 1.5rem;
+    --section-title-padding-block-start: 1rem;
+    --section-title-padding-block-end: 1rem;
+    --section-title-padding-inline-start: 1.5rem;
+    --section-title-padding-inline-end: 1.5rem;
+    --printlink-font-size: 0.9rem;
+    --printlink-padding-block: 1rem;
+    --printlink-padding-inline: 2rem;
+    --education-institution-font-size: 1.4rem;
+    --experience-role-font-size: 1.4rem;
+
+    /* Main container responsive overrides */
+    --main-border-width: 6px;
+    --main-box-shadow: 10px 10px 0 oklch(0% 0 0 / 0.7), 20px 20px 0 var(--brutal-shadow-light);
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --header-name-font-size: 2rem;
+    --header-name-padding-inline-start: 1rem;
+    --header-name-border-inline-start: 8px solid var(--accent-color);
+    --section-title-font-size: 1.2rem;
+    --section-title-padding-block-start: 0.75rem;
+    --section-title-padding-block-end: 0.75rem;
+    --section-title-padding-inline-start: 1rem;
+    --section-title-padding-inline-end: 1rem;
+    --printlink-font-size: 0.9rem;
+    --printlink-padding-block: 1rem;
+    --printlink-padding-inline: 2rem;
+    --section-title-border-inline-start: 10px solid var(--accent-color);
+
+    /* Header and section padding responsive overrides */
+    --header-padding-block-start-responsive-500: var(--spacing-sm);
+    --header-padding-block-end-responsive-500: var(--spacing-sm);
+    --header-padding-inline-start: var(--spacing-md);
+    --header-padding-inline-end: var(--spacing-md);
+    --section-padding-inline-start: var(--spacing-md);
+    --section-padding-inline-end: var(--spacing-md);
+
+    /* Main container responsive overrides */
+    --main-border-width: var(--border-width-extra-thick);
+    --main-box-shadow: 6px 6px 0 oklch(0% 0 0 / 0.7), 12px 12px 0 var(--brutal-shadow-light);
+  }
 }

@@ -323,3 +323,40 @@ body[data-theme='xp'] .xp-dialog-overlay {
     }
   }
 }
+
+/* ==================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================== */
+
+body[data-theme='xp'] {
+  --main-padding-responsive-500: 0;
+  --main-border-width-responsive-768: 0;
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --header-margin-inline-start: 1.25rem;
+    --header-margin-inline-end: 1.25rem;
+    --section-margin-inline-start: 1.25rem;
+    --section-margin-inline-end: 1.25rem;
+    --header-name-font-size: 2.1rem;
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --main-margin-responsive-960: 0.5rem;
+    --resume-main-before-height: 28px;
+    --header-padding-block-start: 0;
+    --section-padding-block-start: 0;
+    --header-margin-block-start: 0;
+    --section-margin-block-start: 0;
+    --header-margin-inline-start: 1rem;
+    --header-margin-inline-end: 1rem;
+    --section-margin-inline-start: 1rem;
+    --section-margin-inline-end: 1rem;
+    --header-name-font-size: 1.7rem;
+    --header-top-row-margin-block-start: 2rem;
+    --printlink-font-size: 0.75rem;
+    --printlink-padding-block: 0.5rem;
+    --printlink-padding-inline: 1.2rem;
+  }
+}

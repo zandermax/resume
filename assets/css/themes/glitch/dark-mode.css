@@ -3,10 +3,6 @@
 =========================== */
 
 :root[data-theme='glitch'][data-mode='dark'] {
-  /* Base colors */
-  --color-white: oklch(100% 0 0);
-  --color-black: oklch(0% 0 0);
-  
   /* Glitch theme-specific colors */
   --glitch-bg-darkest: oklch(4.7% 0 0); /* #0a0a0a */
   --glitch-bg-darker: oklch(8.3% 0 0); /* #111111 */

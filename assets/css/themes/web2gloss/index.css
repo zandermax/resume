@@ -2,7 +2,7 @@
 WEB 2.0 GLOSS Theme - Main Entry Point
 =========================== */
 
-/* Import order: variables → theme modes → base → dial selector → extras → responsive → animations */
+/* Import order: variables → theme modes → base → dial selector → extras → animations */
 
 @import url('./variables.css');
 @import url('./light-mode.css');
@@ -10,6 +10,5 @@ WEB 2.0 GLOSS Theme - Main Entry Point
 @import url('./base.css');
 @import url('./dial-selector.css');
 @import url('./extras.css');
-@import url('./responsive.css');
 @import url('./animations.css');
 

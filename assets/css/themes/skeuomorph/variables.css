@@ -270,4 +270,27 @@ SKEUOMORPH Theme - Base Variables
   --scrollbar-width-value: thin;
   --scrollbar-thumb-color: oklch(0.77 0.13 85);
   --scrollbar-track-color: oklch(0.84 0.065 87.5);
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --dial-selector-housing-padding-block: var(--spacing-md);
+    --dial-selector-housing-padding-inline: var(--spacing-md);
+    --dial-selector-housing-margin: 0.25rem;
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --section-content-padding-inline-responsive-500: 0.5rem;
+    --experience-bullets-li-padding-inline-start: var(--spacing-xs);
+    --header-padding-block-start: var(--spacing-sm);
+    --header-padding-block-end: var(--spacing-sm);
+    --header-padding-inline-start: var(--spacing-sm);
+    --header-padding-inline-end: var(--spacing-sm);
+    --dial-selector-housing-padding-block: 0;
+    --dial-selector-housing-padding-inline: 0;
+    --dial-selector-housing-margin: 0.5rem;
+    --dial-selector-housing-h3-margin-block-start: 1rem;
+  }
 }

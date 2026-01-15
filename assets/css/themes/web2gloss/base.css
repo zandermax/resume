@@ -81,4 +81,64 @@ body[data-theme='web2gloss'] {
   --education-item-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.25) 0%, transparent 100%);
   --education-item-before-border-radius: var(--web2-radius-lg) var(--web2-radius-lg) 0 0;
   --education-item-before-pointer-events: none;
+
+  /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+  /* Base responsive variables (applied at all viewport sizes when specific media queries don't override) */
+  --main-padding-responsive-500: 0.5rem;
+  --header-padding-block-start-responsive-500: 1rem;
+  --header-padding-block-end-responsive-500: 1rem;
+  --header-padding-inline-start-responsive-500: 1rem;
+  --header-padding-inline-end-responsive-500: 1rem;
+
+  /* Minimum tablet size (768px and above) */
+  @media (min-width: 768px) {
+    --header-name-wrapper-padding-inline: var(--spacing-md);
+    --header-meta-padding-inline: var(--spacing-md);
+  }
+
+  /* Tablet and smaller (768px and below) */
+  @media (max-width: 768px) {
+    --header-name-font-size: 2rem;
+    --section-title-font-size: 1.1rem;
+    --section-title-padding-block-start: 0.75rem;
+    --section-title-padding-block-end: 0.75rem;
+    --section-title-padding-inline-start: 1rem;
+    --section-title-padding-inline-end: 1rem;
+    --section-padding-block-start: 1.5rem;
+    --section-padding-inline-start: 1.5rem;
+    --section-padding-block-end: 1.5rem;
+    --section-padding-inline-end: 1.5rem;
+    --header-padding-block-start: 2rem;
+    --header-padding-block-end: 2rem;
+    --header-padding-inline-start: 1.5rem;
+    --header-padding-inline-end: 1.5rem;
+  }
+
+  /* Mobile (500px and below) */
+  @media (max-width: 500px) {
+    --section-padding-block-start: 1rem;
+    --section-padding-inline-start: 1rem;
+    --section-padding-block-end: 1rem;
+    --section-padding-inline-end: 1rem;
+    --experience-item-padding: 1.5rem;
+    --education-item-padding-block-start: 1.5rem;
+    --education-item-padding-block-end: 1.5rem;
+    --education-item-padding-inline-start: 1.5rem;
+    --education-item-padding-inline-end: 1.5rem;
+    --experience-item-border-radius: var(--web2-radius-md);
+    --education-item-border-radius: var(--web2-radius-md);
+    --header-padding-block-start: 1.5rem;
+    --header-padding-block-end: 1.5rem;
+    --header-padding-inline-start: 1rem;
+    --header-padding-inline-end: 1rem;
+  }
+
+  /* Extra small mobile (400px and below) */
+  @media (max-width: 400px) {
+    --header-padding-block-start: 1.25rem;
+    --header-padding-block-end: 1.25rem;
+    --header-padding-inline-start: 0.75rem;
+    --header-padding-inline-end: 0.75rem;
+  }
 }
