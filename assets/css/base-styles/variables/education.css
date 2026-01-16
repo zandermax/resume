@@ -59,7 +59,8 @@
   --education-item-padding-block-end: 0;
   --education-item-padding-inline-start: 0;
   --education-item-padding-inline-end: 0;
-  --education-item-padding-responsive-500: inherit; /* Responsive override for small screens */
+  /* Responsive override - reference base padding */
+  --education-item-padding-responsive-500: var(--education-item-padding);
   --education-item-margin-block-start: 0;
   --education-item-margin-block-end: 0;
   --education-item-margin-inline-start: 0;

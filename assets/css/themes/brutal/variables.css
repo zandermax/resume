@@ -412,7 +412,18 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
     --main-box-shadow: 10px 10px 0 oklch(0% 0 0 / 0.7), 20px 20px 0 var(--brutal-shadow-light);
   }
 
-  /* Mobile (500px and below) */
+  /* ============================================
+     RESPONSIVE OVERRIDES
+     Define responsive variable overrides here.
+     Do NOT use @media blocks for responsive overrides.
+     Use @media blocks only for non-responsive property changes.
+     ============================================ */
+
+  /* Responsive Overrides */
+  --header-padding-block-start-responsive-500: var(--spacing-sm);
+  --header-padding-block-end-responsive-500: var(--spacing-sm);
+
+  /* Non-responsive overrides stay in @media */
   @media (max-width: 500px) {
     --header-name-font-size: 2rem;
     --header-name-padding-inline-start: 1rem;
@@ -426,16 +437,10 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
     --printlink-padding-block: 1rem;
     --printlink-padding-inline: 2rem;
     --section-title-border-inline-start: 10px solid var(--accent-color);
-
-    /* Header and section padding responsive overrides */
-    --header-padding-block-start-responsive-500: var(--spacing-sm);
-    --header-padding-block-end-responsive-500: var(--spacing-sm);
     --header-padding-inline-start: var(--spacing-md);
     --header-padding-inline-end: var(--spacing-md);
     --section-padding-inline-start: var(--spacing-md);
     --section-padding-inline-end: var(--spacing-md);
-
-    /* Main container responsive overrides */
     --main-border-width: var(--border-width-extra-thick);
     --main-box-shadow: 6px 6px 0 oklch(0% 0 0 / 0.7), 12px 12px 0 var(--brutal-shadow-light);
   }

@@ -50,6 +50,24 @@
     /* Visual Effects */
     box-shadow: var(--dial-selector-housing-box-shadow);
 
+    /* === RESPONSIVE ADJUSTMENTS === */
+
+    @media (max-width: 768px) {
+      padding: var(--dial-selector-housing-padding-responsive-768);
+    }
+
+    @media (max-width: 500px) {
+      padding: var(--dial-selector-housing-padding-responsive-500);
+    }
+
+    @media (max-width: 480px) {
+      padding: var(--dial-selector-housing-padding-responsive-480);
+    }
+
+    @media (max-width: 380px) {
+      padding: var(--dial-selector-housing-padding-responsive-380);
+    }
+
     &::before {
       /* Content */
       content: var(--dial-selector-housing-before-content);

@@ -5,7 +5,6 @@ Resume Styles - Modular Import
 @import url('./base-styles/index.css');
 @import url('./colors.css');
 @import url('./dial-selector-styles/index.css');
-@import url('./responsive.css');
 @import url('./print.css');
 
 /* Themes - Individual theme files */

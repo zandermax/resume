@@ -337,7 +337,33 @@ Flat Design / Material Zero
 
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
-  /* Tablet and smaller (768px and below) */
+  /* ============================================
+     RESPONSIVE OVERRIDES
+     Define responsive variable overrides here.
+     Do NOT use @media blocks for responsive overrides.
+     Use @media blocks only for non-responsive property changes.
+     ============================================ */
+
+  /* Responsive Overrides - Tablet (768px) */
+  --header-padding-inline-start-responsive-768: var(--spacing-lg);
+  --header-padding-inline-end-responsive-768: var(--spacing-lg);
+  --section-padding-inline-start-responsive-768: var(--spacing-lg);
+  --section-padding-inline-end-responsive-768: var(--spacing-lg);
+  --dial-selector-housing-padding-responsive-768: var(--spacing-md);
+
+  /* Responsive Overrides - Mobile (500px) */
+  --experience-item-padding-responsive-500: var(--spacing-md);
+  --community-item-padding-responsive-500: var(--spacing-md);
+  --principles-item-padding-responsive-500: var(--spacing-md);
+  --header-padding-inline-responsive-500: 0;
+  --section-padding-inline-responsive-500: 0;
+  --dial-selector-housing-padding-responsive-500: var(--spacing-sm);
+
+  /* Responsive Overrides - Small Mobile (480px and 380px) */
+  --dial-selector-housing-padding-responsive-480: var(--spacing-xs);
+  --dial-selector-housing-padding-responsive-380: var(--spacing-xs);
+
+  /* Non-responsive property overrides in @media blocks */
   @media (max-width: 768px) {
     --header-name-font-size: 2.5rem;
     --section-title-font-size: 1.2rem;
@@ -350,18 +376,8 @@ Flat Design / Material Zero
     --printlink-padding-inline: 1.5rem;
     --education-institution-font-size: 1.1rem;
     --experience-role-font-size: 1.1rem;
-
-    /* Responsive padding overrides */
-    --header-padding-inline-start-responsive-768: var(--spacing-lg);
-    --header-padding-inline-end-responsive-768: var(--spacing-lg);
-    --section-padding-inline-start-responsive-768: var(--spacing-lg);
-    --section-padding-inline-end-responsive-768: var(--spacing-lg);
-
-    /* Dial selector housing responsive padding override */
-    --dial-selector-housing-padding-responsive-768: var(--spacing-md);
   }
 
-  /* Mobile (500px and below) */
   @media (max-width: 500px) {
     --header-name-font-size: 2rem;
     --section-title-font-size: 1rem;
@@ -372,29 +388,5 @@ Flat Design / Material Zero
     --printlink-font-size: 0.75rem;
     --printlink-padding-block: 0.75rem;
     --printlink-padding-inline: 1.5rem;
-
-    /* Responsive item padding overrides */
-    --experience-item-padding-responsive-500: var(--spacing-md);
-    --community-item-padding-responsive-500: var(--spacing-md);
-    --principles-item-padding-responsive-500: var(--spacing-md);
-
-    /* Responsive padding overrides */
-    --header-padding-inline-responsive-500: 0;
-    --section-padding-inline-responsive-500: 0;
-
-    /* Dial selector housing responsive padding overrides */
-    --dial-selector-housing-padding-responsive-500: var(--spacing-sm);
-  }
-
-  /* Extra small mobile (480px and below) */
-  @media (max-width: 480px) {
-    /* Dial selector housing responsive padding override */
-    --dial-selector-housing-padding-responsive-480: var(--spacing-xs);
-  }
-
-  /* Very small mobile (380px and below) */
-  @media (max-width: 380px) {
-    /* Dial selector housing responsive padding override */
-    --dial-selector-housing-padding-responsive-380: var(--spacing-xs);
   }
 }

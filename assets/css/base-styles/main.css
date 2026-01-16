@@ -73,6 +73,21 @@
   transform: var(--main-transform);
   overflow: var(--main-overflow);
 
+  /* === RESPONSIVE ADJUSTMENTS === */
+
+  @media (max-width: 960px) {
+    margin: var(--main-margin-responsive-960);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--main-padding-responsive-768);
+    border-width: var(--main-border-width-responsive-768);
+  }
+
+  @media (max-width: 500px) {
+    padding: var(--main-padding-responsive-500);
+  }
+
   /* === PSEUDO-ELEMENTS === */
   /* Used by themes for decorative elements: title bars, texture grids, overlays, borders, etc. */
 

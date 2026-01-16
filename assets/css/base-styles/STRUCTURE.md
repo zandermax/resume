@@ -132,12 +132,14 @@ Every CSS file includes a structured header:
 **Responsive variables:**
 
 - Use `--property-name-responsive-{breakpoint}` pattern with explicit property names
-- For spacing properties, use longhand logical properties (not shorthands)
-- Breakpoints: 960, 768, 600, 500, 480, 400, 380
+- Breakpoints: 960, 768, 600, 500, 480, 380
+- Default to base property value: `--prop-responsive-768: var(--prop);`
+- Only create responsive variables if at least one theme customizes them
+- Otherwise, use direct values in media queries
 - Examples:
-  - ✓ Correct: `--section-padding-inline-start-responsive-768`
-  - ✓ Correct: `--header-padding-responsive-500` (if header uses shorthand)
-  - ✗ Avoid: `--section-padding-responsive-768` (ambiguous - which padding direction?)
+  - ✓ Correct: `--main-padding-responsive-500: var(--main-padding);` (terminal/crt/xp override this)
+  - ✓ Correct: `flex-direction: column;` in @media (no theme overrides)
+  - ✗ Avoid: Creating unused responsive variables
 
 **Responsive Gap Pattern (Dial Selector):**
 

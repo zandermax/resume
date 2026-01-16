@@ -82,6 +82,9 @@
 
   /* Responsive Overrides */
   --main-margin-responsive-960: var(--spacing-md);
+  --main-padding-responsive-768: var(--main-padding);
+  --main-padding-responsive-500: var(--main-padding);
+  --main-border-width-responsive-768: var(--main-border-width);
 
   /* --- Pseudo-element ::before --- */
   --resume-main-before-content: none;
@@ -151,14 +154,13 @@
   /* Visual Effects */
   --header-box-shadow: none;
 
-  /* Responsive Overrides */
-  --header-padding-inline-start-responsive-768: 0;
-  --header-padding-inline-end-responsive-768: 0;
-  --header-padding-block-start-responsive-500: 0;
-  --header-padding-block-end-responsive-500: 0;
-  --header-padding-inline-responsive-500: 0;
-  --header-padding-inline-start-responsive-500: 0;
-  --header-padding-inline-end-responsive-500: 0;
+  /* Header padding responsive overrides */
+  --header-padding-inline-start-responsive-768: var(--header-padding-inline-start);
+  --header-padding-inline-end-responsive-768: var(--header-padding-inline-end);
+  --header-padding-block-start-responsive-500: var(--header-padding-block-start);
+  --header-padding-block-end-responsive-500: var(--header-padding-block-end);
+  --header-padding-inline-start-responsive-500: var(--header-padding-inline-start);
+  --header-padding-inline-end-responsive-500: var(--header-padding-inline-end);
 
   /* --- Pseudo-element ::before --- */
   --resume-header-before-content: none;

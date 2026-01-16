@@ -127,6 +127,18 @@
   position: var(--resume-section-position);
   z-index: var(--resume-section-z-index);
 
+  /* === RESPONSIVE ADJUSTMENTS === */
+
+  @media (max-width: 768px) {
+    padding-inline-start: var(--section-padding-inline-start-responsive-768);
+    padding-inline-end: var(--section-padding-inline-end-responsive-768);
+  }
+
+  @media (max-width: 500px) {
+    padding-inline-start: var(--section-padding-inline-start-responsive-500);
+    padding-inline-end: var(--section-padding-inline-end-responsive-500);
+  }
+
   /* === SECTION VARIATIONS === */
 
   &:not(:first-of-type) {
@@ -149,6 +161,24 @@
   .resume-section__content {
     padding-inline: var(--section-content-padding-inline);
     background: var(--section-content-background);
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+
+    @media (max-width: 960px) {
+      padding-inline: var(--section-content-padding-inline-responsive-960);
+    }
+
+    @media (max-width: 768px) {
+      padding-inline: var(--section-content-padding-inline-responsive-768);
+    }
+
+    @media (max-width: 600px) {
+      padding-inline: var(--section-content-padding-inline-responsive-600);
+    }
+
+    @media (max-width: 500px) {
+      padding-inline: var(--section-content-padding-inline-responsive-500);
+    }
   }
 
   /* === PSEUDO-ELEMENTS === */

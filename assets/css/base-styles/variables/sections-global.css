@@ -65,6 +65,12 @@
   /* Background */
   --section-content-background: transparent;
 
+  /* Responsive Overrides */
+  --section-content-padding-inline-responsive-960: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-768: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-600: var(--section-content-padding-inline);
+  --section-content-padding-inline-responsive-500: var(--section-content-padding-inline);
+
   /* ============================================================================
      SECTION - SUMMARY MODIFIER (.resume-section--summary)
      ============================================================================ */

@@ -90,13 +90,13 @@
   /* === PRINT/SAVE BUTTON RESPONSIVE === */
 
   /* @media max-width: 500px */
-  --printlink-padding-block-responsive-500: var(--spacing-xs);
-  --printlink-padding-inline-responsive-500: var(--spacing-md);
+  --printlink-padding-block-responsive-500: var(--printlink-padding-block);
+  --printlink-padding-inline-responsive-500: var(--printlink-padding-inline);
   --printlink-font-size-responsive-500: var(--printlink-font-size);
 
   /* @media max-width: 600px */
-  --printlink-padding-block-responsive-600: var(--spacing-xs);
-  --printlink-padding-inline-responsive-600: var(--spacing-md);
+  --printlink-padding-block-responsive-600: var(--printlink-padding-block);
+  --printlink-padding-inline-responsive-600: var(--printlink-padding-inline);
   --printlink-font-size-responsive-600: var(--printlink-font-size);
 
   /* === PRINT/SAVE BUTTON ACTIVE STATES === */

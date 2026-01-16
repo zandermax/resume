@@ -79,6 +79,12 @@
   /* Other */
   overflow: visible;
 
+  /* === RESPONSIVE ADJUSTMENTS === */
+
+  @media (max-width: 500px) {
+    padding: var(--experience-item-padding);
+  }
+
   /* First Item Variant */
   &:first-of-type {
     border-block-start: var(--experience-item-border-block-start-first);
@@ -166,6 +172,14 @@
     /* Flex/Alignment */
     justify-content: space-between;
     align-items: baseline;
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+    /* Direct values - no theme overrides, Dashboard defines but doesn't use */
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   /* --- Main Content Column --- */
@@ -226,6 +240,12 @@
     text-align: right;
     text-transform: uppercase;
     letter-spacing: 0.12em;
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+
+    @media (max-width: 768px) {
+      text-align: left; /* Direct value - no theme overrides */
+    }
 
     .experience-item__dates,
     .experience-item__duration {

@@ -83,6 +83,12 @@
   /* Other */
   overflow: var(--education-item-overflow);
 
+  /* === RESPONSIVE ADJUSTMENTS === */
+
+  @media (max-width: 500px) {
+    padding: var(--education-item-padding-responsive-500);
+  }
+
   /* === EDUCATION ITEM PSEUDO-ELEMENT === */
   /* Used by themes for decorative left bars, backgrounds, etc. */
 

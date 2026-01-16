@@ -23,6 +23,24 @@
     justify-content: var(--header-buttons-justify-content);
     gap: var(--header-buttons-gap);
 
+    /* === RESPONSIVE ADJUSTMENTS === */
+    /* Direct values since no theme customizes these */
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
     .resume-header__savelink {
       /* Display & Layout */
       display: var(--savelink-display, none);
@@ -67,6 +85,21 @@
       /* Animation & Interaction */
       transition: var(--printlink-transition);
       cursor: var(--printlink-cursor);
+
+      /* === RESPONSIVE ADJUSTMENTS === */
+      /* Only Terminal and CRT themes override these */
+
+      @media (max-width: 600px) {
+        font-size: var(--printlink-font-size-responsive-600);
+        padding-block: var(--printlink-padding-block-responsive-600);
+        padding-inline: var(--printlink-padding-inline-responsive-600);
+      }
+
+      @media (max-width: 500px) {
+        font-size: var(--printlink-font-size-responsive-500);
+        padding-block: var(--printlink-padding-block-responsive-500);
+        padding-inline: var(--printlink-padding-inline-responsive-500);
+      }
 
       &:hover {
         /* Background */
@@ -144,6 +177,23 @@
       transition: var(--printlink-transition);
       animation: var(--printlink-animation);
       cursor: var(--printlink-cursor);
+
+      /* === RESPONSIVE ADJUSTMENTS === */
+
+      @media (max-width: 600px) {
+        font-size: var(--printlink-font-size-responsive-600);
+        padding-block: var(--printlink-padding-block-responsive-600);
+        padding-inline: var(--printlink-padding-inline-responsive-600);
+        /* Direct values - no theme customizes these margins */
+        margin-inline-start: 0;
+        margin-block-start: 0.65rem;
+      }
+
+      @media (max-width: 500px) {
+        font-size: var(--printlink-font-size-responsive-500);
+        padding-block: var(--printlink-padding-block-responsive-500);
+        padding-inline: var(--printlink-padding-inline-responsive-500);
+      }
 
       &:hover {
         /* Background */

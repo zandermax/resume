@@ -139,11 +139,7 @@
   --header-buttons-gap: var(--spacing-md);
   --header-buttons-justify-content: center;
 
-  /* Responsive Overrides */
-  --header-buttons-flex-direction-responsive-500: var(--header-buttons-flex-direction);
-  --header-buttons-gap-responsive-500: var(--header-buttons-gap);
-  --header-buttons-flex-direction-responsive-600: var(--header-buttons-flex-direction);
-  --header-buttons-gap-responsive-600: var(--header-buttons-gap);
+  /* Responsive Overrides - removed unused button variables */
 
   /* ============================================================================
      SECTION CONTAINER (.resume-section)
@@ -174,10 +170,11 @@
   --resume-section-background: transparent;
 
   /* Responsive Overrides */
-  --section-padding-inline-start-responsive-768: unset;
-  --section-padding-inline-end-responsive-768: unset;
-  --section-padding-inline-start-responsive-500: unset;
-  --section-padding-inline-end-responsive-500: unset;
+  /* Section padding - changed from unset to base property reference */
+  --section-padding-inline-start-responsive-768: var(--section-padding-inline-start);
+  --section-padding-inline-end-responsive-768: var(--section-padding-inline-end);
+  --section-padding-inline-start-responsive-500: var(--section-padding-inline-start);
+  --section-padding-inline-end-responsive-500: var(--section-padding-inline-end);
 
   /* --- Pseudo-element ::before --- */
   --section-before-content: none;

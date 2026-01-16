@@ -280,9 +280,18 @@ SKEUOMORPH Theme - Base Variables
     --dial-selector-housing-margin: 0.25rem;
   }
 
-  /* Mobile (500px and below) */
+  /* ============================================
+     RESPONSIVE OVERRIDES
+     Define responsive variable overrides here.
+     Do NOT use @media blocks for responsive overrides.
+     Use @media blocks only for non-responsive property changes.
+     ============================================ */
+
+  /* Responsive Overrides */
+  --section-content-padding-inline-responsive-500: 0.5rem;
+
+  /* Non-responsive overrides stay in @media */
   @media (max-width: 500px) {
-    --section-content-padding-inline-responsive-500: 0.5rem;
     --experience-bullets-li-padding-inline-start: var(--spacing-xs);
     --header-padding-block-start: var(--spacing-sm);
     --header-padding-block-end: var(--spacing-sm);

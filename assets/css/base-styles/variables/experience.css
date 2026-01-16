@@ -322,4 +322,11 @@
   --experience-bullets-li-font-weight: normal;
   --experience-bullets-li-color: inherit;
   --experience-bullets-li-line-height: 1.5;
+
+  /* ============================================
+     RESPONSIVE OVERRIDES
+     ============================================ */
+
+  /* Experience Item - 500px breakpoint */
+  --experience-item-padding-responsive-500: var(--experience-item-padding);
 }
