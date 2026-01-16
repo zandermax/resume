@@ -467,6 +467,14 @@ Common properties for all modes
   --scrollbar-thumb-color: var(--text-color);
   --scrollbar-track-color: transparent;
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'Viewport corruption detected...';
+  --breakpoint-message-tier-2: 'Width buffer overflow?';
+  --breakpoint-message-tier-3: 'ERROR: Memory too narrow';
+  --breakpoint-message-tier-4: 'FATAL:\AData\ALost';
+  --breakpoint-message-text-shadow: var(--glitch-text-shadow);
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* Tablet and smaller (768px and below) */

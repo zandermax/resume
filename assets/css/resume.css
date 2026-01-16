@@ -3,6 +3,7 @@ Resume Styles - Modular Import
 =========================== */
 
 @import url('./base-styles/index.css');
+@import url('./base-styles/breakpoint-messages.css');
 @import url('./colors.css');
 @import url('./dial-selector-styles/index.css');
 @import url('./print.css');

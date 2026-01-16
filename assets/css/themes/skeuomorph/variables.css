@@ -271,6 +271,14 @@ SKEUOMORPH Theme - Base Variables
   --scrollbar-thumb-color: oklch(0.77 0.13 85);
   --scrollbar-track-color: oklch(0.84 0.065 87.5);
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'The page is getting cramped...';
+  --breakpoint-message-tier-2: 'This paper is too narrow to fold.';
+  --breakpoint-message-tier-3: 'Cannot fit on this notecard.';
+  --breakpoint-message-tier-4: 'Too small\Afor the\Abooklet.';
+  --breakpoint-message-font-family: var(--font-family);
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* Tablet and smaller (768px and below) */

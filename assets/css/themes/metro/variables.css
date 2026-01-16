@@ -335,6 +335,15 @@ Flat Design / Material Zero
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: transparent;
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'Window too narrow.';
+  --breakpoint-message-tier-2: 'Insufficient width.';
+  --breakpoint-message-tier-3: 'Cannot display.';
+  --breakpoint-message-tier-4: 'Resize\Arequired\Anow.';
+  --breakpoint-message-font-family: var(--font-family);
+  --breakpoint-message-font-weight: 600;
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* ============================================

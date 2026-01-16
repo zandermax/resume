@@ -74,4 +74,13 @@ Nostalgia Theme Variables
   --scrollbar-width-value: auto;
   --scrollbar-thumb-color: var(--nostalgia-orange);
   --scrollbar-track-color: var(--nostalgia-cyan);
+
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'OMG YOUR WINDOW IS SO SMALL!!!';
+  --breakpoint-message-tier-2: 'IS THIS A TAMAGOTCHI SCREEN?!?!';
+  --breakpoint-message-tier-3: 'TOO SMALL 4 ME!!!';
+  --breakpoint-message-tier-4: 'PLS\AMAKE IT\ABIGGER!!!';
+  --breakpoint-message-text-transform: uppercase;
+  --breakpoint-message-font-weight: bold;
 }

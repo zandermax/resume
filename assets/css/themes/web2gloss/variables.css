@@ -290,6 +290,14 @@ WEB 2.0 GLOSS Theme - Variables
   --scrollbar-thumb-color: oklch(68% 0.18 215);
   --scrollbar-track-color: oklch(94% 0 0 / 0.4);
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'Oops! Your screen is getting a bit narrow...';
+  --breakpoint-message-tier-2: 'Hmm, this is quite small! Smartwatch?';
+  --breakpoint-message-tier-3: 'Too narrow to display nicely :(';
+  --breakpoint-message-tier-4: 'Please make\Ayour window\Awider! :)';
+  --breakpoint-message-font-weight: 600;
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* Tablet and smaller (768px and below) */

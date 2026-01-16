@@ -191,6 +191,14 @@ TERMINAL Theme - Common Variables
   --scrollbar-thumb-color: var(--terminal-button-bg);
   --scrollbar-track-color: var(--terminal-window-bg);
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: '$ echo "viewport too narrow"';
+  --breakpoint-message-tier-2: '$ uname -s: watch?';
+  --breakpoint-message-tier-3: 'Error: Width < minimum';
+  --breakpoint-message-tier-4: 'Segmentation\Afault:\Aresize';
+  --breakpoint-message-font-family: var(--font-family);
+
   /* ============================================
      RESPONSIVE OVERRIDES
      Define responsive variable overrides here.

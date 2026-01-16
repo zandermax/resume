@@ -1,0 +1,98 @@
+/* ===========================
+Breakpoint Messages
+=========================== */
+
+/* Default CSS custom properties */
+:root {
+  /* Message content for each tier (themes override these) */
+  --breakpoint-message-tier-1: 'Your window is getting squished...';
+  --breakpoint-message-tier-2: 'Are you on a smartwatch?';
+  --breakpoint-message-tier-3: 'This is too narrow to display properly.';
+  --breakpoint-message-tier-4: 'Seriously,\Awhat are you\Adoing?';
+
+  /* Styling properties (themes can override) */
+  --breakpoint-message-bg: var(--bg-color, #fff);
+  --breakpoint-message-color: var(--text-color, #000);
+  --breakpoint-message-font-family: inherit;
+  --breakpoint-message-font-family-narrow: 'Courier New', monospace;
+  --breakpoint-message-border: none;
+  --breakpoint-message-padding: 2rem 1rem;
+  --breakpoint-message-font-size: 1rem;
+  --breakpoint-message-line-height: 1.5;
+  --breakpoint-message-text-align: center;
+}
+
+/* Base breakpoint message styles */
+.breakpoint-message {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--breakpoint-message-bg);
+  color: var(--breakpoint-message-color);
+  border: var(--breakpoint-message-border);
+  padding: var(--breakpoint-message-padding);
+  font-family: var(--breakpoint-message-font-family);
+  font-size: var(--breakpoint-message-font-size);
+  line-height: var(--breakpoint-message-line-height);
+  text-align: var(--breakpoint-message-text-align);
+
+  /* Flexbox centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide by default (above 320px) */
+@media (min-width: 320px) {
+  .breakpoint-message {
+    display: none;
+  }
+}
+
+/* Tier 1: 240px - 319px (Squished window) */
+@media (max-width: 319px) {
+  .breakpoint-message {
+    display: flex;
+  }
+
+  .breakpoint-message::before {
+    content: var(--breakpoint-message-tier-1);
+  }
+
+  .resume__main {
+    display: none;
+  }
+}
+
+/* Tier 2: 180px - 239px (Watch accusation) */
+@media (max-width: 239px) {
+  .breakpoint-message::before {
+    content: var(--breakpoint-message-tier-2);
+  }
+}
+
+/* Tier 3: 100px - 179px (Deadpan zone) */
+@media (max-width: 179px) {
+  .breakpoint-message {
+    font-family: var(--breakpoint-message-font-family-narrow);
+    font-size: 0.875rem;
+  }
+
+  .breakpoint-message::before {
+    content: var(--breakpoint-message-tier-3);
+  }
+}
+
+/* Tier 4: <100px (The call-out) */
+@media (max-width: 99px) {
+  .breakpoint-message {
+    white-space: pre-line;
+    font-size: 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .breakpoint-message::before {
+    content: var(--breakpoint-message-tier-4);
+  }
+}

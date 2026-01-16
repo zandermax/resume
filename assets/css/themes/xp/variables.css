@@ -287,4 +287,12 @@ XP Theme - Common Variables
 
   /* Header border radius matches main container */
   --header-border-radius: var(--xp-radius-lg) var(--xp-radius-lg) var(--xp-radius-md) var(--xp-radius-md);
+
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'Window too narrow to display properly.';
+  --breakpoint-message-tier-2: 'Error: Minimum width requirement not met.';
+  --breakpoint-message-tier-3: 'Resume.exe has stopped responding.';
+  --breakpoint-message-tier-4: 'This program\Acannot display\Athe webpage.';
+  --breakpoint-message-font-family: var(--font-family);
 }

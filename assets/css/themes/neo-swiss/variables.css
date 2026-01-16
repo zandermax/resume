@@ -367,6 +367,15 @@ Ultra-modern minimalism with mathematical precision
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: transparent;
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'Viewport: 319px maximum';
+  --breakpoint-message-tier-2: 'Width insufficient.';
+  --breakpoint-message-tier-3: 'Below minimum.';
+  --breakpoint-message-tier-4: 'Error.\AExpand\Aviewport.';
+  --breakpoint-message-font-family: var(--font-family);
+  --breakpoint-message-font-weight: var(--font-weight-light);
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* Tablet and smaller (768px and below) */

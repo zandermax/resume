@@ -22,4 +22,10 @@ DEFAULT Theme - Variables
   --printlink-transition: all 0.2s ease;
   --printlink-hover-color: var(--color-white);
   --printlink-hover-transform: translateY(-1px);
+
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+  --breakpoint-message-tier-1: 'Your window is getting a bit narrow...';
+  --breakpoint-message-tier-2: 'Are you viewing this on a smartwatch?';
+  --breakpoint-message-tier-3: 'This width is too narrow to display properly.';
+  --breakpoint-message-tier-4: 'Please resize\Ayour browser\Awindow.';
 }

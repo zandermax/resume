@@ -281,6 +281,14 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: var(--panel-bg);
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: '⚠ Alert: Viewport width suboptimal';
+  --breakpoint-message-tier-2: '⚠ Warning: Display constraints detected';
+  --breakpoint-message-tier-3: '⚠ Critical: Viewport too narrow';
+  --breakpoint-message-tier-4: '⚠ ALERT:\AResize\Awindow';
+  --breakpoint-message-font-family: var(--font-family);
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   @media (max-width: 768px) {

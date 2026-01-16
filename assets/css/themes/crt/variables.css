@@ -219,6 +219,14 @@ Classic cathode ray tube monitor aesthetic
   --scrollbar-thumb-color: currentColor;
   --scrollbar-track-color: transparent;
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: '> Resolution too low...';
+  --breakpoint-message-tier-2: '> Adjust horizontal hold?';
+  --breakpoint-message-tier-3: '> Signal degraded';
+  --breakpoint-message-tier-4: 'NO\ASIGNAL\ADETECTED';
+  --breakpoint-message-text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+
   /* ============================================
      RESPONSIVE OVERRIDES
      Define responsive variable overrides here.

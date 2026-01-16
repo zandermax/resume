@@ -391,6 +391,17 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --scrollbar-thumb-color: var(--accent-color);
   --scrollbar-track-color: var(--background-color);
 
+  /* ==================== BREAKPOINT MESSAGES ==================== */
+
+  --breakpoint-message-tier-1: 'TOO NARROW.';
+  --breakpoint-message-tier-2: 'SERIOUSLY?';
+  --breakpoint-message-tier-3: 'STOP.';
+  --breakpoint-message-tier-4: 'MAKE\AIT\AWIDER.';
+  --breakpoint-message-border: 8px solid var(--border-color);
+  --breakpoint-message-font-weight: 900;
+  --breakpoint-message-text-transform: uppercase;
+  --breakpoint-message-letter-spacing: -0.02em;
+
   /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
   /* Tablet and smaller (768px and below) */
