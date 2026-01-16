@@ -2,51 +2,62 @@
 // Glitch Theme - Mark Random Characters
 // ===========================
 
+// Configuration: Probability of marking a character as glitchable
+const GLITCH_PROBABILITY = 0.03; // 3% of characters
+
 // Mark random characters with a class for CSS-based glitch effect
 function markGlitchableCharacters() {
-  const mainContainer = document.querySelector('.resume__main');
-  if (!mainContainer) return;
+  try {
+    const mainContainer = document.querySelector('.resume__main');
+    if (!mainContainer) return;
 
-  // Get all sections except the header
-  const contentElements = Array.from(mainContainer.children).filter(
-    (child) => !child.classList.contains('resume-header')
-  );
+    // Get all sections except the header
+    const contentElements = Array.from(mainContainer.children).filter(
+      (child) => !child.classList.contains('resume-header'),
+    );
 
-  // Process each content section
-  contentElements.forEach((element) => {
-    // Work with text nodes to preserve HTML structure
-    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+    // Process each content section
+    contentElements.forEach((element) => {
+      // Work with text nodes to preserve HTML structure
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
 
-    const textNodes = [];
-    let node;
-    while ((node = walker.nextNode())) {
-      textNodes.push(node);
-    }
-
-    // Wrap random characters in spans
-    textNodes.forEach((textNode) => {
-      const text = textNode.textContent;
-      if (!text.trim()) return;
-
-      const fragment = document.createDocumentFragment();
-
-      for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-
-        // 3% chance to mark character as glitchable
-        if (char.trim() && Math.random() < 0.03) {
-          const span = document.createElement('span');
-          span.className = 'glitchable';
-          span.textContent = char;
-          fragment.appendChild(span);
-        } else {
-          fragment.appendChild(document.createTextNode(char));
-        }
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) {
+        textNodes.push(node);
       }
 
-      textNode.parentNode.replaceChild(fragment, textNode);
+      // Wrap random characters in spans
+      textNodes.forEach((textNode) => {
+        const text = textNode.textContent;
+        if (!text.trim()) return;
+
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+
+          // Random chance to mark character as glitchable
+          if (char.trim() && Math.random() < GLITCH_PROBABILITY) {
+            const span = document.createElement('span');
+            span.className = 'glitchable';
+            span.textContent = char;
+            fragment.appendChild(span);
+          } else {
+            fragment.appendChild(document.createTextNode(char));
+          }
+        }
+
+        // Safely replace text node with fragment
+        if (textNode.parentNode) {
+          textNode.parentNode.replaceChild(fragment, textNode);
+        }
+      });
     });
-  });
+  } catch (error) {
+    console.error('Failed to mark glitchable characters:', error);
+    // Continue gracefully - glitch effect is non-critical
+  }
 }
 
 // ===========================
@@ -96,7 +107,10 @@ function applyThemeAndMode() {
 function handleThemeChange(event) {
   const displayName = event.detail.value.toLowerCase();
   // Map display name to internal theme name
-  currentTheme = THEME_DISPLAY_TO_INTERNAL[displayName] || displayName;
+  const mappedTheme = THEME_DISPLAY_TO_INTERNAL[displayName] || displayName;
+
+  // Validate theme exists, fallback to default if invalid
+  currentTheme = mappedTheme || 'default';
 
   // Reset sticky note checkboxes when switching themes
   resetCheckboxes('sticky-note-trigger', 'sticky-note-disappear');
@@ -146,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reset checkboxes on page load (browsers remember form state)
-  resetCheckboxes('keks-banner-dismiss', 'sticky-note-disappear', 'xp-dialog-toggle', 'terminal-dialog-toggle');
+  resetCheckboxes('sticky-note-disappear');
 
   // Attach event listeners to dial-selectors
   const themeSelector = document.getElementById('theme-selector');
