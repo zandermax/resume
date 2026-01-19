@@ -172,6 +172,11 @@ document.getElementById('terminal-dialog-cancel')?.addEventListener('click', () 
 document.getElementById('terminal-dialog-cancel-mobile')?.addEventListener('click', () => terminalDialog?.close());
 closeOnBackdrop(terminalDialog);
 
+// Print Button - Opens print.html in new tab
+document.getElementById('resume-header__printlink')?.addEventListener('click', () => {
+  window.open('/print.html', '_blank', 'noopener,noreferrer');
+});
+
 // CRT Terminal Log Dialog
 const crtTerminalDialog = document.getElementById('crt-terminal-dialog');
 const terminalLog = document.getElementById('terminal-log');

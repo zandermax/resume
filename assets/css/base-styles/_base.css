@@ -109,6 +109,33 @@ p {
   padding: 0;
 }
 
+/* === BUTTON RESET === */
+
+button {
+  /* Remove default button styling */
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+
+  /* Inherit typography */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  /* Remove text-transform inheritance issue */
+  text-transform: none;
+
+  /* Ensure consistent cursor */
+  cursor: pointer;
+
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* ============================================
    BASE TEXT ELEMENTS
    ============================================ */

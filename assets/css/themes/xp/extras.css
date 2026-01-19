@@ -355,8 +355,8 @@ body[data-theme='xp'] {
     --section-margin-inline-end: 1rem;
     --header-name-font-size: 1.7rem;
     --header-top-row-margin-block-start: 2rem;
-    --printlink-font-size: 0.75rem;
-    --printlink-padding-block: 0.5rem;
-    --printlink-padding-inline: 1.2rem;
+    --header-button-font-size: 0.75rem;
+    --header-button-padding-block: 0.5rem;
+    --header-button-padding-inline: 1.2rem;
   }
 }

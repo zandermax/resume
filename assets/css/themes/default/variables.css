@@ -12,16 +12,16 @@ DEFAULT Theme - Variables
   --section-bg: transparent;
   --header-background-color: transparent;
 
-  /* ==================== PRINT LINK - COMMON PROPERTIES ==================== */
-  --printlink-border-radius: 4px;
-  --printlink-padding-block: var(--spacing-sm);
-  --printlink-padding-inline: var(--spacing-lg);
-  --printlink-font-size: 0.9rem;
-  --printlink-font-weight: 600;
-  --printlink-letter-spacing: 0.05em;
-  --printlink-transition: all 0.2s ease;
-  --printlink-hover-color: var(--color-white);
-  --printlink-hover-transform: translateY(-1px);
+  /* ==================== HEADER BUTTON - COMMON PROPERTIES ==================== */
+  --header-button-border-radius: 4px;
+  --header-button-padding-block: var(--spacing-sm);
+  --header-button-padding-inline: var(--spacing-lg);
+  --header-button-font-size: 0.9rem;
+  --header-button-font-weight: 600;
+  --header-button-letter-spacing: 0.05em;
+  --header-button-transition: all 0.2s ease;
+  --header-button-hover-color: var(--color-white);
+  --header-button-hover-transform: translateY(-1px);
 
   /* ==================== BREAKPOINT MESSAGES ==================== */
   --breakpoint-message-tier-1: 'Your window is getting a bit narrow...';

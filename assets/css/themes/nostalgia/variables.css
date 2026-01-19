@@ -33,16 +33,16 @@ Nostalgia Theme Variables
   --header-padding-inline-end: 1rem;
   --main-padding-responsive-500: var(--spacing-sm);
 
-  /* Print link common properties */
-  --printlink-border-radius: 8px;
-  --printlink-padding-block: var(--font-size-sm);
-  --printlink-padding-inline: var(--spacing-lg);
-  --printlink-font-size: var(--spacing-md);
-  --printlink-font-weight: bold;
-  --printlink-letter-spacing: 0.08em;
-  --printlink-transition: all 0.15s ease;
-  --printlink-transform: translateY(0);
-  --printlink-hover-transform: translateY(2px);
+  /* Header button common properties */
+  --header-button-border-radius: 8px;
+  --header-button-padding-block: var(--font-size-sm);
+  --header-button-padding-inline: var(--spacing-lg);
+  --header-button-font-size: var(--spacing-md);
+  --header-button-font-weight: bold;
+  --header-button-letter-spacing: 0.08em;
+  --header-button-transition: all 0.15s ease;
+  --header-button-transform: translateY(0);
+  --header-button-hover-transform: translateY(2px);
 
   /* ==================== SCROLLBAR ==================== */
 

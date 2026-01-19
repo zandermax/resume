@@ -10,7 +10,7 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 
 ## File Organization
 
-### CSS Variables (10 files in variables/ subdirectory)
+### CSS Variables (7 files in variables/ subdirectory)
 
 - `variables/base.css` (~70 lines) - Core design tokens
 - `variables/main-header.css` (~308 lines) - Main container and core header variables
@@ -52,8 +52,8 @@ The `_base.css` file (prefixed with underscore) should always be imported first 
 | `.resume-header__name`         | variables/main-header.css     | header.css                |
 | `.resume-header__role`         | variables/header-sections.css | header.css                |
 | `.resume-header__meta`         | variables/header-sections.css | header.css                |
-| `.resume-header__savelink`     | variables/printlink.css       | header/buttons.css        |
-| `#resume-header__printlink`    | variables/printlink.css       | header/buttons.css        |
+| `.resume-header__button--save` | variables/printlink.css       | header/buttons.css        |
+| `.resume-header__button--print` | variables/printlink.css       | header/buttons.css        |
 | `.resume-section`              | variables/header-sections.css | sections.css              |
 | `.resume-section__title`       | variables/header-sections.css | title.css                 |
 | `.skills-grid`                 | variables/skills.css          | skills.css                |

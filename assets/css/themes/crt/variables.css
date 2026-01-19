@@ -162,31 +162,31 @@ Classic cathode ray tube monitor aesthetic
 
   /* ==================== PRINT LINK ==================== */
 
-  /* Print Link - Base */
-  --printlink-border-width: 3px;
-  --printlink-border-style: solid;
-  --printlink-border-color: currentColor;
-  --printlink-box-shadow: 0 0 20px currentColor, inset 0 0 10px var(--crt-glow);
-  --printlink-text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
-  --printlink-padding-block: 0.5rem;
-  --printlink-padding-inline: 1rem;
-  --printlink-padding-inline-responsive-500: 0.5rem;
-  --printlink-font-weight: bold;
-  --printlink-transition: all 0.1s ease;
+  /* Header Button - Base */
+  --header-button-border-width: 3px;
+  --header-button-border-style: solid;
+  --header-button-border-color: currentColor;
+  --header-button-box-shadow: 0 0 20px currentColor, inset 0 0 10px var(--crt-glow);
+  --header-button-text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
+  --header-button-padding-block: 0.5rem;
+  --header-button-padding-inline: 1rem;
+  --header-button-padding-inline-responsive-500: 0.5rem;
+  --header-button-font-weight: bold;
+  --header-button-transition: all 0.1s ease;
 
-  /* Print Link - Hover */
-  --printlink-hover-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
-  --printlink-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-  --printlink-hover-outline-width: 3px;
-  --printlink-hover-outline-offset: -3px;
+  /* Header Button - Hover */
+  --header-button-hover-box-shadow: 0 0 25px currentColor, inset 0 0 15px var(--crt-glow);
+  --header-button-hover-text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+  --header-button-hover-outline-width: 3px;
+  --header-button-hover-outline-offset: -3px;
 
-  /* Print Link - Pseudo-elements (arrows) */
-  --printlink-before-content: '>';
-  --printlink-before-display: inline;
-  --printlink-before-margin-inline-end: 0.35em;
-  --printlink-after-content: '<';
-  --printlink-after-display: inline;
-  --printlink-after-margin-inline-start: 0.35em;
+  /* Header Button - Pseudo-elements (arrows) */
+  --header-button-before-content: '>';
+  --header-button-before-display: inline;
+  --header-button-before-margin-inline-end: 0.35em;
+  --header-button-after-content: '<';
+  --header-button-after-display: inline;
+  --header-button-after-margin-inline-start: 0.35em;
 
   /* ==================== LINKS ==================== */
 
@@ -205,12 +205,18 @@ Classic cathode ray tube monitor aesthetic
   --scrollbar-width: 14px;
   --scrollbar-height: 14px;
   --scrollbar-track-background: transparent;
-  --scrollbar-track-border: 1px solid currentColor;
+  --scrollbar-track-border-width: 1px;
+  --scrollbar-track-border-style: solid;
+  --scrollbar-track-border-color: currentColor;
   --scrollbar-thumb-background: currentColor;
-  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-border-width: 0;
+  --scrollbar-thumb-border-style: solid;
+  --scrollbar-thumb-border-color: transparent;
   --scrollbar-thumb-hover-background: currentColor;
   --scrollbar-button-background: transparent;
-  --scrollbar-button-border: 1px solid currentColor;
+  --scrollbar-button-border-width: 1px;
+  --scrollbar-button-border-style: solid;
+  --scrollbar-button-border-color: currentColor;
   --scrollbar-button-height: 14px;
   --scrollbar-button-width: 14px;
 
@@ -245,10 +251,10 @@ Classic cathode ray tube monitor aesthetic
 
   @media (max-width: 500px) {
     --header-name-font-size: 1.7rem;
-    --printlink-font-size: 0.8rem;
-    --printlink-padding-block: 0.45rem;
-    --printlink-padding-inline: 0.85rem;
-    --printlink-margin-block-end: 0;
+    --header-button-font-size: 0.8rem;
+    --header-button-padding-block: 0.45rem;
+    --header-button-padding-inline: 0.85rem;
+    --header-button-margin-block-end: 0;
   }
 
   @media (max-width: 480px) {

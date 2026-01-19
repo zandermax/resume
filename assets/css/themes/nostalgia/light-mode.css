@@ -17,29 +17,29 @@ Nostalgia Theme - Light Mode
   /* Main sparkles background for resume content area */
   --main-background-image: url("data:image/svg+xml,%3Csvg width='250' height='250' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='main-sparkles-light' x='0' y='0' width='250' height='250' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='35' cy='45' r='2.5' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.2;0.9;0.2' dur='2.3s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='95' cy='85' r='1.8' fill='%23ff00ff'%3E%3Canimate attributeName='opacity' values='0.3;0.95;0.3' dur='1.7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='165' cy='55' r='2.2' fill='%2300ffff'%3E%3Canimate attributeName='opacity' values='0.25;1;0.25' dur='2s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='55' cy='135' r='1.6' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.35;0.85;0.35' dur='2.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='185' cy='165' r='2.3' fill='%23ff00ff'%3E%3Canimate attributeName='opacity' values='0.28;0.92;0.28' dur='1.9s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='125' cy='195' r='1.7' fill='%2300ffff'%3E%3Canimate attributeName='opacity' values='0.32;0.88;0.32' dur='2.6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='70' cy='105' r='2' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.4;0.9;0.4' dur='2.1s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='145' cy='125' r='2.4' fill='%23ff00ff'%3E%3Canimate attributeName='opacity' values='0.22;1;0.22' dur='2.4s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='25' cy='175' r='1.9' fill='%2300ffff'%3E%3Canimate attributeName='opacity' values='0.38;0.86;0.38' dur='1.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='205' cy='35' r='2.1' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.26;0.94;0.26' dur='2.7s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='110' cy='65' r='1.5' fill='%23ff00ff'%3E%3Canimate attributeName='opacity' values='0.33;0.87;0.33' dur='2.2s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='180' cy='145' r='2.2' fill='%2300ffff'%3E%3Canimate attributeName='opacity' values='0.3;0.93;0.3' dur='1.6s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='40' cy='215' r='1.8' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.27;0.91;0.27' dur='2.8s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='220' cy='125' r='2.5' fill='%23ff00ff'%3E%3Canimate attributeName='opacity' values='0.24;0.96;0.24' dur='2.3s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='85' cy='235' r='1.6' fill='%2300ffff'%3E%3Canimate attributeName='opacity' values='0.36;0.84;0.36' dur='1.9s' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='155' cy='15' r='2' fill='%23ffff00'%3E%3Canimate attributeName='opacity' values='0.29;0.89;0.29' dur='2.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/pattern%3E%3C/defs%3E%3Crect width='250' height='250' fill='url(%23main-sparkles-light)'/%3E%3C/svg%3E");
 
-  /* Print Link Button Styling - 90s Style! */
-  --printlink-background-image: linear-gradient(
+  /* Header Button Styling - 90s Style! */
+  --header-button-background-image: linear-gradient(
     135deg,
     var(--nostalgia-hot-pink) 0%,
     var(--nostalgia-orange) 50%,
     var(--nostalgia-yellow) 100%
   );
-  --printlink-color: var(--nostalgia-white);
-  --printlink-border-width: var(--border-width-extra-thick);
-  --printlink-border-style: outset;
-  --printlink-border-color: var(--nostalgia-magenta);
-  --printlink-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
-  --printlink-box-shadow: 0 6px 0 var(--nostalgia-dark-pink), 0 8px 15px oklch(0% 0 0 / 0.3);
+  --header-button-color: var(--nostalgia-white);
+  --header-button-border-width: var(--border-width-extra-thick);
+  --header-button-border-style: outset;
+  --header-button-border-color: var(--nostalgia-magenta);
+  --header-button-text-shadow: 2px 2px 4px oklch(0% 0 0 / 0.5);
+  --header-button-box-shadow: 0 6px 0 var(--nostalgia-dark-pink), 0 8px 15px oklch(0% 0 0 / 0.3);
 
-  --printlink-hover-background-image: linear-gradient(
+  --header-button-hover-background-image: linear-gradient(
     135deg,
     var(--nostalgia-magenta) 0%,
     var(--nostalgia-orange) 50%,
     var(--nostalgia-yellow) 100%
   );
-  --printlink-hover-color: var(--nostalgia-white);
-  --printlink-hover-shadow: 0 4px 0 var(--nostalgia-dark-pink), 0 6px 12px oklch(0% 0 0 / 0.4);
-  --printlink-hover-text-shadow: 2px 2px 6px oklch(0% 0 0 / 0.7);
+  --header-button-hover-color: var(--nostalgia-white);
+  --header-button-hover-shadow: 0 4px 0 var(--nostalgia-dark-pink), 0 6px 12px oklch(0% 0 0 / 0.4);
+  --header-button-hover-text-shadow: 2px 2px 6px oklch(0% 0 0 / 0.7);
 
   /* Scrollbar styling - light mode with hot pink and orange */
   /* Webkit (primary) */

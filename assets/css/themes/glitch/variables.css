@@ -198,31 +198,31 @@ Common properties for all modes
   --header-name-animation: text-glitch var(--duration-slowest) infinite;
   --header-name-will-change: transform, text-shadow;
 
-  /* Print link custom properties */
-  --printlink-border-width: var(--border-width-lg);
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--border-color);
-  --printlink-background-color: var(--background-color);
-  --printlink-color: var(--text-color);
-  --printlink-font-weight: 700;
-  --printlink-padding-block: var(--spacing-md);
-  --printlink-padding-inline: var(--spacing-xl);
-  --printlink-text-transform: uppercase;
-  --printlink-font-size: var(--font-size-base);
-  --printlink-letter-spacing: 0.1em;
-  --printlink-text-decoration: none;
-  --printlink-transform: skewX(-3deg);
-  --printlink-box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
-  --printlink-filter: var(--filter-contrast-base);
-  --printlink-text-shadow: var(--glitch-text-shadow);
-  --printlink-hover-filter: invert(1);
-  --printlink-hover-transform: skewX(3deg);
-  --printlink-before-content: '⚠';
-  --printlink-before-display: inline;
-  --printlink-before-margin-inline-end: 1em;
-  --printlink-after-content: '⚠';
-  --printlink-after-display: inline;
-  --printlink-after-margin-inline-start: 1em;
+  /* Header button custom properties */
+  --header-button-border-width: var(--border-width-lg);
+  --header-button-border-style: solid;
+  --header-button-border-color: var(--border-color);
+  --header-button-background-color: var(--background-color);
+  --header-button-color: var(--text-color);
+  --header-button-font-weight: 700;
+  --header-button-padding-block: var(--spacing-md);
+  --header-button-padding-inline: var(--spacing-xl);
+  --header-button-text-transform: uppercase;
+  --header-button-font-size: var(--font-size-base);
+  --header-button-letter-spacing: 0.1em;
+  --header-button-text-decoration: none;
+  --header-button-transform: skewX(-3deg);
+  --header-button-box-shadow: 5px 5px 0 0 var(--glitch-primary), -3px -3px 0 0 var(--glitch-secondary);
+  --header-button-filter: var(--filter-contrast-base);
+  --header-button-text-shadow: var(--glitch-text-shadow);
+  --header-button-hover-filter: invert(1);
+  --header-button-hover-transform: skewX(3deg);
+  --header-button-before-content: '⚠';
+  --header-button-before-display: inline;
+  --header-button-before-margin-inline-end: 1em;
+  --header-button-after-content: '⚠';
+  --header-button-after-display: inline;
+  --header-button-after-margin-inline-start: 1em;
 
   /* Skills grid custom properties */
   --skills-grid-border: var(--border-width-md) solid var(--border-color);
@@ -485,9 +485,9 @@ Common properties for all modes
     --section-title-padding-block-end: 0.6rem;
     --section-title-padding-inline-start: var(--spacing-md);
     --section-title-padding-inline-end: var(--spacing-md);
-    --printlink-font-size: var(--font-size-xs);
-    --printlink-padding-block: var(--spacing-sm);
-    --printlink-padding-inline: var(--spacing-lg);
+    --header-button-font-size: var(--font-size-xs);
+    --header-button-padding-block: var(--spacing-sm);
+    --header-button-padding-inline: var(--spacing-lg);
 
     /* Layout padding adjustments */
     --resume-main-animation: main-tilt-glitch-mobile var(--duration-fast) infinite;
@@ -511,9 +511,9 @@ Common properties for all modes
     --section-title-padding-block-end: var(--spacing-xs);
     --section-title-padding-inline-start: 0.8rem;
     --section-title-padding-inline-end: 0.8rem;
-    --printlink-font-size: var(--font-size-xs);
-    --printlink-padding-block: var(--spacing-sm);
-    --printlink-padding-inline: var(--spacing-lg);
+    --header-button-font-size: var(--font-size-xs);
+    --header-button-padding-block: var(--spacing-sm);
+    --header-button-padding-inline: var(--spacing-lg);
 
     /* Layout padding adjustments */
     --main-padding: var(--spacing-md);

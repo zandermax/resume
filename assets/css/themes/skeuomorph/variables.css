@@ -192,21 +192,21 @@ SKEUOMORPH Theme - Base Variables
   --tech-badge-after-pointer-events: none;
   --tech-badge-after-z-index: 2;
 
-  /* ==================== PRINT BUTTON VARIABLES ==================== */
+  /* ==================== HEADER BUTTON VARIABLES ==================== */
 
-  --printlink-background-image: var(--metal-gradient);
-  --printlink-color: var(--print-button-text-color, var(--ink-color));
-  --printlink-border-width: 3px;
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--stitch-color);
-  --printlink-box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
+  --header-button-background-image: var(--metal-gradient);
+  --header-button-color: var(--print-button-text-color, var(--ink-color));
+  --header-button-border-width: 3px;
+  --header-button-border-style: solid;
+  --header-button-border-color: var(--stitch-color);
+  --header-button-box-shadow: 0 4px 6px var(--skeu-black-30), inset 0 2px 4px var(--skeu-white-40),
     inset 0 -2px 4px var(--skeu-black-30);
-  --printlink-text-shadow: 0 1px 0 var(--skeu-white-30);
-  --printlink-font-weight: 700;
-  --printlink-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  --header-button-text-shadow: 0 1px 0 var(--skeu-white-30);
+  --header-button-font-weight: 700;
+  --header-button-transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  /* Print button hover state */
-  --printlink-hover-background-image: linear-gradient(
+  /* Header button hover state */
+  --header-button-hover-background-image: linear-gradient(
     135deg,
     oklch(0.65 0.11 75) 0%,
     oklch(0.77 0.13 85) 20%,
@@ -216,15 +216,15 @@ SKEUOMORPH Theme - Base Variables
     oklch(0.77 0.13 85) 80%,
     oklch(0.65 0.11 75) 100%
   );
-  --printlink-hover-background-size: 300% 300%;
-  --printlink-hover-transform: translateY(-2px);
-  --printlink-hover-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
+  --header-button-hover-background-size: 300% 300%;
+  --header-button-hover-transform: translateY(-2px);
+  --header-button-hover-box-shadow: 0 6px 8px var(--skeu-black-40), inset 0 2px 4px var(--skeu-white-50),
     inset 0 -2px 4px var(--skeu-black-20);
-  --printlink-hover-animation: button-shimmer 2s linear infinite;
+  --header-button-hover-animation: button-shimmer 2s linear infinite;
 
-  /* Print button active state */
-  --printlink-active-transform: translateY(0);
-  --printlink-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
+  /* Header button active state */
+  --header-button-active-transform: translateY(0);
+  --header-button-active-box-shadow: 0 2px 3px var(--skeu-black-40), inset 0 1px 2px var(--skeu-black-30);
 
   /* ==================== DIAL SELECTOR HOUSING VARIABLES ==================== */
 

@@ -21,11 +21,8 @@
 
 /* Layout-level variables */
 @import url('./variables/main-header.css');
-@import url('./variables/layout-main-header.css');
 @import url('./variables/header-sections.css');
-@import url('./variables/layout-header-sections.css');
 @import url('./variables/sections-global.css');
-@import url('./variables/layout-sections-global.css');
 
 /* Component-specific variables */
 @import url('./variables/skills.css');

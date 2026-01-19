@@ -259,23 +259,23 @@ Flat Design / Material Zero
   --link-visited-hover-color: var(--color-white);
   --link-visited-hover-border-block-end-color: var(--link-visited-color);
 
-  /* ==================== PRINT LINK ==================== */
+  /* ==================== HEADER BUTTONS ==================== */
 
-  /* Print link custom properties */
-  --printlink-border-width: 0;
-  --printlink-border-radius: 0;
-  --printlink-background-color: var(--metro-green);
-  --printlink-color: var(--color-white);
-  --printlink-font-weight: 600;
-  --printlink-padding-block: 1rem;
-  --printlink-padding-inline: 2rem;
-  --printlink-text-transform: uppercase;
-  --printlink-font-size: 0.9rem;
-  --printlink-letter-spacing: 0.08em;
-  --printlink-box-shadow: none;
-  --printlink-transition: background-color 0.15s ease;
-  --printlink-hover-background-color: var(--metro-blue);
-  --printlink-active-opacity: 0.8;
+  /* Header button custom properties */
+  --header-button-border-width: 0;
+  --header-button-border-radius: 0;
+  --header-button-background-color: var(--metro-green);
+  --header-button-color: var(--color-white);
+  --header-button-font-weight: 600;
+  --header-button-padding-block: 1rem;
+  --header-button-padding-inline: 2rem;
+  --header-button-text-transform: uppercase;
+  --header-button-font-size: 0.9rem;
+  --header-button-letter-spacing: 0.08em;
+  --header-button-box-shadow: none;
+  --header-button-transition: background-color 0.15s ease;
+  --header-button-hover-background-color: var(--metro-blue);
+  --header-button-active-opacity: 0.8;
 
   /* ==================== DIAL SELECTOR ==================== */
 
@@ -321,12 +321,18 @@ Flat Design / Material Zero
   --scrollbar-width: 10px;
   --scrollbar-height: 10px;
   --scrollbar-track-background: transparent;
-  --scrollbar-track-border: none;
+  --scrollbar-track-border-width: 0;
+  --scrollbar-track-border-style: solid;
+  --scrollbar-track-border-color: transparent;
   --scrollbar-thumb-background: var(--accent-color);
-  --scrollbar-thumb-border: none;
+  --scrollbar-thumb-border-width: 0;
+  --scrollbar-thumb-border-style: solid;
+  --scrollbar-thumb-border-color: transparent;
   --scrollbar-thumb-hover-background: var(--accent-color);
   --scrollbar-button-background: transparent;
-  --scrollbar-button-border: none;
+  --scrollbar-button-border-width: 0;
+  --scrollbar-button-border-style: solid;
+  --scrollbar-button-border-color: transparent;
   --scrollbar-button-height: 10px;
   --scrollbar-button-width: 10px;
 
@@ -380,9 +386,9 @@ Flat Design / Material Zero
     --section-title-padding-block-end: 1rem;
     --section-title-padding-inline-start: 1.5rem;
     --section-title-padding-inline-end: 1.5rem;
-    --printlink-font-size: 0.75rem;
-    --printlink-padding-block: 0.75rem;
-    --printlink-padding-inline: 1.5rem;
+    --header-button-font-size: 0.75rem;
+    --header-button-padding-block: 0.75rem;
+    --header-button-padding-inline: 1.5rem;
     --education-institution-font-size: 1.1rem;
     --experience-role-font-size: 1.1rem;
   }
@@ -394,8 +400,8 @@ Flat Design / Material Zero
     --section-title-padding-block-end: 0.75rem;
     --section-title-padding-inline-start: 1rem;
     --section-title-padding-inline-end: 1rem;
-    --printlink-font-size: 0.75rem;
-    --printlink-padding-block: 0.75rem;
-    --printlink-padding-inline: 1.5rem;
+    --header-button-font-size: 0.75rem;
+    --header-button-padding-block: 0.75rem;
+    --header-button-padding-inline: 1.5rem;
   }
 }

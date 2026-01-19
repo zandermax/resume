@@ -202,22 +202,22 @@ Ultra-modern minimalism with mathematical precision
   --section-title-width: 60%;
   --section-title-border-block-end: 1px solid var(--accent-color);
 
-  /* Print link custom properties */
-  --printlink-font-size: var(--font-size-small);
-  --printlink-text-transform: uppercase;
-  --printlink-background-color: var(--accent-color);
-  --printlink-color: var(--color-white);
-  --printlink-font-weight: var(--font-weight-medium);
-  --printlink-padding-block: var(--spacing-2);
-  --printlink-padding-inline: var(--spacing-4);
-  --printlink-letter-spacing: var(--letter-spacing-wide);
-  --printlink-transition: none;
-  --printlink-text-decoration: none;
-  --printlink-border-width: 0;
-  --printlink-border-radius: 0;
-  --printlink-box-shadow: none;
-  --printlink-hover-opacity: 0.9;
-  --printlink-active-opacity: 0.8;
+  /* Header button custom properties */
+  --header-button-font-size: var(--font-size-small);
+  --header-button-text-transform: uppercase;
+  --header-button-background-color: var(--accent-color);
+  --header-button-color: var(--color-white);
+  --header-button-font-weight: var(--font-weight-medium);
+  --header-button-padding-block: var(--spacing-2);
+  --header-button-padding-inline: var(--spacing-4);
+  --header-button-letter-spacing: var(--letter-spacing-wide);
+  --header-button-transition: none;
+  --header-button-text-decoration: none;
+  --header-button-border-width: 0;
+  --header-button-border-radius: 0;
+  --header-button-box-shadow: none;
+  --header-button-hover-opacity: 0.9;
+  --header-button-active-opacity: 0.8;
 
   /* Dial selector housing custom properties */
   --dial-selector-housing-padding-block: var(--spacing-4);
@@ -383,9 +383,9 @@ Ultra-modern minimalism with mathematical precision
     --header-name-font-size: clamp(2.5rem, 10vw, 4rem);
     --section-title-font-size: clamp(1.125rem, 3vw, 1.5rem);
     --section-title-width: 80%;
-    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
-    --printlink-padding-block: calc(var(--swiss-grid) * 1.5);
-    --printlink-padding-inline: var(--spacing-3);
+    --header-button-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --header-button-padding-block: calc(var(--swiss-grid) * 1.5);
+    --header-button-padding-inline: var(--spacing-3);
     --education-institution-font-size: clamp(1.25rem, 4vw, 2rem);
     --experience-role-font-size: clamp(1.25rem, 4vw, 2rem);
   }
@@ -403,8 +403,8 @@ Ultra-modern minimalism with mathematical precision
     --section-title-margin-inline-start: 0;
     --section-title-margin-inline-end: 0;
     --section-title-width: 100%;
-    --printlink-font-size: clamp(0.625rem, 2vw, 0.75rem);
-    --printlink-padding-block: calc(var(--swiss-grid) * 1.5);
-    --printlink-padding-inline: var(--spacing-3);
+    --header-button-font-size: clamp(0.625rem, 2vw, 0.75rem);
+    --header-button-padding-block: calc(var(--swiss-grid) * 1.5);
+    --header-button-padding-inline: var(--spacing-3);
   }
 }

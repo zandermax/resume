@@ -2,13 +2,41 @@
 TERMINAL Theme - Extras (Dialog & Component Styles)
 =========================== */
 
-/* Apply terminal font and rendering */
-body[data-theme='terminal'] {
-  /* Terminal Dialog - 1992 CLI-style modal with ASCII box-drawing */
+body:not([data-theme='terminal']) {
+  #terminal-save-btn,
   .terminal-dialog {
-    background: var(--terminal-window-bg);
-    border: 0;
+    display: none;
+  }
+}
+
+body[data-theme='terminal'] {
+  /* ============================================================================
+     TERMINAL DIALOG - 1992 CLI-style modal with ASCII box-drawing
+     ============================================================================ */
+
+  .terminal-dialog {
+    /* Position */
+    position: fixed;
+
+    /* Display/Box Model */
+    width: 54ch;
+    max-width: none;
     padding: 0;
+    margin: 0;
+
+    /* Borders */
+    border: 0;
+
+    /* Background */
+    background: var(--terminal-window-bg);
+
+    /* Typography */
+    color: var(--text-color);
+    font-family: var(--font-family);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+
+    /* Visual Effects */
     /* Pixelated dithered shadow effect */
     box-shadow: 4px 0 0 var(--terminal-black-80), 8px 0 0 var(--terminal-black-80), 0 4px 0 var(--terminal-black-80),
       4px 4px 0 var(--terminal-black-80), 8px 4px 0 var(--terminal-black-80), 12px 4px 0 var(--terminal-black-40),
@@ -18,108 +46,550 @@ body[data-theme='terminal'] {
       20px 12px 0 var(--terminal-black-40), 8px 16px 0 var(--terminal-black-40), 12px 16px 0 var(--terminal-black-80),
       16px 16px 0 var(--terminal-black-40), 20px 16px 0 var(--terminal-black-40), 12px 20px 0 var(--terminal-black-40),
       16px 20px 0 var(--terminal-black-40), 20px 20px 0 var(--terminal-black-40);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    width: 54ch;
-    max-width: none;
-    overflow: hidden;
-    /* Prevent mobile browser text size adjustment */
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
 
-    /* Performance optimizations */
+    /* Other */
+    overflow: hidden;
     contain: layout paint style;
 
     &::backdrop {
+      /* Background */
       background: var(--terminal-black-60);
     }
-  }
 
-  .terminal-dialog__container {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    cursor: default;
-  }
+    /* --- Dialog Container --- */
+    .terminal-dialog__container {
+      /* Position */
+      position: relative;
 
-  .terminal-dialog__frame {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    font-size: 1rem;
-    line-height: 1; /* Tighter line-height to eliminate gaps */
-    color: var(--text-color);
-    background: transparent;
-    white-space: pre;
-    overflow: visible;
-    display: block;
-    /* Remove any default pre spacing */
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
+      /* Display/Box Model */
+      padding: 0;
+      margin: 0;
 
-  /* Loading bar - pure CSS block pattern with reveal overlay */
-  .terminal-dialog__loading-bar {
-    display: inline-block;
-    width: 38ch;
-    height: 1em;
-    vertical-align: middle;
-    position: relative;
+      /* Other */
+      cursor: default;
+    }
 
-    /* The blocks */
-    --block-size: 1.75ch;
-    --block-gap: 0.5ch;
+    /* --- ASCII Frame (Desktop) --- */
+    .terminal-dialog__frame {
+      /* Display/Box Model */
+      display: block;
+      margin: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding: 0;
 
-    background-image: repeating-linear-gradient(
-      90deg,
-      var(--color-blue-navy) 0 var(--block-size),
-      transparent 0 calc(var(--block-size) + var(--block-gap))
-    );
+      /* Background */
+      background: transparent;
 
-    /* Keep blocks vertically centered */
-    background-size: auto 100%;
-    background-repeat: repeat;
-    background-position: 0 0;
+      /* Typography */
+      font-family: var(--font-family);
+      font-size: 1rem;
+      color: var(--text-color);
+      line-height: 1;
+      white-space: pre;
 
-    /* Overlay that covers the loading bar */
-    &::after {
-      content: '';
+      /* Other */
+      overflow: visible;
+    }
+
+    /* Desktop Frame Variant */
+    .terminal-dialog__frame--desktop {
+      /* Display/Box Model */
+      display: block;
+    }
+
+    /* --- Loading Bar (Desktop) --- */
+    .terminal-dialog__loading-bar {
+      /* Position */
+      position: relative;
+
+      /* Display/Box Model */
+      display: inline-block;
+      width: 38ch;
+      height: 1em;
+
+      /* Flex/Alignment */
+      vertical-align: middle;
+
+      /* Background */
+      --block-size: 1.75ch;
+      --block-gap: 0.5ch;
+      background-image: repeating-linear-gradient(
+        90deg,
+        var(--color-blue-navy) 0 var(--block-size),
+        transparent 0 calc(var(--block-size) + var(--block-gap))
+      );
+      background-size: auto 100%;
+      background-repeat: repeat;
+      background-position: 0 0;
+
+      /* Overlay that covers the loading bar */
+      &::after {
+        content: '';
+
+        /* Position */
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        /* Display/Box Model */
+        width: 100%;
+        height: 100%;
+
+        /* Background */
+        background: var(--terminal-window-bg);
+      }
+    }
+
+    /* --- Message Text --- */
+    .terminal-dialog__message {
+      &::before {
+        content: 'Retrieving resume...';
+      }
+    }
+
+    /* --- Button Text --- */
+    .terminal-dialog__button-text {
+      &::before {
+        content: '      CANCEL       ';
+      }
+    }
+
+    /* --- Dialog Button (Desktop) --- */
+    .terminal-dialog__button {
+      /* Position */
       position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
+      bottom: 1.5rem;
+      left: calc(50% - 0.25em);
+
+      /* Display/Box Model */
+      padding: 1rem 6rem;
+
+      /* Borders */
+      border: 0;
+
+      /* Background */
+      background: transparent;
+
+      /* Typography */
+      font-family: var(--font-family);
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      /* Visual Effects */
+      box-shadow: none;
+      transform: translateX(-50%);
+
+      /* Transitions */
+      transition: none;
+
+      /* Other */
+      cursor: pointer;
+
+      &:active {
+        /* Visual Effects */
+        transform: translateX(-50%) translate(1px, 1px);
+      }
+    }
+
+    /* Desktop Button Variant */
+    .terminal-dialog__button--desktop {
+      /* Display/Box Model */
+      display: block;
+    }
+
+    /* --- Print Overlay (Desktop) --- */
+    #terminal-dialog__print-overlay {
+      /* Position */
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      z-index: 10;
+
+      /* Display/Box Model */
+      padding: 1rem 6rem;
+
+      /* Background */
+      background: transparent;
+
+      /* Typography */
+      text-decoration: none;
+
+      /* Visual Effects */
+      transform: translateX(calc(-50% - 0.25rem));
+
+      /* Other */
+      pointer-events: none;
+      cursor: pointer;
+
+      &:active {
+        /* Visual Effects */
+        transform: translateX(-50%) translate(1px, 1px);
+      }
+    }
+
+    /* Desktop Print Overlay Variant */
+    .terminal-dialog__print-overlay--desktop {
+      /* Display/Box Model */
+      display: block;
+    }
+
+    /* Suppress focus outlines for button and overlay */
+    .terminal-dialog__button,
+    #terminal-dialog__print-overlay {
+      /* Other */
+      outline: none;
+
+      &:focus,
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    /* --- Mobile CSS Border Version --- */
+    .terminal-dialog__content-mobile {
+      /* Display/Box Model */
+      display: none;
+      min-width: 280px;
+      max-width: 95vw;
+      margin: 0 auto;
+
+      /* Flex/Alignment */
+      flex-direction: column;
+
+      /* Borders */
+      border: 3px double var(--text-color);
+      border-radius: 0;
+
+      /* Background */
       background: var(--terminal-window-bg);
+    }
+
+    /* --- Title Bar (Mobile) --- */
+    .terminal-dialog__title-bar {
+      /* Display/Box Model */
+      padding: 0.75rem 1rem;
+
+      /* Borders */
+      border-bottom: 3px double var(--text-color);
+
+      /* Background */
+      background: var(--terminal-window-bg);
+
+      /* Typography */
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+
+    /* --- Body (Mobile) --- */
+    .terminal-dialog__body {
+      /* Display/Box Model */
+      display: flex;
+      padding: 2rem 1.5rem;
+
+      /* Flex/Alignment */
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      /* Borders */
+      border-bottom: 3px double var(--text-color);
+    }
+
+    /* --- Message Mobile --- */
+    .terminal-dialog__message-mobile {
+      /* Position */
+      position: relative;
+
+      /* Display/Box Model */
+      min-height: 1.5em;
+
+      /* Typography */
+      font-size: 0.95rem;
+      text-align: center;
+
+      &::before {
+        content: 'Retrieving resume...';
+      }
+    }
+
+    /* --- Loading Bar (Mobile) --- */
+    .terminal-dialog__loading-bar-mobile {
+      /* Position */
+      position: relative;
+
+      /* Display/Box Model */
+      width: 100%;
+      max-width: 300px;
+      height: 1.5rem;
+
+      /* Background */
+      background-image: repeating-linear-gradient(90deg, var(--color-blue-navy) 0 20px, transparent 0 26px);
+      background-size: auto 100%;
+      background-repeat: repeat;
+      background-position: 0 0;
+
+      &::after {
+        content: '';
+
+        /* Position */
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        /* Display/Box Model */
+        width: 100%;
+        height: 100%;
+
+        /* Background */
+        background: var(--terminal-window-bg);
+      }
+    }
+
+    /* --- Button Area (Mobile) --- */
+    .terminal-dialog__button-area {
+      /* Display/Box Model */
+      display: flex;
+      padding: 1rem 1.5rem;
+
+      /* Flex/Alignment */
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* --- Button Mobile --- */
+    .terminal-dialog__button-mobile {
+      /* Display/Box Model */
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+
+      /* Borders */
+      border: 2px solid var(--text-color);
+
+      /* Background */
+      background: var(--terminal-button-bg);
+
+      /* Typography */
+      font-family: var(--font-family);
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--text-color);
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+
+      /* Visual Effects */
+      box-shadow: var(--terminal-inset-raised-sm);
+
+      /* Transitions */
+      transition: all 0.1s;
+
+      /* Other */
+      cursor: pointer;
+
+      &:hover {
+        /* Visual Effects */
+        filter: brightness(1.1);
+      }
+
+      &:active {
+        /* Visual Effects */
+        box-shadow: var(--terminal-inset-sunken-sm);
+        transform: translate(1px, 1px);
+      }
+    }
+
+    /* Print Button Mobile Variant */
+    .terminal-dialog__button-mobile--print {
+      /* Borders */
+      border-color: var(--dial-selector-color-selection);
+
+      /* Background */
+      background: var(--terminal-title-bg);
+
+      /* Typography */
+      color: var(--dial-selector-color-selection);
+
+      /* Other */
+      visibility: hidden;
+    }
+
+    /* --- Animations when dialog is open --- */
+    &[open] {
+      .terminal-dialog__loading-bar::after {
+        /* Animations */
+        animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
+      }
+
+      .terminal-dialog__message::before {
+        /* Position */
+        position: absolute;
+
+        /* Animations */
+        animation: terminal-message-swap 5s steps(1) 1 forwards;
+      }
+
+      .terminal-dialog__button-text::before {
+        /* Animations */
+        animation: terminal-button-text-swap 5s steps(1) 1 forwards;
+      }
+
+      #terminal-dialog__print-overlay {
+        /* Animations */
+        animation: terminal-print-overlay-enable 5s steps(1) 1 forwards;
+      }
+
+      .terminal-dialog__loading-bar-mobile::after {
+        /* Animations */
+        animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
+      }
+
+      .terminal-dialog__message-mobile::before {
+        /* Animations */
+        animation: terminal-message-text-swap 5s steps(1) 1 forwards;
+      }
+
+      .terminal-dialog__button-mobile--print {
+        /* Animations */
+        animation: terminal-button-mobile-show 5s steps(1) 1 forwards;
+      }
+    }
+
+    /* --- Responsive Adjustments --- */
+
+    /* Desktop: Show ASCII art and absolute buttons, hide mobile version */
+    @media (min-width: 601px) {
+      .terminal-dialog__frame--desktop {
+        display: block;
+      }
+
+      .terminal-dialog__content-mobile {
+        display: none;
+      }
+
+      .terminal-dialog__button--desktop,
+      .terminal-dialog__print-overlay--desktop {
+        display: block;
+      }
+    }
+
+    /* Mobile: Hide ASCII art and absolute buttons, show mobile version */
+    @media (max-width: 600px) {
+      /* Display/Box Model */
+      width: auto;
+      min-width: 280px;
+      max-width: 95vw;
+
+      .terminal-dialog__frame--desktop {
+        display: none;
+      }
+
+      .terminal-dialog__content-mobile {
+        display: flex;
+      }
+
+      .terminal-dialog__button--desktop,
+      .terminal-dialog__print-overlay--desktop {
+        display: none;
+      }
+    }
+
+    /* Extra small screens - slightly smaller mobile dialog */
+    @media (max-width: 400px) {
+      .terminal-dialog__content-mobile {
+        min-width: 260px;
+      }
+
+      .terminal-dialog__title-bar {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .terminal-dialog__body {
+        padding: 1.5rem 1rem;
+        gap: 1.25rem;
+      }
+
+      .terminal-dialog__button-area {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+      }
+
+      .terminal-dialog__button-mobile {
+        width: 100%;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+      }
     }
   }
 
-  /* Message text that changes after loading */
-  .terminal-dialog__message::before {
-    content: 'Retrieving resume...';
+  /* ============================================================================
+     TERMINAL RETRIEVE RESUME BUTTON
+     ============================================================================ */
+
+  #terminal-save-btn {
+    /* Position */
+    position: relative;
+
+    /* Animations */
+    animation: terminal-retrieve-scan 2s ease-in-out infinite;
+
+    /* Transitions */
+    transition: all 0.2s ease;
+
+    &::before {
+      content: '>> ';
+
+      /* Display/Box Model */
+      margin-inline-end: 0.25em;
+
+      /* Typography */
+      font-weight: bold;
+
+      /* Animations */
+      animation: terminal-bracket-blink 1.5s step-end infinite;
+    }
+
+    &::after {
+      content: ' <<';
+
+      /* Display/Box Model */
+      margin-inline-start: 0.25em;
+
+      /* Typography */
+      font-weight: bold;
+
+      /* Animations */
+      animation: terminal-bracket-blink 1.5s step-end infinite;
+      animation-delay: 0.75s;
+    }
+
+    &:hover {
+      /* Visual Effects */
+      transform: translateY(-1px);
+
+      /* Animations */
+      animation: terminal-retrieve-scan 1s ease-in-out infinite;
+    }
+
+    &:active {
+      /* Animations */
+      animation-play-state: paused;
+    }
   }
 
-  /* Button text that changes after loading */
-  .terminal-dialog__button-text::before {
-    content: '      CANCEL       ';
-  }
+  /* ============================================================================
+     DARK MODE ADJUSTMENTS
+     ============================================================================ */
 
-  /* Trigger animations only when dialog is open */
-  .terminal-dialog[open] .terminal-dialog__loading-bar::after {
-    animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
-  }
-
-  .terminal-dialog[open] .terminal-dialog__message::before {
-    position: absolute;
-    animation: terminal-message-swap 5s steps(1) 1 forwards;
-  }
-
-  .terminal-dialog[open] .terminal-dialog__button-text::before {
-    animation: terminal-button-text-swap 5s steps(1) 1 forwards;
-  }
-
-  /* Dark mode - use brighter blue for loading bar and correct overlay color */
   &[data-mode='dark'] {
     .terminal-dialog__loading-bar {
+      /* Background */
       background-image: repeating-linear-gradient(
         90deg,
         var(--color-blue-bright) 0 var(--block-size),
@@ -127,307 +597,37 @@ body[data-theme='terminal'] {
       );
 
       &::after {
+        /* Background */
         background: var(--terminal-window-bg);
       }
     }
-  }
 
-  /* Respect reduced motion preference */
-  @media (prefers-reduced-motion: reduce) {
-    .terminal-dialog__loading-bar {
-      animation: none;
-    }
-  }
-
-  /* Terminal Retrieve Resume button styling and animation */
-  #terminal-save-btn {
-    position: relative;
-    animation: terminal-retrieve-scan 2s ease-in-out infinite;
-    transition: all 0.2s ease;
-
-    &::before {
-      content: '>> ';
-      animation: terminal-bracket-blink 1.5s step-end infinite;
-      font-weight: bold;
-      margin-inline-end: 0.25em;
-    }
-
-    &::after {
-      content: ' <<';
-      animation: terminal-bracket-blink 1.5s step-end infinite;
-      animation-delay: 0.75s;
-      font-weight: bold;
-      margin-inline-start: 0.25em;
-    }
-
-    &:hover {
-      animation: terminal-retrieve-scan 1s ease-in-out infinite;
-      transform: translateY(-1px);
-    }
-
-    &:active {
-      animation-play-state: paused;
-    }
-  }
-
-  /* Disable animations for reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    #terminal-save-btn,
-    #terminal-save-btn::before,
-    #terminal-save-btn::after {
-      animation: none !important;
-    }
-  }
-
-  .terminal-dialog__button {
-    position: absolute;
-    bottom: 1.5rem;
-    left: calc(50% - 0.25em);
-    transform: translateX(-50%);
-    background: transparent;
-    color: transparent;
-    border: 0;
-    padding: 1rem 6rem;
-    font-family: var(--font-family);
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    box-shadow: none;
-    transition: none;
-
-    &:active {
-      transform: translateX(-50%) translate(1px, 1px);
-    }
-  }
-
-  /* Print overlay - positioned over button, only clickable after animation */
-  #terminal-dialog__print-overlay {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(calc(-50% - 0.25rem));
-    padding: 1rem 6rem;
-    pointer-events: none;
-    cursor: pointer;
-    z-index: 10;
-    background: transparent;
-    text-decoration: none;
-
-    &:active {
-      transform: translateX(-50%) translate(1px, 1px);
-    }
-  }
-
-  /* Enable print overlay when dialog is open and animation completes */
-  .terminal-dialog[open] #terminal-dialog__print-overlay {
-    animation: terminal-print-overlay-enable 5s steps(1) 1 forwards;
-  }
-
-  /* Suppress focus outlines for both button and overlay */
-  .terminal-dialog__button,
-  #terminal-dialog__print-overlay {
-    outline: none;
-
-    &:focus,
-    &:focus-visible {
-      outline: none;
-    }
-  }
-
-  /* Mobile CSS Border Version - hidden by default */
-  .terminal-dialog__content-mobile {
-    display: none;
-    flex-direction: column;
-    background: var(--terminal-window-bg);
-    border: 3px double var(--text-color);
-    border-radius: 0;
-    min-width: 280px;
-    max-width: 95vw;
-    margin: 0 auto;
-  }
-
-  .terminal-dialog__title-bar {
-    text-align: center;
-    padding: 0.75rem 1rem;
-    border-bottom: 3px double var(--text-color);
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    background: var(--terminal-window-bg);
-  }
-
-  .terminal-dialog__body {
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    border-bottom: 3px double var(--text-color);
-  }
-
-  .terminal-dialog__message-mobile {
-    text-align: center;
-    font-size: 0.95rem;
-    min-height: 1.5em;
-    position: relative;
-
-    &::before {
-      content: 'Retrieving resume...';
-    }
-  }
-
-  .terminal-dialog__loading-bar-mobile {
-    width: 100%;
-    max-width: 300px;
-    height: 1.5rem;
-    position: relative;
-    background-image: repeating-linear-gradient(90deg, var(--color-blue-navy) 0 20px, transparent 0 26px);
-    background-size: auto 100%;
-    background-repeat: repeat;
-    background-position: 0 0;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      background: var(--terminal-window-bg);
-    }
-  }
-
-  .terminal-dialog__button-area {
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .terminal-dialog__button-mobile {
-    padding: 0.75rem 1.5rem;
-    background: var(--terminal-button-bg);
-    border: 2px solid var(--text-color);
-    box-shadow: var(--terminal-inset-raised-sm);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.1s;
-
-    &:hover {
-      filter: brightness(1.1);
-    }
-
-    &:active {
-      box-shadow: var(--terminal-inset-sunken-sm);
-      transform: translate(1px, 1px);
-    }
-  }
-
-  .terminal-dialog__button-mobile--print {
-    visibility: hidden;
-    background: var(--terminal-title-bg);
-    color: var(--dial-selector-color-selection);
-    border-color: var(--dial-selector-color-selection);
-  }
-
-  /* Dark mode adjustments for mobile loading bar */
-  &[data-mode='dark'] {
     .terminal-dialog__loading-bar-mobile {
+      /* Background */
       background-image: repeating-linear-gradient(90deg, var(--color-blue-bright) 0 20px, transparent 0 26px);
 
       &::after {
+        /* Background */
         background: var(--terminal-window-bg);
       }
     }
   }
 
-  /* Mobile dialog animations - when open */
-  .terminal-dialog[open] .terminal-dialog__loading-bar-mobile::after {
-    animation: terminal-loadbar-reveal 5s steps(17) 1 forwards;
-  }
+  /* ============================================================================
+     ACCESSIBILITY - REDUCED MOTION
+     ============================================================================ */
 
-  .terminal-dialog[open] .terminal-dialog__message-mobile::before {
-    animation: terminal-message-text-swap 5s steps(1) 1 forwards;
-  }
-
-  .terminal-dialog[open] .terminal-dialog__button-mobile--print {
-    animation: terminal-button-mobile-show 5s steps(1) 1 forwards;
-  }
-
-  /* Responsive Adjustments - Toggle between desktop ASCII and mobile CSS borders */
-
-  /* Desktop: Show ASCII art and absolute buttons, hide mobile version */
-  @media (min-width: 601px) {
-    .terminal-dialog__frame--desktop {
-      display: block;
+  @media (prefers-reduced-motion: reduce) {
+    .terminal-dialog__loading-bar {
+      /* Animations */
+      animation: none;
     }
 
-    .terminal-dialog__content-mobile {
-      display: none;
-    }
-
-    .terminal-dialog__button--desktop,
-    .terminal-dialog__print-overlay--desktop {
-      display: block;
-    }
-  }
-
-  /* Mobile: Hide ASCII art and absolute buttons, show mobile version */
-  @media (max-width: 600px) {
-    .terminal-dialog {
-      width: auto;
-      min-width: 280px;
-      max-width: 95vw;
-    }
-
-    .terminal-dialog__frame--desktop {
-      display: none;
-    }
-
-    .terminal-dialog__content-mobile {
-      display: flex;
-    }
-
-    .terminal-dialog__button--desktop,
-    .terminal-dialog__print-overlay--desktop {
-      display: none;
-    }
-  }
-
-  /* Extra small screens - slightly smaller mobile dialog */
-  @media (max-width: 400px) {
-    .terminal-dialog__content-mobile {
-      min-width: 260px;
-    }
-
-    .terminal-dialog__title-bar {
-      font-size: 0.9rem;
-      padding: 0.65rem 0.75rem;
-    }
-
-    .terminal-dialog__body {
-      padding: 1.5rem 1rem;
-      gap: 1.25rem;
-    }
-
-    .terminal-dialog__button-area {
-      padding: 0.75rem 1rem;
-      flex-direction: column;
-    }
-
-    .terminal-dialog__button-mobile {
-      width: 100%;
-      padding: 0.65rem 1rem;
-      font-size: 0.85rem;
+    #terminal-save-btn,
+    #terminal-save-btn::before,
+    #terminal-save-btn::after {
+      /* Animations */
+      animation: none !important;
     }
   }
 }

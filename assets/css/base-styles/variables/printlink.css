@@ -1,132 +1,148 @@
 /**
- * CSS variables for print link button
+ * CSS variables for header buttons (print and save)
  *
  * HTML ELEMENTS AFFECTED:
- *   - .resume-header__savelink (save link, terminal theme only)
- *   - #resume-header__printlink (print link, visible in all themes)
+ *   - .resume-header__button--save (save button, terminal theme only)
+ *   - .resume-header__button--print (print button, visible in all themes)
  *
  * DEPENDENCIES:
  *   - base.css (uses --text-color, --background-color, --spacing-*)
  *
  * RELATED FILES:
- *   - header/buttons.css (applies printlink variables and contains link styles)
+ *   - header/buttons.css (applies header button variables)
  *
- * VARIABLES DEFINED: 50 printlink-specific variables controlling:
- *   - Printlink base styles (border longhand, padding, font, colors)
- *   - Printlink hover/active states
- *   - Printlink pseudo-elements
- *   - Printlink responsive overrides
+ * VARIABLES DEFINED: 50+ button-specific variables controlling:
+ *   - Button base styles (border longhand, padding, font, colors)
+ *   - Button hover/active states
+ *   - Button pseudo-elements
+ *   - Button responsive overrides
  *
- * NOTE: Border uses longhand properties (--printlink-border-width/style/color) for
+ * NOTE: Border uses longhand properties (--header-button-border-width/style/color) for
  *       maximum flexibility in theme overrides.
  */
 
 :root {
-  /* === PRINT/SAVE BUTTON BASE STYLES === */
+  /* === HEADER BUTTON BASE STYLES === */
+  /* Display & Layout */
+  --header-button-display: inline-flex;
+  --header-button-save-display: none;
+
   /* Positioning */
-  --printlink-position: relative;
+  --header-button-position: relative;
 
   /* Spacing */
-  --printlink-padding-block: 0.5rem;
-  --printlink-padding-inline: 1rem;
-  --printlink-margin-block-end: 1rem;
+  --header-button-padding-block: 0.5rem;
+  --header-button-padding-inline: 1rem;
+  --header-button-margin-block-start: 0;
+  --header-button-margin-block-end: 1rem;
+  --header-button-save-margin-block-start: 1rem;
 
   /* Borders */
-  --printlink-border-width: 0;
-  --printlink-border-style: solid;
-  --printlink-border-color: transparent;
-  --printlink-border-radius: 0;
+  --header-button-border-width: 0;
+  --header-button-border-style: solid;
+  --header-button-border-color: transparent;
+  --header-button-border-radius: 0;
 
   /* Background */
-  --printlink-background-color: transparent;
-  --printlink-background-image: none;
+  --header-button-background-color: transparent;
+  --header-button-background-image: none;
 
   /* Typography */
-  --printlink-font-size: 0.8rem;
-  --printlink-font-family: inherit;
-  --printlink-font-weight: normal;
-  --printlink-letter-spacing: 0.14em;
-  --printlink-text-transform: uppercase;
-  --printlink-text-decoration: none;
-  --printlink-color: var(--text-color);
+  --header-button-font-size: 0.8rem;
+  --header-button-font-family: inherit;
+  --header-button-font-weight: normal;
+  --header-button-letter-spacing: 0.14em;
+  --header-button-text-transform: uppercase;
+  --header-button-text-decoration: none;
+  --header-button-color: var(--text-color);
 
   /* Visual Effects */
-  --printlink-box-shadow: none;
-  --printlink-text-shadow: none;
-  --printlink-opacity: 1;
-  --printlink-filter: none;
-  --printlink-transform: none;
+  --header-button-box-shadow: none;
+  --header-button-text-shadow: none;
+  --header-button-opacity: 1;
+  --header-button-filter: none;
+  --header-button-transform: none;
 
   /* Animation & Interaction */
-  --printlink-transition: none;
-  --printlink-animation: none;
-  --printlink-cursor: pointer;
+  --header-button-transition: none;
+  --header-button-animation: none;
+  --header-button-cursor: pointer;
 
-  /* === PRINT/SAVE BUTTON HOVER STATES === */
+  /* === HEADER BUTTON HOVER STATES === */
   /* Borders */
-  --printlink-hover-outline-width: 0;
-  --printlink-hover-outline-style: solid;
-  --printlink-hover-outline-color: transparent;
-  --printlink-hover-outline-offset: 0;
+  --header-button-hover-outline-width: 0;
+  --header-button-hover-outline-style: solid;
+  --header-button-hover-outline-color: transparent;
+  --header-button-hover-outline-offset: 0;
 
   /* Background */
-  --printlink-hover-background-color: var(--text-color);
-  --printlink-hover-background-image: none;
-  --printlink-hover-background-size: auto;
+  --header-button-hover-background-color: var(--text-color);
+  --header-button-hover-background-image: none;
+  --header-button-hover-background-size: auto;
 
   /* Typography */
-  --printlink-hover-color: var(--background-color);
+  --header-button-hover-color: var(--background-color);
 
   /* Visual Effects */
-  --printlink-hover-shadow: none;
-  --printlink-hover-text-shadow: none;
-  --printlink-hover-opacity: 1;
-  --printlink-hover-filter: none;
-  --printlink-hover-transform: none;
+  --header-button-hover-box-shadow: none;
+  --header-button-hover-text-shadow: none;
+  --header-button-hover-opacity: 1;
+  --header-button-hover-filter: none;
+  --header-button-hover-transform: none;
 
   /* Animation */
-  --printlink-hover-animation: none;
+  --header-button-hover-animation: none;
 
-  /* === PRINT/SAVE BUTTON RESPONSIVE === */
+  /* === HEADER BUTTON RESPONSIVE === */
 
   /* @media max-width: 500px */
-  --printlink-padding-block-responsive-500: var(--printlink-padding-block);
-  --printlink-padding-inline-responsive-500: var(--printlink-padding-inline);
-  --printlink-font-size-responsive-500: var(--printlink-font-size);
+  --header-button-padding-block-responsive-500: var(--header-button-padding-block);
+  --header-button-padding-inline-responsive-500: var(--header-button-padding-inline);
+  --header-button-font-size-responsive-500: var(--header-button-font-size);
 
   /* @media max-width: 600px */
-  --printlink-padding-block-responsive-600: var(--printlink-padding-block);
-  --printlink-padding-inline-responsive-600: var(--printlink-padding-inline);
-  --printlink-font-size-responsive-600: var(--printlink-font-size);
+  --header-button-padding-block-responsive-600: var(--header-button-padding-block);
+  --header-button-padding-inline-responsive-600: var(--header-button-padding-inline);
+  --header-button-font-size-responsive-600: var(--header-button-font-size);
 
-  /* === PRINT/SAVE BUTTON ACTIVE STATES === */
+  /* === HEADER BUTTON ACTIVE STATES === */
   /* Visual Effects */
-  --printlink-active-box-shadow: none;
-  --printlink-active-opacity: 1;
-  --printlink-active-transform: none;
+  --header-button-active-box-shadow: none;
+  --header-button-active-opacity: 1;
+  --header-button-active-transform: none;
 
-  /* === PRINT/SAVE BUTTON PSEUDO-ELEMENTS === */
+  /* === HEADER BUTTON PSEUDO-ELEMENTS === */
 
   /* ::before pseudo-element */
-  --printlink-before-content: none;
-  --printlink-before-display: none;
-  --printlink-before-position: static;
-  --printlink-before-top: auto;
-  --printlink-before-right: auto;
-  --printlink-before-bottom: auto;
-  --printlink-before-left: auto;
-  --printlink-before-margin-inline-start: 0;
-  --printlink-before-margin-inline-end: 0;
-  --printlink-before-border-radius: 0;
-  --printlink-before-background: transparent;
-  --printlink-before-font-size: inherit;
-  --printlink-before-transform: none;
-  --printlink-before-pointer-events: auto;
+  --header-button-before-content: none;
+  --header-button-before-display: none;
+  --header-button-before-position: static;
+  --header-button-before-top: auto;
+  --header-button-before-right: auto;
+  --header-button-before-bottom: auto;
+  --header-button-before-left: auto;
+  --header-button-before-margin-inline-start: 0;
+  --header-button-before-margin-inline-end: 0;
+  --header-button-before-border-radius: 0;
+  --header-button-before-background: transparent;
+  --header-button-before-font-size: inherit;
+  --header-button-before-transform: none;
+  --header-button-before-pointer-events: auto;
 
   /* ::after pseudo-element */
-  --printlink-after-content: none;
-  --printlink-after-display: none;
-  --printlink-after-position: static;
-  --printlink-after-margin-inline-start: 0;
-  --printlink-after-margin-inline-end: 0;
+  --header-button-after-content: none;
+  --header-button-after-display: none;
+  --header-button-after-position: static;
+  --header-button-after-margin-inline-start: 0;
+  --header-button-after-margin-inline-end: 0;
+
+  /* === BUTTON CHILD ELEMENT VARIABLES === */
+  /* Icon/inline element sizing */
+  --header-button-icon-size: 1em;
+  --header-button-icon-margin: 0.25em;
+  --header-button-icon-vertical-align: -0.125em;
+
+  /* Child element overrides (for themes to customize) */
+  --header-button-child-color: inherit;
+  --header-button-child-display: inline;
 }

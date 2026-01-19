@@ -230,29 +230,29 @@ Pandemic Era Control Panel - Inspired by COVID dashboards, Grafana, status pages
 
   /* ==================== PRINT LINK ==================== */
 
-  /* Print Link - Base */
-  --printlink-background-color: var(--accent-color);
-  --printlink-border-width: var(--border-width-normal);
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--accent-color);
-  --printlink-border-radius: 6px;
-  --printlink-color: var(--color-white);
-  --printlink-padding-block: var(--spacing-sm);
-  --printlink-padding-inline: var(--spacing-lg);
-  --printlink-font-size: 0.9rem;
-  --printlink-font-weight: 700;
-  --printlink-letter-spacing: 0.08em;
-  --printlink-text-transform: uppercase;
-  --printlink-box-shadow: var(--dashboard-shadow-md), 0 0 0 0 var(--accent-color);
-  --printlink-transition: all 0.2s ease;
+  /* Header Button - Base */
+  --header-button-background-color: var(--accent-color);
+  --header-button-border-width: var(--border-width-normal);
+  --header-button-border-style: solid;
+  --header-button-border-color: var(--accent-color);
+  --header-button-border-radius: 6px;
+  --header-button-color: var(--color-white);
+  --header-button-padding-block: var(--spacing-sm);
+  --header-button-padding-inline: var(--spacing-lg);
+  --header-button-font-size: 0.9rem;
+  --header-button-font-weight: 700;
+  --header-button-letter-spacing: 0.08em;
+  --header-button-text-transform: uppercase;
+  --header-button-box-shadow: var(--dashboard-shadow-md), 0 0 0 0 var(--accent-color);
+  --header-button-transition: all 0.2s ease;
 
-  /* Print Link - Hover */
-  --printlink-hover-background-color: var(--accent-color);
-  --printlink-hover-outline-color: var(--accent-color);
-  --printlink-hover-color: var(--color-white);
-  --printlink-hover-opacity: 0.9;
-  --printlink-hover-transform: translateY(-3px);
-  --printlink-hover-shadow: var(--dashboard-shadow-lg), 0 0 20px var(--accent-color);
+  /* Header Button - Hover */
+  --header-button-hover-background-color: var(--accent-color);
+  --header-button-hover-outline-color: var(--accent-color);
+  --header-button-hover-color: var(--color-white);
+  --header-button-hover-opacity: 0.9;
+  --header-button-hover-transform: translateY(-3px);
+  --header-button-hover-shadow: var(--dashboard-shadow-lg), 0 0 20px var(--accent-color);
 
   /* ==================== LINKS ==================== */
 

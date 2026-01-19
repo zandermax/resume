@@ -147,37 +147,37 @@ WEB 2.0 GLOSS Theme - Variables
   /* Section content custom properties */
   --section-content-padding-inline: clamp(0rem, calc((100vw - var(--min-screen-width)) * 0.0375), 1.5rem);
 
-  /* Print link custom properties */
-  --printlink-border-width: 0;
-  --printlink-border-radius: var(--web2-radius-md);
-  --printlink-background-image: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
-  --printlink-color: var(--color-white);
-  --printlink-font-weight: 700;
-  --printlink-padding-block: 1rem;
-  --printlink-padding-inline: 2rem;
-  --printlink-text-transform: uppercase;
-  --printlink-font-size: 1rem;
-  --printlink-letter-spacing: 0.05em;
-  --printlink-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15),
+  /* Header button custom properties */
+  --header-button-border-width: 0;
+  --header-button-border-radius: var(--web2-radius-md);
+  --header-button-background-image: linear-gradient(180deg, var(--web2-accent) 0%, oklch(67% 0.18 45) 100%);
+  --header-button-color: var(--color-white);
+  --header-button-font-weight: 700;
+  --header-button-padding-block: 1rem;
+  --header-button-padding-inline: 2rem;
+  --header-button-text-transform: uppercase;
+  --header-button-font-size: 1rem;
+  --header-button-letter-spacing: 0.05em;
+  --header-button-box-shadow: 0 2px 4px oklch(0% 0 0 / 0.2), 0 4px 8px oklch(0% 0 0 / 0.15),
     inset 0 1px 0 oklch(100% 0 0 / 0.3);
-  --printlink-text-shadow: 1px 1px 2px oklch(0% 0 0 / 0.3);
-  --printlink-transition: var(--web2-transition-normal);
-  --printlink-hover-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2),
+  --header-button-text-shadow: 1px 1px 2px oklch(0% 0 0 / 0.3);
+  --header-button-transition: var(--web2-transition-normal);
+  --header-button-hover-box-shadow: 0 4px 8px oklch(0% 0 0 / 0.25), 0 8px 16px oklch(0% 0 0 / 0.2),
     0 0 20px oklch(100% 0.25 45 / 0.4), inset 0 1px 0 oklch(100% 0 0 / 0.4);
-  --printlink-hover-transform: translateY(-2px);
-  --printlink-hover-text-shadow: 0 0 8px oklch(100% 0 0 / 0.5);
-  --printlink-active-transform: translateY(0);
-  --printlink-active-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.2), inset 0 1px 3px oklch(0% 0 0 / 0.3);
-  --printlink-before-content: '';
-  --printlink-before-display: block;
-  --printlink-before-position: absolute;
-  --printlink-before-top: 0;
-  --printlink-before-right: 0;
-  --printlink-before-bottom: 50%;
-  --printlink-before-left: 0;
-  --printlink-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
-  --printlink-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
-  --printlink-before-pointer-events: none;
+  --header-button-hover-transform: translateY(-2px);
+  --header-button-hover-text-shadow: 0 0 8px oklch(100% 0 0 / 0.5);
+  --header-button-active-transform: translateY(0);
+  --header-button-active-box-shadow: 0 1px 2px oklch(0% 0 0 / 0.2), inset 0 1px 3px oklch(0% 0 0 / 0.3);
+  --header-button-before-content: '';
+  --header-button-before-display: block;
+  --header-button-before-position: absolute;
+  --header-button-before-top: 0;
+  --header-button-before-right: 0;
+  --header-button-before-bottom: 50%;
+  --header-button-before-left: 0;
+  --header-button-before-background: linear-gradient(180deg, oklch(100% 0 0 / 0.4) 0%, transparent 100%);
+  --header-button-before-border-radius: var(--web2-radius-md) var(--web2-radius-md) 0 0;
+  --header-button-before-pointer-events: none;
 
   /* Header link custom properties */
   --link-text-decoration: none;
@@ -317,9 +317,9 @@ WEB 2.0 GLOSS Theme - Variables
     --section-title-padding-inline-end: 0.8rem;
     --section-title-border-radius: var(--web2-radius-md);
     --header-name-font-size: 1.75rem;
-    --printlink-font-size: 0.85rem;
-    --printlink-padding-block: 0.75rem;
-    --printlink-padding-inline: 1.5rem;
+    --header-button-font-size: 0.85rem;
+    --header-button-padding-block: 0.75rem;
+    --header-button-padding-inline: 1.5rem;
   }
 
   /* Extra small mobile (400px and below) */

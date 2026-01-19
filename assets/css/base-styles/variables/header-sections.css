@@ -139,7 +139,13 @@
   --header-buttons-gap: var(--spacing-md);
   --header-buttons-justify-content: center;
 
-  /* Responsive Overrides - removed unused button variables */
+  /* Responsive Overrides */
+  --header-buttons-flex-direction-responsive-768: column;
+  --header-buttons-gap-responsive-768: var(--spacing-md);
+  --header-buttons-flex-direction-responsive-600: column;
+  --header-buttons-gap-responsive-600: var(--spacing-md);
+  --header-buttons-flex-direction-responsive-500: column;
+  --header-buttons-gap-responsive-500: var(--spacing-md);
 
   /* ============================================================================
      SECTION CONTAINER (.resume-section)

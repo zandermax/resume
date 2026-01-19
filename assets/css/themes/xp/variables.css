@@ -192,38 +192,38 @@ XP Theme - Common Variables
   --section-title-text-transform: uppercase;
   --section-title-letter-spacing: 0.05em;
 
-  /* Print link custom properties */
-  --printlink-border-width: 0;
-  --printlink-background-image: linear-gradient(
+  /* Header button custom properties */
+  --header-button-border-width: 0;
+  --header-button-background-image: linear-gradient(
     180deg,
     oklch(82% 0.14 130) 0%,
     var(--xp-start-green) 50%,
     oklch(61% 0.12 130) 100%
   );
-  --printlink-color: var(--color-white);
-  --printlink-font-weight: bold;
-  --printlink-border-radius: 20px;
-  --printlink-padding-block: 0.6rem;
-  --printlink-padding-inline: var(--spacing-lg);
-  --printlink-box-shadow: var(--xp-button-shadow-hover);
-  --printlink-text-shadow: 1px 1px 2px var(--xp-black-30);
-  --printlink-transition: all 0.15s ease;
-  --printlink-hover-background-image: linear-gradient(
+  --header-button-color: var(--color-white);
+  --header-button-font-weight: bold;
+  --header-button-border-radius: 20px;
+  --header-button-padding-block: 0.6rem;
+  --header-button-padding-inline: var(--spacing-lg);
+  --header-button-box-shadow: var(--xp-button-shadow-hover);
+  --header-button-text-shadow: 1px 1px 2px var(--xp-black-30);
+  --header-button-transition: all 0.15s ease;
+  --header-button-hover-background-image: linear-gradient(
     180deg,
     oklch(88% 0.15 130) 0%,
     oklch(82% 0.14 130) 50%,
     oklch(68% 0.13 130) 100%
   );
-  --printlink-hover-transform: translateY(-1px);
-  --printlink-hover-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-60),
+  --header-button-hover-transform: translateY(-1px);
+  --header-button-hover-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-60),
     0 4px 8px var(--xp-black-30);
-  --printlink-active-transform: translateY(0);
-  --printlink-active-box-shadow: var(--xp-button-shadow-pressed);
-  --printlink-before-content: '▶';
-  --printlink-before-display: inline-block;
-  --printlink-before-margin-inline-start: 8px;
-  --printlink-before-font-size: 0.7em;
-  --printlink-before-transform: rotate(90deg);
+  --header-button-active-transform: translateY(0);
+  --header-button-active-box-shadow: var(--xp-button-shadow-pressed);
+  --header-button-before-content: '▶';
+  --header-button-before-display: inline-block;
+  --header-button-before-margin-inline-start: 8px;
+  --header-button-before-font-size: 0.7em;
+  --header-button-before-transform: rotate(90deg);
 
   /* Education item custom properties */
   --education-item-border-block-start: 0;

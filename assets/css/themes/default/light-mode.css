@@ -7,13 +7,13 @@ DEFAULT Theme - Light Mode
 
 :root[data-theme='default'][data-mode='light'] {
   --dial-selector-color-knob-background: var(--color-dark-knob);
-  --printlink-background-color: var(--color-black);
-  --printlink-color: var(--color-white);
-  --printlink-border-width: var(--border-width-normal);
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--color-black);
-  --printlink-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
-  --printlink-hover-background-color: var(--color-red-crimson);
-  --printlink-hover-outline-color: var(--color-red-crimson);
-  --printlink-hover-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
+  --header-button-background-color: var(--color-black);
+  --header-button-color: var(--color-white);
+  --header-button-border-width: var(--border-width-normal);
+  --header-button-border-style: solid;
+  --header-button-border-color: var(--color-black);
+  --header-button-box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06);
+  --header-button-hover-background-color: var(--color-red-crimson);
+  --header-button-hover-outline-color: var(--color-red-crimson);
+  --header-button-hover-box-shadow: 0 6px 12px oklch(0% 0 0 / 0.15), 0 3px 6px oklch(0% 0 0 / 0.1);
 }

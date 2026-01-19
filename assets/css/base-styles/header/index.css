@@ -284,26 +284,6 @@
     }
   }
 
-  /* All anchor tags within header */
-  a {
-    position: var(--header-link-position);
-    border-block-end: var(--header-link-border-block-end);
-    text-decoration: var(--header-link-text-decoration);
-    transition: var(--header-link-transition);
-
-    &:hover {
-      border-block-end: var(--header-link-hover-border-block-end);
-    }
-
-    &:visited {
-      border-block-end: var(--header-link-visited-border-block-end);
-
-      &:hover {
-        border-block-end: var(--header-link-visited-hover-border-block-end);
-      }
-    }
-  }
-
   /* === MOBILE-SPECIFIC LAYOUT === */
 
   /* Mobile-only image element */

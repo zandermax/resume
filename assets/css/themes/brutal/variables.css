@@ -293,30 +293,30 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
 
   /* ==================== PRINT LINK ==================== */
 
-  /* Print link - Base */
-  --printlink-border-width: 6px;
-  --printlink-border-style: solid;
-  --printlink-border-color: var(--background-color);
-  --printlink-background-color: var(--accent-color);
-  --printlink-color: var(--color-white);
-  --printlink-font-weight: 900;
-  --printlink-padding-block: 1.5rem;
-  --printlink-padding-inline: 3rem;
-  --printlink-text-transform: uppercase;
-  --printlink-font-size: 1.2rem;
-  --printlink-letter-spacing: 0.05em;
-  --printlink-box-shadow: 8px 8px 0 oklch(0% 0 0 / 0.4);
-  --printlink-transition: all 0.05s ease;
-  --printlink-transform: skewX(-5deg);
+  /* Header button - Base */
+  --header-button-border-width: 6px;
+  --header-button-border-style: solid;
+  --header-button-border-color: var(--background-color);
+  --header-button-background-color: var(--accent-color);
+  --header-button-color: var(--color-white);
+  --header-button-font-weight: 900;
+  --header-button-padding-block: 1.5rem;
+  --header-button-padding-inline: 3rem;
+  --header-button-text-transform: uppercase;
+  --header-button-font-size: 1.2rem;
+  --header-button-letter-spacing: 0.05em;
+  --header-button-box-shadow: 8px 8px 0 oklch(0% 0 0 / 0.4);
+  --header-button-transition: all 0.05s ease;
+  --header-button-transform: skewX(-5deg);
 
-  /* Print link - Hover */
-  --printlink-hover-transform: skewX(-5deg) translate(-4px, -4px);
-  --printlink-hover-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
-  --printlink-hover-color: var(--color-white);
+  /* Header button - Hover */
+  --header-button-hover-transform: skewX(-5deg) translate(-4px, -4px);
+  --header-button-hover-box-shadow: 12px 12px 0 oklch(0% 0 0 / 0.5);
+  --header-button-hover-color: var(--color-white);
 
-  /* Print link - Active */
-  --printlink-active-transform: skewX(-5deg) translate(0, 0);
-  --printlink-active-box-shadow: 4px 4px 0 var(--brutal-shadow-light);
+  /* Header button - Active */
+  --header-button-active-transform: skewX(-5deg) translate(0, 0);
+  --header-button-active-box-shadow: 4px 4px 0 var(--brutal-shadow-light);
 
   /* ==================== DIAL SELECTOR HOUSING ==================== */
 
@@ -377,12 +377,18 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
   --scrollbar-width: 18px;
   --scrollbar-height: 18px;
   --scrollbar-track-background: var(--background-color);
-  --scrollbar-track-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-track-border-width: var(--border-width-thick);
+  --scrollbar-track-border-style: solid;
+  --scrollbar-track-border-color: var(--border-color);
   --scrollbar-thumb-background: var(--accent-color);
-  --scrollbar-thumb-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-thumb-border-width: var(--border-width-thick);
+  --scrollbar-thumb-border-style: solid;
+  --scrollbar-thumb-border-color: var(--border-color);
   --scrollbar-thumb-hover-background: var(--text-color);
   --scrollbar-button-background: var(--background-color);
-  --scrollbar-button-border: var(--border-width-thick) solid var(--border-color);
+  --scrollbar-button-border-width: var(--border-width-thick);
+  --scrollbar-button-border-style: solid;
+  --scrollbar-button-border-color: var(--border-color);
   --scrollbar-button-height: 18px;
   --scrollbar-button-width: 18px;
 
@@ -412,9 +418,9 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
     --section-title-padding-block-end: 1rem;
     --section-title-padding-inline-start: 1.5rem;
     --section-title-padding-inline-end: 1.5rem;
-    --printlink-font-size: 0.9rem;
-    --printlink-padding-block: 1rem;
-    --printlink-padding-inline: 2rem;
+    --header-button-font-size: 0.9rem;
+    --header-button-padding-block: 1rem;
+    --header-button-padding-inline: 2rem;
     --education-institution-font-size: 1.4rem;
     --experience-role-font-size: 1.4rem;
 
@@ -444,9 +450,9 @@ Maximum Brutalism: Bold borders, aggressive shadows, skewed transforms
     --section-title-padding-block-end: 0.75rem;
     --section-title-padding-inline-start: 1rem;
     --section-title-padding-inline-end: 1rem;
-    --printlink-font-size: 0.9rem;
-    --printlink-padding-block: 1rem;
-    --printlink-padding-inline: 2rem;
+    --header-button-font-size: 0.9rem;
+    --header-button-padding-block: 1rem;
+    --header-button-padding-inline: 2rem;
     --section-title-border-inline-start: 10px solid var(--accent-color);
     --header-padding-inline-start: var(--spacing-md);
     --header-padding-inline-end: var(--spacing-md);
