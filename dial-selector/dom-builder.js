@@ -3,12 +3,7 @@
  * Handles DOM creation, manipulation, and event handling
  */
 
-import {
-  LINE_OPACITY_INACTIVE,
-  LINE_OPACITY_ACTIVE,
-  NEARLY_HORIZONTAL_THRESHOLD,
-  FULL_CIRCLE_DEGREES,
-} from './constants.js';
+import { NEARLY_HORIZONTAL_THRESHOLD, FULL_CIRCLE_DEGREES, HAPTIC_COMPLETION_DURATION } from './constants.js';
 
 export const DOMBuilder = {
   /**
@@ -191,10 +186,10 @@ export const DOMBuilder = {
       indicator.addEventListener('transitionend', (e) => {
         // Only trigger for transform transitions (the rotation)
         if (e.propertyName === 'transform' && this.isInitialized && this.hapticFeedbackEnabled) {
-          // Lighter vibration for completion (35ms)
+          // Lighter vibration for completion
           if (navigator.vibrate && typeof navigator.vibrate === 'function') {
             try {
-              navigator.vibrate(35);
+              navigator.vibrate(HAPTIC_COMPLETION_DURATION);
             } catch (err) {
               // Silently fail
             }

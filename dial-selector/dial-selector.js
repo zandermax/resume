@@ -14,6 +14,7 @@ import {
   BASE_HORIZONTAL_LINE_END_OFFSET,
   BASE_INDICATOR_WIDTH,
   INITIALIZATION_DELAY,
+  DEFAULT_HAPTIC_DURATION,
 } from './constants.js';
 import { AttributeHandlers } from './attribute-handlers.js';
 import { Geometry } from './geometry.js';
@@ -48,16 +49,11 @@ export class DialSelector extends HTMLElement {
 
     // Haptic feedback configuration
     this.hapticFeedbackEnabled = true;
-    this.hapticFeedbackDuration = 25;
+    this.hapticFeedbackDuration = DEFAULT_HAPTIC_DURATION;
   }
 
   static get observedAttributes() {
-    return [
-      'options',
-      'default-option',
-      'haptic-feedback',
-      'haptic-duration',
-    ];
+    return ['options', 'default-option', 'haptic-feedback', 'haptic-duration'];
   }
 
   connectedCallback() {
