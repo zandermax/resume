@@ -24,15 +24,15 @@ TERMINAL Theme - Dial Selector Styles
 :root[data-theme='terminal'] {
   --dial-selector-knob-border-width: 0;
   --dial-selector-indicator-width: 10px;
-  --dial-selector-label-active-span-padding-block: 0.25rem;
-  --dial-selector-label-active-span-padding-inline: 0.3rem;
 
   /* Dial selector hover/active states */
+  --dial-selector-label-hover-padding-block: 0.4rem;
+  --dial-selector-label-hover-padding-inline: 0.8rem;
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
   --dial-selector-label-hover-background: var(--terminal-button-bg);
-  --dial-selector-label-hover-padding-block: 0rem;
-  --dial-selector-label-hover-padding-inline: 0.5rem;
   --dial-selector-label-hover-box-shadow: var(--terminal-inset-raised-sm);
+  --dial-selector-label-active-padding-block: 0.4rem;
+  --dial-selector-label-active-padding-inline: 0.8rem;
   --dial-selector-label-active-background: var(--terminal-title-bg);
   --dial-selector-label-active-box-shadow: var(--terminal-inset-sunken-sm);
   --dial-selector-label-active-color: var(--dial-selector-color-selection);
@@ -41,19 +41,20 @@ TERMINAL Theme - Dial Selector Styles
   --dial-selector-knob-clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
   --dial-selector-knob-border-radius: 0;
   --dial-selector-knob-box-shadow: var(--terminal-inset-raised-sm), 2px 2px 4px var(--color-black / 0.3);
-
 }
 
 /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
 @media (max-width: 768px) {
   :root[data-theme='terminal'] {
-    --dial-selector-label-padding: var(--spacing-xs) var(--spacing-sm);
+    --dial-selector-label-padding-block: var(--spacing-xs);
+    --dial-selector-label-padding-inline: var(--spacing-sm);
   }
 }
 
 @media (max-width: 500px) {
   :root[data-theme='terminal'] {
-    --dial-selector-label-padding: var(--spacing-xs) var(--spacing-xs);
+    --dial-selector-label-padding-block: var(--spacing-xs);
+    --dial-selector-label-padding-inline: var(--spacing-xs);
   }
 }

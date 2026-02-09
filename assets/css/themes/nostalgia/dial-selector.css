@@ -27,8 +27,6 @@ NOSTALGIA Theme - Dial Selector Styles
   /* Dial label hover properties */
   --dial-selector-label-hover-background: var(--accent-color);
   --dial-selector-label-hover-color: var(--background-color);
-  --dial-selector-label-hover-padding-block: 0rem;
-  --dial-selector-label-hover-padding-inline: 0.5rem;
 
   &[data-mode='light'] {
     --dial-selector-label-hover-color: var(--nostalgia-black);

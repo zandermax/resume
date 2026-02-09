@@ -13,7 +13,7 @@ SKEUOMORPH Theme - Dark Mode Variables
 
   /* Component colors */
   --print-button-text-color: oklch(0.28 0.08 58);
-  --accent-color: oklch(0.77 0.13 85);
+  --tech-badge-text-color: oklch(0.92 0.02 60); /* Light text for dark badges */
 
   /* Material colors */
   --leather-color: oklch(0.33 0.03 45);
@@ -86,7 +86,7 @@ SKEUOMORPH Theme - Dark Mode Variables
     inset 0 3px 6px var(--skeu-white-08), inset 0 -5px 10px var(--skeu-black-80);
 
   /* Sticky note */
-  --sticky-note-color: oklch(0.98 0.1 105);
+  --sticky-note-color: oklch(0.95 0.12 100); /* Slightly darker yellow for dark mode */
   --sticky-note-shadow: 0 6px 8px var(--skeu-black-40), 0 2px 4px var(--skeu-black-30);
 
   /* Scrollbar styling - dark metallic 3D */

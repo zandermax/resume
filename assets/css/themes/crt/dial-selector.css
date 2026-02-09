@@ -43,30 +43,32 @@ CRT Theme - Dial Selector Styles
   --dial-selector-label-border-color: transparent;
 
   /* Labels - Hover */
+  --dial-selector-label-hover-padding-block: 0.4rem;
+  --dial-selector-label-hover-padding-inline: 0.8rem;
   --dial-selector-label-hover-text-shadow: 0 0 10px currentColor;
   --dial-selector-label-hover-border-width: 1px;
   --dial-selector-label-hover-border-style: solid;
   --dial-selector-label-hover-border-color: currentColor;
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
-  --dial-selector-label-hover-padding-block: 0rem;
-  --dial-selector-label-hover-padding-inline: 0.5rem;
 
   /* Labels - Active State */
-  --dial-selector-label-active-span-padding-block: 0.25rem;
-  --dial-selector-label-active-span-padding-inline: 0.6rem;
+  --dial-selector-label-active-padding-block: 0.4rem;
+  --dial-selector-label-active-padding-inline: 0.8rem;
   --dial-selector-label-active-text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-  --dial-selector-label-active-span-font-weight: bold;
-  --dial-selector-label-active-span-border-width: 2px;
-  --dial-selector-label-active-span-border-style: solid;
-  --dial-selector-label-active-span-border-color: currentColor;
+  --dial-selector-label-active-font-weight: bold;
+  --dial-selector-label-active-border-width: 2px;
+  --dial-selector-label-active-border-style: solid;
+  --dial-selector-label-active-border-color: currentColor;
   --dial-selector-label-active-box-shadow: 0 0 15px currentColor, inset 0 0 15px var(--crt-glow);
 
   /* Responsive overrides */
   @media (max-width: 768px) {
-    --dial-selector-label-padding: 0.35rem 0;
+    --dial-selector-label-padding-block: 0.35rem;
+    --dial-selector-label-padding-inline: 0;
   }
 
   @media (max-width: 500px) {
-    --dial-selector-label-padding: 0.3rem 0;
+    --dial-selector-label-padding-block: 0.3rem;
+    --dial-selector-label-padding-inline: 0;
   }
 }

@@ -104,6 +104,8 @@
   --header-button-padding-block-responsive-600: var(--header-button-padding-block);
   --header-button-padding-inline-responsive-600: var(--header-button-padding-inline);
   --header-button-font-size-responsive-600: var(--header-button-font-size);
+  --header-button-margin-inline-start-responsive-600: 0;
+  --header-button-margin-block-start-responsive-600: 0.65rem;
 
   /* === HEADER BUTTON ACTIVE STATES === */
   /* Visual Effects */

@@ -3,12 +3,8 @@
  *
  * DOM STRUCTURE:
  *   <dial-selector>
- *     <label class="dial-label">
- *       <span>Option Text</span>
- *     </label>
- *     <label class="dial-label active">
- *       <span>Active Option</span>
- *     </label>
+ *     <label class="dial-label">Option Text</label>
+ *     <label class="dial-label active">Active Option</label>
  *   </dial-selector>
  *
  * DEPENDENCIES:
@@ -43,7 +39,8 @@ dial-selector {
 
     /* Display/Box Model */
     display: inline-flex;
-    padding: var(--ds-label-padding);
+    padding-block: var(--ds-label-padding-block);
+    padding-inline: var(--ds-label-padding-inline);
 
     /* Flex/Grid/Alignment */
     align-items: center;
@@ -82,47 +79,10 @@ dial-selector {
     -webkit-tap-highlight-color: transparent;
 
     /* ========================================================================
-       NESTED SPAN ELEMENT
-       ======================================================================== */
-
-    & > span {
-      /* Display/Box Model */
-      display: var(--ds-label-span-display);
-      padding-block: var(--ds-label-span-padding-block);
-      padding-inline: var(--ds-label-span-padding-inline);
-
-      /* Borders */
-      border-width: var(--ds-label-span-border-width);
-      border-style: var(--ds-label-span-border-style);
-      border-color: var(--ds-label-span-border-color);
-      border-radius: var(--ds-label-span-border-radius);
-
-      /* Background */
-      background: var(--ds-label-span-background);
-
-      /* Typography */
-      font-size: var(--ds-label-span-font-size);
-      font-weight: var(--ds-label-span-font-weight);
-      color: var(--ds-label-span-color);
-      text-transform: var(--ds-label-span-text-transform);
-      letter-spacing: var(--ds-label-span-letter-spacing);
-
-      /* Visual Effects */
-      box-shadow: var(--ds-label-span-box-shadow);
-      transform: var(--ds-label-span-transform);
-
-      /* Transitions/Animations */
-      transition: var(--ds-label-span-transition);
-
-      /* Other */
-      overflow: var(--ds-label-span-overflow);
-    }
-
-    /* ========================================================================
        HOVER STATE (non-active labels only)
        ======================================================================== */
 
-    &:not(.active):hover > span {
+    &:not(.active):hover {
       /* Display/Box Model */
       padding-block: var(--ds-label-hover-padding-block);
       padding-inline: var(--ds-label-hover-padding-inline);
@@ -147,9 +107,6 @@ dial-selector {
 
       /* Transitions/Animations */
       animation: var(--ds-label-hover-animation);
-
-      /* Other */
-      will-change: var(--ds-label-hover-will-change);
     }
 
     /* ========================================================================
@@ -157,31 +114,25 @@ dial-selector {
        ======================================================================== */
 
     &.active {
-      /* Visual Effects */
-      box-shadow: var(--ds-label-active-box-shadow);
-    }
-
-    &.active > span {
       /* Display/Box Model */
-      padding-block: var(--ds-label-active-span-padding-block);
-      padding-inline: var(--ds-label-active-span-padding-inline);
+      padding-block: var(--ds-label-active-padding-block);
+      padding-inline: var(--ds-label-active-padding-inline);
 
       /* Borders */
-      border-width: var(--ds-label-active-span-border-width);
-      border-style: var(--ds-label-active-span-border-style);
-      border-color: var(--ds-label-active-span-border-color);
+      border-width: var(--ds-label-active-border-width);
+      border-style: var(--ds-label-active-border-style);
+      border-color: var(--ds-label-active-border-color);
 
       /* Background */
       background: var(--ds-label-active-background);
 
       /* Typography */
-      font-weight: var(--ds-label-active-span-font-weight);
+      font-weight: var(--ds-label-active-font-weight);
       color: var(--ds-label-active-color);
 
       /* Visual Effects */
-      box-shadow: var(--ds-label-active-span-box-shadow);
+      box-shadow: var(--ds-label-active-box-shadow);
       text-shadow: var(--ds-label-active-text-shadow);
-      transform: var(--ds-label-active-span-transform);
       filter: var(--ds-label-active-filter);
 
       /* Transitions/Animations */

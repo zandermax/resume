@@ -270,6 +270,7 @@
   .experience-item__tech {
     /* Position */
     position: var(--tech-badge-position);
+    z-index: var(--tech-badge-z-index);
 
     /* Display/Box Model */
     display: var(--tech-badge-display);
@@ -374,6 +375,12 @@
 
       /* Other */
       pointer-events: var(--tech-badge-after-pointer-events);
+    }
+
+    /* Text content (p tag) */
+    p {
+      position: var(--tech-badge-text-position);
+      z-index: var(--tech-badge-text-z-index);
     }
   }
 

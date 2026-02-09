@@ -30,229 +30,246 @@
  *
  * NO INLINE FALLBACKS:
  *   All custom properties are defined in variable files with proper defaults.
+ *
+ * NOTE: This file is imported at the top level in base-styles/index.css,
+ *       so all selectors must be fully qualified (not nested).
  */
 
-.resume-header {
-  /* === BUTTONS === */
+/* === BUTTON CONTAINER === */
 
-  .resume-header__buttons {
-    display: flex;
-    flex-direction: var(--header-buttons-flex-direction);
-    align-items: center;
-    justify-content: var(--header-buttons-justify-content);
-    gap: var(--header-buttons-gap);
+.resume-header .resume-header__buttons {
+  display: flex;
+  flex-direction: var(--header-buttons-flex-direction);
+  align-items: center;
+  justify-content: var(--header-buttons-justify-content);
+  gap: var(--header-buttons-gap);
+  padding-block-start: var(--spacing-md);
+}
 
-    /* === RESPONSIVE ADJUSTMENTS === */
+/* === CONTAINER RESPONSIVE ADJUSTMENTS === */
 
-    @media (max-width: 768px) {
-      flex-direction: var(--header-buttons-flex-direction-responsive-768);
-      gap: var(--header-buttons-gap-responsive-768);
-    }
-
-    @media (max-width: 600px) {
-      flex-direction: var(--header-buttons-flex-direction-responsive-600);
-      gap: var(--header-buttons-gap-responsive-600);
-    }
-
-    @media (max-width: 500px) {
-      flex-direction: var(--header-buttons-flex-direction-responsive-500);
-      gap: var(--header-buttons-gap-responsive-500);
-    }
-
-    /* === SHARED BUTTON BASE STYLES === */
-    .resume-header__button {
-      /* Display & Layout */
-      position: var(--header-button-position);
-      box-sizing: border-box;
-
-      /* Spacing */
-      margin-block-end: var(--header-button-margin-block-end);
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      padding-block: var(--header-button-padding-block);
-      padding-inline: var(--header-button-padding-inline);
-
-      /* Borders */
-      border-width: var(--header-button-border-width);
-      border-style: var(--header-button-border-style);
-      border-color: var(--header-button-border-color);
-      border-radius: var(--header-button-border-radius);
-
-      /* Background */
-      background-color: var(--header-button-background-color);
-      background-image: var(--header-button-background-image);
-
-      /* Typography */
-      font-size: var(--header-button-font-size);
-      font-family: var(--header-button-font-family);
-      font-weight: var(--header-button-font-weight);
-      text-transform: var(--header-button-text-transform);
-      text-decoration: var(--header-button-text-decoration);
-      letter-spacing: var(--header-button-letter-spacing);
-      white-space: nowrap;
-      color: var(--header-button-color);
-
-      /* === CHILD ELEMENT SUPPORT === */
-
-      /* Ensure child elements inherit button's color and don't add unwanted spacing */
-      & > * {
-        color: inherit;
-        display: inline;
-        vertical-align: baseline;
-        line-height: inherit;
-      }
-
-      /* Support for icons or decorative elements */
-      & > svg,
-      & > img {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        margin-inline-end: 0.25em;
-        vertical-align: -0.125em; /* Slight optical adjustment */
-      }
-
-      /* Last icon should not have margin */
-      & > svg:last-child,
-      & > img:last-child {
-        margin-inline-end: 0;
-        margin-inline-start: 0.25em;
-      }
-
-      /* Visual Effects */
-      box-shadow: var(--header-button-box-shadow);
-      text-shadow: var(--header-button-text-shadow);
-      opacity: var(--header-button-opacity);
-      filter: var(--header-button-filter);
-      transform: var(--header-button-transform);
-
-      /* Animation & Interaction */
-      transition: var(--header-button-transition);
-      cursor: var(--header-button-cursor);
-
-      /* === RESPONSIVE ADJUSTMENTS === */
-
-      @media (max-width: 600px) {
-        font-size: var(--header-button-font-size-responsive-600);
-        padding-block: var(--header-button-padding-block-responsive-600);
-        padding-inline: var(--header-button-padding-inline-responsive-600);
-      }
-
-      @media (max-width: 500px) {
-        font-size: var(--header-button-font-size-responsive-500);
-        padding-block: var(--header-button-padding-block-responsive-500);
-        padding-inline: var(--header-button-padding-inline-responsive-500);
-      }
-
-      &:hover {
-        /* Background */
-        background-color: var(--header-button-hover-background-color);
-        background-image: var(--header-button-hover-background-image);
-        background-size: var(--header-button-hover-background-size);
-
-        /* Typography */
-        color: var(--header-button-hover-color);
-
-        /* Borders */
-        outline-width: var(--header-button-hover-outline-width);
-        outline-style: var(--header-button-hover-outline-style);
-        outline-color: var(--header-button-hover-outline-color);
-        outline-offset: var(--header-button-hover-outline-offset);
-
-        /* Visual Effects */
-        box-shadow: var(--header-button-hover-box-shadow);
-        text-shadow: var(--header-button-hover-text-shadow);
-        opacity: var(--header-button-hover-opacity);
-        filter: var(--header-button-hover-filter);
-        transform: var(--header-button-hover-transform);
-
-        /* Animation */
-        animation: var(--header-button-hover-animation);
-      }
-
-      &:active {
-        /* Visual Effects */
-        box-shadow: var(--header-button-active-box-shadow);
-        opacity: var(--header-button-active-opacity);
-        transform: var(--header-button-active-transform);
-      }
-    }
-
-    /* === SAVE BUTTON (Terminal theme only) === */
-    .resume-header__button--save {
-      /* Display & Layout */
-      display: var(--header-button-save-display);
-
-      /* Spacing */
-      margin-block-start: var(--header-button-save-margin-block-start);
-    }
-
-    /* === PRINT BUTTON (Always visible) === */
-    .resume-header__button--print {
-      /* Display & Layout */
-      display: var(--header-button-display);
-      align-items: center;
-
-      /* Spacing */
-      margin-block-start: var(--header-button-margin-block-start);
-
-      /* Animation */
-      animation: var(--header-button-animation);
-
-      /* === RESPONSIVE ADJUSTMENTS === */
-
-      @media (max-width: 600px) {
-        /* Direct values - no theme customizes these margins */
-        margin-inline-start: 0;
-        margin-block-start: 0.65rem;
-      }
-
-      /* === PSEUDO-ELEMENTS === */
-
-      &::before {
-        /* Content */
-        content: var(--header-button-before-content);
-
-        /* Display & Layout */
-        display: var(--header-button-before-display);
-        position: var(--header-button-before-position);
-        top: var(--header-button-before-top);
-        right: var(--header-button-before-right);
-        bottom: var(--header-button-before-bottom);
-        left: var(--header-button-before-left);
-
-        /* Spacing */
-        margin-inline-start: var(--header-button-before-margin-inline-start);
-        margin-inline-end: var(--header-button-before-margin-inline-end);
-
-        /* Borders */
-        border-radius: var(--header-button-before-border-radius);
-
-        /* Background */
-        background: var(--header-button-before-background);
-
-        /* Typography */
-        font-size: var(--header-button-before-font-size);
-
-        /* Visual Effects */
-        transform: var(--header-button-before-transform);
-
-        /* Interaction */
-        pointer-events: var(--header-button-before-pointer-events);
-      }
-
-      &::after {
-        /* Content */
-        content: var(--header-button-after-content);
-
-        /* Display & Layout */
-        display: var(--header-button-after-display);
-        position: var(--header-button-after-position);
-
-        /* Spacing */
-        margin-inline-start: var(--header-button-after-margin-inline-start);
-        margin-inline-end: var(--header-button-after-margin-inline-end);
-      }
-    }
+@media (max-width: 768px) {
+  .resume-header .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-768);
+    gap: var(--header-buttons-gap-responsive-768);
   }
+}
+
+@media (max-width: 600px) {
+  .resume-header .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-600);
+    gap: var(--header-buttons-gap-responsive-600);
+  }
+}
+
+@media (max-width: 500px) {
+  .resume-header .resume-header__buttons {
+    flex-direction: var(--header-buttons-flex-direction-responsive-500);
+    gap: var(--header-buttons-gap-responsive-500);
+  }
+}
+
+/* === SHARED BUTTON BASE STYLES === */
+
+.resume-header .resume-header__buttons .resume-header__button {
+  /* Display & Layout */
+  position: var(--header-button-position);
+  box-sizing: border-box;
+
+  /* Spacing */
+  margin-block-end: var(--header-button-margin-block-end);
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block: var(--header-button-padding-block);
+  padding-inline: var(--header-button-padding-inline);
+
+  /* Borders */
+  border-width: var(--header-button-border-width);
+  border-style: var(--header-button-border-style);
+  border-color: var(--header-button-border-color);
+  border-radius: var(--header-button-border-radius);
+
+  /* Background */
+  background-color: var(--header-button-background-color);
+  background-image: var(--header-button-background-image);
+
+  /* Typography */
+  font-size: var(--header-button-font-size);
+  font-family: var(--header-button-font-family);
+  font-weight: var(--header-button-font-weight);
+  text-transform: var(--header-button-text-transform);
+  text-decoration: var(--header-button-text-decoration);
+  letter-spacing: var(--header-button-letter-spacing);
+  white-space: nowrap;
+  color: var(--header-button-color);
+
+  /* Visual Effects */
+  box-shadow: var(--header-button-box-shadow);
+  text-shadow: var(--header-button-text-shadow);
+  opacity: var(--header-button-opacity);
+  filter: var(--header-button-filter);
+  transform: var(--header-button-transform);
+
+  /* Animation & Interaction */
+  transition: var(--header-button-transition);
+  cursor: var(--header-button-cursor);
+}
+
+/* === CHILD ELEMENT SUPPORT === */
+
+/* Ensure child elements inherit button's color and don't add unwanted spacing */
+.resume-header .resume-header__buttons .resume-header__button > * {
+  color: inherit;
+  display: inline;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+/* Support for icons or decorative elements */
+.resume-header .resume-header__buttons .resume-header__button > svg,
+.resume-header .resume-header__buttons .resume-header__button > img {
+  display: inline-block;
+  width: var(--header-button-icon-size);
+  height: var(--header-button-icon-size);
+  margin-inline-end: var(--header-button-icon-margin);
+  vertical-align: var(--header-button-icon-vertical-align);
+}
+
+/* Last icon should not have margin */
+.resume-header .resume-header__buttons .resume-header__button > svg:last-child,
+.resume-header .resume-header__buttons .resume-header__button > img:last-child {
+  margin-inline-end: 0;
+  margin-inline-start: var(--header-button-icon-margin);
+}
+
+/* === BUTTON RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 600px) {
+  .resume-header .resume-header__buttons .resume-header__button {
+    font-size: var(--header-button-font-size-responsive-600);
+    padding-block: var(--header-button-padding-block-responsive-600);
+    padding-inline: var(--header-button-padding-inline-responsive-600);
+  }
+}
+
+@media (max-width: 500px) {
+  .resume-header .resume-header__buttons .resume-header__button {
+    font-size: var(--header-button-font-size-responsive-500);
+    padding-block: var(--header-button-padding-block-responsive-500);
+    padding-inline: var(--header-button-padding-inline-responsive-500);
+  }
+}
+
+/* === BUTTON HOVER STATE === */
+
+.resume-header .resume-header__buttons .resume-header__button:hover {
+  /* Background */
+  background-color: var(--header-button-hover-background-color);
+  background-image: var(--header-button-hover-background-image);
+  background-size: var(--header-button-hover-background-size);
+
+  /* Typography */
+  color: var(--header-button-hover-color);
+
+  /* Borders */
+  outline-width: var(--header-button-hover-outline-width);
+  outline-style: var(--header-button-hover-outline-style);
+  outline-color: var(--header-button-hover-outline-color);
+  outline-offset: var(--header-button-hover-outline-offset);
+
+  /* Visual Effects */
+  box-shadow: var(--header-button-hover-box-shadow);
+  text-shadow: var(--header-button-hover-text-shadow);
+  opacity: var(--header-button-hover-opacity);
+  filter: var(--header-button-hover-filter);
+  transform: var(--header-button-hover-transform);
+
+  /* Animation */
+  animation: var(--header-button-hover-animation);
+}
+
+/* === BUTTON ACTIVE STATE === */
+
+.resume-header .resume-header__buttons .resume-header__button:active {
+  /* Visual Effects */
+  box-shadow: var(--header-button-active-box-shadow);
+  opacity: var(--header-button-active-opacity);
+  transform: var(--header-button-active-transform);
+}
+
+/* === SAVE BUTTON (Terminal theme only) === */
+
+.resume-header .resume-header__buttons .resume-header__button--save {
+  /* Display & Layout */
+  display: var(--header-button-save-display);
+}
+
+/* === PRINT BUTTON (Always visible) === */
+
+.resume-header .resume-header__buttons .resume-header__button--print {
+  /* Display & Layout */
+  display: var(--header-button-display);
+  align-items: center;
+
+  /* Spacing */
+  margin-block-start: var(--header-button-margin-block-start);
+
+  /* Animation */
+  animation: var(--header-button-animation);
+}
+
+/* === PRINT BUTTON RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 600px) {
+  .resume-header .resume-header__buttons .resume-header__button--print {
+    margin-inline-start: var(--header-button-margin-inline-start-responsive-600);
+    margin-block-start: var(--header-button-margin-block-start-responsive-600);
+  }
+}
+
+/* === PRINT BUTTON PSEUDO-ELEMENTS === */
+
+.resume-header .resume-header__buttons .resume-header__button--print::before {
+  /* Content */
+  content: var(--header-button-before-content);
+
+  /* Display & Layout */
+  display: var(--header-button-before-display);
+  position: var(--header-button-before-position);
+  top: var(--header-button-before-top);
+  right: var(--header-button-before-right);
+  bottom: var(--header-button-before-bottom);
+  left: var(--header-button-before-left);
+
+  /* Spacing */
+  margin-inline-start: var(--header-button-before-margin-inline-start);
+  margin-inline-end: var(--header-button-before-margin-inline-end);
+
+  /* Borders */
+  border-radius: var(--header-button-before-border-radius);
+
+  /* Background */
+  background: var(--header-button-before-background);
+
+  /* Typography */
+  font-size: var(--header-button-before-font-size);
+
+  /* Visual Effects */
+  transform: var(--header-button-before-transform);
+
+  /* Interaction */
+  pointer-events: var(--header-button-before-pointer-events);
+}
+
+.resume-header .resume-header__buttons .resume-header__button--print::after {
+  /* Content */
+  content: var(--header-button-after-content);
+
+  /* Display & Layout */
+  display: var(--header-button-after-display);
+  position: var(--header-button-after-position);
+
+  /* Spacing */
+  margin-inline-start: var(--header-button-after-margin-inline-start);
+  margin-inline-end: var(--header-button-after-margin-inline-end);
 }

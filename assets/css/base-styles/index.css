@@ -46,8 +46,10 @@
 /* Main container */
 @import url('./main.css');
 
-/* Header structure (includes dial-selectors and buttons) */
+/* Header structure */
 @import url('./header/index.css');
+@import url('./header/dial-selectors.css');
+@import url('./header/buttons.css');
 
 /* Section containers */
 @import url('./sections.css');

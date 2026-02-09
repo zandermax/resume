@@ -5,14 +5,11 @@ METRO Theme - Dial Selector Custom Properties
 /* ==================== DIAL SELECTOR ==================== */
 
 :root[data-theme='metro'] {
-  /* Dial label active span padding - Metro tiles have generous padding */
-  --dial-selector-label-active-span-padding-block: 0.6rem;
-  --dial-selector-label-active-span-padding-inline: 1rem;
-
   /* Dial label hover properties - Bold Metro hover */
+  --dial-selector-label-hover-padding-block: 0.5rem;
+  --dial-selector-label-hover-padding-inline: 1rem;
   --dial-selector-label-hover-background: oklch(57% 0.17 246 / 0.2);
   --dial-selector-label-hover-box-shadow: none;
-  --dial-selector-label-hover-transform: translateY(-1px);
 
   /* Dial selector knob styling */
   --dial-selector-knob-border-width: 0;
@@ -24,7 +21,8 @@ METRO Theme - Dial Selector Custom Properties
   /* Dial selector label styling - Metro tile-like labels */
   --dial-selector-label-font-size: 0.9rem;
   --dial-selector-label-hover-color: var(--dial-selector-color-ink);
-  --dial-selector-label-padding: 0.75rem 1rem;
+  --dial-selector-label-padding-block: 0.5rem;
+  --dial-selector-label-padding-inline: 1rem;
   --dial-selector-label-border-radius: 0;
   --dial-selector-label-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --dial-selector-label-font-weight: 600;
@@ -32,6 +30,8 @@ METRO Theme - Dial Selector Custom Properties
   --dial-selector-label-letter-spacing: 0.08em;
 
   /* Dial selector label active state - Bold Metro accent */
+  --dial-selector-label-active-padding-block: 0.5rem;
+  --dial-selector-label-active-padding-inline: 1rem;
   --dial-selector-label-active-background: var(--accent-color);
   --dial-selector-label-active-box-shadow: none;
   --dial-selector-label-active-color: var(--color-white);
@@ -44,11 +44,13 @@ METRO Theme - Dial Selector Custom Properties
   /* Responsive overrides */
   @media (max-width: 768px) {
     --dial-selector-label-font-size: var(--spacing-sm);
-    --dial-selector-label-padding: var(--spacing-xs) 0.8rem;
+    --dial-selector-label-padding-block: var(--spacing-xs);
+    --dial-selector-label-padding-inline: 0.8rem;
   }
 
   @media (max-width: 500px) {
     --dial-selector-label-font-size: var(--font-size-xs);
-    --dial-selector-label-padding: 0.4rem var(--font-size-xs);
+    --dial-selector-label-padding-block: 0.4rem;
+    --dial-selector-label-padding-inline: var(--font-size-xs);
   }
 }

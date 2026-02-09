@@ -102,9 +102,6 @@ Flat Design / Material Zero
 
   /* ==================== EXPERIENCE SECTION ==================== */
 
-  /* Experience section custom properties */
-  --experience-section-padding-block-start: 2rem;
-
   /* Experience item custom properties */
   --experience-item-padding: 2rem;
   --experience-item-background: var(--section-bg);

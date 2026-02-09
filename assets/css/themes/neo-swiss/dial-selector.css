@@ -3,11 +3,9 @@ Neo-Swiss Theme - Dial Selector Styling
 =========================== */
 
 body[data-theme='neoswiss'] {
-  /* Dial label active span padding */
-  --dial-selector-label-active-span-padding-block: 0.05rem;
-  --dial-selector-label-active-span-padding-inline: 0.6rem;
-
   /* Dial label hover properties */
+  --dial-selector-label-hover-padding-block: var(--spacing-1);
+  --dial-selector-label-hover-padding-inline: var(--spacing-2);
   --dial-selector-label-hover-color: var(--accent-color);
 
   /* Dial selector knob styling */
@@ -21,7 +19,8 @@ body[data-theme='neoswiss'] {
 
   /* Dial selector label styling */
   --dial-selector-label-font-size: var(--font-size-small);
-  --dial-selector-label-padding: var(--spacing-1) var(--spacing-2);
+  --dial-selector-label-padding-block: var(--spacing-1);
+  --dial-selector-label-padding-inline: var(--spacing-2);
   --dial-selector-label-transition: color 50ms linear, background 50ms linear;
   --dial-selector-label-font-weight: var(--font-weight-medium);
   --dial-selector-label-text-transform: uppercase;
@@ -29,9 +28,11 @@ body[data-theme='neoswiss'] {
   --dial-selector-label-color: var(--dial-selector-color-ink);
 
   /* Dial selector label active state */
+  --dial-selector-label-active-padding-block: calc(var(--spacing-1) / 2);
+  --dial-selector-label-active-padding-inline: var(--spacing-2);
   --dial-selector-label-active-background: var(--accent-color);
   --dial-selector-label-active-color: var(--color-white);
-  --dial-selector-label-active-span-font-weight: 600;
+  --dial-selector-label-active-font-weight: 600;
 
   /* Dial selector spoke lines */
   --dial-selector-line-width: 1px;
@@ -45,6 +46,7 @@ body[data-theme='neoswiss'] {
   /* Responsive overrides */
   @media (max-width: 500px) {
     --dial-selector-label-font-size: clamp(0.625rem, 2vw, 0.75rem);
-    --dial-selector-label-padding: calc(var(--swiss-grid) * 0.75) calc(var(--swiss-grid) * 0.125);
+    --dial-selector-label-padding-block: calc(var(--swiss-grid) * 0.75);
+    --dial-selector-label-padding-inline: calc(var(--swiss-grid) * 0.125);
   }
 }

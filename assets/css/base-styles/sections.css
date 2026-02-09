@@ -74,9 +74,6 @@
  *   Section modifiers:
  *     --section-summary-p-font-size (default: inherit)
  *     --section-summary-p-margin-block-end (default: inherit)
- *     --experience-section-padding-block-start (defined in variables/experience.css)
- *     --section-ashby-border-block-start (default: none)
- *     --section-ashby-padding-block-start (default: 0)
  *
  * NAMING CONVENTIONS:
  *   - Use longhand logical properties for margins/padding (e.g., padding-block-start)
@@ -253,15 +250,5 @@
       font-size: var(--section-summary-p-font-size);
       margin-block-end: var(--section-summary-p-margin-block-end);
     }
-  }
-
-  &.resume-section--experience {
-    border-block-start: 0;
-    padding-block-start: var(--experience-section-padding-block-start);
-  }
-
-  &.resume-section--ashby {
-    border-block-start: var(--section-ashby-border-block-start);
-    padding-block-start: var(--section-ashby-padding-block-start);
   }
 }

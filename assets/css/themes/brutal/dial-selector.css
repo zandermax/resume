@@ -9,7 +9,7 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-color-selection: var(--color-red-crimson);
   --dial-selector-color-indicator: var(--color-red-crimson);
   --dial-selector-color-knob-background: oklch(19% 0.02 240);
-  --dial-selector-label-span-color: var(--color-black);
+  --dial-selector-label-color: var(--color-black);
   --dial-selector-label-hover-color: var(--color-white);
 }
 
@@ -21,7 +21,7 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-color-line: oklch(95% 0 0);
   --dial-selector-color-knob-background: var(--color-dark-bg-alt);
   --dial-selector-label-hover-color: var(--color-white);
-  --dial-selector-label-span-color: oklch(92% 0 0);
+  --dial-selector-label-color: oklch(92% 0 0);
   --dial-selector-indicator-box-shadow: 0 0 20px var(--accent-color);
   --dial-selector-line-opacity: 1;
 }
@@ -48,47 +48,43 @@ BRUTAL Theme - Dial Selector Custom Properties
   --dial-selector-line-width: 4px;
 
   /* Labels - Base */
-  --dial-selector-label-span-font-size: 0.9rem;
-  --dial-selector-label-span-font-weight: 900;
-  --dial-selector-label-span-border-width: 0;
-  --dial-selector-label-active-span-border-width: 3px;
-  --dial-selector-label-active-span-border-style: solid;
-  --dial-selector-label-active-span-border-color: var(--border-color);
-  --dial-selector-label-span-transition: all 0.05s ease;
-  --dial-selector-label-span-text-transform: uppercase;
-  --dial-selector-label-span-letter-spacing: 0.05em;
-  --dial-selector-label-span-transform: skewX(-3deg);
-  --dial-selector-label-span-color: var(--text-color);
+  --dial-selector-label-font-size: 0.9rem;
+  --dial-selector-label-font-weight: 900;
+  --dial-selector-label-border-width: 0;
+  --dial-selector-label-transition: all 0.05s ease;
+  --dial-selector-label-text-transform: uppercase;
+  --dial-selector-label-letter-spacing: 0.05em;
+  --dial-selector-label-color: var(--text-color);
 
   /* Labels - Active State */
-  --dial-selector-label-active-span-border-color: var(--border-color);
+  --dial-selector-label-active-padding-block: var(--spacing-xs);
+  --dial-selector-label-active-padding-inline: 0.8rem;
+  --dial-selector-label-active-border-width: 3px;
+  --dial-selector-label-active-border-style: solid;
+  --dial-selector-label-active-border-color: var(--border-color);
   --dial-selector-label-active-background: var(--accent-color);
-  --dial-selector-label-active-span-transform: skewX(-3deg) translate(-2px, -2px);
-  --dial-selector-label-active-span-box-shadow: 4px 4px 0 var(--border-color);
+  --dial-selector-label-active-box-shadow: 4px 4px 0 var(--border-color);
   --dial-selector-label-active-color: var(--background-color);
-  --dial-selector-label-active-span-padding-block: var(--spacing-xs);
-  --dial-selector-label-active-span-padding-inline: var(--spacing-md);
 
   /* Labels - Hover State */
+  --dial-selector-label-hover-padding-block: var(--spacing-xs);
+  --dial-selector-label-hover-padding-inline: 0.8rem;
   --dial-selector-label-hover-border-width: 3px;
   --dial-selector-label-hover-border-style: solid;
   --dial-selector-label-hover-border-color: var(--border-color);
   --dial-selector-label-hover-background: var(--accent-color);
-  --dial-selector-label-hover-transform: skewX(-3deg) translate(-2px, -2px);
   --dial-selector-label-hover-box-shadow: 4px 4px 0 var(--border-color);
-  --dial-selector-label-hover-padding-block: var(--spacing-xs);
-  --dial-selector-label-hover-padding-inline: var(--spacing-md);
 
   /* Responsive overrides */
   @media (max-width: 768px) {
-    --dial-selector-label-span-font-size: var(--spacing-sm);
-    --dial-selector-label-span-padding-block: 0.6rem;
-    --dial-selector-label-span-padding-inline: var(--spacing-md);
+    --dial-selector-label-font-size: var(--spacing-sm);
+    --dial-selector-label-padding-block: 0.6rem;
+    --dial-selector-label-padding-inline: var(--spacing-md);
   }
 
   @media (max-width: 500px) {
-    --dial-selector-label-span-font-size: var(--font-size-xs);
-    --dial-selector-label-span-padding-block: 0.35rem;
-    --dial-selector-label-span-padding-inline: 0.6rem;
+    --dial-selector-label-font-size: var(--font-size-xs);
+    --dial-selector-label-padding-block: 0.35rem;
+    --dial-selector-label-padding-inline: 0.6rem;
   }
 }

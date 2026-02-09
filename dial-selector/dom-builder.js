@@ -77,9 +77,7 @@ export const DOMBuilder = {
 
       const label = document.createElement('label');
       label.className = 'dial-label';
-      const span = document.createElement('span');
-      span.textContent = option;
-      label.appendChild(span);
+      label.textContent = option;
       label.dataset.index = index;
       label.dataset.angle = angle;
 

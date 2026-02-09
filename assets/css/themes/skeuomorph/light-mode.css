@@ -6,34 +6,34 @@ SKEUOMORPH Theme - Light Mode Variables
   /* ==================== COLOR PALETTE ==================== */
 
   /* Base colors */
-  --background-color: oklch(0.36 0.05 45);
+  --background-color: oklch(0.85 0.03 50); /* Light background for readability */
   --text-color: var(--color-brown);
   --heading-color: var(--color-brown);
-  --border-color: oklch(0.54 0.04 50);
+  --border-color: oklch(0.65 0.05 50);
 
   /* Component colors */
   --tech-badge-color: oklch(0.92 0.02 60);
-  --accent-color: oklch(0.42 0.11 50);
+  --tech-badge-text-color: oklch(0.92 0.02 60); /* Light text for dark badges */
 
   /* Material colors */
-  --leather-color: var(--color-tan);
+  --leather-color: oklch(0.65 0.05 45); /* Lighter tan for better contrast */
   --paper-color: var(--color-cream);
   --ink-color: var(--color-brown);
   --stitch-color: oklch(0.76 0.08 70);
 
   /* Link colors */
-  --link-color: oklch(0.38 0.04 40);
-  --link-visited-color: oklch(0.27 0.03 40);
+  --link-color: oklch(0.35 0.06 40); /* Darker for better contrast on light bg */
+  --link-visited-color: oklch(0.28 0.04 40); /* Darker visited links */
 
   /* Section colors */
   --section-bg: var(--color-cream);
   --section-content-background: var(--paper-color);
-  --header-background-color: var(--color-tan);
+  --header-background-color: oklch(0.92 0.02 70); /* Light cream header */
 
   /* ==================== DIAL SELECTOR COLORS ==================== */
 
   --dial-selector-color-ink: var(--color-brown);
-  --dial-selector-color-line: oklch(0.62 0.04 40); /* Lighter brown for subtle carved grooves */
+  --dial-selector-color-line: oklch(0.50 0.05 40); /* Darker for better visibility on lighter leather */
   --dial-selector-color-selection: oklch(0.63 0.13 20);
   --dial-selector-color-indicator: oklch(0.63 0.13 20);
 
@@ -86,7 +86,7 @@ SKEUOMORPH Theme - Light Mode Variables
     inset 0 3px 6px var(--skeu-white-30), inset 0 -4px 8px var(--skeu-black-50);
 
   /* Sticky note */
-  --sticky-note-color: oklch(0.98 0.1 105);
+  --sticky-note-color: oklch(0.98 0.1 105); /* Bright yellow sticky note */
   --sticky-note-shadow: 0 4px 6px var(--skeu-black-10), 0 1px 3px var(--skeu-black-08);
 
   /* Scrollbar styling - light metallic 3D with warm tones */

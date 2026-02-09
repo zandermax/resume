@@ -25,20 +25,21 @@ XP Theme - Dial Selector (Public API)
 
   /* Dial label XP styling */
   --dial-selector-label-font-size: 0.85rem;
-  --dial-selector-label-padding: 0.45rem 0.8rem;
+  --dial-selector-label-padding-block: 0.45rem;
+  --dial-selector-label-padding-inline: 0.8rem;
   --dial-selector-label-border-radius: 3px;
   --dial-selector-label-transition: all 0.15s ease;
   --dial-selector-label-font-weight: 700;
+  --dial-selector-label-hover-padding-block: 0.45rem;
+  --dial-selector-label-hover-padding-inline: 0.8rem;
   --dial-selector-label-hover-background: linear-gradient(180deg, oklch(97% 0.02 245) 0%, oklch(92% 0.04 245) 100%);
   --dial-selector-label-hover-box-shadow: 0 0 0 1px var(--xp-button-shadow), inset 1px 1px 0 var(--xp-white-80);
-  --dial-selector-label-hover-padding-block: 0.45rem;
-  --dial-selector-label-hover-padding-inline: 0.25rem;
+  --dial-selector-label-active-padding-block: 0.45rem;
+  --dial-selector-label-active-padding-inline: 0.8rem;
   --dial-selector-label-active-background: linear-gradient(180deg, var(--xp-start-green) 0%, oklch(61% 0.12 130) 100%);
   --dial-selector-label-active-box-shadow: 0 0 0 1px var(--xp-black-30), inset 1px 1px 0 var(--xp-white-30),
     0 2px 4px var(--xp-black-20);
   --dial-selector-label-active-color: var(--color-white);
-  --dial-selector-label-active-span-padding-inline: 0.25rem;
-  --dial-selector-label-active-span-padding-block: 0.25rem;
   --dial-selector-label-active-text-shadow: 1px 1px 2px var(--xp-black-40);
 }
 
@@ -68,12 +69,14 @@ XP Theme - Dial Selector (Public API)
 :root[data-theme='xp'] {
   @media (max-width: 768px) {
     --dial-selector-label-font-size: 0.75rem;
-    --dial-selector-label-padding: 0.4rem 0.7rem;
+    --dial-selector-label-padding-block: 0.4rem;
+    --dial-selector-label-padding-inline: 0.7rem;
   }
 
   @media (max-width: 500px) {
     --dial-selector-label-font-size: 0.7rem;
-    --dial-selector-label-padding: 0.35rem 0.3rem;
+    --dial-selector-label-padding-block: 0.35rem;
+    --dial-selector-label-padding-inline: 0.3rem;
     --dial-selector-housing-padding-block: 0.5rem;
     --dial-selector-housing-padding-inline: 0.5rem;
   }

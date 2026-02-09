@@ -5,7 +5,6 @@
  *   - .resume-section__text (section text paragraphs)
  *   - .resume-section__content (section content wrapper)
  *   - .resume-section--summary (summary section modifier)
- *   - .resume-section--ashby (ashby section modifier)
  *   - Global typography variables
  *   - Global link variables
  *   - Body pseudo-elements
@@ -78,16 +77,6 @@
   /* Typography */
   --section-summary-p-font-size: inherit;
   --section-summary-p-margin-block-end: inherit;
-
-  /* ============================================================================
-     SECTION - ASHBY MODIFIER (.resume-section--ashby)
-     ============================================================================ */
-
-  /* Spacing - Padding */
-  --section-ashby-padding-block-start: 0;
-
-  /* Borders */
-  --section-ashby-border-block-start: none;
 
   /* ============================================================================
      GLOBAL TYPOGRAPHY

@@ -1,10 +1,5 @@
 /**
- * Resume header module - main entry point
- *
- * This file imports all header-related styles in the correct order:
- *   1. Core header structure (this file)
- *   2. Dial selector positioning and styling
- *   3. Print and save button styles
+ * Resume header core structure
  *
  * HTML ELEMENTS AFFECTED:
  *   - .resume-header (main header container)
@@ -25,6 +20,9 @@
  *   All custom properties are defined in variable files with proper defaults.
  *   No inline fallbacks (var(--property, fallback)) are used in this file.
  *   This ensures consistent defaults and prevents duplication.
+ *
+ * NOTE: Header component styles (dial-selectors.css and buttons.css) are imported
+ *       separately in base-styles/index.css for proper cascade order.
  */
 
 /* === HEADER CONTAINER === */
@@ -307,11 +305,3 @@
     }
   }
 }
-
-/* === IMPORT ADDITIONAL HEADER MODULES === */
-
-/* Dial selector housing and positioning */
-@import url('./dial-selectors.css');
-
-/* Print and save button styles */
-@import url('./buttons.css');

@@ -43,7 +43,9 @@ body[data-theme='brutal'] {
     border-block-start: 6px solid var(--accent-color);
     border-inline: 4px solid var(--border-color);
     background: var(--background-color);
-    box-shadow: 0 -10px 20px oklch(0% 0 0 / 0.5), inset 0 4px 0 var(--accent-color);
+    box-shadow:
+      0 -10px 20px oklch(0% 0 0 / 0.5),
+      inset 0 4px 0 var(--accent-color);
 
     @media (max-width: 768px) {
       width: calc(100% - 8px - var(--spacing-xl));
@@ -276,6 +278,16 @@ body[data-theme='brutal'] {
     @media (max-width: 500px) {
       font-size: 0.525rem;
     }
+  }
+
+  /* ========== DIAL SELECTOR ========== */
+  /* Custom brutal skew effect - applied directly to labels */
+  dial-selector .dial-label.active {
+    transform: translateY(-50%) skewX(-3deg);
+  }
+
+  dial-selector .dial-label:not(.active):hover {
+    transform: translateY(-50%) skewX(-3deg);
   }
 
   /* ========== ANIMATIONS ========== */

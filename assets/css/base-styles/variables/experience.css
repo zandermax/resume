@@ -193,6 +193,7 @@
   /* Display & Position */
   --tech-badge-display: inline-block;
   --tech-badge-position: relative;
+  --tech-badge-z-index: auto;
 
   /* Box Model */
   --tech-badge-padding: 0.25rem 0.4rem;
@@ -229,6 +230,10 @@
 
   /* Other */
   --tech-badge-overflow: visible;
+
+  /* Text Content */
+  --tech-badge-text-position: relative;
+  --tech-badge-text-z-index: auto;
 
   /* Hover States */
   --tech-badge-hover-background: transparent;

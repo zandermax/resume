@@ -34,10 +34,11 @@ The resume header buttons (.resume-header__button--print and .resume-header__but
 
 ### Child Elements
 
-Buttons support inline child elements (icons, spans):
+Buttons support inline child elements (icons, spans) with fully themeable properties:
 
-- Icon sizing: `--header-button-icon-size`
-- Icon spacing: `--header-button-icon-margin`
+- Icon sizing: `--header-button-icon-size` (default: 1em)
+- Icon spacing: `--header-button-icon-margin` (default: 0.25em)
+- Icon vertical alignment: `--header-button-icon-vertical-align` (default: -0.125em)
 - All child elements inherit button color by default
 
 ### Link Style Protection
@@ -110,13 +111,15 @@ Themes can customize buttons by overriding CSS variables. Examples:
 
 Button styling adapts to viewport size through CSS variables:
 
-- `@media (max-width: 600px)`: Adjusts font-size, padding
+- `@media (max-width: 600px)`: Adjusts font-size, padding, and margins
 - `@media (max-width: 500px)`: Further reduces sizing
 
 Container layout (`.resume-header__buttons`) also responds:
 
 - Switches from row to column layout on smaller screens
 - Adjustable gap between buttons
+
+All responsive properties are themeable via CSS variables (no hardcoded values).
 
 ## Best Practices
 
